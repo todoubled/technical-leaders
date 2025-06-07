@@ -1,69 +1,138 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Zap, BarChart3, Target, Lightbulb, Clock } from "lucide-react";
+import { Megaphone, Bot, Users, TrendingUp, Briefcase, Rocket, Check, ArrowRight, Brain } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Features = () => {
-  const features = [
+  const programs = [
     {
-      icon: Users,
-      title: "Collaborative Workshops",
-      description: "Engage teams with interactive exercises, breakouts, and real-time collaboration tools designed by expert facilitators."
+      title: "Get Promoted",
+      subtitle: "Climb Your Career Ladder Faster",
+      description: "Navigate the corporate ladder with proven strategies and playbooks",
+      cta: "For Corporate Leaders",
+      features: [
+        {
+          icon: Briefcase,
+          title: "Executive Presence",
+          description: "Build the leadership presence and communication skills that get you noticed by senior leadership"
+        },
+        {
+          icon: TrendingUp,
+          title: "Promotion Strategies",
+          description: "Navigate promotion cycles, comp negotiations, and political dynamics with insider strategies"
+        },
+        {
+          icon: Bot,
+          title: "AI-Enhanced Productivity",
+          description: "Leverage AI tools to 10x your output while maintaining quality and avoiding AI slop"
+        },
+        {
+          icon: Brain,
+          title: "Mental Fitness",
+          description: "Build resilience and prevent burnout with proven mental performance techniques for high-pressure environments"
+        }
+      ],
+      gradient: "from-blue-600 to-purple-600"
     },
     {
-      icon: Zap,
-      title: "AI-Powered Insights",
-      description: "Get intelligent recommendations for workshop structure, timing, and activities based on your team's goals and dynamics."
-    },
-    {
-      icon: BarChart3,
-      title: "Analytics & Outcomes",
-      description: "Track participation, measure engagement, and analyze results to continuously improve your facilitation effectiveness."
-    },
-    {
-      icon: Target,
-      title: "Goal-Driven Templates",
-      description: "Access proven workshop templates for strategy sessions, retrospectives, ideation, and team building activities."
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation Tools",
-      description: "Facilitate breakthrough thinking with structured brainstorming, idea evaluation, and decision-making frameworks."
-    },
-    {
-      icon: Clock,
-      title: "Time Management",
-      description: "Keep workshops on track with built-in timers, automated transitions, and smart pacing recommendations."
+      title: "Promote Yourself",
+      subtitle: "Your Entrepreneurial Path",
+      description: "Build your personal brand, monetize your expertise, and diversify your income streams",
+      cta: "For Indie Leaders",
+      features: [
+        {
+          icon: Megaphone,
+          title: "Personal Brand Mastery",
+          description: "Position yourself as the go-to expert in your niche and attract premium opportunities"
+        },
+        {
+          icon: Rocket,
+          title: "Income Diversification",
+          description: "Create consulting, coaching, and product revenue streams beyond your 9-5"
+        },
+        {
+          icon: Users,
+          title: "Mastermind Network",
+          description: "Connect with tech leaders building their own paths and accelerate together"
+        },
+        {
+          icon: Brain,
+          title: "Mental Fitness",
+          description: "Maintain peak performance and creative flow while juggling multiple ventures without burning out"
+        }
+      ],
+      gradient: "from-orange-600 to-red-600"
     }
   ];
 
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Everything you need to facilitate success
+            Two Powerful Programs to Accelerate Your Tech Career
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From planning to execution to analysis, our comprehensive platform supports every stage of your workshop journey.
+            Whether you're aiming for promotion or building your own path, we've got the tools, playbooks, and coaching to get you there faster.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-primary" />
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {programs.map((program, programIndex) => (
+            <Card key={programIndex} className="relative overflow-hidden border-2 hover:shadow-xl transition-all duration-300">
+              <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${program.gradient}`} />
+              <CardHeader className="text-center pb-8">
+                <div className="mb-2">
+                  <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                    {program.subtitle}
+                  </span>
                 </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed">
-                  {feature.description}
+                <CardTitle className="text-3xl font-bold mb-3">{program.title}</CardTitle>
+                <CardDescription className="text-lg">
+                  {program.description}
                 </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {program.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${program.gradient} bg-opacity-10 flex items-center justify-center`}>
+                        <feature.icon className="h-5 w-5 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-foreground mb-1">{feature.title}</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+                <div className="pt-6 border-t border-border">
+                  <Button
+                    className="w-full group"
+                    variant="secondary"
+                    onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
+                  >
+                    {program.cta}
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-muted-foreground mb-4">
+            Not sure which path is right for you?
+          </p>
+          <Button
+            variant="link"
+            className="text-primary hover:text-primary/80"
+            onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
+          >
+            Book a free intro call and we'll help you figure it out →
+          </Button>
         </div>
       </div>
     </section>
