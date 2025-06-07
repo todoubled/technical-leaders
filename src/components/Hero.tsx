@@ -9,7 +9,7 @@ const Hero = () => {
   const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s"; // Replace with your actual video URL
 
   return (
-    <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/20">
+    <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/20">
       <div className="container mx-auto text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
@@ -55,9 +55,9 @@ const Hero = () => {
       <div className="mt-20 -mx-4 sm:-mx-6 lg:-mx-8">
         <div className="bg-white dark:bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-center text-lg font-semibold text-gray-600 dark:text-gray-700 mb-8">
+            <p className="text-center text-xl text-muted-foreground mb-8">
               Built By Tech Leaders, For Tech Leaders At Top Companies Like
-            </h3>
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
               <img src="/nike.png" alt="Nike" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               <img src="/peleton.webp" alt="Peloton" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />

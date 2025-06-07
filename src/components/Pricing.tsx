@@ -27,16 +27,13 @@ const Pricing = () => {
       name: "Launch Kit",
       price: "$2950",
       period: " lifetime access",
-      description: "Complete program to get promoted or promote yourself",
+      description: "Complete program to get ideal opportunities even if you hate selling yourself",
       icon: Zap,
       features: [
-        "Everything in AI Trade School",
-        "Personal branding playbooks",
-        "1-on-1 coaching sessions",
-        "Premium positioning strategies",
-        "Executive presence training",
-        "Mastermind access",
-        "Lifetime alumni network"
+        "Marketing System (ICP)",
+        "Sales Playbook (Scalable Offer)",
+        "3 Months of Ghostwritten Content (Revenue Generating Activities)",
+        "Weekly Workshops",
       ],
       popular: true,
       gradient: "from-blue-500 to-purple-600",
@@ -50,9 +47,9 @@ const Pricing = () => {
       icon: Crown,
       features: [
         "Everything in Launch Kit",
-        "Weekly 1-on-1 coaching",
-        "Board readiness preparation",
-        "Executive ghostwriting",
+        "Private 1-on-1 coaching",
+        "Content ghostwriting",
+        "Done-for-you marketing",
         "Media training",
         "Strategic introductions",
         "Concierge support"
@@ -148,9 +145,19 @@ const Pricing = () => {
                       ? `bg-gradient-to-r ${plan.gradient} hover:shadow-lg hover:scale-105 text-white border-0`
                       : `border-2 border-primary/20 hover:border-primary bg-gradient-to-r ${plan.gradient} hover:shadow-lg hover:scale-105 text-white`
                   }`}
-                  onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
+                  onClick={() => {
+                    if (plan.name === "AI Trade School") {
+                      window.location.href = "/ai-trade-school";
+                    } else if (plan.name === "Launch Kit") {
+                      window.location.href = "/launch";
+                    } else if (plan.name === "Scale Program") {
+                      window.location.href = "/scale";
+                    } else {
+                      window.location.href = "/call";
+                    }
+                  }}
                 >
-                  Get Started Today
+                  Learn More
                 </Button>
               </CardContent>
             </Card>
@@ -163,7 +170,7 @@ const Pricing = () => {
             Not sure which path is right for you?
           </p>
           <button
-            onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
+            onClick={() => { window.location.href = "/call" }}
             className="text-xl font-medium text-foreground hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
           >
             Book a free intro call and we'll help you figure it out

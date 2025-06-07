@@ -4,7 +4,8 @@
 
 - [x] https://www.technical-leaders.com/call
 - [ ] https://www.technical-leaders.com/call-confirmed
-- [ ] https://www.technical-leaders.com/privacy-policy
+- [x] https://www.technical-leaders.com/privacy-policy
+- [ ] https://www.technical-leaders.com/articles (Ghost + AI SEO Bot)
 
 
 - [ ] Workshops/
@@ -16,7 +17,6 @@
 - [ ] /spotlight-sessions (https://www.technical-leaders.com/mish, https://www.technical-leaders.com/clive-foley-spotlight-session)
 - [ ] https://www.technical-leaders.com/accredited-tech-leader
 - [ ] https://www.technical-leaders.com/refer
-- [ ] https://www.technical-leaders.com/articles (Ghost + AI SEO Bot)
 
 
 ### Ask Amelia
