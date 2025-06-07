@@ -16,16 +16,16 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors">How It Works</a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-              <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
-              <a href="#pricing" className="text-foreground hover:text-primary transition-colors">Get Started</a>
+              <a href="/#how-it-works" className="text-foreground hover:text-primary transition-colors">How It Works</a>
+              <a href="/#about" className="text-foreground hover:text-primary transition-colors">About</a>
+              <a href="/#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
+              <a href="/#pricing" className="text-foreground hover:text-primary transition-colors">Get Started</a>
             </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" onClick={() => { window.location.href = "https://skool.com/tech-leaders" }}>Sign In</Button>
-            <Button onClick={() => { window.location.href = "https://technical-leaders.com/call" }}>Book Intro Call</Button>
+            <Button onClick={() => { window.location.href = "/call" }}>Book Intro Call</Button>
           </div>
 
           <div className="md:hidden">
@@ -48,7 +48,7 @@ const Navigation = () => {
             <a href="#pricing" className="block px-3 py-2 text-foreground hover:text-primary">Pricing</a>
             <div className="px-3 py-2 space-y-2">
               <Button variant="ghost" className="w-full" onClick={() => { window.location.href = "https://skool.com/tech-leaders" }}>Sign In</Button>
-              <Button className="w-full" onClick={() => { window.location.href = "https://technical-leaders.com/call" }}>Book Intro Call</Button>
+              <Button className="w-full" onClick={() => { window.location.href = "/call" }}>Book Intro Call</Button>
             </div>
           </div>
         </div>

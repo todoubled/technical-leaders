@@ -23,7 +23,7 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
-            <Button size="lg" className="text-lg px-8 py-3 group" onClick={() => { window.location.href = "https://technical-leaders.com/call" }}>
+            <Button size="lg" className="text-lg px-8 py-3 group" onClick={() => { window.location.href = "/call" }}>
               Book Intro Call
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -50,6 +50,26 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Company Logos Section */}
+      <div className="mt-20 -mx-4 sm:-mx-6 lg:-mx-8">
+        <div className="bg-white dark:bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-center text-lg font-semibold text-gray-600 dark:text-gray-700 mb-8">
+              Built By Tech Leaders, For Tech Leaders At Top Companies Like
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+              <img src="/nike.png" alt="Nike" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/peleton.webp" alt="Peloton" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/cashapp.svg" alt="Cash App" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/redhat.webp" alt="Red Hat" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/calendly.webp" alt="Calendly" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}

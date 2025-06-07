@@ -8,7 +8,7 @@ const Features = () => {
       title: "Get Promoted",
       subtitle: "Climb Your Career Ladder Faster",
       description: "Navigate the corporate ladder with proven strategies and playbooks",
-      cta: "For Corporate Leaders",
+      cta: "For Tech Leaders",
       features: [
         {
           icon: Briefcase,
@@ -37,7 +37,7 @@ const Features = () => {
       title: "Promote Yourself",
       subtitle: "Your Entrepreneurial Path",
       description: "Build your personal brand, monetize your expertise, and diversify your income streams",
-      cta: "For Indie Leaders",
+      cta: "For Founders & Consultants",
       features: [
         {
           icon: Megaphone,
@@ -69,10 +69,10 @@ const Features = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Two Powerful Programs to Accelerate Your Tech Career
+            Two Proven Paths to Accelerate Your Tech Career
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Whether you're aiming for promotion or building your own path, we've got the tools, playbooks, and coaching to get you there faster.
+            Whether you're aiming for promotion or building your own business, we've got the tools, playbooks, and coaching to get you there faster.
           </p>
         </div>
 
@@ -107,16 +107,6 @@ const Features = () => {
                     </div>
                   </div>
                 ))}
-                <div className="pt-6 border-t border-border">
-                  <Button
-                    className="w-full group"
-                    variant="secondary"
-                    onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
-                  >
-                    {program.cta}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
               </CardContent>
             </Card>
           ))}

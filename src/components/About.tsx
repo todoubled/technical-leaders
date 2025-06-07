@@ -30,13 +30,13 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            Built by tech leaders,
+            Built By Tech Leaders,
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
-              for tech leaders
+              For Tech Leaders
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            We believe the world needs technical experts with strong leadership skills. Our programs bridge the gap between brilliant coding and exceptional leadership.
+            We believe the world needs technical experts with strong leadership and business skills. Our programs bridge the gap between technical expertise and business outcomes.
           </p>
         </div>
 

@@ -15,9 +15,9 @@ const Footer = () => {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Get the strategic playbook that shows you how to diversify your income through consulting—without traditional sales tactics, cold outreach, or burning out.
           </p>
-          <Button 
+          <Button
             size="lg"
-            className="bg-gradient-to-r from-primary to-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8"
+            className="bg-gradient-to-r from-secondary/50 to-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8"
             onClick={() => { window.location.href = "https://techleaders.kit.com/playbook" }}
           >
             Get Your Free Consulting Playbook
@@ -30,23 +30,17 @@ const Footer = () => {
             <div className="flex items-center gap-6">
               <img src="/orange-logo.png" alt="Tech Leaders" className="h-8 w-auto" />
               <span className="text-sm text-muted-foreground">
-                © 2024 Tech Leaders. All rights reserved.
+                © 2025 Tech Leaders. All rights reserved.
               </span>
             </div>
-            
+
             <div className="flex items-center gap-6 text-sm">
-              <a 
-                href="https://skool.com/tech-leaders" 
+              <a
+                href="https://billing.stripe.com/p/login/28oaFm1om8Za4XC000"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                Community
+                My Membership
               </a>
-              <button 
-                onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                Contact
-              </button>
             </div>
           </div>
         </div>

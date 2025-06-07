@@ -14,9 +14,9 @@ const Pricing = () => {
         "Weekly AI workflow training",
         "Hands-on tool tutorials",
         "Real-world implementation guides",
-        "Avoid AI slop techniques",
-        "Community access",
-        "Monthly group coaching"
+        "Techniques to Avoid 'AI Slop'",
+        "Lifetime Community Access",
+        "Demo Day to Launch Your Project"
       ],
       popular: false,
       badge: "New",
