@@ -6,7 +6,9 @@
 - [x] https://www.technical-leaders.com/call-confirmed
 - [x] https://www.technical-leaders.com/privacy-policy
 - [x] https://www.technical-leaders.com/accredited-tech-leader
-- [ ] https://www.technical-leaders.com/articles (AI SEO Bot)
+- [x] https://www.technical-leaders.com/articles (AI SEO Bot)
+- [ ] https://www.technical-leaders.com/ai
+- [ ] https://www.technical-leaders.com/refer
 
 
 - [ ] Workshops/
@@ -14,9 +16,6 @@
     - [ ] https://www.technical-leaders.com/workshop
     - [ ] https://www.technical-leaders.com/workshop-confirmed
     - [ ] https://www.technical-leaders.com/workshop-call
-- [ ] https://www.technical-leaders.com/ai
-- [ ] https://www.technical-leaders.com/refer
-
 
 - [ ] Copy complete bios and quotes from /tech-leader-accreditation
 - [ ] Export complete Webflow site once migration is complete as a backup

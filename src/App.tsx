@@ -10,6 +10,8 @@ import AITradeSchool from "./pages/AITradeSchool";
 import Launch from "./pages/Launch";
 import Scale from "./pages/Scale";
 import Accredited from "./pages/Accredited";
+import Articles from "./pages/Articles";
+import Article from "./pages/Article";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/launch" element={<Launch />} />
           <Route path="/scale" element={<Scale />} />
           <Route path="/accredited" element={<Accredited />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:slug" element={<Article />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
