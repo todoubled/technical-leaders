@@ -7,9 +7,7 @@
 - [x] https://www.technical-leaders.com/privacy-policy
 - [x] https://www.technical-leaders.com/accredited-tech-leader
 - [x] https://www.technical-leaders.com/articles (AI SEO Bot)
-- [ ] https://www.technical-leaders.com/ai
-- [ ] https://www.technical-leaders.com/refer
-
+- [x] https://www.technical-leaders.com/refer
 
 - [ ] Workshops/
     - [ ] https://www.technical-leaders.com/tlss-workshop
@@ -17,8 +15,6 @@
     - [ ] https://www.technical-leaders.com/workshop-confirmed
     - [ ] https://www.technical-leaders.com/workshop-call
 
-- [ ] Copy complete bios and quotes from /tech-leader-accreditation
-- [ ] Export complete Webflow site once migration is complete as a backup
 
 ### Ask Amelia
 - [ ] https://www.technical-leaders.com/ai-exec-workshop
@@ -33,3 +29,4 @@
 - [ ] https://www.technical-leaders.com/tech-leader-strategic-focus-toolkit
 - [ ] https://www.technical-leaders.com/tech-leader-leverage-system
 - [ ] https://www.technical-leaders.com/tech-leader-problem-solving-framework
+- [ ] Export complete Webflow site once migration is complete as a backup

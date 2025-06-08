@@ -17,7 +17,7 @@ const Hero = () => {
             <span className="text-primary block mt-2">Promote Yourself</span>
           </h1>
 
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
             Leverage the <b>tools</b>, <b>playbooks</b>, and <b>coaching</b> to position your skills for premium pay (<i>without</i> burning out).<br /> <br />
             Join hundreds of tech leaders from companies like <b>Calendly</b>, <b>Red Hat</b>, <b>Vercel</b>, <b>and more</b> who are diversifying their income, monetizing their expertise, and making a positive impact with AI.
           </p>

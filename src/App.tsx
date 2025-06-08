@@ -13,6 +13,7 @@ import Accredited from "./pages/Accredited";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Refer from "./pages/Refer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<Article />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/refer" element={<Refer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -118,10 +118,10 @@ const Features = () => {
           </p>
           <Button
             variant="link"
-            className="text-primary hover:text-primary/80"
+            className="text-primary hover:text-primary/80 text-sm sm:text-base text-center px-2 w-full"
             onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
           >
-            Book a free intro call and we'll help you figure it out →
+            <span className="break-words">Book a free intro call and we'll help you figure it out →</span>
           </Button>
         </div>
       </div>

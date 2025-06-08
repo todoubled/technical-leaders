@@ -172,10 +172,10 @@ const Pricing = () => {
           </p>
           <button
             onClick={() => { window.location.href = "/call" }}
-            className="text-xl font-medium text-foreground hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
+            className="text-lg sm:text-xl font-medium text-foreground hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group text-center"
           >
-            Book a free intro call and we'll help you figure it out
-            <span className="text-primary group-hover:translate-x-1 transition-transform duration-200">→</span>
+            <span className="break-words">Book a free intro call and we'll help you figure it out</span>
+            <span className="text-primary group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0">→</span>
           </button>
         </div>
       </div>
