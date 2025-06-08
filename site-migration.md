@@ -3,9 +3,10 @@
 ## URLs to Migrate
 
 - [x] https://www.technical-leaders.com/call
-- [ ] https://www.technical-leaders.com/call-confirmed
+- [x] https://www.technical-leaders.com/call-confirmed
 - [x] https://www.technical-leaders.com/privacy-policy
-- [ ] https://www.technical-leaders.com/articles (Ghost + AI SEO Bot)
+- [x] https://www.technical-leaders.com/accredited-tech-leader
+- [ ] https://www.technical-leaders.com/articles (AI SEO Bot)
 
 
 - [ ] Workshops/
@@ -14,10 +15,11 @@
     - [ ] https://www.technical-leaders.com/workshop-confirmed
     - [ ] https://www.technical-leaders.com/workshop-call
 - [ ] https://www.technical-leaders.com/ai
-- [ ] /spotlight-sessions (https://www.technical-leaders.com/mish, https://www.technical-leaders.com/clive-foley-spotlight-session)
-- [ ] https://www.technical-leaders.com/accredited-tech-leader
 - [ ] https://www.technical-leaders.com/refer
 
+
+- [ ] Copy complete bios and quotes from /tech-leader-accreditation
+- [ ] Export complete Webflow site once migration is complete as a backup
 
 ### Ask Amelia
 - [ ] https://www.technical-leaders.com/ai-exec-workshop

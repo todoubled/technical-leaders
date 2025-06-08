@@ -1,7 +1,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Quote } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Quote, Award } from "lucide-react";
 
 const Testimonials = () => {
   const testimonials = [
@@ -102,12 +103,21 @@ const Testimonials = () => {
             Ready to join them?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
+            <Button 
+              size="lg"
+              onClick={() => { window.location.href = "/call" }}
             >
               Book Your Free Call
-            </button>
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              onClick={() => { window.location.href = "/accredited" }}
+              className="group"
+            >
+              <Award className="w-4 h-4 mr-2 group-hover:text-primary transition-colors" />
+              View Accredited Leaders
+            </Button>
           </div>
         </div>
       </div>

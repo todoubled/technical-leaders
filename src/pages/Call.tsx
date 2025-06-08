@@ -69,13 +69,12 @@ const Call = () => {
               {/* Calendar Widget Placeholder */}
               <div className="rounded-lg p-8 text-center min-h-[400px] flex flex-col items-center justify-center">
                 <div className="calendly-inline-widget" data-url="https://calendly.com/tech-leaders/intro?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: "320px", height: "500px" }}></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
               </div>
 
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Can't find a time that works?
-                  <a href="mailto:support@technical-leaders.com" className="text-orange-500 hover:underline ml-1">
+                  <a href="mailto:todd@technical-leaders.com" className="text-orange-500 hover:underline ml-1">
                     Email us
                   </a>
                 </p>

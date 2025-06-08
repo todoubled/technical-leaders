@@ -30,10 +30,11 @@ const Pricing = () => {
       description: "Complete program to get ideal opportunities even if you hate selling yourself",
       icon: Zap,
       features: [
-        "Marketing System (ICP)",
-        "Sales Playbook (Scalable Offer)",
-        "3 Months of Ghostwritten Content (Revenue Generating Activities)",
+        "Marketing System",
+        "Sales Playbook",
+        "3 Months of Content",
         "Weekly Workshops",
+        "Mastermind Access"
       ],
       popular: true,
       gradient: "from-blue-500 to-purple-600",
@@ -61,11 +62,11 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/30">
+    <section id="programs" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/30">
       <div className="container mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            Choose Your Path to
+            Choose Your Program For
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
               Premium Pay
             </span>
@@ -117,12 +118,12 @@ const Pricing = () => {
                 </CardDescription>
 
                 {/* Pricing */}
-                <div className="mt-8">
+                {/* <div className="mt-8">
                   <div className="flex items-baseline justify-center">
                     <span className="text-5xl font-bold text-foreground">{plan.price}</span>
                     <span className="text-lg text-muted-foreground ml-1">{plan.period}</span>
                   </div>
-                </div>
+                </div> */}
               </CardHeader>
 
               <CardContent className="px-8 pb-8">
@@ -167,7 +168,7 @@ const Pricing = () => {
         {/* Bottom CTA - Subtle */}
         <div className="text-center mt-16">
           <p className="text-xl text-muted-foreground mb-4">
-            Not sure which path is right for you?
+            Not sure which program is right for you?
           </p>
           <button
             onClick={() => { window.location.href = "/call" }}
