@@ -19,7 +19,7 @@ const AITradeSchool = () => {
     {
       icon: Sparkles,
       title: "Avoid AI Slop",
-      description: "Master techniques to create authentic, high-quality content that doesn't feel AI-generated"
+      description: "Master techniques to create high-quality deliverables that don't feel AI-generated"
     },
     {
       icon: Award,
@@ -31,89 +31,80 @@ const AITradeSchool = () => {
   const curriculum = [
     {
       week: "Weeks 1-3",
-      title: "AI Foundations & Prompt Engineering",
-      topics: ["ChatGPT/Claude mastery", "Advanced prompting techniques", "AI workflow optimization"]
+      title: "Master the Fundamentals",
+      topics: ["Go beyond basic ChatGPT to advanced AI techniques", "Build your first AI workflow that saves 5+ hours/week", "Design AI solutions that actually get adopted"]
     },
     {
       week: "Weeks 4-6",
-      title: "Content Creation & Automation",
-      topics: ["AI writing that doesn't suck", "Image & video generation", "Workflow automation tools"]
+      title: "Deploy Power Tools",
+      topics: ["Access the $10k+ AI stack for free or cheap", "Build custom AI agents without writing code", "Automate repetitive work while you sleep"]
     },
     {
       week: "Weeks 7-9",
-      title: "Technical AI Applications",
-      topics: ["Code generation & review", "Data analysis with AI", "Custom GPT development"]
+      title: "Scale Your Impact",
+      topics: ["Write prompts that get perfect results every time", "Chain AI tools together for 10x productivity", "Create systems that improve automatically"]
     },
     {
       week: "Weeks 10-12",
-      title: "Launch Your AI Project",
-      topics: ["Real-world implementation", "Demo day preparation", "Scaling AI initiatives"]
+      title: "Ship Your AI Project",
+      topics: ["Connect AI to your real data and workflows", "Measure ROI and prove your value", "Present your project on Demo Day"]
     }
   ];
 
   const testimonials = [
     {
-      quote: "I went from spending 8 hours on reports to 2 hours. The techniques Todd taught me saved my sanity and got me promoted.",
-      author: "Sarah Chen",
-      title: "Senior Product Manager, Stripe"
+      quote: "AI tools have become integral to my daily work, streamlining processes and freeing up significant time for strategic contributions.",
+      author: "Joy Mycka",
+      title: "Business Analyst, CARDS, Inc."
     },
     {
-      quote: "Finally, AI training that's actually practical. No fluff, just real tools and workflows I use every day.",
-      author: "Marcus Johnson",
-      title: "Engineering Lead, Microsoft"
+      quote: "It's enabled me to develop something with no experience of coding, the power this gives me is mind blowing, I can build stuff I could have only dreamt about before.",
+      author: "Will Stogdale",
+      title: "Owner, Boost Design Agency"
     },
     {
-      quote: "The Demo Day forced me to actually build something. Now I'm known as the 'AI guy' at my company.",
-      author: "Emily Rodriguez",
-      title: "VP of Marketing, Series B Startup"
+      quote: "The program rewired how I think about solving business problems using AI. I walked away with real skills I use every day to work smarter and faster.",
+      author: "Amelia Leigner",
+      title: "Head of Product, Seek Invest"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-500/10 to-teal-600/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>12-Week Cohort Starting Soon</span>
+              <span>Open Enrollment</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Master AI Tools Without
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600 mt-2">
-                Becoming a Robot
+                Getting Technical
               </span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Join 500+ tech leaders who learned to leverage AI to 10x their output while maintaining authenticity. 
-              Stop producing "AI slop" and start creating work that gets you promoted.
+              Go beyond ChatGPT basics and start delivering higher quality work, faster.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "/call"}
+                onClick={() => window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl"}
               >
                 Reserve Your Spot - $1000
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-lg px-8 py-6"
-                onClick={() => setIsVideoModalOpen(true)}
-              >
-                Watch Demo Day Highlights
-              </Button>
             </div>
-            
+
             <p className="text-sm text-muted-foreground mt-4">
-              Only 25 spots per cohort • Next cohort starts January 20th
+              Flexible Learning | Weekly Workshops | Community Support
             </p>
           </div>
         </div>
@@ -124,7 +115,7 @@ const AITradeSchool = () => {
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3 text-center">
           <AlertCircle className="w-5 h-5 text-orange-600 dark:text-orange-400 flex-shrink-0" />
           <p className="text-foreground font-medium">
-            <strong>Early Bird Special:</strong> Save $200 when you enroll by January 10th
+            <strong>Early Bird Special:</strong> Save $200 when you enroll by July 4th
           </p>
         </div>
       </section>
@@ -133,7 +124,7 @@ const AITradeSchool = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Why Tech Leaders Choose AI Trade School
+            Why Choose AI Trade School
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
@@ -153,12 +144,12 @@ const AITradeSchool = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            12 Weeks to AI Mastery
+            From AI Novice to Power User in 12 Weeks
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Practical, hands-on training that you can apply immediately
+            Join live every week. Ship real AI projects. Get results from day one.
           </p>
-          
+
           <div className="space-y-6">
             {curriculum.map((module, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1">
@@ -188,7 +179,7 @@ const AITradeSchool = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Join 500+ Tech Leaders Who Transformed Their Careers
+            What Our Students Say
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -254,6 +245,10 @@ const AITradeSchool = () => {
               {
                 q: "How much time should I dedicate?",
                 a: "Plan for 2-3 hours per week: 90-minute live session + 30-60 minutes of practice."
+              },
+              {
+                q: "What do I get?",
+                a: "Confidence, advanced AI skills, a portfolio of projects, and a certificate of completion."
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6">
@@ -274,7 +269,7 @@ const AITradeSchool = () => {
           <p className="text-xl text-muted-foreground mb-8">
             Join the next cohort and transform how you work in just 12 weeks
           </p>
-          
+
           <div className="bg-card p-8 rounded-lg shadow-lg mb-8">
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div>
@@ -286,35 +281,35 @@ const AITradeSchool = () => {
                 <p className="text-muted-foreground">Spots available</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">Jan 20</p>
-                <p className="text-muted-foreground">Next cohort starts</p>
+                <p className="text-3xl font-bold text-foreground">OPEN</p>
+                <p className="text-muted-foreground">Enrollment</p>
               </div>
             </div>
-            
-            <Button 
-              size="lg" 
+
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-lg px-12 py-6 w-full md:w-auto"
-              onClick={() => window.location.href = "/call"}
+              onClick={() => window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl"}
             >
               Reserve Your Spot Now
             </Button>
-            
+
             <p className="text-sm text-muted-foreground mt-4">
               💳 Payment plans available • 🔒 14-day money-back guarantee
             </p>
           </div>
-          
+
           <p className="text-muted-foreground">
             Questions? Email us at{" "}
-            <a href="mailto:support@technical-leaders.com" className="text-emerald-600 hover:underline">
-              support@technical-leaders.com
+            <a href="mailto:todd@technical-leaders.com" className="text-emerald-600 hover:underline">
+              todd@technical-leaders.com
             </a>
           </p>
         </div>
       </section>
 
       <Footer />
-      
+
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
