@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star } from "lucide-react";
+import { CheckCircle2, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 
@@ -67,24 +67,45 @@ const Launch = () => {
 
   const testimonials = [
     {
-      quote: "I went from unknown engineer to CTO in 18 months. The positioning work alone was worth 10x the investment.",
-      author: "David Park",
-      title: "CTO at Series A Startup",
-      income: "Went from $180k → $400k total comp",
+      quote: "I didn't even use all of tools that you provide guys, so far all is exceeding my expectations. Basically thats the first mastermind group that gives a real value that I know! Stress levels overall in my life almost went to 0, in all cases, private, work etc",
+      author: "P.O.",
+      title: "DevOps Lead, Poland",
+      income: "Stress levels went to 0",
       stars: 5
     },
     {
-      quote: "The ghostwritten content saved me 20 hours/week and landed me 3 board advisor positions.",
-      author: "Maria Santos",
-      title: "VP Engineering at Fortune 500",
-      income: "Added $150k in advisory income",
+      quote: "For this client, it's a fractional gig that will replace all my income, which means I can go and do this fractional thing for three days a week and then have two days to apply all the other learnings. Massive, massive win.",
+      author: "C.F.",
+      title: "Fractional CTO, Ireland",
+      income: "Replaced full income with 3-day week",
       stars: 5
     },
     {
-      quote: "I finally stopped underselling myself. Now companies compete to hire me.",
-      author: "James Wilson",
-      title: "Principal Engineer turned Consultant",
-      income: "$500k+ consulting revenue in year 1",
+      quote: "Applying my new approach learned through Tech Leaders, has led to a new job offer and a promotion",
+      author: "K.D.",
+      title: "Director of Customer Success, Colorado",
+      income: "New job offer + promotion",
+      stars: 5
+    },
+    {
+      quote: "The 'win seeds' I've been planting the last ~1-2 months have started blooming at work! My squad was recognized by senior leadership across two orgs for the work we've been doing.",
+      author: "Tech Leader",
+      title: "Senior Leadership",
+      income: "Recognition across 2 orgs",
+      stars: 5
+    },
+    {
+      quote: "I feel I'm a strong IC and have quite good managing skills, but I felt lacking in strategy tools. I wanted to increase my leverage by doing a higher level of work.",
+      author: "M.W.",
+      title: "CTO, Poland",
+      income: "Leveled up strategic impact",
+      stars: 5
+    },
+    {
+      quote: "It is harder than I thought, specifically talking about yourself as a product or service offering is not something I really ever had to do working in a large corporation for the majority of the last three decades.",
+      author: "F.C.",
+      title: "Fractional CTO, Ann Arbor",
+      income: "Transitioned from corporate to fractional",
       stars: 5
     }
   ];
@@ -110,46 +131,47 @@ const Launch = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-500/10 to-purple-600/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Zap className="w-4 h-4" />
-              <span>The Most Popular Program for Tech Leaders</span>
+              <span>Launch Kit</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Get Ideal Opportunities
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mt-2">
                 Even If You Hate Selling Yourself
               </span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              The complete system that's helped 200+ tech leaders go from overlooked to overbooked 
+              The complete system that's helped 200+ tech leaders go from overlooked to overbooked
               with premium opportunities – without the cringe of self-promotion.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "/call"}
+                onClick={() => window.location.href = "https://buy.stripe.com/bIY7we76B2L9bwAeV2"}
               >
-                Start Your Transformation - $2950
+                Get Launch Kit - $2950
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-lg px-8 py-6"
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-6 group"
                 onClick={() => setIsVideoModalOpen(true)}
               >
-                Watch Success Stories
+                <PlayCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                What is Tech Leaders?
               </Button>
             </div>
-            
+
             <p className="text-sm text-muted-foreground mt-4">
               🔥 5 spots left this quarter • 💳 Payment plans available
             </p>
@@ -158,29 +180,45 @@ const Launch = () => {
       </section>
 
       {/* Transformation Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Where You Are Now → Where You'll Be in 90 Days
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-slate-200/20 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-grid-slate-700/20"></div>
+        <div className="max-w-6xl mx-auto relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">
+              Your 90-Day Career Transformation
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Join 200+ tech leaders who stopped waiting and started winning
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-6 mb-12">
             {transformations.map((item, index) => (
-              <div key={index} className="flex items-center gap-4">
-                <div className="flex-1">
-                  <Card className="p-4 bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
-                    <p className="text-sm font-medium text-red-700 dark:text-red-400">Before</p>
-                    <p className="text-foreground">{item.before}</p>
-                  </Card>
-                </div>
-                <ArrowRight className="w-6 h-6 text-muted-foreground flex-shrink-0" />
-                <div className="flex-1">
-                  <Card className="p-4 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
-                    <p className="text-sm font-medium text-green-700 dark:text-green-400">After</p>
-                    <p className="text-foreground">{item.after}</p>
-                  </Card>
-                </div>
+              <div key={index} className="group">
+                <Card className="p-0 overflow-hidden border-2 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="grid grid-cols-[1fr,auto,1fr]">
+                    <div className="p-6 bg-gradient-to-br from-red-500/10 to-orange-500/10">
+                      <p className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider mb-2">Today's Reality</p>
+                      <p className="text-foreground font-medium leading-relaxed">{item.before}</p>
+                    </div>
+                    <div className="flex items-center justify-center px-2 bg-gradient-to-b from-blue-500/20 to-purple-500/20">
+                      <ArrowRight className="w-6 h-6 text-blue-600 dark:text-blue-400 animate-pulse" />
+                    </div>
+                    <div className="p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10">
+                      <p className="text-xs font-bold text-green-600 dark:text-green-400 uppercase tracking-wider mb-2">90 Days Later</p>
+                      <p className="text-foreground font-medium leading-relaxed">{item.after}</p>
+                    </div>
+                  </div>
+                </Card>
               </div>
             ))}
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-700 dark:text-orange-400 px-6 py-3 rounded-full font-semibold">
+              <Zap className="w-5 h-5" />
+              <span>Average participant sees results in 30-45 days</span>
+            </div>
           </div>
         </div>
       </section>
@@ -194,7 +232,7 @@ const Launch = () => {
           <p className="text-center text-muted-foreground mb-12 text-lg">
             Stop hoping for opportunities. Start creating them.
           </p>
-          
+
           <div className="space-y-8">
             {modules.map((module, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all">
@@ -228,7 +266,7 @@ const Launch = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
             200+ Tech Leaders Have Transformed Their Careers
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
                 <div className="flex gap-1 mb-4">
@@ -236,7 +274,7 @@ const Launch = () => {
                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-foreground mb-4 italic">"{testimonial.quote}"</p>
+                <p className="text-foreground mb-4 italic text-sm leading-relaxed">"{testimonial.quote}"</p>
                 <div className="border-t pt-4">
                   <p className="font-semibold text-foreground">{testimonial.author}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.title}</p>
@@ -256,7 +294,7 @@ const Launch = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
             Everything You Get With Launch Kit
           </h2>
-          
+
           <Card className="p-8 mb-8">
             <h3 className="text-2xl font-bold mb-6 text-foreground">Core Program ($2950 Value)</h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -279,7 +317,7 @@ const Launch = () => {
           </Card>
 
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4 text-foreground">Plus These Exclusive Bonuses:</h3>
+            <h3 className="text-xl font-bold mb-4 text-foreground">Plus These Bonuses:</h3>
             <div className="space-y-4">
               {bonuses.map((bonus, index) => (
                 <Card key={index} className="p-4 flex items-center justify-between">
@@ -296,7 +334,7 @@ const Launch = () => {
           </div>
 
           <div className="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-            <p className="text-2xl font-bold text-foreground mb-2">
+            <p className="text-2xl font-bold text-background mb-2">
               Total Value: <span className="line-through text-muted-foreground">$4,444</span>
             </p>
             <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
@@ -313,12 +351,12 @@ const Launch = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
         <div className="max-w-4xl mx-auto text-center">
           <Award className="w-16 h-16 mx-auto mb-6 text-green-600 dark:text-green-400" />
-          <h2 className="text-3xl font-bold mb-4 text-foreground">
+          <h2 className="text-3xl font-bold mb-4 text-background">
             The "Premium Opportunity" Guarantee
           </h2>
-          <p className="text-lg text-foreground mb-6 max-w-2xl mx-auto">
-            If you complete the program and don't receive at least one premium opportunity 
-            (promotion, new role, consulting gig, or speaking engagement) within 6 months, 
+          <p className="text-lg text-background mb-6 max-w-2xl mx-auto">
+            If you complete the program and don't receive at least one premium opportunity
+            (promotion, new role, consulting gig, or speaking engagement) within 6 months,
             we'll work with you for free until you do.
           </p>
           <p className="text-muted-foreground">
@@ -374,7 +412,7 @@ const Launch = () => {
           <p className="text-xl text-muted-foreground mb-8">
             Join 200+ tech leaders who took control of their careers and income
           </p>
-          
+
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-blue-500/5">
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div>
@@ -390,27 +428,27 @@ const Launch = () => {
                 <p className="text-muted-foreground">Left this quarter</p>
               </div>
             </div>
-            
-            <Button 
-              size="lg" 
+
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-12 py-6 w-full md:w-auto mb-4"
-              onClick={() => window.location.href = "/call"}
+              onClick={() => window.location.href = "https://buy.stripe.com/bIY7we76B2L9bwAeV2"}
             >
               Yes! I Want Premium Opportunities
             </Button>
-            
+
             <p className="text-sm text-muted-foreground">
               🛡️ Protected by our Premium Opportunity Guarantee
             </p>
           </Card>
-          
+
           <p className="text-muted-foreground">
             Still have questions? Email{" "}
             <a href="mailto:support@technical-leaders.com" className="text-blue-600 hover:underline">
               support@technical-leaders.com
             </a>
             {" "}or{" "}
-            <button 
+            <button
               onClick={() => window.location.href = "/call"}
               className="text-blue-600 hover:underline"
             >
@@ -421,7 +459,7 @@ const Launch = () => {
       </section>
 
       <Footer />
-      
+
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}

@@ -79,7 +79,7 @@ const AITradeSchool = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>Open Enrollment</span>
+              <span>AI Trade School</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -104,7 +104,7 @@ const AITradeSchool = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-4">
-              Flexible Learning | Weekly Workshops | Community Support
+              Open Enrollment | Weekly Workshops | Community Support
             </p>
           </div>
         </div>
@@ -267,7 +267,7 @@ const AITradeSchool = () => {
             Ready to 10x Your Output with AI?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join the next cohort and transform how you work in just 12 weeks
+            Join the cohort and transform how you work in just 12 weeks
           </p>
 
           <div className="bg-card p-8 rounded-lg shadow-lg mb-8">
@@ -277,8 +277,8 @@ const AITradeSchool = () => {
                 <p className="text-muted-foreground">One-time investment</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">25</p>
-                <p className="text-muted-foreground">Spots available</p>
+                <p className="text-3xl font-bold text-foreground">2-3 Hours</p>
+                <p className="text-muted-foreground">Per Week For 12 Weeks</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-foreground">OPEN</p>
