@@ -32,7 +32,7 @@ const Launch = () => {
   const modules = [
     {
       icon: Target,
-      title: "Marketing System (ICP)",
+      title: "Ideal Client Profile",
       week: "Weeks 1-2",
       description: "Define your Ideal Customer Profile and position yourself as their perfect solution",
       outcomes: [
@@ -43,7 +43,7 @@ const Launch = () => {
     },
     {
       icon: FileText,
-      title: "Sales Playbook (Scalable Offer)",
+      title: "Scalable Offer",
       week: "Weeks 3-4",
       description: "Package your expertise into high-value offers that practically sell themselves",
       outcomes: [
@@ -133,8 +133,16 @@ const Launch = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-500/10 to-purple-600/10">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-500/10 to-purple-600/10 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/launch-bg.png" 
+            alt="Launch background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20"></div>
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Zap className="w-4 h-4" />
@@ -238,7 +246,9 @@ const Launch = () => {
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all">
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
-                    <module.icon className="w-12 h-12 mb-4" />
+                    <div className="w-12 h-12 mb-4 rounded-full bg-white/20 flex items-center justify-center">
+                      <span className="text-3xl font-bold">{index + 1}</span>
+                    </div>
                     <h3 className="text-2xl font-bold mb-2">{module.title}</h3>
                     <p className="text-blue-100">{module.week}</p>
                   </div>
@@ -269,11 +279,6 @@ const Launch = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.stars)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
                 <p className="text-foreground mb-4 italic text-sm leading-relaxed">"{testimonial.quote}"</p>
                 <div className="border-t pt-4">
                   <p className="font-semibold text-foreground">{testimonial.author}</p>

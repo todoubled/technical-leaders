@@ -74,8 +74,16 @@ const AITradeSchool = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-500/10 to-teal-600/10">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-500/10 to-teal-600/10 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/ai-in-ar.png"
+            alt="AI in AR"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-600/20"></div>
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4" />

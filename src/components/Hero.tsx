@@ -9,8 +9,16 @@ const Hero = () => {
   const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s"; // Replace with your actual video URL
 
   return (
-    <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/20">
-      <div className="container mx-auto text-center">
+    <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/20 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/ai-in-ar.png"
+          alt="AI background"
+          className="w-full h-full object-cover object-top opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
             Get Promoted or
@@ -52,7 +60,7 @@ const Hero = () => {
       </div>
 
       {/* Company Logos Section */}
-      <div className="mt-20 -mx-4 sm:-mx-6 lg:-mx-8">
+      <div className="mt-20 -mx-4 sm:-mx-6 lg:-mx-8 relative z-10">
         <div className="bg-white dark:bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <p className="text-center text-xl text-muted-foreground mb-8">
