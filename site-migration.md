@@ -8,6 +8,7 @@
 - [x] https://www.technical-leaders.com/accredited-tech-leader
 - [x] https://www.technical-leaders.com/articles (AI SEO Bot)
 - [x] https://www.technical-leaders.com/refer
+- [ ] https://www.technical-leaders.com/ai-exec-workshop
 
 - [ ] Workshops/
     - [ ] https://www.technical-leaders.com/tlss-workshop
@@ -17,7 +18,7 @@
 
 
 ### Ask Amelia
-- [ ] https://www.technical-leaders.com/ai-exec-workshop
+- [ ]
 - [ ] https://www.technical-leaders.com/ai-resources-for-executives
 - [ ] https://www.technical-leaders.com/the-ai-exec-event-landing-page
 - [ ] https://www.technical-leaders.com/ai-executive-strategy-program

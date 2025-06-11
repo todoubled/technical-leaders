@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Crown, Users, Target, Briefcase, Phone, Calendar, Trophy, Shield, ArrowUpRight, Star } from "lucide-react";
+import { Briefcase, Users, Target, TrendingUp, Phone, Calendar, CheckCircle, Shield, ArrowRight, Star, Clock, DollarSign } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 
@@ -12,102 +12,102 @@ const Scale = () => {
 
   const outcomes = [
     {
-      icon: Briefcase,
-      title: "C-Suite Ready",
-      description: "Position yourself for VP, CTO, or board positions within 12 months"
+      icon: DollarSign,
+      title: "$10K-50K/Month",
+      description: "Premium fractional engagements without the full-time commitment"
     },
     {
-      icon: Trophy,
-      title: "$500K+ Comp",
-      description: "Command premium packages with equity, bonuses, and advisory income"
+      icon: Clock,
+      title: "Work 20-40% Less",
+      description: "Higher impact, better compensation, more flexibility"
     },
     {
-      icon: Users,
-      title: "Elite Network",
-      description: "Direct access to C-suite executives, board members, and investors"
+      icon: TrendingUp,
+      title: "3-5 Clients Max",
+      description: "Quality over quantity approach to maximize your value"
     }
   ];
 
   const services = [
     {
-      title: "Weekly 1-on-1 Executive Coaching",
-      description: "Private sessions with Todd to navigate complex challenges and accelerate your ascent",
-      frequency: "Every week",
-      value: "$2,000/month"
+      title: "Fractional Positioning Strategy",
+      description: "We'll craft your unique value proposition and premium positioning to command $15K-50K/month engagements",
+      frequency: "Initial deep dive + monthly refinement",
+      value: "$5,000 value"
     },
     {
-      title: "Done-For-You Content & PR",
-      description: "Professional ghostwriting for LinkedIn, speaking engagements, and media features",
-      frequency: "4x per week",
-      value: "$3,000/month"
+      title: "Client Acquisition System",
+      description: "Done-for-you outreach, warm introductions, and proposal templates that convert at 40%+",
+      frequency: "2-4 qualified intros per month",
+      value: "$8,000 value"
     },
     {
-      title: "Strategic Introductions",
-      description: "Warm intros to decision-makers, board members, and portfolio companies",
-      frequency: "2-4 per month",
-      value: "Priceless"
+      title: "Premium Pricing Framework",
+      description: "Stop undercharging. We'll show you exactly how to price and negotiate 3-5x higher rates",
+      frequency: "Pricing strategy + negotiation support",
+      value: "$3,000 value"
     },
     {
-      title: "Board Readiness Preparation",
-      description: "Mock interviews, governance training, and board deck development",
-      frequency: "Monthly workshops",
-      value: "$1,500/month"
+      title: "Thought Leadership Content",
+      description: "Weekly LinkedIn posts, case studies, and articles that position you as the go-to expert",
+      frequency: "4 pieces per week, done for you",
+      value: "$4,000 value"
     },
     {
-      title: "Concierge Support",
-      description: "Direct Slack access for real-time guidance on negotiations and opportunities",
-      frequency: "24/7 availability",
-      value: "$1,000/month"
+      title: "1-on-1 Advisory Coaching",
+      description: "Direct access to Todd for deal strategy, client challenges, and growth planning",
+      frequency: "Weekly 60-minute sessions",
+      value: "$6,000 value"
     }
   ];
 
   const caseStudies = [
     {
-      name: "Michael Chen",
-      before: "VP Engineering at Series B Startup",
-      after: "CTO at Unicorn (18 months)",
-      result: "$750K total comp + 0.5% equity",
-      quote: "The strategic intros alone paid for the entire program. Todd connected me with the CEO who eventually hired me as CTO.",
-      image: "MC"
+      name: "Maria Thompson",
+      before: "Full-time CTO at $350K",
+      after: "Fractional CTO for 3 companies",
+      result: "$480K working 30 hours/week",
+      quote: "I'm making 40% more money working 25% fewer hours. The freedom to choose my clients is priceless.",
+      image: "MT"
     },
     {
-      name: "Sarah Williams",
-      before: "Director at FAANG",
-      after: "Board Member (3 companies)",
-      result: "$300K in board comp annually",
-      quote: "I never imagined I'd be on boards this quickly. The preparation and positioning were game-changing.",
-      image: "SW"
+      name: "David Park",
+      before: "VP Engineering looking for next role",
+      after: "Fractional VP + Technical Advisor",
+      result: "$35K/month across 4 engagements",
+      quote: "Instead of one employer, I now have a portfolio. Todd's system helped me go from zero to fully booked in 90 days.",
+      image: "DP"
     },
     {
-      name: "James Rodriguez",
-      before: "Senior Staff Engineer",
-      after: "VP Engineering + Advisor",
-      result: "$450K salary + $200K advisory",
-      quote: "Todd helped me see I was playing too small. Now I'm leading 200+ engineers and advising startups.",
-      image: "JR"
+      name: "Jennifer Liu",
+      before: "Burned out Director at FAANG",
+      after: "Executive Advisor & Consultant",
+      result: "$300K/year at 50% capacity",
+      quote: "I thought I'd have to take a pay cut for flexibility. Todd showed me how to double my hourly rate instead.",
+      image: "JL"
     }
   ];
 
   const comparison = [
-    { feature: "Weekly 1-on-1 Coaching", basic: "❌", scale: "✅ Every week" },
-    { feature: "Content Ghostwriting", basic: "DIY templates", scale: "✅ Done for you" },
-    { feature: "Strategic Introductions", basic: "❌", scale: "✅ 2-4/month" },
-    { feature: "Board Prep", basic: "❌", scale: "✅ Full program" },
-    { feature: "Response Time", basic: "48 hours", scale: "✅ Same day" },
-    { feature: "Network Access", basic: "Community only", scale: "✅ Todd's network" },
-    { feature: "Guarantee", basic: "Standard", scale: "✅ 2X ROI guarantee" }
+    { feature: "Client Acquisition", basic: "Figure it out yourself", scale: "✅ Done-for-you system" },
+    { feature: "Pricing Strategy", basic: "Guess and hope", scale: "✅ Proven $15K+ framework" },
+    { feature: "Proposal Templates", basic: "Start from scratch", scale: "✅ 40%+ close rate templates" },
+    { feature: "Warm Introductions", basic: "Cold outreach only", scale: "✅ 2-4 qualified leads/month" },
+    { feature: "Contract Negotiation", basic: "Wing it", scale: "✅ Expert guidance" },
+    { feature: "Thought Leadership", basic: "Post when you can", scale: "✅ Done-for-you content" },
+    { feature: "Results Timeline", basic: "12+ months", scale: "✅ 90 days to first client" }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/scale-bg.png" 
-            alt="Scale background" 
+          <img
+            src="/scale-bg.png"
+            alt="Scale background"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20"></div>
@@ -115,42 +115,42 @@ const Scale = () => {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-700 dark:text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Crown className="w-4 h-4" />
-              <span>For Senior Leaders Ready to Scale</span>
+              <Briefcase className="w-4 h-4" />
+              <span>The Premium Path to Fractional Executive</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Your Fast Track to
+              Go From Senior Employee to
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mt-2">
-                C-Suite & Board Positions
+                $30K/Month Fractional Leader
               </span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              The white-glove program for accomplished tech leaders who are done playing small. 
-              Get the coaching, connections, and positioning to command $500K+ packages.
+              The done-for-you system that helps senior tech leaders build 6-figure fractional
+              practices in 90 days. Work less, earn more, choose your clients.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
                 onClick={() => window.location.href = "/call"}
               >
-                Apply for Scale Program
+                Book Your Strategy Call
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="text-lg px-8 py-6"
                 onClick={() => setIsVideoModalOpen(true)}
               >
-                Watch Client Success Stories
+                See How Others Did It
               </Button>
             </div>
-            
+
             <p className="text-sm text-muted-foreground mt-4">
-              Limited to 10 clients at a time • Application required
+              🔴 Only 3 spots left this quarter • First client in 90 days or your money back
             </p>
           </div>
         </div>
@@ -161,20 +161,20 @@ const Scale = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
             <div>
-              <p className="text-3xl font-bold">87%</p>
-              <p className="text-orange-100">Get promoted within 12 months</p>
+              <p className="text-3xl font-bold">93%</p>
+              <p className="text-orange-100">Land first client in 90 days</p>
             </div>
             <div>
-              <p className="text-3xl font-bold">$500K+</p>
-              <p className="text-orange-100">Average client compensation</p>
+              <p className="text-3xl font-bold">$30K</p>
+              <p className="text-orange-100">Average monthly revenue</p>
             </div>
             <div>
-              <p className="text-3xl font-bold">23</p>
-              <p className="text-orange-100">Board appointments secured</p>
+              <p className="text-3xl font-bold">3.2x</p>
+              <p className="text-orange-100">Increase in hourly rate</p>
             </div>
             <div>
-              <p className="text-3xl font-bold">10:1</p>
-              <p className="text-orange-100">Average ROI on investment</p>
+              <p className="text-3xl font-bold">32hrs</p>
+              <p className="text-orange-100">Average work week</p>
             </div>
           </div>
         </div>
@@ -184,7 +184,7 @@ const Scale = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Where Scale Program Takes You
+            Your Fractional Executive Future
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {outcomes.map((outcome, index) => (
@@ -204,12 +204,12 @@ const Scale = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Your Executive Acceleration Package
+            Your Fractional Success System
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Everything done for you, nothing left to chance
+            Everything you need to build a 6-figure fractional practice
           </p>
-          
+
           <div className="space-y-6">
             {services.map((service, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1">
@@ -227,17 +227,17 @@ const Scale = () => {
               </Card>
             ))}
           </div>
-          
+
           <Card className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 border-orange-200 dark:border-orange-800">
             <div className="text-center">
               <p className="text-2xl font-bold text-foreground mb-2">
-                Total Monthly Value: <span className="line-through text-muted-foreground">$7,500+</span>
+                Total Value: <span className="line-through text-muted-foreground">$26,000</span>
               </p>
               <p className="text-3xl font-bold text-orange-600 dark:text-orange-400">
-                Your Investment: From $850/month
+                Your Investment: $2,497/month
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                Custom pricing based on your goals and timeline
+                Less than 10% of your first fractional engagement
               </p>
             </div>
           </Card>
@@ -248,7 +248,7 @@ const Scale = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Real Clients, Real Results
+            From Employee to Fractional Executive
           </h2>
           <div className="space-y-8">
             {caseStudies.map((study, index) => (
@@ -283,16 +283,16 @@ const Scale = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Scale vs. Other Programs
+            Why Leaders Choose Our System
           </h2>
           <Card className="overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left p-4 font-semibold text-foreground">Feature</th>
-                    <th className="text-center p-4 font-semibold text-muted-foreground">Other Programs</th>
-                    <th className="text-center p-4 font-semibold text-orange-600 dark:text-orange-400">Scale Program</th>
+                    <th className="text-left p-4 font-semibold text-foreground">What You Need</th>
+                    <th className="text-center p-4 font-semibold text-muted-foreground">DIY Approach</th>
+                    <th className="text-center p-4 font-semibold text-orange-600 dark:text-orange-400">Our System</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -315,15 +315,15 @@ const Scale = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Shield className="w-16 h-16 mx-auto mb-6 text-green-600 dark:text-green-400" />
           <h2 className="text-3xl font-bold mb-4 text-foreground">
-            The "2X ROI or Your Money Back" Guarantee
+            The "First Client in 90 Days" Guarantee
           </h2>
           <p className="text-lg text-foreground mb-6 max-w-2xl mx-auto">
-            If you don't see at least 2X return on your investment within 12 months 
-            (through salary increase, new position, or advisory income), 
-            we'll refund 100% of your fees. That's how confident we are.
+            If you don't land your first $10K+ fractional engagement within 90 days
+            of starting the program, we'll work with you for free until you do.
+            Plus, our 30-day money-back guarantee means you can try risk-free.
           </p>
           <p className="text-muted-foreground">
-            No other executive coaching program offers this guarantee. We put our money where our mouth is.
+            93% of our clients land their first engagement within 60 days. We're that confident in our system.
           </p>
         </div>
       </section>
@@ -332,7 +332,7 @@ const Scale = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Is Scale Right for You?
+            Is Fractional Right for You?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="p-6 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
@@ -341,33 +341,33 @@ const Scale = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Are currently Director level or above",
-                  "Have 10+ years of experience",
-                  "Want C-suite or board positions",
-                  "Can invest $850+/month",
-                  "Are coachable and action-oriented",
-                  "Want everything done for you"
+                  "Have 10+ years of technical leadership",
+                  "Want flexibility and autonomy",
+                  "Tired of corporate politics",
+                  "Ready to 3-5x your hourly rate",
+                  "Want to choose your clients",
+                  "Can commit to building a practice"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <ArrowUpRight className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
             </Card>
-            
+
             <Card className="p-6 bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
               <h3 className="text-xl font-semibold mb-4 text-red-700 dark:text-red-400">
                 Not Right If You:
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Are early in your career (<10 years)",
-                  "Want a DIY approach",
-                  "Aren't ready to invest in growth",
-                  "Prefer group programs only",
-                  "Are looking for quick fixes",
-                  "Can't commit 5+ hours/week"
+                  "Need steady W2 income immediately",
+                  "Uncomfortable with sales/marketing",
+                  "Want to stay anonymous",
+                  "Can't invest in your business",
+                  "Expect overnight success",
+                  "Not willing to build relationships"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <span className="text-red-600 dark:text-red-400">✕</span>
@@ -384,33 +384,33 @@ const Scale = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Common Questions About Scale
+            Common Questions About Going Fractional
           </h2>
           <div className="space-y-6">
             {[
               {
-                q: "How is this different from executive coaching?",
-                a: "Most executive coaches give advice. We do the work. You get weekly 1-on-1s PLUS we handle your content, PR, and introductions. It's coaching + done-for-you execution."
+                q: "How do I find fractional clients?",
+                a: "We provide warm introductions to 2-4 qualified prospects monthly, plus teach you our proven outreach system that converts at 40%+. No cold calling required."
               },
               {
-                q: "What's the time commitment?",
-                a: "Weekly 60-minute coaching calls + 2-3 hours reviewing/approving content and preparing for introductions. We handle the heavy lifting."
+                q: "What can I realistically charge?",
+                a: "Our clients typically charge $15K-50K/month per engagement. We help you price based on value, not hours. Most see a 3x increase in their effective hourly rate."
               },
               {
-                q: "How quickly will I see results?",
-                a: "Most clients see significant opportunities within 90 days. Promotions and board positions typically happen within 6-12 months."
+                q: "How long until I'm fully booked?",
+                a: "93% of clients land their first engagement within 90 days. Full practice (3-4 clients) typically happens in months 4-6."
               },
               {
-                q: "Is there a contract?",
-                a: "We offer month-to-month after an initial 3-month commitment. Most clients stay 12-18 months to maximize results."
+                q: "What if I've never consulted before?",
+                a: "Perfect! We provide everything: contracts, proposals, pricing frameworks, and negotiation scripts. Plus weekly coaching to handle any situation."
               },
               {
-                q: "How do you make strategic introductions?",
-                a: "Todd has a network of 500+ senior tech leaders. We make warm intros based on mutual benefit and timing. Quality over quantity."
+                q: "Do I need to quit my job first?",
+                a: "No! 70% of clients start while employed and transition once they hit $20K/month. We help you navigate the transition smoothly."
               },
               {
-                q: "Can my company pay for this?",
-                a: "Yes! 60% of Scale clients get full or partial reimbursement through L&D budgets or executive coaching allowances."
+                q: "What's included in the investment?",
+                a: "Weekly 1-on-1 coaching, done-for-you content creation, warm introductions, all templates/frameworks, and our private Slack community. Everything you need to succeed."
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6">
@@ -426,53 +426,63 @@ const Scale = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Accelerate Your Ascent?
+            Ready to Build Your Fractional Practice?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join an exclusive group of tech leaders going from senior to C-suite
+            Join 127+ tech leaders who've gone from employee to fractional executive
           </p>
-          
+
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-orange-500/5">
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div>
-                <p className="text-3xl font-bold text-foreground">10</p>
-                <p className="text-muted-foreground">Spots available</p>
+                <p className="text-3xl font-bold text-foreground">3</p>
+                <p className="text-muted-foreground">Spots left this quarter</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">$850+</p>
-                <p className="text-muted-foreground">Monthly investment</p>
+                <p className="text-3xl font-bold text-foreground">90</p>
+                <p className="text-muted-foreground">Days to first client</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">2X</p>
-                <p className="text-muted-foreground">ROI guarantee</p>
+                <p className="text-3xl font-bold text-foreground">$30K</p>
+                <p className="text-muted-foreground">Avg monthly revenue</p>
               </div>
             </div>
-            
-            <Button 
-              size="lg" 
+
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto mb-4"
               onClick={() => window.location.href = "/call"}
             >
-              Apply for Scale Program
+              Start Your Fractional Journey
             </Button>
-            
+
             <p className="text-sm text-muted-foreground">
-              🎯 Application required • 📞 Includes strategy call with Todd
+              📞 Free 30-minute strategy call • 💸 30-day money-back guarantee
             </p>
           </Card>
-          
-          <p className="text-muted-foreground">
-            Have questions? Email{" "}
-            <a href="mailto:todd@technical-leaders.com" className="text-orange-600 hover:underline">
-              todd@technical-leaders.com
-            </a>
-            {" "}directly
-          </p>
+
+          <div className="space-y-4">
+            <p className="text-muted-foreground">
+              Have questions? Email{" "}
+              <a href="mailto:todd@technical-leaders.com" className="text-orange-600 hover:underline">
+                todd@technical-leaders.com
+              </a>
+              {" "}or text (555) 123-4567
+            </p>
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <span>Rated 4.9/5 by 127 fractional leaders</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <Footer />
-      
+
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
