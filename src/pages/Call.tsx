@@ -3,8 +3,26 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
+import { useEffect } from "react";
+
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
 
 const Call = () => {
+  useEffect(() => {
+    // Check if Calendly is already loaded
+    if (window.Calendly) {
+      window.Calendly.initInlineWidget({
+        url: 'https://calendly.com/tech-leaders/intro?hide_event_type_details=1&hide_gdpr_banner=1',
+        parentElement: document.querySelector('.calendly-inline-widget'),
+        prefill: {},
+        utm: {}
+      });
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
