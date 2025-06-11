@@ -149,8 +149,8 @@ const Pricing = () => {
                   onClick={() => {
                     if (plan.name === "AI Trade School") {
                       window.location.href = "/ai-trade-school";
-                    // } else if (plan.name === "Launch Kit") {
-                    //   window.location.href = "/launch";
+                    } else if (plan.name === "Launch Kit") {
+                      window.location.href = "/launch";
                     // } else if (plan.name === "Scale Program") {
                     //   window.location.href = "/scale";
                     } else {

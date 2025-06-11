@@ -112,19 +112,24 @@ const Launch = () => {
 
   const bonuses = [
     {
-      title: "AI Automation Templates",
-      value: "$497",
-      description: "Save 10+ hours/week with our proven AI workflows"
+      title: "90 Days of Done-For-You Content",
+      value: "$2,250",
+      description: "Your personal ghostwriter creates 3 months of LinkedIn posts, articles, and email templates that position you as the go-to expert (while you sleep)"
     },
     {
-      title: "Premium Positioning Audit",
-      value: "$997",
-      description: "1-on-1 session to nail your unique positioning"
+      title: "Weekly Hot Seat Coaching Calls",
+      value: "$2,400",
+      description: "Get Todd's direct feedback on your specific challenges + watch him tear down real opportunities and show you exactly how to land them"
     },
     {
-      title: "Lifetime Alumni Access",
-      value: "Priceless",
-      description: "Connect with 200+ successful tech leaders forever"
+      title: "The $100K Opportunity Playbook",
+      value: "$1,997",
+      description: "Swipe files of exact scripts that landed our members 6-figure raises, board seats, and $25K+ consulting gigs"
+    },
+    {
+      title: "Lifetime Tech Leaders Network",
+      value: "$5,000+",
+      description: "Your personal board of 200+ senior tech leaders who send each other opportunities, make warm intros, and close deals together"
     }
   ];
 
@@ -135,9 +140,9 @@ const Launch = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-500/10 to-purple-600/10 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/launch-bg.png" 
-            alt="Launch background" 
+          <img
+            src="/launch-bg.png"
+            alt="Launch background"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20"></div>
@@ -196,7 +201,7 @@ const Launch = () => {
               Your 90-Day Career Transformation
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join 200+ tech leaders who stopped waiting and started winning
+              Join 150+ tech leaders who stopped waiting and started winning
             </p>
           </div>
 
@@ -274,7 +279,7 @@ const Launch = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            200+ Tech Leaders Have Transformed Their Careers
+            What Our Members Say
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -304,18 +309,16 @@ const Launch = () => {
             <h3 className="text-2xl font-bold mb-6 text-foreground">Core Program ($2950 Value)</h3>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                "12 weeks of intensive training",
-                "Weekly live workshops (recorded)",
-                "Done-for-you content (3 months)",
-                "Personal positioning blueprint",
-                "Sales playbook & scripts",
-                "Private community access",
-                "Direct access to Todd",
-                "Lifetime alumni network"
+                "The ICP Targeter",
+                "The Offer Designer",
+                "The Profile Optimizer",
+                "The Opportunity Finder",
+                "The Pipeline Tracker",
+                "The Client Converter",
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-foreground">{item}</span>
+                  <span className="text-foreground">{item}&trade;</span>
                 </div>
               ))}
             </div>
@@ -339,14 +342,14 @@ const Launch = () => {
           </div>
 
           <div className="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-            <p className="text-2xl font-bold text-background mb-2">
-              Total Value: <span className="line-through text-muted-foreground">$4,444</span>
+            <p className="text-2xl font-bold text-muted-foreground mb-2">
+              Total Value: <span className="line-through text-muted-foreground">$14,597</span>
             </p>
             <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
               Your Investment: $2,950
             </p>
             <p className="text-sm text-muted-foreground mt-2">
-              Save $1,494 when you join today
+              Save $11,647 when you join today (80% off)
             </p>
           </div>
         </div>
@@ -374,7 +377,7 @@ const Launch = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Questions? We've Got Answers
+            Frequently Asked Questions
           </h2>
           <div className="space-y-6">
             {[
@@ -449,8 +452,8 @@ const Launch = () => {
 
           <p className="text-muted-foreground">
             Still have questions? Email{" "}
-            <a href="mailto:support@technical-leaders.com" className="text-blue-600 hover:underline">
-              support@technical-leaders.com
+            <a href="mailto:todd@technical-leaders.com" className="text-blue-600 hover:underline">
+              todd@technical-leaders.com
             </a>
             {" "}or{" "}
             <button
