@@ -33,9 +33,9 @@ const Navigation = () => {
                   <DropdownMenuItem onClick={() => window.location.href = "/launch"}>
                     Launch Kit
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => window.location.href = "/scale"}>
+                  {/* <DropdownMenuItem onClick={() => window.location.href = "/scale"}>
                     Scale Program
-                  </DropdownMenuItem>
+                  </DropdownMenuItem> */}
                 </DropdownMenuContent>
               </DropdownMenu>
               <a href="/articles" className="text-foreground hover:text-primary transition-colors">Articles</a>
