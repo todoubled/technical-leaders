@@ -156,6 +156,49 @@ const Scale = () => {
         </div>
       </section>
 
+      {/* Logos Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-center text-sm font-medium text-gray-500 dark:text-gray-400 mb-8">
+            Built By Tech Leaders, For Tech Leaders At Top Companies Like
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+            <img
+              src="/nike.png"
+              alt="Nike"
+              className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+            />
+            <img
+              src="/peleton.webp"
+              alt="Peloton"
+              className="h-24 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+              style={{ maxHeight: '6rem' }}
+            />
+            <img
+              src="/cashapp.svg"
+              alt="Cash App"
+              className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+              style={{ maxHeight: '5rem' }}
+            />
+            <img
+              src="/redhat.webp"
+              alt="Red Hat"
+              className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+            />
+            <img
+              src="/calendly.webp"
+              alt="Calendly"
+              className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+            />
+            <img
+              src="/gitlab.png"
+              alt="GitLab"
+              className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Stats Banner */}
       <section className="bg-gradient-to-r from-orange-600 to-red-600 py-8 px-4">
         <div className="max-w-6xl mx-auto">
