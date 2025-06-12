@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Briefcase, Users, Target, TrendingUp, Phone, Calendar, CheckCircle, Shield, ArrowRight, Star, Clock, DollarSign } from "lucide-react";
+import { Users, Target, TrendingUp, Phone, Calendar, CheckCircle, Shield, ArrowRight, Star, Clock, DollarSign, Rocket, Award, Zap } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 
@@ -64,27 +64,30 @@ const Scale = () => {
   const caseStudies = [
     {
       name: "Maria Thompson",
-      before: "Full-time CTO at $350K",
-      after: "Fractional CTO for 3 companies",
-      result: "$480K working 30 hours/week",
-      quote: "I'm making 40% more money working 25% fewer hours. The freedom to choose my clients is priceless.",
-      image: "MT"
+      before: "Launch Kit: Got 3 consulting gigs at $10K each",
+      after: "Scale: Fractional CTO for 3 companies at $20K/mo each",
+      result: "$60K/month working 30 hours/week",
+      quote: "Launch helped me get started, but Scale transformed my one-off projects into recurring executive engagements. The jump from $30K to $60K months happened faster than I imagined.",
+      image: "MT",
+      timeline: "Launch → Scale in 6 months"
     },
     {
       name: "David Park",
-      before: "VP Engineering looking for next role",
-      after: "Fractional VP + Technical Advisor",
-      result: "$35K/month across 4 engagements",
-      quote: "Instead of one employer, I now have a portfolio. Todd's system helped me go from zero to fully booked in 90 days.",
-      image: "DP"
+      before: "Launch Kit: Built pipeline of opportunities",
+      after: "Scale: Fractional VP Eng + Board Advisor",
+      result: "$45K/month with 3 premium clients",
+      quote: "After Launch, I had too many small engagements. Scale taught me to say no to $5K projects and yes to $15K+ retainers. Best decision ever.",
+      image: "DP",
+      timeline: "Launch graduate → $45K/mo in 4 months"
     },
     {
       name: "Jennifer Liu",
-      before: "Burned out Director at FAANG",
-      after: "Executive Advisor & Consultant",
-      result: "$300K/year at 50% capacity",
-      quote: "I thought I'd have to take a pay cut for flexibility. Todd showed me how to double my hourly rate instead.",
-      image: "JL"
+      before: "Launch Kit: First $12K consulting project",
+      after: "Scale: Fractional CPO + Strategic Advisor",
+      result: "$38K/month at 50% capacity",
+      quote: "Launch gave me confidence to leave corporate. Scale gave me the system to build a real business. Now I choose my clients and my schedule.",
+      image: "JL",
+      timeline: "Launch → Scale → 6-figure practice"
     }
   ];
 
@@ -115,21 +118,30 @@ const Scale = () => {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-700 dark:text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Briefcase className="w-4 h-4" />
-              <span>The Premium Path to Fractional Executive</span>
+              <Rocket className="w-4 h-4" />
+              <span>The Next Step After Launch Kit</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Go From Senior Employee to
+              You Launched. You're Getting Opportunities.
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mt-2">
-                $30K/Month Fractional Leader
+                Now Scale to $30K+ Months
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              The done-for-you system that helps senior tech leaders build 6-figure fractional
-              practices in 90 days. Work less, earn more, choose your clients.
+              Turn your Launch momentum into a 6-figure fractional practice. 
+              Graduate from individual opportunities to premium recurring engagements 
+              with Fortune 500s and funded startups.
             </p>
+
+            <div className="mb-8 p-4 bg-blue-500/10 rounded-lg max-w-2xl mx-auto">
+              <p className="text-sm font-semibold text-blue-700 dark:text-blue-400">
+                <Zap className="w-4 h-4 inline mr-2" />
+                Launch Kit Alumni: Your proven track record makes you perfect for Scale. 
+                Use code LAUNCH20 for exclusive pricing.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
@@ -137,7 +149,7 @@ const Scale = () => {
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
                 onClick={() => window.location.href = "/call"}
               >
-                Book Your Strategy Call
+                Apply for Scale Program
               </Button>
               <Button
                 variant="outline"
@@ -145,12 +157,12 @@ const Scale = () => {
                 className="text-lg px-8 py-6"
                 onClick={() => setIsVideoModalOpen(true)}
               >
-                See How Others Did It
+                See Launch → Scale Success Stories
               </Button>
             </div>
 
             <p className="text-sm text-muted-foreground mt-4">
-              🔴 Only 3 spots left this quarter • First client in 90 days or your money back
+              🔴 Only 3 spots for Launch graduates • Average member hits $30K/month in 4 months
             </p>
           </div>
         </div>
@@ -195,6 +207,97 @@ const Scale = () => {
               alt="GitLab"
               className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Launch to Scale Journey Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-500/5 to-orange-500/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
+              Your Journey From Launch to Scale
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              You've already built the foundation. Now multiply your success.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="p-6 border-2 border-blue-500/20 hover:border-blue-500/50 transition-all">
+              <div className="w-12 h-12 mb-4 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <span className="text-2xl font-bold text-blue-600">1</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-foreground">Launch Kit Success</h3>
+              <p className="text-muted-foreground text-sm mb-3">You completed Launch and now have:</p>
+              <ul className="space-y-1 text-sm">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Clear ICP & positioning</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Proven $10K+ offer</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Steady opportunity flow</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-6 border-2 border-orange-500/20 hover:border-orange-500/50 transition-all">
+              <div className="w-12 h-12 mb-4 rounded-full bg-orange-500/20 flex items-center justify-center">
+                <ArrowRight className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-foreground">Ready for Scale</h3>
+              <p className="text-muted-foreground text-sm mb-3">You're experiencing:</p>
+              <ul className="space-y-1 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-600">→</span>
+                  <span className="text-foreground">Too many small engagements</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-600">→</span>
+                  <span className="text-foreground">Hitting income ceiling</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-600">→</span>
+                  <span className="text-foreground">Want fractional role</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-6 border-2 border-red-500/20 hover:border-red-500/50 transition-all">
+              <div className="w-12 h-12 mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
+                <Award className="w-6 h-6 text-red-600" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-foreground">Scale Transformation</h3>
+              <p className="text-muted-foreground text-sm mb-3">In 90 days you'll have:</p>
+              <ul className="space-y-1 text-sm">
+                <li className="flex items-start gap-2">
+                  <Star className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">$15-50K/mo engagements</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Star className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">3-5 premium clients</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Star className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">True location freedom</span>
+                </li>
+              </ul>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Card className="inline-flex items-center gap-4 p-4 bg-gradient-to-r from-blue-500/10 to-orange-500/10">
+              <Rocket className="w-6 h-6 text-orange-600" />
+              <p className="font-semibold text-foreground">
+                87% of Launch graduates who join Scale hit $30K/month within 4 months
+              </p>
+            </Card>
           </div>
         </div>
       </section>
@@ -290,9 +393,12 @@ const Scale = () => {
       {/* Case Studies Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            From Employee to Fractional Executive
+          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
+            Launch Graduates Who Scaled to 6-Figures
           </h2>
+          <p className="text-center text-xl text-muted-foreground mb-12">
+            See how they leveraged their Launch momentum to build fractional practices
+          </p>
           <div className="space-y-8">
             {caseStudies.map((study, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
@@ -301,15 +407,16 @@ const Scale = () => {
                     <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold">
                       {study.image}
                     </div>
-                    <h3 className="text-xl font-bold text-center">{study.name}</h3>
+                    <h3 className="text-xl font-bold text-center mb-2">{study.name}</h3>
+                    <p className="text-sm text-orange-100 text-center">{study.timeline}</p>
                   </div>
                   <div className="md:w-2/3 p-8">
                     <div className="mb-4">
-                      <p className="text-sm text-muted-foreground">Before Scale:</p>
+                      <p className="text-sm text-muted-foreground">After Launch Kit:</p>
                       <p className="font-semibold text-foreground">{study.before}</p>
                     </div>
                     <div className="mb-4">
-                      <p className="text-sm text-muted-foreground">After Scale:</p>
+                      <p className="text-sm text-muted-foreground">After Scale Program:</p>
                       <p className="font-semibold text-green-600 dark:text-green-400">{study.after}</p>
                     </div>
                     <p className="text-2xl font-bold text-foreground mb-4">{study.result}</p>
@@ -375,7 +482,7 @@ const Scale = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Is Fractional Right for You?
+            Is Scale Your Next Step?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="p-6 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
@@ -384,12 +491,12 @@ const Scale = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Have 10+ years of technical leadership",
-                  "Want flexibility and autonomy",
-                  "Tired of corporate politics",
-                  "Ready to 3-5x your hourly rate",
-                  "Want to choose your clients",
-                  "Can commit to building a practice"
+                  "Completed Launch Kit successfully",
+                  "Getting steady opportunities",
+                  "Want recurring $15K+ engagements",
+                  "Ready to work with enterprise clients",
+                  "Can invest 5-10 hrs/week to scale",
+                  "Want true location & time freedom"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
@@ -399,25 +506,32 @@ const Scale = () => {
               </ul>
             </Card>
 
-            <Card className="p-6 bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
-              <h3 className="text-xl font-semibold mb-4 text-red-700 dark:text-red-400">
-                Not Right If You:
+            <Card className="p-6 bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800">
+              <h3 className="text-xl font-semibold mb-4 text-orange-700 dark:text-orange-400">
+                Start with Launch If You:
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Need steady W2 income immediately",
-                  "Uncomfortable with sales/marketing",
-                  "Want to stay anonymous",
-                  "Can't invest in your business",
-                  "Expect overnight success",
-                  "Not willing to build relationships"
+                  "Haven't defined your ICP yet",
+                  "Don't have a proven offer",
+                  "Need to build initial momentum",
+                  "Want to test consulting first",
+                  "Haven't landed first clients",
+                  "New to thought leadership"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <span className="text-red-600 dark:text-red-400">✕</span>
+                    <ArrowRight className="w-5 h-5 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
+              <Button 
+                variant="outline" 
+                className="w-full mt-4 border-orange-300 hover:bg-orange-50"
+                onClick={() => window.location.href = "/launch"}
+              >
+                Start with Launch Kit →
+              </Button>
             </Card>
           </div>
         </div>
@@ -432,28 +546,28 @@ const Scale = () => {
           <div className="space-y-6">
             {[
               {
-                q: "How do I find fractional clients?",
-                a: "We provide warm introductions to 2-4 qualified prospects monthly, plus teach you our proven outreach system that converts at 40%+. No cold calling required."
+                q: "I just finished Launch Kit. Am I ready for Scale?",
+                a: "If you're consistently getting opportunities and have landed at least one $10K+ engagement, you're perfect for Scale. We'll help you upgrade from projects to recurring fractional roles."
               },
               {
-                q: "What can I realistically charge?",
-                a: "Our clients typically charge $15K-50K/month per engagement. We help you price based on value, not hours. Most see a 3x increase in their effective hourly rate."
+                q: "How is Scale different from Launch?",
+                a: "Launch builds your foundation (ICP, offer, pipeline). Scale transforms that into a premium fractional practice with $15-50K/month recurring engagements and enterprise clients."
               },
               {
-                q: "How long until I'm fully booked?",
-                a: "93% of clients land their first engagement within 90 days. Full practice (3-4 clients) typically happens in months 4-6."
+                q: "What if I haven't done Launch Kit yet?",
+                a: "We recommend starting with Launch Kit first. It gives you the proven foundation that Scale builds upon. You can upgrade to Scale after completing Launch."
               },
               {
-                q: "What if I've never consulted before?",
-                a: "Perfect! We provide everything: contracts, proposals, pricing frameworks, and negotiation scripts. Plus weekly coaching to handle any situation."
+                q: "How much can Launch graduates realistically charge?",
+                a: "Launch grads in Scale typically go from $10-15K projects to $20-50K/month retainers. The average is $30K/month across 3 clients within 4-6 months."
               },
               {
-                q: "Do I need to quit my job first?",
-                a: "No! 70% of clients start while employed and transition once they hit $20K/month. We help you navigate the transition smoothly."
+                q: "Do I get credit for completing Launch?",
+                a: "Yes! Launch graduates get 20% off Scale, plus priority access when spots open. Your Launch success fast-tracks your Scale results."
               },
               {
-                q: "What's included in the investment?",
-                a: "Weekly 1-on-1 coaching, done-for-you content creation, warm introductions, all templates/frameworks, and our private Slack community. Everything you need to succeed."
+                q: "What support do I get in Scale?",
+                a: "Weekly 1-on-1 coaching with Todd, done-for-you content, warm intros to enterprise clients, fractional exec templates, and our private Scale community of 6-figure earners."
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6">
@@ -468,49 +582,71 @@ const Scale = () => {
       {/* Application CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8 inline-flex items-center gap-2 bg-blue-500/10 text-blue-700 dark:text-blue-400 px-6 py-3 rounded-full font-semibold">
+            <Award className="w-5 h-5" />
+            <span>Exclusive Program for Launch Kit Graduates</span>
+          </div>
+          
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Build Your Fractional Practice?
+            Your Launch Success Qualifies You for Scale
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Join 127+ tech leaders who've gone from employee to fractional executive
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            You've proven you can land opportunities. Now let's 10x your impact and income 
+            with premium fractional engagements.
           </p>
 
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-orange-500/5">
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div>
-                <p className="text-3xl font-bold text-foreground">3</p>
-                <p className="text-muted-foreground">Spots left this quarter</p>
+                <p className="text-3xl font-bold text-foreground">87%</p>
+                <p className="text-muted-foreground">Launch grads hit $30K/mo</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">90</p>
-                <p className="text-muted-foreground">Days to first client</p>
+                <p className="text-3xl font-bold text-foreground">4</p>
+                <p className="text-muted-foreground">Months to full practice</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">$30K</p>
-                <p className="text-muted-foreground">Avg monthly revenue</p>
+                <p className="text-3xl font-bold text-foreground">20%</p>
+                <p className="text-muted-foreground">Launch alumni discount</p>
               </div>
             </div>
 
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto mb-4"
-              onClick={() => window.location.href = "/call"}
-            >
-              Start Your Fractional Journey
-            </Button>
+            <div className="space-y-4">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto"
+                onClick={() => window.location.href = "/call"}
+              >
+                Apply for Scale Program
+              </Button>
+              
+              <p className="text-sm text-muted-foreground">
+                📞 30-min strategy call to discuss your Launch results • 💸 Special Launch graduate pricing
+              </p>
+            </div>
+          </Card>
 
-            <p className="text-sm text-muted-foreground">
-              📞 Free 30-minute strategy call • 💸 30-day money-back guarantee
+          <Card className="p-6 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800 max-w-2xl mx-auto mb-8">
+            <h3 className="font-semibold text-foreground mb-2">Not a Launch Graduate Yet?</h3>
+            <p className="text-muted-foreground mb-4">
+              Start with Launch Kit to build your foundation, then upgrade to Scale when you're ready for fractional executive roles.
             </p>
+            <Button 
+              variant="outline" 
+              className="border-blue-300 hover:bg-blue-50"
+              onClick={() => window.location.href = "/launch"}
+            >
+              Start with Launch Kit ($2,950) →
+            </Button>
           </Card>
 
           <div className="space-y-4">
             <p className="text-muted-foreground">
-              Have questions? Email{" "}
+              Questions about your readiness? Email{" "}
               <a href="mailto:todd@technical-leaders.com" className="text-orange-600 hover:underline">
                 todd@technical-leaders.com
               </a>
-              {" "}or text (555) 123-4567
+              {" "}with "Scale Application" in the subject
             </p>
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
@@ -518,7 +654,7 @@ const Scale = () => {
               <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
               <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
               <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <span>Rated 4.9/5 by 127 fractional leaders</span>
+              <span>Rated 4.9/5 by 68 Launch → Scale graduates</span>
             </div>
           </div>
         </div>
