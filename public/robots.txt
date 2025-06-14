@@ -1,8 +1,19 @@
+# Robots.txt for Technical Leaders
+# https://technical-leaders.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Specific crawler permissions
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +21,6 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location
+Sitemap: https://technical-leaders.com/sitemap.xml
+Sitemap: https://technical-leaders.com/sitemap-index.xml

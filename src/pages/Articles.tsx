@@ -8,6 +8,7 @@ import { Input } from '../components/ui/input';
 import { Calendar, Clock, Search, ArrowRight } from 'lucide-react';
 import { Article, ArticleCategory } from '../types/article';
 import { seobotClient } from '../lib/seobot';
+import SEO from '../components/SEO';
 
 const categories: ArticleCategory[] = [
   { id: '1', name: 'All Articles', slug: 'all' },
@@ -111,6 +112,11 @@ export default function Articles() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Articles & Resources for Technical Leaders"
+        description="Practical insights, strategies, and tools for CTOs, VPs of Engineering, and technical executives. Learn from real-world experiences in scaling teams and advancing careers."
+        keywords={['technical leadership articles', 'CTO insights', 'engineering management', 'tech leadership resources', 'career development']}
+      />
       <Navigation />
       
       {/* Hero Section */}

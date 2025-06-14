@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Users, Target, TrendingUp, Phone, Calendar, CheckCircle, Shield, ArrowRight, Star, Clock, DollarSign, Rocket, Award, Zap } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
+import SEO from "@/components/SEO";
 
 const Scale = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -103,6 +104,11 @@ const Scale = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Scale Program - Grow Your Tech Leadership Business"
+        description="Transform your expertise into a scalable business. For technical leaders ready to build consulting practices, advisory roles, and thought leadership platforms."
+        keywords={['tech leadership business', 'consulting for CTOs', 'technical advisory', 'fractional CTO', 'tech thought leadership']}
+      />
       <Navigation />
 
       {/* Hero Section */}

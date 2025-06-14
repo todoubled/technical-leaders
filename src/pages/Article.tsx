@@ -10,6 +10,7 @@ import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Link as LinkIcon
 import { Article } from '../types/article';
 import { useToast } from '../components/ui/use-toast';
 import { seobotClient } from '../lib/seobot';
+import SEO from '../components/SEO';
 
 // Mock data - replace with SEObot API call
 const mockArticle: Article = {
@@ -226,6 +227,44 @@ export default function ArticlePage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title={article?.seo?.metaTitle || article?.title || 'Article'}
+        description={article?.seo?.metaDescription || article?.description || 'Read this article on Technical Leaders'}
+        keywords={article?.seo?.keywords || article?.tags || []}
+        author={article?.author?.name}
+        type="article"
+        publishedTime={article?.publishedAt}
+        modifiedTime={article?.updatedAt}
+        section={article?.category}
+        tags={article?.tags || []}
+        image={article?.featuredImage}
+        structuredData={article ? {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": article.title,
+          "description": article.description,
+          "image": article.featuredImage,
+          "datePublished": article.publishedAt,
+          "dateModified": article.updatedAt || article.publishedAt,
+          "author": {
+            "@type": "Person",
+            "name": article.author.name,
+            "jobTitle": article.author.role
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Technical Leaders",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://technical-leaders.com/favicon.webp"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://technical-leaders.com/post/${article.slug}`
+          }
+        } : undefined}
+      />
       <Navigation />
       
       {/* Article Header */}

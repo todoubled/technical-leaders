@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
+import SEO from "@/components/SEO";
 
 const Launch = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -135,6 +136,11 @@ const Launch = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Launch Program - From Senior Engineer to Tech Executive"
+        description="6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Build authority, expand income, and lead at scale."
+        keywords={['tech leadership program', 'engineer to CTO', 'technical executive training', 'leadership coaching', 'career advancement']}
+      />
       <Navigation />
 
       {/* Hero Section */}

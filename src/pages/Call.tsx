@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 
 declare global {
   interface Window {
@@ -25,6 +26,11 @@ const Call = () => {
   }, []);
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Book a Strategy Call - Technical Leaders"
+        description="Schedule a free strategy call to discuss how to advance your technical leadership career. Get personalized guidance from experienced CTOs and tech executives."
+        keywords={['technical leadership coaching', 'CTO mentorship', 'career strategy call', 'tech executive coaching']}
+      />
       <Navigation />
 
       {/* Hero Section */}
