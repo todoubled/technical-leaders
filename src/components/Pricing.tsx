@@ -158,7 +158,7 @@ const Pricing = () => {
                     }
                   }}
                 >
-                  Learn More
+                  {plan.name === "Scale Program" ? "Book a call" : "Learn More"}
                 </Button>
               </CardContent>
             </Card>

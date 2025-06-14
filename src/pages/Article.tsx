@@ -369,7 +369,7 @@ export default function ArticlePage() {
               <Card 
                 key={related.id} 
                 className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-                onClick={() => navigate(`/articles/${related.slug}`)}
+                onClick={() => navigate(`/post/${related.slug}`)}
               >
                 <CardContent className="p-6">
                   <Badge className="mb-3">{related.category}</Badge>

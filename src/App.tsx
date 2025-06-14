@@ -33,7 +33,7 @@ const App = () => (
           <Route path="/scale" element={<Scale />} />
           <Route path="/accredited" element={<Accredited />} />
           <Route path="/articles" element={<Articles />} />
-          <Route path="/articles/:slug" element={<Article />} />
+          <Route path="/post/:slug" element={<Article />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refer" element={<Refer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

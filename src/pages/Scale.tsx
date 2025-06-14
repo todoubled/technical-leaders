@@ -63,31 +63,31 @@ const Scale = () => {
 
   const caseStudies = [
     {
-      name: "Maria Thompson",
-      before: "Launch Kit: Got 3 consulting gigs at $10K each",
-      after: "Scale: Fractional CTO for 3 companies at $20K/mo each",
-      result: "$60K/month working 30 hours/week",
-      quote: "Launch helped me get started, but Scale transformed my one-off projects into recurring executive engagements. The jump from $30K to $60K months happened faster than I imagined.",
-      image: "MT",
-      timeline: "Launch → Scale in 6 months"
+      name: "P.O.",
+      before: "DevOps Lead, Poland",
+      after: "Stress levels went to 0",
+      result: "Transformed work-life balance",
+      quote: "I didn't even use all of tools that you provide guys, so far all is exceeding my expectations. Basically thats the first mastermind group that gives a real value that I know! Stress levels overall in my life almost went to 0, in all cases, private, work etc",
+      image: "PO",
+      timeline: "DevOps Lead → Stress-free success"
     },
     {
-      name: "David Park",
-      before: "Launch Kit: Built pipeline of opportunities",
-      after: "Scale: Fractional VP Eng + Board Advisor",
-      result: "$45K/month with 3 premium clients",
-      quote: "After Launch, I had too many small engagements. Scale taught me to say no to $5K projects and yes to $15K+ retainers. Best decision ever.",
-      image: "DP",
-      timeline: "Launch graduate → $45K/mo in 4 months"
+      name: "C.F.",
+      before: "Fractional CTO, Ireland",
+      after: "Replaced full income with 3-day week",
+      result: "Full income, 60% of the time",
+      quote: "For this client, it's a fractional gig that will replace all my income, which means I can go and do this fractional thing for three days a week and then have two days to apply all the other learnings. Massive, massive win.",
+      image: "CF",
+      timeline: "Full-time → 3-day fractional"
     },
     {
-      name: "Jennifer Liu",
-      before: "Launch Kit: First $12K consulting project",
-      after: "Scale: Fractional CPO + Strategic Advisor",
-      result: "$38K/month at 50% capacity",
-      quote: "Launch gave me confidence to leave corporate. Scale gave me the system to build a real business. Now I choose my clients and my schedule.",
-      image: "JL",
-      timeline: "Launch → Scale → 6-figure practice"
+      name: "K.D.",
+      before: "Director of Customer Success, Colorado",
+      after: "New job offer + promotion",
+      result: "Multiple opportunities unlocked",
+      quote: "Applying my new approach learned through Tech Leaders, has led to a new job offer and a promotion",
+      image: "KD",
+      timeline: "Director → Multiple offers"
     }
   ];
 
@@ -130,15 +130,15 @@ const Scale = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Turn your Launch momentum into a 6-figure fractional practice. 
-              Graduate from individual opportunities to premium recurring engagements 
+              Turn your momentum into a 6-figure business.
+              Graduate from individual opportunities to premium recurring engagements
               with Fortune 500s and funded startups.
             </p>
 
             <div className="mb-8 p-4 bg-blue-500/10 rounded-lg max-w-2xl mx-auto">
               <p className="text-sm font-semibold text-blue-700 dark:text-blue-400">
                 <Zap className="w-4 h-4 inline mr-2" />
-                Launch Kit Alumni: Your proven track record makes you perfect for Scale. 
+                <a href="/launch" className="underline">Launch Kit Alumni</a>: Your proven track record makes you perfect for Scale.
                 Use code LAUNCH20 for exclusive pricing.
               </p>
             </div>
@@ -162,7 +162,7 @@ const Scale = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-4">
-              🔴 Only 3 spots for Launch graduates • Average member hits $30K/month in 4 months
+              🔴 Only 3 spots left • Open Enrollment
             </p>
           </div>
         </div>
@@ -525,8 +525,8 @@ const Scale = () => {
                   </li>
                 ))}
               </ul>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="w-full mt-4 border-orange-300 hover:bg-orange-50"
                 onClick={() => window.location.href = "/launch"}
               >
@@ -586,12 +586,12 @@ const Scale = () => {
             <Award className="w-5 h-5" />
             <span>Exclusive Program for Launch Kit Graduates</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Your Launch Success Qualifies You for Scale
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            You've proven you can land opportunities. Now let's 10x your impact and income 
+            You've proven you can land opportunities. Now let's 10x your impact and income
             with premium fractional engagements.
           </p>
 
@@ -619,7 +619,7 @@ const Scale = () => {
               >
                 Apply for Scale Program
               </Button>
-              
+
               <p className="text-sm text-muted-foreground">
                 📞 30-min strategy call to discuss your Launch results • 💸 Special Launch graduate pricing
               </p>
@@ -631,8 +631,8 @@ const Scale = () => {
             <p className="text-muted-foreground mb-4">
               Start with Launch Kit to build your foundation, then upgrade to Scale when you're ready for fractional executive roles.
             </p>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="border-blue-300 hover:bg-blue-50"
               onClick={() => window.location.href = "/launch"}
             >

@@ -17,7 +17,7 @@ const Launch = () => {
     },
     {
       before: "Unknown outside your company",
-      after: "Recognized industry expert with inbound opportunities"
+      after: "Recognized expert with inbound opportunities"
     },
     {
       before: "$200k salary feeling stuck",
@@ -25,7 +25,7 @@ const Launch = () => {
     },
     {
       before: "Hoping for promotion every year",
-      after: "Choosing between multiple executive offers"
+      after: "Choosing between multiple offers"
     }
   ];
 
@@ -113,7 +113,7 @@ const Launch = () => {
   const bonuses = [
     {
       title: "90 Days of Done-For-You Content",
-      value: "$2,250",
+      value: "$2,550",
       description: "Your personal ghostwriter creates 3 months of LinkedIn posts, articles, and email templates that position you as the go-to expert (while you sleep)"
     },
     {
@@ -250,12 +250,22 @@ const Launch = () => {
             {modules.map((module, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
-                    <div className="w-12 h-12 mb-4 rounded-full bg-white/20 flex items-center justify-center">
-                      <span className="text-3xl font-bold">{index + 1}</span>
+                  <div className="md:w-1/3 p-8 text-white relative overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: index === 0 ? 'url(/ai-in-ar.png)' : index === 1 ? 'url(/launch-bg.png)' : 'url(/scale-bg.png)',
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/50 to-purple-700/50"></div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">{module.title}</h3>
-                    <p className="text-blue-100">{module.week}</p>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 mb-4 rounded-full bg-white/20 flex items-center justify-center">
+                        <span className="text-3xl font-bold">{index + 1}</span>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-2">{module.title}</h3>
+                      <p className="text-blue-100">{module.week}</p>
+                    </div>
                   </div>
                   <div className="md:w-2/3 p-8">
                     <p className="text-lg text-foreground mb-4">{module.description}</p>
@@ -302,11 +312,11 @@ const Launch = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Everything You Get With Launch Kit
+            Everything You Get
           </h2>
 
           <Card className="p-8 mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-foreground">Core Program ($2950 Value)</h3>
+            <h3 className="text-2xl font-bold mb-6 text-foreground">Launch Kit ($2950 Value)</h3>
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 "The ICP Targeter",

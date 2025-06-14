@@ -171,7 +171,7 @@ export default function Articles() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredArticles.map((article) => (
                 <Card key={article.id} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group overflow-hidden"
-                  onClick={() => window.location.href = `/articles/${article.slug}`}>
+                  onClick={() => window.location.href = `/post/${article.slug}`}>
                   <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-secondary/50 to-secondary/30">
                     {article.featuredImage && (
                       <img 
