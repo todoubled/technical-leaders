@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle } from "lucide-react";
+import { CheckCircle2, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle, Shield, AlertTriangle } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
@@ -17,16 +17,16 @@ const Launch = () => {
       after: "Multiple high-impact opportunities with diversified income streams"
     },
     {
-      before: "Unknown online and treated like the 'best kept secret' at work",
-      after: "Influential thought leader with a growing audience who values your expertise"
+      before: "Virtually unknown online and like the 'best kept secret' at work",
+      after: "Influential expert with a growing network that values your expertise"
     },
     {
-      before: "Waiting for someone else to recognize your value and give you permission",
+      before: "Waiting for promotion to unlock the next level in your career",
       after: "Proactively creating your own opportunities and commanding premium rates"
     },
     {
       before: "Working alone without mentorship or proven systems to guide you",
-      after: "Part of an elite community with direct access to successful CTOs and VPs"
+      after: "Part of an international community of tech leaders who support each other"
     }
   ];
 
@@ -113,9 +113,16 @@ const Launch = () => {
 
   const bonuses = [
     {
+      title: "Lifetime Tech Leaders Network",
+      value: "$5,000+",
+      description: "Your personal board of 150+ senior tech leaders who send each other opportunities, make warm intros, and close deals together",
+      badge: "Most Valuable"
+    },
+    {
       title: "90 Days of Done-For-You Content",
       value: "$2,550",
-      description: "Your personal ghostwriter creates 3 months of LinkedIn posts, articles, and email templates that position you as the go-to expert (while you sleep)"
+      description: "Your personal ghostwriter creates 3 months of LinkedIn posts, articles, and email templates that position you as the go-to expert (while you sleep)",
+      badge: "Limited Time"
     },
     {
       title: "Weekly Hot Seat Coaching Calls",
@@ -128,9 +135,9 @@ const Launch = () => {
       description: "Swipe files of exact scripts that landed our members 6-figure raises, board seats, and $25K+ consulting gigs"
     },
     {
-      title: "Lifetime Tech Leaders Network",
-      value: "$5,000+",
-      description: "Your personal board of 200+ senior tech leaders who send each other opportunities, make warm intros, and close deals together"
+      title: "Mental Fitness Program Access",
+      value: "$1,200",
+      description: "Exclusive access to our executive mental fitness program designed to boost productivity, reduce stress, and maintain peak performance under pressure"
     }
   ];
 
@@ -167,10 +174,17 @@ const Launch = () => {
               </span>
             </h1>
 
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              The complete system that's helped 150+ tech leaders go from overlooked to overbooked
-              with premium opportunities – without the cringe of self-promotion.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed">
+              The complete system to go from overlooked to overbooked with premium opportunities&nbsp;
+              <i>without</i> the cringe of self-promotion.
             </p>
+
+            <div className="flex items-center justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>Trusted by 150+ tech leaders</span>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
@@ -191,12 +205,21 @@ const Launch = () => {
               </Button>
             </div>
 
-            <p className="text-sm text-muted-foreground mt-4">
-              🔥 5 spots left this month • 💳 Payment plans available
-            </p>
+            <div className="flex items-center justify-center gap-4 mt-4 text-sm">
+              <div className="flex items-center gap-1 text-red-600 dark:text-red-400 font-semibold">
+                <AlertTriangle className="w-4 h-4" />
+                <span>Only 3 spots left</span>
+              </div>
+              <div className="flex items-center gap-1 text-green-600 dark:text-green-400">
+                <Shield className="w-4 h-4" />
+                <span>Payment plans available</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+
 
       {/* Transformation Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
@@ -207,7 +230,7 @@ const Launch = () => {
               Your 90-Day Transformation
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join 150+ tech leaders who stopped waiting and started winning
+              Join 150+ tech leaders who stopped waiting and started winning together
             </p>
           </div>
 
@@ -236,7 +259,7 @@ const Launch = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-700 dark:text-orange-400 px-6 py-3 rounded-full font-semibold">
               <Zap className="w-5 h-5" />
-              <span>Average participant sees results in 30-45 days</span>
+              <span>Average member sees results in 30-45 days</span>
             </div>
           </div>
         </div>
@@ -249,7 +272,7 @@ const Launch = () => {
             The 3-Part System That Changes Everything
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            We'll help you implement the system that's helped 150+ tech leaders go from overlooked to overbooked with premium opportunities.
+            We'll help you implement the system to go from overlooked to overbooked with premium opportunities.
           </p>
 
           <div className="space-y-8">
@@ -344,9 +367,20 @@ const Launch = () => {
             <h3 className="text-xl font-bold mb-4 text-foreground">Plus These Bonuses:</h3>
             <div className="space-y-4">
               {bonuses.map((bonus, index) => (
-                <Card key={index} className="p-4 flex items-center justify-between">
+                <Card key={index} className="p-4 flex items-center justify-between relative">
                   <div>
-                    <h4 className="font-semibold text-foreground">{bonus.title}</h4>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h4 className="font-semibold text-foreground">{bonus.title}</h4>
+                      {bonus.badge && (
+                        <span className={`px-2 py-1 text-xs font-bold rounded-full ${
+                          bonus.badge === "Most Valuable"
+                            ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400"
+                            : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400"
+                        }`}>
+                          {bonus.badge}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-muted-foreground">{bonus.description}</p>
                   </div>
                   <span className="text-lg font-bold text-green-600 dark:text-green-400">
@@ -359,13 +393,13 @@ const Launch = () => {
 
           <div className="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
             <p className="text-2xl font-bold text-muted-foreground mb-2">
-              Total Value: <span className="line-through text-muted-foreground">$14,597</span>
+              Total Value: <span className="line-through text-muted-foreground">$15,797</span>
             </p>
             <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
               Your Investment: $2,950
             </p>
             <p className="text-sm text-muted-foreground mt-2">
-              Save $11,647 when you join today (80% off)
+              Save $12,847 when you join today (81% off)
             </p>
           </div>
         </div>
@@ -376,16 +410,17 @@ const Launch = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Award className="w-16 h-16 mx-auto mb-6 text-green-600 dark:text-green-400" />
           <h2 className="text-3xl font-bold mb-4 text-background">
-            The "Premium Opportunity" Guarantee
+            The "$25K+ Opportunity" Guarantee
           </h2>
-          <p className="text-lg text-background mb-6 max-w-2xl mx-auto">
-            If you complete the program and don't receive at least one premium opportunity
-            (promotion, new role, consulting gig, or speaking engagement) within 6 months,
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            If you complete the program and don't receive at least one opportunity worth $25K+
+            (promotion, new role, consulting gig, or board position) within 6 months,
             we'll work with you for free until you do.
           </p>
-          <p className="text-muted-foreground">
-            That's how confident we are in this system. Zero risk, all reward.
-          </p>
+          <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-6 py-3 rounded-full font-semibold">
+            <Shield className="w-5 h-5" />
+            <span>Zero risk, guaranteed results</span>
+          </div>
         </div>
       </section>
 
@@ -398,24 +433,40 @@ const Launch = () => {
           <div className="space-y-6">
             {[
               {
-                q: "I'm introverted and hate self-promotion. Will this work for me?",
-                a: "Absolutely. Our system is designed for technical people who hate traditional networking. We focus on demonstrating expertise, not bragging."
+                q: "How much time do I need to commit?",
+                a: "Just 2-3 hours per week of async self-study and live coaching sessions. All mastermind sessions are recorded, so if you miss one live, you can catch up when convenient. Most members find this fits easily into their schedule while delivering life-changing results."
               },
               {
-                q: "How much time do I need to invest?",
-                a: "Plan for 3-5 hours per week: 90-minute workshop + 2-3 hours implementing. The ghostwritten content saves you 10+ hours/week."
+                q: "What if I'm not sure about my goals yet?",
+                a: "Perfect! That's exactly why you need this program. 80% of our members discover bigger, better goals once they realize their true market value. Our first priority is helping you get crystal clear on your path to maximum impact and income."
               },
               {
-                q: "What if I'm already senior level?",
-                a: "Perfect. This program helps senior leaders break through to executive and board-level opportunities. Many students are already Directors/VPs."
+                q: "What if I have a problem with Imposter Syndrome?",
+                a: "You're not alone - 70% of tech professionals struggle with this, and 40% let it seriously damage their results. Overcoming imposter syndrome and building unshakeable confidence is one of our specialties. You'll join a community where your expertise is recognized and valued."
               },
               {
-                q: "Is there a payment plan?",
-                a: "Yes! We offer 3-month and 6-month payment plans. You can also use your learning budget or get employer sponsorship."
+                q: "How long before I can expect a result?",
+                a: "We expect you to achieve a significant breakthrough within 6 months, but most members see opportunities start flowing in 30-45 days. Our entire system is designed around rapid, measurable progress with support at every step."
               },
               {
-                q: "What makes this different from other programs?",
-                a: "We do the heavy lifting for you. While others teach theory, we give you done-for-you content, templates, and scripts. You just execute."
+                q: "Do I have to attend the weekly live sessions to succeed?",
+                a: "While sessions are recorded for flexibility, members who attend live consistently get the biggest results fastest. Sessions run Monday, Tuesday, and Wednesday at 10am CST to accommodate global schedules. The live interaction and community support are game-changers."
+              },
+              {
+                q: "Is there real camaraderie and community?",
+                a: "Absolutely. Our live sessions create genuine connections where you get support from both our team and fellow members. We have everyone from senior engineers to CTOs, and the collaborative spirit means everyone helps everyone succeed."
+              },
+              {
+                q: "Can I see inside the membership portal before joining?",
+                a: "Yes! We have a complete portal walkthrough that shows you exactly what you'll get access to. You'll see the training modules, tools, templates, and community features that drive results for our members."
+              },
+              {
+                q: "What if I'm already at a senior level?",
+                a: "Perfect. This program is specifically designed for senior professionals ready to break through to executive-level opportunities. Many of our most successful members are already Directors, VPs, and senior leaders who want to accelerate to the next level."
+              },
+              {
+                q: "Is there a payment plan available?",
+                a: "Yes! We offer flexible payment options including 3-month and 6-month plans. You can also use your professional development budget or request employer sponsorship - we provide all the documentation you need."
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6">
@@ -434,7 +485,7 @@ const Launch = () => {
             Stop Waiting for Opportunities to Find You
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join 200+ tech leaders who took control of their careers and income
+            Join 150+ tech leaders who took control of their careers and income
           </p>
 
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-blue-500/5">
@@ -448,8 +499,8 @@ const Launch = () => {
                 <p className="text-muted-foreground">To transformation</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">5 Spots</p>
-                <p className="text-muted-foreground">Left this quarter</p>
+                <p className="text-3xl font-bold text-red-600 dark:text-red-400">3 Spots</p>
+                <p className="text-muted-foreground">Left this week</p>
               </div>
             </div>
 
@@ -458,12 +509,14 @@ const Launch = () => {
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-12 py-6 w-full md:w-auto mb-4"
               onClick={() => window.location.href = "https://buy.stripe.com/bIY7we76B2L9bwAeV2"}
             >
-              Yes! I Want Premium Opportunities
+              Get Launch Kit Now
             </Button>
 
-            <p className="text-sm text-muted-foreground">
-              🛡️ Protected by our Premium Opportunity Guarantee
-            </p>
+            <div className="space-y-2">
+              <p className="text-sm text-muted-foreground">
+                🛡️ Protected by our $25K+ Opportunity Guarantee
+              </p>
+            </div>
           </Card>
 
           <p className="text-muted-foreground">
