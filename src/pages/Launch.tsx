@@ -13,20 +13,20 @@ const Launch = () => {
 
   const transformations = [
     {
-      before: "Spending 40+ hours/week grinding at work on someone else's vision",
-      after: "Working 30 hours/week with 2x the impact growing your own business"
+      before: "Feeling unchallenged and stuck in a bad job market with limited options",
+      after: "Multiple high-impact opportunities with diversified income streams"
     },
     {
-      before: "Like a 'best kept secret' and unknown outside your company",
-      after: "Recognized expert with inbound opportunities"
+      before: "Unknown online and treated like the 'best kept secret' at work",
+      after: "Influential thought leader with a growing audience who values your expertise"
     },
     {
-      before: "$200k salary feeling stuck",
-      after: "$350k+ total comp with multiple income streams"
+      before: "Waiting for someone else to recognize your value and give you permission",
+      after: "Proactively creating your own opportunities and commanding premium rates"
     },
     {
-      before: "Hoping for promotion every year",
-      after: "Choosing between multiple offers"
+      before: "Working alone without mentorship or proven systems to guide you",
+      after: "Part of an elite community with direct access to successful CTOs and VPs"
     }
   ];
 
@@ -168,7 +168,7 @@ const Launch = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              The complete system that's helped 200+ tech leaders go from overlooked to overbooked
+              The complete system that's helped 150+ tech leaders go from overlooked to overbooked
               with premium opportunities – without the cringe of self-promotion.
             </p>
 
@@ -192,7 +192,7 @@ const Launch = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-4">
-              🔥 5 spots left this quarter • 💳 Payment plans available
+              🔥 5 spots left this month • 💳 Payment plans available
             </p>
           </div>
         </div>
@@ -204,7 +204,7 @@ const Launch = () => {
         <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              Your 90-Day Career Transformation
+              Your 90-Day Transformation
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Join 150+ tech leaders who stopped waiting and started winning
