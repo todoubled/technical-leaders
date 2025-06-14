@@ -9,15 +9,15 @@ import SEO from "@/components/SEO";
 
 const Launch = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s"; // Replace with actual video
+  const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s";
 
   const transformations = [
     {
-      before: "Spending 40+ hours/week grinding at work",
-      after: "Working 30 hours/week with 2x the impact"
+      before: "Spending 40+ hours/week grinding at work on someone else's vision",
+      after: "Working 30 hours/week with 2x the impact growing your own business"
     },
     {
-      before: "Unknown outside your company",
+      before: "Like a 'best kept secret' and unknown outside your company",
       after: "Recognized expert with inbound opportunities"
     },
     {
@@ -136,7 +136,7 @@ const Launch = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
+      <SEO
         title="Launch Program - From Senior Engineer to Tech Executive"
         description="6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Build authority, expand income, and lead at scale."
         keywords={['tech leadership program', 'engineer to CTO', 'technical executive training', 'leadership coaching', 'career advancement']}
@@ -249,7 +249,7 @@ const Launch = () => {
             The 3-Part System That Changes Everything
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Stop hoping for opportunities. Start creating them.
+            We'll help you implement the system that's helped 150+ tech leaders go from overlooked to overbooked with premium opportunities.
           </p>
 
           <div className="space-y-8">

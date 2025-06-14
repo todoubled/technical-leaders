@@ -1,0 +1,265 @@
+/* Enhanced article typography and reading experience */
+
+.article-content {
+  /* Typography optimization */
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Better text selection */
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Enhanced list styling */
+.prose-custom ul li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.prose-custom ul li::before {
+  content: "•";
+  color: hsl(var(--primary));
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.prose-custom ol li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* Nested list indentation */
+.prose-custom ul ul,
+.prose-custom ol ol,
+.prose-custom ul ol,
+.prose-custom ol ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+/* Table enhancements */
+.prose-custom table {
+  border-collapse: collapse;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.prose-custom table tbody tr:nth-child(even) {
+  background-color: hsl(var(--secondary) / 0.3);
+}
+
+.prose-custom table tbody tr:hover {
+  background-color: hsl(var(--secondary) / 0.5);
+  transition: background-color 0.2s ease;
+}
+
+/* Code block enhancements */
+.prose-custom pre {
+  position: relative;
+  overflow-x: auto;
+  border: 1px solid hsl(var(--border));
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+.prose-custom pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.prose-custom :not(pre) > code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+/* Blockquote styling */
+.prose-custom blockquote {
+  position: relative;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.prose-custom blockquote::before {
+  content: '"';
+  position: absolute;
+  left: -0.5rem;
+  top: -0.5rem;
+  font-size: 3rem;
+  color: hsl(var(--primary) / 0.3);
+  font-family: serif;
+  line-height: 1;
+}
+
+/* Link hover effects */
+.prose-custom a {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.prose-custom a:hover {
+  text-decoration: none;
+}
+
+.prose-custom a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(var(--primary));
+  transition: width 0.3s ease;
+}
+
+.prose-custom a:hover::after {
+  width: 100%;
+}
+
+/* Focus states for accessibility */
+.prose-custom a:focus,
+.prose-custom button:focus {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Image enhancements */
+.prose-custom img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prose-custom img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Heading anchors */
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3,
+.prose-custom h4,
+.prose-custom h5,
+.prose-custom h6 {
+  position: relative;
+  scroll-margin-top: 6rem;
+}
+
+.prose-custom h1:hover::after,
+.prose-custom h2:hover::after,
+.prose-custom h3:hover::after,
+.prose-custom h4:hover::after,
+.prose-custom h5:hover::after,
+.prose-custom h6:hover::after {
+  content: '#';
+  position: absolute;
+  left: -1.5rem;
+  color: hsl(var(--primary) / 0.5);
+  font-weight: normal;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .prose-custom {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .prose-custom h1 { 
+    font-size: 2rem; 
+    line-height: 1.2;
+  }
+  
+  .prose-custom h2 { 
+    font-size: 1.75rem; 
+    line-height: 1.3;
+  }
+  
+  .prose-custom h3 { 
+    font-size: 1.5rem; 
+    line-height: 1.4;
+  }
+  
+  .prose-custom blockquote {
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+  
+  .prose-custom pre {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+    padding: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .prose-custom {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+  }
+  
+  .prose-custom h1,
+  .prose-custom h2,
+  .prose-custom h3 {
+    page-break-after: avoid;
+    color: black;
+  }
+  
+  .prose-custom p,
+  .prose-custom li {
+    orphans: 2;
+    widows: 2;
+  }
+  
+  .prose-custom a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .prose-custom a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 80%;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .prose-custom img {
+    opacity: 0.9;
+  }
+  
+  .prose-custom img:hover {
+    opacity: 1;
+  }
+}
+
+/* Reading progress indicator */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: hsl(var(--secondary));
+  z-index: 1000;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+  transition: width 0.1s ease;
+}

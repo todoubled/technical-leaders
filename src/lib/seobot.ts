@@ -1,6 +1,6 @@
 import { Article, ArticleListResponse } from '../types/article';
 
-// SEObot API configuration  
+// SEObot API configuration
 const SEOBOT_API_KEY = import.meta.env?.VITE_SEOBOT_API_KEY;
 
 // Debug logging
@@ -94,7 +94,7 @@ const safeStringExtract = (value: any): string => {
 // Convert SEObot article to our Article interface
 const convertSeobotArticle = (seobotArticle: any): Article => {
   console.log('Converting article:', seobotArticle);
-  
+
   // Ensure we have required fields, provide defaults if missing
   // Use safe string extraction for all fields
   const id = safeStringExtract(seobotArticle.id || seobotArticle._id) || Math.random().toString(36);
@@ -104,7 +104,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
   const content = safeStringExtract(seobotArticle.html || seobotArticle.content || seobotArticle.markdown) || '';
   const publishedAt = safeStringExtract(seobotArticle.publishedAt || seobotArticle.createdAt) || new Date().toISOString();
   const category = safeStringExtract(seobotArticle.category) || 'General';
-  
+
   // Ensure tags is an array of strings
   let tags: string[] = [];
   if (Array.isArray(seobotArticle.tags)) {
@@ -113,14 +113,14 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
     const tagStr = safeStringExtract(seobotArticle.tags);
     if (tagStr) tags = [tagStr];
   }
-  
+
   // Ensure author is properly structured
   let author = {
-    name: 'Technical Leaders',
-    role: 'Editorial Team',
+    name: 'Tech Leaders',
+    role: 'Content Team',
     avatar: 'TL'
   };
-  
+
   if (seobotArticle.author) {
     if (typeof seobotArticle.author === 'string') {
       author.name = seobotArticle.author;
@@ -132,7 +132,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
       };
     }
   }
-  
+
   const result = {
     id,
     slug,
@@ -150,7 +150,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
       metaDescription: description,
     }
   };
-  
+
   console.log('Converted article result:', result);
   return result;
 };
@@ -174,11 +174,11 @@ class SeobotClient {
 
   private async getClient() {
     console.log('Getting client, API key:', this.apiKey ? 'Present' : 'Missing');
-    
+
     if (!this.client && this.apiKey) {
       console.log('Initializing BlogClient...');
       await initializeBlogClient();
-      
+
       if (BlogClient) {
         console.log('BlogClient available, creating instance');
         this.client = new BlogClient(this.apiKey);
@@ -189,7 +189,7 @@ class SeobotClient {
     } else if (!this.apiKey) {
       console.log('No API key provided, will use mock data');
     }
-    
+
     return this.client;
   }
 
@@ -204,7 +204,7 @@ class SeobotClient {
   } = {}): Promise<ArticleListResponse> {
     console.log('getArticles called with params:', params);
     const client = await this.getClient();
-    
+
     if (!client) {
       console.log('No client available, using mock data');
       // Fall back to mock data if SEObot is not available
@@ -215,7 +215,7 @@ class SeobotClient {
       console.log('Using SEObot client to fetch articles');
       const page = params.page || 0; // SEObot uses 0-based pagination
       const limit = params.pageSize || 12;
-      
+
       let seobotArticles: SeobotArticle[] = [];
 
       if (params.category && params.category !== 'all') {
@@ -232,10 +232,10 @@ class SeobotClient {
       console.log('Raw articles from SEObot:', seobotArticles);
       console.log('Type of seobotArticles:', typeof seobotArticles);
       console.log('Is array:', Array.isArray(seobotArticles));
-      
+
       // Handle different response structures from SEObot
       let articlesArray: SeobotArticle[] = [];
-      
+
       if (Array.isArray(seobotArticles)) {
         articlesArray = seobotArticles;
       } else if (seobotArticles && typeof seobotArticles === 'object') {
@@ -252,19 +252,19 @@ class SeobotClient {
         console.warn('Unexpected response format from SEObot:', seobotArticles);
         articlesArray = [];
       }
-      
+
       console.log('Processed articles array:', articlesArray);
-      
+
       // Filter out any invalid articles and convert
       const articles = articlesArray
         .filter(article => article && typeof article === 'object')
         .map(convertSeobotArticle);
-      
+
       console.log('Converted articles:', articles);
-      
+
       // Filter by search query if provided
-      const filteredArticles = params.search 
-        ? articles.filter(article => 
+      const filteredArticles = params.search
+        ? articles.filter(article =>
             article.title.toLowerCase().includes(params.search!.toLowerCase()) ||
             article.description.toLowerCase().includes(params.search!.toLowerCase())
           )
@@ -277,7 +277,7 @@ class SeobotClient {
         pageSize: limit,
         hasMore: filteredArticles.length === limit
       };
-      
+
       console.log('Returning result:', result);
       return result;
     } catch (error) {
@@ -290,7 +290,7 @@ class SeobotClient {
   // Fetch a single article by slug
   async getArticle(slug: string): Promise<Article> {
     const client = await this.getClient();
-    
+
     if (!client) {
       return this.getMockArticle(slug);
     }
@@ -307,8 +307,8 @@ class SeobotClient {
   // Mock data fallback methods
   private getMockArticles(params: any): ArticleListResponse {
     const articles = mockSeobotData.articles.map(convertSeobotArticle);
-    const filteredArticles = params.search 
-      ? articles.filter((article: Article) => 
+    const filteredArticles = params.search
+      ? articles.filter((article: Article) =>
           article.title.toLowerCase().includes(params.search.toLowerCase()) ||
           article.description.toLowerCase().includes(params.search.toLowerCase())
         )
@@ -368,7 +368,7 @@ export const articleUtils = {
   // Generate article excerpt
   generateExcerpt: (content: string, maxLength: number = 160): string => {
     const text = content.replace(/<[^>]*>/g, ''); // Strip HTML
-    return text.length > maxLength 
+    return text.length > maxLength
       ? text.substring(0, maxLength).trim() + '...'
       : text;
   },

@@ -11,6 +11,9 @@ import { Article } from '../types/article';
 import { useToast } from '../components/ui/use-toast';
 import { seobotClient } from '../lib/seobot';
 import SEO from '../components/SEO';
+import ArticleContent from '../components/ArticleContent';
+import TableOfContents from '../components/TableOfContents';
+import ReadingProgress from '../components/ReadingProgress';
 
 // Mock data - replace with SEObot API call
 const mockArticle: Article = {
@@ -227,6 +230,7 @@ export default function ArticlePage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <ReadingProgress />
       <SEO 
         title={article?.seo?.metaTitle || article?.title || 'Article'}
         description={article?.seo?.metaDescription || article?.description || 'Read this article on Technical Leaders'}
@@ -269,7 +273,7 @@ export default function ArticlePage() {
       
       {/* Article Header */}
       <article className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back button */}
           <Button 
             variant="ghost" 
@@ -281,7 +285,7 @@ export default function ArticlePage() {
           </Button>
 
           {/* Article meta */}
-          <div className="mb-8">
+          <div className="max-w-4xl mb-8">
             <div className="flex items-center gap-4 mb-4">
               <Badge>{article.category}</Badge>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -343,11 +347,11 @@ export default function ArticlePage() {
             </div>
           </div>
 
-          <Separator className="mb-8" />
+          <Separator className="mb-8 max-w-4xl" />
 
           {/* Featured image */}
           {article.featuredImage && (
-            <div className="aspect-video relative overflow-hidden rounded-lg mb-8 bg-secondary">
+            <div className="aspect-video relative overflow-hidden rounded-lg mb-12 bg-secondary max-w-4xl">
               <img 
                 src={article.featuredImage} 
                 alt={article.title}
@@ -356,46 +360,56 @@ export default function ArticlePage() {
             </div>
           )}
 
-          {/* Article content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: article.content }} />
-          </div>
-
-          {/* Tags */}
-          <div className="mt-12 pt-8 border-t">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm font-semibold">Tags:</span>
-              {article.tags.map((tag) => (
-                <Badge key={tag} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
+          {/* Article layout with sidebar */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Main content */}
+            <div className="lg:col-span-3">
+              <ArticleContent content={article.content} />
+            </div>
+            
+            {/* Sidebar with Table of Contents */}
+            <div className="lg:col-span-1 order-first lg:order-last">
+              <TableOfContents content={article.content} />
             </div>
           </div>
 
-          {/* Share CTA */}
-          <Card className="mt-8 bg-secondary/30">
-            <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-semibold mb-2">Found this helpful?</h3>
-              <p className="text-muted-foreground mb-4">Share it with your network</p>
-              <div className="flex items-center justify-center gap-2">
-                <Button
-                  variant="outline"
-                  onClick={() => shareArticle('twitter')}
-                >
-                  <Twitter className="h-4 w-4 mr-2" />
-                  Share on Twitter
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => shareArticle('linkedin')}
-                >
-                  <Linkedin className="h-4 w-4 mr-2" />
-                  Share on LinkedIn
-                </Button>
+          {/* Tags and Share CTA - within main content area */}
+          <div className="lg:col-span-3">
+            <div className="mt-12 pt-8 border-t">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-sm font-semibold">Tags:</span>
+                {article.tags.map((tag) => (
+                  <Badge key={tag} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Share CTA */}
+            <Card className="mt-8 bg-secondary/30">
+              <CardContent className="p-6 text-center">
+                <h3 className="text-xl font-semibold mb-2">Found this helpful?</h3>
+                <p className="text-muted-foreground mb-4">Share it with your network</p>
+                <div className="flex items-center justify-center gap-2">
+                  <Button
+                    variant="outline"
+                    onClick={() => shareArticle('twitter')}
+                  >
+                    <Twitter className="h-4 w-4 mr-2" />
+                    Share on Twitter
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => shareArticle('linkedin')}
+                  >
+                    <Linkedin className="h-4 w-4 mr-2" />
+                    Share on LinkedIn
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </article>
 
