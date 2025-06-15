@@ -41,6 +41,15 @@ const Footer = () => {
               >
                 My Membership
               </a>
+              <div className="flex items-center gap-4">
+                <span className="text-muted-foreground">Compare:</span>
+                <a
+                  href="/alternative-to-sidebar"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Alternative to Sidebar
+                </a>
+              </div>
             </div>
           </div>
         </div>
