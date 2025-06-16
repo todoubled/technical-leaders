@@ -117,7 +117,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
   // Ensure author is properly structured
   let author = {
     name: 'Tech Leaders',
-    role: 'Content Team',
+    role: 'Mastermind',
     avatar: 'TL'
   };
 

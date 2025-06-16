@@ -62,13 +62,12 @@ const Navigation = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/#how-it-works" className="block px-3 py-2 text-foreground hover:text-primary">How It Works</a>
             <div className="px-3 py-2 text-foreground">
               <div className="font-medium mb-2">Programs</div>
               <div className="ml-4 space-y-1">
                 <a href="/ai-trade-school" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI Trade School</a>
                 <a href="/launch" className="block py-1 text-sm text-muted-foreground hover:text-primary">Launch Kit</a>
-                <a href="/scale" className="block py-1 text-sm text-muted-foreground hover:text-primary">Scale Program</a>
+                {/* <a href="/scale" className="block py-1 text-sm text-muted-foreground hover:text-primary">Scale Program</a> */}
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>

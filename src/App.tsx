@@ -16,6 +16,7 @@ import Article from "./pages/Article";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Refer from "./pages/Refer";
 import AlternativeToSidebar from "./pages/AlternativeToSidebar";
+import TLAIWorkflow from "./pages/TLAIWorkflow";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refer" element={<Refer />} />
           <Route path="/alternative-to-sidebar" element={<AlternativeToSidebar />} />
+          <Route path="/tl-ai-workflow" element={<TLAIWorkflow />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
