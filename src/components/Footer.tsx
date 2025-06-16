@@ -24,32 +24,84 @@ const Footer = () => {
           </Button>
         </div>
 
-        {/* Simple Footer */}
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-6">
-              <img src="/orange-logo.png" alt="Tech Leaders" className="h-8 w-auto" />
-              <span className="text-sm text-muted-foreground">
+        {/* Links Section */}
+        <div className="border-t border-border pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+            {/* Logo and Copyright */}
+            <div className="md:col-span-2">
+              <img src="/orange-logo.png" alt="Tech Leaders" className="h-8 w-auto mb-4" />
+              <p className="text-sm text-muted-foreground">
                 © 2025 Tech Leaders. All rights reserved.
-              </span>
+              </p>
             </div>
 
-            <div className="flex items-center gap-6 text-sm">
-              <a
-                href="https://billing.stripe.com/p/login/28oaFm1om8Za4XC000"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                My Membership
-              </a>
-              <div className="flex items-center gap-4">
-                <span className="text-muted-foreground">Compare:</span>
-                <a
-                  href="/alternative-to-sidebar"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Alternative to Sidebar
-                </a>
-              </div>
+            {/* Compare Section */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Compare</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/alternative-to-sidebar"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Tech Leaders vs. Sidebar
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/alternative-to-mba"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Tech Leaders vs. MBA Program
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Resources Section */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Resources</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/articles"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Articles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/tl-ai-workflow"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    AI Workshop
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Account Section */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Account</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="https://billing.stripe.com/p/login/28oaFm1om8Za4XC000"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    My Membership
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/privacy-policy"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -16,6 +16,7 @@ import Article from "./pages/Article";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Refer from "./pages/Refer";
 import AlternativeToSidebar from "./pages/AlternativeToSidebar";
+import AlternativeToMBA from "./pages/AlternativeToMBA";
 import TLAIWorkflow from "./pages/TLAIWorkflow";
 import NotFound from "./pages/NotFound";
 
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refer" element={<Refer />} />
           <Route path="/alternative-to-sidebar" element={<AlternativeToSidebar />} />
+          <Route path="/alternative-to-mba" element={<AlternativeToMBA />} />
           <Route path="/tl-ai-workflow" element={<TLAIWorkflow />} />
           <Route path="/workshop" element={<Navigate to="/tl-ai-workflow" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
