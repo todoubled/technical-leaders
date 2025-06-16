@@ -4,12 +4,25 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Star, Users, Sparkles, Brain, Rocket, MessageSquare, Bot, Calendar, Clock, Gift, FileText, Video, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import VideoModal from "@/components/VideoModal";
 
 const TLAIWorkflow = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const videoUrl = "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"; // Replace with actual video URL
+
+  useEffect(() => {
+    // Simple approach: inject script into the form container
+    const formContainer = document.getElementById('kit-form-container');
+    if (formContainer && !formContainer.querySelector('script')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.setAttribute('data-uid', '48377e1fda');
+      script.src = 'https://techleaders.kit.com/48377e1fda/index.js';
+      formContainer.appendChild(script);
+    }
+  }, []);
+
 
   // Hero content - Replace with content from Notion
   const heroContent = {
@@ -119,7 +132,7 @@ const TLAIWorkflow = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            {/* KIT Form */}
+            <div id="kit-form-container" className="w-full max-w-md mx-auto"></div>
           </div>
 
           {/* Logistics Section - Integrated into Hero */}
@@ -315,7 +328,19 @@ const TLAIWorkflow = () => {
           <p className="text-xl text-muted-foreground mb-8">
             Spots are limited. Grab yours now and get the exact AI workflow that will double your output beyond the ChatGPT basics.
           </p>
-          {/* KIT Form */}
+          <Button
+            size="lg"
+            className="text-lg px-8"
+            onClick={() => {
+              document.getElementById('kit-form-container')?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+              });
+            }}
+          >
+            <Rocket className="mr-2 h-5 w-5" />
+            Register Now
+          </Button>
         </div>
       </section>
 
