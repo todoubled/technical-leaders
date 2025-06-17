@@ -39,8 +39,7 @@ const Launch = () => {
       outcomes: [
         "Crystal clear on who you serve",
         "Magnetic positioning statement",
-        "Profile optimized for your ICP"
-      ]
+        "Profile optimized for your ICP"      ]
     },
     {
       icon: FileText,
@@ -61,7 +60,7 @@ const Launch = () => {
       outcomes: [
         "3 months of content written for you",
         "Weekly accountability check-ins",
-        "Real results in real time"
+        "Playbook of scripts, strategies, and tactics to land ideal opportunities"
       ]
     }
   ];
@@ -113,6 +112,12 @@ const Launch = () => {
 
   const bonuses = [
     {
+      title: "Mental Fitness Program",
+      value: "$1,200",
+      description: "Get access to our signature mental fitness program designed to boost productivity, reduce stress, and maintain peak performance under pressure",
+      badge: "Most Popular"
+    },
+    {
       title: "Lifetime Tech Leaders Network",
       value: "$5,000+",
       description: "Your personal board of 150+ senior tech leaders who send each other opportunities, make warm intros, and close deals together",
@@ -121,23 +126,20 @@ const Launch = () => {
     {
       title: "90 Days of Done-For-You Content",
       value: "$2,550",
-      description: "Your personal ghostwriter creates 3 months of LinkedIn posts, articles, and email templates that position you as the go-to expert (while you sleep)",
+      description: "Your personal ghostwriter creates 3 months of LinkedIn posts and articles grow your audience, network, and position you as the go-to expert (while you sleep)",
       badge: "Limited Time"
     },
     {
-      title: "Weekly Hot Seat Coaching Calls",
+      title: "Weekly Workshops and Coaching Calls",
       value: "$2,400",
-      description: "Get Todd's direct feedback on your specific challenges + watch him tear down real opportunities and show you exactly how to land them"
+      description: "Get Todd's (and the whole Tech Leaders marketing team) direct feedback on your specific challenges + tear down real opportunities and show you exactly how to land them",
+      badge: "Live Sessions"
     },
     {
       title: "The $100K Opportunity Playbook",
-      value: "$1,997",
-      description: "Swipe files of exact scripts that landed our members 6-figure raises, board seats, and $25K+ consulting gigs"
-    },
-    {
-      title: "Mental Fitness Program Access",
-      value: "$1,200",
-      description: "Exclusive access to our executive mental fitness program designed to boost productivity, reduce stress, and maintain peak performance under pressure"
+      value: "$997",
+      description: "Swipe files of exact scripts that landed our members 6-figure raises, board seats, and $25K+ consulting gigs",
+      badge: "Guides and Examples"
     }
   ];
 
@@ -182,7 +184,7 @@ const Launch = () => {
             <div className="flex items-center justify-center gap-6 mb-8 text-sm font-semibold">
               <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Trusted by 150+ tech leaders</span>
+                <span>Trusted by 150+ tech leaders since 2022</span>
               </div>
             </div>
 
@@ -375,6 +377,8 @@ const Launch = () => {
                         <span className={`px-2 py-1 text-xs font-bold rounded-full ${
                           bonus.badge === "Most Valuable"
                             ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400"
+                            : bonus.badge === "Most Popular"
+                            ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
                             : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400"
                         }`}>
                           {bonus.badge}
@@ -393,13 +397,13 @@ const Launch = () => {
 
           <div className="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
             <p className="text-2xl font-bold text-muted-foreground mb-2">
-              Total Value: <span className="line-through text-muted-foreground">$15,797</span>
+              Total Value: <span className="line-through text-muted-foreground">$15,097</span>
             </p>
             <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
               Your Investment: $2,950
             </p>
             <p className="text-sm text-muted-foreground mt-2">
-              Save $12,847 when you join today (81% off)
+              Save $12,147 when you join today (81% off)
             </p>
           </div>
         </div>
