@@ -26,7 +26,7 @@ const Call = () => {
   }, []);
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
+      <SEO
         title="Book a Strategy Call - Technical Leaders"
         description="Schedule a free strategy call to discuss how to advance your technical leadership career. Get personalized guidance from experienced CTOs and tech executives."
         keywords={['technical leadership coaching', 'CTO mentorship', 'career strategy call', 'tech executive coaching']}
@@ -45,40 +45,47 @@ const Call = () => {
       {/* Main Content */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-          {/* Left Column - Benefits */}
+          {/* Left Column - Video */}
           <div>
             <Card className="p-8 bg-white dark:bg-gray-800 shadow-lg">
               <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                On This Intro Call, We'll:
+                Learn How Tech Leaders Works
               </h2>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-orange-500 mt-1 mr-3 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Discuss your current situation and past experiences to understand where you are now
-                  </p>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-orange-500 mt-1 mr-3 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Uncover your "#1 blocker" that's getting in the way of your goals
-                  </p>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-orange-500 mt-1 mr-3 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Develop a 3-step Action Plan to move forward with clarity and confidence
-                  </p>
-                </div>
+              <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl mb-6">
+                <iframe
+                  src="https://www.youtube.com/embed/TYCqWRjIm4s"
+                  title="What is Tech Leaders?"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Watch this 5-minute overview to understand how our system helps senior engineers become tech executives.
+              </p>
 
-              <div className="mt-8 p-6 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
-                <p className="text-sm text-gray-700 dark:text-gray-300 italic">
-                  "This call helped me identify exactly what was holding me back. The action plan we created was clear and achievable."
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                  - Senior Engineer at Fortune 500
-                </p>
+              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                On This Intro Call, We'll:
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0" />
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    Discuss your current situation and identify opportunities
+                  </p>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0" />
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    Uncover your "#1 blocker" that's limiting your opportunities
+                  </p>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0" />
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    Create a 3-step Action Plan to achieve your goals
+                  </p>
+                </div>
               </div>
             </Card>
           </div>
