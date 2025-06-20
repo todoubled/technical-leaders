@@ -27,8 +27,8 @@ const TLAIWorkflow = () => {
   // Hero content - Replace with content from Notion
   const heroContent = {
     badge: "Free Workshop",
-    headline: "The Tech Leader AI Workflow™ How to Easily Overdeliver Without ChatGPT",
-    subheadline: "How I DOUBLED My Delivery in HALF the Time with a Simple, No-ChatGPT (or Cursor/Windsurf) AI Workflow",
+    headline: "The Tech Leader AI Workflow™ How to Easily Overdeliver Without AI Slop",
+    subheadline: "How I DOUBLED My Delivery in HALF the Time with a Simple, No-ChatGPT (or Cursor/Windsurf/REPLit) AI Workflow",
     cta: "Register for the Free Workshop",
     ctaSecondary: "Watch Demo"
   };
@@ -97,8 +97,8 @@ const TLAIWorkflow = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="TL AI Workflow - Transform Your Tech Leadership with AI | Technical Leaders"
-        description="Join the waitlist for the revolutionary AI-powered workflow system that helps technical leaders 10x their impact through intelligent automation."
+        title="The Tech Leader AI Workflow™ How to Easily Overdeliver Without AI Slop | Technical Leaders"
+        description="Join the free workshop that helps technical leaders double their delivery in half the time with a simple, no-ChatGPT (or Cursor/Windsurf/REPLit) AI Workflow."
         keywords={["AI workflow", "technical leadership", "AI automation", "engineering productivity", "tech leadership AI"]}
       />
 
@@ -180,7 +180,7 @@ const TLAIWorkflow = () => {
               Why This 90-Minute Workshop Will Help You Redesign Your Workflows
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Without Using ChatGPT, Cursor, or Windsurf
+              Without Using ChatGPT, Cursor, Windsurf, or REPLit
             </p>
           </div>
 
