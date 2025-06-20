@@ -51,13 +51,13 @@ const About = () => {
 
             <div className="pl-8 space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Tech Leaders was founded by Todd Larsen and Stephen Bates to solve a critical gap in the tech industry. After years of watching brilliant developers struggle with the transition to leadership, we built the program we wished we had.
+                Tech Leaders was founded by Todd Larsen and Stephen Bates to solve a critical gap in the tech industry. After years of watching talented individual contributors struggle with the transition to leadership, we built the program we wished we had when we were growing our careers.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Todd brought 15 years of experience as a Global Platform Engineer at Groupon and Founding Engineer at Digit.co, building engineering teams and scalable products. Stephen contributed over 25 years of corporate training and leadership coaching expertise.
+                Todd brings 15+ years of experience as a Global Platform Engineer at Groupon and Founding Engineer at Digit.co, building engineering teams and scalable products. Stephen has over 25 years of corporate training and leadership coaching expertise across many industries across the world.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Together, we created Tech Leaders to help technical professionals excel in leadership without burning out, providing the practical skills and playbooks needed to increase your influence, impact, and income.
+                Together, we created Tech Leaders to help technical professionals excel in leadership and entrepreneurship without burning out, providing the practical skills and playbooks needed to increase your influence, impact, and income.
               </p>
             </div>
           </div>

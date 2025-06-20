@@ -26,8 +26,8 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
-            Leverage the <b>tools</b>, <b>playbooks</b>, and <b>coaching</b> to position your skills for premium pay (<i>without</i> burning out).<br /> <br />
-            Join hundreds of tech leaders from companies like <b>Calendly</b>, <b>Red Hat</b>, <b>Vercel</b>, <b>and more</b> who are diversifying their income, monetizing their expertise, and making a positive impact with AI.
+            Leverage the <b>tools</b>, <b>playbooks</b>, and <b>coaching</b> to position your skills and experience for premium pay (<i>without</i> burning out).<br /> <br />
+            Join hundreds of tech leaders from companies like <b>Calendly</b>, <b>Red Hat</b>, <b>Vercel</b>, <b>and more</b> who are <b>diversifying their income</b>, <b>monetizing their expertise</b>, and <b>making a positive impact</b> with AI.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
@@ -63,8 +63,8 @@ const Hero = () => {
       <div className="mt-20 -mx-4 sm:-mx-6 lg:-mx-8 relative z-10">
         <div className="bg-white dark:bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <p className="text-center text-xl text-muted-foreground mb-8">
-              Built By Tech Leaders, For Tech Leaders At Top Companies Like
+            <p className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8">
+              Trusted by Tech Leaders at
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
               <img src="/nike.png" alt="Nike" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />

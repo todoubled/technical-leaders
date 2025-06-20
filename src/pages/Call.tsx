@@ -61,7 +61,7 @@ const Call = () => {
                 />
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Watch this 5-minute overview to understand how our system helps senior engineers become tech executives.
+                Watch this 1-minute overview to understand how we help.
               </p>
 
               <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
