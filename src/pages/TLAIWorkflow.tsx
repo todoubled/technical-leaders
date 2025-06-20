@@ -28,7 +28,7 @@ const TLAIWorkflow = () => {
   const heroContent = {
     badge: "Free Workshop",
     headline: "The Tech Leader AI Workflow™ How to Easily Overdeliver Without AI Slop",
-    subheadline: "How I DOUBLED My Delivery in HALF the Time with a Simple, No-ChatGPT (or Cursor/Windsurf/REPLit) AI Workflow",
+    subheadline: "How I DOUBLED My Delivery in HALF the Time with a Simple, No-ChatGPT (or Gemini/Cursor/Windsurf/REPLit) AI Workflow",
     cta: "Register for the Free Workshop",
     ctaSecondary: "Watch Demo"
   };
@@ -98,7 +98,7 @@ const TLAIWorkflow = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="The Tech Leader AI Workflow™ How to Easily Overdeliver Without AI Slop | Technical Leaders"
-        description="Join the free workshop that helps technical leaders double their delivery in half the time with a simple, no-ChatGPT (or Cursor/Windsurf/REPLit) AI Workflow."
+        description="Join the free workshop that helps technical leaders double their delivery in half the time with a simple, no-ChatGPT (or Gemini/Cursor/Windsurf/REPLit) AI Workflow."
         keywords={["AI workflow", "technical leadership", "AI automation", "engineering productivity", "tech leadership AI"]}
       />
 
@@ -180,13 +180,13 @@ const TLAIWorkflow = () => {
               Why This 90-Minute Workshop Will Help You Redesign Your Workflows
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Without Using ChatGPT, Cursor, Windsurf, or REPLit
+              Without Using ChatGPT, Gemini, Cursor, Windsurf, or REPLit
             </p>
           </div>
 
           <div className="text-center mb-12">
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
-            Most freelancers, consultants, and agency owners are stuck. They’re juggling client work, scrambling to meet deadlines, and losing sleep over keeping up with the rapid pace of AI innovation. Everyone’s talking about ChatGPT, Cursor, and Windsurf, but no one’s showing a clear, simple path that actually delivers results.
+            Most freelancers, consultants, and agency owners are stuck. They’re juggling client work, scrambling to meet deadlines, and losing sleep over keeping up with the rapid pace of AI innovation. Everyone’s talking about ChatGPT, Gemini, Cursor, Windsurf, and REPLit, but no one’s showing a clear, simple path that actually delivers results based on a completely different tool: Claude Code.
             </p>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
