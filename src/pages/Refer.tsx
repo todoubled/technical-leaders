@@ -22,7 +22,7 @@ Let me know if you have any questions - I'd be happy to share more about my expe
 
 Best regards,
 [Your Name]`);
-    
+
     window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
 
@@ -95,7 +95,7 @@ Best regards,
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">Referral Program</h2>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              Know someone ready to <span className="font-semibold text-foreground">step up to the next level</span> in their technical leadership career? 
+              Know someone ready to <span className="font-semibold text-foreground">step up to the next level</span> in their technical leadership career?
               Help them discover the Technical Leaders Program and earn rewards for successful referrals.
             </p>
           </div>
@@ -107,7 +107,7 @@ Best regards,
                   More influence, impact, and income without burning out
                 </p>
                 <p className="text-muted-foreground">
-                  Our program is designed for technical professionals who are ready to advance their careers 
+                  Our program is designed for technical professionals who are ready to advance their careers
                   through proven leadership frameworks and strategies.
                 </p>
               </div>
@@ -151,7 +151,7 @@ Best regards,
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">How It Works</h2>
-          
+
           <div className="space-y-6">
             <div className="flex items-start">
               <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold mr-4 mt-1">
@@ -162,7 +162,7 @@ Best regards,
                 <p className="text-muted-foreground">Use our email template or share the program link with someone you think would benefit from technical leadership development.</p>
               </div>
             </div>
-            
+
             <div className="flex items-start">
               <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold mr-4 mt-1">
                 2
@@ -172,7 +172,7 @@ Best regards,
                 <p className="text-muted-foreground">Your referral enrolls in the program and completes their second month of membership.</p>
               </div>
             </div>
-            
+
             <div className="flex items-start">
               <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold mr-4 mt-1">
                 3
@@ -197,7 +197,7 @@ Best regards,
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Terms and Conditions</h2>
-          
+
           <Card className="bg-background border">
             <CardContent className="p-8">
               <div className="space-y-4">
@@ -235,10 +235,10 @@ Best regards,
                   Learn More About Program
                 </Button>
               </div>
-              
+
               {/* Social Links */}
               <div className="flex justify-center space-x-6 pt-6 border-t border-white/20">
-                <Button variant="ghost" size="sm" className="text-white hover:bg-white/20" 
+                <Button variant="ghost" size="sm" className="text-white hover:bg-white/20"
                   onClick={() => window.open('https://www.linkedin.com/company/technical-leaders', '_blank')}>
                   <Linkedin className="w-5 h-5" />
                 </Button>
@@ -251,7 +251,7 @@ Best regards,
                   <Youtube className="w-5 h-5" />
                 </Button>
               </div>
-              
+
               <p className="text-sm mt-4 text-white/80">
                 Technical Leaders, Inc.
               </p>

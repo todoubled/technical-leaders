@@ -52,13 +52,7 @@ const Call = () => {
                 Learn How Tech Leaders Works
               </h2>
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl mb-6">
-                <iframe
-                  src="https://www.youtube.com/embed/TYCqWRjIm4s"
-                  title="What is Tech Leaders?"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/bvTN0qP1MO4?si=Tx1TeD5-EDFXJ2kG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Watch this 1-minute overview to understand how we help.

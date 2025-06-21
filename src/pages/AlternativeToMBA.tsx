@@ -9,7 +9,7 @@ import SEO from "@/components/SEO";
 
 const AlternativeToMBA = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s";
+  const videoUrl = "https://youtu.be/bvTN0qP1MO4";
 
   const comparisonPoints = [
     {
@@ -149,8 +149,8 @@ const AlternativeToMBA = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed">
-              While your peers spend <span className="font-semibold">$200K and 2 years</span> on an MBA, 
-              you could land your first <span className="font-semibold">$25K+ opportunity in 90 days</span> with 
+              While your peers spend <span className="font-semibold">$200K and 2 years</span> on an MBA,
+              you could land your first <span className="font-semibold">$25K+ opportunity in 90 days</span> with
               Tech Leaders—at 1/50th the cost.
             </p>
 
@@ -330,7 +330,7 @@ const AlternativeToMBA = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
             Why MBAs Fail Technical Leaders
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {mbaProblems.map((item, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
@@ -401,7 +401,7 @@ const AlternativeToMBA = () => {
                 <h3 className="text-xl font-bold text-foreground">Real Tech Executive Skills</h3>
               </div>
               <p className="text-muted-foreground">
-                Not generic case studies—actual strategies from CTOs and VPs who've built $100M+ engineering orgs. 
+                Not generic case studies—actual strategies from CTOs and VPs who've built $100M+ engineering orgs.
                 Learn what really works in tech leadership, not what worked for GE in 1985.
               </p>
             </Card>
@@ -412,7 +412,7 @@ const AlternativeToMBA = () => {
                 <h3 className="text-xl font-bold text-foreground">90 Days of Executive Positioning</h3>
               </div>
               <p className="text-muted-foreground">
-                While MBA students write papers, we write your LinkedIn posts, articles, and emails that 
+                While MBA students write papers, we write your LinkedIn posts, articles, and emails that
                 position you as the go-to tech executive. Done for you while you focus on your day job.
               </p>
             </Card>
@@ -423,7 +423,7 @@ const AlternativeToMBA = () => {
                 <h3 className="text-xl font-bold text-foreground">Multiple Revenue Streams</h3>
               </div>
               <p className="text-muted-foreground">
-                MBAs teach you to climb one ladder. We show you how to build multiple: 
+                MBAs teach you to climb one ladder. We show you how to build multiple:
                 promotions, fractional roles, advisory positions, and consulting—all at once.
               </p>
             </Card>
@@ -434,7 +434,7 @@ const AlternativeToMBA = () => {
                 <h3 className="text-xl font-bold text-foreground">$25K+ Opportunity Guarantee</h3>
               </div>
               <p className="text-muted-foreground">
-                MBAs guarantee nothing but debt. We guarantee you'll land at least one opportunity 
+                MBAs guarantee nothing but debt. We guarantee you'll land at least one opportunity
                 worth $25K+ within 6 months, or we work with you until you do.
               </p>
             </Card>

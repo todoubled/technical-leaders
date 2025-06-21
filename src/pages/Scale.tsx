@@ -9,7 +9,7 @@ import SEO from "@/components/SEO";
 
 const Scale = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s"; // Replace with actual video
+  const videoUrl = "https://youtu.be/bvTN0qP1MO4"; // Replace with actual video
 
   const outcomes = [
     {
@@ -104,7 +104,7 @@ const Scale = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
+      <SEO
         title="Scale Program - Grow Your Tech Leadership Business"
         description="Transform your expertise into a scalable business. For technical leaders ready to build consulting practices, advisory roles, and thought leadership platforms."
         keywords={['tech leadership business', 'consulting for CTOs', 'technical advisory', 'fractional CTO', 'tech thought leadership']}

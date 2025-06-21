@@ -9,7 +9,7 @@ import SEO from "@/components/SEO";
 
 const AlternativeToSidebar = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s";
+  const videoUrl = "https://youtu.be/bvTN0qP1MO4";
 
   const comparisonPoints = [
     {
@@ -134,8 +134,8 @@ const AlternativeToSidebar = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed">
-              While Sidebar offers peer circles for any executive, Tech Leaders delivers 
-              <span className="font-semibold"> guaranteed $25K+ opportunities</span> specifically for senior engineers 
+              While Sidebar offers peer circles for any executive, Tech Leaders delivers
+              <span className="font-semibold"> guaranteed $25K+ opportunities</span> specifically for senior engineers
               ready to monetize their expertise.
             </p>
 
@@ -249,7 +249,7 @@ const AlternativeToSidebar = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
             The Problems with Sidebar (And How We Solve Them)
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {sidebarProblems.map((item, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
@@ -341,7 +341,7 @@ const AlternativeToSidebar = () => {
                 <h3 className="text-xl font-bold text-foreground">90 Days of Done-For-You Content ($2,550 Value)</h3>
               </div>
               <p className="text-muted-foreground">
-                While Sidebar members struggle to find time for networking, we give you 3 months of LinkedIn posts, 
+                While Sidebar members struggle to find time for networking, we give you 3 months of LinkedIn posts,
                 articles, and emails that position you as the go-to expert—written by our team while you focus on your day job.
               </p>
             </Card>
@@ -352,7 +352,7 @@ const AlternativeToSidebar = () => {
                 <h3 className="text-xl font-bold text-foreground">Proven Playbooks & Templates ($1,997 Value)</h3>
               </div>
               <p className="text-muted-foreground">
-                Exact scripts that landed our members 6-figure raises, board seats, and $25K+ consulting gigs. 
+                Exact scripts that landed our members 6-figure raises, board seats, and $25K+ consulting gigs.
                 Not theory—actual templates you can use tomorrow.
               </p>
             </Card>
@@ -363,7 +363,7 @@ const AlternativeToSidebar = () => {
                 <h3 className="text-xl font-bold text-foreground">Weekly Implementation Calls ($2,400 Value)</h3>
               </div>
               <p className="text-muted-foreground">
-                Get Todd's direct feedback on your specific challenges. Watch him tear down real opportunities 
+                Get Todd's direct feedback on your specific challenges. Watch him tear down real opportunities
                 and show you exactly how to land them. (Sidebar offers peer discussions only.)
               </p>
             </Card>
@@ -374,7 +374,7 @@ const AlternativeToSidebar = () => {
                 <h3 className="text-xl font-bold text-foreground">$25K+ Opportunity Guarantee</h3>
               </div>
               <p className="text-muted-foreground">
-                If you don't land at least one opportunity worth $25K+ within 6 months, we work with you 
+                If you don't land at least one opportunity worth $25K+ within 6 months, we work with you
                 for free until you do. Sidebar offers... hope?
               </p>
             </Card>

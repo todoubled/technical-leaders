@@ -8,7 +8,7 @@ import VideoModal from "@/components/VideoModal";
 
 const AITradeSchool = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s"; // Replace with actual video
+  const videoUrl = "https://youtu.be/bvTN0qP1MO4"; // Replace with actual video
 
   const benefits = [
     {

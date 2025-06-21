@@ -6,7 +6,7 @@ import VideoModal from "./VideoModal";
 
 const Hero = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://www.youtube.com/watch?v=TYCqWRjIm4s"; // Replace with your actual video URL
+  const videoUrl = "https://youtu.be/bvTN0qP1MO4"; // Replace with your actual video URL
 
   return (
     <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/20 relative overflow-hidden">
