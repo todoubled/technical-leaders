@@ -239,15 +239,15 @@ Best regards,
               {/* Social Links */}
               <div className="flex justify-center space-x-6 pt-6 border-t border-white/20">
                 <Button variant="ghost" size="sm" className="text-white hover:bg-white/20"
-                  onClick={() => window.open('https://www.linkedin.com/company/technical-leaders', '_blank')}>
+                  onClick={() => window.open('https://www.linkedin.com/in/remotebranch', '_blank')}>
                   <Linkedin className="w-5 h-5" />
                 </Button>
                 <Button variant="ghost" size="sm" className="text-white hover:bg-white/20"
-                  onClick={() => window.open('https://twitter.com/technicalleaders', '_blank')}>
+                  onClick={() => window.open('https://twitter.com/remotebranch', '_blank')}>
                   <Twitter className="w-5 h-5" />
                 </Button>
                 <Button variant="ghost" size="sm" className="text-white hover:bg-white/20"
-                  onClick={() => window.open('https://youtube.com/technicalleaders', '_blank')}>
+                  onClick={() => window.open('https://youtube.com/remotebranch', '_blank')}>
                   <Youtube className="w-5 h-5" />
                 </Button>
               </div>

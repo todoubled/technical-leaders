@@ -9,7 +9,7 @@ import SEO from "@/components/SEO";
 
 const Launch = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://youtu.be/bvTN0qP1MO4";
+  const videoUrl = "https://youtu.be/VKetl72iSlk";
 
   const transformations = [
     {

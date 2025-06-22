@@ -9,7 +9,7 @@ import VideoModal from "@/components/VideoModal";
 
 const TLAIWorkflow = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://youtu.be/bvTN0qP1MO4"; // Replace with actual video URL
+  const videoUrl = "https://youtu.be/VKetl72iSlk"; // Replace with actual video URL
 
   useEffect(() => {
     // Simple approach: inject script into the form container

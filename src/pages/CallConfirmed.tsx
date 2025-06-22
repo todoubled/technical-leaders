@@ -71,14 +71,7 @@ export default function CallConfirmed() {
           <Card className="overflow-hidden">
             <CardContent className="p-0">
               <div className="aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/lVKg4K5cc-c"
-                  title="Watch This Before Our Call"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/VKetl72iSlk?si=xxlfHLSsP6kmVd1Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
             </CardContent>
           </Card>

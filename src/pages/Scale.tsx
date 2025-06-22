@@ -9,7 +9,7 @@ import SEO from "@/components/SEO";
 
 const Scale = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoUrl = "https://youtu.be/bvTN0qP1MO4"; // Replace with actual video
+  const videoUrl = "https://youtu.be/VKetl72iSlk"; // Replace with actual video
 
   const outcomes = [
     {
