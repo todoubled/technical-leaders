@@ -18,6 +18,7 @@ import Refer from "./pages/Refer";
 import AlternativeToSidebar from "./pages/AlternativeToSidebar";
 import AlternativeToMBA from "./pages/AlternativeToMBA";
 import TLAIWorkflow from "./pages/TLAIWorkflow";
+import PlaybookConfirmed from "./pages/PlaybookConfirmed";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/alternative-to-mba" element={<AlternativeToMBA />} />
           <Route path="/tl-ai-workflow" element={<TLAIWorkflow />} />
           <Route path="/workshop" element={<Navigate to="/tl-ai-workflow" replace />} />
+          <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
