@@ -221,6 +221,64 @@ const Launch = () => {
         </div>
       </section>
 
+      {/* Success Metrics Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 relative -mt-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+              Our mastermind delivers life-changing outcomes
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-card/50 backdrop-blur-sm p-6 rounded-lg text-center hover:bg-card/80 transition-all duration-300 border border-border/50">
+              <div className="mb-3">
+                <Award className="w-10 h-10 mx-auto text-yellow-500/80" />
+              </div>
+              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-1">
+                6 Days
+              </p>
+              <p className="text-base font-semibold text-foreground mb-1">
+                Fastest First Client
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Record time from joining to landing their first high-value opportunity
+              </p>
+            </div>
+
+            <div className="bg-card/50 backdrop-blur-sm p-6 rounded-lg text-center hover:bg-card/80 transition-all duration-300 border border-border/50">
+              <div className="mb-3">
+                <TrendingUp className="w-10 h-10 mx-auto text-green-500/80" />
+              </div>
+              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-1">
+                60-90
+              </p>
+              <p className="text-base font-semibold text-foreground mb-1">
+                Days to Success
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Average time for members to secure their next major opportunity
+              </p>
+            </div>
+
+            <div className="bg-card/50 backdrop-blur-sm p-6 rounded-lg text-center hover:bg-card/80 transition-all duration-300 border border-border/50">
+              <div className="mb-3">
+                <Users className="w-10 h-10 mx-auto text-purple-500/80" />
+              </div>
+              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-1">
+                28%
+              </p>
+              <p className="text-base font-semibold text-foreground mb-1">
+                Join Through Referrals
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Word-of-mouth from successful members drives our growth
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
 
       {/* Transformation Section */}
