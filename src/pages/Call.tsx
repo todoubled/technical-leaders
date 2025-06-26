@@ -17,7 +17,7 @@ const Call = () => {
     // Check if Calendly is already loaded
     if (window.Calendly) {
       window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/tech-leaders/intro?hide_event_type_details=1&hide_gdpr_banner=1',
+        url: 'https://calendly.com/d/cqqn-58s-rqc/tech-leaders-intro-call?hide_event_type_details=1&hide_gdpr_banner=1',
         parentElement: document.querySelector('.calendly-inline-widget'),
         prefill: {},
         utm: {}
@@ -93,7 +93,7 @@ const Call = () => {
 
               {/* Calendar Widget Placeholder */}
               <div className="rounded-lg p-8 text-center min-h-[400px] flex flex-col items-center justify-center">
-                <div className="calendly-inline-widget" data-url="https://calendly.com/tech-leaders/intro?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: "320px", height: "500px" }}></div>
+                <div className="calendly-inline-widget" data-url="https://calendly.com/d/cqqn-58s-rqc/tech-leaders-intro-call?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: "320px", height: "700px" }}></div>
               </div>
 
               <div className="mt-6 text-center">
