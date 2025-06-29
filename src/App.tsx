@@ -20,6 +20,7 @@ import AlternativeToMBA from "./pages/AlternativeToMBA";
 import TLAIWorkflow from "./pages/TLAIWorkflow";
 import PlaybookConfirmed from "./pages/PlaybookConfirmed";
 import ShipAI from "./pages/ShipAI";
+import AiExecutiveStrategy from "./pages/AiExecutiveStrategy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/workshop" element={<Navigate to="/tl-ai-workflow" replace />} />
           <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
           <Route path="/ship-ai" element={<ShipAI />} />
+          <Route path="/ai-executive-strategy-program" element={<AiExecutiveStrategy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
