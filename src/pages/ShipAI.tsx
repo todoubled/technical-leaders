@@ -85,7 +85,7 @@ const ShipAI = () => {
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
               We're inviting you to join a tight 12-week sprint with us.
-              Build, iterate, and ship real AI projects with expert guidance and peer support.
+              Build, iterate, and ship real AI projects with marketing and AI expert guidance and peer support.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -175,7 +175,7 @@ const ShipAI = () => {
                 <Card className="flex-1 p-6">
                   <h3 className="text-xl font-semibold mb-2 text-foreground">Pre-Launch Prep</h3>
                   <p className="text-muted-foreground">
-                    14-day onboarding: Map out your goals and get your Phase 1 gameplan ready
+                    7-day onboarding: Map out your goals and get your Phase 1 gameplan ready
                   </p>
                 </Card>
               </div>
@@ -199,7 +199,7 @@ const ShipAI = () => {
                 <Card className="flex-1 p-6">
                   <h3 className="text-xl font-semibold mb-2 text-foreground">Scale & Monetize</h3>
                   <p className="text-muted-foreground">
-                    Iterate based on feedback, expand scope, and dial in your monetization/promotion strategy
+                  Iterate based on feedback, expand scope, and dial in your monetization/promotion strategy
                   </p>
                 </Card>
               </div>
@@ -240,6 +240,38 @@ const ShipAI = () => {
               saving 5-10 hours per week within the first month.
             </p>
           </Card>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+            What Our Students Say
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 bg-gradient-to-br from-card to-purple-500/5">
+              <p className="text-foreground mb-4 italic">"AI tools have become integral to my daily work, streamlining processes and freeing up significant time for strategic contributions."</p>
+              <div>
+                <p className="font-semibold text-foreground">Joy Mycka</p>
+                <p className="text-sm text-muted-foreground">Business Analyst, CARDS, Inc.</p>
+              </div>
+            </Card>
+            <Card className="p-6 bg-gradient-to-br from-card to-purple-500/5">
+              <p className="text-foreground mb-4 italic">"It's enabled me to develop something with no experience of coding, the power this gives me is mind blowing, I can build stuff I could have only dreamt about before."</p>
+              <div>
+                <p className="font-semibold text-foreground">Will Stogdale</p>
+                <p className="text-sm text-muted-foreground">Owner, Boost Design Agency</p>
+              </div>
+            </Card>
+            <Card className="p-6 bg-gradient-to-br from-card to-purple-500/5">
+              <p className="text-foreground mb-4 italic">"The program rewired how I think about solving business problems using AI. I walked away with real skills I use every day to work smarter and faster."</p>
+              <div>
+                <p className="font-semibold text-foreground">Amelia Leigner</p>
+                <p className="text-sm text-muted-foreground">Head of Product, Seek Invest</p>
+              </div>
+            </Card>
+          </div>
         </div>
       </section>
 
