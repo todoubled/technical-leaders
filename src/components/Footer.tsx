@@ -41,14 +41,6 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="/alternative-to-sidebar"
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Tech Leaders vs. Sidebar
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="/alternative-to-mba"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
