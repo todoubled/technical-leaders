@@ -141,35 +141,6 @@ const CallTemplates = () => {
         </div>
       </section>
 
-      {/* Additional CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-            Ready to Transform Your Consulting Practice?
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Download your free templates and book your strategy session to start seeing results immediately.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-orange-500 hover:bg-orange-600"
-            >
-              <Download className="h-4 w-4 mr-2" />
-              Get All Templates
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20"
-            >
-              <Clock className="h-4 w-4 mr-2" />
-              Book Strategy Call
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
