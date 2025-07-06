@@ -3,41 +3,47 @@
 ```mermaid
 graph TD
     TL[Tech Leaders]
+    TL1[Tech Leaders EU]
+    TL2[Tech Leaders US]
     B8[Bottega8]
 
-    Todd[Todd - Co-Founder]
-    Stephen[Stephen - Co-Founder]
-    John[John - GM & Coach]
-    Nick[Nick - Founder]
-    Amelia[Amelia - Marketing]
-    Lindsay[Lindsay]
-    VAs1[Virtual Assistants Pod 1]
-    VAs2[Virtual Assistants Pod 2]
+    Todd[Todd Larsen - Co-Founder]
+    Stephen[Stephen Bates - Co-Founder]
+    John[John Chapman - GM / Coach]
+    Nick[Nick Talwar - Founder]
+    Amelia[Amelia Leigner - CMO]
+    Lindsay[Lindsay Gould - AI Operations Intern]
+    VAs[Virtual Assistants]
+    Harry[Harry Gladwin - Sales Advisor]
 
-    TL --> Todd
-    TL --> Stephen
+
+    TL --> TL1
+    TL --> TL2
+    TL2 --> Todd
+    TL1 --> Stephen
     B8 --> Nick
 
     Stephen --> John
     Todd --> Amelia
+    Todd --> Harry
     Nick --> Amelia
     Nick --> Lindsay
 
-    Lindsay -.-> Todd
-    Lindsay -.-> Amelia
+    Amelia -.-> Lindsay
+    Todd -.-> Lindsay
 
-    John --> VAs1
-    Amelia --> VAs2
+    John --> VAs
+    Amelia --> VAs
 
-    TL <-.Partnership.-> B8
+    TL2 <-.Partnership.-> B8
 
     classDef company fill:#f59e0b,stroke:#d97706,stroke-width:3px,color:#fff
     classDef leader fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#fff
     classDef va fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
 
-    class TL,B8 company
-    class Todd,Stephen,John,Nick,Amelia,Lindsay leader
-    class VAs1,VAs2 va
+    class TL,B8,TL1,TL2 company
+    class Todd,Stephen,John,Nick,Amelia leader
+    class VAs,Harry,Lindsay va
 ```
 
 ## Company Structure
@@ -47,8 +53,8 @@ graph TD
 - **Stephen** - Co-Founder
 - **John** - CTO
 - **Amelia** - VP Marketing
-- **Virtual Assistants Pod 1** - Support Staff
-- **Virtual Assistants Pod 2** - Support Staff
+- **Virtual Assistants** - Support Staff
+- **Harry** - Sales Advisor
 
 ### Bottega8
 - **Nick** - Founder
