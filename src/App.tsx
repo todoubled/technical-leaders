@@ -23,6 +23,7 @@ import ShipAI from "./pages/ShipAI";
 import AiExecutiveStrategy from "./pages/AiExecutiveStrategy";
 import AiPlaybookExecutives from "./pages/AiPlaybookExecutives";
 import CallTemplates from "./pages/CallTemplates";
+import LaunchWithUs from "./pages/LaunchWithUs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/ai-executive-strategy-program" element={<AiExecutiveStrategy />} />
           <Route path="/ai-playbook-executives" element={<AiPlaybookExecutives />} />
           <Route path="/call-templates" element={<CallTemplates />} />
+          <Route path="/launch-with-us" element={<LaunchWithUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
