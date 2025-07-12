@@ -2,29 +2,29 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock, TrendingUp, Shield } from "lucide-react";
+import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock, TrendingUp, Shield, Star } from "lucide-react";
 
 const LaunchWithUs = () => {
   const phases = [
     {
       title: "Phase 1: Launch",
       icon: Rocket,
-      description: "1:1 strategy sessions to get crystal clear on your scalable offer and lock in your first customer fast",
+      description: "Workshops, tools, and private coaching to get crystal clear on your scalable offer, positioning, and funnel so you can lock in your first customer fast",
       features: [
-        "Define your niche and offer positioning",
+        "Define your niche, offer, and pricing",
+        "First 3 months of content written for you",
         "Lock in your first customer",
-        "Immediate ROI focus",
-        "Tactical implementation"
+        "Immediate ROI focus"
       ]
     },
     {
       title: "Phase 2: Scale",
       icon: TrendingUp,
-      description: "Strategic diagnostics and proven systems to scale your expertise into a cash-generating machine",
+      description: "Private coaching, opportunity referrals, and access to our in-house marketing team and systems to scale your expertise into a cash-generating machine",
       features: [
         "6-Week Gameplan™ cycles",
         "Identify & fix constraints",
-        "Done-for-you systems",
+        "Done-for-you marketing systems",
         "Weekly guidance & tracking"
       ]
     }
@@ -56,8 +56,31 @@ const LaunchWithUs = () => {
   const idealFor = [
     "Have 10+ years of deep experience working with EU or US companies",
     "Are willing to share your unique perspectives publicly to attract ideal opportunities",
-    "Are friendly and coachable",
-    "And you won't make fun of my bald headed content..."
+    "Are friendly, coachable, and open to feedback in a psychologically safe environment"
+  ];
+
+  const testimonials = [
+    {
+      quote: "For this client, it's a fractional gig that will replace all my income, which means I can go and do this fractional thing for three days a week and then have two days to apply all the other learnings. Massive, massive win.",
+      author: "C.F.",
+      title: "Fractional CTO, Ireland",
+      income: "Replaced full income with 3-day week",
+      stars: 5
+    },
+    {
+      quote: "Applying my new approach learned through Tech Leaders, has led to a new job offer and a promotion",
+      author: "K.D.",
+      title: "Director of Customer Success, Colorado",
+      income: "New job offer + promotion",
+      stars: 5
+    },
+    {
+      quote: "It is harder than I thought, specifically talking about yourself as a product or service offering is not something I really ever had to do working in a large corporation for the majority of the last three decades.",
+      author: "F.C.",
+      title: "Fractional CTO, Ann Arbor",
+      income: "Transitioned from corporate to fractional",
+      stars: 5
+    }
   ];
 
   return (
@@ -79,7 +102,7 @@ const LaunchWithUs = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Launch With Us
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 mt-2">
-                Turn Your Expertise Into Income
+                Turn Your Expertise Into Independent Income
               </span>
             </h1>
 
@@ -90,7 +113,7 @@ const LaunchWithUs = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-6"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-8 py-6"
                 onClick={() => window.location.href = "#apply"}
               >
                 Reserve Your Spot
@@ -174,19 +197,19 @@ const LaunchWithUs = () => {
                 <Card className="flex-1 p-6">
                   <h3 className="text-xl font-semibold mb-2 text-foreground">Launch</h3>
                   <p className="text-muted-foreground">
-                    Get crystal clear on your scalable offer and lock in your first customer fast
+                    Get crystal clear on your scalable offer, positioning, and lock in your first customer fast
                   </p>
                 </Card>
               </div>
 
               <div className="flex items-start gap-4">
                 <div className="w-24 h-24 rounded-full text-center bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold flex-shrink-0 relative z-10">
-                  6 Weeks
+                  Every 6 Weeks
                 </div>
                 <Card className="flex-1 p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">First 6-Week Gameplan™</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">6-Week Sprint Plans</h3>
                   <p className="text-muted-foreground">
-                    Diagnostic process to identify your biggest constraint and install the right system
+                    Diagnostic process to identify your biggest constraint and install the right system to scale your income without burning out
                   </p>
                 </Card>
               </div>
@@ -249,6 +272,29 @@ const LaunchWithUs = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+            What Our Members Say
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                <p className="text-foreground mb-4 italic text-sm leading-relaxed">"{testimonial.quote}"</p>
+                <div className="border-t pt-4">
+                  <p className="font-semibold text-foreground">{testimonial.author}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                  <p className="text-sm font-semibold text-green-600 dark:text-green-400 mt-2">
+                    {testimonial.income}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section id="apply" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-500/10 to-pink-600/10">
         <div className="max-w-4xl mx-auto text-center">
@@ -278,33 +324,20 @@ const LaunchWithUs = () => {
 
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-12 py-6 w-full md:w-auto"
-              onClick={() => window.location.href = "mailto:todd@technical-leaders.com?subject=I'm In - Mastermind Coaching Program"}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-12 py-6 w-full md:w-auto"
+              onClick={() => window.location.href = "https://buy.stripe.com/bIY7we76B2L9bwAeV2"}
             >
-              DM "I'm In" to Get Started
+              Get Started
             </Button>
 
             <p className="text-sm text-muted-foreground mt-4">
-              💳 Small group • 🔒 Hand-selected participants
-            </p>
-
-            <div className="mt-8 space-y-2 text-sm text-muted-foreground">
-              <p><strong>Step 1:</strong> DM me the words "I'm In"</p>
-              <p><strong>Step 2:</strong> We'll get you enrolled</p>
-              <p><strong>Step 3:</strong> We'll get you set up in the program and book your Gameplan</p>
-            </div>
-
-            <p className="text-sm text-muted-foreground mt-6">
-              <strong>P.S.</strong> As soon as you decide, we'll get you access to our Revenue Generating
-              Playbook — so you can start driving cash before we even officially start.
+              💳 Payment Plans Available • 🔒 Hand-selected participants
             </p>
           </Card>
 
-          <p className="text-muted-foreground">
-            Questions? Email me at{" "}
-            <a href="mailto:todd@technical-leaders.com" className="text-purple-600 hover:underline">
-              todd@technical-leaders.com
-            </a>
+          <p className="text-sm text-muted-foreground mt-6">
+            <strong>P.S.</strong> As soon as you decide, we'll get you access to our Revenue Generating
+            Playbook — so you can start driving cash before we even officially start.
           </p>
         </div>
       </section>
