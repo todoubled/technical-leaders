@@ -457,7 +457,7 @@ export default function ArticlePage() {
               <Button 
                 size="lg" 
                 variant="secondary"
-                onClick={() => window.location.href = 'https://techleaders.kit.com/playbook'}
+                onClick={() => window.location.href = 'https://techleaders.kit.com/playbook?utm_source=technical-leaders-blog'}
               >
                 Get the Playbook
               </Button>

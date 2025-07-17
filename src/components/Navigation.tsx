@@ -39,7 +39,7 @@ const Navigation = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
               <a href="/articles" className="text-foreground hover:text-primary transition-colors">Articles</a>
-              <a href="https://techleaders.kit.com/playbook" target="_blank" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
+              <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ const Navigation = () => {
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>
-            <a href="https://techleaders.kit.com/playbook" target="_blank" className="block px-3 py-2 text-foreground hover:text-primary">Get the Playbook</a>
+            <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="block px-3 py-2 text-foreground hover:text-primary">Get the Playbook</a>
             <div className="px-3 py-2 space-y-2">
               <Button variant="ghost" className="w-full" onClick={() => { window.location.href = "https://skool.com/tech-leaders" }}>Sign In</Button>
               <Button className="w-full" onClick={() => { window.location.href = "/call" }}>Book Intro Call</Button>
