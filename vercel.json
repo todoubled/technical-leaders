@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/benchmark",
+      "destination": "https://airtable.com/appISrtODYeSTN5Lb/pagLNelw4FGEwXZxu/form",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
