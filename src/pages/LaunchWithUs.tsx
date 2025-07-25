@@ -622,6 +622,7 @@ const LaunchWithUs = () => {
                 <div className="text-center">
                   <p className="text-4xl font-bold text-foreground">$850/mo</p>
                   <p className="text-lg text-muted-foreground">For 12 months to scale</p>
+                  <p className="text-sm text-purple-600 font-semibold mt-1">(optional)</p>
                 </div>
               </div>
             </div>
