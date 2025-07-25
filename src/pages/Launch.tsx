@@ -34,7 +34,6 @@ const Launch = () => {
     {
       icon: Target,
       title: "Ideal Client Profile",
-      week: "Weeks 1-2",
       description: "Define your Ideal Customer Profile and position yourself as their perfect solution",
       outcomes: [
         "Crystal clear on who you serve",
@@ -44,7 +43,6 @@ const Launch = () => {
     {
       icon: FileText,
       title: "Scalable Offer",
-      week: "Weeks 3-4",
       description: "Package your expertise into high-value offers that practically sell themselves",
       outcomes: [
         "$10k+ offer framework",
@@ -55,7 +53,6 @@ const Launch = () => {
     {
       icon: Zap,
       title: "Revenue Generating Activities",
-      week: "Weeks 5-12",
       description: "Execute daily actions that directly lead to new opportunities and income",
       outcomes: [
         "3 months of content written for you",
@@ -353,7 +350,6 @@ const Launch = () => {
                         <span className="text-3xl font-bold">{index + 1}</span>
                       </div>
                       <h3 className="text-2xl font-bold mb-2">{module.title}</h3>
-                      <p className="text-blue-100">{module.week}</p>
                     </div>
                   </div>
                   <div className="md:w-2/3 p-8">
