@@ -18,6 +18,7 @@ import Refer from "./pages/Refer";
 import AlternativeToSidebar from "./pages/AlternativeToSidebar";
 import AlternativeToMBA from "./pages/AlternativeToMBA";
 import TLAIWorkflow from "./pages/TLAIWorkflow";
+import RGAWorkshop from "./pages/RGAWorkshop";
 import PlaybookConfirmed from "./pages/PlaybookConfirmed";
 import ShipAI from "./pages/ShipAI";
 import AiExecutiveStrategy from "./pages/AiExecutiveStrategy";
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/alternative-to-mba" element={<AlternativeToMBA />} />
           <Route path="/tl-ai-workflow" element={<TLAIWorkflow />} />
           <Route path="/workshop" element={<Navigate to="/tl-ai-workflow" replace />} />
+          <Route path="/in-demand" element={<RGAWorkshop />} />
           <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
           <Route path="/ship-ai" element={<ShipAI />} />
           <Route path="/ai-executive-strategy-program" element={<AiExecutiveStrategy />} />
