@@ -11,8 +11,8 @@ const RGAWorkshop = () => {
   const heroContent = {
     badge: "LIVE Workshop",
     headline: "The Invisible to In-Demand™ Workshop",
-    subheadline: "Turn your expertise into daily opportunities—without hours on LinkedIn",
-    description: "The Lead System Built for Experts Who Hate Selling Themselves.",
+    subheadline: "Turn your expertise into daily opportunities without hours on LinkedIn",
+    description: "The Lead System Built for Experts Who Hate Selling Themselves",
     cta: "Secure My Spot for $50"
   };
 
@@ -76,7 +76,7 @@ const RGAWorkshop = () => {
     {
       icon: MessageSquare,
       title: "Bonus #1: High-Trust Message Templates",
-      description: "Plug-and-play scripts for sparking conversations that convert—without feeling like a cold pitch."
+      description: "Plug-and-play scripts for sparking conversations that convert, without feeling like a cold pitch."
     },
     {
       icon: Shield,
@@ -91,7 +91,7 @@ const RGAWorkshop = () => {
     {
       icon: Target,
       title: "Bonus #4: The \"Inbound Magnet\" Message Swipe File",
-      description: "My top-performing messages to convert lurkers and profile viewers into real leads—ready to talk."
+      description: "My top-performing messages to convert lurkers and profile viewers into real leads who are ready to talk."
     }
   ];
 
@@ -178,7 +178,7 @@ const RGAWorkshop = () => {
               </div>
               <div className="mt-8 pt-6 border-t border-primary/20">
                 <p className="text-sm text-muted-foreground italic">
-                  Replay included—yours for life. Can't join live? No problem.
+                  Replay included (yours for life). Can't join live? No problem.
                 </p>
               </div>
             </div>
@@ -198,10 +198,10 @@ const RGAWorkshop = () => {
               <p className="font-semibold">But somehow… your calendar is empty.</p>
               <p>You post occasionally. You comment. You've tried being "consistent."</p>
               <p className="text-2xl font-bold text-foreground">Still? Crickets.</p>
-              <p>It's not that your offer is weak. It's that you're running a system built for attention-seekers—not quiet experts.</p>
+              <p>It's not that your offer is weak. It's that you're running a system built for attention-seekers, not quiet experts.</p>
               <p className="text-xl font-semibold text-foreground mt-6">The good news?</p>
               <p className="text-2xl font-bold text-primary">You don't need to play the game.</p>
-              <p>You just need a simple, consistent way to attract the right leads—without posting daily, pitching cold, or burning out.</p>
+              <p>You just need a simple, consistent way to attract the right leads, without posting daily, pitching cold, or burning out.</p>
               <p className="text-xl font-semibold text-foreground mt-6">In this workshop, I'll walk you through the exact system I use to generate daily inbound leads without selling myself.</p>
             </div>
           </div>
@@ -314,7 +314,7 @@ const RGAWorkshop = () => {
             Ready to Stop Chasing and Start Attracting?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Hate selling yourself? This system does the heavy lifting—grab your seat now.
+            Hate selling yourself? This system does the heavy lifting. Grab your seat now.
           </p>
           <Button
             size="lg"
