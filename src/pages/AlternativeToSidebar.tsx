@@ -154,7 +154,7 @@ const AlternativeToSidebar = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "https://buy.stripe.com/bIY7we76B2L9bwAeV2"}
+                onClick={() => window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"}
               >
                 Join Tech Leaders - $2,950
               </Button>
@@ -466,7 +466,7 @@ const AlternativeToSidebar = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-12 py-6 w-full md:w-auto mb-4"
-              onClick={() => window.location.href = "https://buy.stripe.com/bIY7we76B2L9bwAeV2"}
+              onClick={() => window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"}
             >
               Switch to Tech Leaders - $2,950
             </Button>
