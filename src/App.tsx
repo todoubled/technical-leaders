@@ -26,6 +26,7 @@ import AiPlaybookExecutives from "./pages/AiPlaybookExecutives";
 import CallTemplates from "./pages/CallTemplates";
 import LaunchWithUs from "./pages/LaunchWithUs";
 import HowToModelYourOffer from "./pages/HowToModelYourOffer";
+import FinanceForFounders from "./pages/FinanceForFounders";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/call-templates" element={<CallTemplates />} />
           <Route path="/launch-with-us" element={<LaunchWithUs />} />
           <Route path="/how-to-model-your-offer" element={<HowToModelYourOffer />} />
+          <Route path="/finance-for-founders" element={<FinanceForFounders />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
