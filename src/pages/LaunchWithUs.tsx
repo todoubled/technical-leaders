@@ -690,40 +690,56 @@ const LaunchWithUs = () => {
           <div className="space-y-6">
             {[
               {
-                q: "How much time do I need to commit?",
-                a: "Just 2-3 hours per week of async self-study and live coaching sessions. All mastermind sessions are recorded, so if you miss one live, you can catch up when convenient. Most members find this fits easily into their schedule while delivering life-changing results."
+                q: "How quickly can I expect to see revenue from the program?",
+                a: "Revenue timing depends on your offer price and target market. Some members close 6-figure enterprise contracts within 60-90 days, while others build steady $5K-$15K monthly retainers within 30-45 days. Our fastest member landed their first client in just 6 days. Your results scale with your commitment and the value of your expertise."
               },
               {
-                q: "What if I'm not sure about my goals yet?",
-                a: "Perfect! That's exactly why you need this program. 80% of our members discover bigger, better goals once they realize their true market value. Our first priority is helping you get crystal clear on your path to maximum impact and income."
-              },
-              {
-                q: "What if I have a problem with Imposter Syndrome?",
-                a: "You're not alone - 70% of tech professionals struggle with this, and 40% let it seriously damage their results. Overcoming imposter syndrome and building unshakeable confidence is one of our specialties. You'll join a community where your expertise is recognized and valued."
+                q: "What's your success guarantee?",
+                a: "We guarantee we'll work with you until you achieve ICP/Offer fit and land your first paying client - as long as it takes. The more effort you invest, the harder we'll work alongside you. This isn't a magic bullet, but a proven system backed by our commitment to your success. Most members recoup their investment before they finish paying for the program."
               },
               {
                 q: "How long before I can expect a result?",
                 a: "We expect you to achieve a significant breakthrough within 6 months, but most members see opportunities start flowing in 30-45 days. Our entire system is designed around rapid, measurable progress with support at every step."
               },
               {
-                q: "Do I have to attend the weekly live sessions to succeed?",
-                a: "While sessions are recorded for flexibility, members who attend live consistently get the biggest results fastest. Sessions run Monday, Tuesday, and Wednesday at 10am CST to accommodate global schedules. The live interaction and community support are game-changers."
+                q: "What if I'm already at a senior level?",
+                a: "Perfect. This program is specifically designed for senior professionals ready to break through to executive-level opportunities. Many of our most successful members are already Directors, VPs, and senior leaders who want to accelerate to the next level."
+              },
+              {
+                q: "Will the LinkedIn strategy actually grow my network?",
+                a: "LinkedIn caps outbound requests at 500/month, but our proven content strategy attracts quality inbound connections too. Most members see 2-3x network growth in 90 days - but it's about quality over quantity. We help you connect with decision-makers in your ICP, not random connections. The right 100 connections beat 10,000 irrelevant ones."
+              },
+              {
+                q: "Can this help me secure board positions?",
+                a: "Absolutely. We can position board directors and founders as your ICP and craft a board advisory offer that showcases your strategic value. Several members have successfully landed board seats by packaging their expertise as high-level strategic advisory services. We'll workshop your specific board positioning together."
+              },
+              {
+                q: "How much time do I need to commit?",
+                a: "Just 2-3 hours per week of async self-study and live coaching sessions. All mastermind sessions are recorded, so if you miss one live, you can catch up when convenient. Most members find this fits easily into their schedule while delivering life-changing results."
               },
               {
                 q: "Is there real camaraderie and community?",
                 a: "Absolutely. Our live sessions create genuine connections where you get support from both our team and fellow members. We have everyone from senior engineers to CTOs, and the collaborative spirit means everyone helps everyone succeed."
               },
               {
-                q: "Can I see inside the membership portal before joining?",
-                a: "Yes! We have a complete portal walkthrough that shows you exactly what you'll get access to. You'll see the training modules, tools, templates, and community features that drive results for our members."
+                q: "What if I'm not sure about my goals yet?",
+                a: "Perfect! That's exactly why you need this program. 80% of our members discover bigger, better goals once they realize their true market value. Our first priority is helping you get crystal clear on your path to maximum impact and income."
               },
               {
-                q: "What if I'm already at a senior level?",
-                a: "Perfect. This program is specifically designed for senior professionals ready to break through to executive-level opportunities. Many of our most successful members are already Directors, VPs, and senior leaders who want to accelerate to the next level."
+                q: "Do I have to attend the weekly live sessions to succeed?",
+                a: "While sessions are recorded for flexibility, members who attend live consistently get the biggest results fastest. Sessions run Monday, Tuesday, and Wednesday at 10am CST to accommodate global schedules. The live interaction and community support are game-changers."
+              },
+              {
+                q: "What if I have a problem with Imposter Syndrome?",
+                a: "You're not alone - 70% of tech professionals struggle with this, and 40% let it seriously damage their results. Overcoming imposter syndrome and building unshakeable confidence is one of our specialties. You'll join a community where your expertise is recognized and valued."
               },
               {
                 q: "Is there a payment plan available?",
                 a: "Yes! We offer flexible payment options including 3-month and 6-month plans. You can also use your professional development budget or request employer sponsorship - we provide all the documentation you need."
+              },
+              {
+                q: "Can I see inside the membership portal before joining?",
+                a: "Yes! We have a complete portal walkthrough that shows you exactly what you'll get access to. You'll see the training modules, tools, templates, and community features that drive results for our members."
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6">
