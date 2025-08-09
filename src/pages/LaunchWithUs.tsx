@@ -97,8 +97,8 @@ const LaunchWithUs = () => {
       features: [
         "Define your niche, offer, and pricing",
         "First 3 months of content written for you",
-        "Lock in your first client",
-        "Immediate ROI focus"
+        "Build more connections with decision-makers",
+        "Optimize Your Funnel"
       ]
     },
     {
@@ -106,10 +106,9 @@ const LaunchWithUs = () => {
       icon: TrendingUp,
       description: "Private coaching, opportunity referrals, and access to our in-house marketing team and systems to scale your expertise into a cash-generating machine",
       features: [
-        "6-Week Gameplan™ cycles",
-        "Identify & fix constraints",
         "Done-for-you marketing systems",
-        "Weekly guidance & tracking"
+        "Weekly guidance & tracking",
+        "Lock in your next client for immediate ROI focus"
       ]
     }
   ];

@@ -80,7 +80,7 @@ const Benchmark = () => {
               </div>
               <h3 className="text-xl font-bold mb-4">Discuss How We Can Help You</h3>
               <p className="text-muted-foreground">
-                We'll go over the options for all different budgets to get started and scale
+                We'll go over the options for all budgets to get started and scale
               </p>
             </Card>
           </div>
