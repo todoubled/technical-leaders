@@ -491,6 +491,26 @@ const Launch = () => {
           <div className="space-y-6">
             {[
               {
+                q: "How long before I can expect a result?",
+                a: "We expect you to achieve a significant breakthrough within 6 months, but most members see opportunities start flowing in 30-45 days. Our entire system is designed around rapid, measurable progress with support at every step."
+              },
+              {
+                q: "What kind of revenue increase can I expect in the first 90 days?",
+                a: "Results vary based on your offer pricing and goals. Some members land six-figure executive roles or board positions, while others secure $5K+ monthly retainers or consulting contracts. The key is we help you price your expertise at market rate - often 2-3x what you thought possible."
+              },
+              {
+                q: "Does everyone who joins the program succeed?",
+                a: "Success requires commitment - we're not a magic solution. However, our guarantee ensures we'll work with you as long as it takes to find your ideal opportunities and land your first high-value clients. The more effort you invest, the more support and results you'll receive."
+              },
+              {
+                q: "Will the LinkedIn strategy actually grow my network significantly?",
+                a: "LinkedIn limits you to 500 connection requests monthly, but as your content gains momentum, you'll receive increasing inbound requests. More importantly, we focus on quality connections within your ideal client profile rather than random networking - leading to better opportunities faster."
+              },
+              {
+                q: "Can this program help me secure board positions?",
+                a: "Absolutely. We can target board directors and founders as your ideal clients, then craft a 'board advisory' offer that positions you perfectly for board opportunities. We'll workshop the exact positioning and approach that works for your expertise."
+              },
+              {
                 q: "How much time do I need to commit?",
                 a: "Just 2-3 hours per week of async self-study and live coaching sessions. All mastermind sessions are recorded, so if you miss one live, you can catch up when convenient. Most members find this fits easily into their schedule while delivering life-changing results."
               },
@@ -503,8 +523,8 @@ const Launch = () => {
                 a: "You're not alone - 70% of tech professionals struggle with this, and 40% let it seriously damage their results. Overcoming imposter syndrome and building unshakeable confidence is one of our specialties. You'll join a community where your expertise is recognized and valued."
               },
               {
-                q: "How long before I can expect a result?",
-                a: "We expect you to achieve a significant breakthrough within 6 months, but most members see opportunities start flowing in 30-45 days. Our entire system is designed around rapid, measurable progress with support at every step."
+                q: "What if I'm already at a senior level?",
+                a: "Perfect. This program is specifically designed for senior professionals ready to break through to executive-level opportunities. Many of our most successful members are already Directors, VPs, and senior leaders who want to accelerate to the next level."
               },
               {
                 q: "Do I have to attend the weekly live sessions to succeed?",
@@ -515,16 +535,12 @@ const Launch = () => {
                 a: "Absolutely. Our live sessions create genuine connections where you get support from both our team and fellow members. We have everyone from senior engineers to CTOs, and the collaborative spirit means everyone helps everyone succeed."
               },
               {
-                q: "Can I see inside the membership portal before joining?",
-                a: "Yes! We have a complete portal walkthrough that shows you exactly what you'll get access to. You'll see the training modules, tools, templates, and community features that drive results for our members."
-              },
-              {
-                q: "What if I'm already at a senior level?",
-                a: "Perfect. This program is specifically designed for senior professionals ready to break through to executive-level opportunities. Many of our most successful members are already Directors, VPs, and senior leaders who want to accelerate to the next level."
-              },
-              {
                 q: "Is there a payment plan available?",
                 a: "Yes! We offer flexible payment options including 3-month and 6-month plans. You can also use your professional development budget or request employer sponsorship - we provide all the documentation you need."
+              },
+              {
+                q: "Can I see inside the membership portal before joining?",
+                a: "Yes! We have a complete portal walkthrough that shows you exactly what you'll get access to. You'll see the training modules, tools, templates, and community features that drive results for our members."
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6">
