@@ -177,7 +177,7 @@ const Navigation = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" onClick={() => { window.location.href = "https://skool.com/tech-leaders" }}>Sign In</Button>
-            <Button onClick={() => { window.location.href = "/call" }}>Book Intro Call</Button>
+            <Button onClick={() => { window.location.href = "/call" }}>Apply to Join</Button>
           </div>
 
           <div className="md:hidden">
@@ -206,7 +206,7 @@ const Navigation = () => {
             <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="block px-3 py-2 text-foreground hover:text-primary">Get the Playbook</a>
             <div className="px-3 py-2 space-y-2">
               <Button variant="ghost" className="w-full" onClick={() => { window.location.href = "https://skool.com/tech-leaders" }}>Sign In</Button>
-              <Button className="w-full" onClick={() => { window.location.href = "/call" }}>Book Intro Call</Button>
+              <Button className="w-full" onClick={() => { window.location.href = "/call" }}>Apply to Join</Button>
             </div>
           </div>
         </div>

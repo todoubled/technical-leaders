@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock, TrendingUp, Shield, Star, Award, ArrowRight, FileText } from "lucide-react";
+import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock, TrendingUp, Shield, Star, Award, ArrowRight, FileText, Map, Wrench, LifeBuoy } from "lucide-react";
 
 const LaunchWithUs = () => {
   const transformations = [
@@ -116,24 +116,64 @@ const LaunchWithUs = () => {
 
   const whatYouGet = [
     {
-      icon: Calendar,
-      title: "AI Tools",
-      description: "Everything you need to identify your best Ideal Client Profile (ICP), price and package your Offer, and reverse-engineer your income goals as you grow"
+      icon: Map,
+      title: "We'll show you what to do",
+      description: (
+        <div className="text-left space-y-3">
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">1:1 Kickoff</strong> and Onboarding Session to get you jump started on your personalized plan</div>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">6-Week Sprints</strong> to diagnose problems, set milestones, and comfortably grow beyond the current constraints</div>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">Weekly Review/Previews</strong> to track progress and iterate towards your 6-week milestone achievements</div>
+          </div>
+        </div>
+      )
     },
     {
-      icon: Users,
-      title: "Small Group Community",
-      description: "Always one quick post away from getting unstuck"
+      icon: Wrench,
+      title: "We'll show you how to do it",
+      description: (
+        <div className="text-left space-y-3">
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">AI Tools</strong> trained on the best ICPs, Offers, and RGAs to design your offer, target your clients, and build your funnel</div>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">Lead Lists</strong> to connect with and get in front of your ideal clients</div>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">Templates</strong>, <strong className="text-foreground">Scripts</strong>, and <strong className="text-foreground">DFY Content</strong> to copy, paste, and convert connections into premium clients</div>
+          </div>
+        </div>
+      )
     },
     {
-      icon: Lightbulb,
-      title: "Monthly Workshops & Hotseats",
-      description: "Freshest strategies and sharpest brains helping you execute"
-    },
-    {
-      icon: Gift,
-      title: "Revenue Generating Playbook",
-      description: "Start driving cash before we even officially start"
+      icon: LifeBuoy,
+      title: "We'll help if you get stuck",
+      description: (
+        <div className="text-left space-y-3">
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">Weekly Workshops</strong> to build out your sales and marketing systems</div>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">24/7 Forum</strong> for connecting with the rest of the mastermind and <strong className="text-foreground">Feedback Forms</strong> for optimizing your assets</div>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <div><strong className="text-foreground">1:1 Coaching</strong> for personalized feedback and strategic advice</div>
+          </div>
+        </div>
+      )
     }
   ];
 
@@ -321,6 +361,9 @@ const LaunchWithUs = () => {
             <p className="text-lg text-muted-foreground">
               Shows you what to do, how to do it, and helps you along the way if you get stuck
             </p>
+            <p className="text-lg text-muted-foreground mt-3">
+              Everything you need to identify your best Ideal Client Profile (ICP), price and package your Offer, and reverse-engineer your income goals as you grow
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -465,19 +508,38 @@ const LaunchWithUs = () => {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Everything You Need to Launch
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+              Everything You Need to Launch
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              A complete system to transform your expertise into a thriving business
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
             {whatYouGet.map((item, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-white" />
+              <Card key={index} className="relative p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-2 border-border/50 hover:border-orange-500/30 bg-card/80 backdrop-blur-sm group">
+                {/* Step number badge */}
+                <div className="absolute -top-4 left-8 bg-gradient-to-r from-orange-500 to-red-600 text-white text-sm font-bold px-3 py-1 rounded-full">
+                  STEP {index + 1}
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                
+                {/* Icon with enhanced styling */}
+                <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-600/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                    <item.icon className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+                
+                {/* Title with better typography */}
+                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-orange-600 transition-colors">
+                  {item.title}
+                </h3>
+                
+                {/* Description with proper spacing and styling */}
+                <div className="text-muted-foreground">{item.description}</div>
               </Card>
             ))}
           </div>
@@ -616,6 +678,60 @@ const LaunchWithUs = () => {
             <p className="text-sm text-muted-foreground mt-2">
               Save $12,147 when you join today (81% off)
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {[
+              {
+                q: "How much time do I need to commit?",
+                a: "Just 2-3 hours per week of async self-study and live coaching sessions. All mastermind sessions are recorded, so if you miss one live, you can catch up when convenient. Most members find this fits easily into their schedule while delivering life-changing results."
+              },
+              {
+                q: "What if I'm not sure about my goals yet?",
+                a: "Perfect! That's exactly why you need this program. 80% of our members discover bigger, better goals once they realize their true market value. Our first priority is helping you get crystal clear on your path to maximum impact and income."
+              },
+              {
+                q: "What if I have a problem with Imposter Syndrome?",
+                a: "You're not alone - 70% of tech professionals struggle with this, and 40% let it seriously damage their results. Overcoming imposter syndrome and building unshakeable confidence is one of our specialties. You'll join a community where your expertise is recognized and valued."
+              },
+              {
+                q: "How long before I can expect a result?",
+                a: "We expect you to achieve a significant breakthrough within 6 months, but most members see opportunities start flowing in 30-45 days. Our entire system is designed around rapid, measurable progress with support at every step."
+              },
+              {
+                q: "Do I have to attend the weekly live sessions to succeed?",
+                a: "While sessions are recorded for flexibility, members who attend live consistently get the biggest results fastest. Sessions run Monday, Tuesday, and Wednesday at 10am CST to accommodate global schedules. The live interaction and community support are game-changers."
+              },
+              {
+                q: "Is there real camaraderie and community?",
+                a: "Absolutely. Our live sessions create genuine connections where you get support from both our team and fellow members. We have everyone from senior engineers to CTOs, and the collaborative spirit means everyone helps everyone succeed."
+              },
+              {
+                q: "Can I see inside the membership portal before joining?",
+                a: "Yes! We have a complete portal walkthrough that shows you exactly what you'll get access to. You'll see the training modules, tools, templates, and community features that drive results for our members."
+              },
+              {
+                q: "What if I'm already at a senior level?",
+                a: "Perfect. This program is specifically designed for senior professionals ready to break through to executive-level opportunities. Many of our most successful members are already Directors, VPs, and senior leaders who want to accelerate to the next level."
+              },
+              {
+                q: "Is there a payment plan available?",
+                a: "Yes! We offer flexible payment options including 3-month and 6-month plans. You can also use your professional development budget or request employer sponsorship - we provide all the documentation you need."
+              }
+            ].map((faq, index) => (
+              <Card key={index} className="p-6">
+                <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
+                <p className="text-muted-foreground">{faq.a}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
