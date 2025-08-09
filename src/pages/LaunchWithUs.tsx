@@ -28,7 +28,7 @@ const LaunchWithUs = () => {
     {
       icon: Target,
       title: "Ideal Client Profile",
-      description: "Define your Ideal Customer Profile and position yourself as their perfect solution",
+      description: "Define your Ideal Client Profile and position yourself as their perfect solution",
       outcomes: [
         "Crystal clear on who you serve",
         "Magnetic positioning statement",
@@ -93,11 +93,11 @@ const LaunchWithUs = () => {
     {
       title: "Phase 1: Foundation",
       icon: Rocket,
-      description: "Workshops, tools, and private coaching to get crystal clear on your scalable offer, positioning, and funnel so you can lock in your first customer fast",
+      description: "Workshops, tools, and private coaching to get crystal clear on your scalable offer, positioning, and funnel so you can lock in your first client fast",
       features: [
         "Define your niche, offer, and pricing",
         "First 3 months of content written for you",
-        "Lock in your first customer",
+        "Lock in your first client",
         "Immediate ROI focus"
       ]
     },
@@ -117,8 +117,8 @@ const LaunchWithUs = () => {
   const whatYouGet = [
     {
       icon: Calendar,
-      title: "Weekly Mastermind Calls",
-      description: "Personal guidance from Todd and the coaching team every week"
+      title: "AI Tools",
+      description: "Everything you need to identify your best Ideal Client Profile (ICP), price and package your Offer, and reverse-engineer your income goals as you grow"
     },
     {
       icon: Users,
@@ -154,7 +154,7 @@ const LaunchWithUs = () => {
     {
       quote: "Applying my new approach learned through Tech Leaders, has led to a new job offer and a promotion",
       author: "K.D.",
-      title: "Director of Customer Success, Colorado",
+      title: "Director of Client Success, Colorado",
       income: "New job offer + promotion",
       stars: 5
     },
@@ -195,8 +195,11 @@ const LaunchWithUs = () => {
               </span>
             </h1>
 
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
+              Designed to help <b>technical experts</b>, <b>consultants</b> and <b>freelancers</b> install a <b>sales and marketing system</b> to <b>productize and monetize</b> your expertise and grow <b>beyond referrals</b> and word of mouth
+            </p>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Designed to help <b>technical experts</b>, <b>consultants</b> and <b>freelancers</b> install a <b>sales and marketing system</b> to <b>productize and monetize</b> your expertise and grow <b>beyond referrals</b> and word of mouth even if you <b>hate feeling "salesy"</b> or have a <b>tiny audience</b>
+              (even if you <b>hate feeling "salesy"</b> or have a <b>tiny audience</b>)
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -216,6 +219,64 @@ const LaunchWithUs = () => {
         </div>
       </section>
 
+      {/* The Payoff Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/20">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+              The Payoff
+            </h2>
+            <p className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 font-semibold">
+              Why Launch Kit
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <Card className="p-8 border-2 border-orange-500/20 hover:border-orange-500/40 transition-all hover:shadow-2xl">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Life-Long Asset</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Building a personal distribution system for sales and marketing like this is a <span className="font-semibold text-foreground">life-long asset</span> that can be used to make money with any product or service
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 border-2 border-orange-500/20 hover:border-orange-500/40 transition-all hover:shadow-2xl">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Your Biggest Moat</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Founder-Led Marketing (distribution) is the <span className="font-semibold text-foreground">biggest moat</span> you can build for your business
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 border-2 border-orange-500/20 hover:border-orange-500/40 transition-all hover:shadow-2xl">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                  <Rocket className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Easy & Systematic</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Launch Kit makes it easy to get started <span className="font-semibold text-foreground">without spinning your wheels</span> and systematize your growth <span className="font-semibold text-foreground">without burning out</span>
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Simple Model Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -223,7 +284,7 @@ const LaunchWithUs = () => {
             The Model is Simple
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Two phases. Clear outcomes. Real results.
+            Two phases to help you launch and get your first client with your new offer
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
