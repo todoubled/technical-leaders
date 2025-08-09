@@ -28,6 +28,7 @@ import LaunchWithUs from "./pages/LaunchWithUs";
 import HowToModelYourOffer from "./pages/HowToModelYourOffer";
 import FinanceForFounders from "./pages/FinanceForFounders";
 import AIForVC from "./pages/AIForVC";
+import Benchmark from "./pages/Benchmark";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -65,6 +66,7 @@ const App = () => (
           <Route path="/how-to-model-your-offer" element={<HowToModelYourOffer />} />
           <Route path="/finance-for-founders" element={<FinanceForFounders />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
+          <Route path="/benchmark" element={<Benchmark />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
