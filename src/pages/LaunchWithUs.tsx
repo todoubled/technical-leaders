@@ -91,7 +91,7 @@ const LaunchWithUs = () => {
 
   const phases = [
     {
-      title: "Phase 1: Launch",
+      title: "Phase 1: Foundation",
       icon: Rocket,
       description: "Workshops, tools, and private coaching to get crystal clear on your scalable offer, positioning, and funnel so you can lock in your first customer fast",
       features: [
@@ -102,7 +102,7 @@ const LaunchWithUs = () => {
       ]
     },
     {
-      title: "Phase 2: Scale",
+      title: "Phase 2: Go-to-Market",
       icon: TrendingUp,
       description: "Private coaching, opportunity referrals, and access to our in-house marketing team and systems to scale your expertise into a cash-generating machine",
       features: [
@@ -172,32 +172,37 @@ const LaunchWithUs = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-500/10 to-pink-600/10 relative overflow-hidden">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-600/5"></div>
+          <img
+            src="/ai-in-ar.png"
+            alt="AI background"
+            className="w-full h-full object-cover object-top opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
         </div>
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-700 dark:text-red-400 px-4 py-2 rounded-full text-sm font-bold mb-6 animate-pulse">
               <Clock className="w-4 h-4" />
-              <span>7 SPOTS LEFT</span>
+              <span>LIMITED SPOTS AVAILABLE</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Launch With Us
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 mt-2">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6">
+              Launch Kit
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mt-2 text-3xl sm:text-4xl lg:text-5xl">
                 Turn Your Expertise Into Independent Income
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Helping technical experts and consultants productize your expertise into a scalable offer that replaces your primary income
+              Designed to help <b>technical experts</b>, <b>consultants</b> and <b>freelancers</b> install a <b>sales and marketing system</b> to <b>productize and monetize</b> your expertise and grow <b>beyond referrals</b> and word of mouth even if you <b>hate feeling "salesy"</b> or have a <b>tiny audience</b>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-8 py-6"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
                 onClick={() => window.location.href = "#apply"}
               >
                 Reserve Your Spot
@@ -205,7 +210,7 @@ const LaunchWithUs = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-4">
-              Done-for-you marketing • Guaranteed results • Proven systems
+              Done-for-you marketing • Guaranteed ROI • Proven systems
             </p>
           </div>
         </div>
@@ -225,7 +230,7 @@ const LaunchWithUs = () => {
             {phases.map((phase, index) => (
               <Card key={index} className="p-8 hover:shadow-lg transition-all hover:-translate-y-1">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
                     <phase.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">{phase.title}</h3>
@@ -234,7 +239,7 @@ const LaunchWithUs = () => {
                 <ul className="space-y-3">
                   {phase.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
@@ -248,9 +253,12 @@ const LaunchWithUs = () => {
       {/* Success Metrics Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
-            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-              Our mastermind delivers life-changing outcomes
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+              Our mastermind coaching program
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Shows you what to do, how to do it, and helps you along the way if you get stuck
             </p>
           </div>
 
@@ -259,7 +267,7 @@ const LaunchWithUs = () => {
               <div className="mb-3">
                 <Award className="w-10 h-10 mx-auto text-yellow-500/80" />
               </div>
-              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-1">
+              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mb-1">
                 6 Days
               </p>
               <p className="text-base font-semibold text-foreground mb-1">
@@ -274,7 +282,7 @@ const LaunchWithUs = () => {
               <div className="mb-3">
                 <TrendingUp className="w-10 h-10 mx-auto text-green-500/80" />
               </div>
-              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-1">
+              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mb-1">
                 60-90
               </p>
               <p className="text-base font-semibold text-foreground mb-1">
@@ -287,9 +295,9 @@ const LaunchWithUs = () => {
 
             <div className="bg-card/50 backdrop-blur-sm p-6 rounded-lg text-center hover:bg-card/80 transition-all duration-300 border border-border/50">
               <div className="mb-3">
-                <Users className="w-10 h-10 mx-auto text-purple-500/80" />
+                <Users className="w-10 h-10 mx-auto text-orange-500/80" />
               </div>
-              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-1">
+              <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mb-1">
                 28%
               </p>
               <p className="text-base font-semibold text-foreground mb-1">
@@ -325,7 +333,7 @@ const LaunchWithUs = () => {
                       <p className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider mb-2">Today's Reality</p>
                       <p className="text-foreground font-medium leading-relaxed">{item.before}</p>
                     </div>
-                    <div className="flex items-center justify-center px-2 bg-gradient-to-b from-blue-500/20 to-purple-500/20">
+                    <div className="flex items-center justify-center px-2 bg-gradient-to-b from-orange-500/20 to-red-500/20">
                       <ArrowRight className="w-6 h-6 text-blue-600 dark:text-blue-400 animate-pulse" />
                     </div>
                     <div className="p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10">
@@ -341,7 +349,7 @@ const LaunchWithUs = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-700 dark:text-orange-400 px-6 py-3 rounded-full font-semibold">
               <Zap className="w-5 h-5" />
-              <span>Average member sees results in 30-45 days</span>
+              <span>Start seeing results in 1 week or less</span>
             </div>
           </div>
         </div>
@@ -368,7 +376,7 @@ const LaunchWithUs = () => {
                         backgroundImage: index === 0 ? 'url(/ai-in-ar.png)' : index === 1 ? 'url(/launch-bg.png)' : 'url(/scale-bg.png)',
                       }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/50 to-purple-700/50"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-600/50 to-red-700/50"></div>
                     </div>
                     <div className="relative z-10">
                       <div className="w-12 h-12 mb-4 rounded-full bg-white/20 flex items-center justify-center">
@@ -404,7 +412,7 @@ const LaunchWithUs = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whatYouGet.map((item, index) => (
               <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
@@ -415,54 +423,6 @@ const LaunchWithUs = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Your 12-Month Journey to Scale
-          </h2>
-          <div className="relative">
-            <div className="absolute left-12 top-12 bottom-12 w-0.5 bg-gradient-to-b from-purple-500 to-pink-600"></div>
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="w-24 h-24 rounded-full text-center bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold flex-shrink-0 relative z-10">
-                  NOW
-                </div>
-                <Card className="flex-1 p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Launch</h3>
-                  <p className="text-muted-foreground">
-                    Get crystal clear on your scalable offer, positioning, and lock in your first customer fast
-                  </p>
-                </Card>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-24 h-24 rounded-full text-center bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold flex-shrink-0 relative z-10">
-                  Every 6 Weeks
-                </div>
-                <Card className="flex-1 p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">6-Week Sprint Plans</h3>
-                  <p className="text-muted-foreground">
-                    Diagnostic process to identify your biggest constraint and install the right system to scale your income without burning out
-                  </p>
-                </Card>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-24 h-24 rounded-full text-center bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold flex-shrink-0 relative z-10">
-                  12 Months
-                </div>
-                <Card className="flex-1 p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Scale to Freedom</h3>
-                  <p className="text-muted-foreground">
-                    Every 6 weeks: regroup, identify next constraint, install proven systems, keep momentum climbing
-                  </p>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Who This Is For Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
@@ -475,7 +435,7 @@ const LaunchWithUs = () => {
             <ul className="space-y-4">
               {idealFor.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
                   <span className="text-lg text-foreground">{item}</span>
                 </li>
               ))}
@@ -487,8 +447,8 @@ const LaunchWithUs = () => {
       {/* ROI Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <Card className="p-8 bg-gradient-to-br from-card to-purple-500/5">
-            <Zap className="w-12 h-12 mx-auto mb-4 text-purple-500" />
+          <Card className="p-8 bg-gradient-to-br from-card to-orange-500/5">
+            <Zap className="w-12 h-12 mx-auto mb-4 text-orange-500" />
             <h3 className="text-2xl font-bold mb-4 text-foreground">
               It Easily Pays for Itself
             </h3>
@@ -496,7 +456,7 @@ const LaunchWithUs = () => {
               Usually before you even finish paying for it. Turn your years of know-how into
               a cash-generating machine — the kind that frees up your time and makes your old job feel optional.
             </p>
-            <div className="flex items-center justify-center gap-2 text-purple-600">
+            <div className="flex items-center justify-center gap-2 text-orange-600">
               <Shield className="w-5 h-5" />
               <p className="font-semibold">
                 Guarantee: We'll work with you until you've made back your investment
@@ -600,7 +560,7 @@ const LaunchWithUs = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section id="apply" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-500/10 to-pink-600/10">
+      <section id="apply" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Ready to Productize Your Expertise?
@@ -616,20 +576,20 @@ const LaunchWithUs = () => {
                 <div className="text-center">
                   <p className="text-4xl font-bold text-foreground">$2,950</p>
                   <p className="text-lg text-muted-foreground">To launch</p>
-                  <p className="text-sm text-purple-600 font-semibold mt-1">With our guarantee</p>
+                  <p className="text-sm text-orange-600 font-semibold mt-1">With our guarantee</p>
                 </div>
                 <div className="text-2xl text-muted-foreground">+</div>
                 <div className="text-center">
                   <p className="text-4xl font-bold text-foreground">$850/mo</p>
                   <p className="text-lg text-muted-foreground">For 12 months to scale</p>
-                  <p className="text-sm text-purple-600 font-semibold mt-1">(optional)</p>
+                  <p className="text-sm text-orange-600 font-semibold mt-1">(optional)</p>
                 </div>
               </div>
             </div>
 
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-12 py-6 w-full md:w-auto"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto"
               onClick={() => window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"}
             >
               Get Started

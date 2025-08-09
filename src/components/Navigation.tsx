@@ -66,7 +66,7 @@ const Navigation = () => {
                   Programs <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
-                  <DropdownMenuItem onClick={() => window.location.href = "/launch"}>
+                  <DropdownMenuItem onClick={() => window.location.href = "/launch-with-us"}>
                     Launch Kit
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => window.location.href = "/ship-ai"}>
@@ -84,14 +84,18 @@ const Navigation = () => {
                 onMouseLeave={() => setIsArticlesOpen(false)}
               >
                 <button
-                  className="text-foreground hover:text-primary transition-colors flex items-center"
+                  className="text-foreground hover:text-primary transition-colors flex items-center py-2"
                   onClick={() => window.location.href = "/articles"}
                 >
                   Articles <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
                 
                 {isArticlesOpen && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-background border border-border rounded-lg shadow-lg p-6 w-[900px] z-50">
+                  <>
+                    {/* Invisible bridge to maintain hover state */}
+                    <div className="absolute top-full left-0 right-0 h-2" />
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 pt-2">
+                      <div className="bg-background border border-border rounded-lg shadow-lg p-6 w-[900px] z-50">
                     <div className="grid grid-cols-2 gap-8">
                       {/* Left Column - Categories */}
                       <div>
@@ -162,6 +166,8 @@ const Navigation = () => {
                       </div>
                     </div>
                   </div>
+                    </div>
+                  </>
                 )}
               </div>
               
@@ -191,7 +197,7 @@ const Navigation = () => {
             <div className="px-3 py-2 text-foreground">
               <div className="font-medium mb-2">Programs</div>
               <div className="ml-4 space-y-1">
-                <a href="/launch" className="block py-1 text-sm text-muted-foreground hover:text-primary">Launch Kit</a>
+                <a href="/launch-with-us" className="block py-1 text-sm text-muted-foreground hover:text-primary">Launch Kit</a>
                 <a href="/ship-ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">Ship AI</a>
                 <a href="/ai-for-vc" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI for VCs</a>
               </div>

@@ -73,7 +73,7 @@ const ShipAI = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-700 dark:text-red-400 px-4 py-2 rounded-full text-sm font-bold mb-6 animate-pulse">
               <Clock className="w-4 h-4" />
-              <span>7 SPOTS LEFT</span>
+              <span>LIMITED SPOTS AVAILABLE</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
