@@ -2,8 +2,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { useEffect } from "react";
+import posthogManager, { trackPageView, setSuperProperties } from "./utils/posthog";
 import Index from "./pages/Index";
 import Call from "./pages/Call";
 import CallConfirmed from "./pages/CallConfirmed";
@@ -27,11 +29,39 @@ import CallTemplates from "./pages/CallTemplates";
 import LaunchWithUs from "./pages/LaunchWithUs";
 import HowToModelYourOffer from "./pages/HowToModelYourOffer";
 import FinanceForFounders from "./pages/FinanceForFounders";
+import FinanceWorkshopConfirmed from "./pages/FinanceWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
 import Benchmark from "./pages/Benchmark";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+// Component to track page views
+const PageViewTracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Track page view on route change
+    trackPageView();
+
+    // Set initial super properties from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams: Record<string, string> = {};
+    
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
+      const value = urlParams.get(param);
+      if (value) {
+        utmParams[param] = value;
+      }
+    });
+
+    if (Object.keys(utmParams).length > 0) {
+      setSuperProperties(utmParams);
+    }
+  }, [location]);
+
+  return null;
+};
 
 const App = () => (
   <HelmetProvider>
@@ -40,6 +70,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <PageViewTracker />
           <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/call" element={<Call />} />
@@ -65,6 +96,7 @@ const App = () => (
           <Route path="/launch-with-us" element={<LaunchWithUs />} />
           <Route path="/how-to-model-your-offer" element={<HowToModelYourOffer />} />
           <Route path="/finance-for-founders" element={<FinanceForFounders />} />
+          <Route path="/finance-workshop-confirmed" element={<FinanceWorkshopConfirmed />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/benchmark" element={<Benchmark />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

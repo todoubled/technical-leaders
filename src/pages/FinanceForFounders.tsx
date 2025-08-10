@@ -5,15 +5,56 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Star, Users, Sparkles, Brain, Rocket, MessageSquare, Bot, Calendar, Clock, Gift, FileText, Video, Phone, Target, Shield, Zap, TrendingUp, DollarSign, BarChart3, Calculator } from "lucide-react";
 import SEO from "@/components/SEO";
 import { useState, useEffect } from "react";
+import { trackEvent, identify, trackConversion } from "@/utils/posthog";
+import { useEmailCapture } from "@/hooks/use-posthog";
 
 const FinanceForFounders = () => {
+  const { captureEmail } = useEmailCapture();
+  
+  useEffect(() => {
+    // Track page view
+    trackEvent('Finance Workshop Page Viewed', {
+      page: 'finance-for-founders',
+      workshop_type: 'free'
+    });
+    
+    // Inject ConvertKit form script
+    const formContainer = document.getElementById('finance-form-container');
+    if (formContainer && !formContainer.querySelector('script')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.setAttribute('data-uid', '79d5ccd0fa');
+      script.src = 'https://techleaders.kit.com/79d5ccd0fa/index.js';
+      formContainer.appendChild(script);
+      
+      // Listen for ConvertKit form submissions to track in PostHog
+      script.onload = () => {
+        // Listen for form submission events from ConvertKit
+        window.addEventListener('message', (event) => {
+          if (event.origin === 'https://techleaders.kit.com' && event.data?.event === 'form_submitted') {
+            // Track conversion in PostHog when ConvertKit form is submitted
+            trackConversion('Workshop Registration', {
+              workshop_name: 'Finance for Founders',
+              source: 'convertkit_form',
+              location: 'hero_section'
+            });
+            
+            // Redirect to confirmation page
+            setTimeout(() => {
+              window.location.href = '/finance-workshop-confirmed';
+            }, 1000); // Small delay to ensure tracking completes
+          }
+        });
+      };
+    }
+  }, []);
 
   const heroContent = {
-    badge: "LIVE Workshop",
+    badge: "FREE Workshop",
     headline: "Finance for Founders™ Workshop",
     subheadline: "Master the financial fundamentals that drive business growth",
     description: "From Accounting Basics to Cash Flow Mastery in One Practical Session",
-    cta: "Secure My Spot for $50"
+    cta: "Register for FREE"
   };
 
   const keyBenefits = [
@@ -137,16 +178,9 @@ const FinanceForFounders = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button
-              size="lg"
-              className="text-lg px-8"
-              onClick={() => {
-                window.location.href = 'https://buy.stripe.com/4gw8Ai76B2L99os6oW';
-              }}
-            >
-              <Rocket className="mr-2 h-5 w-5" />
-              {heroContent.cta}
-            </Button>
+            <div id="finance-form-container" className="w-full max-w-md mx-auto">
+              {/* ConvertKit form will be injected here */}
+            </div>
           </div>
 
           {/* Workshop Details Card */}
@@ -166,19 +200,19 @@ const FinanceForFounders = () => {
                     <Calendar className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg">Date & Time</h3>
-                  <p className="text-muted-foreground">TBD<br/>90 Minutes</p>
+                  <p className="text-muted-foreground">September 15th, 2025<br/>10:00 AM CST<br/>90 Minutes</p>
                 </div>
                 <div className="space-y-2">
                   <div className="p-3 bg-primary/10 rounded-lg w-fit mx-auto mb-3">
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg">Investment</h3>
-                  <p className="text-2xl font-bold text-primary">$50 USD</p>
+                  <p className="text-2xl font-bold text-primary">FREE</p>
                 </div>
               </div>
               <div className="mt-8 pt-6 border-t border-primary/20">
                 <p className="text-sm text-muted-foreground italic">
-                  Includes lifetime recording access. Can't join live? No problem.
+                  Can't join live? No problem! All registrants receive the recording.
                 </p>
               </div>
             </div>
@@ -290,10 +324,10 @@ const FinanceForFounders = () => {
               Workshop Bonuses
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              You'll Also Get These Bonuses
+              FREE Bonuses Included
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to implement immediately
+              Everything you need to implement immediately - at no cost
             </p>
           </div>
 
@@ -328,11 +362,23 @@ const FinanceForFounders = () => {
             size="lg"
             className="text-lg px-8"
             onClick={() => {
-              window.location.href = 'https://buy.stripe.com/4gw8Ai76B2L99os6oW';
+              // Track CTA click
+              trackEvent('Scroll to Form CTA Clicked', {
+                location: 'bottom_cta_section'
+              });
+              
+              // Smooth scroll to the form at the top
+              const formContainer = document.getElementById('finance-form-container');
+              if (formContainer) {
+                formContainer.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'center'
+                });
+              }
             }}
           >
             <Rocket className="mr-2 h-5 w-5" />
-            Secure My Spot for $50
+            Register for FREE Workshop
           </Button>
         </div>
       </section>

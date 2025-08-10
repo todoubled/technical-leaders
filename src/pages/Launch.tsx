@@ -3,13 +3,27 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle, Shield, AlertTriangle } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
+import { trackConversion, trackClick, trackEvent } from "@/utils/posthog";
+import { useTrackScrollDepth } from "@/hooks/use-posthog";
 
 const Launch = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const videoUrl = "https://youtu.be/VKetl72iSlk";
+  
+  // Track scroll depth for engagement
+  useTrackScrollDepth('Launch Page');
+  
+  useEffect(() => {
+    // Track page view with specific properties
+    trackEvent('Launch Page Viewed', {
+      page: 'launch',
+      has_video: true,
+      has_pricing: true
+    });
+  }, []);
 
   const transformations = [
     {
@@ -189,7 +203,17 @@ const Launch = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"}
+                onClick={() => {
+                  trackConversion('Launch Kit Purchase Clicked', {
+                    location: 'hero_section',
+                    price: 2950,
+                    product: 'launch_kit'
+                  });
+                  trackClick('Get Launch Kit Now - Hero', {
+                    destination: 'stripe_checkout'
+                  });
+                  window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
+                }}
               >
                 Get Launch Kit - $2950
               </Button>
@@ -197,7 +221,12 @@ const Launch = () => {
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-6 group"
-                onClick={() => setIsVideoModalOpen(true)}
+                onClick={() => {
+                  trackClick('Watch Video - What is Tech Leaders', {
+                    video_url: videoUrl
+                  });
+                  setIsVideoModalOpen(true);
+                }}
               >
                 <PlayCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 What is Tech Leaders?
@@ -600,7 +629,12 @@ const Launch = () => {
             </a>
             {" "}or{" "}
             <button
-              onClick={() => window.location.href = "/call"}
+              onClick={() => {
+                trackClick('Book Call - Launch Page', {
+                  location: 'bottom_section'
+                });
+                window.location.href = "/call";
+              }}
               className="text-blue-600 hover:underline"
             >
               book a call

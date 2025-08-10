@@ -5,15 +5,29 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
 import SEO from "@/components/SEO";
+import { trackCalendlyEvent, trackEvent } from "@/utils/posthog";
 
 declare global {
   interface Window {
-    Calendly: any;
+    Calendly: {
+      initInlineWidget: (options: {
+        url: string;
+        parentElement: Element | null;
+        prefill?: Record<string, unknown>;
+        utm?: Record<string, string>;
+      }) => void;
+    };
   }
 }
 
 const Call = () => {
   useEffect(() => {
+    // Track that the call booking page was viewed
+    trackEvent('Call Booking Page Viewed', {
+      page: 'call',
+      calendly_url: 'tech-leaders-intro-call'
+    });
+
     // Check if Calendly is already loaded
     if (window.Calendly) {
       window.Calendly.initInlineWidget({
@@ -22,7 +36,51 @@ const Call = () => {
         prefill: {},
         utm: {}
       });
+
+      // Track when Calendly widget is viewed
+      trackCalendlyEvent('viewed', {
+        meeting_type: 'tech-leaders-intro-call'
+      });
     }
+
+    // Listen for Calendly events
+    const handleCalendlyEvent = (e: MessageEvent) => {
+      if (e.origin !== 'https://calendly.com') return;
+      
+      if (e.data.event && e.data.event.indexOf('calendly.') === 0) {
+        const eventName = e.data.event;
+        
+        // Track different Calendly events
+        if (eventName === 'calendly.event_scheduled') {
+          // Extract event details if available
+          const eventDetails = e.data.payload || {};
+          
+          trackCalendlyEvent('scheduled', {
+            invitee: eventDetails.invitee,
+            event: eventDetails.event,
+            meeting_type: 'tech-leaders-intro-call'
+          });
+
+          // Navigate to confirmation page
+          window.location.href = '/call-confirmed';
+        } else if (eventName === 'calendly.page_height') {
+          // Widget loaded
+          trackEvent('Calendly Widget Loaded', {
+            page: 'call'
+          });
+        } else if (eventName === 'calendly.date_and_time_selected') {
+          trackEvent('Calendly Date Selected', {
+            page: 'call'
+          });
+        }
+      }
+    };
+
+    window.addEventListener('message', handleCalendlyEvent);
+
+    return () => {
+      window.removeEventListener('message', handleCalendlyEvent);
+    };
   }, []);
   return (
     <div className="min-h-screen bg-background">
