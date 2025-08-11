@@ -9,8 +9,10 @@ import { trackEvent } from "@/utils/posthog";
 
 const FinanceWorkshopConfirmed = () => {
   useEffect(() => {
-    trackEvent('Finance Workshop Confirmation Page Viewed', {
-      page: 'finance-workshop-confirmed'
+    // Page view tracking is handled centrally in App.tsx
+    // Track successful workshop registration
+    trackEvent('Workshop Registration Completed', {
+      workshop_name: 'Finance for Founders'
     });
   }, []);
 

@@ -35,6 +35,10 @@ export interface EventProperties {
 class PostHogManager {
   private isInitialized: boolean = false;
   private pendingIdentification: UserTraits | null = null;
+  private lastPageView: string | null = null;
+  private pageViewDebounceTimer: NodeJS.Timeout | null = null;
+  private recentEvents: Map<string, number> = new Map();
+  private eventDedupeWindow: number = 500; // 500ms window for deduplication
 
   constructor() {
     // Check if PostHog is loaded
@@ -118,12 +122,36 @@ class PostHogManager {
   }
 
   /**
-   * Track custom events with proper attribution
+   * Track custom events with proper attribution and deduplication
    */
   trackEvent(eventName: string, properties?: EventProperties) {
     if (!this.isInitialized) {
       console.warn('PostHog not initialized, event not tracked:', eventName);
       return;
+    }
+
+    // Create event signature for deduplication
+    const eventSignature = `${eventName}_${JSON.stringify(properties || {})}`;
+    const now = Date.now();
+    const lastEventTime = this.recentEvents.get(eventSignature);
+
+    // Check if this exact event was sent recently
+    if (lastEventTime && (now - lastEventTime) < this.eventDedupeWindow) {
+      console.log(`[PostHog Debug] Skipping duplicate event within ${this.eventDedupeWindow}ms: ${eventName}`);
+      return;
+    }
+
+    // Store event timestamp for deduplication
+    this.recentEvents.set(eventSignature, now);
+
+    // Clean up old entries to prevent memory leak
+    if (this.recentEvents.size > 100) {
+      const cutoffTime = now - this.eventDedupeWindow;
+      for (const [key, timestamp] of this.recentEvents.entries()) {
+        if (timestamp < cutoffTime) {
+          this.recentEvents.delete(key);
+        }
+      }
     }
 
     try {
@@ -139,6 +167,12 @@ class PostHogManager {
         utm_term: this.getUTMParam('utm_term'),
         utm_content: this.getUTMParam('utm_content')
       };
+
+      // Debug logging to identify duplicate events
+      console.log(`[PostHog Debug] Tracking event: ${eventName}`, {
+        properties: enrichedProperties,
+        stackTrace: new Error().stack
+      });
 
       window.posthog.capture(eventName, enrichedProperties);
     } catch (error) {
@@ -164,20 +198,39 @@ class PostHogManager {
   }
 
   /**
-   * Track page views with proper attribution
+   * Track page views with proper attribution and deduplication
    */
   trackPageView(pageName?: string) {
     if (!this.isInitialized) return;
 
-    try {
-      window.posthog.capture('$pageview', {
-        page_name: pageName || document.title,
-        page_path: window.location.pathname,
-        page_url: window.location.href
-      });
-    } catch (error) {
-      console.error('PostHog page view tracking error:', error);
+    const currentPath = window.location.pathname;
+    
+    // Debounce rapid page view calls (e.g., from multiple useEffect hooks)
+    if (this.pageViewDebounceTimer) {
+      clearTimeout(this.pageViewDebounceTimer);
     }
+
+    // Prevent duplicate page views for the same page within 100ms
+    if (this.lastPageView === currentPath) {
+      console.log(`[PostHog Debug] Skipping duplicate pageview for: ${currentPath}`);
+      return;
+    }
+
+    this.pageViewDebounceTimer = setTimeout(() => {
+      try {
+        this.lastPageView = currentPath;
+        
+        console.log(`[PostHog Debug] Tracking pageview for: ${currentPath}`);
+        
+        window.posthog.capture('$pageview', {
+          page_name: pageName || document.title,
+          page_path: window.location.pathname,
+          page_url: window.location.href
+        });
+      } catch (error) {
+        console.error('PostHog page view tracking error:', error);
+      }
+    }, 100); // 100ms debounce
   }
 
   /**

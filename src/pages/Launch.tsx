@@ -17,12 +17,12 @@ const Launch = () => {
   useTrackScrollDepth('Launch Page');
   
   useEffect(() => {
-    // Track page view with specific properties
-    trackEvent('Launch Page Viewed', {
-      page: 'launch',
-      has_video: true,
-      has_pricing: true
-    });
+    // Page view tracking is handled centrally in App.tsx
+    // Track specific page properties if needed
+    // trackEvent('Launch Page Features', {
+    //   has_video: true,
+    //   has_pricing: true
+    // });
   }, []);
 
   const transformations = [

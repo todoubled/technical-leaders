@@ -32,6 +32,7 @@ import FinanceForFounders from "./pages/FinanceForFounders";
 import FinanceWorkshopConfirmed from "./pages/FinanceWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
 import Benchmark from "./pages/Benchmark";
+import TenBeforeTen from "./pages/TenBeforeTen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,21 +44,9 @@ const PageViewTracker = () => {
   useEffect(() => {
     // Track page view on route change
     trackPageView();
-
-    // Set initial super properties from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const utmParams: Record<string, string> = {};
     
-    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
-      const value = urlParams.get(param);
-      if (value) {
-        utmParams[param] = value;
-      }
-    });
-
-    if (Object.keys(utmParams).length > 0) {
-      setSuperProperties(utmParams);
-    }
+    // Note: UTM parameters are already captured in index.html posthog initialization
+    // We don't need to set them again here to avoid duplication
   }, [location]);
 
   return null;
@@ -99,6 +88,7 @@ const App = () => (
           <Route path="/finance-workshop-confirmed" element={<FinanceWorkshopConfirmed />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/benchmark" element={<Benchmark />} />
+          <Route path="/10-before-10" element={<TenBeforeTen />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

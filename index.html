@@ -39,7 +39,7 @@
     posthog.init('phc_MUER631cGWIajjaJy9iInHRvhJJVb4lPz8OTpjosKpk', {
         api_host: 'https://us.i.posthog.com',
         person_profiles: 'always', // Creates profiles when users are identified with email
-        capture_pageview: true, // Automatically capture page views
+        capture_pageview: false, // Disable automatic page views - we handle this manually in React
         capture_pageleave: true, // Track when users leave pages
         autocapture: true, // Automatically capture clicks and form submissions
         disable_session_recording: false, // Enable session recordings for better insights

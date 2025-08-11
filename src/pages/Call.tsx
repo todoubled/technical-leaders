@@ -22,9 +22,9 @@ declare global {
 
 const Call = () => {
   useEffect(() => {
-    // Track that the call booking page was viewed
-    trackEvent('Call Booking Page Viewed', {
-      page: 'call',
+    // Page view tracking is handled centrally in App.tsx
+    // Track Calendly-specific initialization
+    trackEvent('Calendly Widget Initialized', {
       calendly_url: 'tech-leaders-intro-call'
     });
 

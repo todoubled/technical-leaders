@@ -12,11 +12,8 @@ const FinanceForFounders = () => {
   const { captureEmail } = useEmailCapture();
   
   useEffect(() => {
-    // Track page view
-    trackEvent('Finance Workshop Page Viewed', {
-      page: 'finance-for-founders',
-      workshop_type: 'free'
-    });
+    // Page view tracking is handled centrally in App.tsx
+    // Additional page-specific event tracking can be added here if needed
     
     // Inject ConvertKit form script
     const formContainer = document.getElementById('finance-form-container');
