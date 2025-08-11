@@ -457,7 +457,7 @@ const TenBeforeTen = () => {
                 trackClick('Get Launch Kit - 10 Before 10 CTA', {
                   location: 'bottom_section'
                 });
-                window.location.href = "/launch";
+                window.location.href = "/launch-with-us";
               }}
             >
               Get Launch Kit &amp; Start Tomorrow
