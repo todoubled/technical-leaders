@@ -33,6 +33,7 @@ import FinanceWorkshopConfirmed from "./pages/FinanceWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
 import Benchmark from "./pages/Benchmark";
 import TenBeforeTen from "./pages/TenBeforeTen";
+import AIForSuits from "./pages/AIForSuits";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -89,6 +90,7 @@ const App = () => (
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/benchmark" element={<Benchmark />} />
           <Route path="/10-before-10" element={<TenBeforeTen />} />
+          <Route path="/ai-for-suits" element={<AIForSuits />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
