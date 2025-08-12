@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock } from "lucide-react";
+import SEO from "@/components/SEO";
+import { generateCourseStructuredData } from "@/utils/seo-helpers";
 
 const ShipAI = () => {
   const phases = [
@@ -60,8 +62,19 @@ const ShipAI = () => {
     "You're cool with my shameless love for whiteboards and very average drawing skills"
   ];
 
+  const courseStructuredData = generateCourseStructuredData(
+    "Ship AI With Us - 12-Week AI Project Sprint",
+    "Build, iterate, and ship real AI projects in 12 weeks with expert guidance and peer support. Perfect for technical leaders wanting to launch AI-first products."
+  );
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Ship AI With Us - 12-Week AI Project Sprint Program"
+        description="Build, iterate, and ship real AI projects in 12 weeks with expert guidance and peer support. Perfect for technical leaders launching AI-first products and solutions."
+        keywords={['ship AI projects', 'AI development program', 'AI project sprint', 'build AI products', 'AI startup program', 'AI technical training']}
+        structuredData={courseStructuredData}
+      />
       <Navigation />
 
       {/* Hero Section */}

@@ -113,9 +113,9 @@ export default function Articles() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Articles & Resources for Technical Leaders"
-        description="Practical insights, strategies, and tools for CTOs, VPs of Engineering, and technical executives. Learn from real-world experiences in scaling teams and advancing careers."
-        keywords={['technical leadership articles', 'CTO insights', 'engineering management', 'tech leadership resources', 'career development']}
+        title="Technical Leadership Articles - Proven Strategies from 300+ CTOs"
+        description="Practical insights from CTOs, VPs of Engineering, and tech executives. Real-world strategies for scaling teams, advancing careers, and building authority in 2024."
+        keywords={['technical leadership articles', 'CTO insights', 'engineering management', 'tech leadership blog', 'career development', 'scaling engineering teams']}
       />
       <Navigation />
       

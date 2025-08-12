@@ -39,7 +39,7 @@ const AlternativeToSidebar = () => {
     {
       feature: "Community Size",
       sidebar: "1000+ members (diluted attention)",
-      techLeaders: "150+ curated tech leaders (high-touch support)",
+      techLeaders: "300+ curated tech leaders (high-touch support)",
       winner: "techLeaders"
     },
     {
@@ -418,7 +418,7 @@ const AlternativeToSidebar = () => {
             Stop Networking. Start Earning.
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join 150+ tech leaders who chose results over relationships
+            Join 300+ tech leaders who chose results over relationships
           </p>
 
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-blue-500/5">

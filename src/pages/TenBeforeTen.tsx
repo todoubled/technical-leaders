@@ -59,7 +59,7 @@ const TenBeforeTen = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="10 Before 10 - Get Your Next Client Fast"
-        description="The 3-step Do-or-Die strategy to shoot 10 shots before 10am and land your first consulting client. Proven system used by 150+ tech leaders."
+        description="The 3-step Do-or-Die strategy to shoot 10 shots before 10am and land your first consulting client. Proven system used by 300+ tech leaders."
         keywords={['10 before 10', 'consulting clients', 'outreach strategy', 'case study marketing', 'tech consulting']}
       />
       <Navigation />
@@ -465,7 +465,7 @@ const TenBeforeTen = () => {
             </Button>
 
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 font-semibold">
-              Join 150+ tech leaders already using this system
+              Join 300+ tech leaders already using this system
             </p>
           </Card>
 

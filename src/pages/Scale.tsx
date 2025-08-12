@@ -6,6 +6,7 @@ import { Users, Target, TrendingUp, Phone, Calendar, CheckCircle, Shield, ArrowR
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
+import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
 
 const Scale = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -102,12 +103,45 @@ const Scale = () => {
     { feature: "Results Timeline", basic: "12+ months", scale: "✅ 90 days to first client" }
   ];
 
+  // FAQ data for structured markup
+  const faqData = [
+    {
+      question: "I just finished Launch Kit. Am I ready for Scale?",
+      answer: "If you're consistently getting opportunities and have landed at least one $10K+ engagement, you're perfect for Scale. We'll help you upgrade from projects to recurring fractional roles."
+    },
+    {
+      question: "How is Scale different from Launch?",
+      answer: "Launch builds your foundation (ICP, offer, pipeline). Scale transforms that into a premium fractional practice with $15-50K/month recurring engagements and enterprise clients."
+    },
+    {
+      question: "How much can Launch graduates realistically charge?",
+      answer: "Launch grads in Scale typically go from $10-15K projects to $20-50K/month retainers. The average is $30K/month across 3 clients within 4-6 months."
+    },
+    {
+      question: "What support do I get in Scale?",
+      answer: "Weekly 1-on-1 coaching with Todd, done-for-you content, warm intros to enterprise clients, fractional exec templates, and our private Scale community of 6-figure earners."
+    }
+  ];
+
+  // Generate structured data
+  const courseStructuredData = generateCourseStructuredData(
+    "Scale Program - Grow Your Tech Leadership Business",
+    "Transform your expertise into a scalable business. For technical leaders ready to build consulting practices, advisory roles, and thought leadership platforms.",
+    "$2497"
+  );
+
+  const faqStructuredData = generateFAQStructuredData(faqData);
+
+  // Combine structured data
+  const combinedStructuredData = [courseStructuredData, faqStructuredData];
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title="Scale Program - Grow Your Tech Leadership Business"
         description="Transform your expertise into a scalable business. For technical leaders ready to build consulting practices, advisory roles, and thought leadership platforms."
         keywords={['tech leadership business', 'consulting for CTOs', 'technical advisory', 'fractional CTO', 'tech thought leadership']}
+        structuredData={combinedStructuredData}
       />
       <Navigation />
 

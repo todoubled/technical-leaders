@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
+import SEO from "@/components/SEO";
+import { generateCourseStructuredData } from "@/utils/seo-helpers";
 
 const AITradeSchool = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -69,8 +71,19 @@ const AITradeSchool = () => {
     }
   ];
 
+  const courseStructuredData = generateCourseStructuredData(
+    "AI Trade School - Master AI Tools Without Getting Technical",
+    "12-week intensive program to master AI tools, build workflows, and 10x productivity without coding. Perfect for professionals wanting to leverage AI in their work."
+  );
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="AI Trade School - Master AI Tools Without Getting Technical"
+        description="12-week intensive program to master AI tools, build workflows, and 10x productivity without coding. Learn to leverage AI for business success."
+        keywords={['AI training program', 'AI tools course', 'AI productivity', 'AI workflow automation', 'non-technical AI training', 'AI business skills']}
+        structuredData={courseStructuredData}
+      />
       <Navigation />
 
       {/* Hero Section */}
@@ -212,7 +225,7 @@ const AITradeSchool = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { icon: Zap, title: "12 Live Weekly Sessions", desc: "Interactive workshops every Tuesday at 6pm PT" },
-              { icon: Users, title: "Private Community Access", desc: "Connect with your cohort and 500+ alumni" },
+              { icon: Users, title: "Private Community Access", desc: "Connect with your cohort and 300+ alumni" },
               { icon: Award, title: "Demo Day Presentation", desc: "Show off your AI project to the community" },
               { icon: Clock, title: "Lifetime Access", desc: "Recordings, resources, and community forever" }
             ].map((item, index) => (

@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock, TrendingUp, Shield, Star, Award, ArrowRight, FileText, Map, Wrench, LifeBuoy } from "lucide-react";
+import SEO from "@/components/SEO";
+import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
 
 const LaunchWithUs = () => {
   const transformations = [
@@ -66,7 +68,7 @@ const LaunchWithUs = () => {
     {
       title: "Lifetime Tech Leaders Network",
       value: "$5,000+",
-      description: "Your personal board of 150+ senior tech leaders who send each other opportunities, make warm intros, and close deals together",
+      description: "Your personal board of 300+ senior tech leaders who send each other opportunities, make warm intros, and close deals together",
       badge: "Most Valuable"
     },
     {
@@ -206,8 +208,20 @@ const LaunchWithUs = () => {
     }
   ];
 
+  const courseStructuredData = generateCourseStructuredData(
+    "Launch With Us - Technical Leadership Accelerator Program",
+    "6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Build authority, expand income, and lead at scale with personal coaching and done-for-you systems.",
+    "$2950"
+  );
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Launch With Us - Personal Tech Leadership Accelerator Program"
+        description="6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Personal coaching, done-for-you systems, and guaranteed results."
+        keywords={['tech leadership accelerator', 'personal coaching program', 'CTO program', 'executive coaching', 'tech career advancement', 'leadership development']}
+        structuredData={courseStructuredData}
+      />
       <Navigation />
 
       {/* Hero Section */}
@@ -423,7 +437,7 @@ const LaunchWithUs = () => {
               Your 90-Day Transformation
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join 150+ tech leaders who stopped waiting and started winning together
+              Join 300+ tech leaders who stopped waiting and started winning together
             </p>
           </div>
 

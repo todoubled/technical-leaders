@@ -39,7 +39,7 @@ const AlternativeToMBA = () => {
     {
       feature: "Network Quality",
       mba: "Mixed industries, varying experience levels",
-      techLeaders: "150+ senior tech leaders actively hiring/partnering",
+      techLeaders: "300+ senior tech leaders actively hiring/partnering",
       winner: "techLeaders"
     },
     {
@@ -478,7 +478,7 @@ const AlternativeToMBA = () => {
             Your Choice: 2 Years of Debt or 90 Days to Results?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join 150+ engineers who chose skills over degrees
+            Join 300+ engineers who chose skills over degrees
           </p>
 
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-blue-500/5">

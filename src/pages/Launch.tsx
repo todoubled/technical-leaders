@@ -8,6 +8,7 @@ import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { trackConversion, trackClick, trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
+import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
 
 const Launch = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -131,7 +132,7 @@ const Launch = () => {
     {
       title: "Lifetime Tech Leaders Network",
       value: "$5,000+",
-      description: "Your personal board of 150+ senior tech leaders who send each other opportunities, make warm intros, and close deals together",
+      description: "Your personal board of 300+ senior tech leaders who send each other opportunities, make warm intros, and close deals together",
       badge: "Most Valuable"
     },
     {
@@ -154,12 +155,49 @@ const Launch = () => {
     }
   ];
 
+  // FAQ data for structured markup
+  const faqData = [
+    {
+      question: "How long before I can expect a result?",
+      answer: "We expect you to achieve a significant breakthrough within 6 months, but most members see opportunities start flowing in 30-45 days. Our entire system is designed around rapid, measurable progress with support at every step."
+    },
+    {
+      question: "What kind of revenue increase can I expect in the first 90 days?",
+      answer: "Results vary based on your offer pricing and goals. Some members land six-figure executive roles or board positions, while others secure $5K+ monthly retainers or consulting contracts. The key is we help you price your expertise at market rate - often 2-3x what you thought possible."
+    },
+    {
+      question: "Does everyone who joins the program succeed?",
+      answer: "Success requires commitment - we're not a magic solution. However, our guarantee ensures we'll work with you as long as it takes to find your ideal opportunities and land your first high-value clients. The more effort you invest, the more support and results you'll receive."
+    },
+    {
+      question: "Can this program help me secure board positions?",
+      answer: "Absolutely. We can target board directors and founders as your ideal clients, then craft a 'board advisory' offer that positions you perfectly for board opportunities. We'll workshop the exact positioning and approach that works for your expertise."
+    },
+    {
+      question: "How much time do I need to commit?",
+      answer: "Just 2-3 hours per week of async self-study and live coaching sessions. All mastermind sessions are recorded, so if you miss one live, you can catch up when convenient. Most members find this fits easily into their schedule while delivering life-changing results."
+    }
+  ];
+
+  // Generate structured data
+  const courseStructuredData = generateCourseStructuredData(
+    "Launch Program - From Senior Engineer to Tech Executive",
+    "6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Build authority, expand income, and lead at scale.",
+    "$2950"
+  );
+
+  const faqStructuredData = generateFAQStructuredData(faqData);
+
+  // Combine structured data
+  const combinedStructuredData = [courseStructuredData, faqStructuredData];
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title="Launch Program - From Senior Engineer to Tech Executive"
         description="6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Build authority, expand income, and lead at scale."
         keywords={['tech leadership program', 'engineer to CTO', 'technical executive training', 'leadership coaching', 'career advancement']}
+        structuredData={combinedStructuredData}
       />
       <Navigation />
 
@@ -195,7 +233,7 @@ const Launch = () => {
             <div className="flex items-center justify-center gap-6 mb-8 text-sm font-semibold">
               <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Trusted by 150+ tech leaders since 2022</span>
+                <span>Trusted by 300+ tech leaders since 2022</span>
               </div>
             </div>
 
@@ -316,7 +354,7 @@ const Launch = () => {
               Your 90-Day Transformation
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join 150+ tech leaders who stopped waiting and started winning together
+              Join 300+ tech leaders who stopped waiting and started winning together
             </p>
           </div>
 
@@ -588,7 +626,7 @@ const Launch = () => {
             Stop Waiting for Opportunities to Find You
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join 150+ tech leaders who took control of their careers and income
+            Join 300+ tech leaders who took control of their careers and income
           </p>
 
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-blue-500/5">

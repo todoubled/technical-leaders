@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
+import SEO from "@/components/SEO";
+import { generateCourseStructuredData } from "@/utils/seo-helpers";
 
 const AIForVC = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -103,8 +105,19 @@ const AIForVC = () => {
     }
   ];
 
+  const courseStructuredData = generateCourseStructuredData(
+    "AI Executive Training for VCs & Private Equity",
+    "Master prompt engineering and AI workflows to 10x productivity without coding. 4-week program for venture capitalists and private equity executives."
+  );
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="AI Executive Training for VCs & Private Equity - Technical Leaders"
+        description="Master prompt engineering and AI workflows without coding. 4-week executive program for venture capitalists and private equity professionals to 10x productivity with AI."
+        keywords={['AI for VC', 'AI for private equity', 'executive AI training', 'prompt engineering', 'AI workflows', 'venture capital AI', 'PE AI tools']}
+        structuredData={courseStructuredData}
+      />
       <Navigation />
 
       {/* Hero Section */}
