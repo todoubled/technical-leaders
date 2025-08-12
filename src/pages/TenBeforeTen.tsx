@@ -34,25 +34,25 @@ const TenBeforeTen = () => {
       title: "Find ICP",
       subtitle: "Identify your ideal prospects",
       description: "Use AI and Sales Navigator to find exactly who needs your expertise",
-      details: 'Find your ideal client profile on LinkedIn, then use the "twin this profile" formula with ChatGPT. Paste the LinkedIn URL and ask ChatGPT to generate Sales Navigator filters for similar profiles. Use these filters to build a targeted list of 100 prospects to connect with.',
+      details: 'Leverage AI to instantly identify and target your perfect prospects with surgical precision.',
       icon: Target,
       color: "from-purple-500 to-purple-600"
     },
     {
       number: 3,
-      title: "Targeted Outreach",
-      subtitle: "Send messages that convert",
-      description: "Use our proven script to start conversations that lead to opportunities",
-      details: "Send 10 connection requests per day from your list in Step 2. After they accept your connection request, follow up with the proven message template below that leads with value and generates genuine interest.",
+      title: "Daily Outreach System",
+      subtitle: "25 connections + 10 messages",
+      description: "Systematic approach to building your pipeline every single day",
+      details: "Execute your morning outreach routine with precision and consistency to build a predictable pipeline.",
       icon: MessageSquare,
       color: "from-green-500 to-green-600"
     }
   ];
 
   const results = [
-    { metric: "10", label: "Shots taken", sublabel: "Every morning" },
-    { metric: "1-3", label: "Conversations started", sublabel: "Per day" },
-    { metric: "1", label: "Qualified lead", sublabel: "Within 7 days" }
+    { metric: "25", label: "Connection requests", sublabel: "Sent daily" },
+    { metric: "10+", label: "Messages sent", sublabel: "To new connections" },
+    { metric: "2-5", label: "Qualified leads", sublabel: "Per week" }
   ];
 
   return (
@@ -116,8 +116,7 @@ const TenBeforeTen = () => {
                 window.location.href = "/launch-with-us";
               }}
             >
-              Get The Full Launch Kit Now
-              <ArrowRight className="ml-2 w-5 h-5" />
+              Get The Full Launch Kit
             </Button>
           </div>
         </div>
@@ -208,85 +207,283 @@ const TenBeforeTen = () => {
                         </p>
                         
                         {step.number === 1 && (
-                          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border-l-4 border-blue-500 shadow-lg">
-                            <div className="flex items-start gap-3 mb-4">
-                              <div className="p-2 bg-blue-100 dark:bg-blue-800 rounded-lg">
-                                <Star className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+                            <div className="space-y-6">
+                              {/* Header */}
+                              <div className="flex items-center gap-3 mb-4">
+                                <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+                                  <Star className="w-6 h-6 text-white" />
+                                </div>
+                                <div>
+                                  <p className="font-bold text-gray-900 dark:text-white text-xl">
+                                    Your Case Study Creation System
+                                  </p>
+                                  <p className="text-gray-600 dark:text-gray-400">
+                                    Turn your wins into powerful client magnets
+                                  </p>
+                                </div>
                               </div>
-                              <div>
-                                <p className="font-bold text-blue-900 dark:text-blue-200 text-lg mb-1">
-                                  Get The Case Study Builder™️
-                                </p>
-                                <p className="text-blue-700 dark:text-blue-300">
-                                  Transform your wins into client magnets
+
+                              {/* Three-step process */}
+                              <div className="grid md:grid-cols-3 gap-4">
+                                {/* Step 1 */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-200 dark:border-blue-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center font-bold text-blue-600 dark:text-blue-400 text-sm">
+                                      1
+                                    </div>
+                                    <span className="font-bold text-gray-900 dark:text-white text-sm">Pick Your Win</span>
+                                  </div>
+                                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Think of a recent client success</p>
+                                  <div className="text-xs text-blue-600 dark:text-blue-400 font-medium">
+                                    → What problem did you solve?
+                                  </div>
+                                </div>
+
+                                {/* Step 2 */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-cyan-200 dark:border-cyan-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-6 h-6 bg-cyan-100 dark:bg-cyan-900 rounded-full flex items-center justify-center font-bold text-cyan-600 dark:text-cyan-400 text-sm">
+                                      2
+                                    </div>
+                                    <span className="font-bold text-gray-900 dark:text-white text-sm">Use AI Builder</span>
+                                  </div>
+                                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Let AI structure your story</p>
+                                  <div className="text-xs text-cyan-600 dark:text-cyan-400 font-medium">
+                                    → Get professional format
+                                  </div>
+                                </div>
+
+                                {/* Step 3 */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center font-bold text-green-600 dark:text-green-400 text-sm">
+                                      3
+                                    </div>
+                                    <span className="font-bold text-gray-900 dark:text-white text-sm">Share & Convert</span>
+                                  </div>
+                                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Use in your outreach messages</p>
+                                  <div className="text-xs text-green-600 dark:text-green-400 font-medium">
+                                    → Instant credibility
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* CTA Button */}
+                              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
+                                <div className="flex items-center justify-between mb-3">
+                                  <p className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                                    Free Case Study Builder
+                                  </p>
+                                  <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full font-semibold">
+                                    AI-Powered
+                                  </span>
+                                </div>
+                                <Button
+                                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg"
+                                  onClick={() => {
+                                    trackClick('Case Study Builder - Step 1', {
+                                      location: '3_step_process',
+                                      destination: 'chatgpt_case_study_builder'
+                                    });
+                                    window.open('https://chatgpt.com/g/g-689a4e5129588191a4031c1c4d339a59-the-case-study-builder', '_blank');
+                                  }}
+                                >
+                                  Get The Case Study Builder
+                                </Button>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">
+                                  💡 Pro tip: Focus on measurable results (time saved, money made, problems solved)
                                 </p>
                               </div>
                             </div>
-                            <Button
-                              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg"
-                              onClick={() => {
-                                trackClick('Case Study Builder - Step 1', {
-                                  location: '3_step_process',
-                                  destination: 'chatgpt_case_study_builder'
-                                });
-                                window.open('https://chatgpt.com/g/g-689a4e5129588191a4031c1c4d339a59-the-case-study-builder', '_blank');
-                              }}
-                            >
-                              <Star className="w-4 h-4 mr-2" />
-                              Get The Case Study Builder™️
-                              <ArrowRight className="w-4 h-4 ml-2" />
-                            </Button>
                           </div>
                         )}
                         
                         {step.number === 2 && (
-                          <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-6 border-l-4 border-purple-500 shadow-lg">
-                            <div className="flex items-start gap-3">
-                              <div className="p-2 bg-purple-100 dark:bg-purple-800 rounded-lg">
-                                <Target className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                          <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+                            <div className="space-y-6">
+                              {/* Header */}
+                              <div className="flex items-center gap-3 mb-4">
+                                <div className="p-2 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg">
+                                  <Target className="w-6 h-6 text-white" />
+                                </div>
+                                <div>
+                                  <p className="font-bold text-gray-900 dark:text-white text-xl">
+                                    The AI-Powered ICP System
+                                  </p>
+                                  <p className="text-gray-600 dark:text-gray-400">
+                                    Find 100 perfect prospects in 15 minutes
+                                  </p>
+                                </div>
                               </div>
-                              <div>
-                                <p className="font-bold text-purple-900 dark:text-purple-200 text-lg mb-2">
-                                  The ICP Formula
-                                </p>
-                                <div className="space-y-1 text-sm">
-                                  <div className="flex items-center gap-2">
-                                    <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                    <span className="text-purple-700 dark:text-purple-300">Tell ChatGPT "twin this profile: LINK"</span>
+
+                              {/* Three-step process */}
+                              <div className="grid md:grid-cols-3 gap-4">
+                                {/* Step 1 */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-6 h-6 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center font-bold text-purple-600 dark:text-purple-400 text-sm">
+                                      1
+                                    </div>
+                                    <span className="font-bold text-gray-900 dark:text-white text-sm">Find Ideal Profile</span>
                                   </div>
-                                  <div className="flex items-center gap-2">
-                                    <ArrowRight className="w-3 h-3 text-purple-500" />
-                                    <span className="text-purple-700 dark:text-purple-300">Ask for Sales Nav filters</span>
-                                  </div>
-                                  <div className="flex items-center gap-2">
-                                    <ArrowRight className="w-3 h-3 text-purple-500" />
-                                    <span className="text-purple-700 dark:text-purple-300">Build list of 100 to connect with</span>
+                                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Go to LinkedIn and find one perfect client profile</p>
+                                  <div className="text-xs text-purple-600 dark:text-purple-400 font-medium">
+                                    → Copy their LinkedIn URL
                                   </div>
                                 </div>
+
+                                {/* Step 2 */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-indigo-200 dark:border-indigo-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-6 h-6 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center font-bold text-indigo-600 dark:text-indigo-400 text-sm">
+                                      2
+                                    </div>
+                                    <span className="font-bold text-gray-900 dark:text-white text-sm">Use AI Formula</span>
+                                  </div>
+                                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Tell ChatGPT to clone this profile</p>
+                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-2 text-xs font-mono text-gray-800 dark:text-gray-200">
+                                    "twin this profile: [URL]"
+                                  </div>
+                                </div>
+
+                                {/* Step 3 */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center font-bold text-green-600 dark:text-green-400 text-sm">
+                                      3
+                                    </div>
+                                    <span className="font-bold text-gray-900 dark:text-white text-sm">Build Your List</span>
+                                  </div>
+                                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Ask for Sales Navigator filters</p>
+                                  <div className="text-xs text-green-600 dark:text-green-400 font-medium">
+                                    → Target: 100 prospects
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Exact prompt */}
+                              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
+                                <div className="flex items-center justify-between mb-3">
+                                  <p className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                                    Exact ChatGPT Prompt
+                                  </p>
+                                  <span className="text-xs bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full font-semibold">
+                                    Copy & Paste
+                                  </span>
+                                </div>
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 font-mono text-sm leading-relaxed">
+                                  <p className="text-gray-800 dark:text-gray-200">
+                                    "Twin this profile: <span className="text-purple-600 dark:text-purple-400 font-bold">[PASTE_LINKEDIN_URL]</span><br/><br/>
+                                    Give me Sales Navigator filters to find similar profiles. I want to build a list of 100 prospects to connect with."
+                                  </p>
+                                </div>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">
+                                  💡 Pro tip: Choose someone who recently got promoted or started a new role - they're more likely to need help
+                                </p>
                               </div>
                             </div>
                           </div>
                         )}
                         
                         {step.number === 3 && (
-                          <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 border-l-4 border-green-500 shadow-lg">
-                            <div className="flex items-start gap-3 mb-4">
-                              <div className="p-2 bg-green-100 dark:bg-green-800 rounded-lg">
-                                <MessageSquare className="w-5 h-5 text-green-600 dark:text-green-400" />
+                          <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+                            <div className="space-y-6">
+                              {/* Daily Actions Header */}
+                              <div className="flex items-center gap-3 mb-4">
+                                <div className="p-2 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg">
+                                  <Zap className="w-6 h-6 text-white" />
+                                </div>
+                                <div>
+                                  <p className="font-bold text-gray-900 dark:text-white text-xl">
+                                    Your Daily Outreach System
+                                  </p>
+                                  <p className="text-gray-600 dark:text-gray-400">
+                                    Two simple actions that compound into pipeline growth
+                                  </p>
+                                </div>
                               </div>
-                              <div>
-                                <p className="font-bold text-green-900 dark:text-green-200 text-lg mb-1">
-                                  The Proven Script
-                                </p>
-                                <p className="text-green-700 dark:text-green-300 text-sm">
-                                  Copy, paste, and personalize
+
+                              {/* Two-column layout for actions */}
+                              <div className="grid md:grid-cols-2 gap-4">
+                                {/* Action 1: Connections */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border-2 border-blue-200 dark:border-blue-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center font-bold text-blue-600 dark:text-blue-400">
+                                      1
+                                    </div>
+                                    <Users className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    <span className="font-bold text-gray-900 dark:text-white">25 Connections</span>
+                                  </div>
+                                  <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-blue-500 font-bold">→</span>
+                                      <span>Open Sales Navigator</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-blue-500 font-bold">→</span>
+                                      <span>Use filters from Step 2</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-blue-500 font-bold">→</span>
+                                      <span>Send 25 requests with notes</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-blue-500 font-bold">→</span>
+                                      <span>Track: 30%+ accept rate</span>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                                {/* Action 2: Messages */}
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border-2 border-green-200 dark:border-green-700">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center font-bold text-green-600 dark:text-green-400">
+                                      2
+                                    </div>
+                                    <MessageSquare className="w-5 h-5 text-green-600 dark:text-green-400" />
+                                    <span className="font-bold text-gray-900 dark:text-white">10+ Messages</span>
+                                  </div>
+                                  <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-green-500 font-bold">→</span>
+                                      <span>Check accepted connections</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-green-500 font-bold">→</span>
+                                      <span>Copy script below</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-green-500 font-bold">→</span>
+                                      <span>Personalize [brackets]</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                      <span className="text-green-500 font-bold">→</span>
+                                      <span>Send 10+ before 10am</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                              {/* The Script */}
+                              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
+                                <div className="flex items-center justify-between mb-3">
+                                  <p className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                                    The Proven Message Script
+                                  </p>
+                                  <span className="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full font-semibold">
+                                    Copy & Personalize
+                                  </span>
+                                </div>
+                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 font-mono text-sm leading-relaxed">
+                                  <p className="text-gray-800 dark:text-gray-200">
+                                    "Hey <span className="text-green-600 dark:text-green-400 font-bold">[Name]</span>, I worked with <span className="text-green-600 dark:text-green-400 font-bold">[Client]</span> who you might be familiar with. They were dealing with <span className="text-green-600 dark:text-green-400 font-bold">[problem]</span> and I/we helped them get <span className="text-green-600 dark:text-green-400 font-bold">[result]</span>. Wrote up a quick case study walking through exactly how we did it. Would it be helpful if I sent over the link?"
+                                  </p>
+                                </div>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">
+                                  💡 Pro tip: Reference a mutual connection or shared interest for 2x response rates
                                 </p>
                               </div>
-                            </div>
-                            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-800 font-mono text-sm leading-relaxed">
-                              <p className="text-gray-800 dark:text-gray-200">
-                                "Hey <span className="text-green-600 dark:text-green-400 font-semibold">[Name]</span>, I worked with <span className="text-green-600 dark:text-green-400 font-semibold">[Client]</span> who you might be familiar with. They were dealing with <span className="text-green-600 dark:text-green-400 font-semibold">[problem]</span> and I/we helped them get <span className="text-green-600 dark:text-green-400 font-semibold">[result]</span>. Wrote up a quick case study walking through exactly how we did it. Would it be helpful if I sent over the link?"
-                              </p>
                             </div>
                           </div>
                         )}
@@ -303,7 +500,7 @@ const TenBeforeTen = () => {
             <div className="inline-flex items-center gap-3 bg-white dark:bg-gray-800 px-8 py-4 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
               <Clock className="w-6 h-6 text-orange-500" />
               <span className="text-lg font-bold text-gray-900 dark:text-white">
-                Momentum and Consistency matter. Send 10 messages before 10am daily
+                Daily commitment: 25 connections + 10 messages = Your pipeline grows every day
               </span>
             </div>
           </div>
@@ -380,21 +577,21 @@ const TenBeforeTen = () => {
           <div className="grid md:grid-cols-3 gap-8 mt-8">
             <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
               <p className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 mb-4">
-                10
+                25
               </p>
-              <p className="text-xl text-gray-300 font-bold">Messages Sent Before 10am Every Day</p>
+              <p className="text-xl text-gray-300 font-bold">Connection Requests Sent Daily</p>
             </div>
             <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
               <p className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 mb-4">
-                1-3
+                10+
               </p>
-              <p className="text-xl text-gray-300 font-bold">Leads Per Week</p>
+              <p className="text-xl text-gray-300 font-bold">Messages to New Connections Daily</p>
             </div>
             <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
               <p className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 mb-4">
-                6 Days
+                2-5
               </p>
-              <p className="text-xl text-gray-300 font-bold">Fastest First Client</p>
+              <p className="text-xl text-gray-300 font-bold">Qualified Leads Per Week</p>
             </div>
           </div>
           
@@ -460,8 +657,7 @@ const TenBeforeTen = () => {
                 window.location.href = "/launch-with-us";
               }}
             >
-              Get Launch Kit &amp; Start Tomorrow
-              <ArrowRight className="ml-2 w-5 h-5" />
+              Get The Full Launch Kit
             </Button>
 
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 font-semibold">
