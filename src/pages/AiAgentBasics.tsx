@@ -244,7 +244,7 @@ const AiAgentBasics = () => {
                                       <p>1. Press <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">Windows Key</code></p>
                                       <p>2. Type "PowerShell"</p>
                                       <p>3. Right-click → "Run as Administrator"</p>
-                                      <p>You'll see: <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded font-mono text-xs">C:\Users\YourName></code></p>
+                                      <p>You'll see: <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded font-mono text-xs">C:\Users\YourName&gt;</code></p>
                                     </div>
                                   </div>
                                 </div>
@@ -337,7 +337,7 @@ const AiAgentBasics = () => {
                                     </div>
                                     <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
                                       <p className="text-orange-600 dark:text-orange-400 font-semibold mb-1">Windows:</p>
-                                      <code className="font-mono text-xs">echo. > README.md</code>
+                                      <code className="font-mono text-xs">echo. &gt; README.md</code>
                                     </div>
                                   </div>
                                 </div>
