@@ -232,19 +232,19 @@ const AiAgentBasics = () => {
                                   <div>
                                     <p className="font-semibold text-blue-600 dark:text-blue-400 mb-2">Mac Users:</p>
                                     <div className="space-y-1 text-gray-600 dark:text-gray-400">
-                                      <p>1. Press <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">Command + Space</code></p>
+                                      <p>1. Press <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">Command + Space</code></p>
                                       <p>2. Type "Terminal"</p>
                                       <p>3. Press Enter</p>
-                                      <p>You'll see: <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded font-mono text-xs">yourname@YourComputer ~ %</code></p>
+                                      <p>You'll see: <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">yourname@YourComputer ~ %</code></p>
                                     </div>
                                   </div>
                                   <div>
                                     <p className="font-semibold text-cyan-600 dark:text-cyan-400 mb-2">Windows Users:</p>
                                     <div className="space-y-1 text-gray-600 dark:text-gray-400">
-                                      <p>1. Press <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">Windows Key</code></p>
+                                      <p>1. Press <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">Windows Key</code></p>
                                       <p>2. Type "PowerShell"</p>
                                       <p>3. Right-click → "Run as Administrator"</p>
-                                      <p>You'll see: <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded font-mono text-xs">C:\Users\YourName&gt;</code></p>
+                                      <p>You'll see: <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">C:\Users\YourName&gt;</code></p>
                                     </div>
                                   </div>
                                 </div>
@@ -261,9 +261,9 @@ const AiAgentBasics = () => {
                                     <span className="text-gray-900 dark:text-white font-semibold">"Where's our team working?"</span>
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Shows your current location in the file system</p>
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-2 text-xs font-mono">
-                                    <span className="text-gray-500">Mac:</span> <span className="text-green-600">/Users/yourname</span><br/>
-                                    <span className="text-gray-500">Windows:</span> <span className="text-green-600">C:\Users\YourName</span>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 text-xs font-mono">
+                                    <span className="text-slate-300 dark:text-slate-600">Mac:</span> <span className="text-green-400 dark:text-green-600 font-semibold">/Users/yourname</span><br/>
+                                    <span className="text-slate-300 dark:text-slate-600">Windows:</span> <span className="text-green-400 dark:text-green-600 font-semibold">C:\Users\YourName</span>
                                   </div>
                                 </div>
 
@@ -276,8 +276,8 @@ const AiAgentBasics = () => {
                                     <span className="text-gray-900 dark:text-white font-semibold">"What projects are here?"</span>
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Lists all files and folders in your current location</p>
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-2 text-xs">
-                                    <p className="text-blue-600 dark:text-blue-400 mb-1">💡 Pro tip: Use <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">ls -la</code> on Mac to see hidden files</p>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 text-xs">
+                                    <p className="text-blue-400 dark:text-blue-600 mb-1 font-medium">💡 Pro tip: Use <code className="bg-blue-900 dark:bg-blue-100 text-blue-200 dark:text-blue-800 px-2 py-1 rounded font-mono font-semibold">ls -la</code> on Mac to see hidden files</p>
                                   </div>
                                 </div>
 
@@ -289,21 +289,21 @@ const AiAgentBasics = () => {
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Navigate between folders like rooms in an office</p>
                                   <div className="space-y-2 text-sm">
-                                    <div className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <code className="font-mono text-xs">cd Documents</code>
-                                      <span className="text-gray-600 dark:text-gray-400">Enter the Documents folder</span>
+                                    <div className="flex justify-between items-center bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <code className="font-mono text-sm text-green-400 dark:text-green-600 font-semibold">cd Documents</code>
+                                      <span className="text-slate-300 dark:text-slate-600 font-medium">Enter the Documents folder</span>
                                     </div>
-                                    <div className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <code className="font-mono text-xs">cd ..</code>
-                                      <span className="text-gray-600 dark:text-gray-400">Go back one level</span>
+                                    <div className="flex justify-between items-center bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <code className="font-mono text-sm text-green-400 dark:text-green-600 font-semibold">cd ..</code>
+                                      <span className="text-slate-300 dark:text-slate-600 font-medium">Go back one level</span>
                                     </div>
-                                    <div className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <code className="font-mono text-xs">cd ~</code>
-                                      <span className="text-gray-600 dark:text-gray-400">Return to home base</span>
+                                    <div className="flex justify-between items-center bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <code className="font-mono text-sm text-green-400 dark:text-green-600 font-semibold">cd ~</code>
+                                      <span className="text-slate-300 dark:text-slate-600 font-medium">Return to home base</span>
                                     </div>
-                                    <div className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <code className="font-mono text-xs">cd "Q4 Reports"</code>
-                                      <span className="text-gray-600 dark:text-gray-400">Use quotes for spaces</span>
+                                    <div className="flex justify-between items-center bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <code className="font-mono text-sm text-green-400 dark:text-green-600 font-semibold">cd "Q4 Reports"</code>
+                                      <span className="text-slate-300 dark:text-slate-600 font-medium">Use quotes for spaces</span>
                                     </div>
                                   </div>
                                 </div>
@@ -315,9 +315,9 @@ const AiAgentBasics = () => {
                                     <span className="text-gray-900 dark:text-white font-semibold">"Create a new project space"</span>
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Creates new folders for organizing your work</p>
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                    <code className="font-mono text-xs text-purple-600 dark:text-purple-400">mkdir awesome-new-project</code>
-                                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">💡 Use hyphens instead of spaces in project names</p>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                    <code className="font-mono text-sm text-purple-400 dark:text-purple-600 font-semibold">mkdir awesome-new-project</code>
+                                    <p className="text-xs text-slate-300 dark:text-slate-600 mt-2 font-medium">💡 Use hyphens instead of spaces in project names</p>
                                   </div>
                                 </div>
 
@@ -331,13 +331,13 @@ const AiAgentBasics = () => {
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Creates new files for your projects</p>
                                   <div className="grid md:grid-cols-2 gap-3 text-sm">
-                                    <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">Mac:</p>
-                                      <code className="font-mono text-xs">touch README.md</code>
+                                    <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <p className="text-blue-400 dark:text-blue-600 font-semibold mb-2">Mac:</p>
+                                      <code className="font-mono text-sm text-orange-400 dark:text-orange-600 font-semibold">touch README.md</code>
                                     </div>
-                                    <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <p className="text-orange-600 dark:text-orange-400 font-semibold mb-1">Windows:</p>
-                                      <code className="font-mono text-xs">echo. &gt; README.md</code>
+                                    <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <p className="text-orange-400 dark:text-orange-600 font-semibold mb-2">Windows:</p>
+                                      <code className="font-mono text-sm text-orange-400 dark:text-orange-600 font-semibold">echo. &gt; README.md</code>
                                     </div>
                                   </div>
                                 </div>
@@ -352,42 +352,42 @@ const AiAgentBasics = () => {
                                     <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
                                     <div>
                                       <p className="font-semibold text-gray-900 dark:text-white">Check your location:</p>
-                                      <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">pwd</code>
+                                      <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-3 py-1 rounded font-mono text-sm font-semibold">pwd</code>
                                     </div>
                                   </div>
                                   <div className="flex items-start gap-3">
                                     <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
                                     <div>
                                       <p className="font-semibold text-gray-900 dark:text-white">Go to home base:</p>
-                                      <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">cd ~</code>
+                                      <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-3 py-1 rounded font-mono text-sm font-semibold">cd ~</code>
                                     </div>
                                   </div>
                                   <div className="flex items-start gap-3">
                                     <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
                                     <div>
                                       <p className="font-semibold text-gray-900 dark:text-white">Create project workspace:</p>
-                                      <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">mkdir my-team-project</code>
+                                      <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-3 py-1 rounded font-mono text-sm font-semibold">mkdir my-team-project</code>
                                     </div>
                                   </div>
                                   <div className="flex items-start gap-3">
                                     <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</div>
                                     <div>
                                       <p className="font-semibold text-gray-900 dark:text-white">Enter the workspace:</p>
-                                      <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">cd my-team-project</code>
+                                      <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-3 py-1 rounded font-mono text-sm font-semibold">cd my-team-project</code>
                                     </div>
                                   </div>
                                   <div className="flex items-start gap-3">
                                     <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</div>
                                     <div>
                                       <p className="font-semibold text-gray-900 dark:text-white">Create project file:</p>
-                                      <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">touch README.md</code>
+                                      <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-3 py-1 rounded font-mono text-sm font-semibold">touch README.md</code>
                                     </div>
                                   </div>
                                   <div className="flex items-start gap-3">
                                     <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</div>
                                     <div>
                                       <p className="font-semibold text-gray-900 dark:text-white">Verify your work:</p>
-                                      <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded font-mono text-xs">ls</code>
+                                      <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-3 py-1 rounded font-mono text-sm font-semibold">ls</code>
                                     </div>
                                   </div>
                                 </div>
@@ -396,11 +396,11 @@ const AiAgentBasics = () => {
                                 </div>
                               </div>
 
-                              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                                <p className="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">
+                              <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                                <p className="text-sm font-bold text-blue-800 dark:text-blue-200 mb-2">
                                   💡 Think of terminal as your team's Slack channel
                                 </p>
-                                <p className="text-xs text-gray-600 dark:text-gray-400">
+                                <p className="text-xs text-blue-700 dark:text-blue-300">
                                   Instead of clicking through menus, you give direct instructions through text. It's how professional developers communicate with their machines - and soon it'll feel as natural as sending a text message.
                                 </p>
                               </div>
@@ -434,14 +434,14 @@ const AiAgentBasics = () => {
                                   <div>
                                     <p className="font-semibold text-purple-600 dark:text-purple-400 mb-2">1. Install Git</p>
                                     <div className="grid md:grid-cols-2 gap-4 text-sm">
-                                      <div className="bg-gray-50 dark:bg-gray-900 rounded p-3">
-                                        <p className="font-semibold mb-2 text-blue-600 dark:text-blue-400">Mac:</p>
-                                        <code className="font-mono text-xs block mb-2">git --version</code>
-                                        <p className="text-xs text-gray-600 dark:text-gray-400">If not installed, macOS will prompt you to install it</p>
+                                      <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                        <p className="font-semibold mb-2 text-blue-400 dark:text-blue-600">Mac:</p>
+                                        <code className="font-mono text-sm block mb-2 text-blue-300 dark:text-blue-700 font-semibold">git --version</code>
+                                        <p className="text-xs text-slate-300 dark:text-slate-600">If not installed, macOS will prompt you to install it</p>
                                       </div>
-                                      <div className="bg-gray-50 dark:bg-gray-900 rounded p-3">
-                                        <p className="font-semibold mb-2 text-orange-600 dark:text-orange-400">Windows:</p>
-                                        <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Download from git-scm.com</p>
+                                      <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                        <p className="font-semibold mb-2 text-orange-400 dark:text-orange-600">Windows:</p>
+                                        <p className="text-xs text-slate-300 dark:text-slate-600 mb-1">Download from git-scm.com</p>
                                         <p className="text-xs text-gray-600 dark:text-gray-400">Keep all default settings</p>
                                       </div>
                                     </div>
@@ -451,11 +451,11 @@ const AiAgentBasics = () => {
                                   <div>
                                     <p className="font-semibold text-purple-600 dark:text-purple-400 mb-2">2. Introduce Yourself to Your Team</p>
                                     <div className="space-y-2">
-                                      <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                        <code className="font-mono text-xs">git config --global user.name "Your Name"</code>
+                                      <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                        <code className="font-mono text-sm text-purple-400 dark:text-purple-600 font-semibold">git config --global user.name "Your Name"</code>
                                       </div>
-                                      <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                        <code className="font-mono text-xs">git config --global user.email "you@example.com"</code>
+                                      <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                        <code className="font-mono text-sm text-purple-400 dark:text-purple-600 font-semibold">git config --global user.email "you@example.com"</code>
                                       </div>
                                       <p className="text-xs text-gray-600 dark:text-gray-400">💡 Every change you make is like signing a document - Git needs to know who's making decisions</p>
                                     </div>
@@ -496,9 +496,9 @@ const AiAgentBasics = () => {
                                     <span className="text-gray-900 dark:text-white font-semibold">Import a Project</span>
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Get an existing project from GitHub to your local workspace</p>
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-2 space-y-1">
-                                    <code className="font-mono text-xs block">git clone https://github.com/company/project-name.git</code>
-                                    <code className="font-mono text-xs block">cd project-name</code>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 space-y-2">
+                                    <code className="font-mono text-sm block text-green-400 dark:text-green-600 font-semibold">git clone https://github.com/company/project-name.git</code>
+                                    <code className="font-mono text-sm block text-green-400 dark:text-green-600 font-semibold">cd project-name</code>
                                   </div>
                                 </div>
 
@@ -509,10 +509,10 @@ const AiAgentBasics = () => {
                                     <span className="text-gray-900 dark:text-white font-semibold">Check Project Status</span>
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">See what your team has changed</p>
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-2 text-xs">
-                                    <p><span className="text-red-600">Red items:</span> Changes not yet reviewed</p>
-                                    <p><span className="text-green-600">Green items:</span> Changes approved and ready to record</p>
-                                    <p><span className="text-gray-600">"Nothing to commit":</span> All work is up to date</p>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 text-sm">
+                                    <p><span className="text-red-400 dark:text-red-600 font-semibold">Red items:</span> <span className="text-slate-300 dark:text-slate-600">Changes not yet reviewed</span></p>
+                                    <p><span className="text-green-400 dark:text-green-600 font-semibold">Green items:</span> <span className="text-slate-300 dark:text-slate-600">Changes approved and ready to record</span></p>
+                                    <p><span className="text-slate-400 dark:text-slate-500 font-semibold">"Nothing to commit":</span> <span className="text-slate-300 dark:text-slate-600">All work is up to date</span></p>
                                   </div>
                                 </div>
 
@@ -524,13 +524,13 @@ const AiAgentBasics = () => {
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Move changes to the review stage</p>
                                   <div className="space-y-2 text-sm">
-                                    <div className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <code className="font-mono text-xs">git add filename.js</code>
-                                      <span className="text-gray-600 dark:text-gray-400">Review specific file</span>
+                                    <div className="flex justify-between items-center bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <code className="font-mono text-sm text-yellow-400 dark:text-yellow-600 font-semibold">git add filename.js</code>
+                                      <span className="text-slate-300 dark:text-slate-600 font-medium">Review specific file</span>
                                     </div>
-                                    <div className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <code className="font-mono text-xs">git add .</code>
-                                      <span className="text-gray-600 dark:text-gray-400">Review all changes</span>
+                                    <div className="flex justify-between items-center bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <code className="font-mono text-sm text-yellow-400 dark:text-yellow-600 font-semibold">git add .</code>
+                                      <span className="text-slate-300 dark:text-slate-600 font-medium">Review all changes</span>
                                     </div>
                                   </div>
                                 </div>
@@ -542,8 +542,8 @@ const AiAgentBasics = () => {
                                     <span className="text-gray-900 dark:text-white font-semibold">Record Team Decisions</span>
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Save your reviewed changes with a clear description</p>
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-2 mb-3">
-                                    <code className="font-mono text-xs">git commit -m "Add customer login feature"</code>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 mb-3">
+                                    <code className="font-mono text-sm text-blue-400 dark:text-blue-600 font-semibold">git commit -m "Add customer login feature"</code>
                                   </div>
                                   <div className="grid md:grid-cols-2 gap-3 text-xs">
                                     <div>
@@ -574,14 +574,14 @@ const AiAgentBasics = () => {
                                     <span className="text-gray-900 dark:text-white font-semibold">Team Synchronization</span>
                                   </div>
                                   <div className="grid md:grid-cols-2 gap-3 text-sm">
-                                    <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-1">Share Work:</p>
-                                      <code className="font-mono text-xs block mb-1">git push</code>
-                                      <p className="text-xs text-gray-600 dark:text-gray-400">Upload your team's work to the cloud</p>
+                                    <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <p className="font-semibold text-indigo-400 dark:text-indigo-600 mb-2">Share Work:</p>
+                                      <code className="font-mono text-sm block mb-2 text-indigo-300 dark:text-indigo-700 font-semibold">git push</code>
+                                      <p className="text-xs text-slate-300 dark:text-slate-600">Upload your team's work to the cloud</p>
                                     </div>
-                                    <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                      <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-1">Get Updates:</p>
-                                      <code className="font-mono text-xs block mb-1">git pull</code>
+                                    <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                      <p className="font-semibold text-indigo-400 dark:text-indigo-600 mb-2">Get Updates:</p>
+                                      <code className="font-mono text-sm block mb-2 text-indigo-300 dark:text-indigo-700 font-semibold">git pull</code>
                                       <p className="text-xs text-gray-600 dark:text-gray-400">Download latest changes from team</p>
                                     </div>
                                   </div>
@@ -661,11 +661,11 @@ const AiAgentBasics = () => {
                                 </div>
                               </div>
 
-                              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                                <p className="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">
+                              <div className="bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                                <p className="text-sm font-bold text-purple-800 dark:text-purple-200 mb-2">
                                   💡 Git is like having a project manager who never forgets
                                 </p>
-                                <p className="text-xs text-gray-600 dark:text-gray-400">
+                                <p className="text-xs text-purple-700 dark:text-purple-300">
                                   It tracks every decision, every change, and can instantly recall any previous version. No more "final_final_v2_ACTUALLY_final.doc" chaos! Your entire development history is preserved and searchable.
                                 </p>
                               </div>
@@ -749,8 +749,8 @@ const AiAgentBasics = () => {
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Get instant feedback and improvements on your code</p>
                                   
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-3 space-y-2">
-                                    <h6 className="font-semibold text-blue-600 dark:text-blue-400 text-sm">Example Commands:</h6>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 space-y-2">
+                                    <h6 className="font-semibold text-blue-400 dark:text-blue-600 text-sm">Example Commands:</h6>
                                     <div className="space-y-1 text-xs font-mono">
                                       <div className="bg-white dark:bg-gray-800 p-2 rounded border">
                                         <span className="text-green-600">claude</span> <span className="text-gray-600">"Review my recent changes and suggest improvements"</span>
@@ -775,8 +775,8 @@ const AiAgentBasics = () => {
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Write code together in real-time collaboration</p>
                                   
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-3 space-y-2">
-                                    <h6 className="font-semibold text-green-600 dark:text-green-400 text-sm">Collaboration Examples:</h6>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 space-y-2">
+                                    <h6 className="font-semibold text-green-400 dark:text-green-600 text-sm">Collaboration Examples:</h6>
                                     <div className="space-y-1 text-xs font-mono">
                                       <div className="bg-white dark:bg-gray-800 p-2 rounded border">
                                         <span className="text-green-600">claude</span> <span className="text-gray-600">"Help me implement a user authentication system"</span>
@@ -801,8 +801,8 @@ const AiAgentBasics = () => {
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Get help understanding and fixing errors</p>
                                   
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-3 space-y-2">
-                                    <h6 className="font-semibold text-orange-600 dark:text-orange-400 text-sm">Debugging Support:</h6>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 space-y-2">
+                                    <h6 className="font-semibold text-orange-400 dark:text-orange-600 text-sm">Debugging Support:</h6>
                                     <div className="space-y-1 text-xs font-mono">
                                       <div className="bg-white dark:bg-gray-800 p-2 rounded border">
                                         <span className="text-green-600">claude</span> <span className="text-gray-600">"Can you explain what this error means?"</span>
@@ -827,8 +827,8 @@ const AiAgentBasics = () => {
                                   </div>
                                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">AI assistance with version control and project organization</p>
                                   
-                                  <div className="bg-gray-50 dark:bg-gray-900 rounded p-3 space-y-2">
-                                    <h6 className="font-semibold text-purple-600 dark:text-purple-400 text-sm">Git Collaboration:</h6>
+                                  <div className="bg-slate-800 dark:bg-slate-200 rounded p-3 space-y-2">
+                                    <h6 className="font-semibold text-purple-400 dark:text-purple-600 text-sm">Git Collaboration:</h6>
                                     <div className="space-y-1 text-xs font-mono">
                                       <div className="bg-white dark:bg-gray-800 p-2 rounded border">
                                         <span className="text-green-600">claude</span> <span className="text-gray-600">"What's a good commit message for these changes?"</span>
@@ -877,17 +877,17 @@ const AiAgentBasics = () => {
                                     <div className="space-y-3">
                                       <h5 className="font-semibold text-blue-600 dark:text-blue-400">🏃 Common Commands:</h5>
                                       <div className="space-y-2 text-xs">
-                                        <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                          <code className="font-mono">npm install</code>
-                                          <p className="text-gray-600 dark:text-gray-400 mt-1">Gather project resources</p>
+                                        <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                          <code className="font-mono text-blue-400 dark:text-blue-600 font-semibold">npm install</code>
+                                          <p className="text-slate-300 dark:text-slate-600 mt-1 font-medium">Gather project resources</p>
                                         </div>
-                                        <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                          <code className="font-mono">npm start</code>
-                                          <p className="text-gray-600 dark:text-gray-400 mt-1">Launch project</p>
+                                        <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                          <code className="font-mono text-green-400 dark:text-green-600 font-semibold">npm start</code>
+                                          <p className="text-slate-300 dark:text-slate-600 mt-1 font-medium">Launch project</p>
                                         </div>
-                                        <div className="bg-gray-50 dark:bg-gray-900 rounded p-2">
-                                          <code className="font-mono">Ctrl+C</code>
-                                          <p className="text-gray-600 dark:text-gray-400 mt-1">Stop project</p>
+                                        <div className="bg-slate-800 dark:bg-slate-200 rounded p-3">
+                                          <code className="font-mono text-red-400 dark:text-red-600 font-semibold">Ctrl+C</code>
+                                          <p className="text-slate-300 dark:text-slate-600 mt-1 font-medium">Stop project</p>
                                         </div>
                                       </div>
                                     </div>
@@ -941,11 +941,11 @@ const AiAgentBasics = () => {
                                 </div>
                               </div>
 
-                              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                                <p className="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">
+                              <div className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                                <p className="text-sm font-bold text-green-800 dark:text-green-200 mb-2">
                                   💡 You're not coding alone anymore - you're leading a team
                                 </p>
-                                <p className="text-xs text-gray-600 dark:text-gray-400">
+                                <p className="text-xs text-green-700 dark:text-green-300">
                                   Claude Code is like having a senior developer who's available 24/7, never gets tired, and has experience with virtually every programming language. You drive the vision and make strategic decisions, while AI handles implementation details and offers expert guidance. This is the future of development leadership.
                                 </p>
                               </div>
@@ -994,7 +994,7 @@ const AiAgentBasics = () => {
                   <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     <p className="font-medium mb-1">Solutions:</p>
                     <ul className="space-y-1 text-xs">
-                      <li>• Mac: Add <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">sudo</code> before command</li>
+                      <li>• Mac: Add <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">sudo</code> before command</li>
                       <li>• Windows: Run terminal as Administrator</li>
                     </ul>
                   </div>
@@ -1017,8 +1017,8 @@ const AiAgentBasics = () => {
                   <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     <p className="font-medium mb-1">Solutions:</p>
                     <ul className="space-y-1 text-xs">
-                      <li>• Check location with <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">pwd</code></li>
-                      <li>• List files with <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">ls</code></li>
+                      <li>• Check location with <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">pwd</code></li>
+                      <li>• List files with <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">ls</code></li>
                       <li>• Verify path is correct</li>
                     </ul>
                   </div>
@@ -1042,7 +1042,7 @@ const AiAgentBasics = () => {
                     <p className="font-medium mb-1">Solutions:</p>
                     <ul className="space-y-1 text-xs">
                       <li>• Navigate to project folder first</li>
-                      <li>• Initialize with <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">git init</code></li>
+                      <li>• Initialize with <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">git init</code></li>
                     </ul>
                   </div>
                 </div>
@@ -1052,7 +1052,7 @@ const AiAgentBasics = () => {
                   <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     <p className="font-medium mb-1">Solutions:</p>
                     <ul className="space-y-1 text-xs">
-                      <li>• Run <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">git push</code> to sync</li>
+                      <li>• Run <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">git push</code> to sync</li>
                       <li>• Your local work isn't shared yet</li>
                     </ul>
                   </div>
@@ -1064,7 +1064,7 @@ const AiAgentBasics = () => {
                     <p className="font-medium mb-1">Solutions:</p>
                     <ul className="space-y-1 text-xs">
                       <li>• Open conflicted file</li>
-                      <li>• Look for <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> markers</li>
+                      <li>• Look for <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> markers</li>
                       <li>• Choose which changes to keep</li>
                       <li>• Remove markers and commit</li>
                     </ul>
@@ -1099,7 +1099,7 @@ const AiAgentBasics = () => {
                   <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     <p className="font-medium mb-1">Solutions:</p>
                     <ul className="space-y-1 text-xs">
-                      <li>• Run <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">npm install</code> first</li>
+                      <li>• Run <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">npm install</code> first</li>
                       <li>• Ensure you're in project root</li>
                     </ul>
                   </div>
@@ -1147,7 +1147,7 @@ const AiAgentBasics = () => {
                     <p className="font-medium mb-1">Solutions:</p>
                     <ul className="space-y-1 text-xs">
                       <li>• Check internet connection</li>
-                      <li>• Verify <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">claude --version</code></li>
+                      <li>• Verify <code className="bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 px-2 py-1 rounded font-mono text-xs font-semibold">claude --version</code></li>
                       <li>• Restart terminal session</li>
                     </ul>
                   </div>
