@@ -147,19 +147,9 @@ const AiRdSystem = () => {
             Master AI tools and workflows with AI-Driven Product Development to go from research to reality and ship a revenue-generating AI product or service.
           </p>
           
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
             This comprehensive tutorial teaches a systematic 6-step approach that validates demand, builds prototypes, and launches successfully using behavioral science and AI tools.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
-            {results.map((result, index) => (
-              <div key={index} className="text-center p-4 bg-background/50 backdrop-blur border border-white/10 rounded-lg">
-                <div className="text-2xl font-bold text-primary mb-1">{result.metric}</div>
-                <div className="text-sm font-medium text-foreground">{result.label}</div>
-                <div className="text-xs text-muted-foreground">{result.sublabel}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -265,6 +255,88 @@ const AiRdSystem = () => {
                   <span className="text-foreground font-medium">Leverage AI tools throughout the process</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prerequisites & Setup */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              Prerequisites & Setup
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Everything you need to get started with the Ship AI Program framework
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {/* Development Environment Setup */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 justify-center">
+                <GitBranch className="w-6 h-6 text-blue-600" />
+                Development Environment Setup
+              </h3>
+              
+              <Card className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                      <GitBranch className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <h4 className="text-xl font-bold">Clone the Agents Repository</h4>
+                  </div>
+                  
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Before beginning this program, you must clone the technical leaders agents repository which contains essential AI agent templates and frameworks used throughout the tutorial:
+                  </p>
+                  
+                  <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
+                    <div className="text-green-400 text-xs mb-2"># Navigate to your preferred development directory</div>
+                    <div className="text-white font-mono text-sm mb-2">cd ~/code</div>
+                    <div className="text-green-400 text-xs mb-2"># Clone the agents repository using SSH (recommended)</div>
+                    <div className="text-white font-mono text-sm mb-2">git clone git@github.com:technical-leaders/agents.git</div>
+                    <div className="text-green-400 text-xs mb-2"># Navigate into the cloned repository</div>
+                    <div className="text-white font-mono text-sm mb-2">cd agents</div>
+                    <div className="text-green-400 text-xs mb-2"># Verify the repository contents</div>
+                    <div className="text-white font-mono text-sm">ls -la</div>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <h5 className="font-bold text-gray-900 dark:text-white mb-3">What's in the Agents Repository:</h5>
+                    <div className="grid grid-cols-1 gap-2">
+                      {[
+                        'Pre-built AI agent configurations for market research',
+                        'Customer interview templates and analysis frameworks',
+                        'Product requirement document (PRD) generators',
+                        'User experience (UX) story creation tools',
+                        'Go-to-market strategy templates',
+                        'Integration examples for popular AI development tools'
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg">
+                    <h5 className="font-bold text-yellow-800 dark:text-yellow-300 mb-2 flex items-center gap-2">
+                      <Lightbulb className="w-4 h-4" />
+                      Important Notes:
+                    </h5>
+                    <ul className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
+                      <li>• Ensure you have SSH keys set up with GitHub for seamless access</li>
+                      <li>• If you encounter permission issues, verify your GitHub access to the technical-leaders organization</li>
+                      <li>• The agents repository will be referenced throughout Steps 1-6 of this program</li>
+                      <li>• Keep the repository updated by running <code className="bg-yellow-100 dark:bg-yellow-800 px-1 rounded text-xs">git pull origin main</code> periodically</li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>

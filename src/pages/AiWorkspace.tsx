@@ -8,11 +8,11 @@ import { trackClick, trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { useEffect } from "react";
 
-const AiAgentBasics = () => {
-  useTrackScrollDepth('AI Agent Basics Page');
+const AiWorkspace = () => {
+  useTrackScrollDepth('AI Workspace Page');
   
   useEffect(() => {
-    trackEvent('AI Agent Basics Page View', {
+    trackEvent('AI Workspace Page View', {
       has_strategy: true,
       has_cta: true
     });
@@ -58,7 +58,7 @@ const AiAgentBasics = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Agent Basics - Build Your Development Team"
+        title="AI Workspace - Build Your Development Team"
         description="Learn terminal, Git, and AI collaboration fundamentals. Transform from coding alone to leading a team where AI agents accelerate your development."
         keywords={['AI development', 'terminal basics', 'git fundamentals', 'Claude Code', 'AI programming team']}
       />
@@ -84,12 +84,12 @@ const AiAgentBasics = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
             The Tech Leader
             <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
-              AI Workflow™️
+              AI Workspace™️
             </span>
           </h1>
           
           <h2 className="text-2xl sm:text-3xl font-semibold text-muted-foreground mb-6">
-            Welcome to the Modern Development Workplace
+            Welcome to the Modern Development Workspace
           </h2>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
@@ -1353,4 +1353,4 @@ const AiAgentBasics = () => {
   );
 };
 
-export default AiAgentBasics;
+export default AiWorkspace;

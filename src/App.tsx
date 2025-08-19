@@ -32,7 +32,7 @@ import FinanceWorkshopConfirmed from "./pages/FinanceWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
 import Benchmark from "./pages/Benchmark";
 import TenBeforeTen from "./pages/TenBeforeTen";
-import AiAgentBasics from "./pages/AiAgentBasics";
+import AiWorkspace from "./pages/AiWorkspace";
 import AdvancedClaude from "./pages/AdvancedClaude";
 import AIForSuits from "./pages/AIForSuits";
 import AiRdSystem from "./pages/AiRdSystem";
@@ -90,8 +90,9 @@ const App = () => (
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/benchmark" element={<Benchmark />} />
           <Route path="/10-before-10" element={<TenBeforeTen />} />
-          <Route path="/ai-workflow" element={<AiAgentBasics />} />
-          <Route path="/ai-agent-basics" element={<Navigate to="/ai-workflow" replace />} />
+          <Route path="/ai-workspace" element={<AiWorkspace />} />
+          <Route path="/ai-workflow" element={<Navigate to="/ai-workspace" replace />} />
+          <Route path="/ai-agent-basics" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/advanced-claude" element={<AdvancedClaude />} />
           <Route path="/ai-for-suits" element={<AIForSuits />} />
           <Route path="/ai-rd-system" element={<AiRdSystem />} />
