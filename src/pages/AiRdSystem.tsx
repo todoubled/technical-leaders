@@ -10,10 +10,10 @@ import { useEffect } from "react";
 
 const AiRdSystem = () => {
   useTrackScrollDepth('AI R&D System Page');
-  
+
   useEffect(() => {
     trackEvent('AI R&D System Page View', {
-      tutorial_type: 'Ship AI Program',
+      tutorial_type: 'AI R&D',
       has_6_steps: true
     });
   }, []);
@@ -27,7 +27,7 @@ const AiRdSystem = () => {
       details: "Complete market research, customer interviews, and ICP validation using AI tools and behavioral science.",
       icon: Search,
       color: "from-blue-500 to-blue-600",
-      deliverables: ["Market Research Report", "10-15 Customer Interviews", "ICP Documentation", "Pain Point Analysis"]
+      deliverables: ["Market Research Report", "Go-to-Market Strategies", "ICP Documentation", "Pain Point Analysis"]
     },
     {
       number: 2,
@@ -77,7 +77,7 @@ const AiRdSystem = () => {
       details: "Implement marketing strategies, optimize conversion funnels, and establish growth measurement frameworks.",
       icon: Rocket,
       color: "from-indigo-500 to-indigo-600",
-      deliverables: ["Launch Strategy", "Marketing Materials", "Customer Acquisition Channels", "Revenue Optimization"]
+      deliverables: []
     }
   ];
 
@@ -94,7 +94,7 @@ const AiRdSystem = () => {
       tools: ["Claude.ai", "Customer interviews", "Pain point analysis"]
     },
     {
-      name: "Rapid Prototyping", 
+      name: "Rapid Prototyping",
       description: "AI-powered development",
       tools: ["v0.dev", "Bolt.new", "Cursor IDE"]
     },
@@ -108,9 +108,9 @@ const AiRdSystem = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI R&D System - Ship AI Program Tutorial"
-        description="Master the 6-step Ship AI Program framework. Learn systematic AI product development from market research to revenue launch using behavioral science and AI tools."
-        keywords={['AI R&D system', 'Ship AI Program', 'product development', 'AI workflow', 'behavioral design', 'Claude Code tutorial']}
+        title="AI R&D System Tutorial"
+        description="Master the 6-step AI R&D framework. Learn systematic AI product development from market research to revenue launch using behavioral science and AI tools."
+        keywords={['AI R&D system', 'AI R&D framework', 'product development', 'AI workflow', 'behavioral design', 'Claude Code tutorial']}
       />
 
       <Navigation />
@@ -129,134 +129,24 @@ const AiRdSystem = () => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold mb-6">
             <Rocket className="w-4 h-4" />
-            <span>Ship AI Program Tutorial</span>
+            <span>Part of the Ship AI Program</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
             The AI R&D System™
-            <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
-              Ship AI Program
-            </span>
           </h1>
-          
+
           <h2 className="text-2xl sm:text-3xl font-semibold text-muted-foreground mb-6">
-            From Research to Reality in 4-8 Weeks
+            From Research to Reality
           </h2>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
             Master AI tools and workflows with AI-Driven Product Development to go from research to reality and ship a revenue-generating AI product or service.
           </p>
-          
+
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
             This comprehensive tutorial teaches a systematic 6-step approach that validates demand, builds prototypes, and launches successfully using behavioral science and AI tools.
           </p>
-        </div>
-      </section>
-
-      {/* Your Development Toolkit */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-600/5"></div>
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-16 text-white">
-            Your AI R&D Toolkit
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 mt-8">
-            {toolkit.map((tool, index) => (
-              <div key={index} className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 mx-auto mb-4 text-center flex items-center justify-center">
-                  {index === 0 && <Search className="w-12 h-12 text-blue-400" />}
-                  {index === 1 && <Code className="w-12 h-12 text-purple-400" />}
-                  {index === 2 && <Brain className="w-12 h-12 text-green-400" />}
-                </div>
-                <p className="text-xl font-bold text-white mb-2">{tool.name}</p>
-                <p className="text-gray-300 text-sm mb-3">{tool.description}</p>
-                <div className="space-y-1">
-                  {tool.tools.map((toolName, idx) => (
-                    <div key={idx} className="font-mono text-xs text-gray-400">
-                      {toolName}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          {/* Additional benefits */}
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">Behavioral science-based</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">AI-first methodology</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">Proven 6-step framework</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why This Framework Works */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Why This Framework Works
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The Ship AI Program follows proven principles that most product development ignores
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-red-600">❌ Traditional Approach</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">Lengthy market research with expensive consultants</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">Building features without customer validation</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">Hoping customers will adopt the product</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">90% failure rate for new products</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-green-600">✅ Ship AI Program</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-foreground font-medium">Validate demand before building anything</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-foreground font-medium">Use community-driven research methods</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-foreground font-medium">Iterate development with continuous feedback</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-foreground font-medium">Leverage AI tools throughout the process</span>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -265,10 +155,10 @@ const AiRdSystem = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Prerequisites & Setup
+              Setup
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Everything you need to get started with the Ship AI Program framework
+              Everything you need to get started with the AI R&D framework
             </p>
           </div>
 
@@ -279,7 +169,7 @@ const AiRdSystem = () => {
                 <GitBranch className="w-6 h-6 text-blue-600" />
                 Development Environment Setup
               </h3>
-              
+
               <Card className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 mb-4">
@@ -288,22 +178,22 @@ const AiRdSystem = () => {
                     </div>
                     <h4 className="text-xl font-bold">Clone the Agents Repository</h4>
                   </div>
-                  
+
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Before beginning this program, you must clone the technical leaders agents repository which contains essential AI agent templates and frameworks used throughout the tutorial:
+                    Before beginning this tutorial, you must clone the technical leaders agents repository which contains essential AI agent templates and frameworks used throughout the tutorial:
                   </p>
-                  
+
                   <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
-                    <div className="text-green-400 text-xs mb-2"># Navigate to your preferred development directory</div>
-                    <div className="text-white font-mono text-sm mb-2">cd ~/code</div>
+                    <div className="text-green-400 text-xs mb-2"># Navigate to your claude directory</div>
+                    <div className="text-white font-mono text-sm mb-2">cd ~/.claude</div>
                     <div className="text-green-400 text-xs mb-2"># Clone the agents repository using SSH (recommended)</div>
                     <div className="text-white font-mono text-sm mb-2">git clone git@github.com:technical-leaders/agents.git</div>
                     <div className="text-green-400 text-xs mb-2"># Navigate into the cloned repository</div>
                     <div className="text-white font-mono text-sm mb-2">cd agents</div>
-                    <div className="text-green-400 text-xs mb-2"># Verify the repository contents</div>
+                    <div className="text-green-400 text-xs mb-2"># Verify the agents have been installed</div>
                     <div className="text-white font-mono text-sm">ls -la</div>
                   </div>
-                  
+
                   <div className="mt-6">
                     <h5 className="font-bold text-gray-900 dark:text-white mb-3">What's in the Agents Repository:</h5>
                     <div className="grid grid-cols-1 gap-2">
@@ -331,7 +221,7 @@ const AiRdSystem = () => {
                     <ul className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
                       <li>• Ensure you have SSH keys set up with GitHub for seamless access</li>
                       <li>• If you encounter permission issues, verify your GitHub access to the technical-leaders organization</li>
-                      <li>• The agents repository will be referenced throughout Steps 1-6 of this program</li>
+                      <li>• The agents repository will be referenced throughout Steps 1-6 of this tutorial</li>
                       <li>• Keep the repository updated by running <code className="bg-yellow-100 dark:bg-yellow-800 px-1 rounded text-xs">git pull origin main</code> periodically</li>
                     </ul>
                   </div>
@@ -348,7 +238,7 @@ const AiRdSystem = () => {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-6 py-3 rounded-full font-bold mb-6 shadow-md">
               <Rocket className="w-5 h-5" />
-              <span>Ship AI Program Framework</span>
+              <span>AI R&D Framework</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
               The Complete 6-Step Tutorial System
@@ -365,7 +255,7 @@ const AiRdSystem = () => {
                 {index < steps.length - 1 && (
                   <div className="absolute left-1/2 top-full w-0.5 h-12 bg-gradient-to-b from-orange-300 to-transparent dark:from-orange-600 transform -translate-x-1/2 z-10"></div>
                 )}
-                
+
                 <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 group border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
                   <div className="flex flex-col lg:flex-row">
                     {/* Left side - Step info */}
@@ -380,7 +270,7 @@ const AiRdSystem = () => {
                       </div>
                       <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                       <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-10 -translate-x-10"></div>
-                      
+
                       <div className="relative z-10">
                         <div className="flex items-center gap-4 mb-6">
                           <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
@@ -390,7 +280,7 @@ const AiRdSystem = () => {
                             <step.icon className="w-8 h-8" />
                           </div>
                         </div>
-                        
+
                         <div className="space-y-4">
                           <div>
                             <h3 className="text-3xl font-bold mb-2 leading-tight">{step.title}</h3>
@@ -400,27 +290,231 @@ const AiRdSystem = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Right side - Details */}
                     <div className="lg:w-3/5 p-10 bg-white dark:bg-gray-800">
                       <div className="h-full flex flex-col justify-between">
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{step.details}</p>
-                          
-                          <div>
-                            <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
-                              <FileText className="w-5 h-5 text-orange-600" />
-                              Key Deliverables
-                            </h4>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                              {step.deliverables.map((deliverable, idx) => (
-                                <div key={idx} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                  <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                  <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{deliverable}</span>
-                                </div>
-                              ))}
+
+                          {/* Claude Command for Step 1 */}
+                          {step.number === 1 && (
+                            <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
+                              <div className="text-green-400 text-xs mb-2"># Claude Command for Market Research</div>
+                              <div className="text-white font-mono text-sm">
+                                Use sea-of-demand to write a new document called market-research.md about my PRODUCT_OR_SERVICE for ICP_IDENTITY with PROBLEMS_OR_RISKS
+                              </div>
                             </div>
-                          </div>
+                          )}
+
+                          {/* Claude Command for Step 2 */}
+                          {step.number === 2 && (
+                            <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
+                              <div className="text-green-400 text-xs mb-2"># Claude Command for Waitlist Validation</div>
+                              <div className="text-white font-mono text-sm">
+                                Use waitlist-builder to read market-research.md and icp-interviews.md to validate bet
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Claude Command for Step 3 */}
+                          {step.number === 3 && (
+                            <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
+                              <div className="text-green-400 text-xs mb-2"># Claude Command for Wedge Roadmap</div>
+                              <div className="text-white font-mono text-sm">
+                                Use product-researcher to create a Wedge Roadmap
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Claude Command for Step 4 */}
+                          {step.number === 4 && (
+                            <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
+                              <div className="text-green-400 text-xs mb-2"># Claude Command for PRD Creation</div>
+                              <div className="text-white font-mono text-sm">
+                                Use user-researcher to create a PRD
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Claude Command for Step 5 */}
+                          {step.number === 5 && (
+                            <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
+                              <div className="text-green-400 text-xs mb-2"># Claude Command for Iteration Loop</div>
+                              <div className="text-white font-mono text-sm">
+                                Use ux-story-creator to create user stories from your PRD
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Iteration Loop Steps for Step 5 */}
+                          {step.number === 5 && (
+                            <div>
+                              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                                <Settings className="w-5 h-5 text-red-600" />
+                                The Iteration Loop Process
+                              </h4>
+                              <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg">
+                                <p className="text-sm text-blue-800 dark:text-blue-300 font-medium">
+                                  Use this to integrate your prototypes into your fully functioning software.
+                                </p>
+                              </div>
+                              <div className="space-y-3">
+                                {[
+                                  {
+                                    title: "Prototype",
+                                    description: "Feed each story from market-research-ux.md into v0 to prototype"
+                                  },
+                                  {
+                                    title: "Feedback", 
+                                    description: "Show your prototyped features to your ICP waitlist and implement changes to consider their feedback"
+                                  },
+                                  {
+                                    title: "Integrate",
+                                    description: "Give your final v0 prototype file to Claude Code and ask to integrate it into your product"
+                                  }
+                                ].map((step, idx) => (
+                                  <div key={idx} className="flex items-start gap-4 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
+                                    <div className="w-8 h-8 bg-red-100 dark:bg-red-800/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                      <span className="text-sm font-bold text-red-600 dark:text-red-300">{idx + 1}</span>
+                                    </div>
+                                    <div>
+                                      <h5 className="font-bold text-gray-900 dark:text-white mb-1">{step.title}</h5>
+                                      <span className="text-sm text-gray-700 dark:text-gray-300">{step.description}</span>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Claude Command for Step 6 */}
+                          {step.number === 6 && (
+                            <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
+                              <div className="text-green-400 text-xs mb-2"># Claude Command for Go-to-Market Launch</div>
+                              <div className="text-white font-mono text-sm">
+                                Use launch-strategist to create revenue generating activities
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Go-to-Market Launch Steps for Step 6 */}
+                          {step.number === 6 && (
+                            <div>
+                              <div className="mb-6 p-4 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-700 rounded-lg">
+                                <p className="text-sm text-indigo-800 dark:text-indigo-300 font-medium">
+                                  Your next steps after you have a functioning product from The Iteration Loop™:
+                                </p>
+                              </div>
+
+                              <div className="space-y-6">
+                                {/* Deploy to Production */}
+                                <div>
+                                  <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                                    <Rocket className="w-5 h-5 text-indigo-600" />
+                                    Deploy to Production
+                                  </h4>
+                                  <div className="space-y-3">
+                                    {[
+                                      "Create Vercel and Github accounts",
+                                      "Add New Github Project to Vercel",
+                                      "Github Basics to Push to Production (GH Desktop)",
+                                      "Set up custom domain on Vercel",
+                                      "git push origin main 🎉"
+                                    ].map((step, idx) => (
+                                      <div key={idx} className="flex items-start gap-3 p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg">
+                                        <div className="w-6 h-6 bg-indigo-100 dark:bg-indigo-800/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                          <span className="text-xs font-bold text-indigo-600 dark:text-indigo-300">{idx + 1}</span>
+                                        </div>
+                                        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{step}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                {/* Launch Kit */}
+                                <div>
+                                  <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                                    <BarChart className="w-5 h-5 text-green-600" />
+                                    Launch Kit™
+                                  </h4>
+                                  <div className="mb-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg">
+                                    <p className="text-sm text-green-800 dark:text-green-300 font-medium">
+                                      Run your Revenue Generating Activities (RGAs) to effectively spread the word, capture attention, and convert interested users into paying customers.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Follow-up Steps for Step 2 */}
+                          {step.number === 2 && (
+                            <div>
+                              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                                <Target className="w-5 h-5 text-purple-600" />
+                                Promote Waitlist to ICP
+                              </h4>
+                              <div className="mb-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg">
+                                <p className="text-sm text-yellow-800 dark:text-yellow-300 font-medium">
+                                  If you can't get signups for a future product, it's unlikely you'll get signups for a full product after wasting time and money to make it real
+                                </p>
+                              </div>
+                              <div className="space-y-3">
+                                <div className="flex items-start gap-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                  <div className="w-6 h-6 bg-purple-100 dark:bg-purple-800/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <span className="text-xs font-bold text-purple-600 dark:text-purple-300">🎯</span>
+                                  </div>
+                                  <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Get 10 signups for early access to your product</span>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Key Deliverables - only show if there are deliverables */}
+                          {step.deliverables && step.deliverables.length > 0 && (
+                            <div>
+                              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                                <FileText className="w-5 h-5 text-orange-600" />
+                                Key Deliverables
+                              </h4>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                {step.deliverables.map((deliverable, idx) => (
+                                  <div key={idx} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                    <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                    <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{deliverable}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Step-by-Step Process for Step 1 */}
+                          {step.number === 1 && (
+                            <div>
+                              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                                <Target className="w-5 h-5 text-blue-600" />
+                                The Inverted Dream 100 ICP List™️
+                              </h4>
+                              <div className="space-y-3">
+                                {[
+                                  "Find 10 online communities where your ICP gathers",
+                                  "Spend 1 week observing without promoting",
+                                  "Document the top 5 pain points mentioned",
+                                  "Validate which ones you can solve best",
+                                  "Build a list of 100 dream customers and invert the order to \"practice\" on lower risk ICP",
+                                  "Conduct in-depth interviews (see The Mom Test) with your Ideal Customer Profile (ICP) to confirm their pain points. Save the transcripts in a file called icp-interviews.md."
+                                ].map((step, idx) => (
+                                  <div key={idx} className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                                    <div className="w-6 h-6 bg-blue-100 dark:bg-blue-800/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                      <span className="text-xs font-bold text-blue-600 dark:text-blue-300">{idx + 1}</span>
+                                    </div>
+                                    <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{step}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -463,32 +557,6 @@ const AiRdSystem = () => {
               </div>
             </Card>
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Ready to Ship Your AI Product?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Start the comprehensive 6-step tutorial that systematically takes you from market research to revenue launch using behavioral science and AI tools.
-          </p>
-          <Button
-            size="lg"
-            className="text-lg px-8"
-            onClick={() => {
-              trackClick('Start AI R&D System Tutorial', {
-                tutorial_type: 'Ship AI Program',
-                location: 'final_cta'
-              });
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
-            <Rocket className="mr-2 h-5 w-5" />
-            Start the Tutorial
-          </Button>
         </div>
       </section>
 

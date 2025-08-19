@@ -67,11 +67,6 @@ const AdvancedClaude = () => {
     }
   ];
 
-  const results = [
-    { metric: "5x", label: "Faster iteration", sublabel: "With visual feedback loops" },
-    { metric: "10x", label: "More integrations", sublabel: "Via MCP servers" },
-    { metric: "50%", label: "Lower costs", sublabel: "With smart context management" }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -117,37 +112,6 @@ const AdvancedClaude = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
             Master CLI automation, visual development workflows, MCP server integrations, advanced configuration, and cost optimization strategies used by AI development professionals.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => trackClick('Start Advanced Tutorial', { source: 'hero' })}
-            >
-              <Zap className="mr-2 h-5 w-5" />
-              Start Advanced Tutorial
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-8 py-4 rounded-full font-bold border-2 hover:bg-primary/5 transition-all duration-300"
-              onClick={() => trackClick('View Prerequisites', { source: 'hero' })}
-            >
-              <CheckCircle2 className="mr-2 h-5 w-5" />
-              Prerequisites
-            </Button>
-          </div>
-
-          {/* Results Preview */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {results.map((result, index) => (
-              <div key={index} className="bg-card/50 backdrop-blur-sm border rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-1">{result.metric}</div>
-                <div className="text-sm font-semibold text-foreground mb-1">{result.label}</div>
-                <div className="text-xs text-muted-foreground">{result.sublabel}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -421,10 +385,10 @@ const AdvancedClaude = () => {
               <Settings className="w-5 h-5" />
               <span>Configuration Mastery</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
               CLAUDE.md & Slash Commands
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               Master configuration files and custom commands for professional workflows
             </p>
           </div>
@@ -476,11 +440,11 @@ const AdvancedClaude = () => {
                 <div className="p-2 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold">Slash Commands</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Slash Commands</h3>
               </div>
               <div className="space-y-4">
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                  <p className="font-semibold mb-2">Example Commands:</p>
+                  <p className="font-semibold mb-2 text-gray-900 dark:text-white">Example Commands:</p>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
                       <code className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded font-mono text-xs">/review</code>
@@ -519,10 +483,10 @@ const AdvancedClaude = () => {
               <Monitor className="w-5 h-5" />
               <span>Advanced Troubleshooting</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
               Professional Problem Solving
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               Handle common advanced scenarios and optimize your workflow
             </p>
           </div>
