@@ -19,7 +19,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Refer from "./pages/Refer";
 import AlternativeToSidebar from "./pages/AlternativeToSidebar";
 import AlternativeToMBA from "./pages/AlternativeToMBA";
-import TLAIWorkflow from "./pages/TLAIWorkflow";
 import RGAWorkshop from "./pages/RGAWorkshop";
 import PlaybookConfirmed from "./pages/PlaybookConfirmed";
 import ShipAI from "./pages/ShipAI";
@@ -34,7 +33,9 @@ import AIForVC from "./pages/AIForVC";
 import Benchmark from "./pages/Benchmark";
 import TenBeforeTen from "./pages/TenBeforeTen";
 import AiAgentBasics from "./pages/AiAgentBasics";
+import AdvancedClaude from "./pages/AdvancedClaude";
 import AIForSuits from "./pages/AIForSuits";
+import AiRdSystem from "./pages/AiRdSystem";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -76,8 +77,6 @@ const App = () => (
           <Route path="/refer" element={<Refer />} />
           <Route path="/alternative-to-sidebar" element={<AlternativeToSidebar />} />
           <Route path="/alternative-to-mba" element={<AlternativeToMBA />} />
-          <Route path="/tl-ai-workflow" element={<TLAIWorkflow />} />
-          <Route path="/workshop" element={<Navigate to="/tl-ai-workflow" replace />} />
           <Route path="/in-demand" element={<RGAWorkshop />} />
           <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
           <Route path="/ship-ai" element={<ShipAI />} />
@@ -91,8 +90,11 @@ const App = () => (
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/benchmark" element={<Benchmark />} />
           <Route path="/10-before-10" element={<TenBeforeTen />} />
-          <Route path="/ai-agent-basics" element={<AiAgentBasics />} />
+          <Route path="/ai-workflow" element={<AiAgentBasics />} />
+          <Route path="/ai-agent-basics" element={<Navigate to="/ai-workflow" replace />} />
+          <Route path="/advanced-claude" element={<AdvancedClaude />} />
           <Route path="/ai-for-suits" element={<AIForSuits />} />
+          <Route path="/ai-rd-system" element={<AiRdSystem />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

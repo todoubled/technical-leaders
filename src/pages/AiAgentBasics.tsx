@@ -78,68 +78,79 @@ const AiAgentBasics = () => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold mb-6">
             <Bot className="w-4 h-4" />
-            <span>Build Your AI Development Team</span>
+            <span>Build Your Development Team</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Terminal, Git, and Your
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+            The Tech Leader
             <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
-              AI Development Colleagues
+              AI Workflow™️
             </span>
           </h1>
+          
+          <h2 className="text-2xl sm:text-3xl font-semibold text-muted-foreground mb-6">
+            Welcome to the Modern Development Workplace
+          </h2>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
-            Stop coding alone. Learn the <span className="font-bold text-white">fundamentals</span> to build a modern development team where you lead and AI agents accelerate your work.
+            Think of yourself as the team lead of a small but powerful development team. You're not coding alone - you have digital colleagues ready to help.
           </p>
           
-          <p className="text-2xl font-semibold mb-8 max-w-2xl mx-auto">
-            Master the basics that transform you from solo coder to team leader.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            This guide will show you how to set up your workspace, communicate with your computer through the terminal, manage your project history with Git, and collaborate with AI team members who can accelerate your work.
           </p>
-
-          <div className="bg-background/50 backdrop-blur border border-white/10 rounded-lg p-6 max-w-2xl mx-auto mb-8 shadow-xl">
-            <p className="text-lg font-bold mb-2">
-              🚀 From commands to collaboration in one guide
-            </p>
-            <p className="text-base text-muted-foreground">
-              The foundation every tech leader needs to work effectively with AI development tools
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-              onClick={() => {
-                trackClick('Start Learning - AI Agent Basics', {
-                  location: 'hero_section'
-                });
-                const element = document.getElementById('fundamentals-section');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Start Building Your Team
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Expected Results */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 -mt-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6">
-            {results.map((result, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-xl transition-all duration-300 border-2 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mb-2">
-                  {result.metric}
-                </p>
-                <p className="text-lg font-bold text-gray-900 dark:text-white">
-                  {result.label}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {result.sublabel}
-                </p>
-              </Card>
-            ))}
+      {/* Your Development Toolkit */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-600/5"></div>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-16 text-white">
+            Your Team Toolkit
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mt-8">
+            <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <Terminal className="w-12 h-12 mx-auto mb-4 text-blue-400" />
+              <p className="text-xl font-bold text-white mb-2">Terminal</p>
+              <p className="text-gray-300 text-sm">Your communication hub</p>
+              <div className="mt-3 font-mono text-xs text-gray-400">
+                pwd • ls • cd • mkdir
+              </div>
+            </div>
+            <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <GitBranch className="w-12 h-12 mx-auto mb-4 text-purple-400" />
+              <p className="text-xl font-bold text-white mb-2">Git</p>
+              <p className="text-gray-300 text-sm">Your project manager</p>
+              <div className="mt-3 font-mono text-xs text-gray-400">
+                add • commit • push • pull
+              </div>
+            </div>
+            <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <Bot className="w-12 h-12 mx-auto mb-4 text-green-400" />
+              <p className="text-xl font-bold text-white mb-2">Claude Code</p>
+              <p className="text-gray-300 text-sm">Your AI colleague</p>
+              <div className="mt-3 font-mono text-xs text-gray-400">
+                24/7 • expert • patient
+              </div>
+            </div>
+          </div>
+          
+          {/* Additional benefits */}
+          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span className="text-sm font-medium">Works on any platform</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span className="text-sm font-medium">Industry standard tools</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span className="text-sm font-medium">Learn once, use everywhere</span>
+            </div>
           </div>
         </div>
       </section>
@@ -390,9 +401,6 @@ const AiAgentBasics = () => {
                                       <code className="bg-gray-900 dark:bg-gray-100 text-green-400 dark:text-green-700 px-3 py-1 rounded font-mono text-sm font-semibold">ls</code>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="mt-3 p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-200 dark:border-green-800">
-                                  <p className="text-sm text-green-800 dark:text-green-300 font-semibold">🎉 Congratulations! You just managed your first project workspace like a pro team leader!</p>
                                 </div>
                               </div>
 
@@ -962,6 +970,174 @@ const AiAgentBasics = () => {
         </div>
       </section>
 
+      {/* Quick Reference Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-6 py-3 rounded-full font-bold mb-6 shadow-md">
+              <Star className="w-5 h-5" />
+              <span>Quick Reference</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+              Your Team Command Center
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Essential commands for leading your AI development team effectively.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {/* Terminal Commands */}
+            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-blue-500 rounded-lg">
+                  <Terminal className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="font-bold text-white">Terminal</h3>
+              </div>
+              <div className="space-y-2 text-sm font-mono">
+                <div className="flex justify-between items-center">
+                  <code className="text-blue-300">pwd</code>
+                  <span className="text-gray-400 text-xs">Where am I?</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-blue-300">ls</code>
+                  <span className="text-gray-400 text-xs">What's here?</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-blue-300">cd folder</code>
+                  <span className="text-gray-400 text-xs">Move to</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-blue-300">mkdir name</code>
+                  <span className="text-gray-400 text-xs">Create folder</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-blue-300">touch file</code>
+                  <span className="text-gray-400 text-xs">Create file</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* Git Commands */}
+            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-purple-500 rounded-lg">
+                  <GitBranch className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="font-bold text-white">Git</h3>
+              </div>
+              <div className="space-y-2 text-sm font-mono">
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-300">git status</code>
+                  <span className="text-gray-400 text-xs">Check changes</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-300">git add .</code>
+                  <span className="text-gray-400 text-xs">Stage all</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-300">git commit</code>
+                  <span className="text-gray-400 text-xs">Save changes</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-300">git push</code>
+                  <span className="text-gray-400 text-xs">Upload</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-300">git pull</code>
+                  <span className="text-gray-400 text-xs">Download</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* Node.js Commands */}
+            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-green-500 rounded-lg">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="font-bold text-white">Node.js</h3>
+              </div>
+              <div className="space-y-2 text-sm font-mono">
+                <div className="flex justify-between items-center">
+                  <code className="text-green-300">npm install</code>
+                  <span className="text-gray-400 text-xs">Get resources</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-green-300">npm start</code>
+                  <span className="text-gray-400 text-xs">Launch project</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-green-300">npm run dev</code>
+                  <span className="text-gray-400 text-xs">Development</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-green-300">Ctrl+C</code>
+                  <span className="text-gray-400 text-xs">Stop project</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-green-300">node --version</code>
+                  <span className="text-gray-400 text-xs">Check version</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* Claude Code Commands */}
+            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-orange-500 rounded-lg">
+                  <Bot className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="font-bold text-white">Claude Code</h3>
+              </div>
+              <div className="space-y-2 text-sm">
+                <div className="text-orange-300 font-mono text-xs mb-2">claude "your request"</div>
+                <div className="space-y-1 text-xs text-gray-300">
+                  <p>• "Review my code"</p>
+                  <p>• "Fix this error"</p>
+                  <p>• "Explain this concept"</p>
+                  <p>• "Write tests for this"</p>
+                  <p>• "Optimize performance"</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Essential Workflow */}
+          <div className="mt-12 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-8 border border-orange-500/20">
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">🚀 Essential Daily Workflow</h3>
+            <div className="grid md:grid-cols-5 gap-4 text-center">
+              <div className="text-white">
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
+                <p className="text-sm font-semibold mb-1">Navigate</p>
+                <code className="text-xs text-blue-300">cd project</code>
+              </div>
+              <div className="text-white">
+                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
+                <p className="text-sm font-semibold mb-1">Check Status</p>
+                <code className="text-xs text-purple-300">git status</code>
+              </div>
+              <div className="text-white">
+                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">3</div>
+                <p className="text-sm font-semibold mb-1">Collaborate</p>
+                <code className="text-xs text-orange-300">claude "help"</code>
+              </div>
+              <div className="text-white">
+                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">4</div>
+                <p className="text-sm font-semibold mb-1">Save Work</p>
+                <code className="text-xs text-green-300">git commit</code>
+              </div>
+              <div className="text-white">
+                <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">5</div>
+                <p className="text-sm font-semibold mb-1">Share</p>
+                <code className="text-xs text-indigo-300">git push</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Troubleshooting Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
@@ -1170,358 +1346,7 @@ const AiAgentBasics = () => {
         </div>
       </section>
 
-      {/* Quick Reference Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-6 py-3 rounded-full font-bold mb-6 shadow-md">
-              <Star className="w-5 h-5" />
-              <span>Quick Reference</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-              Your Development Command Center
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Essential commands for leading your AI development team effectively.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {/* Terminal Commands */}
-            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-500 rounded-lg">
-                  <Terminal className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="font-bold text-white">Terminal</h3>
-              </div>
-              <div className="space-y-2 text-sm font-mono">
-                <div className="flex justify-between items-center">
-                  <code className="text-blue-300">pwd</code>
-                  <span className="text-gray-400 text-xs">Where am I?</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-blue-300">ls</code>
-                  <span className="text-gray-400 text-xs">What's here?</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-blue-300">cd folder</code>
-                  <span className="text-gray-400 text-xs">Move to</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-blue-300">mkdir name</code>
-                  <span className="text-gray-400 text-xs">Create folder</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-blue-300">touch file</code>
-                  <span className="text-gray-400 text-xs">Create file</span>
-                </div>
-              </div>
-            </Card>
-
-            {/* Git Commands */}
-            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-purple-500 rounded-lg">
-                  <GitBranch className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="font-bold text-white">Git</h3>
-              </div>
-              <div className="space-y-2 text-sm font-mono">
-                <div className="flex justify-between items-center">
-                  <code className="text-purple-300">git status</code>
-                  <span className="text-gray-400 text-xs">Check changes</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-purple-300">git add .</code>
-                  <span className="text-gray-400 text-xs">Stage all</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-purple-300">git commit</code>
-                  <span className="text-gray-400 text-xs">Save changes</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-purple-300">git push</code>
-                  <span className="text-gray-400 text-xs">Upload</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-purple-300">git pull</code>
-                  <span className="text-gray-400 text-xs">Download</span>
-                </div>
-              </div>
-            </Card>
-
-            {/* Node.js Commands */}
-            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-green-500 rounded-lg">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="font-bold text-white">Node.js</h3>
-              </div>
-              <div className="space-y-2 text-sm font-mono">
-                <div className="flex justify-between items-center">
-                  <code className="text-green-300">npm install</code>
-                  <span className="text-gray-400 text-xs">Get resources</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-green-300">npm start</code>
-                  <span className="text-gray-400 text-xs">Launch project</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-green-300">npm run dev</code>
-                  <span className="text-gray-400 text-xs">Development</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-green-300">Ctrl+C</code>
-                  <span className="text-gray-400 text-xs">Stop project</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <code className="text-green-300">node --version</code>
-                  <span className="text-gray-400 text-xs">Check version</span>
-                </div>
-              </div>
-            </Card>
-
-            {/* Claude Code Commands */}
-            <Card className="p-6 bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-orange-500 rounded-lg">
-                  <Bot className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="font-bold text-white">Claude Code</h3>
-              </div>
-              <div className="space-y-2 text-sm">
-                <div className="text-orange-300 font-mono text-xs mb-2">claude "your request"</div>
-                <div className="space-y-1 text-xs text-gray-300">
-                  <p>• "Review my code"</p>
-                  <p>• "Fix this error"</p>
-                  <p>• "Explain this concept"</p>
-                  <p>• "Write tests for this"</p>
-                  <p>• "Optimize performance"</p>
-                </div>
-              </div>
-            </Card>
-          </div>
-
-          {/* Essential Workflow */}
-          <div className="mt-12 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-8 border border-orange-500/20">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">🚀 Essential Daily Workflow</h3>
-            <div className="grid md:grid-cols-5 gap-4 text-center">
-              <div className="text-white">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
-                <p className="text-sm font-semibold mb-1">Navigate</p>
-                <code className="text-xs text-blue-300">cd project</code>
-              </div>
-              <div className="text-white">
-                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
-                <p className="text-sm font-semibold mb-1">Check Status</p>
-                <code className="text-xs text-purple-300">git status</code>
-              </div>
-              <div className="text-white">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">3</div>
-                <p className="text-sm font-semibold mb-1">Collaborate</p>
-                <code className="text-xs text-orange-300">claude "help"</code>
-              </div>
-              <div className="text-white">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">4</div>
-                <p className="text-sm font-semibold mb-1">Save Work</p>
-                <code className="text-xs text-green-300">git commit</code>
-              </div>
-              <div className="text-white">
-                <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">5</div>
-                <p className="text-sm font-semibold mb-1">Share</p>
-                <code className="text-xs text-indigo-300">git push</code>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why This Matters */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Why These Fundamentals Transform Everything
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">From Solo to Team Leader</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Transform from coding alone to leading a team where AI handles implementation while you focus on strategy and architecture
-                  </p>
-                </div>
-              </div>
-            </Card>
-            
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">10x Development Speed</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    AI agents handle repetitive tasks, boilerplate code, and research while you drive the vision and make decisions
-                  </p>
-                </div>
-              </div>
-            </Card>
-            
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Professional Workflows</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Learn the same tools and processes used by senior developers at top tech companies worldwide
-                  </p>
-                </div>
-              </div>
-            </Card>
-            
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Future-Proof Skills</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Master the fundamentals that remain constant while AI tools evolve - terminal, Git, and team leadership
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Reference */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-600/5"></div>
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-16 text-white">
-            Your Development Toolkit
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 mt-8">
-            <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <Terminal className="w-12 h-12 mx-auto mb-4 text-blue-400" />
-              <p className="text-xl font-bold text-white mb-2">Terminal</p>
-              <p className="text-gray-300 text-sm">Your communication hub</p>
-              <div className="mt-3 font-mono text-xs text-gray-400">
-                pwd • ls • cd • mkdir
-              </div>
-            </div>
-            <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <GitBranch className="w-12 h-12 mx-auto mb-4 text-purple-400" />
-              <p className="text-xl font-bold text-white mb-2">Git</p>
-              <p className="text-gray-300 text-sm">Your project manager</p>
-              <div className="mt-3 font-mono text-xs text-gray-400">
-                add • commit • push • pull
-              </div>
-            </div>
-            <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <Bot className="w-12 h-12 mx-auto mb-4 text-green-400" />
-              <p className="text-xl font-bold text-white mb-2">Claude Code</p>
-              <p className="text-gray-300 text-sm">Your AI colleague</p>
-              <div className="mt-3 font-mono text-xs text-gray-400">
-                24/7 • expert • patient
-              </div>
-            </div>
-          </div>
-          
-          {/* Additional benefits */}
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">Works on any platform</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">Industry standard tools</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">Learn once, use everywhere</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <Zap className="w-16 h-16 mx-auto mb-6 text-orange-500" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Ready to Build Your Development Team?
-          </h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-            Master these fundamentals and accelerate your development with AI-powered workflows.
-          </p>
-
-          <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-              Get The Complete Learning System
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4 mb-6 text-left max-w-xl mx-auto">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">Terminal mastery guide</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">Git workflow system</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">AI collaboration patterns</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">Hands-on practice exercises</span>
-              </div>
-            </div>
-
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
-              onClick={() => {
-                trackClick('Get Complete Guide - AI Agent Basics', {
-                  location: 'bottom_section'
-                });
-                window.location.href = "/launch-with-us";
-              }}
-            >
-              Get The Complete Guide
-            </Button>
-
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 font-semibold">
-              Join hundreds of developers building with AI
-            </p>
-          </Card>
-
-          <p className="text-gray-700 dark:text-gray-300 mt-8">
-            Questions? Email{" "}
-            <a href="mailto:todd@technical-leaders.com" className="text-orange-600 hover:underline">
-              todd@technical-leaders.com
-            </a>
-            {" "}or{" "}
-            <button
-              onClick={() => {
-                trackClick('Book Call - AI Agent Basics', {
-                  location: 'bottom_section'
-                });
-                window.location.href = "/call";
-              }}
-              className="text-orange-600 hover:underline"
-            >
-              book a call
-            </button>
-          </p>
-        </div>
-      </section>
 
       <Footer />
     </div>

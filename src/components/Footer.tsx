@@ -62,14 +62,6 @@ const Footer = () => {
                     Articles
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/tl-ai-workflow"
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    AI Workshop
-                  </a>
-                </li>
               </ul>
             </div>
 
