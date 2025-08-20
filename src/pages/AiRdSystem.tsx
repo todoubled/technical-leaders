@@ -27,7 +27,7 @@ const AiRdSystem = () => {
       details: "Complete market research, customer interviews, and ICP validation using AI tools and behavioral science.",
       icon: Search,
       color: "from-blue-500 to-blue-600",
-      deliverables: ["Market Research Report", "Go-to-Market Strategies", "ICP Documentation", "Pain Point Analysis"]
+      deliverables: ["market-research.md", "icp-interviews.md with 10 interviews"]
     },
     {
       number: 2,
@@ -37,7 +37,7 @@ const AiRdSystem = () => {
       details: "Build waitlist landing pages using proven patterns, set up development environment, and validate through real signups.",
       icon: Target,
       color: "from-purple-500 to-purple-600",
-      deliverables: ["Landing Page", "Email Capture System", "10+ Waitlist Signups", "Development Environment"]
+      deliverables: ["Landing Page", "Email Capture System"]
     },
     {
       number: 3,
@@ -47,7 +47,7 @@ const AiRdSystem = () => {
       details: "Create comprehensive Product Requirements Document with strategic feature prioritization.",
       icon: Brain,
       color: "from-green-500 to-green-600",
-      deliverables: ["Jobs-to-be-Done Analysis", "Wedge Feature Selection", "Product Requirements Document", "Go-to-Market Strategy"]
+      deliverables: ["roadmap-prd.md"]
     },
     {
       number: 4,
@@ -57,7 +57,7 @@ const AiRdSystem = () => {
       details: "Design wireframes, map user journeys, and validate prototypes with real customers.",
       icon: TestTube,
       color: "from-orange-500 to-orange-600",
-      deliverables: ["User Experience Flows", "Wireframes", "Prototype Testing", "Customer Validation"]
+      deliverables: ["ux.md"]
     },
     {
       number: 5,
@@ -67,7 +67,7 @@ const AiRdSystem = () => {
       details: "Use Claude Code and rapid prototyping to create working software with customer feedback.",
       icon: Settings,
       color: "from-red-500 to-red-600",
-      deliverables: ["UX Story Creation", "v0 Prototypes", "Customer Feedback Integration", "Working Software"]
+      deliverables: ["Functional App"]
     },
     {
       number: 6,
@@ -241,7 +241,7 @@ const AiRdSystem = () => {
               <span>AI R&D Framework</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              The Complete 6-Step Tutorial System
+              The 6-Step System
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Master systematic AI product development from market research to revenue launch using proven behavioral science principles.
@@ -302,7 +302,7 @@ const AiRdSystem = () => {
                             <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
                               <div className="text-green-400 text-xs mb-2"># Claude Command for Market Research</div>
                               <div className="text-white font-mono text-sm">
-                                Use sea-of-demand to write a new document called market-research.md about my PRODUCT_OR_SERVICE for ICP_IDENTITY with PROBLEMS_OR_RISKS
+                                Use sea-of-demand on my PRODUCT_OR_SERVICE for ICP_IDENTITY with PROBLEMS_OR_RISKS
                               </div>
                             </div>
                           )}
@@ -312,7 +312,7 @@ const AiRdSystem = () => {
                             <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
                               <div className="text-green-400 text-xs mb-2"># Claude Command for Waitlist Validation</div>
                               <div className="text-white font-mono text-sm">
-                                Use waitlist-builder to read market-research.md and icp-interviews.md to validate bet
+                                Use validated-bet
                               </div>
                             </div>
                           )}
@@ -322,7 +322,7 @@ const AiRdSystem = () => {
                             <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
                               <div className="text-green-400 text-xs mb-2"># Claude Command for Wedge Roadmap</div>
                               <div className="text-white font-mono text-sm">
-                                Use product-researcher to create a Wedge Roadmap
+                                Use wedge-roadmap
                               </div>
                             </div>
                           )}
@@ -333,16 +333,6 @@ const AiRdSystem = () => {
                               <div className="text-green-400 text-xs mb-2"># Claude Command for PRD Creation</div>
                               <div className="text-white font-mono text-sm">
                                 Use user-researcher to create a PRD
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Claude Command for Step 5 */}
-                          {step.number === 5 && (
-                            <div className="bg-gray-900 dark:bg-black rounded-lg p-4 overflow-x-auto">
-                              <div className="text-green-400 text-xs mb-2"># Claude Command for Iteration Loop</div>
-                              <div className="text-white font-mono text-sm">
-                                Use ux-story-creator to create user stories from your PRD
                               </div>
                             </div>
                           )}
@@ -363,10 +353,10 @@ const AiRdSystem = () => {
                                 {[
                                   {
                                     title: "Prototype",
-                                    description: "Feed each story from market-research-ux.md into v0 to prototype"
+                                    description: "Feed each story from ux.md into v0 to build a prototype"
                                   },
                                   {
-                                    title: "Feedback", 
+                                    title: "Feedback",
                                     description: "Show your prototyped features to your ICP waitlist and implement changes to consider their feedback"
                                   },
                                   {
@@ -471,12 +461,12 @@ const AiRdSystem = () => {
                             </div>
                           )}
 
-                          {/* Key Deliverables - only show if there are deliverables */}
-                          {step.deliverables && step.deliverables.length > 0 && (
+                          {/* Key Deliverables - show for all steps except Step 1 (Step 1 shows it at the end) */}
+                          {step.number !== 1 && step.deliverables && step.deliverables.length > 0 && (
                             <div>
                               <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
                                 <FileText className="w-5 h-5 text-orange-600" />
-                                Key Deliverables
+                                Key Deliverables From This Step
                               </h4>
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {step.deliverables.map((deliverable, idx) => (
@@ -515,6 +505,24 @@ const AiRdSystem = () => {
                               </div>
                             </div>
                           )}
+
+                          {/* Key Deliverables for Step 1 - shown at the end */}
+                          {step.number === 1 && step.deliverables && step.deliverables.length > 0 && (
+                            <div>
+                              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                                <FileText className="w-5 h-5 text-orange-600" />
+                                Key Deliverables From This Step
+                              </h4>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                {step.deliverables.map((deliverable, idx) => (
+                                  <div key={idx} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                    <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                    <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{deliverable}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -526,39 +534,6 @@ const AiRdSystem = () => {
         </div>
       </section>
 
-      {/* Tutorial Benefits */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mt-16 text-center">
-            <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-              <h3 className="text-2xl font-bold mb-4">What You'll Have After Completing This Tutorial</h3>
-              <div className="grid md:grid-cols-3 gap-6 mt-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Target className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h4 className="font-bold mb-2">Validated Product Concept</h4>
-                  <p className="text-sm text-muted-foreground">With proven market demand and clear positioning</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Monitor className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h4 className="font-bold mb-2">Functional Prototype</h4>
-                  <p className="text-sm text-muted-foreground">Tested with real customers and ready to scale</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <BarChart className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h4 className="font-bold mb-2">Go-to-Market Strategy</h4>
-                  <p className="text-sm text-muted-foreground">Complete launch plan with growth metrics</p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>
