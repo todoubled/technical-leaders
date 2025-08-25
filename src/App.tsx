@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import posthogManager, { trackPageView, setSuperProperties } from "./utils/posthog";
 import Index from "./pages/Index";
 import Call from "./pages/Call";
+import Calls from "./pages/Calls";
 import CallConfirmed from "./pages/CallConfirmed";
 import AITradeSchool from "./pages/AITradeSchool";
 import Launch from "./pages/Launch";
@@ -66,6 +67,7 @@ const App = () => (
           <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/call" element={<Call />} />
+          <Route path="/calls" element={<Calls />} />
           <Route path="/call-confirmed" element={<CallConfirmed />} />
           <Route path="/ai-trade-school" element={<AITradeSchool />} />
           <Route path="/launch" element={<Launch />} />
