@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import "./Navigation.css";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +42,14 @@ const Navigation = () => {
               
               <a href="/articles" className="text-foreground hover:text-primary transition-colors">Articles</a>
               
-              <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
+              <div className="playbook-nav-item">
+                <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
+                <a className="book-container" href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" rel="noreferrer noopener">
+                  <div className="book">
+                    <img alt="" src="https://www.technical-leaders.com/playbook-cover.png" />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
