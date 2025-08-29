@@ -412,7 +412,7 @@ const AIForLeaders = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">Executive Faculty</h2>
             <p className="text-lg text-muted-foreground">
-              Learn from industry leaders with decades of AI/ML experience
+              Learn from industry leaders with decades of AI/ML and leadership experience
             </p>
           </div>
 
@@ -475,7 +475,7 @@ const AIForLeaders = () => {
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl font-semibold text-foreground mb-2">Todd Larsen</h3>
-                  <p className="text-sm text-primary font-medium mb-3">CEO at TechLeaders, CTO at Serve2Perform, former Groupon, founder at Digit.co</p>
+                  <p className="text-sm text-primary font-medium mb-3">CEO at TechLeaders, CTO at AcreHedge, former Groupon, founding team at Digit.co (sold to OPRT)</p>
                   <p className="text-muted-foreground">
                     As a former Global Platform Engineer at Groupon, Founding Engineer at Digit, and current CEO of Technical Leaders, Todd has 15+ years of experience building and scaling products in startup mode and at-scale.
                     <br /><br />
