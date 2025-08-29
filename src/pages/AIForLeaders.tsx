@@ -409,6 +409,25 @@ const AIForLeaders = () => {
       {/* Executive Faculty Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
+          {/* Partnership Badge */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border/50 px-4 py-2 rounded-full text-sm text-muted-foreground">
+              <span>In Partnership with</span>
+              <a
+                href="https://bottega8.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="/bottega8-logo.png"
+                  alt="Bottega8 Logo"
+                  className="h-6 object-contain"
+                />
+              </a>
+            </div>
+          </div>
+          
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">Executive Faculty</h2>
             <p className="text-lg text-muted-foreground">
