@@ -216,14 +216,14 @@ const Scale = () => {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
             <img
-              src="/nike.png"
-              alt="Nike"
+              src="/netflix.png"
+              alt="Netflix"
               className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
             />
             <img
-              src="/peleton.webp"
-              alt="Peloton"
-              className="h-24 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+              src="/nike.png"
+              alt="Nike"
+              className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
               style={{ maxHeight: '6rem' }}
             />
             <img
