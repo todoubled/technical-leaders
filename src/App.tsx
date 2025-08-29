@@ -31,6 +31,7 @@ import HowToModelYourOffer from "./pages/HowToModelYourOffer";
 import FinanceForFounders from "./pages/FinanceForFounders";
 import FinanceWorkshopConfirmed from "./pages/FinanceWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
+import AIForLeaders from "./pages/AIForLeaders";
 import Benchmark from "./pages/Benchmark";
 import TenBeforeTen from "./pages/TenBeforeTen";
 import AiWorkspace from "./pages/AiWorkspace";
@@ -90,6 +91,7 @@ const App = () => (
           <Route path="/finance-for-founders" element={<FinanceForFounders />} />
           <Route path="/finance-workshop-confirmed" element={<FinanceWorkshopConfirmed />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
+          <Route path="/ai-for-leaders" element={<AIForLeaders />} />
           <Route path="/benchmark" element={<Benchmark />} />
           <Route path="/10-before-10" element={<TenBeforeTen />} />
           <Route path="/ai-workspace" element={<AiWorkspace />} />
