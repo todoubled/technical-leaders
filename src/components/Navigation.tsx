@@ -34,8 +34,8 @@ const Navigation = () => {
                   <DropdownMenuItem onClick={() => window.location.href = "/ship-ai"}>
                     Ship AI
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => window.location.href = "/ai-for-vc"}>
-                    AI for VCs
+                  <DropdownMenuItem onClick={() => window.location.href = "/ai-for-leaders"}>
+                    AI for Execs/Founders
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -77,7 +77,7 @@ const Navigation = () => {
               <div className="ml-4 space-y-1">
                 <a href="/launch-with-us" className="block py-1 text-sm text-muted-foreground hover:text-primary">Launch Kit</a>
                 <a href="/ship-ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">Ship AI</a>
-                <a href="/ai-for-vc" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI for VCs</a>
+                <a href="/ai-for-leaders" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI for Execs/Founders</a>
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>

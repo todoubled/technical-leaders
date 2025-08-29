@@ -4,8 +4,7 @@ import Footer from '../components/Footer';
 import { Card, CardContent, CardHeader } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Calendar, Clock, Search, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Article, ArticleCategory } from '../types/article';
 import { seobotClient } from '../lib/seobot';
 import SEO from '../components/SEO';
@@ -20,7 +19,6 @@ const categories: ArticleCategory[] = [
 
 export default function Articles() {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
@@ -35,7 +33,6 @@ export default function Articles() {
           page: currentPage,
           pageSize: 12,
           category: selectedCategory === 'all' ? undefined : selectedCategory,
-          search: searchQuery || undefined,
         };
         
         const response = await seobotClient.getArticles(params);
@@ -57,37 +54,6 @@ export default function Articles() {
 
     fetchArticles();
   }, [selectedCategory, currentPage]);
-
-  // Handle search with debouncing
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (currentPage === 0) {
-        const fetchArticles = async () => {
-          setLoading(true);
-          try {
-            const params = {
-              page: 0,
-              pageSize: 12,
-              category: selectedCategory === 'all' ? undefined : selectedCategory,
-              search: searchQuery || undefined,
-            };
-            
-            const response = await seobotClient.getArticles(params);
-            setArticles(response.articles);
-            setHasMore(response.hasMore);
-          } catch (error) {
-            console.error('Error searching articles:', error);
-          } finally {
-            setLoading(false);
-          }
-        };
-
-        fetchArticles();
-      }
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [searchQuery]);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
@@ -129,38 +95,9 @@ export default function Articles() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Practical insights, strategies, and tools for technical leaders looking to scale their impact and income.
           </p>
-          
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-            <Input
-              type="text"
-              placeholder="Search articles..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 py-6 text-lg"
-            />
-          </div>
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 border-b">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={selectedCategory === category.slug ? "default" : "outline"}
-                onClick={() => handleCategoryChange(category.slug)}
-                className="transition-all"
-              >
-                {category.name}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Articles Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">

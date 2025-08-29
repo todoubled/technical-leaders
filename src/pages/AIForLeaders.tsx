@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench } from "lucide-react";
+import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
@@ -27,6 +27,11 @@ const AIForLeaders = () => {
       icon: Wrench,
       title: "Build Without Code",
       description: "Create powerful AI prototypes and tools that solve real business problems - no developers needed"
+    },
+    {
+      icon: GitBranch,
+      title: "Change Management Excellence",
+      description: "Navigate organizational resistance and drive AI adoption with proven change management frameworks tailored for tech teams"
     }
   ];
 
@@ -87,23 +92,6 @@ const AIForLeaders = () => {
     }
   ];
 
-  const painPoints = [
-    {
-      stat: "73%",
-      label: "of executives struggle",
-      description: "To get meaningful AI output"
-    },
-    {
-      stat: "89%",
-      label: "of companies lack",
-      description: "AI implementation strategy"
-    },
-    {
-      stat: "$4.2M",
-      label: "average wasted annually",
-      description: "On failed AI initiatives"
-    }
-  ];
 
   const courseStructuredData = generateCourseStructuredData(
     "AI Executive Training for Senior Leaders",
@@ -124,7 +112,7 @@ const AIForLeaders = () => {
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/ai-playbook-executives.png"
+            src="/ai-in-ar.png"
             alt="AI for Leaders"
             className="w-full h-full object-cover object-top opacity-40"
           />
@@ -153,26 +141,11 @@ const AIForLeaders = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-shadow"
-                onClick={() => window.location.href = "https://calendly.com/tech-leaders/sync"}
+                onClick={() => window.location.href = "https://calendly.com/tech-leaders/ai-strategy"}
               >
-                Book Your Strategy Call → Free 30-Min Consultation
+                Book Strategy Session
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Points Banner */}
-      <section className="bg-red-500/10 border-y border-red-500/20 py-8 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            {painPoints.map((point, index) => (
-              <div key={index}>
-                <p className="text-4xl font-bold text-foreground mb-1">{point.stat}</p>
-                <p className="text-lg font-semibold text-foreground mb-1">{point.label}</p>
-                <p className="text-sm text-muted-foreground">{point.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -291,7 +264,7 @@ const AIForLeaders = () => {
               className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-shadow"
               onClick={() => window.location.href = "https://calendly.com/tech-leaders/sync"}
             >
-              Discuss Your Custom Program → Book a Call
+              Book Strategy Session
             </Button>
             <p className="text-sm text-muted-foreground mt-4">
               100% tailored to your organization • No generic training
@@ -306,7 +279,7 @@ const AIForLeaders = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
             Transform Your Leadership with AI
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
@@ -390,7 +363,7 @@ const AIForLeaders = () => {
               className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-8 py-6"
               onClick={() => window.location.href = "https://calendly.com/tech-leaders/sync"}
             >
-              Get Your Custom AI Roadmap → Book a Call
+              Book Strategy Session
             </Button>
           </div>
         </div>
@@ -511,6 +484,28 @@ const AIForLeaders = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Stephen Bates */}
+            <Card>
+              <CardContent className="p-8 flex flex-col md:flex-row gap-6 items-center md:items-start">
+                <div className="flex-shrink-0">
+                  <img
+                    src="https://cdn.prod.website-files.com/64a434b6a610d6a7db0f40aa/64a97ef1944d79396cb11126_stephen.png"
+                    alt="Stephen Bates"
+                    className="w-32 h-32 rounded-full object-cover"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-semibold text-foreground mb-2">Stephen Bates</h3>
+                  <p className="text-sm text-primary font-medium mb-3">Co-Founder at Technical Leaders, Executive Coach & Leadership Consultant</p>
+                  <p className="text-muted-foreground">
+                    Stephen brings a practical and pragmatic approach to leadership coaching and corporate training, with over 25 years of experience transforming technical teams and their leaders.
+                    <br /><br />
+                    As Co-Founder of Technical Leaders, Stephen specializes in helping executives navigate the intersection of technology and business strategy. His extensive background in corporate training and leadership development enables him to guide C-suite leaders through AI adoption challenges, organizational change management, and the development of high-performing technical teams. His methodology focuses on practical, implementable strategies that deliver immediate business impact.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -591,7 +586,7 @@ const AIForLeaders = () => {
               className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-12 py-6 w-full md:w-auto shadow-lg hover:shadow-xl transition-all"
               onClick={() => window.location.href = "https://calendly.com/tech-leaders/sync"}
             >
-              Book Your Free Strategy Call Now →
+              Book Strategy Session
             </Button>
           </div>
 
