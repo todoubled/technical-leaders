@@ -482,6 +482,30 @@ const AIForLeaders = () => {
               </CardContent>
             </Card>
 
+            {/* Amelia Leigner */}
+            <Card>
+              <CardContent className="p-8 flex flex-col md:flex-row gap-6 items-center md:items-start">
+                <div className="flex-shrink-0">
+                  <img
+                    src="/amelia-leigner.png"
+                    alt="Amelia Leigner"
+                    className="w-32 h-32 rounded-full object-cover"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-semibold text-foreground mb-2">Amelia Leigner</h3>
+                  <p className="text-sm text-primary font-medium mb-3">Fractional CMO & CPO, Head of Product at Bottega8, Startup Growth Strategist</p>
+                  <p className="text-muted-foreground">
+                    Amelia is a product and marketing executive with nearly a decade of experience helping early-stage startups and AI-driven companies launch and scale. She currently serves as Head of Product, Growth at Bottega8 and as Fractional CMO for Tech Leaders, where she drives AI product adoption and builds scalable growth strategies.
+                    <br /><br />
+                    Previously, she was Fractional CPO at SeekInvest, where she shaped product vision and go-to-market strategy for a fintech platform serving financial advisors. She also founded Amazon Amelia LLC, a consulting practice supporting Amazon sellers with marketing and business development.
+                    <br /><br />
+                    She now partners with founders and executives to align product and marketing, turning growth goals into measurable outcomes through frameworks for founder-led sales, AI-powered growth, and market positioning.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Todd Larsen */}
             <Card>
               <CardContent className="p-8 flex flex-col md:flex-row gap-6 items-center md:items-start">
