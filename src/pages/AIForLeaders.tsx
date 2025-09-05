@@ -186,7 +186,7 @@ const AIForLeaders = () => {
               <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
                 <Users className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-foreground">2-Day Intensive Workshop</h3>
+              <h3 className="text-xl font-semibold mb-2 text-foreground">1-2 Day Intensive Workshop</h3>
               <p className="text-muted-foreground mb-4">
                 Immersive, hands-on training for your leadership team. Walk away with implemented AI solutions.
               </p>
@@ -279,16 +279,28 @@ const AIForLeaders = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
             Transform Your Leadership with AI
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                  <benefit.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+                <Brain className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Non-Technical AI Workflows for Senior Leaders</h3>
+              <p className="text-muted-foreground">Master enterprise AI tools without coding. Build automated workflows that turn complex data into strategic insights, streamline decision-making processes, and create executive dashboards that actually inform strategy.</p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+                <Wrench className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Build Internal Tools Without Dev Resources</h3>
+              <p className="text-muted-foreground">Create powerful AI prototypes and production-ready tools using no-code platforms. Test ideas rapidly, validate with real users, and deploy solutions that solve million-dollar problems—all without waiting for engineering capacity.</p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+                <GitBranch className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">AI Transformation & Change Management</h3>
+              <p className="text-muted-foreground">Navigate organizational resistance with proven frameworks. Build AI champions across your org, establish governance that enables innovation, and create a culture where AI adoption accelerates rather than stalls.</p>
+            </Card>
           </div>
         </div>
       </section>
