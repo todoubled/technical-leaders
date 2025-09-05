@@ -148,11 +148,55 @@ export default function Articles() {
                     </div>
                     <div className="flex items-center justify-between mt-4">
                       <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-                          <span className="text-xs font-semibold">{String(article.author?.avatar || 'A')}</span>
-                        </div>
+{article.author?.profile ? (
+                          <a 
+                            href={String(article.author.profile)} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="block w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-primary/50 transition-all"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {article.author?.avatar && String(article.author.avatar).startsWith('http') ? (
+                              <img 
+                                src={String(article.author.avatar)} 
+                                alt={String(article.author?.name || 'Author')}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                                <span className="text-xs font-semibold">{String(article.author?.avatar || 'A')}</span>
+                              </div>
+                            )}
+                          </a>
+                        ) : (
+                          <div className="w-8 h-8 rounded-full overflow-hidden">
+                            {article.author?.avatar && String(article.author.avatar).startsWith('http') ? (
+                              <img 
+                                src={String(article.author.avatar)} 
+                                alt={String(article.author?.name || 'Author')}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                                <span className="text-xs font-semibold">{String(article.author?.avatar || 'A')}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
                         <div>
-                          <p className="text-sm font-medium">{String(article.author?.name || 'Unknown Author')}</p>
+                          {article.author?.profile ? (
+                            <a 
+                              href={String(article.author.profile)} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-sm font-medium hover:text-primary transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {String(article.author?.name || 'Unknown Author')}
+                            </a>
+                          ) : (
+                            <p className="text-sm font-medium">{String(article.author?.name || 'Unknown Author')}</p>
+                          )}
                           {article.author?.role && (
                             <p className="text-xs text-muted-foreground">{String(article.author.role)}</p>
                           )}

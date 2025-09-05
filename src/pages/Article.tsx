@@ -309,11 +309,53 @@ export default function ArticlePage() {
             {/* Author info */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-                  <span className="font-semibold">{article.author.avatar}</span>
-                </div>
+{article.author.profile ? (
+                  <a 
+                    href={article.author.profile} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-12 h-12 rounded-full overflow-hidden hover:ring-2 hover:ring-primary/50 transition-all"
+                  >
+                    {article.author.avatar && article.author.avatar.startsWith('http') ? (
+                      <img 
+                        src={article.author.avatar} 
+                        alt={article.author.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                        <span className="font-semibold">{article.author.avatar}</span>
+                      </div>
+                    )}
+                  </a>
+                ) : (
+                  <div className="w-12 h-12 rounded-full overflow-hidden">
+                    {article.author.avatar && article.author.avatar.startsWith('http') ? (
+                      <img 
+                        src={article.author.avatar} 
+                        alt={article.author.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                        <span className="font-semibold">{article.author.avatar}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
                 <div>
-                  <p className="font-semibold">{article.author.name}</p>
+                  {article.author.profile ? (
+                    <a 
+                      href={article.author.profile} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="font-semibold hover:text-primary transition-colors"
+                    >
+                      {article.author.name}
+                    </a>
+                  ) : (
+                    <p className="font-semibold">{article.author.name}</p>
+                  )}
                   {article.author.role && (
                     <p className="text-sm text-muted-foreground">{article.author.role}</p>
                   )}

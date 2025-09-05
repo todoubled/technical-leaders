@@ -7,6 +7,7 @@ export interface Article {
   author: {
     name: string;
     role?: string;
+    profile?: string;
     avatar?: string;
   };
   publishedAt: string;

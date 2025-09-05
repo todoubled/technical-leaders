@@ -116,9 +116,10 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
 
   // Ensure author is properly structured
   let author = {
-    name: 'Tech Leaders',
-    role: 'Mastermind',
-    avatar: 'TL'
+    name: 'Todd Larsen',
+    role: 'Co-founder & CTO',
+    profile: 'https://www.linkedin.com/in/remotebranch/',
+    avatar: 'https://cdn.prod.website-files.com/64a434b6a610d6a7db0f40aa/64a97ef0410ff2068560b25d_todd.png'
   };
 
   if (seobotArticle.author) {
@@ -128,6 +129,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
       author = {
         name: safeStringExtract(seobotArticle.author.name) || 'Technical Leaders',
         role: safeStringExtract(seobotArticle.author.role) || 'Editorial Team',
+        profile: safeStringExtract(seobotArticle.author.profile) || 'https://www.linkedin.com/in/remotebranch/',
         avatar: safeStringExtract(seobotArticle.author.avatar) || 'TL'
       };
     }
