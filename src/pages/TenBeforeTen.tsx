@@ -107,6 +107,19 @@ const TenBeforeTen = () => {
             This is exactly how our members land their first client in days, not months.
           </p>
 
+          <div className="max-w-3xl mx-auto mb-8">
+            <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.youtube.com/embed/B4hpEyvui4A"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+
           <div className="bg-background/50 backdrop-blur border border-white/10 rounded-lg p-6 max-w-2xl mx-auto mb-8 shadow-xl">
             <p className="text-lg font-bold mb-2">
               ⚡ Use the playbook below to get your first lead
