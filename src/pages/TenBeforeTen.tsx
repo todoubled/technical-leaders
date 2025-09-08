@@ -6,10 +6,11 @@ import { CheckCircle2, Clock, Target, MessageSquare, ArrowRight, Zap, Star, User
 import SEO from "@/components/SEO";
 import { trackClick, trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const TenBeforeTen = () => {
   useTrackScrollDepth('10 Before 10 Page');
+  const [showCaseStudyForm, setShowCaseStudyForm] = useState(false);
   
   useEffect(() => {
     trackEvent('10 Before 10 Page View', {
@@ -17,6 +18,16 @@ const TenBeforeTen = () => {
       has_cta: true
     });
   }, []);
+
+  useEffect(() => {
+    if (showCaseStudyForm) {
+      const script = document.createElement('script');
+      script.src = 'https://techleaders.kit.com/89c53071d2/index.js';
+      script.async = true;
+      script.setAttribute('data-uid', '89c53071d2');
+      document.getElementById('case-study-form-container')?.appendChild(script);
+    }
+  }, [showCaseStudyForm]);
 
   const steps = [
     {
@@ -271,29 +282,45 @@ const TenBeforeTen = () => {
 
                               {/* CTA Button */}
                               <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                                <div className="flex items-center justify-between mb-3">
-                                  <p className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                                    Free Case Study Builder
-                                  </p>
-                                  <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full font-semibold">
-                                    AI-Powered
-                                  </span>
-                                </div>
-                                <Button
-                                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg"
-                                  onClick={() => {
-                                    trackClick('Case Study Builder - Step 1', {
-                                      location: '3_step_process',
-                                      destination: 'chatgpt_case_study_builder'
-                                    });
-                                    window.open('https://chatgpt.com/g/g-689a4e5129588191a4031c1c4d339a59-the-case-study-builder', '_blank');
-                                  }}
-                                >
-                                  Get The Case Study Builder
-                                </Button>
-                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">
-                                  💡 Pro tip: Focus on measurable results (time saved, money made, problems solved)
-                                </p>
+                                {!showCaseStudyForm ? (
+                                  <>
+                                    <div className="flex items-center justify-between mb-3">
+                                      <p className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                                        Free Case Study Builder
+                                      </p>
+                                      <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full font-semibold">
+                                        AI-Powered
+                                      </span>
+                                    </div>
+                                    <Button
+                                      className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg"
+                                      onClick={() => {
+                                        trackClick('Case Study Builder - Step 1', {
+                                          location: '3_step_process',
+                                          destination: 'form_embed'
+                                        });
+                                        setShowCaseStudyForm(true);
+                                      }}
+                                    >
+                                      Get The Case Study Builder
+                                    </Button>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">
+                                      💡 Pro tip: Focus on measurable results (time saved, money made, problems solved)
+                                    </p>
+                                  </>
+                                ) : (
+                                  <div 
+                                    className="animate-fade-in"
+                                    style={{
+                                      animation: 'fadeIn 0.5s ease-in-out'
+                                    }}
+                                  >
+                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 text-center">
+                                      Sign Up To Get The Case Study Builder
+                                    </h3>
+                                    <div id="case-study-form-container" />
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
