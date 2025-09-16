@@ -29,6 +29,7 @@ import CallTemplates from "./pages/CallTemplates";
 import LaunchWithUs from "./pages/LaunchWithUs";
 import HowToModelYourOffer from "./pages/HowToModelYourOffer";
 import FinanceForFounders from "./pages/FinanceForFounders";
+import FinanceForFoundersWorkshop from "./pages/FinanceForFoundersWorkshop";
 import FinanceWorkshopConfirmed from "./pages/FinanceWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
 import AIForLeaders from "./pages/AIForLeaders";
@@ -89,6 +90,7 @@ const App = () => (
           <Route path="/launch-with-us" element={<LaunchWithUs />} />
           <Route path="/how-to-model-your-offer" element={<HowToModelYourOffer />} />
           <Route path="/finance-for-founders" element={<FinanceForFounders />} />
+          <Route path="/finance-for-founders-workshop" element={<FinanceForFoundersWorkshop />} />
           <Route path="/finance-workshop-confirmed" element={<FinanceWorkshopConfirmed />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/ai-for-leaders" element={<AIForLeaders />} />
