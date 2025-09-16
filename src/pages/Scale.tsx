@@ -7,6 +7,7 @@ import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
+import { trackClick } from "@/utils/posthog";
 
 const Scale = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -187,7 +188,14 @@ const Scale = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "/call"}
+                onClick={() => {
+                  trackClick('Scale - Hero CTA', {
+                    location: 'hero_section',
+                    destination: '/call',
+                    cta_text: 'Apply for Scale Program'
+                  });
+                  window.location.href = "/call";
+                }}
               >
                 Apply for Scale Program
               </Button>
@@ -195,7 +203,14 @@ const Scale = () => {
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-6"
-                onClick={() => setIsVideoModalOpen(true)}
+                onClick={() => {
+                  trackClick('Scale - Video CTA', {
+                    location: 'hero_section',
+                    cta_text: 'See Launch → Scale Success Stories',
+                    content_type: 'video'
+                  });
+                  setIsVideoModalOpen(true);
+                }}
               >
                 See Launch → Scale Success Stories
               </Button>
@@ -568,7 +583,14 @@ const Scale = () => {
               <Button
                 variant="outline"
                 className="w-full mt-4 border-orange-300 hover:bg-orange-50"
-                onClick={() => window.location.href = "/launch"}
+                onClick={() => {
+                  trackClick('Scale - Launch Kit CTA', {
+                    location: 'who_this_is_for_section',
+                    destination: '/launch',
+                    cta_text: 'Start with Launch Kit'
+                  });
+                  window.location.href = "/launch";
+                }}
               >
                 Start with Launch Kit →
               </Button>
@@ -655,7 +677,15 @@ const Scale = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto"
-                onClick={() => window.location.href = "/call"}
+                onClick={() => {
+                  trackClick('Scale - Final CTA', {
+                    location: 'final_cta_section',
+                    destination: '/call',
+                    cta_text: 'Apply for Scale Program',
+                    price: '$2497/month'
+                  });
+                  window.location.href = "/call";
+                }}
               >
                 Apply for Scale Program
               </Button>
@@ -674,7 +704,15 @@ const Scale = () => {
             <Button
               variant="outline"
               className="border-blue-300 hover:bg-blue-50"
-              onClick={() => window.location.href = "/launch"}
+              onClick={() => {
+                trackClick('Scale - Launch Kit Alternative CTA', {
+                  location: 'final_cta_section',
+                  destination: '/launch',
+                  cta_text: 'Start with Launch Kit',
+                  price: '$2950'
+                });
+                window.location.href = "/launch";
+              }}
             >
               Start with Launch Kit ($2,950) →
             </Button>

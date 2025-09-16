@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Quote, Award } from "lucide-react";
+import { trackClick } from "@/utils/posthog";
 
 const Testimonials = () => {
   const testimonials = [
@@ -103,16 +104,28 @@ const Testimonials = () => {
             Ready to join them?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
-              onClick={() => { window.location.href = "/call" }}
+              onClick={() => {
+                trackClick('Testimonials - Book Free Call', {
+                  location: 'testimonials_bottom',
+                  destination: '/call'
+                });
+                window.location.href = "/call";
+              }}
             >
               Book Your Free Call
             </Button>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
-              onClick={() => { window.location.href = "/accredited" }}
+              onClick={() => {
+                trackClick('Testimonials - View Accredited Leaders', {
+                  location: 'testimonials_bottom',
+                  destination: '/accredited'
+                });
+                window.location.href = "/accredited";
+              }}
               className="group"
             >
               <Award className="w-4 h-4 mr-2 group-hover:text-primary transition-colors" />

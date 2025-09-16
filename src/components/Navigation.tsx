@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import "./Navigation.css";
+import { trackClick } from "@/utils/posthog";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,13 +29,31 @@ const Navigation = () => {
                   Programs <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
-                  <DropdownMenuItem onClick={() => window.location.href = "/launch-with-us"}>
+                  <DropdownMenuItem onClick={() => {
+                    trackClick('Nav Dropdown - Launch Kit', {
+                      location: 'nav_dropdown',
+                      destination: '/launch-with-us'
+                    });
+                    window.location.href = "/launch-with-us";
+                  }}>
                     Launch Kit
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => window.location.href = "/ship-ai"}>
+                  <DropdownMenuItem onClick={() => {
+                    trackClick('Nav Dropdown - Ship AI', {
+                      location: 'nav_dropdown',
+                      destination: '/ship-ai'
+                    });
+                    window.location.href = "/ship-ai";
+                  }}>
                     Ship AI
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => window.location.href = "/ai-for-leaders"}>
+                  <DropdownMenuItem onClick={() => {
+                    trackClick('Nav Dropdown - AI for Execs/Founders', {
+                      location: 'nav_dropdown',
+                      destination: '/ai-for-leaders'
+                    });
+                    window.location.href = "/ai-for-leaders";
+                  }}>
                     AI for Execs/Founders
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -54,8 +73,20 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" onClick={() => { window.location.href = "https://skool.com/tech-leaders" }}>Sign In</Button>
-            <Button onClick={() => { window.location.href = "/call" }}>Apply to Join</Button>
+            <Button variant="ghost" onClick={() => {
+              trackClick('Nav - Sign In', {
+                location: 'nav_main',
+                destination: 'https://skool.com/tech-leaders'
+              });
+              window.location.href = "https://skool.com/tech-leaders";
+            }}>Sign In</Button>
+            <Button onClick={() => {
+              trackClick('Nav - Apply to Join', {
+                location: 'nav_main',
+                destination: '/call'
+              });
+              window.location.href = "/call";
+            }}>Apply to Join</Button>
           </div>
 
           <div className="md:hidden">
@@ -83,8 +114,20 @@ const Navigation = () => {
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>
             <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="block px-3 py-2 text-foreground hover:text-primary">Get the Playbook</a>
             <div className="px-3 py-2 space-y-2">
-              <Button variant="ghost" className="w-full" onClick={() => { window.location.href = "https://skool.com/tech-leaders" }}>Sign In</Button>
-              <Button className="w-full" onClick={() => { window.location.href = "/call" }}>Apply to Join</Button>
+              <Button variant="ghost" className="w-full" onClick={() => {
+                trackClick('Nav Mobile - Sign In', {
+                  location: 'nav_mobile',
+                  destination: 'https://skool.com/tech-leaders'
+                });
+                window.location.href = "https://skool.com/tech-leaders";
+              }}>Sign In</Button>
+              <Button className="w-full" onClick={() => {
+                trackClick('Nav Mobile - Apply to Join', {
+                  location: 'nav_mobile',
+                  destination: '/call'
+                });
+                window.location.href = "/call";
+              }}>Apply to Join</Button>
             </div>
           </div>
         </div>

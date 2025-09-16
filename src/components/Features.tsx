@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Megaphone, Bot, Users, TrendingUp, Briefcase, Rocket, Check, ArrowRight, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackClick } from "@/utils/posthog";
 
 const Features = () => {
   const programs = [
@@ -119,7 +120,13 @@ const Features = () => {
           <Button
             variant="link"
             className="text-primary hover:text-primary/80 text-sm sm:text-base text-center px-2 w-full"
-            onClick={() => { window.location.href = "https://technical-leaders.com/call" }}
+            onClick={() => {
+              trackClick('Features - Bottom Intro Call', {
+                location: 'features_bottom',
+                destination: 'https://technical-leaders.com/call'
+              });
+              window.location.href = "https://technical-leaders.com/call";
+            }}
           >
             <span className="break-words">Book a free intro call and we'll help you figure it out →</span>
           </Button>

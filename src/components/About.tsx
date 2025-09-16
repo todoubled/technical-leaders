@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Rocket, Linkedin, Quote, Award, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackClick } from "@/utils/posthog";
 
 const About = () => {
   const values = [
@@ -109,7 +110,14 @@ const About = () => {
                       variant="ghost"
                       size="sm"
                       className="p-0 h-auto text-primary hover:text-primary/80"
-                      onClick={() => { window.location.href = "https://www.linkedin.com/in/remotebranch/" }}
+                      onClick={() => {
+                        trackClick('About - Connect Todd LinkedIn', {
+                          location: 'about_team',
+                          person: 'Todd Larsen',
+                          destination: 'https://www.linkedin.com/in/remotebranch/'
+                        });
+                        window.location.href = "https://www.linkedin.com/in/remotebranch/";
+                      }}
                     >
                       <Linkedin className="h-4 w-4 mr-2" />
                       Connect on LinkedIn
@@ -139,7 +147,14 @@ const About = () => {
                       variant="ghost"
                       size="sm"
                       className="p-0 h-auto text-primary hover:text-primary/80"
-                      onClick={() => { window.location.href = "https://www.linkedin.com/in/stephenbatesuk/" }}
+                      onClick={() => {
+                        trackClick('About - Connect Stephen LinkedIn', {
+                          location: 'about_team',
+                          person: 'Stephen Bates',
+                          destination: 'https://www.linkedin.com/in/stephenbatesuk/'
+                        });
+                        window.location.href = "https://www.linkedin.com/in/stephenbatesuk/";
+                      }}
                     >
                       <Linkedin className="h-4 w-4 mr-2" />
                       Connect on LinkedIn

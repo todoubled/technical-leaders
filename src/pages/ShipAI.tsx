@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock } from "lucide-react";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData } from "@/utils/seo-helpers";
+import { trackClick } from "@/utils/posthog";
 
 const ShipAI = () => {
   const phases = [
@@ -105,7 +106,14 @@ const ShipAI = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "#apply"}
+                onClick={() => {
+                  trackClick('Ship AI - Hero CTA', {
+                    location: 'hero_section',
+                    destination: '#apply',
+                    cta_text: 'Reserve Your Spot'
+                  });
+                  window.location.href = "#apply";
+                }}
               >
                 Reserve Your Spot
               </Button>
@@ -307,7 +315,15 @@ const ShipAI = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-12 py-6 w-full md:w-auto"
-              onClick={() => window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl"}
+              onClick={() => {
+                trackClick('Ship AI - Final CTA', {
+                  location: 'final_cta_section',
+                  destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
+                  cta_text: 'Reserve Your Spot Now',
+                  price: '$1000'
+                });
+                window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
+              }}
             >
               Reserve Your Spot Now
             </Button>

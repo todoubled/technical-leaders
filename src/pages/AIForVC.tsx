@@ -7,6 +7,7 @@ import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData } from "@/utils/seo-helpers";
+import { trackClick } from "@/utils/posthog";
 
 const AIForVC = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -152,7 +153,15 @@ const AIForVC = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl"}
+                onClick={() => {
+                  trackClick('AI For VC - Hero CTA', {
+                    location: 'hero_section',
+                    destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
+                    cta_text: 'Reserve Your Spot - Executive Cohort',
+                    target_audience: 'VC_PE'
+                  });
+                  window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
+                }}
               >
                 Reserve Your Spot - Executive Cohort
               </Button>
@@ -435,7 +444,15 @@ const AIForVC = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white text-lg px-12 py-6 w-full md:w-auto mb-4"
-              onClick={() => window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl"}
+              onClick={() => {
+                trackClick('AI For VC - Final CTA', {
+                  location: 'final_cta_section',
+                  destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
+                  cta_text: 'Join Cohort',
+                  target_audience: 'VC_PE'
+                });
+                window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
+              }}
             >
               Join Cohort
             </Button>

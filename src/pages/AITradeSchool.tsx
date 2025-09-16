@@ -7,6 +7,7 @@ import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData } from "@/utils/seo-helpers";
+import { trackClick } from "@/utils/posthog";
 
 const AITradeSchool = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -118,7 +119,15 @@ const AITradeSchool = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl"}
+                onClick={() => {
+                  trackClick('AI Trade School - Hero CTA', {
+                    location: 'hero_section',
+                    destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
+                    cta_text: 'Reserve Your Spot',
+                    price: '$1000'
+                  });
+                  window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
+                }}
               >
                 Reserve Your Spot - $1000
               </Button>
@@ -310,7 +319,15 @@ const AITradeSchool = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-lg px-12 py-6 w-full md:w-auto"
-              onClick={() => window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl"}
+              onClick={() => {
+                trackClick('AI Trade School - Final CTA', {
+                  location: 'final_cta_section',
+                  destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
+                  cta_text: 'Reserve Your Spot Now',
+                  price: '$1000'
+                });
+                window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
+              }}
             >
               Reserve Your Spot Now
             </Button>

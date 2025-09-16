@@ -7,6 +7,7 @@ import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData } from "@/utils/seo-helpers";
+import { trackClick } from "@/utils/posthog";
 
 const AIForLeaders = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -141,7 +142,14 @@ const AIForLeaders = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-shadow"
-                onClick={() => window.location.href = "https://calendly.com/tech-leaders/ai-strategy"}
+                onClick={() => {
+                  trackClick('AI For Leaders - Hero CTA', {
+                    location: 'hero_section',
+                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    cta_text: 'Book Strategy Session'
+                  });
+                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                }}
               >
                 Book Strategy Session
               </Button>
@@ -262,7 +270,14 @@ const AIForLeaders = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-shadow"
-              onClick={() => window.location.href = "https://calendly.com/tech-leaders/sync"}
+              onClick={() => {
+                trackClick('AI For Leaders - Program Options CTA', {
+                  location: 'program_options_section',
+                  destination: 'https://calendly.com/tech-leaders/sync',
+                  cta_text: 'Book Strategy Session'
+                });
+                window.location.href = "https://calendly.com/tech-leaders/sync";
+              }}
             >
               Book Strategy Session
             </Button>
@@ -373,7 +388,14 @@ const AIForLeaders = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-8 py-6"
-              onClick={() => window.location.href = "https://calendly.com/tech-leaders/sync"}
+              onClick={() => {
+                trackClick('AI For Leaders - Resources CTA', {
+                  location: 'resources_section',
+                  destination: 'https://calendly.com/tech-leaders/sync',
+                  cta_text: 'Book Strategy Session'
+                });
+                window.location.href = "https://calendly.com/tech-leaders/sync";
+              }}
             >
               Book Strategy Session
             </Button>
@@ -639,7 +661,14 @@ const AIForLeaders = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-12 py-6 w-full md:w-auto shadow-lg hover:shadow-xl transition-all"
-              onClick={() => window.location.href = "https://calendly.com/tech-leaders/sync"}
+              onClick={() => {
+                trackClick('AI For Leaders - Final CTA', {
+                  location: 'final_cta_section',
+                  destination: 'https://calendly.com/tech-leaders/sync',
+                  cta_text: 'Book Strategy Session'
+                });
+                window.location.href = "https://calendly.com/tech-leaders/sync";
+              }}
             >
               Book Strategy Session
             </Button>

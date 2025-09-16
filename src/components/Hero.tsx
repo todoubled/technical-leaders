@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "./VideoModal";
+import { trackClick } from "@/utils/posthog";
 
 const Hero = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -31,17 +32,35 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
-            <Button size="lg" className="text-lg px-8 py-3 group" onClick={() => { window.location.href = "/call" }}>
+            <Button size="lg" className="text-lg px-8 py-3 group" onClick={() => {
+              trackClick('Hero - Book Intro Call', {
+                location: 'hero_main',
+                destination: '/call'
+              });
+              window.location.href = "/call";
+            }}>
               Book Intro Call
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3" onClick={() => setIsVideoModalOpen(true)}>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-3" onClick={() => {
+              trackClick('Hero - Learn More Video', {
+                location: 'hero_main',
+                action: 'open_video'
+              });
+              setIsVideoModalOpen(true);
+            }}>
               <Play className="mr-2 h-5 w-5" />
               Learn More
             </Button>
           </div>
 
-          <div className="relative max-w-4xl mx-auto cursor-pointer group" onClick={() => setIsVideoModalOpen(true)}>
+          <div className="relative max-w-4xl mx-auto cursor-pointer group" onClick={() => {
+            trackClick('Hero - Video Thumbnail', {
+              location: 'hero_thumbnail',
+              action: 'open_video'
+            });
+            setIsVideoModalOpen(true);
+          }}>
             <div className="bg-card rounded-lg shadow-2xl p-8 border border-border animate-scale-in relative overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"

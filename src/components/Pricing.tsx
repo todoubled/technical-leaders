@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Sparkles, Zap, Crown } from "lucide-react";
+import { trackClick } from "@/utils/posthog";
 
 const Pricing = () => {
   const plans = [
@@ -147,15 +148,22 @@ const Pricing = () => {
                       : `border-2 border-primary/20 hover:border-primary bg-gradient-to-r ${plan.gradient} hover:shadow-lg hover:scale-105 text-white`
                   }`}
                   onClick={() => {
+                    let destination = '/call';
                     if (plan.name === "AI Trade School") {
-                      window.location.href = "/ai-trade-school";
+                      destination = "/ai-trade-school";
                     } else if (plan.name === "Launch Kit") {
-                      window.location.href = "/launch";
-                    // } else if (plan.name === "Scale Program") {
-                    //   window.location.href = "/scale";
-                    } else {
-                      window.location.href = "/call";
+                      destination = "/launch";
                     }
+
+                    trackClick(`Pricing - ${plan.name} CTA`, {
+                      location: 'pricing_cards',
+                      plan_name: plan.name,
+                      plan_price: plan.price,
+                      destination,
+                      cta_text: plan.name === "Scale Program" ? "Book a call" : "Learn More"
+                    });
+
+                    window.location.href = destination;
                   }}
                 >
                   {plan.name === "Scale Program" ? "Book a call" : "Learn More"}
@@ -171,7 +179,14 @@ const Pricing = () => {
             Not sure which program is right for you?
           </p>
           <button
-            onClick={() => { window.location.href = "/call" }}
+            onClick={() => {
+              trackClick('Pricing - Bottom Intro Call', {
+                location: 'pricing_bottom',
+                destination: '/call',
+                cta_text: 'Book a free intro call'
+              });
+              window.location.href = "/call";
+            }}
             className="text-lg sm:text-xl font-medium text-foreground hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group text-center"
           >
             <span className="break-words">Book a free intro call and we'll help you figure it out</span>

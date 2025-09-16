@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Clock, TrendingUp, Shield, Star, Award, ArrowRight, FileText, Map, Wrench, LifeBuoy } from "lucide-react";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
+import { trackClick } from "@/utils/posthog";
 
 const LaunchWithUs = () => {
   const transformations = [
@@ -259,7 +260,14 @@ const LaunchWithUs = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "#apply"}
+                onClick={() => {
+                  trackClick('Launch With Us - Hero CTA', {
+                    location: 'hero_section',
+                    destination: '#apply',
+                    cta_text: 'Reserve Your Spot'
+                  });
+                  window.location.href = "#apply";
+                }}
               >
                 Reserve Your Spot
               </Button>
@@ -815,7 +823,15 @@ const LaunchWithUs = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto"
-              onClick={() => window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"}
+              onClick={() => {
+                trackClick('Launch With Us - Final CTA', {
+                  location: 'final_cta_section',
+                  destination: 'https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A',
+                  cta_text: 'Get Started',
+                  price: '$2950'
+                });
+                window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
+              }}
             >
               Get Started
             </Button>

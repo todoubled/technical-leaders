@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { trackClick } from "@/utils/posthog";
 
 const Footer = () => {
   return (
@@ -18,7 +19,14 @@ const Footer = () => {
           <Button
             size="lg"
             className="bg-gradient-to-r from-secondary/50 to-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8"
-            onClick={() => { window.location.href = "https://techleaders.kit.com/playbook?utm_source=technical-leaders" }}
+            onClick={() => {
+              trackClick('Footer - Get Free Playbook', {
+                location: 'footer_main_cta',
+                destination: 'https://techleaders.kit.com/playbook',
+                utm_source: 'technical-leaders'
+              });
+              window.location.href = "https://techleaders.kit.com/playbook?utm_source=technical-leaders";
+            }}
           >
             Get Your Free Consulting Playbook
           </Button>
