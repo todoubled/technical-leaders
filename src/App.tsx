@@ -39,6 +39,7 @@ import AiWorkspace from "./pages/AiWorkspace";
 import AdvancedClaude from "./pages/AdvancedClaude";
 import AIForSuits from "./pages/AIForSuits";
 import AiRdSystem from "./pages/AiRdSystem";
+import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -102,6 +103,7 @@ const App = () => (
           <Route path="/advanced-claude" element={<AdvancedClaude />} />
           <Route path="/ai-for-suits" element={<AIForSuits />} />
           <Route path="/ai-rd-system" element={<AiRdSystem />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
