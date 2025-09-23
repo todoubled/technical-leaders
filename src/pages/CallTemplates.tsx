@@ -141,6 +141,44 @@ const CallTemplates = () => {
         </div>
       </section>
 
+      {/* How It Works CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-primary/5">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-2 border-primary/20">
+            <div className="p-8 sm:p-12 text-center">
+              <h2 className="text-3xl font-bold mb-4">
+                Want the Full System Behind These Templates?
+              </h2>
+              <p className="text-xl text-muted-foreground mb-6">
+                See exactly how we help technical leaders launch and scale consulting businesses using proven systems and frameworks.
+              </p>
+              <div className="flex justify-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+                  onClick={() => {
+                    // Track the click
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'click', {
+                        event_category: 'CTA',
+                        event_label: 'How It Works - Call Templates',
+                        page_location: window.location.href
+                      });
+                    }
+                    window.location.href = '/how-it-works'
+                  }}
+                >
+                  See How It Works
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                Join 300+ technical leaders who've successfully launched consulting practices
+              </p>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

@@ -80,6 +80,124 @@ const HowItWorks = () => {
         </div>
       </section>
 
+      {/* Value Stacking Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Here's What You Get with Launch Kit
+          </h2>
+
+          <div className="space-y-6 mb-12">
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">✅</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Proven Client Acquisition System</h3>
+                <p className="text-muted-foreground">Get your first paying client in 30 days using our battle-tested outreach templates and conversion strategies</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">✅</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Done-For-You Templates & Scripts</h3>
+                <p className="text-muted-foreground">Skip months of trial and error with our proven case study templates, outreach scripts, and proposal frameworks</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">✅</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Weekly Group Coaching Calls</h3>
+                <p className="text-muted-foreground">Get direct access to successful founders who've built 6-figure consulting businesses</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">✅</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Private Community of 300+ Technical Leaders</h3>
+                <p className="text-muted-foreground">Network with CTOs, VPs, and technical founders who are building consulting practices alongside you</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Proof */}
+          <div className="bg-primary/10 rounded-lg p-6 mb-12 text-center">
+            <p className="text-lg font-semibold">
+              🔥 12 technical leaders joined this week
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">
+              Next cohort starts Monday (Limited spots available)
+            </p>
+          </div>
+
+          {/* Multiple CTA Options */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+              onClick={() => {
+                trackEvent('Get Launch Kit Now - How It Works CTA', {
+                  location: 'value_section'
+                });
+                window.location.href = "/launch-with-us";
+              }}
+            >
+              Get Launch Kit Now
+            </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6"
+              onClick={() => {
+                trackEvent('Book a Call - How It Works CTA', {
+                  location: 'value_section'
+                });
+                window.location.href = "/calls";
+              }}
+            >
+              Book a Strategy Call First
+            </Button>
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            Not ready yet? <a href="/10-before-10" className="text-primary underline" onClick={() => trackEvent('10 Before 10 Link - How It Works', { location: 'value_section' })}>Get our free 10 Before 10 playbook</a>
+          </p>
+        </div>
+      </section>
+
+      {/* Bottom CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-primary/5">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Ready to Launch Your Consulting Business?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Join 300+ technical leaders who've successfully transitioned to consulting
+          </p>
+
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
+            onClick={() => {
+              trackEvent('Final CTA - How It Works', {
+                location: 'bottom_section'
+              });
+              window.location.href = "/launch-with-us";
+            }}
+          >
+            Start Your Journey Today
+          </Button>
+
+          <div className="mt-8 flex justify-center gap-8 text-sm text-muted-foreground">
+            <div>✓ 30-day money-back guarantee</div>
+            <div>✓ Proven system</div>
+            <div>✓ 300+ success stories</div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

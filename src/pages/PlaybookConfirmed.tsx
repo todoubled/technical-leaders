@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
 import SEO from "@/components/SEO";
@@ -109,6 +110,39 @@ const PlaybookConfirmed = () => {
         </div>
       </section>
 
+      {/* How It Works CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-primary/5">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Ready to Implement? See Our Full System
+          </h2>
+          <p className="text-xl text-muted-foreground mb-6">
+            You've got the playbook. Now see exactly how we help technical leaders launch and scale consulting businesses using proven systems.
+          </p>
+          <div className="flex justify-center mb-8">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+              onClick={() => {
+                // Track the click
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'click', {
+                    event_category: 'CTA',
+                    event_label: 'How It Works - Playbook Confirmed',
+                    page_location: window.location.href
+                  });
+                }
+                window.location.href = '/how-it-works'
+              }}
+            >
+              See How It Works
+            </Button>
+          </div>
+          <p className="text-sm text-muted-foreground mb-8">
+            Join 300+ technical leaders who've successfully launched consulting practices
+          </p>
+        </div>
+      </section>
 
       <Footer />
     </div>

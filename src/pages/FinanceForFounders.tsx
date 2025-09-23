@@ -397,6 +397,35 @@ const FinanceForFounders = () => {
       </section>
 
       {/* Final CTA */}
+      {/* How It Works CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Ready for the Next Step?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Finance fundamentals are just the beginning. See how we help technical leaders build full consulting businesses.
+          </p>
+          <div className="flex justify-center mb-8">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+              onClick={() => {
+                trackEvent('See How It Works - Finance Workshop', {
+                  location: 'finance_workshop_cta'
+                });
+                window.location.href = '/how-it-works'
+              }}
+            >
+              See How It Works
+            </Button>
+          </div>
+          <p className="text-sm text-muted-foreground mb-8">
+            Join 300+ technical leaders who've launched successful consulting practices
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -413,11 +442,11 @@ const FinanceForFounders = () => {
               trackEvent('Scroll to Form CTA Clicked', {
                 location: 'bottom_cta_section'
               });
-              
+
               // Smooth scroll to the form at the top
               const formContainer = document.getElementById('finance-form-container');
               if (formContainer) {
-                formContainer.scrollIntoView({ 
+                formContainer.scrollIntoView({
                   behavior: 'smooth',
                   block: 'center'
                 });

@@ -95,6 +95,56 @@ export default function Articles() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Practical insights, strategies, and tools for technical leaders looking to scale their impact and income.
           </p>
+
+          {/* CTA Section - Moved to top */}
+          <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border-2 border-primary/20 p-8 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4">
+              Ready to Turn Your Expertise Into Revenue?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              See exactly how we help technical leaders launch consulting businesses using proven systems.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white"
+                onClick={() => {
+                  // Track the click
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'click', {
+                      event_category: 'CTA',
+                      event_label: 'How It Works - Articles Hero',
+                      page_location: window.location.href
+                    });
+                  }
+                  window.location.href = "/how-it-works"
+                }}
+              >
+                See How It Works
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary text-primary hover:bg-primary/10"
+                onClick={() => {
+                  // Track the click
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'click', {
+                      event_category: 'CTA',
+                      event_label: 'Free Playbook - Articles Hero',
+                      page_location: window.location.href
+                    });
+                  }
+                  window.location.href = "https://techleaders.kit.com/playbook?utm_source=technical-leaders-articles-hero"
+                }}
+              >
+                Get Free Playbook
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Join 300+ technical leaders who've successfully launched consulting practices
+            </p>
+          </div>
         </div>
       </section>
 
@@ -226,7 +276,7 @@ export default function Articles() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Contributors CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">

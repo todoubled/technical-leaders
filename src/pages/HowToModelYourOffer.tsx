@@ -59,9 +59,42 @@ const HowToModelYourOffer = () => {
             </li>
           </ul>
 
+          {/* How It Works CTA Section */}
+          <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border-2 border-primary/20">
+            <h2 className="text-3xl font-bold text-center mb-4">
+              Need Help Implementing This?
+            </h2>
+            <p className="text-xl text-muted-foreground text-center mb-6">
+              See exactly how we help technical leaders turn their expertise into profitable consulting offers using our proven system.
+            </p>
+            <div className="flex justify-center mb-6">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+                onClick={() => {
+                  // Track the click
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'click', {
+                      event_category: 'CTA',
+                      event_label: 'How It Works - Offer Model',
+                      page_location: window.location.href
+                    });
+                  }
+                  window.location.href = '/how-it-works'
+                }}
+              >
+                See How It Works
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground text-center mb-6">
+              Join 300+ technical leaders who've successfully launched consulting practices
+            </p>
+          </div>
+
           <div className="mt-12 text-center">
             <Button
               size="lg"
+              variant="outline"
               className="text-lg px-8"
               onClick={() => {
                 window.location.href = '/call';

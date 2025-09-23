@@ -134,13 +134,13 @@ const TenBeforeTen = () => {
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
               onClick={() => {
-                trackClick('Get Launch Kit - 10 Before 10', {
+                trackClick('See How We Help - 10 Before 10', {
                   location: 'hero_section'
                 });
-                window.location.href = "/launch-with-us";
+                window.location.href = "/how-it-works";
               }}
             >
-              Get The Full Launch Kit
+              See How We Help
             </Button>
           </div>
         </div>
@@ -691,13 +691,13 @@ const TenBeforeTen = () => {
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
               onClick={() => {
-                trackClick('Get Launch Kit - 10 Before 10 CTA', {
+                trackClick('See How We Help - 10 Before 10 CTA', {
                   location: 'bottom_section'
                 });
-                window.location.href = "/launch-with-us";
+                window.location.href = "/how-it-works";
               }}
             >
-              Get The Full Launch Kit
+              See How We Help
             </Button>
 
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 font-semibold">

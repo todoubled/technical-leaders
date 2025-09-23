@@ -485,24 +485,57 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
+      {/* How It Works CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <Card className="bg-gradient-to-br from-orange-500 to-red-600 text-white border-0">
+          <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/20">
             <CardContent className="p-8 sm:p-12 text-center">
               <h2 className="text-3xl font-bold mb-4">
-                Get Technical Leadership Insights
+                Ready to Turn Your Expertise Into Revenue?
               </h2>
-              <p className="text-xl mb-6 text-white/90">
-                Join thousands of technical leaders getting weekly insights on scaling teams, career growth, and building better products.
+              <p className="text-xl mb-6 text-muted-foreground">
+                See exactly how we help technical leaders like you launch and scale consulting businesses using proven systems.
               </p>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                onClick={() => window.location.href = 'https://techleaders.kit.com/playbook?utm_source=technical-leaders-blog'}
-              >
-                Get the Playbook
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white"
+                  onClick={() => {
+                    // Track the click
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'click', {
+                        event_category: 'CTA',
+                        event_label: 'How It Works - Article Page',
+                        page_location: window.location.href
+                      });
+                    }
+                    window.location.href = '/how-it-works'
+                  }}
+                >
+                  See How It Works
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-primary text-primary hover:bg-primary/10"
+                  onClick={() => {
+                    // Track the click
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'click', {
+                        event_category: 'CTA',
+                        event_label: 'Free Playbook - Article Page',
+                        page_location: window.location.href
+                      });
+                    }
+                    window.location.href = 'https://techleaders.kit.com/playbook?utm_source=technical-leaders-blog'
+                  }}
+                >
+                  Get Free Playbook
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                Join 300+ technical leaders who've successfully launched consulting practices
+              </p>
             </CardContent>
           </Card>
         </div>
