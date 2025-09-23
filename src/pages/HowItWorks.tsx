@@ -6,8 +6,7 @@ import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const HowItWorks = () => {
-  // Replace with your actual YouTube video ID
-  const youtubeVideoId = "dQw4w9WgXcQ"; // TODO: Replace with actual video ID
+  const youtubeVideoId = "8aVvZ9NwiN8";
 
   return (
     <div className="min-h-screen bg-background">
@@ -39,7 +38,7 @@ const HowItWorks = () => {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-              How Technical Leaders Works
+              How It Works
             </span>
           </h1>
 
