@@ -170,7 +170,7 @@ const MarketingTeam = () => {
       name: "John Chapman",
       role: "Head of Operations",
       description: "Based in the UK, John combines a 15+ yearcareer in IT with a genuine curiosity about people and a values-led approach to helping our Tech Leaders grow with clarity and confidence.",
-      image: "/john.jpeg"
+      image: "/john-chapman.jpeg"
     }
   ];
 
