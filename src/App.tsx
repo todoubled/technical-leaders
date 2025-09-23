@@ -13,6 +13,7 @@ import CallConfirmed from "./pages/CallConfirmed";
 import AITradeSchool from "./pages/AITradeSchool";
 import Launch from "./pages/Launch";
 import Scale from "./pages/Scale";
+import Marketing from "./pages/Marketing";
 import Accredited from "./pages/Accredited";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
@@ -75,6 +76,7 @@ const App = () => (
           <Route path="/ai-trade-school" element={<AITradeSchool />} />
           <Route path="/launch" element={<Launch />} />
           <Route path="/scale" element={<Scale />} />
+          <Route path="/marketing" element={<Marketing />} />
           <Route path="/accredited" element={<Accredited />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/post/:slug" element={<Article />} />

@@ -7,7 +7,6 @@ import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
-import { trackClick } from "@/utils/posthog";
 
 const Scale = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -188,14 +187,7 @@ const Scale = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-                onClick={() => {
-                  trackClick('Scale - Hero CTA', {
-                    location: 'hero_section',
-                    destination: '/call',
-                    cta_text: 'Apply for Scale Program'
-                  });
-                  window.location.href = "/call";
-                }}
+                onClick={() => window.location.href = "/call"}
               >
                 Apply for Scale Program
               </Button>
@@ -203,14 +195,7 @@ const Scale = () => {
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-6"
-                onClick={() => {
-                  trackClick('Scale - Video CTA', {
-                    location: 'hero_section',
-                    cta_text: 'See Launch → Scale Success Stories',
-                    content_type: 'video'
-                  });
-                  setIsVideoModalOpen(true);
-                }}
+                onClick={() => setIsVideoModalOpen(true)}
               >
                 See Launch → Scale Success Stories
               </Button>
@@ -583,14 +568,7 @@ const Scale = () => {
               <Button
                 variant="outline"
                 className="w-full mt-4 border-orange-300 hover:bg-orange-50"
-                onClick={() => {
-                  trackClick('Scale - Launch Kit CTA', {
-                    location: 'who_this_is_for_section',
-                    destination: '/launch',
-                    cta_text: 'Start with Launch Kit'
-                  });
-                  window.location.href = "/launch";
-                }}
+                onClick={() => window.location.href = "/launch"}
               >
                 Start with Launch Kit →
               </Button>
@@ -642,109 +620,46 @@ const Scale = () => {
       </section>
 
       {/* Application CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500 to-red-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8 inline-flex items-center gap-2 bg-blue-500/10 text-blue-700 dark:text-blue-400 px-6 py-3 rounded-full font-semibold">
-            <Award className="w-5 h-5" />
-            <span>Exclusive Program for Launch Kit Graduates</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Your Launch Success Qualifies You for Scale
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Ready to Join Other Launch Grads Making $30K+/Month?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            You've proven you can land opportunities. Now let's 10x your impact and income
-            with premium fractional engagements.
+          <p className="text-xl mb-8 text-orange-100">
+            Use your Launch momentum to build the fractional practice you deserve.
+            Only 3 spots available this cohort.
           </p>
-
-          <Card className="p-8 mb-8 bg-gradient-to-br from-card to-orange-500/5">
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div>
-                <p className="text-3xl font-bold text-foreground">87%</p>
-                <p className="text-muted-foreground">Launch grads hit $30K/mo</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-foreground">4</p>
-                <p className="text-muted-foreground">Months to full practice</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-foreground">20%</p>
-                <p className="text-muted-foreground">Launch alumni discount</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto"
-                onClick={() => {
-                  trackClick('Scale - Final CTA', {
-                    location: 'final_cta_section',
-                    destination: '/call',
-                    cta_text: 'Apply for Scale Program',
-                    price: '$2497/month'
-                  });
-                  window.location.href = "/call";
-                }}
-              >
-                Apply for Scale Program
-              </Button>
-
-              <p className="text-sm text-muted-foreground">
-                📞 30-min strategy call to discuss your Launch results • 💸 Special Launch graduate pricing
-              </p>
-            </div>
-          </Card>
-
-          <Card className="p-6 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800 max-w-2xl mx-auto mb-8">
-            <h3 className="font-semibold text-foreground mb-2">Not a Launch Graduate Yet?</h3>
-            <p className="text-muted-foreground mb-4">
-              Start with Launch Kit to build your foundation, then upgrade to Scale when you're ready for fractional executive roles.
-            </p>
-            <Button
-              variant="outline"
-              className="border-blue-300 hover:bg-blue-50"
-              onClick={() => {
-                trackClick('Scale - Launch Kit Alternative CTA', {
-                  location: 'final_cta_section',
-                  destination: '/launch',
-                  cta_text: 'Start with Launch Kit',
-                  price: '$2950'
-                });
-                window.location.href = "/launch";
-              }}
-            >
-              Start with Launch Kit ($2,950) →
-            </Button>
-          </Card>
-
-          <div className="space-y-4">
-            <p className="text-muted-foreground">
-              Questions about your readiness? Email{" "}
-              <a href="mailto:todd@technical-leaders.com" className="text-orange-600 hover:underline">
-                todd@technical-leaders.com
-              </a>
-              {" "}with "Scale Application" in the subject
-            </p>
-            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <span>Rated 4.9/5 by 68 Launch → Scale graduates</span>
-            </div>
+          <div className="space-y-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 text-left max-w-2xl mx-auto mb-8">
+            <h3 className="text-lg font-semibold text-center">Your next 90 days:</h3>
+            <ul className="space-y-3">
+              {[
+                "Week 1-2: Upgrade your Launch offer to fractional positioning",
+                "Week 3-4: Launch your authority-building content system",
+                "Week 5-8: Convert opportunities into $20K+ retainers",
+                "Week 9-12: Scale to 3 premium clients at $30K+/month"
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-orange-300 flex-shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+          <Button
+            size="lg"
+            className="bg-white text-orange-600 hover:bg-orange-50 text-xl px-10 py-7 font-bold"
+            onClick={() => window.location.href = "/call"}
+          >
+            Apply for Scale Program Now
+          </Button>
+          <p className="text-orange-100 mt-4">
+            📞 Applications reviewed within 24 hours
+          </p>
         </div>
       </section>
 
       <Footer />
-
-      <VideoModal
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        videoUrl={videoUrl}
-      />
+      <VideoModal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)} videoUrl={videoUrl} />
     </div>
   );
 };

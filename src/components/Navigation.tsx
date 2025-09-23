@@ -26,17 +26,35 @@ const Navigation = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <DropdownMenu>
                 <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors flex items-center">
-                  Programs <ChevronDown className="ml-1 h-4 w-4" />
+                  How We Help <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - Launch Kit', {
+                    trackClick('Nav Dropdown - Launch', {
                       location: 'nav_dropdown',
                       destination: '/launch-with-us'
                     });
                     window.location.href = "/launch-with-us";
                   }}>
-                    Launch Kit
+                    Launch
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => {
+                    trackClick('Nav Dropdown - Marketing', {
+                      location: 'nav_dropdown',
+                      destination: '/marketing'
+                    });
+                    window.location.href = "/marketing";
+                  }}>
+                    Marketing
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => {
+                    trackClick('Nav Dropdown - AI for Leaders', {
+                      location: 'nav_dropdown',
+                      destination: '/ai-for-leaders'
+                    });
+                    window.location.href = "/ai-for-leaders";
+                  }}>
+                    AI for Leaders
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => {
                     trackClick('Nav Dropdown - Ship AI', {
@@ -46,15 +64,6 @@ const Navigation = () => {
                     window.location.href = "/ship-ai";
                   }}>
                     Ship AI
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - AI for Execs/Founders', {
-                      location: 'nav_dropdown',
-                      destination: '/ai-for-leaders'
-                    });
-                    window.location.href = "/ai-for-leaders";
-                  }}>
-                    AI for Execs/Founders
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -104,11 +113,12 @@ const Navigation = () => {
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <div className="px-3 py-2 text-foreground">
-              <div className="font-medium mb-2">Programs</div>
+              <div className="font-medium mb-2">How We Help</div>
               <div className="ml-4 space-y-1">
-                <a href="/launch-with-us" className="block py-1 text-sm text-muted-foreground hover:text-primary">Launch Kit</a>
+                <a href="/launch-with-us" className="block py-1 text-sm text-muted-foreground hover:text-primary">Launch</a>
+                <a href="/marketing" className="block py-1 text-sm text-muted-foreground hover:text-primary">Marketing</a>
+                <a href="/ai-for-leaders" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI for Leaders</a>
                 <a href="/ship-ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">Ship AI</a>
-                <a href="/ai-for-leaders" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI for Execs/Founders</a>
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>
