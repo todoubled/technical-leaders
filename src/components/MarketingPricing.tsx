@@ -165,7 +165,13 @@ const MarketingPricing = () => {
                       : `border-2 border-primary/20 hover:border-primary bg-gradient-to-r ${plan.gradient} hover:shadow-lg hover:scale-105 text-white`
                   }`}
                   onClick={() => {
-                    window.location.href = "https://calendly.com/tech-leaders/strategy-session";
+                    window.location.href = plan.name === "Launch"
+                      ? "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"
+                      : plan.name === "Scale"
+                      ? "https://buy.stripe.com/6oEeYG62xetR304eVg"
+                      : plan.name === "Multi-Channel"
+                      ? "https://buy.stripe.com/7sY7sLdPH1kbgamgnOaMU0D"
+                      : "https://calendly.com/tech-leaders/strategy-session";
                   }}
                 >
                   Get Started with {plan.name}
