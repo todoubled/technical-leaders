@@ -139,7 +139,7 @@ const AIForLeaders = () => {
             </p>
 
             {/* YouTube Video Embed */}
-            <div className="w-full max-w-3xl mx-auto mb-8">
+            <div className="w-full max-w-3xl mx-auto mb-3">
               <div className="relative pb-[56.25%] h-0">
                 <iframe
                   className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
@@ -150,6 +150,13 @@ const AIForLeaders = () => {
                   allowFullScreen
                 ></iframe>
               </div>
+            </div>
+
+            {/* Pamela Johnston Testimonial */}
+            <div className="text-center mb-8">
+              <p className="text-sm text-muted-foreground">
+                <span className="font-medium">Pamela Johnston</span> • Senior Business Analyst
+              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

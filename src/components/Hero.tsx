@@ -75,11 +75,6 @@ const Hero = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg pointer-events-none"></div>
           </div>
-          <div className="mt-3 text-center">
-            <p className="text-sm text-muted-foreground">
-              <span className="font-medium">Pamela Johnston</span> • Senior Business Analyst
-            </p>
-          </div>
         </div>
       </div>
 
