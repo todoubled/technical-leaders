@@ -256,25 +256,57 @@ const LaunchWithUs = () => {
               (even if you <b>hate feeling "salesy"</b> or have a <b>tiny audience</b>)
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-                onClick={() => {
-                  trackClick('Launch With Us - Hero CTA', {
-                    location: 'hero_section',
-                    destination: '#apply',
-                    cta_text: 'Reserve Your Spot'
-                  });
-                  window.location.href = "#apply";
-                }}
-              >
-                Reserve Your Spot
-              </Button>
-            </div>
+            <Card className="p-8 shadow-lg mb-8 max-w-2xl mx-auto">
+              <div className="mb-8">
+                <div className="text-center">
+                  <p className="text-5xl font-bold text-foreground mb-2">$2,950</p>
+                  <p className="text-xl text-muted-foreground mb-1">Launch Kit Program</p>
+                  <p className="text-sm text-orange-600 font-semibold">With our guarantee</p>
+                </div>
+              </div>
 
-            <p className="text-sm text-muted-foreground mt-4">
-              Done-for-you marketing • Guaranteed ROI • Proven systems
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full sm:w-auto"
+                  onClick={() => {
+                    trackClick('Launch With Us - Hero CTA', {
+                      location: 'hero_section',
+                      destination: 'https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A',
+                      cta_text: 'Get Started',
+                      price: '$2950'
+                    });
+                    window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
+                  }}
+                >
+                  Get Started
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-8 py-6 w-full sm:w-auto"
+                  onClick={() => {
+                    trackClick('Launch With Us - Hero Strategy Session', {
+                      location: 'hero_section',
+                      destination: '/benchmark',
+                      cta_text: 'Book a Strategy Session'
+                    });
+                    window.location.href = "/benchmark";
+                  }}
+                >
+                  Book a Strategy Session
+                </Button>
+              </div>
+
+              <p className="text-sm text-muted-foreground mt-4 text-center">
+                💳 Payment Plans Available • 🔒 Hand-selected participants
+              </p>
+            </Card>
+
+            <p className="text-sm text-muted-foreground mt-6">
+              <strong>P.S.</strong> As soon as you decide, we'll get you access to our Revenue Generating
+              Playbook — so you can start driving cash before we even officially start.
             </p>
           </div>
         </div>
@@ -802,48 +834,25 @@ const LaunchWithUs = () => {
             Join a small group of experienced pros building scalable businesses
           </p>
 
-          <Card className="p-8 shadow-lg mb-8">
-            <div className="mb-8">
-              <p className="text-3xl font-bold text-foreground mb-4">Here's the deal:</p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-6">
-                <div className="text-center">
-                  <p className="text-4xl font-bold text-foreground">$2,950</p>
-                  <p className="text-lg text-muted-foreground">To launch</p>
-                  <p className="text-sm text-orange-600 font-semibold mt-1">With our guarantee</p>
-                </div>
-                <div className="text-2xl text-muted-foreground">+</div>
-                <div className="text-center">
-                  <p className="text-4xl font-bold text-foreground">$850/mo</p>
-                  <p className="text-lg text-muted-foreground">For 12 months to scale</p>
-                  <p className="text-sm text-orange-600 font-semibold mt-1">(optional)</p>
-                </div>
-              </div>
-            </div>
-
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 w-full md:w-auto"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
               onClick={() => {
                 trackClick('Launch With Us - Final CTA', {
                   location: 'final_cta_section',
-                  destination: 'https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A',
-                  cta_text: 'Get Started',
-                  price: '$2950'
+                  destination: '#apply',
+                  cta_text: 'Reserve Your Spot'
                 });
-                window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              Get Started
+              Reserve Your Spot
             </Button>
+          </div>
 
-            <p className="text-sm text-muted-foreground mt-4">
-              💳 Payment Plans Available • 🔒 Hand-selected participants
-            </p>
-          </Card>
-
-          <p className="text-sm text-muted-foreground mt-6">
-            <strong>P.S.</strong> As soon as you decide, we'll get you access to our Revenue Generating
-            Playbook — so you can start driving cash before we even officially start.
+          <p className="text-sm text-muted-foreground mt-4">
+            Done-for-you marketing • Guaranteed ROI • Proven systems
           </p>
         </div>
       </section>
