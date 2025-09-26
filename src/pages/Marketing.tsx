@@ -45,7 +45,7 @@ const MarketingHero = () => {
       badgeColor: "bg-emerald-500",
       idealFor: "Growing audience and getting leads for outreach",
       results: "Automated 500+ new ICP connections/followers",
-      link: "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"
+      link: "https://buy.stripe.com/6oEeYG62xetR304eVg"
     },
     {
       name: "The Content Creator™",
@@ -64,7 +64,7 @@ const MarketingHero = () => {
       badgeColor: "bg-primary",
       idealFor: "Converting inbound leads with content marketing",
       results: "Automated Inbound/Outbound Lead Conversion",
-      link: "https://buy.stripe.com/6oEeYG62xetR304eVg"
+      link: "https://buy.stripe.com/7sY7sLdPH1kbgamgnOaMU0D"
     },
     {
       name: "The Multi-Channel Scaler™",
@@ -84,7 +84,7 @@ const MarketingHero = () => {
       badgeColor: "bg-orange-500",
       idealFor: "Omni-present marketing and brand building",
       results: "Performance-based goals TBD",
-      link: "https://buy.stripe.com/7sY7sLdPH1kbgamgnOaMU0D"
+      link: "https://calendly.com/tech-leaders/strategy-session"
     }
   ];
 
