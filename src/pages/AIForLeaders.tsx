@@ -359,177 +359,159 @@ const AIForLeaders = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Transform Your Leadership with AI
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                <Brain className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Non-Technical AI Workflows for Senior Leaders</h3>
-              <p className="text-muted-foreground">Master enterprise AI tools without coding. Build automated workflows that turn complex data into strategic insights, streamline decision-making processes, and create executive dashboards that actually inform strategy.</p>
-            </Card>
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                <Wrench className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Build Internal Tools Without Dev Resources</h3>
-              <p className="text-muted-foreground">Create powerful AI prototypes and production-ready tools using no-code platforms. Test ideas rapidly, validate with real users, and deploy solutions that solve million-dollar problems—all without waiting for engineering capacity.</p>
-            </Card>
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                <GitBranch className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">AI Transformation & Change Management</h3>
-              <p className="text-muted-foreground">Navigate organizational resistance with proven frameworks. Build AI champions across your org, establish governance that enables innovation, and create a culture where AI adoption accelerates rather than stalls.</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Curriculum Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            From AI Skeptic to AI Champion
+            From AI Curious to AI Champion
           </h2>
           <p className="text-center text-muted-foreground mb-8 text-lg">
             Our proven AI ROI Framework transforms your organization through 8 interconnected training modules
           </p>
 
-          {/* AI ROI Framework Visual */}
-          <div className="mb-12 bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-3">The AI ROI Framework™</h3>
-              <p className="text-muted-foreground max-w-3xl mx-auto">
-                Move from failed initiatives to sustained adoption by mastering the three pillars of AI transformation:
-                <span className="font-semibold text-foreground"> Literacy</span> (how to think AI-first),
-                <span className="font-semibold text-foreground"> Leverage</span> (how to maximize value), and
-                <span className="font-semibold text-foreground"> Adoption</span> (how to drive organizational change).
+          {/* AI ROI Framework Visual - Improved Version */}
+          <div className="mb-12 bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-10">
+            <div className="text-center mb-10">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Master the Three Pillars of AI Transformation</h3>
+              <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed font-medium">
+                3 focused training modules that move you from failed initiatives to sustained adoption
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="grid md:grid-cols-3 gap-10 mb-10">
               {/* Literacy Pillar */}
-              <div className="text-center">
-                <div className="mb-4">
-                  <div className="inline-block p-3 bg-green-100 dark:bg-green-900/30 rounded-full">
-                    <Brain className="w-8 h-8 text-green-600 dark:text-green-400" />
+              <div className="text-center p-8 rounded-2xl bg-white dark:bg-gray-800 border-2 border-green-200 dark:border-green-800 hover:shadow-lg transition-all hover:-translate-y-1">
+                <div className="mb-6">
+                  <div className="inline-block w-20 h-20 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center shadow-lg">
+                    <Brain className="w-10 h-10 text-white" />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-green-600 dark:text-green-400 mb-2">LITERACY</h4>
-                <p className="text-sm text-muted-foreground mb-4">Build foundational understanding</p>
-                <div className="space-y-2 text-left">
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">AI Fundamentals™</p>
-                    <p className="text-xs text-muted-foreground">How to think AI-first</p>
+                <h4 className="text-2xl font-bold text-green-600 dark:text-green-400 mb-3 tracking-wide">LITERACY</h4>
+                <p className="text-base text-gray-700 dark:text-gray-300 mb-6 font-semibold">Module 1: Executive Prompt Engineering Mastery</p>
+                <div className="space-y-3 text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-green-600 dark:text-green-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Design prompts that produce board-ready analysis</p>
+                    </div>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">The Context Creator™</p>
-                    <p className="text-xs text-muted-foreground">HOW to input the right data for best output</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-green-600 dark:text-green-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Build context frameworks for strategic decisions</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-green-600 dark:text-green-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Create reusable prompt templates for your team</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Leverage Pillar */}
-              <div className="text-center">
-                <div className="mb-4">
-                  <div className="inline-block p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
-                    <TrendingUp className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+              <div className="text-center p-8 rounded-2xl bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-800 hover:shadow-lg transition-all hover:-translate-y-1">
+                <div className="mb-6">
+                  <div className="inline-block w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center shadow-lg">
+                    <TrendingUp className="w-10 h-10 text-white" />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">LEVERAGE</h4>
-                <p className="text-sm text-muted-foreground mb-4">Maximize value creation</p>
-                <div className="space-y-2 text-left">
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">The AI Project Planner™</p>
-                    <p className="text-xs text-muted-foreground">HOW to scope requirements</p>
+                <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-3 tracking-wide">LEVERAGE</h4>
+                <p className="text-base text-gray-700 dark:text-gray-300 mb-6 font-semibold">Module 2: Data Intelligence & Tool Creation</p>
+                <div className="space-y-3 text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 dark:text-blue-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Connect AI to your company's data sources securely</p>
+                    </div>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">The AI Toolbox™</p>
-                    <p className="text-xs text-muted-foreground">HOW to assemble your tools</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 dark:text-blue-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Build automated reporting workflows</p>
+                    </div>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">The AI Strategy Builder™</p>
-                    <p className="text-xs text-muted-foreground">HOW to get the most out of all you have</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 dark:text-blue-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Create custom AI tools for your business needs</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 dark:text-blue-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Deploy internal AI solutions without IT dependencies</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Adoption Pillar */}
-              <div className="text-center">
-                <div className="mb-4">
-                  <div className="inline-block p-3 bg-purple-100 dark:bg-purple-900/30 rounded-full">
-                    <Users className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+              <div className="text-center p-8 rounded-2xl bg-white dark:bg-gray-800 border-2 border-purple-200 dark:border-purple-800 hover:shadow-lg transition-all hover:-translate-y-1">
+                <div className="mb-6">
+                  <div className="inline-block w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center shadow-lg">
+                    <Users className="w-10 h-10 text-white" />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-purple-600 dark:text-purple-400 mb-2">ADOPTION</h4>
-                <p className="text-sm text-muted-foreground mb-4">Drive organizational change</p>
-                <div className="space-y-2 text-left">
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">The AI Workflow™</p>
-                    <p className="text-xs text-muted-foreground">HOW to deliver better work, faster</p>
+                <h4 className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-3 tracking-wide">ADOPTION</h4>
+                <p className="text-base text-gray-700 dark:text-gray-300 mb-6 font-semibold">Module 3: AI Strategy Implementation</p>
+                <div className="space-y-3 text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-purple-600 dark:text-purple-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Develop your organization's AI playbook</p>
+                    </div>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">Ship AI™</p>
-                    <p className="text-xs text-muted-foreground">HOW individual contributors can be more productive</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-purple-600 dark:text-purple-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Train your team to leverage AI effectively</p>
+                    </div>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-foreground">The 5-Step AI Exec Playbook™</p>
-                    <p className="text-xs text-muted-foreground">HOW to transform your organization</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-purple-600 dark:text-purple-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Measure and communicate AI ROI to stakeholders</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-purple-600 dark:text-purple-400 font-bold text-lg mt-0.5">→</span>
+                    <div>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">Navigate organizational resistance with proven frameworks</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="border-t pt-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">Without Framework = Failed Initiatives</span>
+            <div className="border-t-2 border-gray-300 dark:border-gray-600 pt-8">
+              <div className="flex flex-wrap items-center justify-between gap-6">
+                <div className="flex items-center gap-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                    <span className="text-base font-bold text-gray-800 dark:text-gray-200">Without Framework = Failed Initiatives</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">With Framework = AI ROI</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                    <span className="text-base font-bold text-gray-800 dark:text-gray-200">With Framework = AI ROI</span>
                   </div>
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  Powered by <span className="font-semibold">Bottega8™</span> Done-For-You AI Implementation
+                <div className="text-base text-gray-700 dark:text-gray-300 font-medium">
+                  Powered by <span className="font-bold text-gray-900 dark:text-white">Bottega8™</span> Done-For-You AI Implementation
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Original Module Cards */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-center mb-6 text-foreground">
-              Your 4-Module Implementation Journey
-            </h3>
-            {curriculum.map((module, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                    {module.week}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-2 text-foreground">{module.title}</h3>
-                    <ul className="space-y-2">
-                      {module.topics.map((topic, topicIndex) => (
-                        <li key={topicIndex} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                          <span className="text-muted-foreground">{topic}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </Card>
-            ))}
+          {/* Module timing info */}
+          <div className="text-center mt-8">
+            <p className="text-lg font-semibold text-foreground dark:text-white mb-2">
+              Program Format
+            </p>
+            <p className="text-base text-gray-700 dark:text-gray-300">
+              3 comprehensive modules delivered over 3 weeks • Weekly 2-hour sessions • Lifetime access to office hours
+            </p>
           </div>
         </div>
       </section>
