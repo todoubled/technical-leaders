@@ -176,10 +176,10 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Hero CTA', {
                     location: 'hero_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
                     cta_text: 'Book Strategy Session'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
                 }}
               >
                 Book Strategy Session
@@ -258,11 +258,11 @@ const AIForLeaders = () => {
                       onClick={() => {
                         trackClick('AI For Leaders - Individual Training', {
                           location: '3-session_program',
-                          destination: 'https://buy.stripe.com/link-to-individual',
+                          destination: 'https://buy.stripe.com/4gMeVdfXPgf5e2ec7yaMU0E',
                           cta_text: 'Enroll Now - $2,500',
                           price: '$2500'
                         });
-                        window.location.href = "https://buy.stripe.com/link-to-individual";
+                        window.location.href = "https://buy.stripe.com/4gMeVdfXPgf5e2ec7yaMU0E";
                       }}
                     >
                       Enroll Now - $2,500
@@ -271,21 +271,21 @@ const AIForLeaders = () => {
 
                   <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
                     <p className="text-sm font-semibold text-background mb-1">For Organizations</p>
-                    <p className="text-xs text-muted-foreground mb-2">Live customized training for up to 30 seats</p>
+                    <p className="text-xs text-muted-foreground mb-2">Live customized training for up to 30 seats - $50k</p>
                     <Button
                       size="sm"
                       className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold"
                       onClick={() => {
                         trackClick('AI For Leaders - Organization Training', {
                           location: '3-session_program',
-                          destination: 'https://calendly.com/tech-leaders/ai-org-training',
-                          cta_text: 'Book Discovery Call - $50K',
+                          destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
+                          cta_text: 'Book Discovery Call',
                           price: '$50000'
                         });
-                        window.location.href = "https://calendly.com/tech-leaders/ai-org-training";
+                        window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
                       }}
                     >
-                      Book Discovery Call - $50K
+                      Book Discovery Call
                     </Button>
                   </div>
                 </div>
@@ -342,10 +342,10 @@ const AIForLeaders = () => {
                   onClick={() => {
                     trackClick('AI For Leaders - Workshop Strategy Session', {
                       location: '1-day_workshop',
-                      destination: 'https://calendly.com/tech-leaders/sync',
+                      destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
                       cta_text: 'Book Strategy Session'
                     });
-                    window.location.href = "https://calendly.com/tech-leaders/sync";
+                    window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
                   }}
                 >
                   Book Strategy Session
@@ -393,15 +393,123 @@ const AIForLeaders = () => {
 
       {/* Curriculum Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
             From AI Skeptic to AI Champion
           </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            4 modules of evergreen, executive-focused training
+          <p className="text-center text-muted-foreground mb-8 text-lg">
+            Our proven AI ROI Framework transforms your organization through 8 interconnected training modules
           </p>
 
+          {/* AI ROI Framework Visual */}
+          <div className="mb-12 bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-foreground mb-3">The AI ROI Framework™</h3>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Move from failed initiatives to sustained adoption by mastering the three pillars of AI transformation:
+                <span className="font-semibold text-foreground"> Literacy</span> (how to think AI-first),
+                <span className="font-semibold text-foreground"> Leverage</span> (how to maximize value), and
+                <span className="font-semibold text-foreground"> Adoption</span> (how to drive organizational change).
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              {/* Literacy Pillar */}
+              <div className="text-center">
+                <div className="mb-4">
+                  <div className="inline-block p-3 bg-green-100 dark:bg-green-900/30 rounded-full">
+                    <Brain className="w-8 h-8 text-green-600 dark:text-green-400" />
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-green-600 dark:text-green-400 mb-2">LITERACY</h4>
+                <p className="text-sm text-muted-foreground mb-4">Build foundational understanding</p>
+                <div className="space-y-2 text-left">
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">AI Fundamentals™</p>
+                    <p className="text-xs text-muted-foreground">How to think AI-first</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">The Context Creator™</p>
+                    <p className="text-xs text-muted-foreground">HOW to input the right data for best output</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Leverage Pillar */}
+              <div className="text-center">
+                <div className="mb-4">
+                  <div className="inline-block p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                    <TrendingUp className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">LEVERAGE</h4>
+                <p className="text-sm text-muted-foreground mb-4">Maximize value creation</p>
+                <div className="space-y-2 text-left">
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">The AI Project Planner™</p>
+                    <p className="text-xs text-muted-foreground">HOW to scope requirements</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">The AI Toolbox™</p>
+                    <p className="text-xs text-muted-foreground">HOW to assemble your tools</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">The AI Strategy Builder™</p>
+                    <p className="text-xs text-muted-foreground">HOW to get the most out of all you have</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Adoption Pillar */}
+              <div className="text-center">
+                <div className="mb-4">
+                  <div className="inline-block p-3 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+                    <Users className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-purple-600 dark:text-purple-400 mb-2">ADOPTION</h4>
+                <p className="text-sm text-muted-foreground mb-4">Drive organizational change</p>
+                <div className="space-y-2 text-left">
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">The AI Workflow™</p>
+                    <p className="text-xs text-muted-foreground">HOW to deliver better work, faster</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">Ship AI™</p>
+                    <p className="text-xs text-muted-foreground">HOW individual contributors can be more productive</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-foreground">The 5-Step AI Exec Playbook™</p>
+                    <p className="text-xs text-muted-foreground">HOW to transform your organization</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t pt-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-sm text-muted-foreground">Without Framework = Failed Initiatives</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-sm text-muted-foreground">With Framework = AI ROI</span>
+                  </div>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Powered by <span className="font-semibold">Bottega8™</span> Done-For-You AI Implementation
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Original Module Cards */}
           <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-center mb-6 text-foreground">
+              Your 4-Module Implementation Journey
+            </h3>
             {curriculum.map((module, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1">
                 <div className="flex items-start gap-4">
@@ -462,10 +570,10 @@ const AIForLeaders = () => {
               onClick={() => {
                 trackClick('AI For Leaders - Resources CTA', {
                   location: 'resources_section',
-                  destination: 'https://calendly.com/tech-leaders/sync',
+                  destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
                   cta_text: 'Book Strategy Session'
                 });
-                window.location.href = "https://calendly.com/tech-leaders/sync";
+                window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
               }}
             >
               Book Strategy Session
@@ -735,10 +843,10 @@ const AIForLeaders = () => {
               onClick={() => {
                 trackClick('AI For Leaders - Final CTA', {
                   location: 'final_cta_section',
-                  destination: 'https://calendly.com/tech-leaders/sync',
+                  destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
                   cta_text: 'Book Strategy Session'
                 });
-                window.location.href = "https://calendly.com/tech-leaders/sync";
+                window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
               }}
             >
               Book Strategy Session
