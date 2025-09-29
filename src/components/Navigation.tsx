@@ -30,40 +30,31 @@ const Navigation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - Launch', {
+                    trackClick('Nav Dropdown - Get Consulting Clients', {
                       location: 'nav_dropdown',
-                      destination: '/launch-with-us'
+                      destination: '/how-it-works'
                     });
-                    window.location.href = "/launch-with-us";
+                    window.location.href = "/how-it-works";
                   }}>
-                    Launch
+                    Get Consulting Clients
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - Marketing', {
+                    trackClick('Nav Dropdown - Done-For-You Marketing', {
                       location: 'nav_dropdown',
                       destination: '/marketing'
                     });
                     window.location.href = "/marketing";
                   }}>
-                    Marketing
+                    Done-For-You Marketing
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - AI for Leaders', {
+                    trackClick('Nav Dropdown - AI Training', {
                       location: 'nav_dropdown',
                       destination: '/ai-for-leaders'
                     });
                     window.location.href = "/ai-for-leaders";
                   }}>
-                    AI for Leaders
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - Ship AI', {
-                      location: 'nav_dropdown',
-                      destination: '/ship-ai'
-                    });
-                    window.location.href = "/ship-ai";
-                  }}>
-                    Ship AI
+                    AI Training
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -115,10 +106,9 @@ const Navigation = () => {
             <div className="px-3 py-2 text-foreground">
               <div className="font-medium mb-2">How We Help</div>
               <div className="ml-4 space-y-1">
-                <a href="/launch-with-us" className="block py-1 text-sm text-muted-foreground hover:text-primary">Launch</a>
-                <a href="/marketing" className="block py-1 text-sm text-muted-foreground hover:text-primary">Marketing</a>
-                <a href="/ai-for-leaders" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI for Leaders</a>
-                <a href="/ship-ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">Ship AI</a>
+                <a href="/how-it-works" className="block py-1 text-sm text-muted-foreground hover:text-primary">Get Consulting Clients</a>
+                <a href="/marketing" className="block py-1 text-sm text-muted-foreground hover:text-primary">Done-For-You Marketing</a>
+                <a href="/ai-for-leaders" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI Training</a>
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>

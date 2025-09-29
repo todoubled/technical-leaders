@@ -124,7 +124,7 @@ const AIForLeaders = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-white/90 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-sm">
               <Brain className="w-4 h-4" />
-              <span>TAILORED AI PROGRAMS • INTENSIVE WORKSHOPS • 1:1 EXECUTIVE COACHING</span>
+              <span>TAILORED AI PROGRAMS • INTENSIVE WORKSHOPS</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -219,32 +219,8 @@ const AIForLeaders = () => {
               Every program is customized to your specific industry, challenges, and goals
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-foreground">1-2 Day Intensive Workshop</h3>
-              <p className="text-muted-foreground mb-4">
-                Immersive, hands-on training for your leadership team. Walk away with implemented AI solutions.
-              </p>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <span className="text-foreground">On-site or virtual delivery</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <span className="text-foreground">5-15 executives per session</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <span className="text-foreground">Industry-specific use cases</span>
-                </li>
-              </ul>
-            </Card>
-            
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
             <Card className="p-6 hover:shadow-lg transition-shadow relative">
               <div className="absolute -top-3 -right-3 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-sm">
                 MOST POPULAR
@@ -252,11 +228,11 @@ const AIForLeaders = () => {
               <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
                 <Brain className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-foreground">4-Week Executive Cohort</h3>
+              <h3 className="text-xl font-semibold mb-2 text-foreground">3-Session Training Program</h3>
               <p className="text-muted-foreground mb-4">
                 Deep-dive program with peer learning and ongoing support. Maximum transformation impact.
               </p>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-sm mb-6">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-600" />
                   <span className="text-foreground">Weekly 2-hour sessions</span>
@@ -267,54 +243,118 @@ const AIForLeaders = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <span className="text-foreground">1:1 implementation support</span>
+                  <span className="text-foreground">Lifetime access to Weekly Office Hours</span>
                 </li>
               </ul>
+
+              <div className="border-t pt-4 space-y-3">
+                <div className="space-y-3">
+                  <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-background mb-1">For Individuals</p>
+                    <p className="text-xs text-muted-foreground mb-2">Open enrollment</p>
+                    <Button
+                      size="sm"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+                      onClick={() => {
+                        trackClick('AI For Leaders - Individual Training', {
+                          location: '3-session_program',
+                          destination: 'https://buy.stripe.com/link-to-individual',
+                          cta_text: 'Enroll Now - $2,500',
+                          price: '$2500'
+                        });
+                        window.location.href = "https://buy.stripe.com/link-to-individual";
+                      }}
+                    >
+                      Enroll Now - $2,500
+                    </Button>
+                  </div>
+
+                  <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-background mb-1">For Organizations</p>
+                    <p className="text-xs text-muted-foreground mb-2">Live customized training for up to 30 seats</p>
+                    <Button
+                      size="sm"
+                      className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold"
+                      onClick={() => {
+                        trackClick('AI For Leaders - Organization Training', {
+                          location: '3-session_program',
+                          destination: 'https://calendly.com/tech-leaders/ai-org-training',
+                          cta_text: 'Book Discovery Call - $50K',
+                          price: '$50000'
+                        });
+                        window.location.href = "https://calendly.com/tech-leaders/ai-org-training";
+                      }}
+                    >
+                      Book Discovery Call - $50K
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </Card>
-            
+
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                <Target className="w-6 h-6 text-white" />
+                <Users className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-foreground">1:1 Executive Advisory</h3>
+              <h3 className="text-xl font-semibold mb-2 text-foreground">1-Day Intensive Workshop</h3>
               <p className="text-muted-foreground mb-4">
-                Private, confidential guidance for C-suite leaders. Completely tailored to your strategic goals.
+                Immersive, hands-on training for your leadership team. Walk away with implemented AI solutions.
               </p>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-sm mb-6">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <span className="text-foreground">Flexible scheduling</span>
+                  <span className="text-foreground">On-site or virtual delivery</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <span className="text-foreground">Board-ready deliverables</span>
+                  <span className="text-foreground">10-30 leaders per session</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-600" />
-                  <span className="text-foreground">Ongoing strategic support</span>
+                  <span className="text-foreground">Industry-specific use cases and deliverables</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span className="text-foreground">1:1 Implementation Support</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span className="text-foreground">AI Strategy Roadmap & Action Plan</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span className="text-foreground">Custom AI Tools Built Live</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span className="text-foreground">30-Day Follow-up Support</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span className="text-foreground">Executive AI Toolkit & Templates</span>
                 </li>
               </ul>
+
+              <div className="border-t pt-4">
+                <Button
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white"
+                  onClick={() => {
+                    trackClick('AI For Leaders - Workshop Strategy Session', {
+                      location: '1-day_workshop',
+                      destination: 'https://calendly.com/tech-leaders/sync',
+                      cta_text: 'Book Strategy Session'
+                    });
+                    window.location.href = "https://calendly.com/tech-leaders/sync";
+                  }}
+                >
+                  Book Strategy Session
+                </Button>
+                <p className="text-xs text-muted-foreground mt-2 text-center">
+                  100% tailored to your organization
+                </p>
+              </div>
             </Card>
-          </div>
-          
-          <div className="text-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-shadow"
-              onClick={() => {
-                trackClick('AI For Leaders - Program Options CTA', {
-                  location: 'program_options_section',
-                  destination: 'https://calendly.com/tech-leaders/sync',
-                  cta_text: 'Book Strategy Session'
-                });
-                window.location.href = "https://calendly.com/tech-leaders/sync";
-              }}
-            >
-              Book Strategy Session
-            </Button>
-            <p className="text-sm text-muted-foreground mt-4">
-              100% tailored to your organization • No generic training
-            </p>
           </div>
         </div>
       </section>
@@ -492,7 +532,7 @@ const AIForLeaders = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">Executive Faculty</h2>
             <p className="text-lg text-muted-foreground">
@@ -665,7 +705,7 @@ const AIForLeaders = () => {
               In Just 30 Minutes
             </span>
           </h2>
-          
+
           <p className="text-xl text-muted-foreground mb-8">
             On your strategy call, we'll analyze your specific challenges and design a custom program that delivers ROI in weeks, not months
           </p>
@@ -688,7 +728,7 @@ const AIForLeaders = () => {
                 </li>
               </ul>
             </div>
-            
+
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-12 py-6 w-full md:w-auto shadow-lg hover:shadow-xl transition-all"

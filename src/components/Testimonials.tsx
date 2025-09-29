@@ -103,33 +103,19 @@ const Testimonials = () => {
           <p className="text-muted-foreground text-lg mb-6">
             Ready to join them?
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button
               size="lg"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
               onClick={() => {
-                trackClick('Testimonials - Book Free Call', {
+                trackClick('Testimonials - Learn How It Works', {
                   location: 'testimonials_bottom',
-                  destination: '/call'
+                  destination: '/how-it-works'
                 });
-                window.location.href = "/call";
+                window.location.href = "/how-it-works";
               }}
             >
-              Book Your Free Call
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => {
-                trackClick('Testimonials - View Accredited Leaders', {
-                  location: 'testimonials_bottom',
-                  destination: '/accredited'
-                });
-                window.location.href = "/accredited";
-              }}
-              className="group"
-            >
-              <Award className="w-4 h-4 mr-2 group-hover:text-primary transition-colors" />
-              View Accredited Leaders
+              Learn How It Works
             </Button>
           </div>
         </div>

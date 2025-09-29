@@ -1,12 +1,59 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Play, Quote } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const HowItWorks = () => {
   const youtubeVideoId = "8aVvZ9NwiN8";
+
+  const testimonials = [
+    {
+      name: "P.O.",
+      role: "DevOps Lead",
+      location: "Poland",
+      avatar: "PO",
+      content: "I didn't even use all of tools that you provide guys, so far all is exceeding my expectations. Basically thats the first mastermind group that gives a real value that I know! Stress levels overall in my life almost went to 0, in all cases, private, work etc"
+    },
+    {
+      name: "C.F.",
+      role: "Fractional CTO",
+      location: "Ireland",
+      avatar: "CF",
+      content: "For this client, it's a fractional gig that will replace all my income, which means I can go and do this fractional thing for three days a week and then have two days to apply all the other learnings. Massive, massive win."
+    },
+    {
+      name: "K.D.",
+      role: "Director of Customer Success",
+      location: "Colorado",
+      avatar: "KD",
+      content: "Applying my new approach learned through Tech Leaders, has led to a new job offer and a promotion"
+    },
+    {
+      name: "Tech Leader",
+      role: "Senior Leadership",
+      location: "",
+      avatar: "TL",
+      content: "The 'win seeds' I've been planting the last ~1-2 months have started blooming at work! My squad was recognized by senior leadership across two orgs for the work we've been doing."
+    },
+    {
+      name: "M.W.",
+      role: "CTO",
+      location: "Poland",
+      avatar: "MW",
+      content: "I feel I'm a strong IC and have quite good managing skills, but I felt lacking in strategy tools. I wanted to increase my leverage by doing a higher level of work."
+    },
+    {
+      name: "F.C.",
+      role: "Fractional CTO",
+      location: "Ann Arbor",
+      avatar: "FC",
+      content: "It is harder than I thought, specifically talking about yourself as a product or service offering is not something I really ever had to do working in a large corporation for the majority of the last three decades."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -43,7 +90,7 @@ const HowItWorks = () => {
           </h1>
 
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            See exactly how we help technical founders launch and scale their businesses with proven systems and strategies
+            See exactly how we help experts and consultants launch and scale their businesses with proven systems and strategies
           </p>
 
           {/* YouTube Video Embed */}
@@ -77,6 +124,56 @@ const HowItWorks = () => {
           <p className="text-sm text-muted-foreground mt-4 font-semibold">
             Join 300+ founders already scaling their businesses
           </p>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+              What Our
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
+                Members Say
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Real results from tech leaders who've transformed their careers with our proven playbooks and community support
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="relative bg-card border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="absolute top-4 left-4 opacity-10">
+                    <Quote className="h-8 w-8 text-primary" />
+                  </div>
+
+                  <div className="relative z-10">
+                    <p className="text-foreground mb-8 leading-relaxed text-lg italic pt-4">
+                      {testimonial.content}
+                    </p>
+
+                    <div className="flex items-center pt-4 border-t border-border">
+                      <Avatar className="h-14 w-14 mr-4 ring-2 ring-primary/20">
+                        <AvatarImage src="" />
+                        <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/40 text-primary font-semibold text-lg">
+                          {testimonial.avatar}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <div className="font-bold text-foreground text-lg">{testimonial.name}</div>
+                        <div className="text-muted-foreground text-sm font-medium">
+                          {testimonial.role}{testimonial.location && ` • ${testimonial.location}`}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -121,16 +218,6 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Social Proof */}
-          <div className="bg-primary/10 rounded-lg p-6 mb-12 text-center">
-            <p className="text-lg font-semibold">
-              🔥 12 technical leaders joined this week
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              Next cohort starts Monday (Limited spots available)
-            </p>
-          </div>
-
           {/* Multiple CTA Options */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
@@ -151,50 +238,19 @@ const HowItWorks = () => {
               variant="outline"
               className="border-2 border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6"
               onClick={() => {
-                trackEvent('Book a Call - How It Works CTA', {
+                trackEvent('Book an Intro Call - How It Works CTA', {
                   location: 'value_section'
                 });
-                window.location.href = "/calls";
+                window.location.href = "/call";
               }}
             >
-              Book a Strategy Call First
+              Book an Intro Call First
             </Button>
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-6">
             Not ready yet? <a href="/10-before-10" className="text-primary underline" onClick={() => trackEvent('10 Before 10 Link - How It Works', { location: 'value_section' })}>Get our free 10 Before 10 playbook</a>
           </p>
-        </div>
-      </section>
-
-      {/* Bottom CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-primary/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Launch Your Consulting Business?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Join 300+ technical leaders who've successfully transitioned to consulting
-          </p>
-
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
-            onClick={() => {
-              trackEvent('Final CTA - How It Works', {
-                location: 'bottom_section'
-              });
-              window.location.href = "/launch-with-us";
-            }}
-          >
-            Start Your Journey Today
-          </Button>
-
-          <div className="mt-8 flex justify-center gap-8 text-sm text-muted-foreground">
-            <div>✓ 30-day money-back guarantee</div>
-            <div>✓ Proven system</div>
-            <div>✓ 300+ success stories</div>
-          </div>
         </div>
       </section>
 
