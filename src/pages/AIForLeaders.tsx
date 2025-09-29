@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch } from "lucide-react";
+import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch, ArrowRight, XCircle } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
@@ -77,19 +77,19 @@ const AIForLeaders = () => {
 
   const testimonials = [
     {
-      quote: "This program transformed how our executive team approaches AI. We went from talking about AI to actually using it to drive strategic decisions.",
-      author: "Sarah Chen",
-      title: "CEO, TechCorp Solutions"
+      quote: "These AI tools have become integral to my daily work, streamlining processes and freeing up my time for more strategic contributions.",
+      author: "Head of Business Analytics",
+      title: "Fortune 500 Company"
     },
     {
-      quote: "I built three AI prototypes that are now full products generating $2M ARR. The no-code approach was a game-changer for testing ideas quickly.",
-      author: "Michael Rodriguez",
-      title: "Chief Innovation Officer, Global Ventures"
+      quote: "This program enabled me to develop something with no experience of coding, the power this gives me is mind blowing, I can build stuff I could have only dreamt about before.",
+      author: "UX Design Director",
+      title: "Technology Company"
     },
     {
-      quote: "The prompt engineering techniques alone saved our team 30 hours per week. We're now making data-driven decisions at 10x the speed.",
-      author: "Jennifer Walsh",
-      title: "EVP Operations, Fortune 500 Company"
+      quote: "The program rewired how I think about solving day-to-day problems using AI. I walked away with real skills I use every day to work smarter and faster.",
+      author: "Head of Product",
+      title: "Enterprise Software Company"
     }
   ];
 
@@ -122,20 +122,26 @@ const AIForLeaders = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-white/90 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-sm">
               <Brain className="w-4 h-4" />
-              <span>TAILORED AI PROGRAMS • INTENSIVE WORKSHOPS</span>
+              <span>AI EXECUTIVE MASTERY PROGRAM</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Lead Your Organization's
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mt-2">
-                AI Transformation
+              <span className="block text-3xl sm:text-4xl lg:text-5xl text-muted-foreground mb-2">Build Executive-Level</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-700">
+                AI Literacy
+              </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
+                Leverage Your Data
+              </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-700">
+                Drive Adoption
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-              Get a personalized AI roadmap for your organization. Choose from intensive workshops, cohort programs, or 1:1 executive coaching.
+              This custom-built program builds executive-level confidence and capability in AI without requiring any technical background. Move from AI observers to AI champions and power users.
             </p>
 
             {/* Testimonial Headline */}
@@ -185,6 +191,52 @@ const AIForLeaders = () => {
                 Book Strategy Session
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Executive Challenges Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Managers and Executives Today Face Key AI Challenges
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              These leadership gaps are why most AI initiatives fail
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 border-orange-500/20 bg-orange-500/5">
+              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Lack of Clarity</h3>
+              <p className="text-muted-foreground">
+                There is often confusion and uncertainty around the real-world applications of AI, how to implement it effectively, and what the true risks and benefits are. The learning curve can feel endless.
+              </p>
+            </Card>
+
+            <Card className="p-6 border-red-500/20 bg-red-500/5">
+              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Risk of Falling Behind</h3>
+              <p className="text-muted-foreground">
+                As competitors increasingly leverage AI, there is a growing risk of being left behind with this rapid pace of innovation. The divide widens every day without a framework of first principles to stay ahead of the curve.
+              </p>
+            </Card>
+
+            <Card className="p-6 border-yellow-500/20 bg-yellow-500/5">
+              <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Opportunity Cost</h3>
+              <p className="text-muted-foreground">
+                The cost of not investing in AI literacy at the leadership level is significant, as organizations miss out on potential efficiency gains, competitive advantages, new business opportunities, and failed AI initiatives.
+              </p>
+            </Card>
           </div>
         </div>
       </section>
@@ -249,12 +301,16 @@ const AIForLeaders = () => {
 
               <div className="border-t pt-4 space-y-3">
                 <div className="space-y-3">
-                  <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-background mb-1">For Individuals</p>
-                    <p className="text-xs text-muted-foreground mb-2">Open enrollment</p>
+                  <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-2 border-blue-200 dark:border-blue-700">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-sm font-bold text-blue-800 dark:text-blue-200">Individual Enrollment</p>
+                      <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-semibold">MOST POPULAR</span>
+                    </div>
+                    <p className="text-lg font-bold text-blue-900 dark:text-blue-100 mb-1">$2,500</p>
+                    <p className="text-xs text-blue-700 dark:text-blue-300 mb-3">Complete program + lifetime office hours access</p>
                     <Button
                       size="sm"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg"
                       onClick={() => {
                         trackClick('AI For Leaders - Individual Training', {
                           location: '3-session_program',
@@ -269,12 +325,19 @@ const AIForLeaders = () => {
                     </Button>
                   </div>
 
-                  <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-background mb-1">For Organizations</p>
-                    <p className="text-xs text-muted-foreground mb-2">Live customized training for up to 30 seats - $50k</p>
+                  <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border-2 border-purple-200 dark:border-purple-700">
+                    <p className="text-sm font-bold text-purple-800 dark:text-purple-200 mb-1">Enterprise Teams</p>
+                    <p className="text-lg font-bold text-purple-900 dark:text-purple-100 mb-1">$50,000</p>
+                    <p className="text-xs text-purple-700 dark:text-purple-300 mb-3">Customized live training • Up to 30 leaders • Industry-specific content</p>
+                    <div className="text-xs text-purple-600 dark:text-purple-400 mb-3">
+                      <p>✓ 3 live training sessions (6 hours)</p>
+                      <p>✓ 4 weeks office hours</p>
+                      <p>✓ Executive debrief session</p>
+                      <p>✓ AI Toolkit & templates</p>
+                    </div>
                     <Button
                       size="sm"
-                      className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold"
+                      className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold shadow-lg"
                       onClick={() => {
                         trackClick('AI For Leaders - Organization Training', {
                           location: '3-session_program',
@@ -366,8 +429,50 @@ const AIForLeaders = () => {
             From AI Curious to AI Champion
           </h2>
           <p className="text-center text-muted-foreground mb-8 text-lg">
-            Our proven AI ROI Framework transforms your organization through 8 interconnected training modules
+            Our training process moves your organization from Education to Adoption
           </p>
+
+          {/* 5-Step Methodology */}
+          <div className="mb-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+            <h3 className="text-2xl font-bold text-center mb-8 text-background">How It Works: 5-Step Methodology</h3>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">1</span>
+                </div>
+                <h4 className="font-semibold text-background mb-2">Education</h4>
+                <p className="text-sm text-muted-foreground">Business Opportunities, AI Capabilities, Research Insights, Cutting-Edge Use Cases</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">2</span>
+                </div>
+                <h4 className="font-semibold text-background mb-2">Strategy</h4>
+                <p className="text-sm text-muted-foreground">Leverage IP, Market Trends, Define Objectives, Gap Analysis, De-Risk Ethical & Brand Concerns</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">3</span>
+                </div>
+                <h4 className="font-semibold text-background mb-2">Roadmap</h4>
+                <p className="text-sm text-muted-foreground">Define Proof-of-Concept, Selection Criteria, Resource Allocation, Milestones and Deadlines</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">4</span>
+                </div>
+                <h4 className="font-semibold text-background mb-2">Iteration</h4>
+                <p className="text-sm text-muted-foreground">Feedback Loops, Agile Revisions, Scalability Assessment, Monitor, Measure, Assess Efficacy</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">5</span>
+                </div>
+                <h4 className="font-semibold text-background mb-2">Adoption</h4>
+                <p className="text-sm text-muted-foreground">Change Management, Continuous Improvement, Business Impact, Organizational and Data-Driven Cultural Changes</p>
+              </div>
+            </div>
+          </div>
 
           {/* AI ROI Framework Visual - Improved Version */}
           <div className="mb-12 bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-10">
@@ -408,6 +513,9 @@ const AIForLeaders = () => {
                     </div>
                   </div>
                 </div>
+                <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-500">
+                  <p className="text-sm font-semibold text-green-800 dark:text-green-200">Key Output: Each participant leaves with ideas for an AI use case to pilot</p>
+                </div>
               </div>
 
               {/* Leverage Pillar */}
@@ -444,6 +552,9 @@ const AIForLeaders = () => {
                       <p className="text-base font-semibold text-gray-900 dark:text-white">Deploy internal AI solutions without IT dependencies</p>
                     </div>
                   </div>
+                </div>
+                <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+                  <p className="text-sm font-semibold text-blue-800 dark:text-blue-200">Key Output: Each participant has a WIP project and change management plan</p>
                 </div>
               </div>
 
@@ -482,36 +593,78 @@ const AIForLeaders = () => {
                     </div>
                   </div>
                 </div>
+                <div className="mt-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
+                  <p className="text-sm font-semibold text-purple-800 dark:text-purple-200">Key Output: Each participant has a plan to build one working AI tool/workflow</p>
+                </div>
               </div>
             </div>
 
-            <div className="border-t-2 border-gray-300 dark:border-gray-600 pt-8">
-              <div className="flex flex-wrap items-center justify-between gap-6">
-                <div className="flex items-center gap-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-                    <span className="text-base font-bold text-gray-800 dark:text-gray-200">Without Framework = Failed Initiatives</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-                    <span className="text-base font-bold text-gray-800 dark:text-gray-200">With Framework = AI ROI</span>
-                  </div>
-                </div>
-                <div className="text-base text-gray-700 dark:text-gray-300 font-medium">
-                  Powered by <span className="font-bold text-gray-900 dark:text-white">Bottega8™</span> Done-For-You AI Implementation
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Module timing info */}
-          <div className="text-center mt-8">
-            <p className="text-lg font-semibold text-foreground dark:text-white mb-2">
-              Program Format
-            </p>
-            <p className="text-base text-gray-700 dark:text-gray-300">
-              3 comprehensive modules delivered over 3 weeks • Weekly 2-hour sessions • Lifetime access to office hours
-            </p>
+          {/* Program Timeline & Implementation Plan */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mt-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-background mb-4">
+                Complete Timeline & Implementation Plan
+              </h3>
+              <p className="text-muted-foreground">
+                Designed for executive schedules with maximum impact in minimum time
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-semibold text-background mb-2">3 Week Program</h4>
+                <p className="text-sm text-muted-foreground">3 comprehensive modules delivered weekly</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-semibold text-background mb-2">2-Hour Sessions</h4>
+                <p className="text-sm text-muted-foreground">Executive-friendly format with recordings available</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-semibold text-background mb-2">90-Day Support</h4>
+                <p className="text-sm text-muted-foreground">4 weeks office hours + ongoing implementation support</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-6 border border-blue-200 dark:border-blue-700">
+              <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-4">What's Included</h4>
+              <div className="grid md:grid-cols-2 gap-4 text-sm text-blue-700 dark:text-blue-300">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span>3 tailored live training sessions (6 hours)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span>Access to 4 weeks of Office Hours</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span>Executive debrief and planning session</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span>AI Toolkit, Template Library & Workspace</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span>Tech Leaders Certificate of Completion</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span>Lifetime access to updates</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -560,6 +713,63 @@ const AIForLeaders = () => {
             >
               Book Strategy Session
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Anxiety and Change Management Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Overcoming AI Resistance & Building Confidence
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Address the unique challenges of AI adoption in your organization
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <Card className="p-6 border-amber-500/20 bg-amber-500/5">
+              <div className="flex items-center gap-3 mb-4">
+                <AlertCircle className="w-8 h-8 text-amber-600" />
+                <h3 className="text-xl font-semibold text-foreground">AI Anxiety & "AI Shame"</h3>
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Many employees experience anxiety about AI replacing their jobs or feeling ashamed about not understanding AI technology.
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Fear of job displacement</li>
+                <li>• Feeling left behind by technology</li>
+                <li>• Resistance to learning new tools</li>
+                <li>• Imposter syndrome with AI</li>
+              </ul>
+            </Card>
+
+            <Card className="p-6 border-green-500/20 bg-green-500/5">
+              <div className="flex items-center gap-3 mb-4">
+                <Shield className="w-8 h-8 text-green-600" />
+                <h3 className="text-xl font-semibold text-foreground">Psychological Safety</h3>
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Our program builds psychological safety for AI experimentation using proven change management frameworks.
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• ADKAR framework for organization-wide adoption</li>
+                <li>• Communication strategies that build trust vs. fear</li>
+                <li>• Managing resistance at every level</li>
+                <li>• Building AI champions within teams</li>
+              </ul>
+            </Card>
+          </div>
+
+          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 border-l-4 border-blue-500">
+            <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">
+              Unique AI Change Management Approach
+            </h4>
+            <p className="text-blue-700 dark:text-blue-300 text-sm">
+              Unlike traditional change management, AI adoption requires addressing both technical literacy and emotional resistance. Our program tackles both simultaneously with industry-specific frameworks.
+            </p>
           </div>
         </div>
       </section>
@@ -775,6 +985,14 @@ const AIForLeaders = () => {
               {
                 q: "Is this confidential?",
                 a: "Absolutely. All sessions are under NDA. You can discuss your actual business challenges and get specific solutions without concerns about confidentiality."
+              },
+              {
+                q: "What if our AI initiatives have failed before?",
+                a: "Perfect - that's exactly why this program exists. We'll analyze what went wrong, address the specific leadership gaps that caused the failures, and give you a proven framework to succeed."
+              },
+              {
+                q: "Do you work with our specific industry?",
+                a: "Yes. Every program is 100% tailored to your organization's specific industry, challenges, and goals. We don't do generic training - everything is customized to your context."
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6">
@@ -797,7 +1015,7 @@ const AIForLeaders = () => {
           </h2>
 
           <p className="text-xl text-muted-foreground mb-8">
-            On your strategy call, we'll analyze your specific challenges and design a custom program that delivers ROI in weeks, not months
+            On your strategy call, we'll analyze your specific challenges and design a custom program that delivers ROI in weeks, not months. <strong className="text-foreground">100% confidential and no-obligation.</strong>
           </p>
 
           <div className="bg-card p-8 rounded-lg shadow-lg mb-8 border-2 border-blue-500/20">
@@ -815,6 +1033,14 @@ const AIForLeaders = () => {
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
                   <span>Custom program recommendation & timeline</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span>Analysis of your past AI initiative failures (if any)</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span>Industry-specific use case recommendations</span>
                 </li>
               </ul>
             </div>
