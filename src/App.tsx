@@ -41,6 +41,7 @@ import AdvancedClaude from "./pages/AdvancedClaude";
 import AIForSuits from "./pages/AIForSuits";
 import AiRdSystem from "./pages/AiRdSystem";
 import HowItWorks from "./pages/HowItWorks";
+import Speak from "./pages/Speak";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -106,6 +107,7 @@ const App = () => (
           <Route path="/ai-for-suits" element={<AIForSuits />} />
           <Route path="/ai-rd-system" element={<AiRdSystem />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/speak" element={<Speak />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
