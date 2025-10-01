@@ -64,7 +64,7 @@ const ContentFooter = ({
           {/* Main Offer Card */}
           <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl mb-8">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold mb-4 text-foreground">
+              <h3 className="text-2xl font-bold mb-4 text-background">
                 {primaryCTA.description || "Get Everything You Need to Succeed"}
               </h3>
 
@@ -74,7 +74,7 @@ const ContentFooter = ({
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                      <span className="text-foreground font-semibold">{benefit}</span>
+                      <span className="text-background font-semibold">{benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -82,22 +82,24 @@ const ContentFooter = ({
             </div>
 
             {/* Primary CTA */}
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg sm:text-xl font-bold px-12 py-7 w-full md:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group"
-              onClick={() => {
-                trackClick(`${trackingContext} - Content Footer CTA`, {
-                  location: 'content_footer',
-                  destination: primaryCTA.url
-                });
-                window.location.href = primaryCTA.url;
-              }}
-            >
-              <span className="flex items-center gap-3">
-                {primaryCTA.text}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Button>
+            <div className="flex justify-center">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg sm:text-xl font-bold px-12 py-7 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group"
+                onClick={() => {
+                  trackClick(`${trackingContext} - Content Footer CTA`, {
+                    location: 'content_footer',
+                    destination: primaryCTA.url
+                  });
+                  window.location.href = primaryCTA.url;
+                }}
+              >
+                <span className="flex items-center gap-3">
+                  {primaryCTA.text}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+            </div>
 
             {/* Social Proof */}
             {socialProof && (
@@ -131,8 +133,8 @@ const ContentFooter = ({
           {/* Secondary CTA / Contact */}
           <div className="text-center">
             {secondaryCTA ? (
-              <Card className="p-6 bg-secondary/30 border border-border max-w-xl mx-auto">
-                <p className="text-muted-foreground mb-3 font-medium">Not ready yet?</p>
+              <Card className="p-8 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900 border-2 border-gray-700 dark:border-gray-800 max-w-2xl mx-auto shadow-2xl">
+                <p className="text-gray-300 dark:text-gray-400 mb-6 font-semibold text-lg">Not ready yet?</p>
                 <Button
                   variant="outline"
                   size="lg"
@@ -143,10 +145,12 @@ const ContentFooter = ({
                     });
                     window.location.href = secondaryCTA.url;
                   }}
-                  className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-6 transition-all duration-300 group"
+                  className="border-2 border-white/80 text-white hover:bg-white hover:text-gray-900 font-bold text-lg px-12 py-7 transition-all duration-300 transform hover:scale-105 group shadow-lg"
                 >
-                  {secondaryCTA.text}
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span className="flex items-center gap-3">
+                    {secondaryCTA.text}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </Button>
               </Card>
             ) : (

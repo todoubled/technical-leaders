@@ -129,7 +129,7 @@ const TenBeforeTen = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex justify-center">
             <Button
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
@@ -665,13 +665,13 @@ const TenBeforeTen = () => {
           </p>
 
           <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
-            <h3 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
+            <h3 className="text-2xl font-bold mb-4 text-background">
               Get Everything You Need to Succeed
             </h3>
             <div className="grid md:grid-cols-2 gap-4 mb-6 text-left max-w-xl mx-auto">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-blue-900 dark:text-black-900 font-semibold">The Case Study Builder™️</span>
+                <span className="text-blue-900 dark:text-gray-900 font-semibold">The Case Study Builder™️</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
@@ -747,8 +747,8 @@ const TenBeforeTen = () => {
           role: "DevOps Lead, Poland"
         }}
         secondaryCTA={{
-          text: "Get more free resources",
-          url: "/articles"
+          text: "Book a Strategy Session",
+          url: "/benchmark"
         }}
         trackingContext="10 Before 10"
       />
