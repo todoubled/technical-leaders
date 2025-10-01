@@ -24,69 +24,25 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <DropdownMenu>
-                <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors flex items-center">
-                  How We Help <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48">
-                  <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - Get Consulting Clients', {
-                      location: 'nav_dropdown',
-                      destination: '/how-it-works'
-                    });
-                    window.location.href = "/how-it-works";
-                  }}>
-                    Get Consulting Clients
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - Done-For-You Marketing', {
-                      location: 'nav_dropdown',
-                      destination: '/marketing'
-                    });
-                    window.location.href = "/marketing";
-                  }}>
-                    Done-For-You Marketing
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => {
-                    trackClick('Nav Dropdown - AI Training', {
-                      location: 'nav_dropdown',
-                      destination: '/ai-for-leaders'
-                    });
-                    window.location.href = "/ai-for-leaders";
-                  }}>
-                    AI Training
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              
+              <a href="/how-it-works" className="text-foreground hover:text-primary transition-colors">Get Consulting Clients</a>
+              <a href="/marketing" className="text-foreground hover:text-primary transition-colors">Done-For-You Marketing</a>
+              <a href="/ai-for-leaders" className="text-foreground hover:text-primary transition-colors relative inline-flex items-center">
+                AI Training
+                <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
+              </a>
               <a href="/articles" className="text-foreground hover:text-primary transition-colors">Articles</a>
-              
-              <div className="playbook-nav-item">
-                <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
-                <a className="book-container" href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" rel="noreferrer noopener">
-                  <div className="book">
-                    <img alt="" src="https://www.technical-leaders.com/playbook-cover.png" />
-                  </div>
-                </a>
-              </div>
             </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" onClick={() => {
-              trackClick('Nav - Sign In', {
-                location: 'nav_main',
-                destination: 'https://skool.com/tech-leaders'
-              });
-              window.location.href = "https://skool.com/tech-leaders";
-            }}>Sign In</Button>
-            <Button onClick={() => {
-              trackClick('Nav - Apply to Join', {
-                location: 'nav_main',
-                destination: '/call'
-              });
-              window.location.href = "/call";
-            }}>Apply to Join</Button>
+            <div className="playbook-nav-item">
+              <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
+              <a className="book-container" href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" rel="noreferrer noopener">
+                <div className="book">
+                  <img alt="" src="https://www.technical-leaders.com/playbook-cover.png" />
+                </div>
+              </a>
+            </div>
           </div>
 
           <div className="md:hidden">
@@ -113,22 +69,6 @@ const Navigation = () => {
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>
             <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="block px-3 py-2 text-foreground hover:text-primary">Get the Playbook</a>
-            <div className="px-3 py-2 space-y-2">
-              <Button variant="ghost" className="w-full" onClick={() => {
-                trackClick('Nav Mobile - Sign In', {
-                  location: 'nav_mobile',
-                  destination: 'https://skool.com/tech-leaders'
-                });
-                window.location.href = "https://skool.com/tech-leaders";
-              }}>Sign In</Button>
-              <Button className="w-full" onClick={() => {
-                trackClick('Nav Mobile - Apply to Join', {
-                  location: 'nav_mobile',
-                  destination: '/call'
-                });
-                window.location.href = "/call";
-              }}>Apply to Join</Button>
-            </div>
           </div>
         </div>
       )}

@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle, Shield, AlertTriangle } from "lucide-react";
@@ -668,20 +668,47 @@ const Launch = () => {
             {" "}or{" "}
             <button
               onClick={() => {
-                trackClick('Book Call - Launch Page', {
+                trackClick('How It Works - Launch Page', {
                   location: 'bottom_section'
                 });
-                window.location.href = "/call";
+                window.location.href = "/how-it-works";
               }}
               className="text-blue-600 hover:underline"
             >
-              book a call
+              see how it works
             </button>
           </p>
         </div>
       </section>
 
-      <Footer />
+      <SalesFooter
+        headline="Stop Waiting for Opportunities to Find You"
+        subheadline="Join 300+ tech leaders who took control of their careers and income"
+        primaryCTA={{
+          text: "Get Launch Kit Now - $2,950",
+          url: "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A",
+          price: "$2,950"
+        }}
+        urgency={{
+          text: "Only 3 spots left this week",
+          icon: "alert"
+        }}
+        socialProof="300+ members, 28% joined via referrals"
+        guarantee={{
+          text: "$25K+ Opportunity Guarantee",
+          description: "If you don't land at least one opportunity worth $25K+ within 6 months, we'll work with you for free until you do."
+        }}
+        secondaryCTA={{
+          text: "See how it works",
+          url: "/how-it-works"
+        }}
+        stats={[
+          { number: "6 Days", label: "Fastest first client" },
+          { number: "60-90", label: "Days to success" },
+          { number: "28%", label: "Join via referrals" }
+        ]}
+        trackingContext="Launch Page"
+      />
 
       <VideoModal
         isOpen={isVideoModalOpen}

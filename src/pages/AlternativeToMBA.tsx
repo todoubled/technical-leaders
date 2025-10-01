@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, XCircle, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle, Shield, AlertTriangle, DollarSign, Rocket, Brain, Lock, GraduationCap, Briefcase, Clock, Calculator } from "lucide-react";
@@ -554,16 +554,43 @@ const AlternativeToMBA = () => {
             </a>
             {" "}or{" "}
             <button
-              onClick={() => window.location.href = "/call"}
+              onClick={() => window.location.href = "/how-it-works"}
               className="text-blue-600 hover:underline"
             >
-              book a call
+              see how it works
             </button>
           </p>
         </div>
       </section>
 
-      <Footer />
+      <SalesFooter
+        headline="Your Choice: 2 Years of Debt or 90 Days to Results?"
+        subheadline="Join 300+ engineers who chose skills over degrees"
+        primaryCTA={{
+          text: "Skip the MBA, Join Tech Leaders - $2,950",
+          url: "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A",
+          price: "$2,950"
+        }}
+        urgency={{
+          text: "Next cohort starts Monday",
+          icon: "alert"
+        }}
+        socialProof="186x Better ROI than MBA"
+        guarantee={{
+          text: "$25K+ Opportunity Guarantee",
+          description: "Same career advancement as MBA, zero debt, immediate results - or we work with you until you succeed."
+        }}
+        secondaryCTA={{
+          text: "See how it works",
+          url: "/how-it-works"
+        }}
+        stats={[
+          { number: "$2,950", label: "Total investment" },
+          { number: "3-6 mo", label: "Break-even time" },
+          { number: "$0", label: "Student debt" }
+        ]}
+        trackingContext="Alternative to MBA"
+      />
 
       <VideoModal
         isOpen={isVideoModalOpen}

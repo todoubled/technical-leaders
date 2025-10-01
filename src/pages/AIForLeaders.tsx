@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch, ArrowRight, XCircle } from "lucide-react";
@@ -1070,7 +1070,20 @@ const AIForLeaders = () => {
         </div>
       </section>
 
-      <Footer />
+      <SalesFooter
+        headline="Get Your Personalized AI Implementation Plan In Just 30 Minutes"
+        subheadline="100% confidential and no-obligation strategy call"
+        primaryCTA={{
+          text: "Book Strategy Session",
+          url: "https://calendly.com/tech-leaders/ai-strategy-session"
+        }}
+        socialProof="Trusted by executives at Netflix, Nike, GitLab, and more"
+        guarantee={{
+          text: "Free AI Readiness Assessment",
+          description: "On your call: AI readiness assessment, 3 quick wins you can implement immediately, custom program recommendation, and analysis of past AI initiative failures."
+        }}
+        trackingContext="AI For Leaders"
+      />
 
       <VideoModal
         isOpen={isVideoModalOpen}

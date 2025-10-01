@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import DecisionFooter from "@/components/footers/DecisionFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -124,6 +124,17 @@ const HowItWorks = () => {
           <p className="text-sm text-muted-foreground mt-4 font-semibold">
             Join 300+ founders already scaling their businesses
           </p>
+
+          <p className="text-sm text-muted-foreground mt-6">
+            Not sure if it's a fit yet?{" "}
+            <a
+              href="/benchmark"
+              className="text-primary underline hover:text-primary/80"
+              onClick={() => trackEvent('Book Strategy Session - Hero Section', { location: 'hero_section' })}
+            >
+              Book a Strategy Session here
+            </a>
+          </p>
         </div>
       </section>
 
@@ -238,13 +249,13 @@ const HowItWorks = () => {
               variant="outline"
               className="border-2 border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6"
               onClick={() => {
-                trackEvent('Book an Intro Call - How It Works CTA', {
+                trackEvent('Book Strategy Session - How It Works CTA', {
                   location: 'value_section'
                 });
-                window.location.href = "/call";
+                window.location.href = "/benchmark";
               }}
             >
-              Book an Intro Call First
+              Book Strategy Session
             </Button>
           </div>
 
@@ -254,7 +265,64 @@ const HowItWorks = () => {
         </div>
       </section>
 
-      <Footer />
+      <DecisionFooter
+        headline="Choose Your Path"
+        subheadline="Every journey is different. Find the right starting point for you."
+        options={[
+          {
+            title: "Start Free",
+            description: "Test the waters with our proven 10 Before 10 playbook",
+            benefits: [
+              "Free case study builder",
+              "ICP targeting system",
+              "Daily outreach scripts",
+              "Get your first lead fast"
+            ],
+            cta: {
+              text: "Get Free Playbook",
+              url: "/10-before-10",
+              variant: "outline"
+            }
+          },
+          {
+            title: "Launch Kit",
+            description: "Full client acquisition system to land your first $25K+ opportunity",
+            benefits: [
+              "Proven templates & scripts",
+              "Weekly coaching calls",
+              "Community of 300+ leaders",
+              "$25K+ opportunity guarantee"
+            ],
+            badge: "MOST POPULAR",
+            cta: {
+              text: "Get Launch Kit - $2,950",
+              url: "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A",
+              variant: "primary"
+            }
+          },
+          {
+            title: "Book Strategy Call",
+            description: "Not sure which is right? Let's figure it out together",
+            benefits: [
+              "30-minute consultation",
+              "Custom recommendation",
+              "No pressure, no obligation",
+              "Get clarity on your path"
+            ],
+            cta: {
+              text: "Book Free Call",
+              url: "/benchmark",
+              variant: "secondary"
+            }
+          }
+        ]}
+        helpText="Still deciding?"
+        helpCTA={{
+          text: "Book a Strategy Session",
+          url: "/benchmark"
+        }}
+        trackingContext="How It Works"
+      />
     </div>
   );
 };

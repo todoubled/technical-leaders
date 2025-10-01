@@ -285,7 +285,7 @@ export default function Articles() {
           <p className="text-xl text-muted-foreground mb-8">
             Share your technical leadership insights with our community of senior tech leaders.
           </p>
-          <Button size="lg" onClick={() => window.location.href = "/call"}>
+          <Button size="lg" onClick={() => window.location.href = "/how-it-works"}>
             Become a Contributor
           </Button>
         </div>

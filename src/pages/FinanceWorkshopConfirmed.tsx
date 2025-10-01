@@ -110,13 +110,13 @@ const FinanceWorkshopConfirmed = () => {
                 </Button>
                 <Button
                   onClick={() => {
-                    trackEvent('Book Call from Confirmation', {
+                    trackEvent('How It Works from Confirmation', {
                       from: 'finance_workshop_confirmation'
                     });
-                    window.location.href = '/call';
+                    window.location.href = '/how-it-works';
                   }}
                 >
-                  Book a Strategy Call
+                  See How It Works
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>

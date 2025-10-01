@@ -97,10 +97,10 @@ const HowToModelYourOffer = () => {
               variant="outline"
               className="text-lg px-8"
               onClick={() => {
-                window.location.href = '/call';
+                window.location.href = '/how-it-works';
               }}
             >
-              Want feedback or help with your offer? Book a Call with Todd
+              Want feedback or help with your offer? See How It Works
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

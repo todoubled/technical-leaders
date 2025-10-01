@@ -488,10 +488,10 @@ const AlternativeToSidebar = () => {
             </a>
             {" "}or{" "}
             <button
-              onClick={() => window.location.href = "/call"}
+              onClick={() => window.location.href = "/how-it-works"}
               className="text-blue-600 hover:underline"
             >
-              book a call
+              see how it works
             </button>
           </p>
         </div>

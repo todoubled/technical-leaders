@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import ContentFooter from "@/components/footers/ContentFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Star, Users, Sparkles, Brain, Rocket, MessageSquare, Bot, Calendar, Clock, Gift, FileText, Video, Phone, Target, Shield, Zap, TrendingUp, DollarSign, BarChart3, Calculator, Play, Download, ExternalLink } from "lucide-react";
@@ -350,20 +350,45 @@ const FinanceForFoundersWorkshop = () => {
             {" "}or{" "}
             <button
               onClick={() => {
-                trackEvent('Book Call - Finance Workshop', {
+                trackEvent('How It Works - Finance Workshop', {
                   location: 'bottom_section'
                 });
-                window.location.href = "/call";
+                window.location.href = "/how-it-works";
               }}
               className="text-orange-600 hover:underline"
             >
-              book a call
+              see how it works
             </button>
           </p>
         </div>
       </section>
 
-      <Footer />
+      <ContentFooter
+        headline="Ready to Build the Business You Always Dreamed Of?"
+        description="You've learned the finance fundamentals. Now let Launch Kit help you build the client acquisition system to make it real."
+        primaryCTA={{
+          text: "See How Launch Kit Works",
+          url: "/how-it-works",
+          description: "Turn Knowledge Into Income"
+        }}
+        benefits={[
+          "Proven Client Acquisition System",
+          "Done-For-You Templates & Scripts",
+          "Weekly Group Coaching Calls",
+          "Community of 300+ Tech Leaders"
+        ]}
+        socialProof="Members land their first client in 60-90 days"
+        testimonial={{
+          quote: "The finance workshop helped me understand my numbers. Launch Kit helped me actually get clients and build a profitable consulting business.",
+          author: "C.F.",
+          role: "Fractional CTO, Ireland"
+        }}
+        secondaryCTA={{
+          text: "Explore more free resources",
+          url: "/10-before-10"
+        }}
+        trackingContext="Finance Workshop"
+      />
     </div>
   );
 };

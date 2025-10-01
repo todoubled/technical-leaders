@@ -33,13 +33,13 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
             <Button size="lg" className="text-lg px-8 py-3 group" onClick={() => {
-              trackClick('Hero - Book Intro Call', {
+              trackClick('Hero - How It Works', {
                 location: 'hero_main',
-                destination: '/call'
+                destination: '/how-it-works'
               });
-              window.location.href = "/call";
+              window.location.href = "/how-it-works";
             }}>
-              Book Intro Call
+              How It Works
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-3" onClick={() => {

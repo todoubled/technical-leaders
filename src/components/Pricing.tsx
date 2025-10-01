@@ -148,7 +148,7 @@ const Pricing = () => {
                       : `border-2 border-primary/20 hover:border-primary bg-gradient-to-r ${plan.gradient} hover:shadow-lg hover:scale-105 text-white`
                   }`}
                   onClick={() => {
-                    let destination = '/call';
+                    let destination = '/how-it-works';
                     if (plan.name === "AI Trade School") {
                       destination = "/ai-trade-school";
                     } else if (plan.name === "Launch Kit") {
@@ -160,13 +160,13 @@ const Pricing = () => {
                       plan_name: plan.name,
                       plan_price: plan.price,
                       destination,
-                      cta_text: plan.name === "Scale Program" ? "Book a call" : "Learn More"
+                      cta_text: plan.name === "Scale Program" ? "How It Works" : "Learn More"
                     });
 
                     window.location.href = destination;
                   }}
                 >
-                  {plan.name === "Scale Program" ? "Book a call" : "Learn More"}
+                  {plan.name === "Scale Program" ? "How It Works" : "Learn More"}
                 </Button>
               </CardContent>
             </Card>
@@ -180,16 +180,16 @@ const Pricing = () => {
           </p>
           <button
             onClick={() => {
-              trackClick('Pricing - Bottom Intro Call', {
+              trackClick('Pricing - How It Works', {
                 location: 'pricing_bottom',
-                destination: '/call',
-                cta_text: 'Book a free intro call'
+                destination: '/how-it-works',
+                cta_text: 'See how it works'
               });
-              window.location.href = "/call";
+              window.location.href = "/how-it-works";
             }}
             className="text-lg sm:text-xl font-medium text-foreground hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group text-center"
           >
-            <span className="break-words">Book a free intro call and we'll help you figure it out</span>
+            <span className="break-words">See how it works and we'll help you figure it out</span>
             <span className="text-primary group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0">→</span>
           </button>
         </div>

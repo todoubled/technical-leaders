@@ -180,7 +180,7 @@ export default function Accredited() {
                   Apply for Accreditation
                 </Button>
                 <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/50"
-                  onClick={() => window.location.href = "/call"}>
+                  onClick={() => window.location.href = "/how-it-works"}>
                   Learn More
                 </Button>
               </div>

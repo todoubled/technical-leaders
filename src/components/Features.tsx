@@ -121,14 +121,14 @@ const Features = () => {
             variant="link"
             className="text-primary hover:text-primary/80 text-sm sm:text-base text-center px-2 w-full"
             onClick={() => {
-              trackClick('Features - Bottom Intro Call', {
+              trackClick('Features - How It Works', {
                 location: 'features_bottom',
-                destination: 'https://technical-leaders.com/call'
+                destination: '/how-it-works'
               });
-              window.location.href = "https://technical-leaders.com/call";
+              window.location.href = "/how-it-works";
             }}
           >
-            <span className="break-words">Book a free intro call and we'll help you figure it out →</span>
+            <span className="break-words">See how it works and we'll help you figure it out →</span>
           </Button>
         </div>
       </div>

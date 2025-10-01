@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Users, Target, TrendingUp, Phone, Calendar, CheckCircle, Shield, ArrowRight, Star, Clock, DollarSign, Rocket, Award, Zap } from "lucide-react";
@@ -187,7 +187,7 @@ const Scale = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-                onClick={() => window.location.href = "/call"}
+                onClick={() => window.location.href = "/how-it-works"}
               >
                 Apply for Scale Program
               </Button>
@@ -648,7 +648,7 @@ const Scale = () => {
           <Button
             size="lg"
             className="bg-white text-orange-600 hover:bg-orange-50 text-xl px-10 py-7 font-bold"
-            onClick={() => window.location.href = "/call"}
+            onClick={() => window.location.href = "/how-it-works"}
           >
             Apply for Scale Program Now
           </Button>
@@ -658,7 +658,34 @@ const Scale = () => {
         </div>
       </section>
 
-      <Footer />
+      <SalesFooter
+        headline="Ready to Join Other Launch Grads Making $30K+/Month?"
+        subheadline="Use your Launch momentum to build the fractional practice you deserve"
+        primaryCTA={{
+          text: "Apply for Scale Program",
+          url: "/how-it-works",
+          price: "$2,497/month"
+        }}
+        urgency={{
+          text: "Only 3 spots available this cohort",
+          icon: "alert"
+        }}
+        socialProof="87% of Launch grads hit $30K/month within 4 months"
+        guarantee={{
+          text: "First Client in 90 Days",
+          description: "If you don't land your first $10K+ fractional engagement within 90 days, we'll work with you for free until you do."
+        }}
+        secondaryCTA={{
+          text: "Book a strategy call",
+          url: "/how-it-works"
+        }}
+        stats={[
+          { number: "93%", label: "Land client in 90 days" },
+          { number: "$30K", label: "Avg monthly revenue" },
+          { number: "3.2x", label: "Rate increase" }
+        ]}
+        trackingContext="Scale Page"
+      />
       <VideoModal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)} videoUrl={videoUrl} />
     </div>
   );

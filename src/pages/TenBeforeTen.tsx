@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import ContentFooter from "@/components/footers/ContentFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Clock, Target, MessageSquare, ArrowRight, Zap, Star, Users } from "lucide-react";
@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const TenBeforeTen = () => {
   useTrackScrollDepth('10 Before 10 Page');
   const [showCaseStudyForm, setShowCaseStudyForm] = useState(false);
-  
+
   useEffect(() => {
     trackEvent('10 Before 10 Page View', {
       has_strategy: true,
@@ -102,7 +102,7 @@ const TenBeforeTen = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
             The <span className="font-bold text-white">Do-or-Die</span> 3-step process to shoot 10 shots before 10am and validate consulting as a viable path.
           </p>
-          
+
           <p className="text-2xl font-semibold mb-8 max-w-2xl mx-auto">
             This is exactly how our members land their first client in days, not months.
           </p>
@@ -190,7 +190,7 @@ const TenBeforeTen = () => {
                 {index < steps.length - 1 && (
                   <div className="absolute left-1/2 top-full w-0.5 h-12 bg-gradient-to-b from-orange-300 to-transparent dark:from-orange-600 transform -translate-x-1/2 z-10"></div>
                 )}
-                
+
                 <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 group border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
                   <div className="flex flex-col lg:flex-row">
                     {/* Left side - Step info */}
@@ -205,7 +205,7 @@ const TenBeforeTen = () => {
                       </div>
                       <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                       <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-10 -translate-x-10"></div>
-                      
+
                       <div className="relative z-10">
                         <div className="flex items-center gap-4 mb-6">
                           <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
@@ -219,7 +219,7 @@ const TenBeforeTen = () => {
                         <p className="text-xl opacity-90 font-medium">{step.subtitle}</p>
                       </div>
                     </div>
-                    
+
                     {/* Right side - Details */}
                     <div className="lg:w-3/5 p-10">
                       <div className="max-w-2xl">
@@ -229,7 +229,7 @@ const TenBeforeTen = () => {
                         <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
                           {step.details}
                         </p>
-                        
+
                         {step.number === 1 && (
                           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
                             <div className="space-y-6">
@@ -322,7 +322,7 @@ const TenBeforeTen = () => {
                                     </p>
                                   </>
                                 ) : (
-                                  <div 
+                                  <div
                                     className="animate-fade-in"
                                     style={{
                                       animation: 'fadeIn 0.5s ease-in-out'
@@ -338,7 +338,7 @@ const TenBeforeTen = () => {
                             </div>
                           </div>
                         )}
-                        
+
                         {step.number === 2 && (
                           <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
                             <div className="space-y-6">
@@ -425,7 +425,7 @@ const TenBeforeTen = () => {
                             </div>
                           </div>
                         )}
-                        
+
                         {step.number === 3 && (
                           <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
                             <div className="space-y-6">
@@ -534,7 +534,7 @@ const TenBeforeTen = () => {
               </div>
             ))}
           </div>
-          
+
           {/* Bottom CTA */}
           <div className="text-center mt-16">
             <div className="inline-flex items-center gap-3 bg-white dark:bg-gray-800 px-8 py-4 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
@@ -553,7 +553,7 @@ const TenBeforeTen = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             Why The 10 Before 10 Strategy Works
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
               <div className="flex items-start gap-3">
@@ -566,7 +566,7 @@ const TenBeforeTen = () => {
                 </div>
               </div>
             </Card>
-            
+
             <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
@@ -578,7 +578,7 @@ const TenBeforeTen = () => {
                 </div>
               </div>
             </Card>
-            
+
             <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
@@ -590,7 +590,7 @@ const TenBeforeTen = () => {
                 </div>
               </div>
             </Card>
-            
+
             <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
@@ -613,7 +613,7 @@ const TenBeforeTen = () => {
           <h2 className="text-4xl sm:text-5xl font-bold mb-16 text-white">
             The Numbers That Matter
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mt-8">
             <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
               <p className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 mb-4">
@@ -634,7 +634,7 @@ const TenBeforeTen = () => {
               <p className="text-xl text-gray-300 font-bold">Qualified Leads Per Week</p>
             </div>
           </div>
-          
+
           {/* Additional trust elements */}
           <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400">
             <div className="flex items-center gap-2">
@@ -665,25 +665,25 @@ const TenBeforeTen = () => {
           </p>
 
           <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
               Get Everything You Need to Succeed
             </h3>
             <div className="grid md:grid-cols-2 gap-4 mb-6 text-left max-w-xl mx-auto">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">The Case Study Builder™️</span>
+                <span className="text-blue-900 dark:text-black-900 font-semibold">The Case Study Builder™️</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">ICP Targeting System</span>
+                <span className="text-blue-900 dark:text-gray-100 font-semibold">ICP Targeting System</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">Proven Outreach Scripts</span>
+                <span className="text-blue-900 dark:text-gray-100 font-semibold">Proven Outreach Scripts</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-800 dark:text-gray-200 font-semibold">Weekly Coaching Calls</span>
+                <span className="text-blue-900 dark:text-gray-100 font-semibold">Weekly Coaching Calls</span>
               </div>
             </div>
 
@@ -713,20 +713,45 @@ const TenBeforeTen = () => {
             {" "}or{" "}
             <button
               onClick={() => {
-                trackClick('Book Call - 10 Before 10', {
+                trackClick('How It Works - 10 Before 10', {
                   location: 'bottom_section'
                 });
-                window.location.href = "/call";
+                window.location.href = "/how-it-works";
               }}
               className="text-orange-600 hover:underline"
             >
-              book a call
+              see how it works
             </button>
           </p>
         </div>
       </section>
 
-      <Footer />
+      <ContentFooter
+        headline="Got Your First Lead? Now Let's Help You Close Them"
+        description="The 10 Before 10 playbook gets you leads. Launch Kit helps you convert them into paying clients and build a repeatable system."
+        primaryCTA={{
+          text: "See How We Help",
+          url: "/how-it-works",
+          description: "Get Everything You Need to Succeed"
+        }}
+        benefits={[
+          "The Case Study Builder™️",
+          "ICP Targeting System",
+          "Proven Outreach Scripts",
+          "Weekly Coaching Calls"
+        ]}
+        socialProof="Join 300+ tech leaders already using this system"
+        testimonial={{
+          quote: "I landed my first consulting client in 6 days using the 10 Before 10 system. Then Launch Kit helped me close 3 more in the first month.",
+          author: "P.O.",
+          role: "DevOps Lead, Poland"
+        }}
+        secondaryCTA={{
+          text: "Get more free resources",
+          url: "/articles"
+        }}
+        trackingContext="10 Before 10"
+      />
     </div>
   );
 };

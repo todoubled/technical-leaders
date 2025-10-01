@@ -1,0 +1,247 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ArrowRight, CheckCircle2, Users, Zap } from "lucide-react";
+import { trackClick } from "@/utils/posthog";
+
+interface ContentFooterProps {
+  // Nurture Zone Configuration
+  headline: string;
+  description: string;
+
+  // Next Step CTA
+  primaryCTA: {
+    text: string;
+    url: string;
+    description?: string;
+  };
+
+  // Value Props
+  benefits?: string[];
+
+  // Social Proof
+  socialProof?: string;
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+  };
+
+  // Secondary Options
+  secondaryCTA?: {
+    text: string;
+    url: string;
+  };
+
+  // Tracking
+  trackingContext: string;
+}
+
+const ContentFooter = ({
+  headline,
+  description,
+  primaryCTA,
+  benefits,
+  socialProof,
+  testimonial,
+  secondaryCTA,
+  trackingContext
+}: ContentFooterProps) => {
+  return (
+    <footer className="bg-gradient-to-br from-background to-secondary/30 border-t border-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Nurture Zone */}
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <Zap className="w-16 h-16 mx-auto mb-6 text-primary" />
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              {headline}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {description}
+            </p>
+          </div>
+
+          {/* Main Offer Card */}
+          <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl mb-8">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
+                {primaryCTA.description || "Get Everything You Need to Succeed"}
+              </h3>
+
+              {/* Benefits Grid */}
+              {benefits && benefits.length > 0 && (
+                <div className="grid md:grid-cols-2 gap-4 mb-6 text-left max-w-xl mx-auto">
+                  {benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                      <span className="text-foreground font-semibold">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Primary CTA */}
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg sm:text-xl font-bold px-12 py-7 w-full md:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group"
+              onClick={() => {
+                trackClick(`${trackingContext} - Content Footer CTA`, {
+                  location: 'content_footer',
+                  destination: primaryCTA.url
+                });
+                window.location.href = primaryCTA.url;
+              }}
+            >
+              <span className="flex items-center gap-3">
+                {primaryCTA.text}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Button>
+
+            {/* Social Proof */}
+            {socialProof && (
+              <div className="flex items-center justify-center gap-2 mt-4">
+                <Users className="w-4 h-4 text-muted-foreground" />
+                <p className="text-sm text-muted-foreground font-semibold">
+                  {socialProof}
+                </p>
+              </div>
+            )}
+          </Card>
+
+          {/* Testimonial (if provided) */}
+          {testimonial && (
+            <Card className="p-6 bg-secondary/20 border-l-4 border-primary mb-8 max-w-3xl mx-auto">
+              <p className="text-foreground italic mb-4">"{testimonial.quote}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <span className="text-primary font-bold text-sm">
+                    {testimonial.author.split(' ').map(n => n[0]).join('')}
+                  </span>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.author}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                </div>
+              </div>
+            </Card>
+          )}
+
+          {/* Secondary CTA / Contact */}
+          <div className="text-center">
+            {secondaryCTA ? (
+              <Card className="p-6 bg-secondary/30 border border-border max-w-xl mx-auto">
+                <p className="text-muted-foreground mb-3 font-medium">Not ready yet?</p>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => {
+                    trackClick(`${trackingContext} - Secondary CTA`, {
+                      location: 'content_footer',
+                      destination: secondaryCTA.url
+                    });
+                    window.location.href = secondaryCTA.url;
+                  }}
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-6 transition-all duration-300 group"
+                >
+                  {secondaryCTA.text}
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Card>
+            ) : (
+              <p className="text-muted-foreground text-lg">
+                Questions? Email{" "}
+                <a href="mailto:todd@technical-leaders.com" className="text-primary hover:underline font-semibold">
+                  todd@technical-leaders.com
+                </a>
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* Full Navigation Links */}
+        <div className="border-t border-border pt-12 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+            {/* Logo and Copyright */}
+            <div className="md:col-span-2">
+              <img src="/orange-logo.png" alt="Tech Leaders" className="h-8 w-auto mb-4" />
+              <p className="text-sm text-muted-foreground">
+                © 2025 Tech Leaders. All rights reserved.
+              </p>
+            </div>
+
+            {/* Programs Section */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Programs</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/launch" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Launch Kit
+                  </a>
+                </li>
+                <li>
+                  <a href="/scale" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Scale Program
+                  </a>
+                </li>
+                <li>
+                  <a href="/ai-for-leaders" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    AI Executive Training
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Resources Section */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Resources</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/10-before-10" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    10 Before 10 Playbook
+                  </a>
+                </li>
+                <li>
+                  <a href="/articles" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Articles
+                  </a>
+                </li>
+                <li>
+                  <a href="/how-it-works" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    How It Works
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Account Section */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Account</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="https://billing.stripe.com/p/login/28oaFm1om8Za4XC000"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    My Membership
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/privacy-policy"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default ContentFooter;
