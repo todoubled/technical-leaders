@@ -94,34 +94,19 @@ const ShipAI = () => {
 
   const whatYouGet = [
     {
-      icon: Code2,
-      title: "Three Production-Ready Projects",
-      description: "Not tutorials—real products you'll ship to real users. Each with code, docs, and demo."
-    },
-    {
-      icon: Users,
-      title: "Builder Community (24/7 Discord)",
-      description: "50+ active builders shipping together. Code reviews, job referrals, pair programming sessions."
-    },
-    {
       icon: Calendar,
-      title: "Weekly Live Build Sessions",
-      description: "Screen share actual code. Debug together in real-time. Ship by end of each session."
+      title: "Weekly Live Training & Office Hours",
+      description: "Every week, learn the newest AI tools and workflows with hands-on training. Plus get personalized help with your AI projects, career questions, and technical challenges."
     },
     {
-      icon: DollarSign,
-      title: "Monetization Playbook",
-      description: "How to price your AI product. Landing pages, Stripe integration, ProductHunt launch strategy."
+      icon: Code2,
+      title: "Latest AI Tools & Workflows",
+      description: "Stay current with Claude, ChatGPT, Cursor, v0, and emerging tools. Access our library of prompts, workflows, code templates, and best practices. Updated weekly with new content."
     },
     {
-      icon: Rocket,
-      title: "Public Launch Support",
-      description: "ProductHunt coordination, Twitter/LinkedIn templates, press outreach, community upvote squad."
-    },
-    {
-      icon: Award,
-      title: "Portfolio That Gets You Hired",
-      description: "Real shipped projects with users and metrics. GitHub repos. Live demos that beat resumes."
+      icon: Lightbulb,
+      title: "24/7 AI Community of 300+",
+      description: "Connect with engineers, product managers, designers, marketers, and business leaders all applying AI. Share wins, get feedback, and learn from peers across all business functions."
     }
   ];
 
@@ -255,16 +240,16 @@ const ShipAI = () => {
   ];
 
   const courseStructuredData = generateCourseStructuredData(
-    "Ship AI With Us - 12-Week AI Project Sprint for Builders",
-    "Build, ship, and launch 3 production AI projects in 12 weeks. Perfect for software engineers and ICs who want to level up their AI skills by shipping real products."
+    "Ship AI Membership - Weekly AI Training & Office Hours",
+    "Stay ahead of AI with weekly live training sessions, expert office hours, and hands-on workflows for the latest AI tools. Perfect for software engineers and technical leaders."
   );
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Ship AI With Us - 12-Week AI Project Sprint for Builders & ICs"
-        description="Build and ship 3 production AI projects in 12 weeks. Join software engineers and ICs shipping real AI products that get them promoted, hired, and generating side income."
-        keywords={['ship AI projects', 'AI development', 'build AI products', 'software engineer AI', 'AI portfolio projects', 'learn AI by building']}
+        title="Ship AI Membership - Weekly AI Training & Office Hours"
+        description="Master the latest AI tools and workflows with weekly live training sessions, expert office hours, and a community of builders. Monthly ($120) or Annual ($1000) membership."
+        keywords={['AI training', 'AI office hours', 'AI tools', 'AI workflows', 'ChatGPT training', 'Claude AI', 'AI membership', 'learn AI tools']}
         structuredData={courseStructuredData}
       />
       <Navigation />
@@ -281,20 +266,20 @@ const ShipAI = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-700 dark:text-red-400 px-4 py-2 rounded-full text-sm font-bold mb-6 animate-pulse">
-              <Clock className="w-4 h-4" />
-              <span>Next Cohort: December 2nd • 15 Spots Left</span>
+            <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-700 dark:text-purple-400 px-4 py-2 rounded-full text-sm font-bold mb-6">
+              <Zap className="w-4 h-4" />
+              <span>New Tools & Workflows Added Weekly</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Stop Learning AI in Theory.
+              Master the Latest AI Tools & Workflows
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 mt-2">
-                Start Shipping AI in Production.
+                With Weekly Live Training & Office Hours
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Join 47 software engineers and ICs who shipped real AI projects—and got promoted, launched startups, or 2x'd their consulting rates in 12 weeks.
+              Join software engineers and technical leaders who stay ahead of AI through weekly hands-on training, expert office hours, and a community of builders.
             </p>
 
             <div className="mb-6">
@@ -325,141 +310,26 @@ const ShipAI = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <div className="flex justify-center items-center mb-4">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-6"
                 onClick={() => {
                   trackClick('Ship AI - Hero CTA', {
                     location: 'hero_section',
-                    destination: '#apply',
-                    cta_text: 'Reserve Your Spot in December Cohort'
+                    destination: '#membership',
+                    cta_text: 'Join Membership'
                   });
-                  window.location.href = "#apply";
+                  window.location.href = "#membership";
                 }}
               >
-                Reserve Your Spot in December Cohort
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500/10 text-lg px-8 py-6"
-                onClick={() => {
-                  trackClick('Ship AI - Free Workshop CTA', {
-                    location: 'hero_section',
-                    destination: 'https://calendly.com/tech-leaders/ship-ai-workshop',
-                    cta_text: 'Join Free Workshop First'
-                  });
-                  window.location.href = "https://calendly.com/tech-leaders/ship-ai-workshop";
-                }}
-              >
-                Join Free Workshop First
+                Join Membership
               </Button>
             </div>
 
             <p className="text-sm text-muted-foreground">
-              90-minute live workshop: Build & ship your first AI feature
+              Get access to weekly trainings, office hours, and the latest AI workflows
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Projects Our Builders Shipped
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            Real products. Real users. Real outcomes. Your project could be here in 12 weeks.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {shippedProjects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
-                <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-600/20 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Code2 className="w-16 h-16 text-purple-500/40" />
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">{project.name}</h3>
-                  <p className="text-muted-foreground mb-3">{project.description}</p>
-                  <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-purple-600">
-                    <TrendingUp className="w-4 h-4" />
-                    {project.metrics}
-                  </div>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {project.stack.map((tech, techIndex) => (
-                      <span key={techIndex} className="text-xs bg-secondary px-2 py-1 rounded">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-sm text-muted-foreground">{project.builder}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-lg text-muted-foreground mb-4">
-              💡 Your shipped project could be featured here
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Real Career Outcomes
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            What happened after they shipped
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {careerOutcomes.map((outcome, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
-                  <ArrowRight className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-foreground">{outcome.outcome}</h3>
-                <ul className="space-y-2 mb-4">
-                  {outcome.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4 border-t border-border">
-                  <p className="font-semibold text-foreground">{outcome.name}</p>
-                  <p className="text-sm text-muted-foreground">{outcome.role}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          <div className="mt-12 p-6 bg-gradient-to-br from-purple-500/10 to-pink-600/10 rounded-lg">
-            <div className="grid md:grid-cols-4 gap-6 text-center">
-              <div>
-                <p className="text-3xl font-bold text-foreground">94%</p>
-                <p className="text-sm text-muted-foreground">Shipped 2+ projects</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-foreground">$32K</p>
-                <p className="text-sm text-muted-foreground">Average raise</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-foreground">71%</p>
-                <p className="text-sm text-muted-foreground">Launched publicly</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-foreground">12</p>
-                <p className="text-sm text-muted-foreground">Now making side income</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -467,7 +337,7 @@ const ShipAI = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Everything You Need to Ship
+            What's Included in Your Membership
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whatYouGet.map((item, index) => (
@@ -483,225 +353,73 @@ const ShipAI = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Your 12-Week Shipping Timeline
-          </h2>
-          <p className="text-center text-muted-foreground mb-12">
-            Concrete milestones. Real deliverables. Portfolio-worthy projects.
-          </p>
-
-          <div className="space-y-6">
-            {timeline.map((phase, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="flex flex-col md:flex-row md:items-center gap-4">
-                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 text-white rounded-lg px-4 py-2 text-sm font-bold whitespace-nowrap">
-                    {phase.weeks}
-                  </div>
-                  <div className="flex-1">
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <div>
-                        <p className="text-xs text-muted-foreground mb-1">BUILD</p>
-                        <p className="font-semibold text-foreground">{phase.project}</p>
-                      </div>
-                      <div>
-                        <p className="text-xs text-muted-foreground mb-1">SHIP</p>
-                        <p className="font-semibold text-foreground">{phase.ship}</p>
-                      </div>
-                      <div>
-                        <p className="text-xs text-muted-foreground mb-1">LEARN</p>
-                        <p className="font-semibold text-foreground">{phase.learn}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Technical Stack & Prerequisites
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">What We'll Use</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">APIs</p>
-                  <div className="flex flex-wrap gap-2">
-                    {techStack.apis.map((tech, index) => (
-                      <span key={index} className="bg-purple-500/10 text-purple-700 dark:text-purple-400 px-3 py-1 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">Frameworks</p>
-                  <div className="flex flex-wrap gap-2">
-                    {techStack.frameworks.map((tech, index) => (
-                      <span key={index} className="bg-purple-500/10 text-purple-700 dark:text-purple-400 px-3 py-1 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">Vector DBs</p>
-                  <div className="flex flex-wrap gap-2">
-                    {techStack.vectorDBs.map((tech, index) => (
-                      <span key={index} className="bg-purple-500/10 text-purple-700 dark:text-purple-400 px-3 py-1 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">Deployment</p>
-                  <div className="flex flex-wrap gap-2">
-                    {techStack.deployment.map((tech, index) => (
-                      <span key={index} className="bg-purple-500/10 text-purple-700 dark:text-purple-400 px-3 py-1 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">Prerequisites</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">Basic programming in any language</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">Can deploy a web app (we'll help)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">No ML/AI experience needed</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">We teach the AI-specific parts</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">Comfortable learning by doing</span>
-                </li>
-              </ul>
-
-              <div className="mt-6 p-4 bg-blue-500/10 rounded-lg">
-                <p className="text-sm text-foreground font-semibold mb-2">💡 Not sure if you're ready?</p>
-                <p className="text-sm text-muted-foreground">Join our free workshop to see if this is right for you.</p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Frequently Shipped Projects
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {projectTypes.map((type, index) => (
-              <Card key={index} className="p-6">
-                <h3 className="text-lg font-semibold mb-3 text-foreground flex items-center gap-2">
-                  <Code2 className="w-5 h-5 text-purple-500" />
-                  {type.category}
-                </h3>
-                <ul className="space-y-2">
-                  {type.examples.map((example, exampleIndex) => (
-                    <li key={exampleIndex} className="flex items-start gap-2">
-                      <span className="text-purple-500 mt-1">→</span>
-                      <span className="text-muted-foreground text-sm">{example}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            This Is For You If...
+            Perfect For You If...
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-6 border-green-500/20 bg-green-500/5">
               <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-500" />
-                You Are
+                You Want To
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
-                  <span>A software engineer, product person, or technical IC</span>
+                  <span>Stay current with the latest AI tools & workflows</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
-                  <span>Tired of tutorials, ready to ship real projects</span>
+                  <span>Get hands-on training with Claude, ChatGPT, Cursor & v0</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
-                  <span>Want portfolio pieces that get you promoted/hired</span>
+                  <span>Apply AI to your work immediately with real examples</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
-                  <span>Looking to build AI skills by actually building</span>
+                  <span>Connect with 300+ engineers, PMs, designers & business leaders</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
-                  <span>Comfortable with code (any language—we'll teach AI)</span>
+                  <span>Get personalized help during weekly office hours</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
-                  <span>Want accountability and a community of builders</span>
+                  <span>Access prompts, templates & workflows updated weekly</span>
                 </li>
               </ul>
             </Card>
-            <Card className="p-6 border-red-500/20 bg-red-500/5">
+            <Card className="p-6 border-purple-500/20 bg-purple-500/5">
               <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-red-500" />
-                You're Facing
+                <Target className="w-5 h-5 text-purple-500" />
+                You Need
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
-                  <span>AI hype but no real projects to show</span>
+                  <span className="text-purple-500 mt-1">→</span>
+                  <span>Weekly training to keep up with AI's rapid pace</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
-                  <span>Stuck at IC level with no clear path up</span>
+                  <span className="text-purple-500 mt-1">→</span>
+                  <span>Expert guidance for your specific AI challenges</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
-                  <span>Tried tutorials but never shipped anything complete</span>
+                  <span className="text-purple-500 mt-1">→</span>
+                  <span>A community of peers applying AI across all functions</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
-                  <span>Unsure how to monetize AI skills</span>
+                  <span className="text-purple-500 mt-1">→</span>
+                  <span>Production-ready workflows, not just theory</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
-                  <span>No time/motivation to build solo</span>
+                  <span className="text-purple-500 mt-1">→</span>
+                  <span>Access to recordings & resources whenever you need them</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
-                  <span>Impostor syndrome about AI/ML capabilities</span>
+                  <span className="text-purple-500 mt-1">→</span>
+                  <span>Ongoing learning as new AI tools emerge each week</span>
                 </li>
               </ul>
             </Card>
@@ -709,156 +427,125 @@ const ShipAI = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            What Builders Say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6 bg-gradient-to-br from-card to-purple-500/5">
-                <p className="text-foreground mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
-                <div className="pt-4 border-t border-border">
-                  <p className="font-semibold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground mb-2">{testimonial.title}</p>
-                  {testimonial.link && (
-                    <a
-                      href={`https://${testimonial.link}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-purple-600 hover:underline flex items-center gap-1"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      {testimonial.link}
-                    </a>
-                  )}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                <p className="text-muted-foreground">{faq.a}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="apply" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-500/10 to-pink-600/10">
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="membership" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-500/10 to-pink-600/10">
+        <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Ship Your First AI Product?
+            Choose Your Membership Plan
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Join the December cohort • 15 spots left
+          <p className="text-xl text-muted-foreground mb-12">
+            Get unlimited access to weekly trainings, office hours, and the latest AI tools & workflows
           </p>
 
-          <Card className="p-8 shadow-lg mb-8">
-            <div className="mb-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {/* Monthly Plan */}
+            <Card className="p-8 shadow-lg hover:shadow-xl transition-all relative">
               <div className="mb-6">
-                <p className="text-5xl font-bold text-foreground mb-2">$1,000</p>
-                <p className="text-lg text-muted-foreground mb-4">One-time investment (or 3 × $350)</p>
-              </div>
-
-              <div className="bg-secondary/50 p-6 rounded-lg mb-6">
-                <p className="text-sm font-semibold text-foreground mb-3">COMPARE TO:</p>
-                <div className="space-y-2 text-left">
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">❌ Bootcamp: $15,000</span>
-                    <span className="text-xs text-muted-foreground">(same outcome?)</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">❌ ML Master's: $80,000</span>
-                    <span className="text-xs text-muted-foreground">(still no shipped projects?)</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">❌ Staying stuck at IC: Lost promotion</span>
-                    <span className="text-xs text-muted-foreground">= $30K+</span>
-                  </div>
-                  <div className="flex items-center justify-between pt-2 border-t border-border">
-                    <span className="text-foreground font-semibold">✅ This program: $1,000</span>
-                    <span className="text-xs text-green-600">→ Ship 3 projects + portfolio + community</span>
-                  </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">Monthly</h3>
+                <div className="mb-4">
+                  <p className="text-5xl font-bold text-foreground mb-2">$100</p>
+                  <p className="text-lg text-muted-foreground">per month</p>
                 </div>
               </div>
 
-              <div className="bg-green-500/10 p-4 rounded-lg mb-6">
-                <p className="text-sm font-semibold text-foreground mb-2">ALUMNI REPORTED:</p>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <p className="font-bold text-foreground">📈 $32,000</p>
-                    <p className="text-muted-foreground">Average raise</p>
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">💼 94%</p>
-                    <p className="text-muted-foreground">Shipped 2+ projects</p>
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">🎯 71%</p>
-                    <p className="text-muted-foreground">Launched publicly</p>
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">💰 12 builders</p>
-                    <p className="text-muted-foreground">Now make side income</p>
-                  </div>
+              <div className="space-y-4 mb-8 text-left">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Weekly live training & office hours</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Latest AI tools & workflows (updated weekly)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">24/7 community of 300+ builders</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">All recordings, prompts & templates</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Cancel anytime</span>
                 </div>
               </div>
-            </div>
 
-            <div className="flex flex-col gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-12 py-6 w-full shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-6 w-full shadow-lg hover:shadow-xl transition-all"
                 onClick={() => {
-                  trackClick('Ship AI - Final CTA', {
-                    location: 'final_cta_section',
-                    destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
-                    cta_text: 'Reserve Your Spot Now',
+                  trackClick('Ship AI - Monthly Membership', {
+                    location: 'membership_section',
+                    destination: 'https://buy.stripe.com/9B6dR926Zd2TcYab3uaMU0F',
+                    cta_text: 'Start Monthly Membership',
+                    price: '$100'
+                  });
+                  window.location.href = "https://buy.stripe.com/9B6dR926Zd2TcYab3uaMU0F";
+                }}
+              >
+                Start Monthly Membership
+              </Button>
+            </Card>
+
+            {/* Annual Plan */}
+            <Card className="p-8 shadow-lg hover:shadow-xl transition-all relative border-2 border-purple-500">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                  BEST VALUE - Save $200
+                </span>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-2">Annual</h3>
+                <div className="mb-4">
+                  <p className="text-5xl font-bold text-foreground mb-2">$1,000</p>
+                  <p className="text-lg text-muted-foreground">per year</p>
+                  <p className="text-sm text-purple-600 font-semibold mt-2">
+                    Save $200 - just $83/month
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-4 mb-8 text-left">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground font-semibold">Everything in Monthly, plus:</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Save $200 per year</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Priority support in office hours</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Early access to new content</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Lock in your rate forever</span>
+                </div>
+              </div>
+
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-6 w-full shadow-lg hover:shadow-xl transition-all"
+                onClick={() => {
+                  trackClick('Ship AI - Annual Membership', {
+                    location: 'membership_section',
+                    destination: 'https://buy.stripe.com/5kQ6oHbHze6X3nAb3uaMU0G',
+                    cta_text: 'Start Annual Membership',
                     price: '$1000'
                   });
-                  window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
+                  window.location.href = "https://buy.stripe.com/5kQ6oHbHze6X3nAb3uaMU0G";
                 }}
               >
-                Reserve Your Spot Now - December 2nd Cohort
+                Start Annual Membership
               </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500/10 text-lg px-8 py-6 w-full"
-                onClick={() => {
-                  trackClick('Ship AI - Free Workshop Alternative', {
-                    location: 'final_cta_section',
-                    destination: 'https://calendly.com/tech-leaders/ship-ai-workshop',
-                    cta_text: 'Try Free Workshop First'
-                  });
-                  window.location.href = "https://calendly.com/tech-leaders/ship-ai-workshop";
-                }}
-              >
-                Try Free Workshop First (90 Minutes)
-              </Button>
-            </div>
-
-            <p className="text-sm text-muted-foreground mt-4">
-              💳 Secure checkout • 🔒 SSL encrypted • 💯 Lifetime community access
-            </p>
-
-            <p className="text-sm text-muted-foreground mt-6">
-              <strong>P.S.</strong> As soon as you enroll, you'll get immediate access to our pre-work materials,
-              Discord community, and AI tools starter pack—so you can start building before Day 1.
-            </p>
-          </Card>
+            </Card>
+          </div>
 
           <p className="text-muted-foreground">
             Questions? Email me at{" "}
