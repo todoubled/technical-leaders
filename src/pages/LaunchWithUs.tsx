@@ -321,7 +321,15 @@ const LaunchWithUs = () => {
               </div>
 
               <p className="text-sm text-muted-foreground mt-4 text-center">
-                💳 Payment Plans Available • 🔒 Hand-selected participants
+                💳 <a href="https://buy.stripe.com/6oEeYG62xetR304eVg" className="underline hover:text-orange-600 transition-colors" onClick={(e) => {
+                  e.preventDefault();
+                  trackClick('Launch With Us - Payment Plan Link', {
+                    location: 'hero_section',
+                    destination: 'https://buy.stripe.com/6oEeYG62xetR304eVg',
+                    cta_text: '$850/month payment plan available'
+                  });
+                  window.location.href = "https://buy.stripe.com/6oEeYG62xetR304eVg";
+                }}>$850/month payment plan available</a> • 🔒 Hand-selected participants
               </p>
             </Card>
 
