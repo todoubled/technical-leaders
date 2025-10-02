@@ -42,6 +42,7 @@ import AIForSuits from "./pages/AIForSuits";
 import AiRdSystem from "./pages/AiRdSystem";
 import HowItWorks from "./pages/HowItWorks";
 import Speak from "./pages/Speak";
+import AIProgramSelector from "./pages/AIProgramSelector";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -96,6 +97,7 @@ const App = () => (
           <Route path="/finance-for-founders" element={<FinanceForFounders />} />
           <Route path="/finance-for-founders-workshop" element={<FinanceForFoundersWorkshop />} />
           <Route path="/finance-workshop-confirmed" element={<FinanceWorkshopConfirmed />} />
+          <Route path="/ai" element={<AIProgramSelector />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/ai-for-leaders" element={<AIForLeaders />} />
           <Route path="/benchmark" element={<Benchmark />} />

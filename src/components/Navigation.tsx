@@ -26,8 +26,8 @@ const Navigation = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <a href="/how-it-works" className="text-foreground hover:text-primary transition-colors">Get Consulting Clients</a>
               <a href="/marketing" className="text-foreground hover:text-primary transition-colors">Done-For-You Marketing</a>
-              <a href="/ai-for-leaders" className="text-foreground hover:text-primary transition-colors relative inline-flex items-center">
-                AI Training
+              <a href="/ai" className="text-foreground hover:text-primary transition-colors relative inline-flex items-center">
+                AI
                 <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
               </a>
               <a href="/articles" className="text-foreground hover:text-primary transition-colors">Articles</a>
@@ -64,7 +64,7 @@ const Navigation = () => {
               <div className="ml-4 space-y-1">
                 <a href="/how-it-works" className="block py-1 text-sm text-muted-foreground hover:text-primary">Get Consulting Clients</a>
                 <a href="/marketing" className="block py-1 text-sm text-muted-foreground hover:text-primary">Done-For-You Marketing</a>
-                <a href="/ai-for-leaders" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI Training</a>
+                <a href="/ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI</a>
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>
