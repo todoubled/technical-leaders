@@ -6,8 +6,12 @@ import { CheckCircle2, Rocket, Users, Calendar, Lightbulb, Target, Zap, Gift, Cl
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
 import { trackClick } from "@/utils/posthog";
+import VideoModal from "@/components/VideoModal";
+import { useState } from "react";
 
 const LaunchWithUs = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const youtubeVideoId = "8aVvZ9NwiN8";
   const transformations = [
     {
       before: "Feeling unchallenged and stuck in a bad job market with limited options",
@@ -252,9 +256,26 @@ const LaunchWithUs = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
               Designed to help <b>technical experts</b>, <b>consultants</b> and <b>freelancers</b> install a <b>sales and marketing system</b> to <b>productize and monetize</b> your expertise and grow <b>beyond referrals</b> and word of mouth
             </p>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
               (even if you <b>hate feeling "salesy"</b> or have a <b>tiny audience</b>)
             </p>
+
+            <div className="mb-8">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-6"
+                onClick={() => {
+                  trackClick('Launch With Us - Learn How It Works', {
+                    location: 'hero_section',
+                    cta_text: 'Learn How It Works'
+                  });
+                  setIsVideoModalOpen(true);
+                }}
+              >
+                Learn How It Works
+              </Button>
+            </div>
 
             <Card className="p-8 shadow-lg mb-8 max-w-2xl mx-auto">
               <div className="mb-8">
@@ -858,6 +879,12 @@ const LaunchWithUs = () => {
       </section>
 
       <Footer />
+
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoUrl={`https://www.youtube.com/watch?v=${youtubeVideoId}`}
+      />
     </div>
   );
 };
