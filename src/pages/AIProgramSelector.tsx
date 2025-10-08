@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Users, Brain, ArrowRight, Code2, Target, Zap, TrendingUp, Clock, Award } from "lucide-react";
+import { CheckCircle2, Users, Brain, ArrowRight, Code2, Target, Zap, TrendingUp, Clock, Award, XCircle } from "lucide-react";
 import { useState } from "react";
 import SEO from "@/components/SEO";
 import { trackClick } from "@/utils/posthog";
@@ -22,8 +22,8 @@ const AIProgramSelector = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="AI Training Programs - Technical Leaders"
-        description="Choose the right AI training program for your role. Executive training for leaders or hands-on membership for builders."
-        keywords={['AI training', 'AI for executives', 'AI for engineers', 'AI programs', 'AI education']}
+        description="Choose between intensive foundational training or ongoing AI support. Master AI on your timeline with programs designed for your learning style."
+        keywords={['AI training', 'AI courses', 'AI programs', 'AI education', 'foundational AI', 'ongoing AI support']}
       />
       <Navigation />
 
@@ -42,82 +42,101 @@ const AIProgramSelector = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Zap className="w-4 h-4" />
-              <span>FIND YOUR PERFECT AI PROGRAM</span>
+              <span>NO CODING REQUIRED</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Which AI Program
+              Master AI Skills That Drive
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mt-2">
-                Is Right For You?
+                Real Business Results
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-              Whether you're building AI tools or leading AI transformation, we have the perfect program to accelerate your goals.
+              Choose intensive training to build AI competency fast, or ongoing support to stay ahead of the curve. Both paths deliver Literacy, Leverage, and Adoption—without writing a single line of code.
             </p>
 
-            {/* Quick Role Selector */}
+            {/* Quick Need Selector */}
             <div className="max-w-4xl mx-auto mb-12">
-              <p className="text-lg font-semibold text-foreground mb-6">I am a...</p>
+              <p className="text-lg font-semibold text-foreground mb-6">I'm looking for...</p>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card
                   className={`p-8 cursor-pointer transition-all hover:shadow-xl hover:scale-105 ${
-                    selectedRole === 'builder' ? 'ring-2 ring-purple-500 shadow-xl' : ''
+                    selectedRole === 'builder' ? 'ring-2 ring-blue-500 shadow-xl' : ''
                   }`}
                   onClick={() => handleRoleSelection('builder')}
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
-                    <Code2 className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+                    <Target className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3">Builder / Maker</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Foundational Training</h3>
                   <p className="text-muted-foreground mb-4">
-                    Engineer, Product Manager, Designer, or Technical Professional
+                    Intensive program to build AI competency fast
                   </p>
                   <div className="text-sm text-muted-foreground space-y-2">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-purple-500" />
-                      <span>Want hands-on AI skills</span>
+                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                      <span>Build strategic AI literacy</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-purple-500" />
-                      <span>Stay current with latest tools</span>
+                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                      <span>Get a custom AI playbook</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-purple-500" />
-                      <span>Build AI-powered products</span>
+                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                      <span>Transform in weeks, not months</span>
                     </div>
                   </div>
                 </Card>
 
                 <Card
                   className={`p-8 cursor-pointer transition-all hover:shadow-xl hover:scale-105 ${
-                    selectedRole === 'leader' ? 'ring-2 ring-blue-500 shadow-xl' : ''
+                    selectedRole === 'leader' ? 'ring-2 ring-purple-500 shadow-xl' : ''
                   }`}
                   onClick={() => handleRoleSelection('leader')}
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                    <Brain className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                    <TrendingUp className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3">Leader / Executive</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Ongoing Support</h3>
                   <p className="text-muted-foreground mb-4">
-                    C-Suite, VP, Director, or Senior Manager
+                    Continuous learning to stay ahead of AI evolution
                   </p>
                   <div className="text-sm text-muted-foreground space-y-2">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                      <span>Drive AI strategy & adoption</span>
+                      <CheckCircle2 className="w-4 h-4 text-purple-500" />
+                      <span>Weekly training on latest tools</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                      <span>Lead organizational transformation</span>
+                      <CheckCircle2 className="w-4 h-4 text-purple-500" />
+                      <span>Never fall behind the AI curve</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                      <span>Build executive AI literacy</span>
+                      <CheckCircle2 className="w-4 h-4 text-purple-500" />
+                      <span>Community & expert support</span>
                     </div>
                   </div>
                 </Card>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Logos Section */}
+      <section className="py-12 -mx-4 sm:-mx-6 lg:-mx-8">
+        <div className="bg-white dark:bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8">
+              Trusted by Tech Leaders at
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+              <img src="/netflix.png" alt="Netflix" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/nike.png" alt="Nike" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/cashapp.svg" alt="Cash App" className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/redhat.webp" alt="Red Hat" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/calendly.webp" alt="Calendly" className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
             </div>
           </div>
         </div>
@@ -128,23 +147,81 @@ const AIProgramSelector = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8">
 
+            {/* AI Leadership Program */}
+            <Card className={`p-8 transition-all ${
+              selectedRole === 'builder' ? 'ring-2 ring-blue-500 shadow-2xl scale-105' : 'hover:shadow-xl'
+            }`}>
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                  FOUNDATIONAL TRAINING
+                </div>
+                <h2 className="text-3xl font-bold text-foreground mb-2">AI Leadership</h2>
+                <p className="text-lg text-muted-foreground mb-4">
+                  Executive AI Training Program
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <h3 className="font-semibold text-foreground mb-4">Perfect if you need to:</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Build AI competency fast with intensive training</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Get a custom AI playbook for your role/organization</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Master prompt engineering for your specific use cases</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Drive AI adoption and organizational change</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Build strategic AI literacy for decision-making</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <Button
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-8 py-6"
+                  onClick={() => {
+                    trackClick('AI Program Selector - AI Leadership', {
+                      location: 'program_comparison',
+                      destination: '/ai-for-leaders',
+                      cta_text: 'Learn More About AI Leadership',
+                      selected_role: selectedRole
+                    });
+                    window.location.href = "/ai-for-leaders";
+                  }}
+                >
+                  Learn More About AI Leadership
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <p className="text-center text-sm text-muted-foreground">
+                  Book a strategy session • 100% customized
+                </p>
+              </div>
+            </Card>
+
             {/* Ship AI Program */}
             <Card className={`p-8 transition-all ${
-              selectedRole === 'builder' ? 'ring-2 ring-purple-500 shadow-2xl scale-105' : 'hover:shadow-xl'
+              selectedRole === 'leader' ? 'ring-2 ring-purple-500 shadow-2xl scale-105' : 'hover:shadow-xl'
             }`}>
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  FOR BUILDERS
+                  ONGOING SUPPORT
                 </div>
                 <h2 className="text-3xl font-bold text-foreground mb-2">Ship AI</h2>
                 <p className="text-lg text-muted-foreground mb-4">
                   Weekly AI Training & Office Hours
                 </p>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl font-bold text-foreground">$100</span>
-                  <span className="text-muted-foreground">/month</span>
-                  <span className="text-sm text-muted-foreground ml-2">or $1,000/year</span>
-                </div>
               </div>
 
               <div className="mb-8">
@@ -152,35 +229,23 @@ const AIProgramSelector = () => {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Stay current with rapidly evolving AI tools</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Get weekly hands-on training with new workflows</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">Master the latest AI tools (Claude, ChatGPT, Cursor, v0)</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Get hands-on training with new workflows every week</span>
+                    <span className="text-muted-foreground">Join a community of 300+ AI practitioners</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Join a community of 300+ builders</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Access expert office hours for your projects</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Stay ahead of the AI curve with weekly updates</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mb-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                <div className="flex items-start gap-2">
-                  <Award className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-purple-900 dark:text-purple-100 mb-1">What You Get</p>
-                    <p className="text-sm text-purple-800 dark:text-purple-200">
-                      Weekly live training • Expert office hours • AI community • Prompts & templates • All recordings
-                    </p>
+                    <span className="text-muted-foreground">Get expert support for your specific projects</span>
                   </div>
                 </div>
               </div>
@@ -208,86 +273,6 @@ const AIProgramSelector = () => {
               </div>
             </Card>
 
-            {/* AI for Leaders Program */}
-            <Card className={`p-8 transition-all ${
-              selectedRole === 'leader' ? 'ring-2 ring-blue-500 shadow-2xl scale-105' : 'hover:shadow-xl'
-            }`}>
-              <div className="mb-6">
-                <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  FOR LEADERS
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-2">AI for Leaders</h2>
-                <p className="text-lg text-muted-foreground mb-4">
-                  Executive AI Training Program
-                </p>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl font-bold text-foreground">$2,500</span>
-                  <span className="text-muted-foreground">individual</span>
-                  <span className="text-sm text-muted-foreground ml-2">or custom enterprise</span>
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <h3 className="font-semibold text-foreground mb-4">Perfect if you need to:</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Build executive-level AI literacy for strategic decisions</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Drive AI adoption across your organization</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Master prompt engineering for enterprise data</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Build AI tools without writing code</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Navigate organizational change management</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <div className="flex items-start gap-2">
-                  <Award className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-blue-900 dark:text-blue-100 mb-1">What You Get</p>
-                    <p className="text-sm text-blue-800 dark:text-blue-200">
-                      3 intensive sessions • Lifetime office hours • Custom AI playbook • Executive toolkit • 90-day support
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <Button
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-8 py-6"
-                  onClick={() => {
-                    trackClick('AI Program Selector - AI for Leaders', {
-                      location: 'program_comparison',
-                      destination: '/ai-for-leaders',
-                      cta_text: 'Learn More About AI for Leaders',
-                      selected_role: selectedRole
-                    });
-                    window.location.href = "/ai-for-leaders";
-                  }}
-                >
-                  Learn More About AI for Leaders
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <p className="text-center text-sm text-muted-foreground">
-                  Book a strategy session • 100% customized
-                </p>
-              </div>
-            </Card>
-
           </div>
         </div>
       </section>
@@ -303,52 +288,52 @@ const AIProgramSelector = () => {
               <thead>
                 <tr className="border-b-2 border-border">
                   <th className="text-left p-4 font-semibold text-foreground"></th>
+                  <th className="text-center p-4 font-semibold text-blue-600">AI Leadership</th>
                   <th className="text-center p-4 font-semibold text-purple-600">Ship AI</th>
-                  <th className="text-center p-4 font-semibold text-blue-600">AI for Leaders</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="p-4 font-medium text-foreground">Best For</td>
-                  <td className="p-4 text-center text-muted-foreground">Engineers, PMs, Designers, Builders</td>
-                  <td className="p-4 text-center text-muted-foreground">C-Suite, VPs, Directors, Executives</td>
+                  <td className="p-4 text-center text-muted-foreground">Building strategic AI foundation quickly</td>
+                  <td className="p-4 text-center text-muted-foreground">Staying current with continuous learning</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium text-foreground">Format</td>
-                  <td className="p-4 text-center text-muted-foreground">Ongoing membership</td>
-                  <td className="p-4 text-center text-muted-foreground">3-session program or 1-day workshop</td>
+                  <td className="p-4 text-center text-muted-foreground">3 live sessions + recorded trainings</td>
+                  <td className="p-4 text-center text-muted-foreground">Weekly training + community</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium text-foreground">Time Commitment</td>
-                  <td className="p-4 text-center text-muted-foreground">~2 hrs/week (flexible)</td>
-                  <td className="p-4 text-center text-muted-foreground">6 hours total + office hours</td>
+                  <td className="p-4 text-center text-muted-foreground">6 hours + optional self-study</td>
+                  <td className="p-4 text-center text-muted-foreground">1 hr/week</td>
                 </tr>
                 <tr>
-                  <td className="p-4 font-medium text-foreground">Focus</td>
-                  <td className="p-4 text-center text-muted-foreground">Hands-on tools & workflows</td>
-                  <td className="p-4 text-center text-muted-foreground">Strategy & organizational adoption</td>
+                  <td className="p-4 font-medium text-foreground">Learning Style</td>
+                  <td className="p-4 text-center text-muted-foreground">Deep dive, custom to your needs</td>
+                  <td className="p-4 text-center text-muted-foreground">Continuous, hands-on practice</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium text-foreground">Price</td>
-                  <td className="p-4 text-center text-muted-foreground">$100/mo or $1,000/yr</td>
-                  <td className="p-4 text-center text-muted-foreground">$2,500 individual / Custom enterprise</td>
+                  <td className="p-4 text-center text-muted-foreground">$2,500</td>
+                  <td className="p-4 text-center text-muted-foreground">$100/month</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium text-foreground">Community</td>
                   <td className="p-4 text-center">
-                    <CheckCircle2 className="w-5 h-5 text-purple-500 mx-auto" />
+                    <XCircle className="w-5 h-5 text-gray-400 mx-auto" />
                   </td>
                   <td className="p-4 text-center">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 mx-auto" />
+                    <CheckCircle2 className="w-5 h-5 text-purple-500 mx-auto" />
                   </td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium text-foreground">Office Hours</td>
                   <td className="p-4 text-center">
-                    <CheckCircle2 className="w-5 h-5 text-purple-500 mx-auto" />
+                    <XCircle className="w-5 h-5 text-gray-400 mx-auto" />
                   </td>
                   <td className="p-4 text-center">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 mx-auto" />
+                    <CheckCircle2 className="w-5 h-5 text-purple-500 mx-auto" />
                   </td>
                 </tr>
               </tbody>
@@ -367,25 +352,25 @@ const AIProgramSelector = () => {
             <Card className="p-6">
               <h3 className="font-semibold text-foreground mb-3">Can I do both programs?</h3>
               <p className="text-muted-foreground">
-                Absolutely! Many executives start with AI for Leaders to build strategic literacy, then join Ship AI to stay current with the latest tools. We offer a bundle discount - contact us for details.
+                Absolutely! Many people start with AI Leadership to build their foundation quickly, then join Ship AI to maintain momentum and stay current. We offer a bundle discount - contact us for details.
               </p>
             </Card>
             <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-3">I'm a technical manager - which should I choose?</h3>
+              <h3 className="font-semibold text-foreground mb-3">How do I choose between them?</h3>
               <p className="text-muted-foreground">
-                If you're hands-on with your team and want to build alongside them, choose Ship AI. If you're focused on strategy, organizational adoption, and leading from above, choose AI for Leaders.
+                Choose AI Leadership if you need to build competency fast with a custom plan. Choose Ship AI if you want continuous learning and to stay ahead of the rapidly evolving AI landscape. Your role doesn't matter - it's about your timeline and learning style.
               </p>
             </Card>
             <Card className="p-6">
               <h3 className="font-semibold text-foreground mb-3">Can my team join together?</h3>
               <p className="text-muted-foreground">
-                Yes! We offer team discounts for Ship AI and custom enterprise programs for AI for Leaders. Email todd@technical-leaders.com to discuss team enrollment.
+                Yes! We offer team discounts for Ship AI and custom enterprise programs for AI Leadership. Email todd@technical-leaders.com to discuss team enrollment.
               </p>
             </Card>
             <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-3">What if I choose the wrong program?</h3>
+              <h3 className="font-semibold text-foreground mb-3">What if I'm new to AI - where should I start?</h3>
               <p className="text-muted-foreground">
-                No worries! We offer a 7-day satisfaction guarantee. If the program isn't the right fit, we'll help you switch or provide a full refund.
+                If you need to get up to speed quickly, AI Leadership gives you an intensive foundation. If you prefer learning gradually with ongoing support, Ship AI is perfect. Both work great for AI beginners - it's about how you like to learn.
               </p>
             </Card>
           </div>
