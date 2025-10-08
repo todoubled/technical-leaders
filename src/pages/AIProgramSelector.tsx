@@ -69,7 +69,7 @@ const AIProgramSelector = () => {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
                     <Target className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3">Foundational Training</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Training Program</h3>
                   <p className="text-muted-foreground mb-4">
                     Intensive program to build AI competency fast
                   </p>
@@ -153,11 +153,11 @@ const AIProgramSelector = () => {
             }`}>
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  FOUNDATIONAL TRAINING
+                  TRAINING PROGRAM
                 </div>
-                <h2 className="text-3xl font-bold text-foreground mb-2">AI Leadership</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-2">AI-First</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  Executive AI Training Program
+                  Training Program to get up to speed quickly
                 </p>
               </div>
 
@@ -192,16 +192,16 @@ const AIProgramSelector = () => {
                   size="lg"
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-8 py-6"
                   onClick={() => {
-                    trackClick('AI Program Selector - AI Leadership', {
+                    trackClick('AI Program Selector - AI-First', {
                       location: 'program_comparison',
                       destination: '/ai-for-leaders',
-                      cta_text: 'Learn More About AI Leadership',
+                      cta_text: 'Learn More About AI-First',
                       selected_role: selectedRole
                     });
                     window.location.href = "/ai-for-leaders";
                   }}
                 >
-                  Learn More About AI Leadership
+                  Learn More About AI-First
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 <p className="text-center text-sm text-muted-foreground">
@@ -220,7 +220,7 @@ const AIProgramSelector = () => {
                 </div>
                 <h2 className="text-3xl font-bold text-foreground mb-2">Ship AI</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  Weekly AI Training & Office Hours
+                  Weekly AI Training & Office Hours to stay ahead of the curve
                 </p>
               </div>
 
@@ -288,7 +288,7 @@ const AIProgramSelector = () => {
               <thead>
                 <tr className="border-b-2 border-border">
                   <th className="text-left p-4 font-semibold text-foreground"></th>
-                  <th className="text-center p-4 font-semibold text-blue-600">AI Leadership</th>
+                  <th className="text-center p-4 font-semibold text-blue-600">AI-First</th>
                   <th className="text-center p-4 font-semibold text-purple-600">Ship AI</th>
                 </tr>
               </thead>
@@ -352,25 +352,25 @@ const AIProgramSelector = () => {
             <Card className="p-6">
               <h3 className="font-semibold text-foreground mb-3">Can I do both programs?</h3>
               <p className="text-muted-foreground">
-                Absolutely! Many people start with AI Leadership to build their foundation quickly, then join Ship AI to maintain momentum and stay current. We offer a bundle discount - contact us for details.
+                Absolutely! Many people start with AI-First to build their foundation quickly, then join Ship AI to maintain momentum and stay current. We offer a bundle discount - contact us for details.
               </p>
             </Card>
             <Card className="p-6">
               <h3 className="font-semibold text-foreground mb-3">How do I choose between them?</h3>
               <p className="text-muted-foreground">
-                Choose AI Leadership if you need to build competency fast with a custom plan. Choose Ship AI if you want continuous learning and to stay ahead of the rapidly evolving AI landscape. Your role doesn't matter - it's about your timeline and learning style.
+                Choose AI-First if you need to build competency fast with a custom plan. Choose Ship AI if you want continuous learning and to stay ahead of the rapidly evolving AI landscape. Your role doesn't matter - it's about your timeline and learning style.
               </p>
             </Card>
             <Card className="p-6">
               <h3 className="font-semibold text-foreground mb-3">Can my team join together?</h3>
               <p className="text-muted-foreground">
-                Yes! We offer team discounts for Ship AI and custom enterprise programs for AI Leadership. Email todd@technical-leaders.com to discuss team enrollment.
+                Yes! We offer team discounts for Ship AI and custom enterprise programs for AI-First. Email todd@technical-leaders.com to discuss team enrollment.
               </p>
             </Card>
             <Card className="p-6">
               <h3 className="font-semibold text-foreground mb-3">What if I'm new to AI - where should I start?</h3>
               <p className="text-muted-foreground">
-                If you need to get up to speed quickly, AI Leadership gives you an intensive foundation. If you prefer learning gradually with ongoing support, Ship AI is perfect. Both work great for AI beginners - it's about how you like to learn.
+                If you need to get up to speed quickly, AI-First gives you an intensive foundation. If you prefer learning gradually with ongoing support, Ship AI is perfect. Both work great for AI beginners - it's about how you like to learn.
               </p>
             </Card>
           </div>
