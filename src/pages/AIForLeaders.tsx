@@ -2,16 +2,51 @@ import Navigation from "@/components/Navigation";
 import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch, ArrowRight, XCircle } from "lucide-react";
+import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch, ArrowRight, XCircle, Play } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData } from "@/utils/seo-helpers";
 import { trackClick } from "@/utils/posthog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const AIForLeaders = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const videoUrl = "https://youtu.be/VKetl72iSlk"; // Replace with actual video
+  const [trainingVideoModalOpen, setTrainingVideoModalOpen] = useState(false);
+  const [selectedTrainingVideo, setSelectedTrainingVideo] = useState<{ title: string; youtubeId: string; description: string } | null>(null);
+
+  const trainingVideos = [
+    {
+      title: "AI Workflow Fundamentals",
+      youtubeId: "zwPwsA5XAgw",
+      description: "Learn the core principles of building effective AI workflows",
+      thumbnail: `https://img.youtube.com/vi/zwPwsA5XAgw/maxresdefault.jpg`
+    },
+    {
+      title: "Advanced AI Implementation",
+      youtubeId: "aNySN2n5icc",
+      description: "Deep dive into implementing AI solutions in your organization",
+      thumbnail: `https://img.youtube.com/vi/aNySN2n5icc/maxresdefault.jpg`
+    }
+  ];
+
+  const openTrainingVideoModal = (video: typeof trainingVideos[0]) => {
+    setSelectedTrainingVideo(video);
+    setTrainingVideoModalOpen(true);
+    trackClick('Training Overview Video Opened', {
+      video_title: video.title,
+      video_id: video.youtubeId,
+      location: 'training_overviews_section',
+      page: 'ai-for-leaders'
+    });
+  };
 
   const benefits = [
     {
@@ -256,6 +291,51 @@ const AIForLeaders = () => {
               <img src="/calendly.webp" alt="Calendly" className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Training Overviews Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              See Our Training in Action
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Preview our executive-level training style. These are real sessions from our live weekly training program, condensed to show you the depth and practicality of what you'll learn.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {trainingVideos.map((video) => (
+              <Card
+                key={video.youtubeId}
+                className="overflow-hidden hover:shadow-xl transition-all cursor-pointer group"
+                onClick={() => openTrainingVideoModal(video)}
+              >
+                <div className="relative aspect-video">
+                  <img
+                    src={video.thumbnail}
+                    alt={video.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-blue-600 group-hover:bg-blue-700 group-hover:scale-110 transition-all flex items-center justify-center shadow-xl">
+                      <Play className="w-10 h-10 text-white ml-1" fill="white" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    {video.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {video.description}
+                  </p>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -1090,6 +1170,30 @@ const AIForLeaders = () => {
         onClose={() => setIsVideoModalOpen(false)}
         videoUrl={videoUrl}
       />
+
+      {/* Training Video Modal */}
+      <Dialog open={trainingVideoModalOpen} onOpenChange={setTrainingVideoModalOpen}>
+        <DialogContent className="max-w-4xl p-0">
+          <DialogHeader className="p-6 pb-0">
+            <DialogTitle className="text-2xl">{selectedTrainingVideo?.title}</DialogTitle>
+            <DialogDescription>{selectedTrainingVideo?.description}</DialogDescription>
+          </DialogHeader>
+          <div className="aspect-video w-full">
+            {selectedTrainingVideo && (
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${selectedTrainingVideo.youtubeId}?autoplay=1`}
+                title={selectedTrainingVideo.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="rounded-b-lg"
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
