@@ -3,7 +3,8 @@ import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch, ArrowRight, XCircle, Play } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 import { generateCourseStructuredData } from "@/utils/seo-helpers";
@@ -17,6 +18,7 @@ import {
 } from "@/components/ui/dialog";
 
 const AIForLeaders = () => {
+  const [searchParams] = useSearchParams();
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const videoUrl = "https://youtu.be/VKetl72iSlk"; // Replace with actual video
   const [trainingVideoModalOpen, setTrainingVideoModalOpen] = useState(false);
@@ -24,12 +26,14 @@ const AIForLeaders = () => {
 
   const trainingVideos = [
     {
+      id: "ai-fundamentals",
       title: "AI-First Fundamentals",
       youtubeId: "zwPwsA5XAgw",
       description: "Learn the core principles of building effective AI workflows",
       thumbnail: `https://img.youtube.com/vi/zwPwsA5XAgw/maxresdefault.jpg`
     },
     {
+      id: "ai-adoption",
       title: "AI Adoption Playbook",
       youtubeId: "aNySN2n5icc",
       description: "Deep dive into getting ROI from AI in your organization",
@@ -47,6 +51,17 @@ const AIForLeaders = () => {
       page: 'ai-for-leaders'
     });
   };
+
+  // Handle deeplink to auto-open video modal
+  useEffect(() => {
+    const videoParam = searchParams.get('video');
+    if (videoParam) {
+      const video = trainingVideos.find(v => v.id === videoParam);
+      if (video) {
+        openTrainingVideoModal(video);
+      }
+    }
+  }, [searchParams]);
 
   const benefits = [
     {
