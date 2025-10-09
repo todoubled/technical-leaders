@@ -24,15 +24,15 @@ const AIForLeaders = () => {
 
   const trainingVideos = [
     {
-      title: "AI Workflow Fundamentals",
+      title: "AI-First Fundamentals",
       youtubeId: "zwPwsA5XAgw",
       description: "Learn the core principles of building effective AI workflows",
       thumbnail: `https://img.youtube.com/vi/zwPwsA5XAgw/maxresdefault.jpg`
     },
     {
-      title: "Advanced AI Implementation",
+      title: "AI Adoption Playbook",
       youtubeId: "aNySN2n5icc",
-      description: "Deep dive into implementing AI solutions in your organization",
+      description: "Deep dive into getting ROI from AI in your organization",
       thumbnail: `https://img.youtube.com/vi/aNySN2n5icc/maxresdefault.jpg`
     }
   ];
@@ -303,7 +303,7 @@ const AIForLeaders = () => {
               See Our Training in Action
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Preview our executive-level training style. These are real sessions from our live weekly training program, condensed to show you the depth and practicality of what you'll learn.
+              Preview some of our core AI concepts. These are summarized lessons from our live weekly training program, condensed to show you the depth and practicality of what you'll learn.
             </p>
           </div>
 
