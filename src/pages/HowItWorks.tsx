@@ -281,7 +281,7 @@ const HowItWorks = () => {
             cta: {
               text: "Get Free Playbook",
               url: "/10-before-10",
-              variant: "outline"
+              variant: "secondary"
             }
           },
           {

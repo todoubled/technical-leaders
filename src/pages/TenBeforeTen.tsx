@@ -665,25 +665,25 @@ const TenBeforeTen = () => {
           </p>
 
           <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
-            <h3 className="text-2xl font-bold mb-4 text-background">
+            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
               Get Everything You Need to Succeed
             </h3>
             <div className="grid md:grid-cols-2 gap-4 mb-6 text-left max-w-xl mx-auto">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-blue-900 dark:text-gray-900 font-semibold">The Case Study Builder™️</span>
+                <span className="text-gray-900 dark:text-gray-100 font-semibold">The Case Study Builder™️</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-blue-900 dark:text-gray-100 font-semibold">ICP Targeting System</span>
+                <span className="text-gray-900 dark:text-gray-100 font-semibold">ICP Targeting System</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-blue-900 dark:text-gray-100 font-semibold">Proven Outreach Scripts</span>
+                <span className="text-gray-900 dark:text-gray-100 font-semibold">Proven Outreach Scripts</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-blue-900 dark:text-gray-100 font-semibold">Weekly Coaching Calls</span>
+                <span className="text-gray-900 dark:text-gray-100 font-semibold">Weekly Coaching Calls</span>
               </div>
             </div>
 
