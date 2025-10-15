@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Users, Brain, ArrowRight, Code2, Target, Zap, TrendingUp, Clock, Award, XCircle } from "lucide-react";
+import { CheckCircle2, Users, Brain, ArrowRight, Code2, Target, Zap, TrendingUp, Clock, Award, XCircle, Quote } from "lucide-react";
 import { useState } from "react";
 import SEO from "@/components/SEO";
 import { trackClick } from "@/utils/posthog";
@@ -46,9 +46,9 @@ const AIProgramSelector = () => {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Master AI Skills That Drive
+              Gain AI Literacy, Leverage & Adoption
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mt-2">
-                Real Business Results
+                with the Latest Tools and Workflows
               </span>
             </h1>
 
@@ -124,7 +124,7 @@ const AIProgramSelector = () => {
       </section>
 
       {/* Company Logos Section */}
-      <section className="py-12 -mx-4 sm:-mx-6 lg:-mx-8">
+      <section className="-mx-4 sm:-mx-6 lg:-mx-8">
         <div className="bg-white dark:bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <p className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8">
@@ -137,6 +137,118 @@ const AIProgramSelector = () => {
               <img src="/redhat.webp" alt="Red Hat" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               <img src="/calendly.webp" alt="Calendly" className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-background dark:to-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <Award className="w-4 h-4" />
+              <span>SUCCESS STORIES</span>
+            </div>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              What Our Students Say
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Join hundreds of leaders who've transformed their AI capabilities
+            </p>
+          </div>
+
+          {/* Featured Headline Quotes */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="p-6 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border-blue-200 dark:border-blue-800">
+              <Quote className="w-8 h-8 text-blue-500 mb-4" />
+              <p className="text-lg font-semibold text-foreground mb-2">
+                "Exactly the hands-on training I needed to create my AI product. You've covered it all from A to Z!"
+              </p>
+            </Card>
+            <Card className="p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-200 dark:border-purple-800">
+              <Quote className="w-8 h-8 text-purple-500 mb-4" />
+              <p className="text-lg font-semibold text-foreground mb-2">
+                "Finally, a course that actually teaches you how to build an AI product — not just talk about it."
+              </p>
+            </Card>
+            <Card className="p-6 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 border-indigo-200 dark:border-indigo-800">
+              <Quote className="w-8 h-8 text-indigo-500 mb-4" />
+              <p className="text-lg font-semibold text-foreground mb-2">
+                "AI Trade School provides access to real tools at every step — from concept to prototype to final product and marketing plan. Mic drop!"
+              </p>
+            </Card>
+          </div>
+
+          {/* Detailed Testimonials */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="p-8 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center flex-shrink-0">
+                  <Quote className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-foreground mb-2">Hands-On and Practical</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    "After spending thousands on top-name university programs that were all theory and no practice, I finally found Tech Leaders' AI Trade School. It's the only program that actually walks you through building your own AI product, step-by-step, with real tools and support."
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center flex-shrink-0">
+                  <Quote className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-foreground mb-2">Safe, Supportive, and Accessible</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    "The atmosphere is inviting and safe — even for non-technical students. No one is judged for asking questions, and the instructors respond with patience and kindness every time. My fear that someone would steal my idea was gone immediately."
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-600 to-blue-700 flex items-center justify-center flex-shrink-0">
+                  <Quote className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-foreground mb-2">Top-Tier Mentorship</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    "Todd and Stephen genuinely care about your progress. They're not just instructors — they're partners in your success. When I got stuck, they were always there with real solutions."
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                  <Quote className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-foreground mb-2">All-in-One Journey</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    "The course structure is logical and practical — it starts with market validation and carries you all the way through product development and go-to-market. Every step includes tools you can actually use."
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Comparative Soundbites */}
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center text-white">
+            <Quote className="w-12 h-12 mx-auto mb-6 opacity-75" />
+            <blockquote className="text-2xl md:text-3xl font-bold mb-6">
+              "Oxford gave me background. MIT gave me theory. Tech Leaders gave me results."
+            </blockquote>
+            <div className="flex flex-wrap justify-center gap-8 text-sm opacity-90">
+              <p className="italic">"I went from academic overload to actionable progress — in weeks."</p>
+              <p className="hidden md:block">•</p>
+              <p className="italic">"No fluff, no overwhelm — just clarity and execution."</p>
             </div>
           </div>
         </div>
@@ -381,16 +493,17 @@ const AIProgramSelector = () => {
             </p>
             <Button
               size="lg"
-              variant="outline"
+              className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white"
               onClick={() => {
-                trackClick('AI Program Selector - Contact', {
+                trackClick('AI Program Selector - Strategy Session', {
                   location: 'faq_section',
-                  cta_text: 'Email Us'
+                  cta_text: 'Book a Strategy Session'
                 });
-                window.location.href = "mailto:todd@technical-leaders.com";
+                window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
               }}
             >
-              Email Us: todd@technical-leaders.com
+              Book a Strategy Session
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
