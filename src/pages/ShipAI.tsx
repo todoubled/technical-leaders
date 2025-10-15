@@ -282,34 +282,6 @@ const ShipAI = () => {
               Join software engineers and technical leaders who stay ahead of AI through weekly hands-on training, expert office hours, and a community of builders.
             </p>
 
-            <div className="mb-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                "AI Transformed How I Work - Watch My 2-Minute Story"
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Why this hands-on program delivers more practical results than Oxford or MIT's academic courses
-              </p>
-            </div>
-
-            <div className="w-full max-w-3xl mx-auto mb-3">
-              <div className="relative pb-[56.25%] h-0">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-                  src="https://www.youtube.com/embed/LyY-glR6P_8"
-                  title="Pamela Johnston - AI Executive Training Testimonial"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-
-            <div className="text-center mb-8">
-              <p className="text-sm text-muted-foreground">
-                <span className="font-semibold">Pamela Johnston</span> • Senior Business Analyst
-              </p>
-            </div>
-
             <div className="flex justify-center items-center mb-4">
               <Button
                 size="lg"

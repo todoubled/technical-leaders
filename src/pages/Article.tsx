@@ -14,6 +14,10 @@ import SEO from '../components/SEO';
 import ArticleContent from '../components/ArticleContent';
 import TableOfContents from '../components/TableOfContents';
 import ReadingProgress from '../components/ReadingProgress';
+import InlineArticleCTA from '../components/InlineArticleCTA';
+import StickySidebarCTA from '../components/StickySidebarCTA';
+import { useScrollTracking } from '../hooks/useScrollTracking';
+import { trackEvent } from '../utils/posthog';
 
 // Mock data - replace with SEObot API call
 const mockArticle: Article = {
@@ -153,6 +157,9 @@ export default function ArticlePage() {
   const [article, setArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Track scroll progress for dynamic CTAs
+  const { scrollProgress, scrollDepth, hasReachedMidpoint, hasReachedEnd, timeOnPage, maxScrollDepth } = useScrollTracking();
+
   useEffect(() => {
     const fetchArticle = async () => {
       setLoading(true);
@@ -168,9 +175,29 @@ export default function ArticlePage() {
         setLoading(false);
       }
     };
-    
+
     fetchArticle();
   }, [slug]);
+
+  // Track scroll milestones for analytics
+  useEffect(() => {
+    if (!article) return;
+
+    const milestones = [25, 50, 75, 90];
+    const tracked = new Set<number>();
+
+    milestones.forEach(milestone => {
+      if (scrollDepth >= milestone && !tracked.has(milestone)) {
+        trackEvent('article_scroll_depth', {
+          article_slug: slug,
+          scroll_depth: milestone,
+          time_on_page: timeOnPage,
+          article_title: article.title
+        });
+        tracked.add(milestone);
+      }
+    });
+  }, [scrollDepth, article, slug, timeOnPage]);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -183,7 +210,7 @@ export default function ArticlePage() {
   const shareArticle = (platform: 'twitter' | 'linkedin' | 'copy') => {
     const url = window.location.href;
     const title = article?.title || '';
-    
+
     switch (platform) {
       case 'twitter':
         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
@@ -231,7 +258,7 @@ export default function ArticlePage() {
   return (
     <div className="min-h-screen bg-background">
       <ReadingProgress />
-      <SEO 
+      <SEO
         title={article?.seo?.metaTitle || article?.title || 'Article'}
         description={article?.seo?.metaDescription || article?.description || 'Read this article on Technical Leaders'}
         keywords={article?.seo?.keywords || article?.tags || []}
@@ -270,13 +297,13 @@ export default function ArticlePage() {
         } : undefined}
       />
       <Navigation />
-      
+
       {/* Article Header */}
       <article className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back button */}
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             className="mb-8"
             onClick={() => navigate('/articles')}
           >
@@ -297,11 +324,11 @@ export default function ArticlePage() {
                 <span>{article.readingTime} min read</span>
               </div>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
               {article.title}
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-8">
               {article.description}
             </p>
@@ -310,15 +337,15 @@ export default function ArticlePage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
 {article.author.profile ? (
-                  <a 
-                    href={article.author.profile} 
-                    target="_blank" 
+                  <a
+                    href={article.author.profile}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="block w-12 h-12 rounded-full overflow-hidden hover:ring-2 hover:ring-primary/50 transition-all"
                   >
                     {article.author.avatar && article.author.avatar.startsWith('http') ? (
-                      <img 
-                        src={article.author.avatar} 
+                      <img
+                        src={article.author.avatar}
                         alt={article.author.name}
                         className="w-full h-full object-cover"
                       />
@@ -331,8 +358,8 @@ export default function ArticlePage() {
                 ) : (
                   <div className="w-12 h-12 rounded-full overflow-hidden">
                     {article.author.avatar && article.author.avatar.startsWith('http') ? (
-                      <img 
-                        src={article.author.avatar} 
+                      <img
+                        src={article.author.avatar}
                         alt={article.author.name}
                         className="w-full h-full object-cover"
                       />
@@ -345,9 +372,9 @@ export default function ArticlePage() {
                 )}
                 <div>
                   {article.author.profile ? (
-                    <a 
-                      href={article.author.profile} 
-                      target="_blank" 
+                    <a
+                      href={article.author.profile}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold hover:text-primary transition-colors"
                     >
@@ -394,8 +421,8 @@ export default function ArticlePage() {
           {/* Featured image */}
           {article.featuredImage && (
             <div className="aspect-video relative overflow-hidden rounded-lg mb-12 bg-secondary max-w-4xl">
-              <img 
-                src={article.featuredImage} 
+              <img
+                src={article.featuredImage}
                 alt={article.title}
                 className="w-full h-full object-cover"
               />
@@ -407,11 +434,43 @@ export default function ArticlePage() {
             {/* Main content */}
             <div className="lg:col-span-3">
               <ArticleContent content={article.content} />
+
+              {/* Inline CTA - appears after content, contextual to article category */}
+              <InlineArticleCTA
+                headline="Get Help Applying This Strategy"
+                description="See exactly how 300+ technical leaders use strategies like this to build consulting practices"
+                primaryCTA={{
+                  text: "See How It Works",
+                  url: "/how-it-works",
+                  label: "How It Works - Inline Article CTA"
+                }}
+                secondaryCTA={{
+                  text: "Get Free Playbook",
+                  url: "https://techleaders.kit.com/playbook?utm_source=technical-leaders-blog-inline",
+                  label: "Free Playbook - Inline Article CTA"
+                }}
+                socialProof="Join 300+ CTOs using proven frameworks"
+                variant="emphasis"
+                articleSlug={slug}
+              />
             </div>
-            
-            {/* Sidebar with Table of Contents */}
+
+            {/* Sidebar with Table of Contents and Dynamic CTA */}
             <div className="lg:col-span-1 order-first lg:order-last">
-              <TableOfContents content={article.content} />
+              <div className="space-y-6">
+                {/* Show TOC early, then transition to sticky CTA */}
+                {scrollProgress < 0.3 ? (
+                  <TableOfContents content={article.content} />
+                ) : (
+                  <>
+                    <TableOfContents content={article.content} />
+                    <StickySidebarCTA
+                      scrollProgress={scrollProgress}
+                      articleSlug={slug}
+                    />
+                  </>
+                )}
+              </div>
             </div>
           </div>
 
@@ -461,8 +520,8 @@ export default function ArticlePage() {
           <h2 className="text-3xl font-bold mb-8">Related Articles</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {relatedArticles.map((related) => (
-              <Card 
-                key={related.id} 
+              <Card
+                key={related.id}
                 className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
                 onClick={() => navigate(`/post/${related.slug}`)}
               >
