@@ -14,6 +14,7 @@ import AITradeSchool from "./pages/AITradeSchool";
 import Launch from "./pages/Launch";
 import Scale from "./pages/Scale";
 import Marketing from "./pages/Marketing";
+import CFO from "./pages/CFO";
 import Accredited from "./pages/Accredited";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
@@ -79,6 +80,7 @@ const App = () => (
           <Route path="/launch" element={<Launch />} />
           <Route path="/scale" element={<Scale />} />
           <Route path="/marketing" element={<Marketing />} />
+          <Route path="/cfo" element={<CFO />} />
           <Route path="/accredited" element={<Accredited />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/post/:slug" element={<Article />} />
