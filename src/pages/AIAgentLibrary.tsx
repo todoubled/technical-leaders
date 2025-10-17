@@ -1,5 +1,4 @@
 import Navigation from "@/components/Navigation";
-import ContentFooter from "@/components/footers/ContentFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Clock, Target, MessageSquare, ArrowRight, Zap, Star, Users, BookOpen, Lightbulb, FileText, TrendingUp } from "lucide-react";
@@ -111,12 +110,6 @@ const AIAgentLibrary = () => {
     }
   ];
 
-  const learningOutcomes = [
-    { metric: "30", label: "Minutes to master", sublabel: "Complete guide" },
-    { metric: "10", label: "Chapters", sublabel: "Step-by-step learning" },
-    { metric: "4", label: "Ready templates", sublabel: "Instant use" }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -140,22 +133,17 @@ const AIAgentLibrary = () => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold mb-6">
             <BookOpen className="w-4 h-4" />
-            <span>The Non-Technical Guide</span>
+            <span>The AI Agent Library™</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Teaching AI to Work for You
             <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
-              Master Prompt Engineering
+            Get AI to Work for You
             </span>
           </h1>
 
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
-            What prompt engineering actually means (spoiler: it's just <span className="font-bold text-white">giving really good instructions!</span>)
-          </p>
-
           <p className="text-2xl font-semibold mb-8 max-w-2xl mx-auto">
-            Learn in 30 minutes what takes others weeks to figure out
+            Learn in 30 minutes what takes others weeks or more to figure out
           </p>
 
           <div className="bg-background/50 backdrop-blur border border-white/10 rounded-lg p-6 max-w-3xl mx-auto mb-8 shadow-xl">
@@ -182,40 +170,23 @@ const AIAgentLibrary = () => {
             </div>
           </div>
 
+          <p className="text-xl font-semibold text-foreground mb-6">
+            Want our full AI training program?
+          </p>
+
           <div className="flex justify-center gap-4">
             <Button
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
               onClick={() => {
-                trackClick('Start Learning - AI Agent Library', {
+                trackClick('Learn More - AI Agent Library', {
                   location: 'hero_section'
                 });
-                document.getElementById('chapters')?.scrollIntoView({ behavior: 'smooth' });
+                window.location.href = "/ai";
               }}
             >
-              Start Learning Now
+              Learn More Here
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Learning Outcomes */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 -mt-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6">
-            {learningOutcomes.map((outcome, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-xl transition-all duration-300 border-2 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mb-2">
-                  {outcome.metric}
-                </p>
-                <p className="text-lg font-bold text-gray-900 dark:text-white">
-                  {outcome.label}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {outcome.sublabel}
-                </p>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -224,12 +195,8 @@ const AIAgentLibrary = () => {
       <section id="chapters" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-6 py-3 rounded-full font-bold mb-6 shadow-md">
-              <BookOpen className="w-5 h-5" />
-              <span>Complete Learning Path</span>
-            </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              10 Chapters to Master Prompt Engineering
+              The AI Agent Library™
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               From complete beginner to confident prompt engineer in just 30 minutes
@@ -364,119 +331,21 @@ const AIAgentLibrary = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Why This Guide Works */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Why This Guide Works
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">No Technical Jargon</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Written for real people, not AI researchers. If you can order coffee, you can do this.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Real Examples</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Every concept includes actual prompts you can copy, modify, and use today.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Practice Built In</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Hands-on exercises help you build confidence and muscle memory.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Immediate Results</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Start getting better AI outputs within minutes of reading Chapter 1.
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* The Toolkit Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-600/5"></div>
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white">
-            Your Complete Toolkit
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Everything you need to become a confident prompt engineer
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6 mt-8 text-left">
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <BookOpen className="w-10 h-10 text-orange-400 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">10 Comprehensive Chapters</h3>
-              <p className="text-gray-300">From basics to advanced techniques, everything is covered step-by-step</p>
-            </div>
-
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <FileText className="w-10 h-10 text-orange-400 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">4 Battle-Tested Templates</h3>
-              <p className="text-gray-300">Ready-to-use prompt templates for common business tasks</p>
-            </div>
-
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <Lightbulb className="w-10 h-10 text-orange-400 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Real-World Examples</h3>
-              <p className="text-gray-300">Actual prompts from our library that you can steal and modify</p>
-            </div>
-
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <CheckCircle2 className="w-10 h-10 text-orange-400 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Practice Exercises</h3>
-              <p className="text-gray-300">Hands-on challenges to build your skills and confidence</p>
-            </div>
-          </div>
-
-          {/* Additional trust elements */}
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">No fluff, just actionable advice</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">Beginner-friendly language</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span className="text-sm font-medium">30-minute read time</span>
-            </div>
+          <div className="text-center mt-16">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 shadow-xl"
+              onClick={() => {
+                trackClick('Get AI Agent Library Copy', {
+                  location: 'chapters_section'
+                });
+                window.open('https://docs.google.com/spreadsheets/u/1/d/1patjQDXhf6nuvOOPFEklYa1bQfoR4ihIk2gXW2PN_gU/edit?gid=0#gid=0', '_blank');
+              }}
+            >
+              Get Your Copy of the AI Agent Library
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
         </div>
       </section>
@@ -486,7 +355,7 @@ const AIAgentLibrary = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Zap className="w-16 h-16 mx-auto mb-6 text-orange-500" />
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Ready to Master Prompt Engineering?
+            Ready For More?
           </h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
             Join hundreds of professionals who've transformed how they work with AI
@@ -494,32 +363,47 @@ const AIAgentLibrary = () => {
 
           <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
             <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-              Get the Complete Guide + Bonus Resources
+              Choose Your AI Training Path
             </h3>
-            <div className="grid md:grid-cols-2 gap-4 mb-8 text-left max-w-2xl mx-auto">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100">10-chapter masterclass</span>
+            <div className="space-y-6 mb-8">
+              {/* AI-First Program */}
+              <div className="border-l-4 border-blue-500 pl-4">
+                <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-2">AI-First Training Program</h4>
+                <p className="text-gray-700 dark:text-gray-300 mb-3">Intensive program to build AI competency fast</p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                    <span className="text-sm text-gray-900 dark:text-gray-100">Custom AI playbook for your role</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                    <span className="text-sm text-gray-900 dark:text-gray-100">Master prompt engineering for your use cases</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                    <span className="text-sm text-gray-900 dark:text-gray-100">Drive AI adoption in your organization</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100">4 ready-to-use templates</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100">Real-world examples</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100">Practice exercises</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100">Expert tips & tricks</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100">Mistakes to avoid</span>
+
+              {/* Ship AI Program */}
+              <div className="border-l-4 border-purple-500 pl-4">
+                <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Ship AI Ongoing Support</h4>
+                <p className="text-gray-700 dark:text-gray-300 mb-3">Weekly training to stay ahead of the AI curve</p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                    <span className="text-sm text-gray-900 dark:text-gray-100">Weekly hands-on training with new workflows</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                    <span className="text-sm text-gray-900 dark:text-gray-100">Community of 300+ AI practitioners</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                    <span className="text-sm text-gray-900 dark:text-gray-100">Expert support for your specific projects</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -530,14 +414,14 @@ const AIAgentLibrary = () => {
                 trackClick('Get the Guide - AI Agent Library', {
                   location: 'bottom_cta'
                 });
-                window.location.href = "/how-it-works";
+                window.location.href = "/ai";
               }}
             >
-              Get Started Now
+              Explore Training Programs
             </Button>
 
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-              Start getting better AI results in the next 30 minutes
+              Choose intensive training or ongoing support—both get you results
             </p>
           </Card>
 
@@ -549,33 +433,6 @@ const AIAgentLibrary = () => {
           </p>
         </div>
       </section>
-
-      <ContentFooter
-        headline="Ready to Transform How You Work with AI?"
-        description="This comprehensive guide gives you everything you need to become a confident prompt engineer in just 30 minutes."
-        primaryCTA={{
-          text: "Start Learning Now",
-          url: "/how-it-works",
-          description: "Get Immediate Access"
-        }}
-        benefits={[
-          "10 comprehensive chapters",
-          "4 ready-to-use templates",
-          "Real-world examples",
-          "Practice exercises"
-        ]}
-        socialProof="Join hundreds of professionals mastering AI"
-        testimonial={{
-          quote: "This guide completely changed how I use AI. I went from frustrated to confident in one afternoon. The templates alone are worth their weight in gold.",
-          author: "Sarah M.",
-          role: "Marketing Director"
-        }}
-        secondaryCTA={{
-          text: "See Our Programs",
-          url: "/ai"
-        }}
-        trackingContext="AI Agent Library"
-      />
     </div>
   );
 };
