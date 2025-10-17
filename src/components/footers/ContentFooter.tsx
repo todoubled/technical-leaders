@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Users, Zap } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, CheckCircle2, Users, Zap, Quote } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { trackClick } from "@/utils/posthog";
 
 interface ContentFooterProps {
@@ -25,6 +26,13 @@ interface ContentFooterProps {
     author: string;
     role: string;
   };
+  testimonials?: Array<{
+    name: string;
+    role: string;
+    location: string;
+    avatar: string;
+    content: string;
+  }>;
 
   // Secondary Options
   secondaryCTA?: {
@@ -43,6 +51,7 @@ const ContentFooter = ({
   benefits,
   socialProof,
   testimonial,
+  testimonials,
   secondaryCTA,
   trackingContext
 }: ContentFooterProps) => {
@@ -112,8 +121,54 @@ const ContentFooter = ({
             )}
           </Card>
 
-          {/* Testimonial (if provided) */}
-          {testimonial && (
+          {/* Testimonials (if provided) */}
+          {testimonials && testimonials.length > 0 && (
+            <div className="mb-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  What Our Members Say
+                </h3>
+                <p className="text-muted-foreground">
+                  Real results from tech leaders who've transformed their careers
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                {testimonials.map((testimonial, index) => (
+                  <Card key={index} className="relative bg-card border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                    <CardContent className="p-8">
+                      <div className="absolute top-4 left-4 opacity-10">
+                        <Quote className="h-8 w-8 text-primary" />
+                      </div>
+
+                      <div className="relative z-10">
+                        <p className="text-foreground mb-8 leading-relaxed text-lg italic pt-4">
+                          {testimonial.content}
+                        </p>
+
+                        <div className="flex items-center pt-4 border-t border-border">
+                          <Avatar className="h-14 w-14 mr-4 ring-2 ring-primary/20">
+                            <AvatarImage src="" />
+                            <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/40 text-primary font-semibold text-lg">
+                              {testimonial.avatar}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <div className="font-bold text-foreground text-lg">{testimonial.name}</div>
+                            <div className="text-muted-foreground text-sm font-medium">
+                              {testimonial.role}{testimonial.location && ` • ${testimonial.location}`}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Single Testimonial (legacy support) */}
+          {testimonial && !testimonials && (
             <Card className="p-6 bg-secondary/20 border-l-4 border-primary mb-8 max-w-3xl mx-auto">
               <p className="text-foreground italic mb-4">"{testimonial.quote}"</p>
               <div className="flex items-center gap-3">
@@ -134,7 +189,7 @@ const ContentFooter = ({
           <div className="text-center">
             {secondaryCTA ? (
               <Card className="p-8 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900 border-2 border-gray-700 dark:border-gray-800 max-w-2xl mx-auto shadow-2xl">
-                <p className="text-gray-300 dark:text-gray-400 mb-6 font-semibold text-lg">Not ready yet?</p>
+                <p className="text-gray-300 dark:text-gray-400 mb-6 font-semibold text-lg">Want help?</p>
                 <Button
                   variant="outline"
                   size="lg"

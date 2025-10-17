@@ -18,6 +18,51 @@ const GetPlaybook = () => {
     });
   }, []);
 
+  const testimonials = [
+    {
+      name: "P.O.",
+      role: "DevOps Lead",
+      location: "Poland",
+      avatar: "PO",
+      content: "I didn't even use all of tools that you provide guys, so far all is exceeding my expectations. Basically thats the first mastermind group that gives a real value that I know! Stress levels overall in my life almost went to 0, in all cases, private, work etc"
+    },
+    {
+      name: "C.F.",
+      role: "Fractional CTO",
+      location: "Ireland",
+      avatar: "CF",
+      content: "For this client, it's a fractional gig that will replace all my income, which means I can go and do this fractional thing for three days a week and then have two days to apply all the other learnings. Massive, massive win."
+    },
+    {
+      name: "K.D.",
+      role: "Director of Customer Success",
+      location: "Colorado",
+      avatar: "KD",
+      content: "Applying my new approach learned through Tech Leaders, has led to a new job offer and a promotion"
+    },
+    {
+      name: "Tech Leader",
+      role: "Senior Leadership",
+      location: "",
+      avatar: "TL",
+      content: "The 'win seeds' I've been planting the last ~1-2 months have started blooming at work! My squad was recognized by senior leadership across two orgs for the work we've been doing."
+    },
+    {
+      name: "M.W.",
+      role: "CTO",
+      location: "Poland",
+      avatar: "MW",
+      content: "I feel I'm a strong IC and have quite good managing skills, but I felt lacking in strategy tools. I wanted to increase my leverage by doing a higher level of work."
+    },
+    {
+      name: "F.C.",
+      role: "Fractional CTO",
+      location: "Ann Arbor",
+      avatar: "FC",
+      content: "It is harder than I thought, specifically talking about yourself as a product or service offering is not something I really ever had to do working in a large corporation for the majority of the last three decades."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -44,6 +89,38 @@ const GetPlaybook = () => {
             <span>The Complete Playbook</span>
           </div>
 
+          <div className="max-w-3xl mx-auto mb-8 text-left bg-background/50 backdrop-blur border border-white/10 rounded-lg p-6">
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex-1">
+                <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                  Hi, my name is <span className="font-semibold text-white">Todd Larsen</span> - Co-founder of Tech Leaders.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                  Tech Leaders is an international community and mastermind that helps you optimize your income, impact and influence with leadership and entrepreneurship.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                  I've spent 5 years testing different ways to monetize my technical expertise:
+                </p>
+                <ul className="list-disc list-inside text-base text-muted-foreground space-y-2 mb-4 ml-4">
+                  <li>Freelance Hourly Consulting</li>
+                  <li>Micro-SaaS Products</li>
+                  <li>Info-Products (courses, etc.)</li>
+                  <li>Fractional CTO/advisory services on retainer</li>
+                </ul>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  After all this experimentation and work with 30+ different companies around the world from start-ups to scale-ups, my co-foudner Stephen Bates and I built:
+                </p>
+              </div>
+              <div className="md:w-64 flex-shrink-0">
+                <img
+                  src="/li-todd.jpg"
+                  alt="Todd Larsen"
+                  className="w-full h-auto rounded-lg object-contain border-2 border-primary/20"
+                />
+              </div>
+            </div>
+          </div>
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             The Productize & Monetize
             <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
@@ -60,7 +137,7 @@ const GetPlaybook = () => {
             <div className="grid md:grid-cols-2 gap-3 text-left text-sm">
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Define your ideal client profile and problem niche with laser precision</span>
+                <span className="text-muted-foreground">Define your ideal client profile and problem niche with precision</span>
               </div>
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
@@ -265,7 +342,7 @@ const GetPlaybook = () => {
 
               <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 border border-yellow-200 dark:border-yellow-800">
                 <p className="text-sm font-semibold text-yellow-800 dark:text-yellow-300">
-                  💡 Pro Tip: If your income is directly tied to hours worked, you have a leverage problem, not an income problem.
+                  Pro Tip: If your income is directly tied to hours worked, you have a leverage problem, not an income problem.
                 </p>
               </div>
             </div>
@@ -319,7 +396,7 @@ const GetPlaybook = () => {
 
             <div className="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 border border-red-200 dark:border-red-800 mt-6">
               <p className="text-sm font-semibold text-red-800 dark:text-red-300">
-                🔥 Warning: The biggest failure point is trying to help everyone with everything. This leads to commodity pricing and referral dependence.
+                Warning: The biggest failure point is trying to help everyone with everything. This leads to commodity pricing and referral dependence.
               </p>
             </div>
           </Card>
@@ -519,14 +596,14 @@ const GetPlaybook = () => {
       {/* Divider CTA */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h3 className="text-2xl font-bold mb-4">Foundation Complete? Now Define Your Market</h3>
-          <p className="text-lg opacity-90 mb-6">Continue to Step 1 to create your Ideal Client Profile and find your profitable niche</p>
+          <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+          <p className="text-lg opacity-90 mb-6">See how we help you build your consulting practice step by step</p>
           <Button
             size="lg"
             variant="secondary"
-            onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.location.href = "/how-it-works"}
           >
-            Continue to Step 1
+            See How It Works
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
@@ -652,7 +729,7 @@ const GetPlaybook = () => {
 
               <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 border border-yellow-200 dark:border-yellow-800">
                 <p className="text-sm font-semibold text-yellow-800 dark:text-yellow-300">
-                  🎯 Pro Tip: The best ICPs come from analyzing your best past clients/projects. Who did you love working with AND got amazing results for?
+                  Pro Tip: The best ICPs come from analyzing your best past clients/projects. Who did you love working with AND got amazing results for?
                 </p>
               </div>
             </div>
@@ -815,14 +892,14 @@ const GetPlaybook = () => {
       {/* Divider CTA */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-green-600">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h3 className="text-2xl font-bold mb-4">Market Defined? Now Build Your Marketing Machine</h3>
-          <p className="text-lg opacity-90 mb-6">Continue to Step 2 to package your expertise and create systematic outreach</p>
+          <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+          <p className="text-lg opacity-90 mb-6">See how we help you build your consulting practice step by step</p>
           <Button
             size="lg"
             variant="secondary"
-            onClick={() => document.getElementById('step-2')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.location.href = "/how-it-works"}
           >
-            Continue to Step 2
+            See How It Works
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
@@ -926,7 +1003,7 @@ const GetPlaybook = () => {
 
                 <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded">
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                    🚀 Your "Power Three": Select your top 3 achievements that best demonstrate value to your ICP.
+                    Your "Power Three": Select your top 3 achievements that best demonstrate value to your ICP.
                   </p>
                 </div>
               </div>
@@ -1079,7 +1156,7 @@ const GetPlaybook = () => {
 
                 <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 border border-yellow-200 dark:border-yellow-800 mt-4">
                   <p className="text-sm font-semibold text-yellow-800 dark:text-yellow-300">
-                    🎥 Pro Tip: Short-form video (30-60 seconds) gets 3-5x more reach. Even simple talking-head videos work.
+                    Pro Tip: Short-form video (30-60 seconds) gets 3-5x more reach. Even simple talking-head videos work.
                   </p>
                 </div>
               </div>
@@ -1189,7 +1266,7 @@ const GetPlaybook = () => {
 
                 <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800 mt-4">
                   <p className="text-sm font-semibold text-blue-800 dark:text-blue-300">
-                    🤖 Automation Tip: After proving the system works, hire a VA for $5-10/hour to handle outreach. You just handle responses.
+                    Automation Tip: After proving the system works, hire a VA for $5-10/hour to handle outreach. You just handle responses.
                   </p>
                 </div>
               </div>
@@ -1201,14 +1278,14 @@ const GetPlaybook = () => {
       {/* Divider CTA */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-orange-600">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h3 className="text-2xl font-bold mb-4">Marketing System Ready? Now Price Your Value</h3>
-          <p className="text-lg opacity-90 mb-6">Continue to Step 3 to package your offer and master value-based pricing</p>
+          <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+          <p className="text-lg opacity-90 mb-6">See how we help you build your consulting practice step by step</p>
           <Button
             size="lg"
             variant="secondary"
-            onClick={() => document.getElementById('step-3')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.location.href = "/how-it-works"}
           >
-            Continue to Step 3
+            See How It Works
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
@@ -1319,7 +1396,7 @@ const GetPlaybook = () => {
 
               <div className="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 border border-red-200 dark:border-red-800">
                 <p className="text-sm font-semibold text-red-800 dark:text-red-300">
-                  ⚠️ Warning: Never base pricing on your old salary. A $150K salary ÷ 2080 hours = $72/hour mindset will keep you broke.
+                  Warning: Never base pricing on your old salary. A $150K salary ÷ 2080 hours = $72/hour mindset will keep you broke.
                 </p>
               </div>
             </div>
@@ -1864,7 +1941,7 @@ const GetPlaybook = () => {
 
       <ContentFooter
         headline="Ready to Productize Your Expertise?"
-        description="Get the complete playbook, weekly coaching, templates, and join a community of technical leaders transforming their expertise into scalable income."
+        description="Get the complete playbook, weekly coaching, templates, and join a community of leaders transforming their expertise into scalable income."
         primaryCTA={{
           text: "Join Launch Kit",
           url: "/how-it-works",
@@ -1877,14 +1954,10 @@ const GetPlaybook = () => {
           "Private Community"
         ]}
         socialProof="Join 300+ tech leaders already using this system"
-        testimonial={{
-          quote: "The playbook gave me a clear roadmap. I went from zero consulting clients to $15K/month in side income within 3 months.",
-          author: "S.M.",
-          role: "Engineering Director, Seattle"
-        }}
+        testimonials={testimonials}
         secondaryCTA={{
-          text: "Try 10 Before 10",
-          url: "/10-before-10"
+          text: "Set This System Up Faster",
+          url: "/how-it-works"
         }}
         trackingContext="Get Playbook"
       />
