@@ -37,6 +37,7 @@ import AIForVC from "./pages/AIForVC";
 import AIForLeaders from "./pages/AIForLeaders";
 import Benchmark from "./pages/Benchmark";
 import TenBeforeTen from "./pages/TenBeforeTen";
+import GetPlaybook from "./pages/GetPlaybook";
 import AiWorkspace from "./pages/AiWorkspace";
 import AdvancedClaude from "./pages/AdvancedClaude";
 import AIForSuits from "./pages/AIForSuits";
@@ -104,6 +105,7 @@ const App = () => (
           <Route path="/ai-for-leaders" element={<AIForLeaders />} />
           <Route path="/benchmark" element={<Benchmark />} />
           <Route path="/10-before-10" element={<TenBeforeTen />} />
+          <Route path="/get-playbook" element={<GetPlaybook />} />
           <Route path="/ai-workspace" element={<AiWorkspace />} />
           <Route path="/ai-workflow" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/ai-agent-basics" element={<Navigate to="/ai-workspace" replace />} />
