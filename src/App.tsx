@@ -45,7 +45,7 @@ import AiRdSystem from "./pages/AiRdSystem";
 import HowItWorks from "./pages/HowItWorks";
 import Speak from "./pages/Speak";
 import AIProgramSelector from "./pages/AIProgramSelector";
-import AIAgentLibrary from "./pages/AIAgentLibrary";
+import Fortune100PromptLibrary from "./pages/Fortune100PromptLibrary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -115,7 +115,7 @@ const App = () => (
           <Route path="/ai-rd-system" element={<AiRdSystem />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/speak" element={<Speak />} />
-          <Route path="/ai-agent-library" element={<AIAgentLibrary />} />
+          <Route path="/fortune-100-prompt-library" element={<Fortune100PromptLibrary />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

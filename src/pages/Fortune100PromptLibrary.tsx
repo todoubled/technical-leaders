@@ -7,11 +7,11 @@ import { trackClick, trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { useEffect } from "react";
 
-const AIAgentLibrary = () => {
-  useTrackScrollDepth('AI Agent Library Page');
+const Fortune100PromptLibrary = () => {
+  useTrackScrollDepth('Fortune 100 Prompt Library Page');
 
   useEffect(() => {
-    trackEvent('AI Agent Library Page View', {
+    trackEvent('Fortune 100 Prompt Library Page View', {
       has_strategy: true,
       has_cta: true
     });
@@ -32,7 +32,7 @@ const AIAgentLibrary = () => {
       title: "Anatomy of a Great Prompt",
       subtitle: "Breaking Down Real Examples",
       description: "Master the secret ingredients: Context, Task, Format, and Constraints",
-      details: "See real examples from our agent library and learn what makes them tick. Understand the four essential ingredients that transform vague requests into powerful instructions.",
+      details: "See real examples from our prompt library and learn what makes them tick. Understand the four essential ingredients that transform vague requests into powerful instructions.",
       icon: Target,
       color: "from-purple-500 to-purple-600"
     },
@@ -113,9 +113,9 @@ const AIAgentLibrary = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Agent Library - The Non-Technical Guide to Prompt Engineering"
+        title="Fortune 100 Prompt Library - The Non-Technical Guide to Prompt Engineering"
         description="Master prompt engineering in 30 minutes. Learn how to give AI clear instructions that get amazing results. Includes real examples, templates, and exercises."
-        keywords={['prompt engineering', 'AI prompts', 'ChatGPT prompts', 'AI writing', 'prompt templates', 'AI guide']}
+        keywords={['prompt engineering', 'AI prompts', 'ChatGPT prompts', 'AI writing', 'prompt templates', 'AI guide', 'fortune 100 prompts']}
       />
       <Navigation />
 
@@ -124,7 +124,7 @@ const AIAgentLibrary = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/launch-bg.png"
-            alt="AI Agent Library background"
+            alt="Fortune 100 Prompt Library background"
             className="w-full h-full object-cover object-top opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
@@ -133,7 +133,7 @@ const AIAgentLibrary = () => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold mb-6">
             <BookOpen className="w-4 h-4" />
-            <span>The AI Agent Library™</span>
+            <span>The Fortune 100 Prompt Library™</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
@@ -179,7 +179,7 @@ const AIAgentLibrary = () => {
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
               onClick={() => {
-                trackClick('Learn More - AI Agent Library', {
+                trackClick('Learn More - Fortune 100 Prompt Library', {
                   location: 'hero_section'
                 });
                 window.location.href = "/ai";
@@ -196,7 +196,7 @@ const AIAgentLibrary = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              The AI Agent Library™
+              The Fortune 100 Prompt Library™
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               From complete beginner to confident prompt engineer in just 30 minutes
@@ -337,13 +337,13 @@ const AIAgentLibrary = () => {
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 shadow-xl"
               onClick={() => {
-                trackClick('Get AI Agent Library Copy', {
+                trackClick('Get Fortune 100 Prompt Library Copy', {
                   location: 'chapters_section'
                 });
                 window.open('https://docs.google.com/spreadsheets/u/1/d/1patjQDXhf6nuvOOPFEklYa1bQfoR4ihIk2gXW2PN_gU/edit?gid=0#gid=0', '_blank');
               }}
             >
-              Get Your Copy of the AI Agent Library
+              Get Your Copy of the Fortune 100 Prompt Library
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
@@ -411,7 +411,7 @@ const AIAgentLibrary = () => {
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
               onClick={() => {
-                trackClick('Get the Guide - AI Agent Library', {
+                trackClick('Get the Guide - Fortune 100 Prompt Library', {
                   location: 'bottom_cta'
                 });
                 window.location.href = "/ai";
@@ -437,4 +437,4 @@ const AIAgentLibrary = () => {
   );
 };
 
-export default AIAgentLibrary;
+export default Fortune100PromptLibrary;
