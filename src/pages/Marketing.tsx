@@ -111,7 +111,7 @@ const MarketingHero = () => {
 
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 mt-8">
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
-              Pick Your Plan
+              Pick Your Marketing Plan
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
