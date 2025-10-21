@@ -369,14 +369,14 @@ const AIProgramSelector = () => {
                   onClick={() => {
                     trackClick('AI Program Selector - Ship AI', {
                       location: 'program_comparison',
-                      destination: '/ship-ai',
-                      cta_text: 'Learn More About Ship AI',
+                      destination: '/ai-bootcamp',
+                      cta_text: 'Learn More',
                       selected_role: selectedRole
                     });
-                    window.location.href = "/ship-ai";
+                    window.location.href = "/ai-bootcamp";
                   }}
                 >
-                  Learn More About Ship AI
+                  Learn More
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 <p className="text-center text-sm text-muted-foreground">

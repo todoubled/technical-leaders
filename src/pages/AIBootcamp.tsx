@@ -8,6 +8,26 @@ import { generateCourseStructuredData } from "@/utils/seo-helpers";
 import { trackClick } from "@/utils/posthog";
 
 const AIBootcamp = () => {
+  // Calculate the first Tuesday of the next month
+  const getNextCohortDate = () => {
+    const today = new Date();
+    const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+
+    // Find the first Tuesday (day 2 in JavaScript, where Sunday is 0)
+    const dayOfWeek = nextMonth.getDay();
+    const daysUntilTuesday = dayOfWeek <= 2 ? 2 - dayOfWeek : 9 - dayOfWeek;
+
+    const firstTuesday = new Date(nextMonth);
+    firstTuesday.setDate(nextMonth.getDate() + daysUntilTuesday);
+
+    // Format as "Month Day, Year"
+    return firstTuesday.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  };
+
   const bootcampOutcomes = [
     {
       outcome: "Launched Revenue-Generating AI Product",
@@ -237,7 +257,7 @@ const AIBootcamp = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-700 dark:text-purple-400 px-4 py-2 rounded-full text-sm font-bold mb-6">
               <Zap className="w-4 h-4" />
-              <span>Next Cohort Starts Soon - Limited Spots</span>
+              <span>New Cohort Every Month- Limited Spots</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -276,7 +296,7 @@ const AIBootcamp = () => {
                   window.location.href = "#enroll";
                 }}
               >
-                Enroll in Next Bootcamp
+                Save My Spot
               </Button>
             </div>
 
@@ -470,7 +490,7 @@ const AIBootcamp = () => {
               <Award className="w-4 h-4" />
               <span>SUCCESS STORIES</span>
             </div>
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-background mb-4">
               What Our Students Say
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -540,7 +560,7 @@ const AIBootcamp = () => {
       <section id="enroll" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-500/10 to-pink-600/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Enroll in the Next AI Bootcamp
+            Enroll in the Next Ship AI Bootcamp
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
             Master the AI R&D System™ and launch your revenue-generating product in 3 weeks
@@ -552,7 +572,7 @@ const AIBootcamp = () => {
                 <Calendar className="w-4 h-4" />
                 <span>Next Cohort Starts Soon</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">AI Bootcamp</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">Ship AI Bootcamp</h3>
               <div className="mb-4">
                 <p className="text-5xl font-bold text-foreground mb-2">$1,000</p>
                 <p className="text-lg text-muted-foreground">One-time payment</p>
@@ -596,18 +616,18 @@ const AIBootcamp = () => {
               onClick={() => {
                 trackClick('AI Bootcamp - Enrollment CTA', {
                   location: 'enrollment_section',
-                  destination: 'https://buy.stripe.com/BOOTCAMP_LINK',
+                  destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
                   cta_text: 'Secure Your Spot - $1,000',
                   price: '$1000'
                 });
-                window.location.href = "https://buy.stripe.com/BOOTCAMP_LINK";
+                window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
               }}
             >
               Secure Your Spot - $1,000
             </Button>
 
             <p className="text-sm text-muted-foreground mt-4">
-              Limited to 30 participants per cohort
+              Next cohort starts {getNextCohortDate()}
             </p>
           </Card>
 
