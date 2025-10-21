@@ -69,9 +69,9 @@ const AIProgramSelector = () => {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
                     <Target className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3">Training Program</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Training For My Org</h3>
                   <p className="text-muted-foreground mb-4">
-                    Intensive program to build AI competency fast
+                    Custom training program to build AI competency fast for your organization
                   </p>
                   <div className="text-sm text-muted-foreground space-y-2">
                     <div className="flex items-center gap-2">
@@ -98,9 +98,9 @@ const AIProgramSelector = () => {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
                     <TrendingUp className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3">Ongoing Support</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Support For Myself</h3>
                   <p className="text-muted-foreground mb-4">
-                    Continuous learning to stay ahead of AI evolution
+                    Bootcamps and Continuous Learning to stay ahead of AI the latest AI tools and workflows
                   </p>
                   <div className="text-sm text-muted-foreground space-y-2">
                     <div className="flex items-center gap-2">
@@ -265,11 +265,11 @@ const AIProgramSelector = () => {
             }`}>
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  TRAINING PROGRAM
+                  CUSTOM TRAINING PROGRAMS
                 </div>
                 <h2 className="text-3xl font-bold text-foreground mb-2">AI-First</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  Training Program to get up to speed quickly
+                  <b>Custom training programs for leaders and individual contributors in organizations</b> to get up to speed quickly and learn the AI frameworks to stay ahead
                 </p>
               </div>
 
@@ -328,24 +328,24 @@ const AIProgramSelector = () => {
             }`}>
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  ONGOING SUPPORT
+                  BOOTCAMP & ONGOING SUPPORT
                 </div>
                 <h2 className="text-3xl font-bold text-foreground mb-2">Ship AI</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  Weekly AI Training & Office Hours to stay ahead of the curve
+                  3-Week Bootcamp and Weekly AI Training & Office Hours to stay ahead of the curve
                 </p>
               </div>
 
               <div className="mb-8">
                 <h3 className="font-semibold text-foreground mb-4">Perfect if you want to:</h3>
                 <div className="space-y-3">
-                  <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Stay current with rapidly evolving AI tools</span>
+                    <span className="text-muted-foreground">Get a crash course in AI</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Get weekly hands-on training with new workflows</span>
+                    <span className="text-muted-foreground">Stay current with rapidly evolving AI tools</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />

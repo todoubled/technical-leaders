@@ -25,6 +25,7 @@ import AlternativeToMBA from "./pages/AlternativeToMBA";
 import RGAWorkshop from "./pages/RGAWorkshop";
 import PlaybookConfirmed from "./pages/PlaybookConfirmed";
 import ShipAI from "./pages/ShipAI";
+import AIBootcamp from "./pages/AIBootcamp";
 import AiExecutiveStrategy from "./pages/AiExecutiveStrategy";
 import AiPlaybookExecutives from "./pages/AiPlaybookExecutives";
 import CallTemplates from "./pages/CallTemplates";
@@ -93,6 +94,7 @@ const App = () => (
           <Route path="/in-demand" element={<RGAWorkshop />} />
           <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
           <Route path="/ship-ai" element={<ShipAI />} />
+          <Route path="/ai-bootcamp" element={<AIBootcamp />} />
           <Route path="/ai-executive-strategy-program" element={<AiExecutiveStrategy />} />
           <Route path="/ai-playbook-executives" element={<AiPlaybookExecutives />} />
           <Route path="/call-templates" element={<CallTemplates />} />
