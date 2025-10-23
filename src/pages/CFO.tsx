@@ -17,7 +17,6 @@ const CFO = () => {
       />
       <Navigation />
       <CFOIntro />
-      <MeetYourCFO />
       <CompanyLogos />
       <CFOFeatures />
       <CFOHero />
@@ -240,54 +239,6 @@ const CompanyLogos = () => {
           <img src="/calendly.webp" alt="Calendly" className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity" />
           <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
         </div>
-      </div>
-    </section>
-  );
-};
-
-// Meet Your CFO Section Component
-const MeetYourCFO = () => {
-  return (
-    <section className="pt-6 pb-12">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <Card className="p-8 hover:shadow-lg transition-all duration-300">
-          <div className="grid md:grid-cols-3 gap-8 items-center">
-            <div className="md:col-span-1">
-              <img
-                src="/bill-zutter.jpg"
-                alt="Bill Zutter"
-                className="w-full max-w-[250px] mx-auto rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="md:col-span-2 space-y-4">
-              <h3 className="text-2xl font-bold mb-4">Bill Zutter, CPA</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Bill Zutter has spent the last 15+ years in finance and accounting roles in the commercial real estate industry.
-                He is a licensed CPA and has experience as a services provider, asset owner and investor. His background spans
-                from hands-on accounting and financial planning to executive-level financial leadership, focusing on translating
-                numbers into strategy and results.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                He currently works as a Finance Director leading a team of professionals at the world's largest commercial
-                real estate services company.
-              </p>
-              <div className="flex flex-wrap gap-3 pt-4">
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                  <Shield className="h-4 w-4" />
-                  Licensed CPA
-                </div>
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                  <TrendingUp className="h-4 w-4" />
-                  15+ Years Experience
-                </div>
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                  <Users className="h-4 w-4" />
-                  Finance Director
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
       </div>
     </section>
   );
