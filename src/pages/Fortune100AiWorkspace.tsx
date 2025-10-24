@@ -58,8 +58,8 @@ const Fortune100AiWorkspace = () => {
       number: 5,
       title: "Connecting Business Tools",
       subtitle: "Making Claude Your Universal Assistant",
-      description: "Connect PostHog, Linear, Airtable, Google Docs, and Slack via MCPs",
-      details: "Set up Model Context Protocol bridges that let Claude work directly in your tools. Get API keys from each platform and connect them to Claude. Test each integration to ensure Claude can read and write to your systems.",
+      description: "Connect PostHog, Linear, Airtable, and secure Email Output via MCPs",
+      details: "Set up Model Context Protocol bridges that let Claude work directly in your tools. Get API keys from each platform and connect them to Claude. Configure secure email output using the pass password manager for encrypted credential storage.",
       icon: Settings,
       color: "from-pink-500 to-pink-600"
     },
@@ -68,7 +68,7 @@ const Fortune100AiWorkspace = () => {
       title: "Using Your AI Workspace",
       subtitle: "The Power of Two Modes",
       description: "Master the strategy room (NotebookLM) and the war room (Claude)",
-      details: "Morning: Upload meeting notes to NotebookLM for strategic insights. Midday: Use Claude to create Linear tasks and update Airtable. Afternoon: Pull analytics from PostHog and generate reports in Google Docs. Learn power commands for both tools.",
+      details: "Morning: Upload meeting notes to NotebookLM for strategic insights. Midday: Use Claude to create Linear tasks and update Airtable. Afternoon: Pull analytics from PostHog and email reports to stakeholders. Learn power commands for both tools.",
       icon: Target,
       color: "from-cyan-500 to-cyan-600"
     },
@@ -290,9 +290,8 @@ const Fortune100AiWorkspace = () => {
                                   { name: "PostHog", icon: "📊", desc: "Analytics & metrics" },
                                   { name: "Linear", icon: "📋", desc: "Project management" },
                                   { name: "Airtable", icon: "📁", desc: "Database & records" },
-                                  { name: "Google Docs", icon: "📝", desc: "Documentation" },
-                                  { name: "Slack", icon: "💬", desc: "Team communication" }
-                                ].slice(0, 4).map((tool, i) => (
+                                  { name: "Email Output", icon: "📧", desc: "Secure email delivery" }
+                                ].map((tool, i) => (
                                   <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-3 border border-pink-200 dark:border-pink-700">
                                     <div className="flex items-center gap-2 mb-1">
                                       <span className="text-xl">{tool.icon}</span>

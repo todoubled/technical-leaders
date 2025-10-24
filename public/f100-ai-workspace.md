@@ -207,8 +207,7 @@ We'll connect these essential tools:
 - 📊 **PostHog**: Analytics and user behavior
 - 📋 **Linear**: Project management
 - 📁 **Airtable**: Database and records
-- 📝 **Google Docs**: Document collaboration
-- 💬 **Slack**: Team communication
+- 📧 **Email Output**: Secure email delivery for reports and updates
 
 ### Setting Up Each Tool
 
@@ -272,48 +271,71 @@ We'll connect these essential tools:
 
 *Success looks like: Claude displays your Airtable data*
 
-#### 📝 Google Docs Setup (3 minutes)
+#### 📧 Email Output Setup (10 minutes)
 
-**What it does**: Lets Claude read and create documents, generate reports, and collaborate on content.
+**What it does**: Lets Claude send reports, updates, and analysis directly to email addresses securely.
 
-1. **Authorize Access**:
-   - In Claude, type: `/connect googledocs`
-   - Click the authorization link
-   - Sign in with your Google account
-   - Click **"Allow"** to grant permissions
+**Why use `pass`**: The `pass` password manager provides military-grade encryption for storing your Gmail app password, ensuring your credentials stay secure while letting Claude send automated emails.
 
-2. **Test Connection**:
-   - Ask: "Create a new document called 'Meeting Notes'"
-   - Or: "Summarize [paste a Google Docs link]"
+1. **Install Password Manager**:
+   - Open Terminal (Mac: Cmd+Space, type "Terminal")
+   - Install `pass`:
+   ```
+   brew install pass
+   ```
 
-*Success looks like: Claude creates or reads your Google Docs*
+   *You should see: Installation progress and "Successfully installed pass"*
 
-#### 💬 Slack Setup (5 minutes)
+2. **Set Up GPG Encryption** (if you don't have a GPG key):
+   - Generate a new GPG key:
+   ```
+   gpg --full-generate-key
+   ```
+   - Choose: RSA and RSA (default)
+   - Key size: 4096 bits
+   - Validity: 0 (doesn't expire)
+   - Enter your name and email when prompted
+   - Create a strong passphrase
 
-**What it does**: Lets Claude read messages, send updates, and manage communications.
+   - Get your GPG key ID:
+   ```
+   gpg --list-secret-keys --keyid-format LONG
+   ```
+   - Copy the key ID (the part after `sec   rsa4096/`)
 
-1. **Create Slack App**:
-   - Go to: **api.slack.com/apps**
-   - Click **"Create New App"**
-   - Choose **"From Scratch"**
-   - Name it "Claude Assistant"
-   - Select your workspace
+3. **Initialize Password Store**:
+   ```
+   pass init "YOUR-GPG-KEY-ID"
+   ```
+   Replace `YOUR-GPG-KEY-ID` with the key you copied above
 
-2. **Set Permissions**:
-   - Click **"OAuth & Permissions"** in sidebar
-   - Under "Scopes", add:
-     - `chat:write`
-     - `channels:read`
-     - `channels:history`
-   - Click **"Install to Workspace"**
-   - Copy the Bot Token
+   *You should see: "Password store initialized for YOUR-GPG-KEY-ID"*
 
-3. **Connect to Claude**:
-   - In Claude, type: `/connect slack`
-   - Paste your Bot Token
-   - Test with: "Send a test message to #general"
+4. **Get Gmail App Password**:
+   - Go to: **myaccount.google.com/apppasswords**
+   - Sign in to your Gmail account
+   - Click **"Select app"** → Choose **"Mail"**
+   - Click **"Select device"** → Choose **"Other"** → Type "Claude"
+   - Click **"Generate"**
+   - Copy the 16-character password (save temporarily)
 
-*Success looks like: Message appears in your Slack*
+5. **Store Gmail Password Securely**:
+   ```
+   pass insert gmail-app-password
+   ```
+   - Paste your Gmail app password when prompted
+   - Press Enter
+   - Confirm by typing it again
+
+   *You should see: "Password stored successfully"*
+
+6. **Test Email Setup**:
+   - In Claude, ask: "Send a test email to my.email@company.com with subject 'Test from Claude'"
+   - Claude will retrieve the password from `pass` and send the email
+
+   *Success looks like: Email arrives in your inbox*
+
+**Security Note**: Your password is encrypted with your GPG key. Only you can decrypt it, even if someone accesses your computer.
 
 ---
 
@@ -343,11 +365,11 @@ Think of your workspace like having two different meeting rooms:
 **Midday (Claude)**:
 1. "Create Linear tasks for all action items from this morning's meeting"
 2. "Update the project tracker in Airtable"
-3. "Send a Slack summary to the team"
+3. "Email a summary to the team at team@company.com"
 
 **Afternoon (Claude)**:
 1. "Pull this week's analytics from PostHog"
-2. "Create a performance report in Google Docs"
+2. "Generate a performance report and email it to stakeholders@company.com"
 3. "What trends should I be paying attention to?"
 
 ### Power Commands to Try
@@ -360,7 +382,7 @@ Think of your workspace like having two different meeting rooms:
 **In Claude with MCPs**:
 - "Create a dashboard of all projects due this month from Linear"
 - "Analyze user engagement trends in PostHog for the last quarter"
-- "Draft a weekly status update and send it to #leadership in Slack"
+- "Draft a weekly status update and email it to leadership@company.com"
 
 ---
 
@@ -420,8 +442,8 @@ Think of your workspace like having two different meeting rooms:
 2. **Claude Phase** (1 hour):
    - "Pull Q3 metrics from PostHog and create visualizations"
    - "Generate a executive summary from Linear completed projects"
-   - "Create a QBR deck in Google Docs with these insights"
-   - "Schedule a prep meeting via Slack with key stakeholders"
+   - "Create a formatted QBR report with these insights"
+   - "Email the QBR preview to stakeholders@company.com"
 
 **Result**: QBR prep in 2 hours instead of 2 days
 
@@ -438,13 +460,13 @@ Think of your workspace like having two different meeting rooms:
 2. **Execution** (Claude):
    - "Create a launch checklist in Linear with assignments"
    - "Set up tracking dashboard in PostHog for launch metrics"
-   - "Generate launch FAQ document in Google Docs"
-   - "Create daily standup reminders in Slack"
+   - "Generate launch FAQ document"
+   - "Email launch plan to product-team@company.com"
 
 3. **Daily Updates** (Claude):
    - "Generate launch status report from all tools"
    - "Flag any blockers or delays"
-   - "Send update to #product-launch channel"
+   - "Email daily update to product-launch@company.com"
 
 ### Use Case 3: Customer Intelligence System
 
@@ -466,9 +488,9 @@ Think of your workspace like having two different meeting rooms:
 
 **Action Phase** (Claude):
 - "Create competitive battle cards in Airtable"
-- "Generate competitive positioning doc in Google Docs"
+- "Generate competitive positioning document"
 - "Set up alerts in PostHog for competitive features"
-- "Brief sales team via Slack with key talking points"
+- "Email competitive brief with key talking points to sales@company.com"
 
 ---
 
