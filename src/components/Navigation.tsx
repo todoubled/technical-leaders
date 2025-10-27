@@ -24,8 +24,7 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="/how-it-works" className="text-foreground hover:text-primary transition-colors">Get Consulting Clients</a>
-              <a href="/marketing" className="text-foreground hover:text-primary transition-colors">Done-For-You Marketing</a>
+              <a href="/how-it-works" className="text-foreground hover:text-primary transition-colors">Productize Yourself</a>
               <a href="/ai" className="text-foreground hover:text-primary transition-colors relative inline-flex items-center">
                 AI
                 <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
@@ -35,14 +34,7 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <div className="playbook-nav-item">
-              <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
-              <a className="book-container" href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" rel="noreferrer noopener">
-                <div className="book">
-                  <img alt="" src="https://www.technical-leaders.com/playbook-cover.png" />
-                </div>
-              </a>
-            </div>
+            <a href="/playbook" className="text-foreground hover:text-primary transition-colors">Get the Playbook</a>
           </div>
 
           <div className="md:hidden">
@@ -62,13 +54,12 @@ const Navigation = () => {
             <div className="px-3 py-2 text-foreground">
               <div className="font-medium mb-2">How We Help</div>
               <div className="ml-4 space-y-1">
-                <a href="/how-it-works" className="block py-1 text-sm text-muted-foreground hover:text-primary">Get Consulting Clients</a>
-                <a href="/marketing" className="block py-1 text-sm text-muted-foreground hover:text-primary">Done-For-You Marketing</a>
+                <a href="/how-it-works" className="block py-1 text-sm text-muted-foreground hover:text-primary">Productize Yourself</a>
                 <a href="/ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI</a>
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>
-            <a href="https://techleaders.kit.com/playbook?utm_source=technical-leaders" target="_blank" className="block px-3 py-2 text-foreground hover:text-primary">Get the Playbook</a>
+            <a href="/playbook" className="block px-3 py-2 text-foreground hover:text-primary">Get the Playbook</a>
           </div>
         </div>
       )}

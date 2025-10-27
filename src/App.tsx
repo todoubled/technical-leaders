@@ -49,6 +49,7 @@ import AIProgramSelector from "./pages/AIProgramSelector";
 import Fortune100PromptLibrary from "./pages/Fortune100PromptLibrary";
 import Fortune100AiWorkspace from "./pages/Fortune100AiWorkspace";
 import Library from "./pages/Library";
+import Playbook from "./pages/Playbook";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -122,6 +123,7 @@ const App = () => (
           <Route path="/fortune-100-prompt-library" element={<Fortune100PromptLibrary />} />
           <Route path="/fortune-100-ai-workspace" element={<Fortune100AiWorkspace />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/playbook" element={<Playbook />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
