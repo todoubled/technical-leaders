@@ -100,7 +100,7 @@ const AIProgramSelector = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-3">Support For Myself</h3>
                   <p className="text-muted-foreground mb-4">
-                    Bootcamps and Continuous Learning to stay ahead of AI the latest AI tools and workflows
+                    6-week training program with continuous learning support to stay ahead of AI the latest AI tools and workflows
                   </p>
                   <div className="text-sm text-muted-foreground space-y-2">
                     <div className="flex items-center gap-2">
@@ -139,6 +139,59 @@ const AIProgramSelector = () => {
               <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Workshop CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <Zap className="w-4 h-4" />
+            <span>FREE WORKSHOP</span>
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Learn the AI Workflows That Will Transform Your Work
+          </h2>
+
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Join our free workshop and discover the exact AI workflows used by Fortune 100 companies to 10x their productivity. No coding required.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <div className="flex items-center gap-2 text-white">
+              <CheckCircle2 className="w-5 h-5" />
+              <span>Live demonstration</span>
+            </div>
+            <div className="flex items-center gap-2 text-white">
+              <CheckCircle2 className="w-5 h-5" />
+              <span>Practical workflows</span>
+            </div>
+            <div className="flex items-center gap-2 text-white">
+              <CheckCircle2 className="w-5 h-5" />
+              <span>Q&A session</span>
+            </div>
+          </div>
+
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+            onClick={() => {
+              trackClick('AI Workflows Workshop CTA', {
+                location: 'workshop_cta_section',
+                destination: 'zoom_registration',
+                cta_text: 'Register for Free Workshop'
+              });
+              window.open('https://us06web.zoom.us/meeting/register/yvD8bVRcSem9wRQkjO0cpQ#/registration', '_blank');
+            }}
+          >
+            Register for Free Workshop
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+
+          <p className="text-white/80 text-sm mt-4">
+            Limited seats available • 100% free
+          </p>
         </div>
       </section>
 
@@ -328,11 +381,11 @@ const AIProgramSelector = () => {
             }`}>
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  BOOTCAMP & ONGOING SUPPORT
+                  TRAINING & ONGOING SUPPORT
                 </div>
                 <h2 className="text-3xl font-bold text-foreground mb-2">Ship AI</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  3-Week Bootcamp and Weekly AI Training & Office Hours to stay ahead of the curve
+                  6-Week Training Program and Weekly Office Hours to stay ahead of the curve
                 </p>
               </div>
 
@@ -369,11 +422,11 @@ const AIProgramSelector = () => {
                   onClick={() => {
                     trackClick('AI Program Selector - Ship AI', {
                       location: 'program_comparison',
-                      destination: '/ai-bootcamp',
+                      destination: '/ship-ai-training-program',
                       cta_text: 'Learn More',
                       selected_role: selectedRole
                     });
-                    window.location.href = "/ai-bootcamp";
+                    window.location.href = "/ship-ai-training-program";
                   }}
                 >
                   Learn More

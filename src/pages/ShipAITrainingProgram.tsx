@@ -7,7 +7,7 @@ import SEO from "@/components/SEO";
 import { generateCourseStructuredData } from "@/utils/seo-helpers";
 import { trackClick } from "@/utils/posthog";
 
-const AIBootcamp = () => {
+const ShipAITrainingProgram = () => {
   // Calculate the first Tuesday of the next month
   const getNextCohortDate = () => {
     const today = new Date();
@@ -28,170 +28,176 @@ const AIBootcamp = () => {
     });
   };
 
-  const bootcampOutcomes = [
-    {
-      outcome: "Launched Revenue-Generating AI Product",
-      details: [
-        "Validated demand with 50+ signups",
-        "Shipped functional product in 3 weeks",
-        "First paying customers in week 4"
-      ],
-      name: "Sarah M.",
-      role: "Product Manager @ Tech Startup"
-    },
-    {
-      outcome: "From Idea to $2K MRR",
-      details: [
-        "Built AI tool solving real pain point",
-        "Used systematic validation framework",
-        "25 paying customers by month 2"
-      ],
-      name: "John D.",
-      role: "Marketing Director → Founder"
-    },
-    {
-      outcome: "Shipped AI SaaS as Side Project",
-      details: [
-        "Validated before building",
-        "Launched on ProductHunt - #4 Product",
-        "Growing waitlist of 200+"
-      ],
-      name: "Mike R.",
-      role: "Software Engineer"
-    }
-  ];
-
   const whatYouGet = [
     {
-      icon: Calendar,
-      title: "3 Live Sessions (2 Hours Each)",
-      description: "Intensive hands-on training covering the complete AI R&D System™ - from market validation to revenue-generating product launch."
+      icon: Code2,
+      title: "Comprehensive Video Coursework",
+      description: "6 weeks of structured lessons covering AI fundamentals, prompt engineering, workflow automation, and practical implementation. Learn at your own pace."
     },
     {
-      icon: Code2,
-      title: "The 6-Step AI R&D Framework",
-      description: "Master the systematic approach: Sea of Demand, Validated Bet, Wedge Roadmap, Fogg Prototype, Iteration Loop, and Go-To-Market Launch."
+      icon: Users,
+      title: "Weekly Live Office Hours",
+      description: "Join weekly 90-minute live sessions for Q&A, troubleshooting, and implementation support. Get help with your specific use cases and challenges."
     },
     {
       icon: Lightbulb,
-      title: "Lifetime Community + AI Agents",
-      description: "Access to 300+ builders, weekly AI updates, and custom Claude agents for each step of the framework (market research, PRD generation, UX design, launch strategy)."
+      title: "Hands-On Projects & Templates",
+      description: "Build real AI workflows with step-by-step projects. Access templates, prompts, and resources you can use immediately in your work."
     }
   ];
 
   const weeklyBreakdown = [
     {
       week: "Week 1",
-      title: "Validate Your Idea (Steps 1-2)",
+      title: "AI Fundamentals & ChatGPT Mastery",
       topics: [
-        "The Sea of Demand™: Find market validation in online communities",
-        "The Validated Bet™: Build landing page & get 10+ signups",
-        "Use AI agents to conduct customer research",
-        "Prove demand before you build anything"
+        "Understanding how AI works (LLMs, tokens, context windows)",
+        "ChatGPT essentials: models, settings, and best practices",
+        "Writing effective prompts: the RISEN framework",
+        "Common pitfalls and how to avoid them"
       ],
-      project: "Get 10+ early access signups",
-      duration: "2 hours live + homework",
-      deliverables: ["market-research.md", "Landing page", "10+ signups"]
+      project: "Create your first AI-powered workflow",
+      duration: "Self-paced coursework + 90-min office hours",
+      deliverables: ["Prompt library for your role", "3 working AI workflows"]
     },
     {
       week: "Week 2",
-      title: "Design & Prototype (Steps 3-4)",
+      title: "Claude & Advanced Prompting",
       topics: [
-        "The Wedge Roadmap™: Prioritize features by impact",
-        "The Fogg Prototype™: Apply behavioral science to UX",
-        "Use AI to generate PRDs and user stories",
-        "Validate prototypes with real customers"
+        "Claude's unique capabilities and use cases",
+        "Projects, artifacts, and extended thinking",
+        "Chain-of-thought prompting and reasoning",
+        "When to use Claude vs ChatGPT vs other tools"
       ],
-      project: "Create validated prototype",
-      duration: "2 hours live + homework",
-      deliverables: ["roadmap-prd.md", "ux.md", "v0 prototypes"]
+      project: "Build a complex multi-step AI workflow",
+      duration: "Self-paced coursework + 90-min office hours",
+      deliverables: ["Claude project templates", "Advanced prompt techniques"]
     },
     {
       week: "Week 3",
-      title: "Build & Launch (Steps 5-6)",
+      title: "AI Workflow Automation",
       topics: [
-        "The Iteration Loop™: Turn prototypes into working software",
-        "The Go-To-Market Launch™: Revenue-generating activities",
-        "Deploy to production with Vercel",
-        "Launch strategy & first customers"
+        "Automating repetitive tasks with AI",
+        "Custom GPTs and Claude Projects for your specific needs",
+        "Integrating AI into existing tools and processes",
+        "Building AI assistants for your team"
       ],
-      project: "Ship revenue-ready product",
-      duration: "2 hours live + homework",
-      deliverables: ["Live product", "Launch plan"]
+      project: "Create a custom AI assistant",
+      duration: "Self-paced coursework + 90-min office hours",
+      deliverables: ["Custom GPT or Claude Project", "Automation playbook"]
+    },
+    {
+      week: "Week 4",
+      title: "AI for Content & Communication",
+      topics: [
+        "Writing, editing, and content creation with AI",
+        "Email drafting, meeting summaries, and documentation",
+        "Maintaining your voice and brand with AI",
+        "Quality control and human-in-the-loop workflows"
+      ],
+      project: "Build a content creation system",
+      duration: "Self-paced coursework + 90-min office hours",
+      deliverables: ["Content templates", "Communication workflows"]
+    },
+    {
+      week: "Week 5",
+      title: "AI for Research & Analysis",
+      topics: [
+        "Market research and competitive analysis with AI",
+        "Data synthesis and report generation",
+        "Using AI for strategic planning and decision-making",
+        "Fact-checking and validation techniques"
+      ],
+      project: "Complete a research project with AI",
+      duration: "Self-paced coursework + 90-min office hours",
+      deliverables: ["Research framework", "Analysis templates"]
+    },
+    {
+      week: "Week 6",
+      title: "Implementation & Scale",
+      topics: [
+        "Rolling out AI to your team or organization",
+        "Training others and change management",
+        "Measuring ROI and productivity gains",
+        "Staying current with rapidly evolving AI tools"
+      ],
+      project: "Create your AI implementation plan",
+      duration: "Self-paced coursework + 90-min office hours",
+      deliverables: ["Implementation roadmap", "Training materials"]
     }
   ];
 
   const frameworkSteps = [
     {
-      step: "Steps 1-2: Validation",
-      name: "Sea of Demand + Validated Bet",
-      description: "Find real demand in online communities and validate with 10+ early access signups before building",
-      tools: ["Claude agents", "Customer interviews", "v0.dev"],
-      outcome: "Proof of demand"
+      step: "Phase 1: Foundation",
+      name: "Weeks 1-2: AI Fundamentals",
+      description: "Build a solid foundation in AI tools, prompt engineering, and best practices. Master ChatGPT and Claude for daily workflows.",
+      tools: ["ChatGPT", "Claude", "RISEN framework"],
+      outcome: "AI literacy and confidence"
     },
     {
-      step: "Steps 3-4: Design",
-      name: "Wedge Roadmap + Fogg Prototype",
-      description: "Use Jobs-to-be-Done framework and BJ Fogg Behavior Model to design features that drive action",
-      tools: ["AI PRD generation", "Behavioral science", "v0 prototypes"],
-      outcome: "Validated UX design"
+      step: "Phase 2: Application",
+      name: "Weeks 3-4: Workflow Automation",
+      description: "Apply AI to real work scenarios. Create custom AI assistants, automate tasks, and build content systems.",
+      tools: ["Custom GPTs", "Claude Projects", "Templates"],
+      outcome: "Working AI systems"
     },
     {
-      step: "Steps 5-6: Ship",
-      name: "Iteration Loop + GTM Launch",
-      description: "Transform prototypes into working software and execute strategic launch for first revenue",
-      tools: ["Claude Code", "Vercel", "Launch strategies"],
-      outcome: "Live, revenue-ready product"
+      step: "Phase 3: Mastery",
+      name: "Weeks 5-6: Advanced Implementation",
+      description: "Master research, analysis, and organizational rollout. Create sustainable AI practices and train others.",
+      tools: ["Research frameworks", "Change management", "ROI tracking"],
+      outcome: "AI transformation plan"
     }
   ];
 
   const perfectFor = {
     youWant: [
-      "Launch a revenue-generating AI product in 3 weeks",
-      "Validate demand BEFORE wasting time building",
-      "Learn systematic product development with AI",
-      "Build something people actually want to pay for",
-      "Master behavioral science + AI tools together",
-      "Join a community of 300+ builders shipping products"
+      "Master AI tools like ChatGPT and Claude",
+      "Build practical AI workflows for your work",
+      "Learn at your own pace with expert support",
+      "Get hands-on help with implementation",
+      "Transform how you work with AI",
+      "Stay ahead in the rapidly evolving AI landscape"
     ],
     youNeed: [
-      "Proven 6-step framework from idea to revenue",
-      "AI agents that automate research, PRDs, and UX",
-      "Validation-first approach (signups before building)",
-      "Accountability to ship in 3 weeks",
-      "Expert guidance on each step",
-      "Lifetime access to community and weekly updates"
+      "Structured 6-week curriculum with clear outcomes",
+      "Live weekly office hours for Q&A and troubleshooting",
+      "Templates, prompts, and resources you can use immediately",
+      "Hands-on projects that build real skills",
+      "Expert guidance tailored to your use cases",
+      "Lifetime access to course materials and updates"
     ]
   };
 
   const faqs = [
     {
-      q: "Do I need coding experience?",
-      a: "Basic familiarity with web technologies helps. We use AI tools (Claude Code, v0.dev, Bolt.new) to accelerate development. The focus is on systematic product development - validation, design, and launch strategy - not just coding."
+      q: "Do I need any technical background?",
+      a: "No! This program is designed for professionals with no coding experience. We focus on using AI tools like ChatGPT and Claude as a user, not building AI systems. If you can use a web browser, you can succeed in this program."
     },
     {
-      q: "What is the AI R&D System™?",
-      a: "It's a proven 6-step framework: (1) Sea of Demand - find market validation, (2) Validated Bet - get signups before building, (3) Wedge Roadmap - prioritize features, (4) Fogg Prototype - apply behavioral science to UX, (5) Iteration Loop - build with AI, (6) GTM Launch - generate revenue."
+      q: "How much time does the program require?",
+      a: "Plan for 3-5 hours per week: 1-2 hours for video coursework at your own pace, plus 90 minutes for the weekly live office hours. All sessions are recorded if you can't attend live."
     },
     {
-      q: "Can I do this while working full-time?",
-      a: "Yes! Sessions are 2 hours each week, plus 3-4 hours of homework. Total commitment is 6 hours per week for 3 weeks. The framework is designed for efficiency - validate before you build, use AI to accelerate everything."
+      q: "What if I can't attend the live office hours?",
+      a: "All office hours are recorded and available within 24 hours. You can also submit questions ahead of time, and we'll address them during the session. However, attending live is highly recommended for real-time troubleshooting."
     },
     {
-      q: "What if I don't have a product idea yet?",
-      a: "Perfect! Week 1 teaches you The Sea of Demand™ - how to find genuine market needs in online communities. You'll identify validated opportunities before choosing what to build."
+      q: "What tools will I learn to use?",
+      a: "You'll master ChatGPT (including GPT-4 and custom GPTs), Claude (including Projects and extended thinking), and learn frameworks for prompt engineering. We also cover when to use which tool for different scenarios."
     },
     {
-      q: "What AI agents do I get access to?",
-      a: "You get custom Claude agents for each step: sea-of-demand (market research), validated-bet (landing pages), wedge-roadmap (feature prioritization), user-researcher (PRD & UX), and launch-strategist (GTM). These are the same agents we use for our own products."
+      q: "Is there ongoing support after the 6 weeks?",
+      a: "Yes! You get lifetime access to all course materials and updates. For continued weekly office hours and community support, you can optionally join our Ship AI program ($100/month) after completing the training."
     },
     {
-      q: "Will I actually launch a revenue-ready product?",
-      a: "Yes, if you follow the system. Week 1: get 10+ signups. Week 2: create validated prototypes. Week 3: ship to production and execute launch. You'll have a live product and launch plan by the end."
+      q: "What makes this different from other AI courses?",
+      a: "Three things: (1) Live office hours for personalized help with YOUR specific use cases, (2) Practical, hands-on projects you can use immediately, (3) Focus on implementation, not just theory. You'll leave with working AI systems, not just knowledge."
     },
     {
-      q: "What happens after the 3 weeks?",
-      a: "Lifetime access to: the community (300+ builders), all AI agents, weekly AI updates, future bootcamp recordings, and ongoing support as you grow your product."
+      q: "Can I get a refund if it's not right for me?",
+      a: "Yes. If you're not satisfied within the first 7 days, we'll provide a full refund—no questions asked. We want to make sure this program is the right fit for you."
     }
   ];
 
@@ -229,16 +235,16 @@ const AIBootcamp = () => {
   ];
 
   const courseStructuredData = generateCourseStructuredData(
-    "AI Bootcamp - Launch Your Revenue-Generating AI Product in 3 Weeks",
-    "Master the 6-step AI R&D System™: from market validation to revenue launch. Learn to validate demand, design with behavioral science, and ship products using AI tools. Includes custom Claude agents for each step."
+    "Ship AI Training Program - 6-Week AI Training",
+    "Comprehensive 6-week training program teaching AI workflows, tools, and implementation. Includes structured coursework, live office hours, and hands-on projects. Master AI tools like Claude, ChatGPT, and modern AI workflows."
   );
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Bootcamp - Launch Revenue-Generating AI Product in 3 Weeks"
-        description="Master the AI R&D System™: validate demand, design with behavioral science, and launch AI products. Get 10+ signups before building, use custom Claude agents, join 300+ builders. Next cohort starts soon!"
-        keywords={['AI bootcamp', 'AI R&D System', 'product validation', 'AI product launch', 'behavioral science', 'Claude agents', 'startup bootcamp', 'launch AI product', 'revenue generation']}
+        title="Ship AI Training Program - 6-Week AI Training"
+        description="6-week comprehensive AI training program with coursework and live office hours. Learn AI workflows, tools, and implementation with hands-on support. Perfect for professionals seeking practical AI skills."
+        keywords={['AI training program', 'AI course', 'AI workflows', 'Claude training', 'ChatGPT course', 'AI implementation', 'AI office hours', 'professional AI training', 'Ship AI']}
         structuredData={courseStructuredData}
       />
       <Navigation />
@@ -257,29 +263,29 @@ const AIBootcamp = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-700 dark:text-purple-400 px-4 py-2 rounded-full text-sm font-bold mb-6">
               <Zap className="w-4 h-4" />
-              <span>New Cohort Every Month- Limited Spots</span>
+              <span>6-Week Training Program • Rolling Enrollment</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Launch Your AI Product
+              Master AI Tools & Workflows
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 mt-2">
-                From Idea to Revenue in 3 Weeks
+                In 6 Weeks with Expert Support
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Master the AI R&D System™: validate demand before building, design with behavioral science, and launch systematically. The proven framework used by 300+ founders to ship revenue-generating products.
+              Comprehensive training program combining structured coursework with live office hours for Q&A and implementation help. Learn practical AI workflows used by Fortune 100 companies—no coding required.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Clock className="w-5 h-5 text-purple-500" />
-                <span className="font-semibold">3 Weeks • 6-Step System</span>
+                <span className="font-semibold">6 Weeks • Self-Paced Coursework</span>
               </div>
 
               <div className="flex items-center gap-2 text-muted-foreground">
-                <Rocket className="w-5 h-5 text-purple-500" />
-                <span className="font-semibold">Validate → Build → Launch</span>
+                <Users className="w-5 h-5 text-purple-500" />
+                <span className="font-semibold">Weekly Live Office Hours</span>
               </div>
             </div>
 
@@ -288,20 +294,20 @@ const AIBootcamp = () => {
                 size="lg"
                 className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-6"
                 onClick={() => {
-                  trackClick('AI Bootcamp - Hero CTA', {
+                  trackClick('Ship AI Training Program - Hero CTA', {
                     location: 'hero_section',
                     destination: '#enroll',
-                    cta_text: 'Enroll in Next Bootcamp'
+                    cta_text: 'Start Training Today'
                   });
                   window.location.href = "#enroll";
                 }}
               >
-                Save My Spot
+                Start Training Today
               </Button>
             </div>
 
             <p className="text-sm text-muted-foreground">
-              $1,000 • Includes AI agents + lifetime community
+              $2,500 • Coursework + Live Support + Course Materials
             </p>
           </div>
         </div>
@@ -310,7 +316,7 @@ const AIBootcamp = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            What You Get in 3 Weeks
+            What's Included in the Program
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whatYouGet.map((item, index) => (
@@ -329,7 +335,7 @@ const AIBootcamp = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Your 3-Week Journey
+            Your 6-Week Learning Path
           </h2>
           <div className="space-y-6">
             {weeklyBreakdown.map((week, index) => (
@@ -379,10 +385,10 @@ const AIBootcamp = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            The 6-Step AI R&D Framework
+            The 3-Phase Learning Framework
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-            A systematic approach to building products people actually want to pay for
+            A structured approach from AI fundamentals to organizational implementation
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {frameworkSteps.map((item, index) => (
@@ -447,38 +453,6 @@ const AIBootcamp = () => {
                 ))}
               </ul>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Real Results from Past Cohorts
-          </h2>
-          <p className="text-center text-muted-foreground mb-12">
-            See what participants built and achieved in just 3 weeks
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {bootcampOutcomes.map((item, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <h3 className="text-lg font-bold text-foreground mb-2">{item.outcome}</h3>
-                  <ul className="space-y-2">
-                    {item.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" />
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="pt-4 border-t border-border">
-                  <p className="font-semibold text-foreground text-sm">{item.name}</p>
-                  <p className="text-xs text-muted-foreground">{item.role}</p>
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -560,21 +534,21 @@ const AIBootcamp = () => {
       <section id="enroll" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-500/10 to-pink-600/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Enroll in the Next Ship AI Bootcamp
+            Enroll in Ship AI Training Program
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
-            Master the AI R&D System™ and launch your revenue-generating product in 3 weeks
+            6-week comprehensive training program with coursework and live office hours
           </p>
 
           <Card className="p-8 shadow-lg hover:shadow-xl transition-all max-w-2xl mx-auto">
             <div className="mb-6">
               <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-700 dark:text-purple-400 px-4 py-2 rounded-full text-sm font-bold mb-4">
                 <Calendar className="w-4 h-4" />
-                <span>Next Cohort Starts Soon</span>
+                <span>Rolling Enrollment • Start Anytime</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Ship AI Bootcamp</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">Ship AI Training Program</h3>
               <div className="mb-4">
-                <p className="text-5xl font-bold text-foreground mb-2">$1,000</p>
+                <p className="text-5xl font-bold text-foreground mb-2">$2,500</p>
                 <p className="text-lg text-muted-foreground">One-time payment</p>
               </div>
             </div>
@@ -582,31 +556,31 @@ const AIBootcamp = () => {
             <div className="space-y-4 mb-8 text-left">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">The complete 6-step AI R&D System™ framework</span>
+                <span className="text-muted-foreground">6 weeks of comprehensive video coursework (self-paced)</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Custom Claude agents for each step (market research, PRD, UX, launch)</span>
+                <span className="text-muted-foreground">6 live 90-minute office hours sessions for Q&A and implementation help</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">3 live sessions (2 hours each) covering validation → design → launch</span>
+                <span className="text-muted-foreground">Hands-on projects: AI workflows, custom assistants, automation systems</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Validation-first approach: get 10+ signups before building</span>
+                <span className="text-muted-foreground">Master ChatGPT, Claude, and advanced AI tools</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Lifetime access to community of 300+ product builders</span>
+                <span className="text-muted-foreground">Templates, prompts, and resources for immediate implementation</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">All recordings, templates, and weekly AI updates (ongoing)</span>
+                <span className="text-muted-foreground">Lifetime access to all course materials and future updates</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Small cohorts (max 30) for personalized guidance</span>
+                <span className="text-muted-foreground">7-day money-back guarantee—no questions asked</span>
               </div>
             </div>
 
@@ -614,20 +588,20 @@ const AIBootcamp = () => {
               size="lg"
               className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg px-8 py-6 w-full shadow-lg hover:shadow-xl transition-all"
               onClick={() => {
-                trackClick('AI Bootcamp - Enrollment CTA', {
+                trackClick('Ship AI Training Program - Enrollment CTA', {
                   location: 'enrollment_section',
-                  destination: 'https://buy.stripe.com/fZe6sa3Up2L9bwAcNl',
-                  cta_text: 'Secure Your Spot - $1,000',
-                  price: '$1000'
+                  destination: 'https://buy.stripe.com/00w14n4f70g7aQ2dbCaMU0K',
+                  cta_text: 'Enroll Now - $2,500',
+                  price: '$2500'
                 });
-                window.location.href = "https://buy.stripe.com/fZe6sa3Up2L9bwAcNl";
+                window.location.href = "https://buy.stripe.com/00w14n4f70g7aQ2dbCaMU0K";
               }}
             >
-              Secure Your Spot - $1,000
+              Enroll Now - $2,500
             </Button>
 
             <p className="text-sm text-muted-foreground mt-4">
-              Next cohort starts {getNextCohortDate()}
+              Start immediately • Access granted within 24 hours
             </p>
           </Card>
 
@@ -636,6 +610,62 @@ const AIBootcamp = () => {
             <a href="mailto:todd@technical-leaders.com" className="text-purple-600 hover:underline">
               todd@technical-leaders.com
             </a>
+          </p>
+        </div>
+      </section>
+
+      {/* Optional Ongoing Support Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <TrendingUp className="w-4 h-4" />
+            <span>OPTIONAL ADD-ON</span>
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Want Ongoing Support After Your Training?
+          </h2>
+
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Continue your AI journey with Ship AI—weekly office hours, community access, and ongoing training to stay ahead of the latest tools and workflows.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <Users className="w-8 h-8 text-white mb-3 mx-auto" />
+              <h3 className="font-semibold text-white mb-2">Weekly Office Hours</h3>
+              <p className="text-white/80 text-sm">Live support every week for your questions and challenges</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <Lightbulb className="w-8 h-8 text-white mb-3 mx-auto" />
+              <h3 className="font-semibold text-white mb-2">Latest AI Tools</h3>
+              <p className="text-white/80 text-sm">Stay current with new tools and workflows as AI evolves</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <Award className="w-8 h-8 text-white mb-3 mx-auto" />
+              <h3 className="font-semibold text-white mb-2">Community Access</h3>
+              <p className="text-white/80 text-sm">Join 300+ practitioners sharing insights and best practices</p>
+            </div>
+          </div>
+
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+            onClick={() => {
+              trackClick('Ship AI Training Program - Ship AI CTA', {
+                location: 'ongoing_support_section',
+                destination: '/ship-ai',
+                cta_text: 'Learn About Ship AI'
+              });
+              window.location.href = "/ship-ai";
+            }}
+          >
+            Learn About Ship AI
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+
+          <p className="text-white/80 text-sm mt-4">
+            $100/month • Cancel anytime
           </p>
         </div>
       </section>
@@ -664,4 +694,4 @@ const AIBootcamp = () => {
   );
 };
 
-export default AIBootcamp;
+export default ShipAITrainingProgram;
