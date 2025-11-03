@@ -12,6 +12,7 @@ import Calls from "./pages/Calls";
 import CallConfirmed from "./pages/CallConfirmed";
 import AITradeSchool from "./pages/AITradeSchool";
 import Launch from "./pages/Launch";
+import December from "./pages/December";
 import Scale from "./pages/Scale";
 import Marketing from "./pages/Marketing";
 import CFO from "./pages/CFO";
@@ -84,6 +85,7 @@ const App = () => (
           <Route path="/call-confirmed" element={<CallConfirmed />} />
           <Route path="/ai-trade-school" element={<AITradeSchool />} />
           <Route path="/launch" element={<Launch />} />
+          <Route path="/december" element={<December />} />
           <Route path="/scale" element={<Scale />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/cfo" element={<CFO />} />
