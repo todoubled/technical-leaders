@@ -222,13 +222,13 @@ const AIProgramSelector = () => {
             <Card className="p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-200 dark:border-purple-800">
               <Quote className="w-8 h-8 text-purple-500 mb-4" />
               <p className="text-lg font-semibold text-foreground mb-2">
-                "Finally, a course that actually teaches you how to build an AI product — not just talk about it."
+                "Finally, a course that actually teaches you how to build an AI product, not just talk about it."
               </p>
             </Card>
             <Card className="p-6 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 border-indigo-200 dark:border-indigo-800">
               <Quote className="w-8 h-8 text-indigo-500 mb-4" />
               <p className="text-lg font-semibold text-foreground mb-2">
-                "AI Trade School provides access to real tools at every step — from concept to prototype to final product and marketing plan. Mic drop!"
+                "AI Trade School provides access to real tools at every step, from concept to prototype to final product and marketing plan."
               </p>
             </Card>
           </div>
@@ -257,7 +257,7 @@ const AIProgramSelector = () => {
                 <div>
                   <h3 className="font-bold text-foreground mb-2">Safe, Supportive, and Accessible</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    "The atmosphere is inviting and safe — even for non-technical students. No one is judged for asking questions, and the instructors respond with patience and kindness every time. My fear that someone would steal my idea was gone immediately."
+                    "The atmosphere is inviting and safe, even for non-technical students. No one is judged for asking questions, and the instructors respond with patience and kindness every time. My fear that someone would steal my idea was gone immediately."
                   </p>
                 </div>
               </div>
@@ -271,7 +271,7 @@ const AIProgramSelector = () => {
                 <div>
                   <h3 className="font-bold text-foreground mb-2">Top-Tier Mentorship</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    "Todd and Stephen genuinely care about your progress. They're not just instructors — they're partners in your success. When I got stuck, they were always there with real solutions."
+                    "Todd and Stephen genuinely care about your progress. They're not just instructors, they're partners in your success. When I got stuck, they were always there with real solutions."
                   </p>
                 </div>
               </div>
@@ -285,7 +285,7 @@ const AIProgramSelector = () => {
                 <div>
                   <h3 className="font-bold text-foreground mb-2">All-in-One Journey</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    "The course structure is logical and practical — it starts with market validation and carries you all the way through product development and go-to-market. Every step includes tools you can actually use."
+                    "The course structure is logical and practical. It starts with market validation and carries you all the way through product development and go-to-market. Every step includes tools you can actually use."
                   </p>
                 </div>
               </div>
@@ -299,9 +299,9 @@ const AIProgramSelector = () => {
               "Oxford gave me background. MIT gave me theory. Tech Leaders gave me results."
             </blockquote>
             <div className="flex flex-wrap justify-center gap-8 text-sm opacity-90">
-              <p className="italic">"I went from academic overload to actionable progress — in weeks."</p>
+              <p className="italic">"I went from academic overload to actionable progress in weeks."</p>
               <p className="hidden md:block">•</p>
-              <p className="italic">"No fluff, no overwhelm — just clarity and execution."</p>
+              <p className="italic">"No fluff, no overwhelm, just clarity and execution."</p>
             </div>
           </div>
         </div>

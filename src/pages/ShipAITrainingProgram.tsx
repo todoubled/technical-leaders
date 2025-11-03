@@ -209,19 +209,19 @@ const ShipAITrainingProgram = () => {
       link: null
     },
     {
-      quote: "The course structure is logical and practical — it starts with market validation and carries you all the way through product development and go-to-market. Every step includes tools you can actually use.",
+      quote: "The course structure is logical and practical. It starts with market validation and carries you all the way through product development and go-to-market. Every step includes tools you can actually use.",
       author: null,
       title: "All-in-One Journey",
       link: null
     },
     {
-      quote: "Todd and Stephen genuinely care about your progress. They're not just instructors — they're partners in your success. When I got stuck, they were always there with real solutions.",
+      quote: "Todd and Stephen genuinely care about your progress. They're not just instructors, they're partners in your success. When I got stuck, they were always there with real solutions.",
       author: null,
       title: "Top-Tier Mentorship",
       link: null
     },
     {
-      quote: "The atmosphere is inviting and safe — even for non-technical students. No one is judged for asking questions, and the instructors respond with patience and kindness every time. My fear that someone would steal my idea was gone immediately.",
+      quote: "The atmosphere is inviting and safe, even for non-technical students. No one is judged for asking questions, and the instructors respond with patience and kindness every time. My fear that someone would steal my idea was gone immediately.",
       author: null,
       title: "Safe, Supportive, and Accessible",
       link: null
@@ -230,8 +230,8 @@ const ShipAITrainingProgram = () => {
 
   const headlineQuotes = [
     "Exactly the hands-on training I needed to create my AI product. You've covered it all from A to Z!",
-    "Finally, a course that actually teaches you how to build an AI product — not just talk about it.",
-    "AI Trade School provides access to real tools at every step — from concept to prototype to final product and marketing plan. Mic drop!"
+    "Finally, a course that actually teaches you how to build an AI product, not just talk about it.",
+    "AI Trade School provides access to real tools at every step, from concept to prototype to final product and marketing plan."
   ];
 
   const courseStructuredData = generateCourseStructuredData(
@@ -523,9 +523,9 @@ const ShipAITrainingProgram = () => {
               "Oxford gave me background. MIT gave me theory. Tech Leaders gave me results."
             </blockquote>
             <div className="flex flex-wrap justify-center gap-8 text-sm opacity-90">
-              <p className="italic">"I went from academic overload to actionable progress — in weeks."</p>
+              <p className="italic">"I went from academic overload to actionable progress in weeks."</p>
               <p className="hidden md:block">•</p>
-              <p className="italic">"No fluff, no overwhelm — just clarity and execution."</p>
+              <p className="italic">"No fluff, no overwhelm, just clarity and execution."</p>
             </div>
           </div>
         </div>
