@@ -28,7 +28,7 @@ const December = () => {
       number: 2,
       title: "Prove",
       duration: "Weeks 5–10",
-      description: "You'll land your first clients and stack up to $10k in revenue, so you've got hard proof your offer works and people are happy to pay you well for it."
+      description: "You'll land your first clients and stack up to $10K+ in revenue, so you've got hard proof your offer works and people are happy to pay you well for it."
     },
     {
       number: 3,
@@ -47,7 +47,7 @@ const December = () => {
     {
       icon: Users,
       title: "Weekly Group Sessions",
-      description: "so you stay accountable, get unstuck fast, and keep momentum all the way to $10K."
+      description: "so you stay accountable, get unstuck fast, and keep momentum all the way to $10K+."
     },
     {
       icon: CheckCircle2,
@@ -72,7 +72,7 @@ const December = () => {
       description: "so you instantly stand out to the right clients and attract opportunities from day one."
     },
     {
-      title: "\"First $10K\" Content Pack",
+      title: "\"First $10K+\" Content Pack",
       description: "so you can plug in proven posts, emails, and messages that turn conversations into clients."
     },
     {
@@ -100,7 +100,7 @@ const December = () => {
   const faqData = [
     {
       question: "How long is the program?",
-      answer: "The Launch Kit program runs for 12+ weeks, divided into three phases: Clarify (weeks 1-4), Prove (weeks 5-10), and Scale (weeks 11-12+). You'll have ongoing support throughout your journey to $10K/month."
+      answer: "The Launch Kit program runs for 12+ weeks, divided into three phases: Clarify (weeks 1-4), Prove (weeks 5-10), and Scale (weeks 11-12+). You'll have ongoing support throughout your journey to $10K+/month."
     },
     {
       question: "What if I don't like the program?",
@@ -119,7 +119,7 @@ const December = () => {
   // Generate structured data
   const courseStructuredData = generateCourseStructuredData(
     "Tech Leaders Launch Kit - Build Your Independent Business",
-    "12-week program to help tech leaders validate their expertise and hit $10K/month selling their knowledge, without feeling salesy or needing a big audience.",
+    "12-week program to help tech leaders validate their expertise and hit $10K+/month selling their knowledge, without feeling salesy or needing a big audience.",
     "$2950"
   );
 
@@ -132,7 +132,7 @@ const December = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Launch Kit - Turn Your Tech Expertise Into $10K/Month"
-        description="Prove your offer works and hit $10K/month by selling your expertise. Join 9 tech leaders in our December cohort. 2-week guarantee, flexible payment plans."
+        description="Prove your offer works and hit $10K+/month by selling your expertise. Join 9 tech leaders in our December cohort. 2-week guarantee, flexible payment plans."
         keywords={['tech leadership', 'independent consulting', 'side hustle', 'tech entrepreneurship', 'consulting business', 'expertise monetization']}
         structuredData={combinedStructuredData}
       />
@@ -163,40 +163,25 @@ const December = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
               Now it's time to make your own ideas pay you directly as a side hustle or replace your primary income with an independent business.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <Card className="p-6 mb-8 bg-card/80 backdrop-blur-sm">
-              <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-                December Slots Now Open
-              </h2>
-              <p className="text-lg text-foreground mb-4">
-                <strong>Here's what we're doing with the Tech Leaders Launch Kit program this month:</strong>
-              </p>
-              <div className="space-y-3 text-left">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">
-                    We're taking on <strong className="text-foreground">9 people only</strong>, and we'll lock in the group by December 1 (or sooner if spots fill)
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">
-                    The goal is simple: prove your offer works and hit <strong className="text-foreground">$10K/month</strong> by selling your expertise, without feeling "salesy" or needing a big audience.
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">
-                    Over the last three years, we've helped hundreds of experts and leaders turn their experience into side income, better job opportunities, and independent consulting/advising businesses.
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">
-                    Most recently, we used this exact system to launch a new offer that brought in <strong className="text-foreground">$54,500 in 93 days</strong>, so you'll get the same proven playbook that's worked for years (and still works today).
-                  </p>
-                </div>
-              </div>
+      {/* Stats Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="text-5xl font-bold text-orange-500 mb-2">9</div>
+              <p className="text-lg text-muted-foreground">Spots available</p>
+            </Card>
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="text-5xl font-bold text-orange-500 mb-2">$10K+</div>
+              <p className="text-lg text-muted-foreground">Monthly goal</p>
+            </Card>
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="text-5xl font-bold text-orange-500 mb-2">12+</div>
+              <p className="text-lg text-muted-foreground">Weeks of support</p>
             </Card>
           </div>
         </div>
@@ -209,7 +194,7 @@ const December = () => {
             The model's simple:
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-            Three clear phases to take you from idea to proven $10K/month offer
+            Three clear phases to take you from idea to proven $10K+/month offer
           </p>
 
           <div className="space-y-8">
@@ -296,7 +281,7 @@ const December = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
         <div className="max-w-4xl mx-auto text-center">
           <Shield className="w-16 h-16 mx-auto mb-6 text-green-600 dark:text-green-400" />
-          <h2 className="text-3xl font-bold mb-4 text-foreground">
+          <h2 className="text-3xl font-bold mb-4 text-background">
             Love it or leave it guarantee.
           </h2>
           <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
@@ -306,90 +291,6 @@ const December = () => {
           <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-6 py-3 rounded-full font-semibold">
             <Shield className="w-5 h-5" />
             <span>14-day money-back guarantee</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="get-started" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Getting started is simple.
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            Choose the payment option that works best for you
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="p-6 hover:shadow-xl transition-all relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  BEST VALUE
-                </span>
-              </div>
-              <div className="text-center pt-2">
-                <p className="text-sm font-semibold text-muted-foreground mb-2">One Payment</p>
-                <p className="text-4xl font-bold text-foreground mb-4">$2,950</p>
-                <p className="text-sm text-muted-foreground mb-6">Pay upfront and save</p>
-                <Button
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white"
-                  onClick={() => {
-                    trackConversion('Launch Kit Purchase Clicked', {
-                      location: 'pricing_section',
-                      price: 2950,
-                      plan: 'one_payment'
-                    });
-                    window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
-                  }}
-                >
-                  Get Started
-                </Button>
-              </div>
-            </Card>
-
-            <Card className="p-6 hover:shadow-xl transition-all">
-              <div className="text-center">
-                <p className="text-sm font-semibold text-muted-foreground mb-2">Two Payments</p>
-                <p className="text-4xl font-bold text-foreground mb-4">$1,600</p>
-                <p className="text-sm text-muted-foreground mb-6">Spread over 2 months</p>
-                <Button
-                  className="w-full"
-                  variant="outline"
-                  onClick={() => {
-                    trackConversion('Launch Kit Purchase Clicked', {
-                      location: 'pricing_section',
-                      price: 3200,
-                      plan: 'two_payments'
-                    });
-                    window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
-                  }}
-                >
-                  Get Started
-                </Button>
-              </div>
-            </Card>
-
-            <Card className="p-6 hover:shadow-xl transition-all">
-              <div className="text-center">
-                <p className="text-sm font-semibold text-muted-foreground mb-2">Four Payments</p>
-                <p className="text-4xl font-bold text-foreground mb-4">$850</p>
-                <p className="text-sm text-muted-foreground mb-6">Spread over 4 months</p>
-                <Button
-                  className="w-full"
-                  variant="outline"
-                  onClick={() => {
-                    trackConversion('Launch Kit Purchase Clicked', {
-                      location: 'pricing_section',
-                      price: 3400,
-                      plan: 'four_payments'
-                    });
-                    window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
-                  }}
-                >
-                  Get Started
-                </Button>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
@@ -440,102 +341,94 @@ const December = () => {
       {/* Next Steps Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Here's what to do next:
           </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Join the December cohort and prove your offer works by hitting $10K+/month
+          </p>
 
-          <div className="space-y-6 mb-12">
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                  1
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-2">DM me "I'm in."</h3>
-                  <p className="text-muted-foreground">Send a direct message to get the ball rolling</p>
-                </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <Card className="p-6 hover:shadow-xl transition-all relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  BEST VALUE
+                </span>
+              </div>
+              <div className="text-center pt-2">
+                <p className="text-sm font-semibold text-muted-foreground mb-2">One Payment</p>
+                <p className="text-4xl font-bold text-foreground mb-4">$2,950</p>
+                <p className="text-sm text-muted-foreground mb-6">Pay upfront and save</p>
+                <Button
+                  className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white"
+                  onClick={() => {
+                    trackConversion('Launch Kit Purchase Clicked', {
+                      location: 'next_steps_section',
+                      price: 2950,
+                      plan: 'one_payment'
+                    });
+                    window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A";
+                  }}
+                >
+                  Get Started
+                </Button>
               </div>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                  2
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-2">I'll send you the link to get started.</h3>
-                  <p className="text-muted-foreground">You'll receive your personalized enrollment link</p>
-                </div>
+            <Card className="p-6 hover:shadow-xl transition-all">
+              <div className="text-center">
+                <p className="text-sm font-semibold text-muted-foreground mb-2">Two Payments</p>
+                <p className="text-4xl font-bold text-foreground mb-4">$1,600</p>
+                <p className="text-sm text-muted-foreground mb-6">Spread over 2 months</p>
+                <Button
+                  className="w-full"
+                  variant="outline"
+                  onClick={() => {
+                    trackConversion('Launch Kit Purchase Clicked', {
+                      location: 'next_steps_section',
+                      price: 3200,
+                      plan: 'two_payments'
+                    });
+                    window.location.href = "https://buy.stripe.com/14AdR9cLD7Iz9LYefGaMU0H";
+                  }}
+                >
+                  Get Started
+                </Button>
               </div>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                  3
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-2">You'll get access to everything in Launch Kit so you can book your 1:1 kick-off call</h3>
-                  <p className="text-muted-foreground">Immediate access to all resources and your strategy session</p>
-                </div>
+            <Card className="p-6 hover:shadow-xl transition-all">
+              <div className="text-center">
+                <p className="text-sm font-semibold text-muted-foreground mb-2">Four Payments</p>
+                <p className="text-4xl font-bold text-foreground mb-4">$850</p>
+                <p className="text-sm text-muted-foreground mb-6">Spread over 4 months</p>
+                <Button
+                  className="w-full"
+                  variant="outline"
+                  onClick={() => {
+                    trackConversion('Launch Kit Purchase Clicked', {
+                      location: 'next_steps_section',
+                      price: 3400,
+                      plan: 'four_payments'
+                    });
+                    window.location.href = "https://buy.stripe.com/7sYbJ126Z9QH0bo9ZqaMU0I";
+                  }}
+                >
+                  Get Started
+                </Button>
               </div>
             </Card>
           </div>
 
-          <div className="mb-8">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
-              onClick={() => {
-                trackConversion('Launch Kit Purchase Clicked', {
-                  location: 'next_steps_section',
-                  price: 2950,
-                  product: 'launch_kit'
-                });
-                trackClick('Get Started - Launch Kit', {
-                  destination: 'pricing_section'
-                });
-                document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Choose Your Plan
-            </Button>
-          </div>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Try the program for two weeks. If it's not what you expected, we'll refund you in full. No forms, no fuss, and no hard feelings.
+          </p>
 
           <p className="text-sm text-muted-foreground">
             P.S. As soon as you join, we'll send you The Profile Optimizer so you can start generating leads before our first session.
           </p>
         </div>
       </section>
-
-      <SalesFooter
-        headline="Ready to Build Your Independent Business?"
-        subheadline="Join the December cohort and prove your offer works by hitting $10K/month"
-        primaryCTA={{
-          text: "Get Launch Kit Now",
-          url: "#get-started",
-          price: "Starting at $850/mo"
-        }}
-        urgency={{
-          text: "Only 9 spots available - Applications close November 21st",
-          icon: "alert"
-        }}
-        socialProof="Proven system that brought in $54,500 in 93 days"
-        guarantee={{
-          text: "14-Day Money-Back Guarantee",
-          description: "Try the program for two weeks. If it's not what you expected, we'll refund you in full. No forms, no fuss, and no hard feelings."
-        }}
-        secondaryCTA={{
-          text: "Questions? Email todd@technical-leaders.com",
-          url: "mailto:todd@technical-leaders.com"
-        }}
-        stats={[
-          { number: "9", label: "Spots available" },
-          { number: "$10K", label: "Monthly goal" },
-          { number: "12+", label: "Weeks of support" }
-        ]}
-        trackingContext="Launch Kit Page"
-      />
     </div>
   );
 };
