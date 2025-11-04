@@ -51,6 +51,7 @@ import Fortune100PromptLibrary from "./pages/Fortune100PromptLibrary";
 import Fortune100AiWorkspace from "./pages/Fortune100AiWorkspace";
 import Library from "./pages/Library";
 import Playbook from "./pages/Playbook";
+import AIWorkflows from "./pages/AIWorkflows";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -115,6 +116,7 @@ const App = () => (
           <Route path="/10-before-10" element={<TenBeforeTen />} />
           <Route path="/full-playbook" element={<GetPlaybook />} />
           <Route path="/ai-workspace" element={<AiWorkspace />} />
+          <Route path="/ai-workflows" element={<AIWorkflows />} />
           <Route path="/ai-workflow" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/ai-agent-basics" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/advanced-claude" element={<AdvancedClaude />} />
