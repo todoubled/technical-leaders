@@ -174,14 +174,17 @@ const December = () => {
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
               <div className="text-5xl font-bold text-orange-500 mb-2">9</div>
               <p className="text-lg text-muted-foreground">Spots available</p>
+              <p className="text-xs text-muted-foreground/60 mt-1">In December</p>
             </Card>
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
               <div className="text-5xl font-bold text-orange-500 mb-2">$10K+</div>
-              <p className="text-lg text-muted-foreground">Monthly goal</p>
+              <p className="text-lg text-muted-foreground">Revenue goal</p>
+              <p className="text-xs text-muted-foreground/60 mt-1">To Prove Your Offer</p>
             </Card>
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="text-5xl font-bold text-orange-500 mb-2">12+</div>
+              <div className="text-5xl font-bold text-orange-500 mb-2">12</div>
               <p className="text-lg text-muted-foreground">Weeks of support</p>
+              <p className="text-xs text-muted-foreground/60 mt-1">To Launch & Iterate</p>
             </Card>
           </div>
         </div>
