@@ -24,12 +24,36 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="/how-it-works" className="text-foreground hover:text-primary transition-colors">Productize Yourself</a>
-              <a href="/ai" className="text-foreground hover:text-primary transition-colors relative inline-flex items-center">
-                AI
-                <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
-              </a>
-              <a href="/ai-workflows" className="text-foreground hover:text-primary transition-colors">AI Workflows</a>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors flex items-center gap-1 outline-none">
+                  How We Help
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-56">
+                  <DropdownMenuItem asChild>
+                    <a href="/how-it-works" className="cursor-pointer">
+                      Productize Yourself
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="/ai" className="cursor-pointer flex items-center justify-between">
+                      AI Training
+                      <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="/ai-workflows" className="cursor-pointer flex items-center justify-between">
+                      AI Workflows
+                      <span className="ml-2 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">Workshop</span>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="/library" className="cursor-pointer">
+                      The Fortune 100 AI Agent Prompt Library
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <a href="/articles" className="text-foreground hover:text-primary transition-colors">Articles</a>
             </div>
           </div>
@@ -64,8 +88,17 @@ const Navigation = () => {
               <div className="font-medium mb-2">How We Help</div>
               <div className="ml-4 space-y-1">
                 <a href="/how-it-works" className="block py-1 text-sm text-muted-foreground hover:text-primary">Productize Yourself</a>
-                <a href="/ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI</a>
-                <a href="/ai-workflows" className="block py-1 text-sm text-muted-foreground hover:text-primary">AI Workflows</a>
+                <a href="/ai" className="block py-1 text-sm text-muted-foreground hover:text-primary flex items-center">
+                  AI Training
+                  <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
+                </a>
+                <a href="/ai-workflows" className="block py-1 text-sm text-muted-foreground hover:text-primary flex items-center">
+                  AI Workflows
+                  <span className="ml-2 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">Workshop</span>
+                </a>
+                <a href="/library" className="block py-1 text-sm text-muted-foreground hover:text-primary">
+                  The Fortune 100 AI Agent Prompt Library
+                </a>
               </div>
             </div>
             <a href="/articles" className="block px-3 py-2 text-foreground hover:text-primary">Articles</a>

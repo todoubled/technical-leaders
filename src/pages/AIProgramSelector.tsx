@@ -3,12 +3,37 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Users, Brain, ArrowRight, Code2, Target, Zap, TrendingUp, Clock, Award, XCircle, Quote } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SEO from "@/components/SEO";
 import { trackClick } from "@/utils/posthog";
 
 const AIProgramSelector = () => {
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
+
+  // Load testimonial.to embed script
+  useEffect(() => {
+    // Load iframeResizer script
+    const script = document.createElement('script');
+    script.src = 'https://testimonial.to/js/iframeResizer.min.js';
+    script.async = true;
+    script.onload = () => {
+      // Initialize iframeResizer after script loads
+      if ((window as any).iFrameResize) {
+        (window as any).iFrameResize(
+          { log: false, checkOrigin: false },
+          '#testimonialto-948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e'
+        );
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   const handleRoleSelection = (role: string) => {
     setSelectedRole(role);
@@ -207,30 +232,8 @@ const AIProgramSelector = () => {
               What Our Students Say
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join hundreds of leaders who've transformed their AI capabilities
+              Join other leaders who've transformed their AI capabilities
             </p>
-          </div>
-
-          {/* Featured Headline Quotes */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="p-6 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border-blue-200 dark:border-blue-800">
-              <Quote className="w-8 h-8 text-blue-500 mb-4" />
-              <p className="text-lg font-semibold text-foreground mb-2">
-                "Exactly the hands-on training I needed to create my AI product. You've covered it all from A to Z!"
-              </p>
-            </Card>
-            <Card className="p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-200 dark:border-purple-800">
-              <Quote className="w-8 h-8 text-purple-500 mb-4" />
-              <p className="text-lg font-semibold text-foreground mb-2">
-                "Finally, a course that actually teaches you how to build an AI product, not just talk about it."
-              </p>
-            </Card>
-            <Card className="p-6 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 border-indigo-200 dark:border-indigo-800">
-              <Quote className="w-8 h-8 text-indigo-500 mb-4" />
-              <p className="text-lg font-semibold text-foreground mb-2">
-                "AI Trade School provides access to real tools at every step, from concept to prototype to final product and marketing plan."
-              </p>
-            </Card>
           </div>
 
           {/* Detailed Testimonials */}
@@ -292,17 +295,15 @@ const AIProgramSelector = () => {
             </Card>
           </div>
 
-          {/* Comparative Soundbites */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center text-white">
-            <Quote className="w-12 h-12 mx-auto mb-6 opacity-75" />
-            <blockquote className="text-2xl md:text-3xl font-bold mb-6">
-              "Oxford gave me background. MIT gave me theory. Tech Leaders gave me results."
-            </blockquote>
-            <div className="flex flex-wrap justify-center gap-8 text-sm opacity-90">
-              <p className="italic">"I went from academic overload to actionable progress in weeks."</p>
-              <p className="hidden md:block">•</p>
-              <p className="italic">"No fluff, no overwhelm, just clarity and execution."</p>
-            </div>
+          {/* Testimonial.to Embed */}
+          <div className="mt-12">
+            <iframe
+              id='testimonialto-948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e'
+              src="https://embed-v2.testimonial.to/carousel/all/tech-leaders-mastermind-program?id=948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e"
+              frameBorder="0"
+              scrolling="no"
+              width="100%"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -438,71 +439,6 @@ const AIProgramSelector = () => {
               </div>
             </Card>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Table Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Quick Comparison
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b-2 border-border">
-                  <th className="text-left p-4 font-semibold text-foreground"></th>
-                  <th className="text-center p-4 font-semibold text-blue-600">AI-First</th>
-                  <th className="text-center p-4 font-semibold text-purple-600">Ship AI</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr>
-                  <td className="p-4 font-medium text-foreground">Best For</td>
-                  <td className="p-4 text-center text-muted-foreground">Building strategic AI foundation quickly</td>
-                  <td className="p-4 text-center text-muted-foreground">Staying current with continuous learning</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-foreground">Format</td>
-                  <td className="p-4 text-center text-muted-foreground">3 live sessions + recorded trainings</td>
-                  <td className="p-4 text-center text-muted-foreground">Weekly training + community</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-foreground">Time Commitment</td>
-                  <td className="p-4 text-center text-muted-foreground">6 hours + optional self-study</td>
-                  <td className="p-4 text-center text-muted-foreground">1 hr/week</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-foreground">Learning Style</td>
-                  <td className="p-4 text-center text-muted-foreground">Deep dive, custom to your needs</td>
-                  <td className="p-4 text-center text-muted-foreground">Continuous, hands-on practice</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-foreground">Price</td>
-                  <td className="p-4 text-center text-muted-foreground">$2,500</td>
-                  <td className="p-4 text-center text-muted-foreground">$100/month</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-foreground">Community</td>
-                  <td className="p-4 text-center">
-                    <XCircle className="w-5 h-5 text-gray-400 mx-auto" />
-                  </td>
-                  <td className="p-4 text-center">
-                    <CheckCircle2 className="w-5 h-5 text-purple-500 mx-auto" />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium text-foreground">Office Hours</td>
-                  <td className="p-4 text-center">
-                    <XCircle className="w-5 h-5 text-gray-400 mx-auto" />
-                  </td>
-                  <td className="p-4 text-center">
-                    <CheckCircle2 className="w-5 h-5 text-purple-500 mx-auto" />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </section>
