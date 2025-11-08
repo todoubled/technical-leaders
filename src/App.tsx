@@ -86,7 +86,8 @@ const App = () => (
           <Route path="/calls" element={<Calls />} />
           <Route path="/call-confirmed" element={<CallConfirmed />} />
           <Route path="/ai-trade-school" element={<AITradeSchool />} />
-          <Route path="/launch" element={<Launch />} />
+          <Route path="/launch-old" element={<Launch />} />
+          <Route path="/launch" element={<Navigate to="/december" replace />} />
           <Route path="/december" element={<December />} />
           <Route path="/scale" element={<Scale />} />
           <Route path="/marketing" element={<Marketing />} />
