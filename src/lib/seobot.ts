@@ -24,6 +24,12 @@ const testSeobotAvailability = async () => {
 // Run test
 testSeobotAvailability();
 
+// Custom updated dates for specific articles (format: YYYY-MM-DD)
+const ARTICLE_UPDATED_DATES: Record<string, string> = {
+  '5-step-ethical-crisis-decision-making-guide': new Date().toISOString().split('T')[0],
+  // Add more articles with custom updated dates here as needed
+};
+
 // Custom SEO keywords mapping for specific articles
 const ARTICLE_KEYWORDS_MAP: Record<string, string[]> = {
   'smart-goals-for-tech-teams-examples-and-templates': [
@@ -40,6 +46,13 @@ const ARTICLE_KEYWORDS_MAP: Record<string, string[]> = {
     'case studies',
     'engagement strategies',
     'decision-making'
+  ],
+  '5-step-ethical-crisis-decision-making-guide': [
+    'ethical decision making',
+    'crisis management',
+    'leadership',
+    'stakeholder impact',
+    'ethical principles'
   ],
   // Add more article-specific keywords here as needed
 };
@@ -163,7 +176,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
     content,
     author,
     publishedAt,
-    updatedAt: safeStringExtract(seobotArticle.updatedAt) || undefined,
+    updatedAt: ARTICLE_UPDATED_DATES[slug] || safeStringExtract(seobotArticle.updatedAt) || undefined,
     category,
     tags,
     featuredImage: seobotArticle.featuredImage || seobotArticle.image || undefined,
@@ -493,6 +506,82 @@ export const articleUtils = {
     }
 
     return faqs;
+  },
+
+  // Extract HowTo steps from article content for HowTo schema
+  extractHowToSteps: (content: string, articleTitle: string): Array<{ name: string; text: string; url: string }> => {
+    const steps: Array<{ name: string; text: string; url: string }> = [];
+
+    try {
+      // Look for numbered steps or step-by-step patterns
+      // Pattern 1: Look for "Step 1:", "Step 2:", etc.
+      const stepPattern1 = /<h[23][^>]*>(Step\s+\d+[:\.]?\s*)(.*?)<\/h[23]>(.*?)(?=<h[23]|$)/gis;
+      let match;
+
+      while ((match = stepPattern1.exec(content)) !== null) {
+        const stepNumber = match[1];
+        const stepName = match[2].replace(/<[^>]*>/g, '').trim();
+        const stepContent = match[3];
+
+        // Extract text content
+        let stepText = stepContent
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/&quot;/g, '"')
+          .replace(/&amp;/g, '&')
+          .replace(/\s+/g, ' ')
+          .trim()
+          .substring(0, 300); // Limit to 300 chars
+
+        // Generate URL anchor
+        const stepId = (stepNumber + stepName).toLowerCase()
+          .replace(/[^a-z0-9\s]/g, '')
+          .replace(/\s+/g, '-');
+
+        if (stepName && stepText) {
+          steps.push({
+            name: stepName,
+            text: stepText,
+            url: `#${stepId}`
+          });
+        }
+      }
+
+      // Pattern 2: If no explicit "Step" headers, look for numbered H2/H3 headings
+      if (steps.length === 0) {
+        const numberedHeadingPattern = /<h[23][^>]*>(\d+[\.)]\s*)(.*?)<\/h[23]>(.*?)(?=<h[23]|$)/gis;
+
+        while ((match = numberedHeadingPattern.exec(content)) !== null) {
+          const stepNumber = match[1];
+          const stepName = match[2].replace(/<[^>]*>/g, '').trim();
+          const stepContent = match[3];
+
+          let stepText = stepContent
+            .replace(/<[^>]*>/g, ' ')
+            .replace(/&quot;/g, '"')
+            .replace(/&amp;/g, '&')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .substring(0, 300);
+
+          const stepId = stepName.toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/\s+/g, '-');
+
+          if (stepName && stepText) {
+            steps.push({
+              name: stepName,
+              text: stepText,
+              url: `#${stepId}`
+            });
+          }
+        }
+      }
+
+    } catch (error) {
+      console.error('Error extracting HowTo steps:', error);
+    }
+
+    return steps;
   },
 };
 

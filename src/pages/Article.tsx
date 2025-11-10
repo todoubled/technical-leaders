@@ -331,6 +331,37 @@ export default function ArticlePage() {
             });
           }
 
+          // Add HowTo schema for tutorial/guide articles
+          const tutorialKeywords = ['guide', 'step', 'how to', 'tutorial', 'framework'];
+          const isTutorial = tutorialKeywords.some(keyword =>
+            article.title.toLowerCase().includes(keyword) ||
+            article.slug.includes(keyword)
+          );
+
+          if (isTutorial) {
+            const howToSteps = articleUtils.extractHowToSteps(article.content, article.title);
+            if (howToSteps.length > 0) {
+              schemas.push({
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                "@id": `${articleUrl}#howto`,
+                "inLanguage": "en-US",
+                "name": article.title,
+                "description": article.description,
+                "image": article.featuredImage,
+                "totalTime": `PT${article.readingTime}M`,
+                "step": howToSteps.map((step, index) => ({
+                  "@type": "HowToStep",
+                  "@id": `${articleUrl}${step.url}`,
+                  "position": index + 1,
+                  "name": step.name,
+                  "text": step.text,
+                  "url": `${articleUrl}${step.url}`
+                }))
+              });
+            }
+          }
+
           // Add BreadcrumbList schema for navigation
           schemas.push({
             "@context": "https://schema.org",
