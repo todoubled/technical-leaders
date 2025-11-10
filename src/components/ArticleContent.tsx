@@ -4,10 +4,18 @@ import '../styles/article.css';
 
 interface ArticleContentProps {
   content: string;
+  articleTitle?: string;
+  articleKeywords?: string[];
+  articleCategory?: string;
 }
 
 // Component to render parsed article content with enhanced styling
-const ArticleContent: React.FC<ArticleContentProps> = ({ content }) => {
+const ArticleContent: React.FC<ArticleContentProps> = ({
+  content,
+  articleTitle = '',
+  articleKeywords = [],
+  articleCategory = ''
+}) => {
   // Helper function to generate ID from text
   const generateId = (text: string): string => {
     return text.toLowerCase()
@@ -26,12 +34,22 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ content }) => {
         return `<h1${attrs} id="${id}" class="text-4xl font-bold text-foreground mt-12 mb-6 first:mt-0 leading-tight scroll-mt-24">${text}</h1>`;
       })
       .replace(/<h2([^>]*)>(.*?)<\/h2>/g, (match, attrs, text) => {
-        const id = generateId(text);
-        return `<h2${attrs} id="${id}" class="text-3xl font-semibold text-foreground mt-10 mb-5 leading-tight border-b border-border pb-2 scroll-mt-24">${text}</h2>`;
+        const cleanId = generateId(text);
+        // Remove existing class and id attributes, keep other attrs like tabindex
+        const cleanAttrs = attrs
+          .replace(/\s*class="[^"]*"/g, '')
+          .replace(/\s*id="[^"]*"/g, '')
+          .trim();
+        return `<h2${cleanAttrs ? ' ' + cleanAttrs : ''} id="${cleanId}" class="text-3xl font-semibold text-foreground mt-10 mb-5 leading-tight border-b border-border pb-2 scroll-mt-24">${text}</h2>`;
       })
       .replace(/<h3([^>]*)>(.*?)<\/h3>/g, (match, attrs, text) => {
-        const id = generateId(text);
-        return `<h3${attrs} id="${id}" class="text-2xl font-semibold text-foreground mt-8 mb-4 leading-snug scroll-mt-24">${text}</h3>`;
+        const cleanId = generateId(text);
+        // Remove existing class and id attributes, keep other attrs like tabindex
+        const cleanAttrs = attrs
+          .replace(/\s*class="[^"]*"/g, '')
+          .replace(/\s*id="[^"]*"/g, '')
+          .trim();
+        return `<h3${cleanAttrs ? ' ' + cleanAttrs : ''} id="${cleanId}" class="text-2xl font-semibold text-foreground mt-8 mb-4 leading-snug scroll-mt-24">${text}</h3>`;
       })
       .replace(/<h4([^>]*)>(.*?)<\/h4>/g, (match, attrs, text) => {
         const id = generateId(text);
@@ -72,8 +90,49 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ content }) => {
       .replace(/<em([^>]*)>/g, '<em$1 class="italic text-foreground/90">')
       .replace(/<i([^>]*)>/g, '<i$1 class="italic text-foreground/90">')
       
-      // Images with responsive behavior
-      .replace(/<img([^>]*)>/g, '<img$1 class="rounded-lg shadow-md mb-6 max-w-full h-auto">')
+      // Images with responsive behavior, lazy loading, and optimization
+      .replace(/<img([^>]*)>/g, (match, attrs) => {
+        // Extract src if available
+        const srcMatch = attrs.match(/src="([^"]*)"/);
+        const altMatch = attrs.match(/alt="([^"]*)"/);
+
+        const src = srcMatch ? srcMatch[1] : '';
+        let alt = altMatch ? altMatch[1] : '';
+
+        // If no alt text, create SEO-optimized alt from article context and keywords
+        if (!alt && src) {
+          const filename = src.split('/').pop()?.split('.')[0] || '';
+          const baseDescription = filename.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+          // Build context-aware alt text with relevant keywords
+          const keywordPhrase = articleKeywords.length > 0
+            ? articleKeywords.slice(0, 3).join(', ')  // Use top 3 keywords
+            : articleCategory;
+
+          // Create descriptive alt text: "Base description related to keywords"
+          alt = keywordPhrase
+            ? `${baseDescription} - ${keywordPhrase}`
+            : baseDescription;
+        }
+
+        // Build optimized image tag
+        let optimizedAttrs = attrs;
+
+        // Remove existing alt if present, we'll add it back
+        optimizedAttrs = optimizedAttrs.replace(/\s*alt="[^"]*"/g, '');
+
+        // Add loading="lazy" if not present
+        if (!optimizedAttrs.includes('loading=')) {
+          optimizedAttrs += ' loading="lazy"';
+        }
+
+        // Add decoding="async" for better performance
+        if (!optimizedAttrs.includes('decoding=')) {
+          optimizedAttrs += ' decoding="async"';
+        }
+
+        return `<img${optimizedAttrs} alt="${alt}" class="rounded-lg shadow-md mb-6 max-w-full h-auto">`;
+      })
       
       // Tables with modern styling
       .replace(/<table([^>]*)>/g, '<table$1 class="w-full border-collapse border border-border rounded-lg overflow-hidden mb-6 shadow-sm">')
@@ -100,7 +159,7 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ content }) => {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-        
+
         /* Custom bullet points for lists */
         .prose-custom ul li::before {
           content: "•";

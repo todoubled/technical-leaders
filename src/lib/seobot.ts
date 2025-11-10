@@ -24,6 +24,26 @@ const testSeobotAvailability = async () => {
 // Run test
 testSeobotAvailability();
 
+// Custom SEO keywords mapping for specific articles
+const ARTICLE_KEYWORDS_MAP: Record<string, string[]> = {
+  'smart-goals-for-tech-teams-examples-and-templates': [
+    'SMART goals',
+    'tech teams',
+    'project management',
+    'software development',
+    'employee engagement',
+    'performance improvement'
+  ],
+  'stakeholder-impact-analysis-5-case-studies': [
+    'stakeholder analysis',
+    'project management',
+    'case studies',
+    'engagement strategies',
+    'decision-making'
+  ],
+  // Add more article-specific keywords here as needed
+};
+
 // SEObot Article interface (from their API)
 interface SeobotArticle {
   id: string;
@@ -143,6 +163,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
     content,
     author,
     publishedAt,
+    updatedAt: safeStringExtract(seobotArticle.updatedAt) || undefined,
     category,
     tags,
     featuredImage: seobotArticle.featuredImage || seobotArticle.image || undefined,
@@ -150,6 +171,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
     seo: {
       metaTitle: title,
       metaDescription: description,
+      keywords: ARTICLE_KEYWORDS_MAP[slug] || tags, // Use custom keywords if available, otherwise tags
     }
   };
 
@@ -401,6 +423,77 @@ export const articleUtils = {
       },
     };
   },
+
+  // Extract FAQs from article content for Schema.org
+  extractFAQs: (content: string): Array<{ question: string; answer: string }> => {
+    const faqs: Array<{ question: string; answer: string }> = [];
+
+    try {
+      // Find FAQ section (case insensitive)
+      const faqSectionMatch = content.match(/(<h[2-3][^>]*>.*?FAQ[s]?.*?<\/h[2-3]>)(.*?)(?=<h[12][^>]*>|$)/is);
+
+      if (!faqSectionMatch) {
+        return faqs;
+      }
+
+      const faqContent = faqSectionMatch[2];
+
+      // Match h3 questions followed by their content until the next h3 or end
+      const questionPattern = /<h3[^>]*>(.*?)<\/h3>(.*?)(?=<h3|$)/gis;
+      let match;
+
+      while ((match = questionPattern.exec(faqContent)) !== null) {
+        const question = match[1]
+          .replace(/<[^>]*>/g, '') // Remove HTML tags
+          .replace(/&quot;/g, '"')
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .trim();
+
+        let answerHTML = match[2];
+
+        // Convert lists to bullet points
+        answerHTML = answerHTML.replace(/<li[^>]*>(.*?)<\/li>/gis, '• $1\n');
+
+        // Remove ordered/unordered list tags but keep the content
+        answerHTML = answerHTML.replace(/<\/?[ou]l[^>]*>/gi, '');
+
+        // Handle table rows - convert to structured text
+        answerHTML = answerHTML.replace(/<tr[^>]*>(.*?)<\/tr>/gis, (_, row) => {
+          const cells = row.match(/<t[dh][^>]*>(.*?)<\/t[dh]>/gis) || [];
+          return cells.map(cell => cell.replace(/<[^>]*>/g, '').trim()).join(': ') + '. ';
+        });
+
+        // Remove remaining table tags
+        answerHTML = answerHTML.replace(/<\/?table[^>]*>/gi, '');
+        answerHTML = answerHTML.replace(/<\/?tbody[^>]*>/gi, '');
+        answerHTML = answerHTML.replace(/<\/?thead[^>]*>/gi, '');
+
+        // Convert paragraphs to proper spacing
+        answerHTML = answerHTML.replace(/<\/p>\s*<p[^>]*>/gi, ' ');
+
+        // Remove all remaining HTML tags
+        const answer = answerHTML
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/&quot;/g, '"')
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/\s+/g, ' ') // Normalize whitespace
+          .replace(/\.\s*\./g, '.') // Remove duplicate periods
+          .trim();
+
+        if (question && answer) {
+          faqs.push({ question, answer });
+        }
+      }
+    } catch (error) {
+      console.error('Error extracting FAQs:', error);
+    }
+
+    return faqs;
+  },
 };
 
 // Mock data for development (remove when SEObot is configured)
@@ -415,6 +508,7 @@ export const mockSeobotData = {
       markdown: '# Scaling Engineering Teams\n\nPractical insights on building and scaling high-performing engineering teams from seed to series C.',
       author: { name: 'Todd Kerpelman', role: 'CTO Coach', avatar: 'TK' },
       publishedAt: '2024-01-15T00:00:00Z',
+      updatedAt: '2024-01-16T00:00:00Z',
       category: 'Leadership',
       tags: ['Team Building', 'Scaling', 'Management'],
       featuredImage: '/placeholder.svg',
@@ -428,6 +522,7 @@ export const mockSeobotData = {
       markdown: '# AI Tools for Technical Leaders\n\nA comprehensive guide to AI tools that can 10x your productivity as a technical leader.',
       author: { name: 'Sara Mazer', role: 'Field CTO', avatar: 'SM' },
       publishedAt: '2024-01-10T00:00:00Z',
+      updatedAt: '2024-01-11T00:00:00Z',
       category: 'AI & Tools',
       tags: ['AI', 'Productivity', 'Tools'],
       featuredImage: '/placeholder.svg',
@@ -441,6 +536,7 @@ export const mockSeobotData = {
       markdown: '# Negotiating Tech Leadership Compensation\n\nHow to negotiate your worth as a senior technical leader, from base salary to equity packages.',
       author: { name: 'Miguel Suárez', role: 'Technical Director', avatar: 'MS' },
       publishedAt: '2024-01-05T00:00:00Z',
+      updatedAt: '2024-01-06T00:00:00Z',
       category: 'Career Growth',
       tags: ['Compensation', 'Negotiation', 'Career'],
       featuredImage: '/placeholder.svg',

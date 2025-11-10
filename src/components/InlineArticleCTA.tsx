@@ -73,8 +73,7 @@ export default function InlineArticleCTA({
             {secondaryCTA && (
               <Button
                 size="lg"
-                variant="secondary"
-                className="border-2 border-primary text-primary hover:bg-primary/10"
+                className="bg-slate-900 text-white hover:bg-slate-800 border-2 border-slate-900 hover:border-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 dark:border-slate-100 dark:hover:border-slate-200 transition-colors"
                 onClick={() => handleCTAClick(secondaryCTA.label, secondaryCTA.url)}
               >
                 {secondaryCTA.text}

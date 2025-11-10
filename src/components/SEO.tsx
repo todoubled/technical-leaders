@@ -94,10 +94,18 @@ const SEO = ({
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       
-      {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(Array.isArray(combinedStructuredData) ? combinedStructuredData : [combinedStructuredData])}
-      </script>
+      {/* Structured Data - Separate script blocks for each schema */}
+      {Array.isArray(combinedStructuredData) ? (
+        combinedStructuredData.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))
+      ) : (
+        <script type="application/ld+json">
+          {JSON.stringify(combinedStructuredData)}
+        </script>
+      )}
     </Helmet>
   );
 };

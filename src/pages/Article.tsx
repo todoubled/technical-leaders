@@ -9,7 +9,7 @@ import { Separator } from '../components/ui/separator';
 import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Link as LinkIcon } from 'lucide-react';
 import { Article } from '../types/article';
 import { useToast } from '../components/ui/use-toast';
-import { seobotClient } from '../lib/seobot';
+import { seobotClient, articleUtils } from '../lib/seobot';
 import SEO from '../components/SEO';
 import ArticleContent from '../components/ArticleContent';
 import TableOfContents from '../components/TableOfContents';
@@ -269,42 +269,122 @@ export default function ArticlePage() {
         section={article?.category}
         tags={article?.tags || []}
         image={article?.featuredImage}
-        structuredData={article ? {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": article.title,
-          "description": article.description,
-          "image": article.featuredImage,
-          "datePublished": article.publishedAt,
-          "dateModified": article.updatedAt || article.publishedAt,
-          "author": {
-            "@type": "Person",
-            "name": article.author.name,
-            "jobTitle": article.author.role
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Technical Leaders",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://technical-leaders.com/favicon.webp"
-            }
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": `https://technical-leaders.com/post/${article.slug}`
+        structuredData={article ? (() => {
+          const schemas = [];
+          const articleUrl = `https://technical-leaders.com/post/${article.slug}`;
+
+          // BlogPosting schema
+          schemas.push({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "@id": `${articleUrl}#article`,
+            "headline": article.title,
+            "description": article.description,
+            "image": article.featuredImage,
+            "datePublished": article.publishedAt,
+            "dateModified": article.updatedAt || article.publishedAt,
+            "author": {
+              "@type": "Person",
+              "name": article.author.name,
+              "jobTitle": article.author.role,
+              ...(article.author.profile && { "url": article.author.profile })
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Technical Leaders",
+              "url": "https://technical-leaders.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://technical-leaders.com/favicon.webp"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": articleUrl
+            },
+            "url": articleUrl,
+            "inLanguage": "en-US",
+            "keywords": article.tags.join(', '),
+            "articleSection": article.category,
+            "wordCount": article.content.replace(/<[^>]*>/g, '').trim().split(/\s+/).length,
+            "timeRequired": `PT${article.readingTime}M`
+          });
+
+          // Extract and add FAQ schema if FAQs exist
+          const faqs = articleUtils.extractFAQs(article.content);
+          if (faqs.length > 0) {
+            schemas.push({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "@id": `${articleUrl}#faq`,
+              "inLanguage": "en-US",
+              "mainEntity": faqs.map((faq, index) => ({
+                "@type": "Question",
+                "@id": `${articleUrl}#faq-question-${index + 1}`,
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "@id": `${articleUrl}#faq-answer-${index + 1}`,
+                  "text": faq.answer
+                }
+              }))
+            });
           }
-        } : undefined}
+
+          // Add BreadcrumbList schema for navigation
+          schemas.push({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "@id": `${articleUrl}#breadcrumb`,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://technical-leaders.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://technical-leaders.com/articles"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": article.category,
+                "item": `https://technical-leaders.com/articles?category=${article.category.toLowerCase().replace(/\s+/g, '-')}`
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": article.title,
+                "item": articleUrl
+              }
+            ]
+          });
+
+          return schemas;
+        })() : undefined}
       />
       <Navigation />
 
       {/* Article Header */}
       <article className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-4" aria-label="Breadcrumb">
+            <a href="/" className="hover:text-foreground transition-colors">Home</a>
+            <span>/</span>
+            <a href="/articles" className="hover:text-foreground transition-colors">Blog</a>
+            <span>/</span>
+            <span className="text-foreground font-medium">{article?.category}</span>
+          </nav>
+
           {/* Back button */}
           <Button
             variant="ghost"
-            className="mb-8"
+            className="mb-4"
             onClick={() => navigate('/articles')}
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -313,12 +393,18 @@ export default function ArticlePage() {
 
           {/* Article meta */}
           <div className="max-w-4xl mb-8">
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center gap-4 mb-4 flex-wrap">
               <Badge>{article.category}</Badge>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" />
-                <span>{formatDate(article.publishedAt)}</span>
+                <span>Published {formatDate(article.publishedAt)}</span>
               </div>
+              {article.updatedAt && article.updatedAt !== article.publishedAt && (
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  <span>Updated {formatDate(article.updatedAt)}</span>
+                </div>
+              )}
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4" />
                 <span>{article.readingTime} min read</span>
@@ -423,7 +509,11 @@ export default function ArticlePage() {
             <div className="aspect-video relative overflow-hidden rounded-lg mb-12 bg-secondary max-w-4xl">
               <img
                 src={article.featuredImage}
-                alt={article.title}
+                alt={`Featured image for article: ${article.title}`}
+                width="1200"
+                height="675"
+                loading="eager"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -433,7 +523,12 @@ export default function ArticlePage() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Main content */}
             <div className="lg:col-span-3">
-              <ArticleContent content={article.content} />
+              <ArticleContent
+                content={article.content}
+                articleTitle={article.title}
+                articleKeywords={article.seo?.keywords || article.tags}
+                articleCategory={article.category}
+              />
 
               {/* Inline CTA - appears after content, contextual to article category */}
               <InlineArticleCTA

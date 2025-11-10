@@ -143,7 +143,7 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Heading anchors */
+/* Heading anchors and display override */
 .prose-custom h1,
 .prose-custom h2,
 .prose-custom h3,
@@ -152,6 +152,15 @@
 .prose-custom h6 {
   position: relative;
   scroll-margin-top: 6rem;
+  /* Force block display to override SEObot inline styles */
+  display: block !important;
+}
+
+/* Hide SEObot internal tracking elements */
+.prose-custom .sb-banner,
+.prose-custom [id^="sbb-itb"] {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .prose-custom h1:hover::after,
