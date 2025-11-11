@@ -24,6 +24,12 @@ const testSeobotAvailability = async () => {
 // Run test
 testSeobotAvailability();
 
+// Custom published dates for specific articles (format: YYYY-MM-DD)
+const ARTICLE_PUBLISHED_DATES: Record<string, string> = {
+  '5-step-ethical-crisis-decision-making-guide': '2025-03-01',
+  // Add more articles with custom published dates here as needed
+};
+
 // Custom updated dates for specific articles (format: YYYY-MM-DD)
 const ARTICLE_UPDATED_DATES: Record<string, string> = {
   '5-step-ethical-crisis-decision-making-guide': new Date().toISOString().split('T')[0],
@@ -146,7 +152,15 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
   const title = safeStringExtract(seobotArticle.headline || seobotArticle.title) || 'Untitled';
   const description = safeStringExtract(seobotArticle.metaDescription || seobotArticle.description || seobotArticle.excerpt) || '';
   const content = safeStringExtract(seobotArticle.html || seobotArticle.content || seobotArticle.markdown) || '';
-  const publishedAt = safeStringExtract(seobotArticle.publishedAt || seobotArticle.createdAt) || new Date().toISOString();
+
+  // Extract published date - check custom dates first, then API data
+  let publishedAt = ARTICLE_PUBLISHED_DATES[slug];
+  if (!publishedAt) {
+    publishedAt = safeStringExtract(seobotArticle.publishedAt);
+    if (!publishedAt || publishedAt === '' || publishedAt === 'null') {
+      publishedAt = safeStringExtract(seobotArticle.createdAt) || new Date().toISOString();
+    }
+  }
   const category = safeStringExtract(seobotArticle.category) || 'General';
 
   // Ensure tags is an array of strings
