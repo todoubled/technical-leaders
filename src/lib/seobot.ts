@@ -153,12 +153,14 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
   const description = safeStringExtract(seobotArticle.metaDescription || seobotArticle.description || seobotArticle.excerpt) || '';
   const content = safeStringExtract(seobotArticle.html || seobotArticle.content || seobotArticle.markdown) || '';
 
-  // Extract published date - check custom dates first, then API data
+  // Extract published date - use createdAt as primary source (matches SEObot dashboard)
+  // Check custom overrides first, then use createdAt, fall back to publishedAt
   let publishedAt = ARTICLE_PUBLISHED_DATES[slug];
   if (!publishedAt) {
-    publishedAt = safeStringExtract(seobotArticle.publishedAt);
+    // Use createdAt as primary since it matches the "Created (published)" field in SEObot dashboard
+    publishedAt = safeStringExtract(seobotArticle.createdAt);
     if (!publishedAt || publishedAt === '' || publishedAt === 'null') {
-      publishedAt = safeStringExtract(seobotArticle.createdAt) || new Date().toISOString();
+      publishedAt = safeStringExtract(seobotArticle.publishedAt) || new Date().toISOString();
     }
   }
   const category = safeStringExtract(seobotArticle.category) || 'General';
