@@ -27,6 +27,7 @@ testSeobotAvailability();
 // Custom updated dates for specific articles (format: YYYY-MM-DD)
 const ARTICLE_UPDATED_DATES: Record<string, string> = {
   '5-step-ethical-crisis-decision-making-guide': new Date().toISOString().split('T')[0],
+  'cq-assessment-tools-a-comparative-analysis': new Date().toISOString().split('T')[0],
   // Add more articles with custom updated dates here as needed
 };
 
@@ -53,6 +54,16 @@ const ARTICLE_KEYWORDS_MAP: Record<string, string[]> = {
     'leadership',
     'stakeholder impact',
     'ethical principles'
+  ],
+  'cq-assessment-tools-a-comparative-analysis': [
+    'Cultural Intelligence',
+    'CQ assessments',
+    'diversity',
+    'leadership',
+    'intercultural development',
+    'global competencies',
+    'workplace inclusion',
+    'team dynamics'
   ],
   // Add more article-specific keywords here as needed
 };
