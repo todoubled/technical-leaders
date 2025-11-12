@@ -15,6 +15,7 @@ export interface Article {
   category: string;
   tags: string[];
   featuredImage?: string;
+  featuredImageAlt?: string;
   readingTime?: number;
   seo?: {
     metaTitle?: string;

@@ -541,7 +541,7 @@ export default function ArticlePage() {
             <div className="aspect-video relative overflow-hidden rounded-lg mb-12 bg-secondary max-w-4xl">
               <img
                 src={article.featuredImage}
-                alt={`Featured image for article: ${article.title}`}
+                alt={article.featuredImageAlt || `Featured image for article: ${article.title}`}
                 width="1200"
                 height="675"
                 loading="eager"

@@ -74,6 +74,12 @@ const ARTICLE_KEYWORDS_MAP: Record<string, string[]> = {
   // Add more article-specific keywords here as needed
 };
 
+// Custom featured image alt text for specific articles
+const ARTICLE_IMAGE_ALT_TEXT: Record<string, string> = {
+  'interest-based-relational-approach-ultimate-guide-for-tech-leaders': 'Interest-Based Relational Approach, tech leaders, team collaboration, conflict resolution, shared interests, mutual respect',
+  // Add more article-specific image alt text here as needed
+};
+
 // SEObot Article interface (from their API)
 interface SeobotArticle {
   id: string;
@@ -207,6 +213,7 @@ const convertSeobotArticle = (seobotArticle: any): Article => {
     category,
     tags,
     featuredImage: seobotArticle.featuredImage || seobotArticle.image || undefined,
+    featuredImageAlt: ARTICLE_IMAGE_ALT_TEXT[slug] || undefined,
     readingTime: calculateReadingTime(content),
     seo: {
       metaTitle: title,
