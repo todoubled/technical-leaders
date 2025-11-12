@@ -1,5 +1,35 @@
 // SEO utility functions and constants
 
+// Convert date string to ISO 8601 format with timezone
+// Accepts dates in formats like "2025-03-01" or "2025-03-01T12:00:00Z"
+export const toISODateTime = (dateString: string | undefined): string => {
+  if (!dateString) {
+    return new Date().toISOString();
+  }
+
+  // If already in ISO format with timezone, return as is
+  if (dateString.includes('T') && (dateString.includes('Z') || dateString.includes('+') || dateString.match(/-\d{2}:\d{2}$/))) {
+    return dateString;
+  }
+
+  // If just a date (YYYY-MM-DD), add time as midnight UTC
+  if (dateString.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    return `${dateString}T00:00:00Z`;
+  }
+
+  // Try to parse and convert to ISO
+  try {
+    const date = new Date(dateString);
+    if (!isNaN(date.getTime())) {
+      return date.toISOString();
+    }
+  } catch (e) {
+    // Fall back to current date if parsing fails
+  }
+
+  return new Date().toISOString();
+};
+
 export const generateArticleStructuredData = (article: any) => {
   return {
     "@context": "https://schema.org",
@@ -24,8 +54,8 @@ export const generateArticleStructuredData = (article: any) => {
         "url": "https://technical-leaders.com/favicon.webp"
       }
     },
-    "datePublished": article.publishedAt,
-    "dateModified": article.updatedAt || article.publishedAt,
+    "datePublished": toISODateTime(article.publishedAt),
+    "dateModified": toISODateTime(article.updatedAt || article.publishedAt),
     "keywords": article.tags?.join(", ") || ""
   };
 };

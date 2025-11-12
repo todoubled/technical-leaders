@@ -18,6 +18,7 @@ import InlineArticleCTA from '../components/InlineArticleCTA';
 import StickySidebarCTA from '../components/StickySidebarCTA';
 import { useScrollTracking } from '../hooks/useScrollTracking';
 import { trackEvent } from '../utils/posthog';
+import { toISODateTime } from '../utils/seo-helpers';
 
 // Mock data - replace with SEObot API call
 const mockArticle: Article = {
@@ -281,8 +282,8 @@ export default function ArticlePage() {
             "headline": article.title,
             "description": article.description,
             "image": article.featuredImage,
-            "datePublished": article.publishedAt,
-            "dateModified": article.updatedAt || article.publishedAt,
+            "datePublished": toISODateTime(article.publishedAt),
+            "dateModified": toISODateTime(article.updatedAt || article.publishedAt),
             "author": {
               "@type": "Person",
               "name": article.author.name,
