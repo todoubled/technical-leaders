@@ -470,7 +470,7 @@ export const articleUtils = {
 
     try {
       // Find FAQ section (case insensitive)
-      const faqSectionMatch = content.match(/(<h[2-3][^>]*>.*?FAQ[s]?.*?<\/h[2-3]>)(.*?)(?=<h[12][^>]*>|$)/is);
+      const faqSectionMatch = content.match(/(<h[2-3][^>]*>.*?(?:FAQ[s]?|Frequently Asked Questions?).*?<\/h[2-3]>)(.*?)(?=<h[12][^>]*>|$)/is);
 
       if (!faqSectionMatch) {
         return faqs;
