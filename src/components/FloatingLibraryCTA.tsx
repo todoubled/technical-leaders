@@ -47,17 +47,17 @@ export default function FloatingLibraryCTA() {
           </div>
           <div className="flex-1">
             <h3 className="font-bold text-sm mb-1">
-              Fortune 100 AI Library
+              Build AI Workflows in Minutes
             </h3>
             <p className="text-xs text-white/90 mb-3">
-              Get access to proven AI prompts from Fortune 100 companies
+              Agentic prompts you can copy, paste & edit in 60 seconds
             </p>
             <Button
               onClick={handleClick}
               size="sm"
               className="w-full bg-white text-orange-600 hover:bg-gray-100 font-semibold"
             >
-              Get Free Access
+              Get Free Library
             </Button>
           </div>
         </div>
