@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import FloatingLibraryCTA from '../components/FloatingLibraryCTA';
 import { Card, CardContent, CardHeader } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
@@ -291,6 +292,7 @@ export default function Articles() {
         </div>
       </section>
 
+      <FloatingLibraryCTA />
       <Footer />
     </div>
   );

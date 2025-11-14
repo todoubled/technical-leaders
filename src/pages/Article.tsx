@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import FloatingLibraryCTA from '../components/FloatingLibraryCTA';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
@@ -727,6 +728,7 @@ export default function ArticlePage() {
         </div>
       </section>
 
+      <FloatingLibraryCTA />
       <Footer />
     </div>
   );

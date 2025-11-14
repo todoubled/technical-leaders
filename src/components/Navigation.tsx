@@ -24,6 +24,10 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
+              <a href="/ai-workflows" className="text-foreground hover:text-primary transition-colors flex items-center gap-2">
+                AI Workshop
+                <span className="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">FREE</span>
+              </a>
               <DropdownMenu>
                 <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors flex items-center gap-1 outline-none">
                   How We Help
@@ -36,20 +40,8 @@ const Navigation = () => {
                     </a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <a href="/ai" className="cursor-pointer flex items-center justify-between">
+                    <a href="/ai" className="cursor-pointer">
                       AI Training
-                      <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a href="/ai-workflows" className="cursor-pointer flex items-center justify-between">
-                      AI Workflows
-                      <span className="ml-2 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">Workshop</span>
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a href="/library" className="cursor-pointer">
-                      The Fortune 100 AI Agent Prompt Library
                     </a>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -61,12 +53,12 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               onClick={() => {
-                trackClick('Get the Consulting Playbook', { location: 'navigation' });
-                window.location.href = '/playbook';
+                trackClick('Get the Fortune 100 AI Library', { location: 'navigation' });
+                window.location.href = '/library';
               }}
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold"
             >
-              Get the Consulting Playbook
+              Get the Fortune 100 AI Library
             </Button>
           </div>
 
@@ -84,20 +76,16 @@ const Navigation = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/ai-workflows" className="block px-3 py-2 text-foreground hover:text-primary flex items-center">
+              AI Workshop
+              <span className="ml-2 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">FREE</span>
+            </a>
             <div className="px-3 py-2 text-foreground">
               <div className="font-medium mb-2">How We Help</div>
               <div className="ml-4 space-y-1">
                 <a href="/how-it-works" className="block py-1 text-sm text-muted-foreground hover:text-primary">Productize Yourself</a>
-                <a href="/ai" className="block py-1 text-sm text-muted-foreground hover:text-primary flex items-center">
+                <a href="/ai" className="block py-1 text-sm text-muted-foreground hover:text-primary">
                   AI Training
-                  <span className="ml-2 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span>
-                </a>
-                <a href="/ai-workflows" className="block py-1 text-sm text-muted-foreground hover:text-primary flex items-center">
-                  AI Workflows
-                  <span className="ml-2 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">Workshop</span>
-                </a>
-                <a href="/library" className="block py-1 text-sm text-muted-foreground hover:text-primary">
-                  The Fortune 100 AI Agent Prompt Library
                 </a>
               </div>
             </div>
@@ -105,12 +93,12 @@ const Navigation = () => {
             <div className="px-3 py-2">
               <Button
                 onClick={() => {
-                  trackClick('Get the Consulting Playbook', { location: 'mobile_navigation' });
-                  window.location.href = '/playbook';
+                  trackClick('Get the Fortune 100 AI Library', { location: 'mobile_navigation' });
+                  window.location.href = '/library';
                 }}
                 className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold"
               >
-                Get the Consulting Playbook
+                Get the Fortune 100 AI Library
               </Button>
             </div>
           </div>
