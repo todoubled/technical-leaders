@@ -488,7 +488,7 @@ const AIProgramSelector = () => {
                   location: 'faq_section',
                   cta_text: 'Book a Strategy Session'
                 });
-                window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
+                window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
               }}
             >
               Book a Strategy Session

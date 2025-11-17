@@ -201,10 +201,10 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Hero CTA', {
                     location: 'hero_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
+                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
                     cta_text: 'Book Strategy Session'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
+                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
                 }}
               >
                 Book Strategy Session
@@ -405,11 +405,11 @@ const AIForLeaders = () => {
                       onClick={() => {
                         trackClick('AI For Leaders - Organization Training', {
                           location: '3-session_program',
-                          destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
+                          destination: 'https://calendly.com/tech-leaders/ai-strategy',
                           cta_text: 'Book Discovery Call',
                           price: '$50000'
                         });
-                        window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
+                        window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
                       }}
                     >
                       Book Discovery Call
@@ -469,10 +469,10 @@ const AIForLeaders = () => {
                   onClick={() => {
                     trackClick('AI For Leaders - Workshop Strategy Session', {
                       location: '1-day_workshop',
-                      destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
+                      destination: 'https://calendly.com/tech-leaders/ai-strategy',
                       cta_text: 'Book Strategy Session'
                     });
-                    window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
+                    window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
                   }}
                 >
                   Book Strategy Session
@@ -769,10 +769,10 @@ const AIForLeaders = () => {
               onClick={() => {
                 trackClick('AI For Leaders - Resources CTA', {
                   location: 'resources_section',
-                  destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
+                  destination: 'https://calendly.com/tech-leaders/ai-strategy',
                   cta_text: 'Book Strategy Session'
                 });
-                window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
+                window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
               }}
             >
               Book Strategy Session
@@ -1115,10 +1115,10 @@ const AIForLeaders = () => {
               onClick={() => {
                 trackClick('AI For Leaders - Final CTA', {
                   location: 'final_cta_section',
-                  destination: 'https://calendly.com/tech-leaders/ai-strategy-session',
+                  destination: 'https://calendly.com/tech-leaders/ai-strategy',
                   cta_text: 'Book Strategy Session'
                 });
-                window.location.href = "https://calendly.com/tech-leaders/ai-strategy-session";
+                window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
               }}
             >
               Book Strategy Session
@@ -1139,7 +1139,7 @@ const AIForLeaders = () => {
         subheadline="100% confidential and no-obligation strategy call"
         primaryCTA={{
           text: "Book Strategy Session",
-          url: "https://calendly.com/tech-leaders/ai-strategy-session"
+          url: "https://calendly.com/tech-leaders/ai-strategy"
         }}
         socialProof="Trusted by executives at Netflix, Nike, GitLab, and more"
         guarantee={{
