@@ -39,9 +39,11 @@ const AIProgramSelector = () => {
 
   const handleRoleSelection = (role: string) => {
     setSelectedRole(role);
-    const targetSection = document.getElementById('programs');
+    // Map roles to specific program IDs
+    const targetId = role === 'leader' ? 'ship-ai-program' : 'ai-first-program';
+    const targetSection = document.getElementById(targetId);
     if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
@@ -79,9 +81,29 @@ const AIProgramSelector = () => {
               </span>
             </h1>
 
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
               Choose intensive training to build AI competency fast, or ongoing support to stay ahead of the curve. Both paths deliver Literacy, Leverage, and Adoption—without writing a single line of code.
             </p>
+
+            <div className="mb-12">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+                onClick={() => {
+                  trackClick('Hero - See How It Works', {
+                    location: 'ai_program_selector_hero',
+                    destination: '#ai-first-playbook'
+                  });
+                  const playbookSection = document.getElementById('ai-first-playbook');
+                  if (playbookSection) {
+                    playbookSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+              >
+                See How It Works
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
 
             {/* Quick Need Selector */}
             <div className="max-w-4xl mx-auto mb-12">
@@ -170,7 +192,7 @@ const AIProgramSelector = () => {
       </section>
 
       {/* Our Methodology Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+      <section id="ai-first-playbook" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -443,71 +465,8 @@ const AIProgramSelector = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8">
 
-            {/* AI Leadership Program */}
-            <Card className={`p-8 transition-all ${
-              selectedRole === 'builder' ? 'ring-2 ring-blue-500 shadow-2xl scale-105' : 'hover:shadow-xl'
-            }`}>
-              <div className="mb-6">
-                <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  CUSTOM TRAINING PROGRAMS
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-2">AI-First</h2>
-                <p className="text-lg text-muted-foreground mb-4">
-                  <b>Custom training programs for leaders and individual contributors in organizations</b> to get up to speed quickly and learn the AI frameworks to stay ahead
-                </p>
-              </div>
-
-              <div className="mb-8">
-                <h3 className="font-semibold text-foreground mb-4">Perfect if you need to:</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Build AI competency fast with intensive training</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Get a custom AI playbook for your role/organization</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Master prompt engineering for your specific use cases</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Drive AI adoption and organizational change</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">Build strategic AI literacy for decision-making</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <Button
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-8 py-6"
-                  onClick={() => {
-                    trackClick('AI Program Selector - AI-First', {
-                      location: 'program_comparison',
-                      destination: '/ai-for-leaders',
-                      cta_text: 'Learn More About AI-First',
-                      selected_role: selectedRole
-                    });
-                    window.location.href = "/ai-for-leaders";
-                  }}
-                >
-                  Learn More About AI-First
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <p className="text-center text-sm text-muted-foreground">
-                  Book a strategy session • 100% customized
-                </p>
-              </div>
-            </Card>
-
             {/* Ship AI Program */}
-            <Card className={`p-8 transition-all ${
+            <Card id="ship-ai-program" className={`p-8 transition-all ${
               selectedRole === 'leader' ? 'ring-2 ring-purple-500 shadow-2xl scale-105' : 'hover:shadow-xl'
             }`}>
               <div className="mb-6">
@@ -569,6 +528,69 @@ const AIProgramSelector = () => {
               </div>
             </Card>
 
+            {/* AI Leadership Program */}
+            <Card id="ai-first-program" className={`p-8 transition-all ${
+              selectedRole === 'builder' ? 'ring-2 ring-blue-500 shadow-2xl scale-105' : 'hover:shadow-xl'
+            }`}>
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                  CUSTOM TRAINING PROGRAMS
+                </div>
+                <h2 className="text-3xl font-bold text-foreground mb-2">AI-First</h2>
+                <p className="text-lg text-muted-foreground mb-4">
+                  <b>Custom training programs for leaders and individual contributors in organizations</b> to get up to speed quickly and learn the AI frameworks to stay ahead
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <h3 className="font-semibold text-foreground mb-4">Perfect if you need to:</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Build AI competency fast with intensive training</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Get a custom AI playbook for your role/organization</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Master prompt engineering for your specific use cases</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Drive AI adoption and organizational change</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Build strategic AI literacy for decision-making</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <Button
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-8 py-6"
+                  onClick={() => {
+                    trackClick('AI Program Selector - AI-First', {
+                      location: 'program_comparison',
+                      destination: '/ai-for-leaders',
+                      cta_text: 'Learn More About AI-First',
+                      selected_role: selectedRole
+                    });
+                    window.location.href = "/ai-for-leaders";
+                  }}
+                >
+                  Learn More About AI-First
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <p className="text-center text-sm text-muted-foreground">
+                  Book a strategy session • 100% customized
+                </p>
+              </div>
+            </Card>
+
           </div>
         </div>
       </section>
@@ -577,31 +599,44 @@ const AIProgramSelector = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Still Not Sure Which Program?
+            Frequently Asked Questions
           </h2>
           <div className="space-y-6">
             <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-3">Can I do both programs?</h3>
+              <h3 className="font-semibold text-foreground mb-3">Do I need coding experience?</h3>
               <p className="text-muted-foreground">
-                Absolutely! Many people start with AI-First to build their foundation quickly, then join Ship AI to maintain momentum and stay current. We offer a bundle discount - contact us for details.
+                No! Both programs are designed for non-technical professionals. The AI-1st Playbook focuses on Literacy, Leverage, and Leadership—not coding. You'll learn to use AI tools effectively, build workflows, and drive adoption without writing a single line of code.
               </p>
             </Card>
             <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-3">How do I choose between them?</h3>
+              <h3 className="font-semibold text-foreground mb-3">Which program should I choose?</h3>
               <p className="text-muted-foreground">
-                Choose AI-First if you need to build competency fast with a custom plan. Choose Ship AI if you want continuous learning and to stay ahead of the rapidly evolving AI landscape. Your role doesn't matter - it's about your timeline and learning style.
+                <strong>Choose Ship AI</strong> if you want ongoing support to stay current with the latest AI tools and workflows. Perfect for individuals who prefer continuous learning with weekly office hours and community access.<br/><br/>
+                <strong>Choose AI-First</strong> if you need intensive, customized training for your organization with a tailored AI playbook and strategic implementation plan. Ideal for teams and leaders driving organizational AI adoption.
               </p>
             </Card>
             <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-3">Can my team join together?</h3>
+              <h3 className="font-semibold text-foreground mb-3">What's included in both programs?</h3>
               <p className="text-muted-foreground">
-                Yes! We offer team discounts for Ship AI and custom enterprise programs for AI-First. Email todd@technical-leaders.com to discuss team enrollment.
+                Both programs are built on the AI-1st Playbook methodology covering Literacy (fundamentals and practical skills), Leverage (AI workspace, workflows, and prompts), and Leadership (organizational adoption and strategy). You'll get hands-on training with Claude, ChatGPT, Cursor, and other cutting-edge tools.
               </p>
             </Card>
             <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-3">What if I'm new to AI - where should I start?</h3>
+              <h3 className="font-semibold text-foreground mb-3">Can I try before committing?</h3>
               <p className="text-muted-foreground">
-                If you need to get up to speed quickly, AI-First gives you an intensive foundation. If you prefer learning gradually with ongoing support, Ship AI is perfect. Both work great for AI beginners - it's about how you like to learn.
+                Yes! Join our free workshop to see the AI workflows in action. You'll get a live demonstration, learn practical techniques, and have a chance to ask questions. For AI-First, you can also book a free strategy session to discuss your specific needs.
+              </p>
+            </Card>
+            <Card className="p-6">
+              <h3 className="font-semibold text-foreground mb-3">Can my team or organization participate together?</h3>
+              <p className="text-muted-foreground">
+                Absolutely! Ship AI offers team discounts for multiple enrollments. AI-First is specifically designed for organizations and can be fully customized for your team's needs, industry, and use cases. Contact todd@technical-leaders.com to discuss team pricing and custom solutions.
+              </p>
+            </Card>
+            <Card className="p-6">
+              <h3 className="font-semibold text-foreground mb-3">What if I want both programs?</h3>
+              <p className="text-muted-foreground">
+                Many professionals start with Ship AI for foundational training and ongoing support, while their organizations invest in AI-First for team-wide adoption. We offer bundle discounts when combining programs—contact us for details.
               </p>
             </Card>
           </div>
