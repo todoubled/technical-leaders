@@ -1,12 +1,15 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import ContentFooter from "@/components/footers/ContentFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Brain, Rocket, Target, TrendingUp, Users, MessageSquare, FileText, Lightbulb, BarChart3, Shield, Sparkles, ChevronRight, Zap } from "lucide-react";
+import { CheckCircle2, Brain, Rocket, Target, Users, Sparkles, ChevronRight, Copy, Check } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const AIWorkflows = () => {
+  const [copied, setCopied] = useState(false);
+
   const heroContent = {
     badge: "AI-First Thinking™",
     headline: "AI Workflows",
@@ -37,104 +40,6 @@ const AIWorkflows = () => {
     }
   ];
 
-  const enterpriseWorkflows = [
-    {
-      icon: TrendingUp,
-      title: "Sales Pipeline Intelligence",
-      challenge: "Sales teams spend 60% of time on admin, not selling",
-      solution: "AI auto-scores leads, drafts personalized outreach, and surfaces buying signals in real-time",
-      outcomes: [
-        "40% more time for high-value conversations",
-        "2x faster deal velocity",
-        "Consistent follow-up across 100% of opportunities"
-      ],
-      color: "from-blue-500/10 to-blue-600/10 border-blue-500/20"
-    },
-    {
-      icon: MessageSquare,
-      title: "Customer Support Automation",
-      challenge: "Support teams drowning in repetitive questions and ticket routing",
-      solution: "AI instantly categorizes tickets, suggests solutions from knowledge base, and drafts personalized responses",
-      outcomes: [
-        "70% of tier-1 issues resolved instantly",
-        "5-minute average response time",
-        "Support agents focus on complex, high-impact issues"
-      ],
-      color: "from-green-500/10 to-green-600/10 border-green-500/20"
-    },
-    {
-      icon: Lightbulb,
-      title: "Product Development Acceleration",
-      challenge: "Product teams lose weeks to research, documentation, and decision paralysis",
-      solution: "AI synthesizes customer feedback, competitive intel, and usage data into actionable insights",
-      outcomes: [
-        "Ship features 3x faster",
-        "Data-driven decisions in hours, not weeks",
-        "Clear roadmap aligned with customer needs"
-      ],
-      color: "from-purple-500/10 to-purple-600/10 border-purple-500/20"
-    },
-    {
-      icon: FileText,
-      title: "Marketing Content Engine",
-      challenge: "Marketing teams can't keep up with demand for fresh, relevant content",
-      solution: "AI generates first drafts, adapts messaging for different channels, and maintains brand consistency",
-      outcomes: [
-        "10x content output with same team",
-        "Consistent brand voice across all channels",
-        "A/B test 5x more variations"
-      ],
-      color: "from-orange-500/10 to-orange-600/10 border-orange-500/20"
-    },
-    {
-      icon: BarChart3,
-      title: "Executive Decision Intelligence",
-      challenge: "Leaders make strategic decisions with incomplete or outdated information",
-      solution: "AI monitors key metrics, identifies trends, and surfaces decision-critical insights proactively",
-      outcomes: [
-        "Real-time visibility into business health",
-        "Early warning on risks and opportunities",
-        "Faster, more confident strategic decisions"
-      ],
-      color: "from-red-500/10 to-red-600/10 border-red-500/20"
-    },
-    {
-      icon: Brain,
-      title: "Knowledge Management System",
-      challenge: "Critical expertise trapped in individual heads and scattered documents",
-      solution: "AI captures tribal knowledge, surfaces relevant context, and ensures nothing gets lost in handoffs",
-      outcomes: [
-        "New hires productive in days, not months",
-        "Zero knowledge loss when people transition",
-        "Instant access to institutional expertise"
-      ],
-      color: "from-indigo-500/10 to-indigo-600/10 border-indigo-500/20"
-    }
-  ];
-
-  const keyBenefits = [
-    {
-      icon: Zap,
-      title: "ROI in Weeks, Not Months",
-      description: "Start seeing measurable productivity gains within 30 days of implementation"
-    },
-    {
-      icon: Shield,
-      title: "Enterprise-Grade Security",
-      description: "All workflows designed with data privacy, compliance, and security best practices built in"
-    },
-    {
-      icon: Users,
-      title: "Team-Ready Playbooks",
-      description: "Step-by-step guides your team can follow without technical expertise"
-    },
-    {
-      icon: TrendingUp,
-      title: "Proven at Scale",
-      description: "Workflows tested with Fortune 500 companies and high-growth startups"
-    }
-  ];
-
   const zoomRegistrationUrl = "https://us06web.zoom.us/meeting/register/yvD8bVRcSem9wRQkjO0cpQ#/registration";
 
   const handleCTA = (ctaName: string, location: string) => {
@@ -143,6 +48,16 @@ const AIWorkflows = () => {
       location: location
     });
     window.open(zoomRegistrationUrl, '_blank');
+  };
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText('https://technical-leaders.com/ai-workflows');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
   };
 
   return (
@@ -208,8 +123,44 @@ const AIWorkflows = () => {
           </Button>
 
           <p className="text-sm font-semibold mt-4 text-muted-foreground">
-            FREE Workshop on Tuesdays at 9am PST / 12pm EST
+            FREE Workshop on Tuesdays at 11am CST
           </p>
+        </div>
+      </section>
+
+      {/* Share Section */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="mx-auto max-w-4xl">
+          <div className="bg-white dark:bg-gray-900 rounded-lg border border-primary/20 p-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-center sm:text-left">
+                <h3 className="text-lg font-semibold mb-1 text-background">Share this with a friend or colleague</h3>
+                <p className="text-sm text-muted-foreground">Help others discover AI-First Thinking</p>
+              </div>
+              <div className="flex items-center gap-2 w-full sm:w-auto">
+                <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg flex-1 sm:flex-none">
+                  <span className="text-sm font-mono text-muted-foreground">technical-leaders.com/ai-workflows</span>
+                </div>
+                <Button
+                  onClick={handleCopyLink}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  size="sm"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="h-4 w-4 mr-2" />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4 mr-2" />
+                      Copy Link
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -243,150 +194,13 @@ const AIWorkflows = () => {
         </div>
       </section>
 
-      {/* Enterprise Workflows Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Rocket className="h-4 w-4" />
-              Proven Workflows
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Enterprise-Grade AI Workflows
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real workflows delivering measurable results across every business function
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {enterpriseWorkflows.map((workflow, index) => (
-              <Card key={index} className={`p-6 bg-gradient-to-br ${workflow.color} hover:shadow-lg transition-all duration-300`}>
-                <div className="p-3 bg-background/80 rounded-lg w-fit mb-4">
-                  <workflow.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{workflow.title}</h3>
-
-                <div className="mb-4">
-                  <p className="text-sm font-medium text-muted-foreground mb-1">The Challenge:</p>
-                  <p className="text-sm italic">{workflow.challenge}</p>
-                </div>
-
-                <div className="mb-4">
-                  <p className="text-sm font-medium text-muted-foreground mb-1">The AI Workflow:</p>
-                  <p className="text-sm">{workflow.solution}</p>
-                </div>
-
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground mb-2">Measurable Outcomes:</p>
-                  <ul className="space-y-2">
-                    {workflow.outcomes.map((outcome, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm font-medium">{outcome}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Benefits Section */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Why AI-First Thinking Works
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Built for real businesses, not AI enthusiasts
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {keyBenefits.map((benefit, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-all duration-300">
-                <div className="p-4 bg-primary/10 rounded-lg w-fit mx-auto mb-4">
-                  <benefit.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground text-sm">{benefit.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How This Works Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              How This Works
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A proven framework for implementing AI workflows in your organization
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                step: "1",
-                title: "Identify Your Bottlenecks",
-                description: "We help you pinpoint where your team loses the most time, makes the most errors, or faces the biggest knowledge gaps",
-                icon: Target
-              },
-              {
-                step: "2",
-                title: "Design Your Ideal Workflow",
-                description: "Map out how work should flow if time, knowledge, and resources weren't constraints—then architect AI to fill those gaps",
-                icon: Lightbulb
-              },
-              {
-                step: "3",
-                title: "Implement with Team Playbooks",
-                description: "Roll out proven workflows with step-by-step guides that any team member can follow, no technical skills required",
-                icon: FileText
-              },
-              {
-                step: "4",
-                title: "Measure and Optimize",
-                description: "Track real business outcomes, gather feedback, and continuously improve workflows based on what's working",
-                icon: BarChart3
-              }
-            ].map((item, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
-                      {item.step}
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <item.icon className="h-6 w-6 text-primary" />
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
-                    </div>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <ContentFooter
         headline="Join the Free AI-First Thinking Workshop"
         description="Learn how to transform your organization with enterprise-grade AI workflows without getting technical."
         primaryCTA={{
           text: "Register for Free Workshop",
           url: zoomRegistrationUrl,
-          description: "Tuesday at 9am PST / 12pm EST"
+          description: "Tuesday at 11am CST"
         }}
         benefits={[
           "Enterprise-Grade Workflows",
