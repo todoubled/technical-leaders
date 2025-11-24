@@ -35,6 +35,8 @@ import HowToModelYourOffer from "./pages/HowToModelYourOffer";
 import FinanceForFounders from "./pages/FinanceForFounders";
 import FinanceForFoundersWorkshop from "./pages/FinanceForFoundersWorkshop";
 import FinanceWorkshopConfirmed from "./pages/FinanceWorkshopConfirmed";
+import BrandCharacterWorkshop from "./pages/BrandCharacterWorkshop";
+import BrandWorkshopConfirmed from "./pages/BrandWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
 import AIForLeaders from "./pages/AIForLeaders";
 import Benchmark from "./pages/Benchmark";
@@ -111,6 +113,8 @@ const App = () => (
           <Route path="/finance-for-founders" element={<FinanceForFounders />} />
           <Route path="/finance-for-founders-workshop" element={<FinanceForFoundersWorkshop />} />
           <Route path="/finance-workshop-confirmed" element={<FinanceWorkshopConfirmed />} />
+          <Route path="/brand-character-workshop" element={<BrandCharacterWorkshop />} />
+          <Route path="/brand-workshop-confirmed" element={<BrandWorkshopConfirmed />} />
           <Route path="/ai" element={<AIProgramSelector />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/ai-for-leaders" element={<AIForLeaders />} />
