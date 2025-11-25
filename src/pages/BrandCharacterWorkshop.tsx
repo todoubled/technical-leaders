@@ -20,8 +20,8 @@ const BrandCharacterWorkshop = () => {
     if (formContainer && !formContainer.querySelector('script')) {
       const script = document.createElement('script');
       script.async = true;
-      script.setAttribute('data-uid', '79d5ccd0fa');
-      script.src = 'https://techleaders.kit.com/79d5ccd0fa/index.js';
+      script.setAttribute('data-uid', 'd6c6cea067');
+      script.src = 'https://techleaders.kit.com/d6c6cea067/index.js';
       formContainer.appendChild(script);
 
       // Listen for ConvertKit form submissions to track in PostHog
