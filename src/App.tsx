@@ -55,6 +55,7 @@ import Library from "./pages/Library";
 import Playbook from "./pages/Playbook";
 import AIWorkflows from "./pages/AIWorkflows";
 import AIProgram from "./pages/AIProgram";
+import Home2025 from "./pages/Home2025";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -135,6 +136,8 @@ const App = () => (
           <Route path="/library" element={<Library />} />
           <Route path="/playbook" element={<Playbook />} />
           <Route path="/ai-program" element={<AIProgram />} />
+          <Route path="/2025" element={<Home2025 />} />
+          <Route path="/2026" element={<Navigate to="/" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
