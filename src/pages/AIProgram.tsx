@@ -147,13 +147,26 @@ const AIProgram = () => {
               <span>12 spots open this month</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
               Ship AI
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 mt-2">
+                In 6 Weeks.
+              </span>
             </h1>
 
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Here's what we're doing with this next Ship AI cohort.
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+              Here's what it's like in our hands-on AI program:
             </p>
+
+            <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.youtube.com/embed/LyY-glR6P_8"
+                title="Ship AI Program"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -161,9 +174,13 @@ const AIProgram = () => {
       {/* Goal Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-4xl mx-auto">
+
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-            The goal is simple:
+          Here's what we're doing with this next Ship AI cohort...
           </h2>
+          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mb-8">
+            The goal is simple:
+            </p>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
             Add 5-10 hours back into your week and help you ship your first AI-powered tool in six weeks.
           </p>
@@ -183,7 +200,7 @@ const AIProgram = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            How it works is simple:
+            How it works:
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
             Three phases to take you from overwhelmed to shipping AI tools
