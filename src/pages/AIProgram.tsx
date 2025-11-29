@@ -123,7 +123,7 @@ const AIProgram = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Ship AI - Build Your First AI Tool in 6 Weeks"
-        description="12 spots open. Add 5-10 hours back into your week and ship your first AI-powered tool in six weeks. No code. No overwhelm. Doors close December 9."
+        description="12 spots open. Add 5-10 hours back into your week and ship your first AI-powered tool in six weeks. No code. No overwhelm."
         keywords={['AI tools', 'AI productivity', 'AI for leaders', 'ship AI', 'AI adoption', 'business AI', 'AI automation', 'non-technical AI']}
         structuredData={combinedStructuredData}
       />
@@ -144,7 +144,7 @@ const AIProgram = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-700 dark:text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Zap className="w-4 h-4" />
-              <span>12 spots open this month. Doors close December 9.</span>
+              <span>12 spots open this month</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
