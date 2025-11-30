@@ -11,32 +11,32 @@ const AIWorkflows = () => {
   const [copied, setCopied] = useState(false);
 
   const heroContent = {
-    badge: "AI-First Thinking™",
+    badge: "Go Beyond ChatGPT",
     headline: "AI Workflows",
-    subheadline: "Transform how your organization works with proven AI workflows",
-    description: "Learn enterprise-grade AI workflows that deliver measurable results without getting technical"
+    subheadline: "Deliver in days, not months. Keep teams small. Ship more.",
+    description: "Learn the exact AI workflows we use with venture-backed teams to write less code by hand and deliver higher quality, closer to spec"
   };
 
   const aiFirstPrinciples = [
     {
       icon: Brain,
-      title: "Think AI-First",
-      description: "Start with the outcome you want, then identify where AI can accelerate or enhance the path to get there"
+      title: "Work on the Right Problem",
+      description: "95% of AI projects fail. We'll show you how to identify which workflows are actually worth automating using the Job to Be Done framework"
     },
     {
       icon: Rocket,
-      title: "Start with Workflows, Not Tools",
-      description: "Design your ideal process first, then layer in AI to eliminate bottlenecks and amplify human expertise"
+      title: "Good In, Good Out",
+      description: "If you can't ask a good question, you won't get good answers. Learn the prompting techniques that separate amateurs from pros"
     },
     {
       icon: Target,
-      title: "Measure What Matters",
-      description: "Focus on business outcomes—time saved, revenue generated, quality improved—not AI features"
+      title: "Define What 'Done' Looks Like",
+      description: "Set clear outcome metrics before you start. Know what success looks like so you can measure real ROI, not just AI hype"
     },
     {
       icon: Users,
-      title: "Human-AI Collaboration",
-      description: "AI handles repetitive tasks and analysis. Humans provide judgment, creativity, and strategic direction"
+      title: "AI Is Not Magic",
+      description: "It's not a silver bullet. But with the right workflows, you can build proof-of-concept MVPs in days instead of weeks"
     }
   ];
 
@@ -64,8 +64,8 @@ const AIWorkflows = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="AI Workflows Workshop | Technical Leaders"
-        description="Learn proven enterprise-grade AI workflows that deliver measurable results. Transform your organization with AI-First Thinking without getting technical."
-        keywords={["AI workflows", "enterprise AI", "AI-first thinking", "AI automation", "business AI strategy", "AI productivity"]}
+        description="Go beyond ChatGPT. Learn the AI workflows that let venture-backed teams build MVPs in days, not months. Free weekly workshop with live demos and Q&A."
+        keywords={["AI workflows", "AI agents", "Claude Code", "MVP development", "AI automation", "startup AI", "AI productivity"]}
       />
 
       <Navigation />
@@ -83,7 +83,7 @@ const AIWorkflows = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Brain className="h-4 w-4" />
+            <Rocket className="h-4 w-4" />
             {heroContent.badge}
           </div>
 
@@ -109,9 +109,21 @@ const AIWorkflows = () => {
             {heroContent.subheadline}
           </p>
 
-          <p className="text-lg mb-12 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             {heroContent.description}
           </p>
+
+          <div className="mb-8 max-w-2xl mx-auto">
+            <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden shadow-xl">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/JA_tWS1LJqs"
+                title="AI Workflows Workshop"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
 
           <Button
             size="lg"
@@ -134,8 +146,8 @@ const AIWorkflows = () => {
           <div className="bg-white dark:bg-gray-900 rounded-lg border border-primary/20 p-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
-                <h3 className="text-lg font-semibold mb-1 text-background">Share this with a friend or colleague</h3>
-                <p className="text-sm text-muted-foreground">Help others discover AI-First Thinking</p>
+                <h3 className="text-lg font-semibold mb-1 text-background">Know someone stuck on ChatGPT?</h3>
+                <p className="text-sm text-muted-foreground">Share this workshop with them</p>
               </div>
               <div className="flex items-center gap-2 w-full sm:w-auto">
                 <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg flex-1 sm:flex-none">
@@ -170,13 +182,13 @@ const AIWorkflows = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="h-4 w-4" />
-              A New Way of Working
+              From a Post-Exit Technical Founder
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              What is AI-First Thinking?
+              The Principles That Actually Work
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              It's not about using AI tools. It's about redesigning how work gets done—with AI as a core collaborator, not an add-on.
+              ChatGPT is just scratching the surface. Learn how agents and sub-agents are changing the game—and how to use them without writing code.
             </p>
           </div>
 
@@ -195,20 +207,20 @@ const AIWorkflows = () => {
       </section>
 
       <ContentFooter
-        headline="Join the Free AI-First Thinking Workshop"
-        description="Learn how to transform your organization with enterprise-grade AI workflows without getting technical."
+        headline="Join the Free AI Workflows Workshop"
+        description="No stupid questions. Odds are someone else is wondering the same thing. Come learn the workflows that let small teams ship like big ones."
         primaryCTA={{
-          text: "Register for Free Workshop",
+          text: "Save My Spot",
           url: zoomRegistrationUrl,
-          description: "Tuesday at 11am CST"
+          description: "FREE on Tuesdays at 11am CST"
         }}
         benefits={[
-          "Enterprise-Grade Workflows",
-          "Real-World Case Studies",
-          "Team Implementation Strategies",
-          "Q&A with Industry Experts"
+          "Live demos of real AI workflows",
+          "Deliver in days, not months",
+          "Interactive Q&A—ask anything",
+          "Works even if you don't code"
         ]}
-        socialProof="Join leaders and senior ICs learning AI-First Thinking"
+        socialProof="Join leaders from venture-backed teams learning to ship faster with AI"
         trackingContext="AI Workflows"
       />
     </div>

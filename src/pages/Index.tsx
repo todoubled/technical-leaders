@@ -136,17 +136,17 @@ const Index = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
               <Sparkles className="w-4 h-4" />
-              <span>GET PROMOTED OR PROMOTE YOURSELF</span>
+              <span>TRAINING, COACHING, & MASTERMIND PROGRAMS</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight animate-fade-in">
-              Master AI.
+              Be AI-First.
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mt-2">
-                Diversify Income.
+                Diversify Your Income.
               </span>
               <span className="block text-foreground/90 mt-2">
-                Get Ahead For The Future.
+                Stay Ahead of the Curve.
               </span>
             </h1>
 

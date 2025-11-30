@@ -53,12 +53,12 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               onClick={() => {
-                trackClick('Get the Fortune 100 AI Library', { location: 'navigation' });
+                trackClick('Get the AI Skills Library', { location: 'navigation' });
                 window.location.href = '/library';
               }}
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold"
             >
-              Get the Fortune 100 AI Library
+              Get the AI Skills Library
             </Button>
           </div>
 
@@ -93,12 +93,12 @@ const Navigation = () => {
             <div className="px-3 py-2">
               <Button
                 onClick={() => {
-                  trackClick('Get the Fortune 100 AI Library', { location: 'mobile_navigation' });
+                  trackClick('Get the AI Skills Library', { location: 'mobile_navigation' });
                   window.location.href = '/library';
                 }}
                 className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold"
               >
-                Get the Fortune 100 AI Library
+                Get the AI Skills Library
               </Button>
             </div>
           </div>
