@@ -512,11 +512,11 @@ const AIProgramSelector = () => {
                   onClick={() => {
                     trackClick('AI Program Selector - Ship AI', {
                       location: 'program_comparison',
-                      destination: '/ship-ai-training-program',
+                      destination: '/ai-program',
                       cta_text: 'Learn More',
                       selected_role: selectedRole
                     });
-                    window.location.href = "/ship-ai-training-program";
+                    window.location.href = "/ai-program";
                   }}
                 >
                   Learn More
