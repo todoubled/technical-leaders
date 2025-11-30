@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Zap, Target, Users, Shield, BookOpen, Wrench, Calendar, MessageCircle, Rocket, FileText, Lightbulb, ClipboardCheck, UserCheck, Settings, LayoutTemplate, Repeat, HeartHandshake, Library } from "lucide-react";
-import { useEffect } from "react";
+import { CheckCircle2, Zap, Target, Users, Shield, BookOpen, Wrench, Calendar, MessageCircle, Rocket, FileText, Lightbulb, ClipboardCheck, UserCheck, Settings, LayoutTemplate, Repeat, HeartHandshake, Library, Brain, XCircle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import SEO from "@/components/SEO";
 import { trackConversion } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
@@ -11,6 +12,7 @@ import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils
 const AIFirstProgram = () => {
   // Track scroll depth for engagement
   useTrackScrollDepth('AI First Program Page');
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   useEffect(() => {
     // Page view tracking is handled centrally in App.tsx
@@ -162,12 +164,16 @@ const AIFirstProgram = () => {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              AI-First
+              AI-First Training for Teams
             </h1>
 
-            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              We're holding dates for two company cohorts this month. Here's what we're doing with the next AI-First cohort.
+            <p className="text-2xl sm:text-3xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
+              We're holding dates for 2 company cohorts this month.
             </p>
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+              Here's what it's like in our hands-on AI program:
+            </p>
+
 
             <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
               <iframe
@@ -191,15 +197,15 @@ const AIFirstProgram = () => {
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mb-8 leading-relaxed">
             Upskill your entire team to AI-proficiency within 6 weeks so they produce AI-assisted work twice as fast within 60 days.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            The model is straightforward.
-          </p>
         </div>
       </section>
 
       {/* How It Works - Phases */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
+            The model is straightforward:
+          </h2>
           <div className="space-y-8">
             {phases.map((phase, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all">
@@ -249,6 +255,134 @@ const AIFirstProgram = () => {
         </div>
       </section>
 
+      {/* Our Curriculum & Support Section */}
+      <section id="ai-first-playbook" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <Brain className="w-4 h-4" />
+              <span>The AI-1ST PLAYBOOK</span>
+            </div>
+            <h2 className="text-4xl font-bold text-background mb-4">
+              Our Curriculum & Support
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The AI-1st™ Playbook helps you avoid the common pitfalls of AI adoption and transform into an AI-First individual and organization
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-8">
+              <img
+                src="/ai-first-playbook.png"
+                alt="The AI-1st Playbook - A framework focusing on Literacy, Leverage, and Leadership to avoid Fear, Uncertainty, Doubt, Hype and Shiny Objects that lead to Failed AI Adoption"
+                className="w-full h-auto rounded-xl shadow-2xl cursor-pointer hover:shadow-3xl transition-shadow"
+                onClick={() => setIsImageModalOpen(true)}
+              />
+
+              <div>
+                <h3 className="text-2xl font-bold text-background mb-4">Comprehensive Support</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full text-xs font-semibold text-blue-700 dark:text-blue-300 whitespace-nowrap mt-0.5">
+                      Curriculum
+                    </div>
+                    <p className="text-sm text-muted-foreground">12 modules based on the AI-1st Playbook</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full text-xs font-semibold text-purple-700 dark:text-purple-300 whitespace-nowrap mt-0.5">
+                      Community
+                    </div>
+                    <p className="text-sm text-muted-foreground">24/7 community support</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-orange-100 dark:bg-orange-900/30 px-3 py-1 rounded-full text-xs font-semibold text-orange-700 dark:text-orange-300 whitespace-nowrap mt-0.5">
+                      Group Coaching
+                    </div>
+                    <p className="text-sm text-muted-foreground">Weekly group coaching calls to get you unblocked</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full text-xs font-semibold text-green-700 dark:text-green-300 whitespace-nowrap mt-0.5">
+                      Office Hours
+                    </div>
+                    <p className="text-sm text-muted-foreground">Weekly Office Hours to keep you up to speed</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-pink-100 dark:bg-pink-900/30 px-3 py-1 rounded-full text-xs font-semibold text-pink-700 dark:text-pink-300 whitespace-nowrap mt-0.5">
+                      Workshops & Hackathons
+                    </div>
+                    <p className="text-sm text-muted-foreground">Ad Hoc Workshops and Hackathons to implement and build</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold text-background mb-4">The Core Problems</h3>
+                <p className="text-muted-foreground mb-4">
+                  Most AI adoption efforts fail because individuals and organizations get caught up in:
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-background">Fear</p>
+                      <p className="text-sm text-muted-foreground">About job security and career paths</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-background">Uncertainty</p>
+                      <p className="text-sm text-muted-foreground">About how to become AI-First</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-background">Doubt</p>
+                      <p className="text-sm text-muted-foreground">About which tools are best for the job</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-background">Hype & Shiny Objects</p>
+                      <p className="text-sm text-muted-foreground">Distractions that don't make an impact</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-background mb-4">The Solution: Three Pillars</h3>
+                <div className="space-y-4">
+                  <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                    <h4 className="font-bold text-blue-700 dark:text-blue-300 mb-2">Literacy</h4>
+                    <p className="text-muted-foreground text-sm">
+                      Get up-to-speed and on the same page with AI Fundamentals™ and Practical AI™ skills to think AI-First and confidently speak a shared language
+                    </p>
+                  </div>
+                  <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                    <h4 className="font-bold text-purple-700 dark:text-purple-300 mb-2">Leverage</h4>
+                    <p className="text-muted-foreground text-sm">
+                      Hands-on skills to lead by example with The AI Workspace™, Agent Prompt Library™, and AI Workflow™ to get consistent outputs across every function
+                    </p>
+                  </div>
+                  <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                    <h4 className="font-bold text-orange-700 dark:text-orange-300 mb-2">Leadership</h4>
+                    <p className="text-muted-foreground text-sm">
+                      Become AI-1st with the help of The AI/HI Org Chart™, Feedback Loop™, and AI Strategy Builder™ to incrementally redefine roles and improve KPIs over time
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Bonus Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -281,7 +415,7 @@ const AIFirstProgram = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
         <div className="max-w-4xl mx-auto text-center">
           <Shield className="w-16 h-16 mx-auto mb-6 text-green-600 dark:text-green-400" />
-          <h2 className="text-3xl font-bold mb-4 text-foreground">
+          <h2 className="text-3xl font-bold mb-4 text-background">
             And you're covered by a simple guarantee:
           </h2>
           <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
@@ -376,6 +510,17 @@ const AIFirstProgram = () => {
           </Card>
         </div>
       </section>
+
+      {/* Image Modal */}
+      <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
+        <DialogContent className="max-w-7xl p-2 bg-white dark:bg-gray-900">
+          <img
+            src="/ai-first-playbook.png"
+            alt="The AI-1st Playbook - A framework focusing on Literacy, Leverage, and Leadership to avoid Fear, Uncertainty, Doubt, Hype and Shiny Objects that lead to Failed AI Adoption"
+            className="w-full h-auto"
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
