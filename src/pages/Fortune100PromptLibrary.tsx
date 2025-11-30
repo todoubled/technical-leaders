@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Clock, Target, MessageSquare, ArrowRight, Zap, Star, Users, BookOpen, Lightbulb, FileText, TrendingUp } from "lucide-react";
+import { CheckCircle2, Target, MessageSquare, ArrowRight, Zap, Star, Users, BookOpen, Lightbulb, FileText, TrendingUp } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackClick, trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
@@ -15,6 +15,21 @@ const Fortune100PromptLibrary = () => {
       has_strategy: true,
       has_cta: true
     });
+
+    // Load LinkedIn badge script
+    const script = document.createElement('script');
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://platform.linkedin.com/badges/js/profile.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, []);
 
   const chapters = [
@@ -120,74 +135,135 @@ const Fortune100PromptLibrary = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-32 pb-20">
+      <section className="relative overflow-hidden pt-32 pb-20">
+        {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/launch-bg.png"
-            alt="Fortune 100 Prompt Library background"
-            className="w-full h-full object-cover object-top opacity-40"
+            src="/ai-in-ar.png"
+            alt="Fortune 100 Prompt Library"
+            className="w-full h-full object-cover object-top opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>
         </div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold mb-6">
-            <BookOpen className="w-4 h-4" />
-            <span>The Fortune 100 Prompt Library™</span>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          {/* Top Section - Subheadline */}
+          <div className="text-center mb-12">
+            <p className="text-xl sm:text-2xl lg:text-3xl mb-2 text-white">
+              How to build AI workflows to go from Objective to Key Result in minutes
+            </p>
+            <p className="text-lg sm:text-xl text-white/80">
+              Without developer resources (even if you're non-technical)
+            </p>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
-            Get AI to Work for You
-            </span>
-          </h1>
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            {/* Left Column - Dramatic Title */}
+            <div className="lg:col-span-5 text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-white">
+                <span className="block text-white/80">The</span>
+                <span className="block">Fortune 100</span>
+                <span className="block">AI Skills</span>
+                <span className="block">Library<sup className="text-3xl sm:text-4xl">™</sup></span>
+              </h1>
 
-          <p className="text-2xl font-semibold mb-8 max-w-2xl mx-auto">
-            Learn in 30 minutes what takes others weeks or more to figure out
-          </p>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
+                Copy, Paste & Edit
+              </p>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-8">
+                Prompts in 60 seconds
+              </p>
 
-          <div className="bg-background/50 backdrop-blur border border-white/10 rounded-lg p-6 max-w-3xl mx-auto mb-8 shadow-xl">
-            <p className="text-lg font-bold mb-3">
-              What You'll Learn:
-            </p>
-            <div className="grid md:grid-cols-2 gap-3 text-left">
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-base">Spot good vs bad prompts instantly</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-base">The secret recipe for amazing results</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-base">Real examples you can steal</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-base">Practice exercises to build confidence</span>
+              {/* CTA Button */}
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+                onClick={() => {
+                  trackClick('Get Library - Fortune 100 Prompt Library', {
+                    location: 'hero_section'
+                  });
+                  window.open('https://docs.google.com/spreadsheets/u/1/d/1patjQDXhf6nuvOOPFEklYa1bQfoR4ihIk2gXW2PN_gU/edit?gid=0#gid=0', '_blank');
+                }}
+              >
+                Get Your Copy of the Library
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+
+            {/* Right Column - Hi, my name is section */}
+            <div className="lg:col-span-7 bg-background/50 backdrop-blur border border-white/10 rounded-lg p-6">
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="flex-1">
+                  <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                    Hi, my name is <span className="font-semibold text-white">Todd Larsen</span> - Co-founder of Tech Leaders.
+                  </p>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                    Tech Leaders helps non-technical leaders build real AI competency—not just talk about it.
+                  </p>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                    We've trained hundreds of professionals to:
+                  </p>
+                  <ul className="list-disc list-inside text-base text-muted-foreground space-y-2 mb-4 ml-4">
+                    <li>Get 5-10 hours back each week with AI workflows</li>
+                    <li>Ship their first AI-powered tool</li>
+                    <li>Lead AI adoption without the hype</li>
+                    <li>Stop chasing shiny objects and use what works</li>
+                  </ul>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    This library is a sample of the prompts and workflows we use in our 6-week Ship AI program.
+                  </p>
+                </div>
+                <div className="md:w-64 flex-shrink-0">
+                  <div
+                    className="badge-base LI-profile-badge"
+                    data-locale="en_US"
+                    data-size="medium"
+                    data-theme="light"
+                    data-type="VERTICAL"
+                    data-vanity="remotebranch"
+                    data-version="v1"
+                  >
+                    <a
+                      className="badge-base__link LI-simple-link"
+                      href="https://www.linkedin.com/in/remotebranch?trk=profile-badge"
+                    >
+                      Todd Larsen
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <p className="text-xl font-semibold text-foreground mb-6">
-            Want our full AI training program?
+      {/* Workshop CTA Section */}
+      <section className="bg-gradient-to-r from-orange-500/10 to-red-500/10 py-12 border-y border-orange-500/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-lg font-semibold text-orange-600 dark:text-orange-400 mb-2">
+            Want to learn how to use these prompts and workflows?
           </p>
-
-          <div className="flex justify-center gap-4">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-              onClick={() => {
-                trackClick('Learn More - Fortune 100 Prompt Library', {
-                  location: 'hero_section'
-                });
-                window.location.href = "/ai";
-              }}
-            >
-              Learn More Here
-            </Button>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            Join Our Free AI Workflows Workshop
+          </h2>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            See these prompts in action and learn how to build AI workflows that save you 5-10 hours per week.
+          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+            onClick={() => {
+              trackClick('Register for Workshop - Fortune 100 Library', {
+                location: 'below_hero_cta'
+              });
+              window.location.href = "/ai-workflows";
+            }}
+          >
+            Register for the Workshop
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
       </section>
 
@@ -196,10 +272,10 @@ const Fortune100PromptLibrary = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              The Fortune 100 Prompt Library™
+              The Fortune 100 AI Skills Library™
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From complete beginner to confident prompt engineer in just 30 minutes
+              Learn how to use these AI skills and prompts:
             </p>
           </div>
 

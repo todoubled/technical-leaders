@@ -78,7 +78,7 @@ const Library = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="The Fortune 100 AI Prompt Library™ - Build AI Workflows in Minutes"
+        title="The Fortune 100 AI Skills Library™ - Build AI Workflows in Minutes"
         description="Build AI workflows to go from Objective to Key Result in minutes—without developer resources. Agentic prompts and workflow designs. Copy, paste & edit in 60 seconds."
         keywords={['AI workflows', 'AI prompts', 'fortune 100 prompts', 'agentic prompts', 'AI productivity', 'workflow automation', 'no-code AI']}
       />
@@ -113,7 +113,7 @@ const Library = () => {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-12 leading-tight text-white">
               <span className="block text-white/80">The</span>
               <span className="block">Fortune 100</span>
-              <span className="block">AI Prompt</span>
+              <span className="block">AI Skills</span>
               <span className="block">Library<sup className="text-4xl sm:text-5xl">™</sup></span>
             </h1>
 

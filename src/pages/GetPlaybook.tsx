@@ -16,6 +16,21 @@ const GetPlaybook = () => {
       has_strategy: true,
       has_cta: true
     });
+
+    // Load LinkedIn badge script
+    const script = document.createElement('script');
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://platform.linkedin.com/badges/js/profile.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, []);
 
   const testimonials = [
@@ -112,11 +127,22 @@ const GetPlaybook = () => {
                 </p>
               </div>
               <div className="md:w-64 flex-shrink-0">
-                <img
-                  src="/li-todd.jpg"
-                  alt="Todd Larsen"
-                  className="w-full h-auto rounded-lg object-contain border-2 border-primary/20"
-                />
+                <div
+                  className="badge-base LI-profile-badge"
+                  data-locale="en_US"
+                  data-size="medium"
+                  data-theme="light"
+                  data-type="VERTICAL"
+                  data-vanity="remotebranch"
+                  data-version="v1"
+                >
+                  <a
+                    className="badge-base__link LI-simple-link"
+                    href="https://www.linkedin.com/in/remotebranch?trk=profile-badge"
+                  >
+                    Todd Larsen
+                  </a>
+                </div>
               </div>
             </div>
           </div>
