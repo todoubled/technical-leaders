@@ -5,69 +5,149 @@
 
     <url>
         <loc>https://technical-leaders.com/</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/articles</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/launch</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/december</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/scale</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/ai-trade-school</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/accredited</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/refer</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/privacy-policy</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call-confirmed</loc>
-        <lastmod>2025-11-26</lastmod>
+        <lastmod>2025-11-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/stakeholder-mapping-tools-comparison</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692bab38df12e5e3fe87da38-1764471552747.jpg</image:loc>
+            <image:title>Stakeholder Mapping Tools: Comparison 2025</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/user-story-mapping-workshop-checklist</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692ba3c2df12e5e3fe87d8bb-1764469443983.jpg</image:loc>
+            <image:title>Checklist for Running User Story Mapping Workshops</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/global-networks-gender-equity-initiatives</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692b8fe1df12e5e3fe87d2af-1764467543204.jpg</image:loc>
+            <image:title>Global Networks for Gender Equity Initiatives</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/ai-strategy-skill-gap-finder</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692b8eccdf12e5e3fe87d1b7-1764462432682.jpg</image:loc>
+            <image:title>AI Strategy Skill Gap Finder</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/tech-consulting-rate-calculator</loc>
+        <lastmod>2025-11-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692a698edf12e5e3fe87babc-1764387256939.jpg</image:loc>
+            <image:title>Tech Consulting Rate Calculator</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/mental-health-leadership-training</loc>
+        <lastmod>2025-11-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692a612fdf12e5e3fe87b918-1764387013175.jpg</image:loc>
+            <image:title>Why Mental Health Matters in Leadership Training</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/engineering-leadership-style-quiz</loc>
+        <lastmod>2025-11-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692a6075df12e5e3fe87b8ea-1764384934003.jpg</image:loc>
+            <image:title>Engineering Leadership Style Quiz</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/stakeholder-ethics-team-goals-balance</loc>
+        <lastmod>2025-11-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692a5273df12e5e3fe87b606-1764384565265.jpg</image:loc>
+            <image:title>Stakeholder Ethics vs. Team Goals: Finding Balance</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://technical-leaders.com/post/peer-skill-exchange-tech-guide</loc>
