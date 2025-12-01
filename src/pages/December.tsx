@@ -83,7 +83,6 @@ const December = () => {
 
   const quickFacts = [
     "9 seats available",
-    "December applications close November 21st",
     "Live group + 1:1 support",
     "2-week guarantee",
     "Flexible pay plans"
@@ -304,7 +303,7 @@ const December = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
             QuickFacts
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
             {quickFacts.map((fact, index) => (
               <Card key={index} className="p-4 text-center hover:shadow-lg transition-shadow">
                 <div className="flex items-center justify-center mb-2">
