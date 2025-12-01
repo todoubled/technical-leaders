@@ -5,69 +5,109 @@
 
     <url>
         <loc>https://technical-leaders.com/</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/articles</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/launch</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/december</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/scale</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/ai-trade-school</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/accredited</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/refer</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/privacy-policy</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call-confirmed</loc>
-        <lastmod>2025-11-30</lastmod>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/communicate-charisma-virtual-meetings</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692d2bf8df12e5e3fe88176a-1764571478290.jpg</image:loc>
+            <image:title>10 Ways to Communicate Charisma in Virtual Meetings</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/cross-cultural-communication-tips-engineers</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692d22a5df12e5e3fe881463-1764567951964.jpg</image:loc>
+            <image:title>Cross-Cultural Communication Tips for Engineers</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/technical-expertise-value-estimator</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692d21afdf12e5e3fe8813fb-1764565503320.jpg</image:loc>
+            <image:title>Technical Expertise Value Estimator</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/regulations-shaping-vr-ar-ethics</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692ce87fdf12e5e3fe87fc44-1764565232645.jpg</image:loc>
+            <image:title>Regulations Shaping VR/AR Ethics</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://technical-leaders.com/post/stakeholder-mapping-tools-comparison</loc>

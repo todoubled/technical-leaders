@@ -1,14 +1,15 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Target, MessageSquare, ArrowRight, Zap, Star, Users, BookOpen, Lightbulb, FileText, TrendingUp } from "lucide-react";
+import { CheckCircle2, ArrowRight, Zap, Download, Terminal, Copy, Sparkles } from "lucide-react";
+import { useState, useEffect } from "react";
 import SEO from "@/components/SEO";
 import { trackClick, trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
-import { useEffect } from "react";
 
 const Fortune100PromptLibrary = () => {
   useTrackScrollDepth('Fortune 100 Prompt Library Page');
+  const [activeInstallTab, setActiveInstallTab] = useState<'claude' | 'chatgpt' | 'gemini'>('claude');
 
   useEffect(() => {
     trackEvent('Fortune 100 Prompt Library Page View', {
@@ -31,99 +32,6 @@ const Fortune100PromptLibrary = () => {
       }
     };
   }, []);
-
-  const chapters = [
-    {
-      number: 1,
-      title: "What is Prompt Engineering?",
-      subtitle: "The Coffee Shop Analogy",
-      description: "Learn why prompt engineering is simply giving AI really clear, specific instructions",
-      details: "Discover how the right prompt can save you hours of work and turn AI from a toy into a powerful business tool. Just like ordering the perfect coffee, specificity gets you exactly what you want.",
-      icon: BookOpen,
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      number: 2,
-      title: "Anatomy of a Great Prompt",
-      subtitle: "Breaking Down Real Examples",
-      description: "Master the secret ingredients: Context, Task, Format, and Constraints",
-      details: "See real examples from our prompt library and learn what makes them tick. Understand the four essential ingredients that transform vague requests into powerful instructions.",
-      icon: Target,
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      number: 3,
-      title: "From Bad to Great",
-      subtitle: "Transforming Weak Prompts",
-      description: "Learn how to fix common mistakes and level up your prompts instantly",
-      details: "Practice improving prompts together with real before-and-after examples. Turn vague requests into specific, actionable instructions that get results.",
-      icon: TrendingUp,
-      color: "from-green-500 to-green-600"
-    },
-    {
-      number: 4,
-      title: "Tutorial Engineer Example",
-      subtitle: "Learning from Complex Prompts",
-      description: "Steal proven prompt structures you can use for any expert task",
-      details: "Break down a sophisticated prompt template that you can adapt for your own needs. See how structure and organization create professional results.",
-      icon: FileText,
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      number: 5,
-      title: "Anti-AI Writing Rules",
-      subtitle: "Making Content Sound Human",
-      description: "Make AI writing sound natural and conversational, not robotic",
-      details: "Learn the secret to avoiding those telltale AI phrases. Write content that sounds like a real person, not a corporate robot.",
-      icon: MessageSquare,
-      color: "from-pink-500 to-pink-600"
-    },
-    {
-      number: 6,
-      title: "Build Your Own Prompt",
-      subtitle: "Step-by-Step Workshop",
-      description: "Follow our proven 5-step process to create effective prompts for any task",
-      details: "Walk through a complete example from start to finish. By the end, you'll have a reusable template for creating powerful prompts.",
-      icon: Lightbulb,
-      color: "from-cyan-500 to-cyan-600"
-    },
-    {
-      number: 7,
-      title: "Practice Exercises",
-      subtitle: "Your Homework",
-      description: "Build confidence with hands-on exercises you can complete today",
-      details: "Four practical exercises to reinforce what you've learned. Practice role reversal, constraint challenges, format fixes, and building from scratch.",
-      icon: CheckCircle2,
-      color: "from-red-500 to-red-600"
-    },
-    {
-      number: 8,
-      title: "Advanced Tips and Tricks",
-      subtitle: "Power User Techniques",
-      description: "Master examples, iteration, placeholders, and reverse engineering",
-      details: "Level up with advanced techniques like the iteration technique, placeholder patterns, and reverse engineering. These pro tips will set you apart.",
-      icon: Star,
-      color: "from-yellow-500 to-yellow-600"
-    },
-    {
-      number: 9,
-      title: "Common Mistakes to Avoid",
-      subtitle: "What Not to Do",
-      description: "Learn the 5 biggest mistakes that sabotage your prompts",
-      details: "Avoid being too polite, information overload, missing context, vague lengths, and ambiguous terms. These quick fixes instantly improve your results.",
-      icon: Zap,
-      color: "from-indigo-500 to-indigo-600"
-    },
-    {
-      number: 10,
-      title: "Your Prompt Engineering Toolkit",
-      subtitle: "Ready-to-Use Templates",
-      description: "Get 4 battle-tested templates you can use immediately",
-      details: "Access proven templates for expert advisors, content creation, problem solving, and analysis. Just fill in the blanks and get professional results.",
-      icon: Users,
-      color: "from-emerald-500 to-emerald-600"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -184,10 +92,10 @@ const Fortune100PromptLibrary = () => {
                   trackClick('Get Library - Fortune 100 Prompt Library', {
                     location: 'hero_section'
                   });
-                  window.open('https://docs.google.com/spreadsheets/u/1/d/1patjQDXhf6nuvOOPFEklYa1bQfoR4ihIk2gXW2PN_gU/edit?gid=0#gid=0', '_blank');
+                  window.open('https://drive.google.com/drive/u/1/folders/1Qfutu_vNGqhh19UAZf9j08I5CPq3zp3b', '_blank');
                 }}
               >
-                Get Your Copy of the Library
+                Download the Skills Library
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
@@ -243,7 +151,7 @@ const Fortune100PromptLibrary = () => {
       <section className="bg-gradient-to-r from-orange-500/10 to-red-500/10 py-12 border-y border-orange-500/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg font-semibold text-orange-600 dark:text-orange-400 mb-2">
-            Want to learn how to use these prompts and workflows?
+            Want to learn how to use these prompts and skills in your own workflows?
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
             Join Our Free AI Workflows Workshop
@@ -267,161 +175,240 @@ const Fortune100PromptLibrary = () => {
         </div>
       </section>
 
-      {/* 10 Chapters */}
-      <section id="chapters" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              The Fortune 100 AI Skills Library™
+      {/* Installation Instructions Section */}
+      <section id="how-to-use" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <Download className="w-4 h-4" />
+              After You Download
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              How to Install Your AI Skills
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Learn how to use these AI skills and prompts:
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Choose your preferred AI tool and follow the simple steps below
             </p>
           </div>
 
-          <div className="space-y-12">
-            {chapters.map((chapter, index) => (
-              <div key={index} className="relative">
-                {/* Connecting line for non-last items */}
-                {index < chapters.length - 1 && (
-                  <div className="absolute left-1/2 top-full w-0.5 h-12 bg-gradient-to-b from-orange-300 to-transparent dark:from-orange-600 transform -translate-x-1/2 z-10"></div>
-                )}
-
-                <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 group border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
-                  <div className="flex flex-col lg:flex-row">
-                    {/* Left side - Chapter info */}
-                    <div className="lg:w-2/5 p-10 text-white relative overflow-hidden">
-                      <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{
-                          backgroundImage: index % 3 === 0 ? 'url(/ai-in-ar.png)' : index % 3 === 1 ? 'url(/launch-bg.png)' : 'url(/scale-bg.png)',
-                        }}
-                      >
-                        <div className={`absolute inset-0 bg-gradient-to-br ${chapter.color.replace('from-', 'from-').replace('to-', 'to-')}/80`}></div>
-                      </div>
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-                      <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-10 -translate-x-10"></div>
-
-                      <div className="relative z-10">
-                        <div className="flex items-center gap-4 mb-6">
-                          <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                            <span className="text-4xl font-bold">{chapter.number}</span>
-                          </div>
-                          <div className="p-3 rounded-xl bg-white/15 backdrop-blur-sm">
-                            <chapter.icon className="w-8 h-8 text-white" />
-                          </div>
-                        </div>
-                        <h3 className="text-3xl sm:text-4xl font-bold mb-3">{chapter.title}</h3>
-                        <p className="text-xl opacity-90 font-medium">{chapter.subtitle}</p>
-                      </div>
-                    </div>
-
-                    {/* Right side - Details */}
-                    <div className="lg:w-3/5 p-10">
-                      <div className="max-w-2xl">
-                        <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                          {chapter.description}
-                        </h4>
-                        <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                          {chapter.details}
-                        </p>
-
-                        {/* Special content for Chapter 1 */}
-                        {chapter.number === 1 && (
-                          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
-                            <div className="space-y-4">
-                              <div className="flex items-center gap-3">
-                                <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
-                                  <Star className="w-6 h-6 text-white" />
-                                </div>
-                                <p className="font-bold text-gray-900 dark:text-white text-xl">
-                                  The Coffee Shop Analogy
-                                </p>
-                              </div>
-                              <div className="grid md:grid-cols-2 gap-4">
-                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-red-200 dark:border-red-700">
-                                  <p className="text-sm font-bold text-red-600 dark:text-red-400 mb-2">❌ Vague Order:</p>
-                                  <p className="text-sm text-gray-700 dark:text-gray-300">"I want coffee"</p>
-                                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">You might get anything from black coffee to a frappuccino</p>
-                                </div>
-                                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-700">
-                                  <p className="text-sm font-bold text-green-600 dark:text-green-400 mb-2">✅ Detailed Order:</p>
-                                  <p className="text-sm text-gray-700 dark:text-gray-300">"Medium oat milk latte, one pump vanilla, extra hot, ceramic mug"</p>
-                                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">You get exactly what you want</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Special content for Chapter 6 */}
-                        {chapter.number === 6 && (
-                          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-xl p-6 border border-cyan-200 dark:border-cyan-800">
-                            <div className="space-y-4">
-                              <p className="font-bold text-gray-900 dark:text-white text-lg mb-3">
-                                The 5-Step Prompt Formula:
-                              </p>
-                              <div className="space-y-3">
-                                {["Define the Role", "Set the Context", "Specify the Task", "Add Constraints", "Request Format"].map((step, i) => (
-                                  <div key={i} className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-lg p-3 border border-cyan-200 dark:border-cyan-700">
-                                    <div className="w-8 h-8 bg-cyan-100 dark:bg-cyan-900 rounded-full flex items-center justify-center font-bold text-cyan-600 dark:text-cyan-400 text-sm flex-shrink-0">
-                                      {i + 1}
-                                    </div>
-                                    <span className="text-sm font-medium text-gray-900 dark:text-white">{step}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Special content for Chapter 10 */}
-                        {chapter.number === 10 && (
-                          <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 rounded-xl p-6 border border-emerald-200 dark:border-emerald-800">
-                            <div className="space-y-4">
-                              <p className="font-bold text-gray-900 dark:text-white text-lg mb-3">
-                                4 Ready-to-Use Templates:
-                              </p>
-                              <div className="grid md:grid-cols-2 gap-3">
-                                {[
-                                  { name: "Expert Advisor", icon: "🎯" },
-                                  { name: "Content Creator", icon: "✍️" },
-                                  { name: "Problem Solver", icon: "🔧" },
-                                  { name: "Analyzer", icon: "📊" }
-                                ].map((template, i) => (
-                                  <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-emerald-200 dark:border-emerald-700">
-                                    <div className="flex items-center gap-2">
-                                      <span className="text-2xl">{template.icon}</span>
-                                      <span className="text-sm font-bold text-gray-900 dark:text-white">{template.name}</span>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            ))}
+          {/* Tab Navigation */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <button
+              onClick={() => setActiveInstallTab('claude')}
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
+                activeInstallTab === 'claude'
+                  ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+            >
+              <Terminal className="w-5 h-5" />
+              Claude Skills
+            </button>
+            <button
+              onClick={() => setActiveInstallTab('chatgpt')}
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
+                activeInstallTab === 'chatgpt'
+                  ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+            >
+              <Sparkles className="w-5 h-5" />
+              ChatGPT
+            </button>
+            <button
+              onClick={() => setActiveInstallTab('gemini')}
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
+                activeInstallTab === 'gemini'
+                  ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+            >
+              <Sparkles className="w-5 h-5" />
+              Gemini
+            </button>
           </div>
 
-          <div className="text-center mt-16">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6 shadow-xl"
-              onClick={() => {
-                trackClick('Get Fortune 100 Prompt Library Copy', {
-                  location: 'chapters_section'
-                });
-                window.open('https://docs.google.com/spreadsheets/u/1/d/1patjQDXhf6nuvOOPFEklYa1bQfoR4ihIk2gXW2PN_gU/edit?gid=0#gid=0', '_blank');
-              }}
-            >
-              Get Your Copy of the Fortune 100 Prompt Library
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+          {/* Claude Skills Instructions */}
+          {activeInstallTab === 'claude' && (
+            <Card className="p-8 bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-800 dark:to-gray-800 border-2 border-orange-200 dark:border-orange-900">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl">
+                  <Terminal className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Install as Claude Skills</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">For Claude Code (Terminal) or Claude Desktop</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Download & Extract the Zip</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Click the download link, then double-click the zip to extract the .md files.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Create the Commands Folder</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Open Terminal and run: <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs">mkdir -p ~/.claude/commands</code></p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Copy the Skill Files</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Move the .md files to the commands folder, or run: <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs">cp ~/Downloads/*.md ~/.claude/commands/</code></p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Use Your Skills</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">In Claude Code, type <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs">/</code> followed by the skill name (filename without .md) to activate it.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-white dark:bg-gray-900 rounded-lg border border-orange-200 dark:border-orange-800">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-orange-600 dark:text-orange-400">Pro Tip:</span> For Claude Desktop, paste the skill content into your project's "Custom Instructions" or "Project Knowledge" section instead.
+                </p>
+              </div>
+            </Card>
+          )}
+
+          {/* ChatGPT Instructions */}
+          {activeInstallTab === 'chatgpt' && (
+            <Card className="p-8 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 border-2 border-green-200 dark:border-green-900">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl">
+                  <Copy className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Copy & Paste into ChatGPT</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Use as Custom Instructions or paste into conversations</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Download & Extract the Zip</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Download from Google Drive, then double-click to extract the .md files.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Open a Skill File</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Double-click any .md file to open it in TextEdit (Mac) or Notepad (Windows).</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Copy the Content</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Press Cmd+A (Mac) or Ctrl+A (Windows) to select all, then Cmd+C or Ctrl+C to copy.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Use in ChatGPT</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Option A:</strong> Profile icon → "Customize ChatGPT" → paste into response instructions.</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1"><strong>Option B:</strong> Paste as your first message in any new conversation.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-white dark:bg-gray-900 rounded-lg border border-green-200 dark:border-green-800">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-green-600 dark:text-green-400">Pro Tip:</span> For longer skills, you may need to condense the content to fit ChatGPT's Custom Instructions character limit. Focus on the core instructions.
+                </p>
+              </div>
+            </Card>
+          )}
+
+          {/* Gemini Instructions */}
+          {activeInstallTab === 'gemini' && (
+            <Card className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 border-2 border-blue-200 dark:border-blue-900">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl">
+                  <Copy className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Copy & Paste into Gemini</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Create Gems or paste into conversations</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Download & Extract the Zip</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Download from Google Drive, then double-click to extract the .md files.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Open a Skill File</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Double-click any .md file to open it in a text editor.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Copy the Content</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Select all text (Cmd+A or Ctrl+A) and copy it (Cmd+C or Ctrl+C).</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                  <div>
+                    <p className="font-medium text-gray-900 dark:text-white">Use in Gemini</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Option A:</strong> Click "Gem manager" in sidebar → "New Gem" → paste into instructions.</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1"><strong>Option B:</strong> Start a new chat and paste the skill as your first message.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-white dark:bg-gray-900 rounded-lg border border-blue-200 dark:border-blue-800">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-blue-600 dark:text-blue-400">Pro Tip:</span> When pasting into chat, add "Please follow these instructions for our conversation:" before the skill content for best results.
+                </p>
+              </div>
+            </Card>
+          )}
+
+          {/* Quick Tips */}
+          <div className="mt-8 grid md:grid-cols-3 gap-4">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 text-center">
+              <p className="text-sm font-medium text-gray-900 dark:text-white mb-1">File Types</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">All skills are .md (Markdown) files - plain text, safe to open</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 text-center">
+              <p className="text-sm font-medium text-gray-900 dark:text-white mb-1">Customization</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Edit the skill files to match your industry, role, or preferences</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 text-center">
+              <p className="text-sm font-medium text-gray-900 dark:text-white mb-1">Combine Skills</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Copy content from multiple files to create custom workflows</p>
+            </div>
           </div>
         </div>
       </section>
