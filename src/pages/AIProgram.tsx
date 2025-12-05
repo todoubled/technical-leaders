@@ -20,20 +20,20 @@ const AIProgram = () => {
     {
       number: 1,
       title: "Time Back & AI Foundations",
-      duration: "First 30 days",
+      duration: "First Few Days",
       description: "We'll run an AI Workflow Audit to find the hours you're losing each week. Then we'll rebuild your core workflows using AI so you get 5-10 hours back fast. It's the momentum boost that pays for the program before we hit the bigger project."
     },
     {
       number: 2,
-      title: "Ship Your First AI Tool",
-      duration: "Weeks 4-6",
-      description: "Next, you'll build a simple, high-leverage AI tool for your role or team. It might be a decision helper, a summariser, a content engine, a workflow bot... whatever gives you the most leverage. You'll walk out with something real that makes you look like the person who \"gets it.\""
+      title: "Ship Your First AI Project",
+      duration: "First Few Weeks",
+      description: "Next, you'll build a simple, high-leverage AI tool for your role, team, or customers. It might be a decision helper, a summariser, a content engine, a workflow bot... whatever gives you the most leverage and usage. You'll walk away with something real that makes you look like the person who \"gets AI\" (with a viable path to monetize it)."
     },
     {
       number: 3,
       title: "AI-First Leadership & Adoption",
       duration: "Ongoing",
-      description: "Once you've got the skills and the tool, we'll shift the focus to adoption, confidence, and repeatable systems. You'll lead with clarity instead of hype, and your team will actually use the tools you bring them."
+      description: "Once you've got the skills and the first project done, we'll shift the focus to adoption and repeatable systems. You'll stay up to speed with AI, lead with clarity instead of hype, and your team/customers will actually use the tools you bring them."
     }
   ];
 
@@ -45,7 +45,7 @@ const AIProgram = () => {
     },
     {
       icon: Target,
-      title: "Weekly Gameplan",
+      title: "Research Agent",
       description: "so you always know your next move and stay focused."
     },
     {
@@ -182,7 +182,7 @@ const AIProgram = () => {
             The goal is simple:
             </p>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            Add 5-10 hours back into your week and help you ship your first AI-powered tool in six weeks.
+            Add 5-10 hours back into your week and help you ship your first AI-powered tool/workflow/product in six weeks.
           </p>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
             No code. No overwhelm. No more guessing which shiny tool actually matters.
@@ -191,7 +191,7 @@ const AIProgram = () => {
             I'm bringing together a small group of non-technical leaders who want to think AI-first, act AI-first, and lead AI-first... without pretending to be developers.
           </p>
           <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
-            We'll build the skills, the workflows, and the confidence to use AI in real work, not in theory.
+            We'll build the skills, the workflows and tools, and the confidence to use AI in real work, not in theory.
           </p>
         </div>
       </section>
@@ -203,7 +203,7 @@ const AIProgram = () => {
             How it works:
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-            Three phases to take you from overwhelmed to shipping AI tools
+            Three phases to take you from idea to shipping your first AI project
           </p>
 
           <div className="space-y-8">
