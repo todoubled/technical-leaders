@@ -127,7 +127,7 @@ const AIProgram = () => {
         structuredData={combinedStructuredData}
       />
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-24 pb-8 px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 z-0">
           <img
             src="/launch-bg.png"
@@ -160,31 +160,28 @@ const AIProgram = () => {
               Get Started
             </Button>
           </div>
-        </div>
-      </section>
 
-      {/* Goal Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-4xl mx-auto">
-
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-          Here's what we're doing with this next Ship AI cohort...
-          </h2>
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mb-8">
-            The goal is simple:
+          {/* Goal Content */}
+          <div className="max-w-4xl mx-auto mt-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
+              Here's what we're doing with this next Ship AI cohort...
+            </h2>
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mb-8">
+              The goal is simple:
             </p>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            Add 5-10 hours back into your week and help you ship your first AI-powered tool/workflow/product in six weeks.
-          </p>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            No code. No overwhelm. No more guessing which shiny tool actually matters.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            I'm bringing together a small group of non-technical leaders who want to think AI-first, act AI-first, and lead AI-first... without pretending to be developers.
-          </p>
-          <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
-            We'll build the skills, the workflows and tools, and the confidence to use AI in real work, not in theory.
-          </p>
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              Add 5-10 hours back into your week and help you ship your first AI-powered tool/workflow/product in six weeks.
+            </p>
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              No code. No overwhelm. No more guessing which shiny tool actually matters.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I'm bringing together a small group of non-technical leaders who want to think AI-first, act AI-first, and lead AI-first... without pretending to be developers.
+            </p>
+            <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
+              We'll build the skills, the workflows and tools, and the confidence to use AI in real work, not in theory.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -222,7 +219,7 @@ const AIProgram = () => {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
             Here's what you get inside the Ship AI program:
@@ -330,7 +327,7 @@ const AIProgram = () => {
       </section>
 
       {/* Next Steps Section */}
-      <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
+      <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             What to do next:
