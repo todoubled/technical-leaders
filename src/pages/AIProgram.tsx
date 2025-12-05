@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Zap, Target, Users, Shield, BookOpen, Wrench, Calendar, MessageCircle, Clock, Rocket, FileText, Lightbulb, ClipboardCheck, UserCheck } from "lucide-react";
@@ -127,8 +126,6 @@ const AIProgram = () => {
         keywords={['AI tools', 'AI productivity', 'AI for leaders', 'ship AI', 'AI adoption', 'business AI', 'AI automation', 'non-technical AI']}
         structuredData={combinedStructuredData}
       />
-      <Navigation />
-
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-24 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 z-0">
