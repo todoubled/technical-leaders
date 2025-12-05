@@ -5,69 +5,229 @@
 
     <url>
         <loc>https://technical-leaders.com/</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/articles</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/launch</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/december</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/scale</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/ai-trade-school</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/accredited</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/refer</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/privacy-policy</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call-confirmed</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/leadership-assessment-tools-best-practices</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/69326801df12e5e3fe9cf58f-1764912986970.jpg</image:loc>
+            <image:title>Best Practices for Using Leadership Assessment Tools</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/tasks-tech-leaders-should-delegate</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/693259bedf12e5e3fe9cf373-1764910997744.jpg</image:loc>
+            <image:title>Top 7 Tasks Tech Leaders Should Delegate</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/scaling-agile-safe-vs-scrum-explained</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/69324e4fdf12e5e3fe9cefcf-1764906742067.jpg</image:loc>
+            <image:title>Scaling Agile: SAFe vs Scrum Explained</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/user-story-mapping-basics-explained</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6932269cdf12e5e3fe9ce099-1764904385257.jpg</image:loc>
+            <image:title>User Story Mapping Basics Explained</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/dei-metrics-leadership-training-programs</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/69310664df12e5e3fe960595-1764822788528.jpg</image:loc>
+            <image:title>DEI Metrics for Leadership Training Programs</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/performance-improvement-plans-guide-tech-leaders</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6930fe33df12e5e3fe960347-1764820420606.jpg</image:loc>
+            <image:title>Performance Improvement Plans: Guide for Tech Leaders</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/managing-ip-virtual-worlds-best-practices</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6930f026df12e5e3fe95ff56-1764818418980.jpg</image:loc>
+            <image:title>Best Practices for Managing IP in Virtual Worlds</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/coaching-logs-mentoring-success</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6930d525df12e5e3fe95f1bd-1764814831919.jpg</image:loc>
+            <image:title>How to Use Coaching Logs for Mentoring Success</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/automation-boosts-cross-team-collaboration</loc>
+        <lastmod>2025-12-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692fb06cdf12e5e3fe9233be-1764734787971.jpg</image:loc>
+            <image:title>How Automation Boosts Cross-Team Collaboration</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/trust-in-cross-functional-teams-guide</loc>
+        <lastmod>2025-12-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692fa577df12e5e3fe922ffa-1764732895609.jpg</image:loc>
+            <image:title>Ultimate Guide To Trust In Cross-Functional Teams</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/designing-training-diverse-teams</loc>
+        <lastmod>2025-12-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692f86a1df12e5e3fe922306-1764730114038.jpg</image:loc>
+            <image:title>Designing Training for Diverse Teams</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/career-transition-readiness-checker</loc>
+        <lastmod>2025-12-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692f7f7bdf12e5e3fe922029-1764720598184.jpg</image:loc>
+            <image:title>Career Transition Readiness Checker</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/predictive-analytics-business-strategy-ai-era</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692e6db0df12e5e3fe91012e-1764652044202.jpg</image:loc>
+            <image:title>Predictive Analytics for Business Strategy in AI Era</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/diversity-tech-leadership-guide</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692e61cddf12e5e3fe9100c9-1764650262094.jpg</image:loc>
+            <image:title>Ultimate Guide to Diversity in Tech Leadership</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/user-story-mapping-agile-mvp-development</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692e570adf12e5e3fe90febf-1764647251164.jpg</image:loc>
+            <image:title>User Story Mapping for Agile MVP Development</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/value-stream-mapping-agile-leaders</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/692e31b8df12e5e3fe90f1c5-1764644324903.jpg</image:loc>
+            <image:title>Value Stream Mapping for Agile Leaders</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://technical-leaders.com/post/communicate-charisma-virtual-meetings</loc>
@@ -3721,11 +3881,11 @@
     </url>
     <url>
         <loc>https://technical-leaders.com/post/vr-ethics-for-leaders-user-consent-and-data-security</loc>
-        <lastmod>2024-10-08</lastmod>
+        <lastmod>2025-12-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://assets.seobotai.com/technical-leaders.com/6705403e71a6ffb49250f565-1728398725324.webp</image:loc>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6705403e71a6ffb49250f565-1728398725324.webp</image:loc>
             <image:title>VR Ethics for Leaders: User Consent  Data Security</image:title>
         </image:image>
     </url>
