@@ -151,19 +151,14 @@ const AIProgram = () => {
               </span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Here's what it's like in our hands-on AI program:
-            </p>
-
-            <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
-              <iframe
-                src="https://www.youtube.com/embed/LyY-glR6P_8"
-                title="Ship AI Program"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
+            <Button
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+              onClick={() => {
+                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Get Started
+            </Button>
           </div>
         </div>
       </section>
@@ -295,6 +290,25 @@ const AIProgram = () => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            Here's what it's like in our hands-on AI program:
+          </p>
+
+          <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/LyY-glR6P_8"
+              title="Ship AI Program"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Who It's For */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -316,7 +330,7 @@ const AIProgram = () => {
       </section>
 
       {/* Next Steps Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
+      <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500/10 to-red-600/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             What to do next:
