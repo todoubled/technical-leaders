@@ -57,6 +57,7 @@ import AIWorkflows from "./pages/AIWorkflows";
 import AIProgram from "./pages/AIProgram";
 import AIFirstProgram from "./pages/AIFirstProgram";
 import Home2025 from "./pages/Home2025";
+import OfficeHoursDemo from "./pages/OfficeHoursDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -138,6 +139,7 @@ const App = () => (
           <Route path="/playbook" element={<Playbook />} />
           <Route path="/ai-program" element={<AIProgram />} />
           <Route path="/ai-first-program" element={<AIFirstProgram />} />
+          <Route path="/office-hours-demo" element={<OfficeHoursDemo />} />
           <Route path="/2025" element={<Home2025 />} />
           <Route path="/2026" element={<Navigate to="/" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
