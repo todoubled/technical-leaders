@@ -59,6 +59,7 @@ import AIFirstProgram from "./pages/AIFirstProgram";
 import Home2025 from "./pages/Home2025";
 import OfficeHoursDemo from "./pages/OfficeHoursDemo";
 import Podcast from "./pages/Podcast";
+import HealthcareAICaseStudy from "./pages/HealthcareAICaseStudy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -142,6 +143,7 @@ const App = () => (
           <Route path="/ai-first-program" element={<AIFirstProgram />} />
           <Route path="/office-hours-demo" element={<OfficeHoursDemo />} />
           <Route path="/podcast" element={<Podcast />} />
+          <Route path="/healthcare-ai-case-study" element={<HealthcareAICaseStudy />} />
           <Route path="/2025" element={<Home2025 />} />
           <Route path="/2026" element={<Navigate to="/" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
