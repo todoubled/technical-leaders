@@ -1,39 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { trackClick } from "@/utils/posthog";
-
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-background to-secondary/30 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Main CTA Section */}
-        <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
-            Turn Your Technical Expertise Into
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
-              Consulting Income
-            </span>
-          </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Get the strategic playbook that shows you how to diversify your income through consulting—without traditional sales tactics, cold outreach, or burning out.
-          </p>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-secondary/50 to-purple-600 hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8"
-            onClick={() => {
-              trackClick('Footer - Get Free Playbook', {
-                location: 'footer_main_cta',
-                destination: 'https://techleaders.kit.com/playbook',
-                utm_source: 'technical-leaders'
-              });
-              window.location.href = "https://techleaders.kit.com/playbook?utm_source=technical-leaders";
-            }}
-          >
-            Get Your Free Consulting Playbook
-          </Button>
-        </div>
-
         {/* Links Section */}
-        <div className="border-t border-border pt-12">
+        <div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
             {/* Logo and Copyright */}
             <div className="md:col-span-2">
@@ -55,19 +25,67 @@ const Footer = () => {
                     Tech Leaders vs. MBA Program
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/alternative-to-mit-oxford"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Tech Leaders vs. MIT/Oxford AI
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Resources Section */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Resources</h4>
+              <h4 className="font-semibold text-foreground mb-4">How We Help</h4>
               <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/ai"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    AI-First Training
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/playbook"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Monetize Your Expertise
+                  </a>
+                </li>
                 <li>
                   <a
                     href="/articles"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     Articles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/podcast"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Podcast
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/healthcare-ai-case-study"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Healthcare AI Case Study
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/speak"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Speaking Engagements
                   </a>
                 </li>
               </ul>

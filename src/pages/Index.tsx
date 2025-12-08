@@ -33,7 +33,7 @@ const Index = () => {
       if ((window as any).iFrameResize) {
         (window as any).iFrameResize(
           { log: false, checkOrigin: false },
-          '#testimonialto-948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e'
+          '#testimonialto-4015461f-4d26-4406-ab94-ebf871fd0b2c'
         );
       }
     };
@@ -60,7 +60,7 @@ const Index = () => {
       title: "Launch Your Consulting Business",
       description: "Turn your expertise into $10K+/month. Proven frameworks to validate, launch, and scale your independent business.",
       cta: "Start Your Launch",
-      href: "/launch",
+      href: "/how-it-works",
       gradient: "from-orange-500 to-red-600"
     }
   ];
@@ -178,9 +178,9 @@ const Index = () => {
                 onClick={() => {
                   trackClick('Hero - Launch Business', {
                     location: 'hero',
-                    destination: '/launch'
+                    destination: '/how-it-works'
                   });
-                  window.location.href = '/launch';
+                  window.location.href = '/how-it-works';
                 }}
               >
                 <Rocket className="w-5 h-5 mr-2" />
@@ -345,13 +345,59 @@ const Index = () => {
           {/* Testimonial.to Embed */}
           <div className="mt-12">
             <iframe
-              id='testimonialto-948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e'
-              src="https://embed-v2.testimonial.to/carousel/all/tech-leaders-mastermind-program?id=948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e"
+              id='testimonialto-4015461f-4d26-4406-ab94-ebf871fd0b2c'
+              src="https://embed-v2.testimonial.to/w/tech-leaders-mastermind-program?id=4015461f-4d26-4406-ab94-ebf871fd0b2c"
               frameBorder="0"
               scrolling="no"
               width="100%"
+              height="800px"
             ></iframe>
           </div>
+        </div>
+      </section>
+
+      {/* Free Workshop CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950/30 dark:via-indigo-950/30 dark:to-purple-950/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-slate-900/[0.02] dark:bg-grid-white/[0.02] bg-[size:40px_40px]" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl" />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
+            <Sparkles className="w-4 h-4" />
+            <span>FREE WEEKLY WORKSHOP</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-6">
+            Go Beyond ChatGPT with
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> AI Workflows</span>
+          </h2>
+
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            Learn the exact AI workflows we use with venture-backed teams to build MVPs in days, not months. Live demos, Q&A, and actionable takeaways.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <Button
+              size="lg"
+              className="text-lg px-8 py-6 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105"
+              onClick={() => {
+                trackClick('Home - Free Workshop CTA', {
+                  location: 'free_workshop_section',
+                  destination: '/ai-workflows'
+                });
+                window.location.href = '/ai-workflows';
+              }}
+            >
+              <Brain className="w-5 h-5 mr-2" />
+              Join Free Workshop
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+
+          <p className="text-sm text-muted-foreground">
+            New session every week
+          </p>
         </div>
       </section>
 
@@ -398,9 +444,9 @@ const Index = () => {
               onClick={() => {
                 trackClick('Final CTA - Launch Business', {
                   location: 'final_cta',
-                  destination: '/launch'
+                  destination: '/how-it-works'
                 });
-                window.location.href = '/launch';
+                window.location.href = '/how-it-works';
               }}
             >
               <Rocket className="w-5 h-5 mr-2" />

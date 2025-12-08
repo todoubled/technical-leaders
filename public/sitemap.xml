@@ -5,69 +5,139 @@
 
     <url>
         <loc>https://technical-leaders.com/</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/articles</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/launch</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/december</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/scale</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/ai-trade-school</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/accredited</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/refer</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/privacy-policy</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call-confirmed</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/servant-leadership-traits-engineers</loc>
+        <lastmod>2025-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6934f428df12e5e3fea1151d-1765081512050.jpg</image:loc>
+            <image:title>5 Servant Leadership Traits for Engineers</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/ai-enhances-knowledge-sharing</loc>
+        <lastmod>2025-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6934eaa4df12e5e3fea1139d-1765077949092.jpg</image:loc>
+            <image:title>How AI Enhances Knowledge Sharing</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/stakeholder-needs-impact-decision-making</loc>
+        <lastmod>2025-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6934e10fdf12e5e3fea10fa5-1765075493154.jpg</image:loc>
+            <image:title>How Stakeholder Needs Impact Decision Making</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/ethical-ai-cybersecurity-checklist</loc>
+        <lastmod>2025-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6934c75ddf12e5e3fea10411-1765073053714.jpg</image:loc>
+            <image:title>Checklist for Ethical AI in Cybersecurity</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/cross-functional-teams-vs-departmental-silos</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6933b5bcdf12e5e3fea0edc2-1764999381574.jpg</image:loc>
+            <image:title>Cross-Functional Teams vs. Departmental Silos</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/cross-functional-collaboration-key-metrics</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6933a258df12e5e3fea0e6c8-1764996397392.jpg</image:loc>
+            <image:title>Cross-Functional Collaboration: Key Metrics to Track</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/measure-change-impact-dashboards</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/693376a9df12e5e3fea0d735-1764991476857.jpg</image:loc>
+            <image:title>How to Measure Change Impact with Dashboards</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://technical-leaders.com/post/leadership-assessment-tools-best-practices</loc>

@@ -2,130 +2,91 @@ import Navigation from "@/components/Navigation";
 import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, XCircle, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle, Shield, AlertTriangle, DollarSign, Rocket, Brain, Lock, GraduationCap, Briefcase, Clock, Calculator } from "lucide-react";
+import { CheckCircle2, XCircle, Zap, TrendingUp, Users, Award, Target, FileText, Calendar, ArrowRight, Star, PlayCircle, Shield, AlertTriangle, DollarSign, Rocket, Brain, Lock, GraduationCap, Briefcase, Clock, Calculator, BookOpen, Headphones, Quote } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import SEO from "@/components/SEO";
 
-const AlternativeToMBA = () => {
+const AlternativeToMitOxford = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const videoUrl = "https://youtu.be/VKetl72iSlk";
 
   const comparisonPoints = [
     {
-      feature: "Time Investment",
-      mba: "2 years full-time or 3-4 years part-time",
-      techLeaders: "90 days to see results, 6 months to ROI",
+      feature: "Practical Application",
+      academic: "History of AI, theory, and academic tangents",
+      techLeaders: "Hands-on workflows you can use immediately",
       winner: "techLeaders"
     },
     {
       feature: "Total Cost",
-      mba: "$100,000 - $200,000+ tuition (plus lost income)",
-      techLeaders: "$2,950 one-time investment",
+      academic: "$2,200 - $5,000+ per course",
+      techLeaders: "$2,950 for complete program + ongoing support",
       winner: "techLeaders"
     },
     {
-      feature: "Income Impact",
-      mba: "Average $20-40K salary increase",
-      techLeaders: "$25K+ opportunity guarantee within 6 months",
+      feature: "What You Get",
+      academic: "A certificate and theoretical knowledge",
+      techLeaders: "Real skills, tools, and guided implementation",
       winner: "techLeaders"
     },
     {
-      feature: "Real-World Application",
-      mba: "Theory-heavy, case studies from decades ago",
-      techLeaders: "Current playbooks from active tech executives",
+      feature: "Support",
+      academic: "Course ends, you're on your own",
+      techLeaders: "Ongoing office hours and expert guidance",
       winner: "techLeaders"
     },
     {
-      feature: "Network Quality",
-      mba: "Mixed industries, varying experience levels",
-      techLeaders: "300+ senior tech leaders actively hiring/partnering",
+      feature: "Curriculum Focus",
+      academic: "Types of AI, academic frameworks, case studies",
+      techLeaders: "What works today, what to avoid, tried-and-true methods",
       winner: "techLeaders"
     },
     {
-      feature: "Career Flexibility",
-      mba: "Traditional corporate ladder focus",
-      techLeaders: "Multiple paths: CTO, VP, fractional, board seats",
+      feature: "Time to Results",
+      academic: "10+ weeks with no practical takeaways",
+      techLeaders: "Apply learnings same day, see results in weeks",
       winner: "techLeaders"
     },
     {
-      feature: "Opportunity Cost",
-      mba: "2-4 years out of workforce or reduced capacity",
-      techLeaders: "Keep your job while building new opportunities",
+      feature: "Real-World Guidance",
+      academic: "Taught by academics, not practitioners",
+      techLeaders: "\"We've been down that road. You don't want to do that.\"",
       winner: "techLeaders"
     },
     {
-      feature: "ROI Timeline",
-      mba: "5-10 years to break even",
-      techLeaders: "3-6 months to positive ROI",
+      feature: "Business Impact",
+      academic: "Impressive on resume, little on practice",
+      techLeaders: "Immediate workflow improvements across your org",
       winner: "techLeaders"
     }
   ];
 
-  const mbaProblems = [
+  const academicProblems = [
     {
-      problem: "Crushing debt that takes years to repay",
-      solution: "One-time $2,950 investment with guaranteed returns in 6 months"
+      problem: "Courses focus on history and theory, not implementation",
+      solution: "Practical AI workflows you can deploy in your business today"
     },
     {
-      problem: "Generic business theory with no tech focus",
-      solution: "Tech-specific strategies from leaders who've done it"
+      problem: "Premium prices for prestigious name, not practical value",
+      solution: "Invest in outcomes, not certificates that look impressive"
     },
     {
-      problem: "Career pause while competitors advance",
-      solution: "Build your executive brand while keeping your current role"
+      problem: "Course ends and you're left figuring it out alone",
+      solution: "Ongoing office hours to stay ahead of the AI curve"
     },
     {
-      problem: "Outdated curriculum taught by academics",
-      solution: "Real-time insights from active CTOs and VPs of Engineering"
+      problem: "Taught by researchers, not business operators",
+      solution: "Learn from practitioners who implement AI daily"
     }
   ];
-
-  const memberWins = [
-    {
-      name: "J.L.",
-      role: "Engineering Manager → VP of Engineering",
-      location: "Texas",
-      result: "$75K salary increase + equity",
-      quote: "Better than my MBA friends' outcomes at 1/50th the cost. I kept my job and got promoted while they're still in school."
-    },
-    {
-      name: "S.K.",
-      role: "Senior Engineer → Fractional CTO",
-      location: "California",
-      result: "$300K+ annual revenue, 3-day week",
-      quote: "MBA teaches you to work for others. Tech Leaders taught me to build my own thing."
-    },
-    {
-      name: "R.T.",
-      role: "Tech Lead → Advisory Board Member",
-      location: "New York",
-      result: "3 board seats at $50K each",
-      quote: "My MBA colleagues are still paying loans. I'm collecting board fees."
-    }
-  ];
-
-  const roiCalculation = {
-    mba: {
-      tuition: -150000,
-      lostIncome: -400000, // 2 years at $200K
-      salaryIncrease: 30000,
-      breakEven: 18 // years
-    },
-    techLeaders: {
-      investment: -2950,
-      keptIncome: 0, // no lost income
-      opportunityValue: 25000,
-      breakEven: 0.5 // 6 months
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Tech Leaders vs MBA - Why Smart Engineers Skip the MBA"
-        description="Compare Tech Leaders to an MBA. Get guaranteed $25K+ opportunities in 6 months vs 2 years of debt. Real tech leadership skills at 1/50th the cost."
-        keywords={['mba alternative', 'tech leaders vs mba', 'engineering leadership without mba', 'skip mba', 'mba for engineers', 'technical mba alternative']}
+        title="Tech Leaders vs MIT & Oxford AI Courses - Get Practical AI Skills"
+        description="Why business leaders are choosing Tech Leaders over academic AI programs. Get practical AI implementation skills, not theory and certificates. Real guidance from practitioners."
+        keywords={['MIT AI course alternative', 'Oxford AI alternative', 'practical AI training', 'AI implementation', 'AI for business', 'executive AI training']}
       />
       <Navigation />
 
@@ -153,30 +114,29 @@ const AlternativeToMBA = () => {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-yellow-500/10 text-yellow-700 dark:text-yellow-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <GraduationCap className="w-4 h-4" />
-              <span>MBA Alternative for Tech Leaders</span>
+              <span>Alternative to Academic AI Courses</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Skip the MBA. Build Your
+              Skip the Academic AI Course.
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mt-2">
-                Tech Executive Career Instead
+                Get Skills You Can Actually Use.
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed">
-              While your peers spend <span className="font-semibold">$200K and 2 years</span> on an MBA,
-              you could land your first <span className="font-semibold">$25K+ opportunity in 90 days</span> with
-              Tech Leaders—at 1/50th the cost.
+              MIT and Oxford AI courses promise practical skills but deliver <span className="font-semibold">history lessons and theory</span>.
+              Tech Leaders gives you <span className="font-semibold">real workflows, ongoing support, and expert guidance</span> for the same price.
             </p>
 
             <div className="flex items-center justify-center gap-6 mb-8 text-sm font-semibold">
               <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>$25K+ Opportunity Guarantee</span>
+                <span>Practical Implementation</span>
               </div>
               <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
-                <Clock className="w-4 h-4" />
-                <span>Keep your job while you level up</span>
+                <Headphones className="w-4 h-4" />
+                <span>Ongoing Expert Support</span>
               </div>
             </div>
 
@@ -195,7 +155,7 @@ const AlternativeToMBA = () => {
                 onClick={() => setIsVideoModalOpen(true)}
               >
                 <PlayCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                See Why Engineers Choose Us
+                See Why Leaders Choose Us
               </Button>
             </div>
 
@@ -209,76 +169,87 @@ const AlternativeToMBA = () => {
         </div>
       </section>
 
-      {/* ROI Calculator Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20">
+      {/* Testimonial Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-8 md:p-12 relative">
+            <Quote className="w-12 h-12 text-emerald-500/20 absolute top-6 left-6" />
+            <div className="relative z-10">
+              <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
+                "I really wish I hadn't spent the money trying to pursue this through more academic means. I took the Oxford course in AI—it was supposed to be implementation for business strategy, and it was so much more of the <span className="font-semibold text-red-600 dark:text-red-400">history of AI</span>... I didn't get one practical thing I could do with it except the certificate.
+              </blockquote>
+              <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
+                Then I signed up for MIT's program because the name of the course was 'Design and Build AI Products and Services'—you would think that would give me something real and tangible. <span className="font-semibold text-red-600 dark:text-red-400">It just didn't help me at all.</span>
+              </blockquote>
+              <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
+                <span className="font-semibold text-emerald-600 dark:text-emerald-400">This was the course.</span> This is where I found the resources, the support, the information, the tried and true, the 'we've been down that road—you don't want to do that.' This is the course where I learned what I need to know to do what I need to do."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg">
+                  P
+                </div>
+                <div>
+                  <p className="font-bold text-foreground">Pamela</p>
+                  <p className="text-sm text-muted-foreground">Tech Leaders Member • Former Oxford & MIT AI Course Student</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* The Real Cost Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Calculator className="w-16 h-16 mx-auto mb-6 text-red-600 dark:text-red-400" />
-            <h2 className="text-4xl font-bold mb-4 text-background">
-              The MBA Math Doesn't Add Up
+            <h2 className="text-4xl font-bold mb-4 text-foreground">
+              What Academic AI Courses Actually Cost You
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Let's look at the real numbers that business schools don't want you to see
+              It's not just money—it's time, opportunity, and results you'll never get back
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 border-2 border-red-500/20">
-              <h3 className="text-2xl font-bold mb-6 text-red-600 dark:text-red-400">Traditional MBA Path</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Tuition & Fees</span>
-                  <span className="font-bold text-red-600">-$150,000</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Lost Income (2 years)</span>
-                  <span className="font-bold text-red-600">-$400,000</span>
-                </div>
-                <div className="border-t pt-4">
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold">Total Cost</span>
-                    <span className="font-bold text-2xl text-red-600">-$550,000</span>
-                  </div>
-                </div>
-                <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg mt-6">
-                  <p className="text-sm text-muted-foreground">Average salary increase: $30K/year</p>
-                  <p className="font-bold text-red-600 dark:text-red-400">Break-even: 18+ years</p>
-                </div>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="p-8 border-2 border-red-500/20 text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                <GraduationCap className="w-8 h-8 text-red-600 dark:text-red-400" />
               </div>
+              <h3 className="text-xl font-bold text-red-600 dark:text-red-400 mb-2">Oxford AI Course</h3>
+              <p className="text-3xl font-bold text-foreground mb-2">$2,200</p>
+              <p className="text-muted-foreground text-sm">10 weeks • History & theory</p>
+              <p className="text-red-600 dark:text-red-400 text-sm font-semibold mt-2">Zero practical takeaways</p>
             </Card>
 
-            <Card className="p-8 border-2 border-green-500/20 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-bl-full"></div>
-              <h3 className="text-2xl font-bold mb-6 text-green-600 dark:text-green-400">Tech Leaders Path</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Program Investment</span>
-                  <span className="font-bold text-red-600">-$2,950</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Lost Income</span>
-                  <span className="font-bold text-green-600">$0</span>
-                </div>
-                <div className="border-t pt-4">
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold">Total Cost</span>
-                    <span className="font-bold text-2xl text-red-600">-$2,950</span>
-                  </div>
-                </div>
-                <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mt-6">
-                  <p className="text-sm text-muted-foreground">Guaranteed opportunity: $25K+</p>
-                  <p className="font-bold text-green-600 dark:text-green-400">Break-even: 3-6 months</p>
-                </div>
+            <Card className="p-8 border-2 border-red-500/20 text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                <BookOpen className="w-8 h-8 text-red-600 dark:text-red-400" />
               </div>
+              <h3 className="text-xl font-bold text-red-600 dark:text-red-400 mb-2">MIT AI Program</h3>
+              <p className="text-3xl font-bold text-foreground mb-2">$2,700</p>
+              <p className="text-muted-foreground text-sm">"Design & Build AI Products"</p>
+              <p className="text-red-600 dark:text-red-400 text-sm font-semibold mt-2">Types of AI, not how to use them</p>
+            </Card>
+
+            <Card className="p-8 border-2 border-green-500/20 text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BEST VALUE</div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                <Rocket className="w-8 h-8 text-green-600 dark:text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold text-green-600 dark:text-green-400 mb-2">Tech Leaders</h3>
+              <p className="text-3xl font-bold text-foreground mb-2">$2,950</p>
+              <p className="text-muted-foreground text-sm">Complete program + ongoing support</p>
+              <p className="text-green-600 dark:text-green-400 text-sm font-semibold mt-2">Practical skills + expert guidance</p>
             </Card>
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="text-center">
             <Card className="inline-flex items-center gap-4 p-6 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-green-500/20">
               <Award className="w-8 h-8 text-green-600 dark:text-green-400" />
               <div className="text-left">
-                <p className="font-bold text-foreground">186x Better ROI</p>
-                <p className="text-sm text-muted-foreground">Tech Leaders pays for itself while MBAs drown in debt</p>
+                <p className="font-bold text-foreground">Same Investment, Actual Results</p>
+                <p className="text-sm text-muted-foreground">Plus ongoing support that academic courses never provide</p>
               </div>
             </Card>
           </div>
@@ -286,14 +257,14 @@ const AlternativeToMBA = () => {
       </section>
 
       {/* Direct Comparison Table */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              MBA vs Tech Leaders: Head-to-Head
+              Academic AI Courses vs Tech Leaders: Head-to-Head
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Why top engineers are skipping the MBA and joining Tech Leaders instead
+              Why smart leaders are skipping the certificates and joining Tech Leaders instead
             </p>
           </div>
 
@@ -304,7 +275,7 @@ const AlternativeToMBA = () => {
                   <th className="text-left py-4 px-4 font-semibold text-foreground">Feature</th>
                   <th className="text-center py-4 px-4">
                     <div className="inline-flex items-center gap-2">
-                      <span className="font-semibold text-muted-foreground">Traditional MBA</span>
+                      <span className="font-semibold text-muted-foreground">MIT / Oxford Courses</span>
                     </div>
                   </th>
                   <th className="text-center py-4 px-4">
@@ -320,9 +291,9 @@ const AlternativeToMBA = () => {
                   <tr key={index} className="border-b hover:bg-secondary/30 transition-colors">
                     <td className="py-4 px-4 font-medium text-foreground">{point.feature}</td>
                     <td className="py-4 px-4 text-center">
-                      <div className={`inline-flex items-start gap-2 ${point.winner === 'mba' ? 'text-green-600' : 'text-muted-foreground'}`}>
-                        {point.winner === 'mba' ? <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" /> : <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-red-500/50" />}
-                        <span className="text-sm text-left">{point.mba}</span>
+                      <div className={`inline-flex items-start gap-2 ${point.winner === 'academic' ? 'text-green-600' : 'text-muted-foreground'}`}>
+                        {point.winner === 'academic' ? <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" /> : <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-red-500/50" />}
+                        <span className="text-sm text-left">{point.academic}</span>
                       </div>
                     </td>
                     <td className="py-4 px-4 text-center">
@@ -339,15 +310,15 @@ const AlternativeToMBA = () => {
         </div>
       </section>
 
-      {/* Problems with MBA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+      {/* Problems with Academic Courses Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Why MBAs Fail Technical Leaders
+            Why Academic AI Courses Fail Business Leaders
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {mbaProblems.map((item, index) => (
+            {academicProblems.map((item, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
@@ -356,7 +327,7 @@ const AlternativeToMBA = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-red-600 dark:text-red-400 mb-2">MBA Problem: {item.problem}</h3>
+                    <h3 className="font-bold text-red-600 dark:text-red-400 mb-2">Academic Problem: {item.problem}</h3>
                     <div className="flex items-start gap-2 mt-4">
                       <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <p className="text-foreground"><span className="font-semibold">Tech Leaders:</span> {item.solution}</p>
@@ -369,77 +340,44 @@ const AlternativeToMBA = () => {
         </div>
       </section>
 
-      {/* Real Results Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">
-              Engineers Who Skipped the MBA Are Winning
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Real results from tech leaders who invested in skills, not debt
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {memberWins.map((win, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-all relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-bl-full"></div>
-                <div className="relative z-10">
-                  <div className="mb-4">
-                    <h3 className="font-bold text-lg text-foreground">{win.name}</h3>
-                    <p className="text-sm text-muted-foreground">{win.role}</p>
-                    <p className="text-sm text-muted-foreground">{win.location}</p>
-                  </div>
-                  <p className="text-green-600 dark:text-green-400 font-bold mb-3">
-                    {win.result}
-                  </p>
-                  <p className="text-sm text-muted-foreground italic">"{win.quote}"</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What You Get Section */}
+      {/* What You Actually Get Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/30 to-background">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-            What MBAs Don't Teach (But We Do)
+            What Academic Courses Don't Teach (But We Do)
           </h2>
 
           <div className="space-y-6">
             <Card className="p-6 border-2 border-green-500/20 bg-gradient-to-r from-green-500/5 to-emerald-500/5">
               <div className="flex items-center gap-3 mb-4">
-                <Briefcase className="w-6 h-6 text-green-600 dark:text-green-400" />
-                <h3 className="text-xl font-bold text-foreground">Real Tech Executive Skills</h3>
+                <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
+                <h3 className="text-xl font-bold text-foreground">Practical AI Workflows</h3>
               </div>
               <p className="text-muted-foreground">
-                Not generic case studies—actual strategies from CTOs and VPs who've built $100M+ engineering orgs.
-                Learn what really works in tech leadership, not what worked for GE in 1985.
+                Not "types of AI" or "history of machine learning"—actual workflows you can implement in your business today.
+                Sales, marketing, operations, finance—AI solutions for every department.
               </p>
             </Card>
 
             <Card className="p-6 border-2 border-blue-500/20 bg-gradient-to-r from-blue-500/5 to-purple-500/5">
               <div className="flex items-center gap-3 mb-4">
-                <Brain className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                <h3 className="text-xl font-bold text-foreground">90 Days of Executive Positioning</h3>
+                <Headphones className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <h3 className="text-xl font-bold text-foreground">Ongoing Office Hours Support</h3>
               </div>
               <p className="text-muted-foreground">
-                While MBA students write papers, we write your LinkedIn posts, articles, and emails that
-                position you as the go-to tech executive. Done for you while you focus on your day job.
+                Academic courses end when the syllabus does. With Tech Leaders, you get continuous access to AI experts
+                who can answer questions, troubleshoot problems, and help you stay ahead of the curve.
               </p>
             </Card>
 
             <Card className="p-6 border-2 border-purple-500/20 bg-gradient-to-r from-purple-500/5 to-pink-500/5">
               <div className="flex items-center gap-3 mb-4">
-                <Rocket className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                <h3 className="text-xl font-bold text-foreground">Multiple Revenue Streams</h3>
+                <Target className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                <h3 className="text-xl font-bold text-foreground">"We've Been Down That Road"</h3>
               </div>
               <p className="text-muted-foreground">
-                MBAs teach you to climb one ladder. We show you how to build multiple:
-                promotions, fractional roles, advisory positions, and consulting—all at once.
+                Learn from practitioners who've tried what works and what doesn't. Skip the expensive mistakes.
+                Get the tried-and-true guidance that only comes from real-world implementation.
               </p>
             </Card>
 
@@ -449,7 +387,7 @@ const AlternativeToMBA = () => {
                 <h3 className="text-xl font-bold text-foreground">$25K+ Opportunity Guarantee</h3>
               </div>
               <p className="text-muted-foreground">
-                MBAs guarantee nothing but debt. We guarantee you'll land at least one opportunity
+                Academic courses guarantee a certificate. We guarantee results. Land at least one opportunity
                 worth $25K+ within 6 months, or we work with you until you do.
               </p>
             </Card>
@@ -457,30 +395,30 @@ const AlternativeToMBA = () => {
         </div>
       </section>
 
-      {/* MBA Debt Reality Check */}
+      {/* Certificate Reality Check */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20">
         <div className="max-w-4xl mx-auto text-center">
-          <DollarSign className="w-16 h-16 mx-auto mb-6 text-red-600 dark:text-red-400" />
+          <GraduationCap className="w-16 h-16 mx-auto mb-6 text-red-600 dark:text-red-400" />
           <h2 className="text-3xl font-bold mb-4 text-background">
-            The MBA Debt Trap
+            The Certificate Trap
           </h2>
           <div className="space-y-4 text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             <p>
-              <span className="font-bold text-background">Average MBA debt:</span> $66,000 - $200,000+
+              <span className="font-bold text-background">What certificates get you:</span> A PDF and a LinkedIn badge
             </p>
             <p>
-              <span className="font-bold text-background">Monthly loan payment:</span> $800 - $2,400 for 10+ years
+              <span className="font-bold text-background">What they don't get you:</span> Practical skills, ongoing support, or real results
             </p>
             <p>
-              <span className="font-bold text-background">Total interest paid:</span> $50,000 - $150,000
+              <span className="font-bold text-background">The truth:</span> "People think the certificate meant something" — but it didn't help with implementation
             </p>
           </div>
           <Card className="inline-block p-6 bg-white/50 dark:bg-gray-900/50">
             <p className="text-2xl font-bold text-green-600 dark:text-green-400 mb-2">
-              Tech Leaders: $2,950 Once
+              Tech Leaders: Skills Over Certificates
             </p>
             <p className="text-muted-foreground">
-              Same career advancement, zero debt, immediate results
+              Real workflows, expert guidance, and a community that helps you implement
             </p>
           </Card>
         </div>
@@ -490,10 +428,10 @@ const AlternativeToMBA = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-500/10 to-purple-600/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Your Choice: 2 Years of Debt or 90 Days to Results?
+            Your Choice: Another Certificate or Real AI Skills?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join 300+ engineers who chose skills over degrees
+            Join leaders who chose practical skills over impressive-sounding courses
           </p>
 
           <Card className="p-8 mb-8 bg-gradient-to-br from-card to-blue-500/5">
@@ -501,23 +439,23 @@ const AlternativeToMBA = () => {
               <div className="text-left space-y-3">
                 <h3 className="font-bold text-lg text-foreground mb-4 flex items-center gap-2">
                   <GraduationCap className="w-5 h-5" />
-                  With an MBA You Get:
+                  With Academic Courses You Get:
                 </h3>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <XCircle className="w-5 h-5 text-red-500/50" />
-                  <span>$100-200K in student debt</span>
+                  <span>History of AI and theory</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <XCircle className="w-5 h-5 text-red-500/50" />
-                  <span>2-4 years away from tech</span>
+                  <span>Certificate with no practical value</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <XCircle className="w-5 h-5 text-red-500/50" />
-                  <span>Generic business theory</span>
+                  <span>Course ends, support ends</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <XCircle className="w-5 h-5 text-red-500/50" />
-                  <span>Hope it pays off someday</span>
+                  <span>Figure out implementation alone</span>
                 </div>
               </div>
               <div className="text-left space-y-3">
@@ -527,19 +465,19 @@ const AlternativeToMBA = () => {
                 </h3>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle2 className="w-5 h-5" />
-                  <span className="font-semibold">$2,950 total investment</span>
+                  <span className="font-semibold">Practical AI workflows for every function</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle2 className="w-5 h-5" />
-                  <span className="font-semibold">Keep earning while learning</span>
+                  <span className="font-semibold">Tried-and-true guidance from practitioners</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle2 className="w-5 h-5" />
-                  <span className="font-semibold">Tech-specific strategies</span>
+                  <span className="font-semibold">Ongoing office hours support</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle2 className="w-5 h-5" />
-                  <span className="font-semibold">$25K+ guaranteed in 6 months</span>
+                  <span className="font-semibold">$25K+ opportunity guarantee</span>
                 </div>
               </div>
             </div>
@@ -549,15 +487,15 @@ const AlternativeToMBA = () => {
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-12 py-6 w-full md:w-auto mb-4"
               onClick={() => window.location.href = "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A"}
             >
-              Skip the MBA, Join Tech Leaders - $2,950
+              Skip the Certificate, Join Tech Leaders - $2,950
             </Button>
 
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
-                🛡️ Protected by our $25K+ Opportunity Guarantee
+                Protected by our $25K+ Opportunity Guarantee
               </p>
               <p className="text-sm text-muted-foreground">
-                💳 Payment plans available (unlike MBA loans, these are interest-free)
+                Payment plans available
               </p>
             </div>
           </Card>
@@ -579,10 +517,10 @@ const AlternativeToMBA = () => {
       </section>
 
       <SalesFooter
-        headline="Your Choice: 2 Years of Debt or 90 Days to Results?"
-        subheadline="Join 300+ engineers who chose skills over degrees"
+        headline="Your Choice: Another Certificate or Real AI Skills?"
+        subheadline="Join leaders who chose practical skills over impressive-sounding courses"
         primaryCTA={{
-          text: "Skip the MBA, Join Tech Leaders - $2,950",
+          text: "Skip the Certificate, Join Tech Leaders - $2,950",
           url: "https://buy.stripe.com/dRmeVd26Z2of5vI2wYaMU0A",
           price: "$2,950"
         }}
@@ -590,10 +528,10 @@ const AlternativeToMBA = () => {
           text: "Next cohort starts Monday",
           icon: "alert"
         }}
-        socialProof="186x Better ROI than MBA"
+        socialProof="Practical skills, not just certificates"
         guarantee={{
           text: "$25K+ Opportunity Guarantee",
-          description: "Same career advancement as MBA, zero debt, immediate results - or we work with you until you succeed."
+          description: "Real workflows, ongoing support, and expert guidance - or we work with you until you succeed."
         }}
         secondaryCTA={{
           text: "See how it works",
@@ -601,10 +539,10 @@ const AlternativeToMBA = () => {
         }}
         stats={[
           { number: "$2,950", label: "Total investment" },
-          { number: "3-6 mo", label: "Break-even time" },
-          { number: "$0", label: "Student debt" }
+          { number: "Ongoing", label: "Office hours support" },
+          { number: "Real", label: "Practical skills" }
         ]}
-        trackingContext="Alternative to MBA"
+        trackingContext="Alternative to MIT Oxford"
       />
 
       <VideoModal
@@ -616,4 +554,4 @@ const AlternativeToMBA = () => {
   );
 };
 
-export default AlternativeToMBA;
+export default AlternativeToMitOxford;

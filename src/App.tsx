@@ -23,6 +23,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Refer from "./pages/Refer";
 import AlternativeToSidebar from "./pages/AlternativeToSidebar";
 import AlternativeToMBA from "./pages/AlternativeToMBA";
+import AlternativeToMitOxford from "./pages/AlternativeToMitOxford";
 import RGAWorkshop from "./pages/RGAWorkshop";
 import PlaybookConfirmed from "./pages/PlaybookConfirmed";
 import ShipAI from "./pages/ShipAI";
@@ -106,6 +107,7 @@ const App = () => (
           <Route path="/refer" element={<Refer />} />
           <Route path="/alternative-to-sidebar" element={<AlternativeToSidebar />} />
           <Route path="/alternative-to-mba" element={<AlternativeToMBA />} />
+          <Route path="/alternative-to-mit-oxford" element={<AlternativeToMitOxford />} />
           <Route path="/in-demand" element={<RGAWorkshop />} />
           <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
           <Route path="/ship-ai" element={<ShipAI />} />

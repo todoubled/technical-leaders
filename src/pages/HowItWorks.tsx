@@ -115,7 +115,7 @@ const HowItWorks = () => {
               trackEvent('Get Started - How It Works CTA', {
                 location: 'hero_section'
               });
-              window.location.href = "/launch-with-us";
+              window.location.href = "/launch";
             }}
           >
             Get Started with Launch Kit
@@ -238,7 +238,7 @@ const HowItWorks = () => {
                 trackEvent('Get Launch Kit Now - How It Works CTA', {
                   location: 'value_section'
                 });
-                window.location.href = "/launch-with-us";
+                window.location.href = "/launch";
               }}
             >
               Get Launch Kit Now
