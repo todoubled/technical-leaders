@@ -123,7 +123,7 @@ const Fortune100PromptLibrary = () => {
                     This library is a sample of the prompts and workflows we use in our 6-week Ship AI program.
                   </p>
                 </div>
-                <div className="md:w-64 flex-shrink-0">
+                <div className="md:w-64 flex-shrink-0 flex flex-col gap-4">
                   <div
                     className="badge-base LI-profile-badge"
                     data-locale="en_US"
@@ -140,8 +140,23 @@ const Fortune100PromptLibrary = () => {
                       Todd Larsen
                     </a>
                   </div>
+                  <div
+                    className="badge-base LI-profile-badge"
+                    data-locale="en_US"
+                    data-size="medium"
+                    data-theme="light"
+                    data-type="VERTICAL"
+                    data-vanity="nicktalwar"
+                    data-version="v1"
+                  >
+                    <a
+                      className="badge-base__link LI-simple-link"
+                      href="https://www.linkedin.com/in/nicktalwar?trk=profile-badge"
+                    >
+                      Nick Talwar
+                    </a>
+                  </div>
                 </div>
-                <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="nicktalwar" data-version="v1"><a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/nicktalwar?trk=profile-badge">Nick Talwar</a></div>
               </div>
             </div>
           </div>
