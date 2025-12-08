@@ -33,7 +33,7 @@ const Index = () => {
       if ((window as any).iFrameResize) {
         (window as any).iFrameResize(
           { log: false, checkOrigin: false },
-          '#testimonialto-4015461f-4d26-4406-ab94-ebf871fd0b2c'
+          '#testimonialto-948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e'
         );
       }
     };
@@ -345,12 +345,11 @@ const Index = () => {
           {/* Testimonial.to Embed */}
           <div className="mt-12">
             <iframe
-              id='testimonialto-4015461f-4d26-4406-ab94-ebf871fd0b2c'
-              src="https://embed-v2.testimonial.to/w/tech-leaders-mastermind-program?id=4015461f-4d26-4406-ab94-ebf871fd0b2c"
+              id='testimonialto-948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e'
+              src="https://embed-v2.testimonial.to/carousel/all/tech-leaders-mastermind-program?id=948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e"
               frameBorder="0"
               scrolling="no"
               width="100%"
-              height="800px"
             ></iframe>
           </div>
         </div>
