@@ -136,7 +136,7 @@ const Index = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
               <Sparkles className="w-4 h-4" />
-              <span>TRAINING, COACHING, & MASTERMIND PROGRAMS</span>
+              <span>HUMAN INTELLIGENCE + ARTIFICIAL INTELLIGENCE</span>
             </div>
 
             {/* Main Headline */}
