@@ -105,10 +105,10 @@ const Fortune100PromptLibrary = () => {
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-1">
                   <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                    Hi, my name is <span className="font-semibold text-white">Todd Larsen</span> - Co-founder of Tech Leaders.
+                    Hi, we're <span className="font-semibold text-white">Todd Larsen</span> and <span className="font-semibold text-white">Nick Talwar</span> from Tech Leaders.
                   </p>
                   <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                    Tech Leaders helps non-technical leaders build real AI competency—not just talk about it.
+                    We help non-technical leaders build real AI competency, not just talk about it.
                   </p>
                   <p className="text-base text-muted-foreground leading-relaxed mb-4">
                     We've trained hundreds of professionals to:
@@ -141,6 +141,7 @@ const Fortune100PromptLibrary = () => {
                     </a>
                   </div>
                 </div>
+                <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="nicktalwar" data-version="v1"><a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/nicktalwar?trk=profile-badge">Nick Talwar</a></div>
               </div>
             </div>
           </div>
