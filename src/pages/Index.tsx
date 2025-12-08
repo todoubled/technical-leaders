@@ -141,12 +141,12 @@ const Index = () => {
 
             {/* Main Headline */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight animate-fade-in">
-              Be AI-First.
+             Think AI-First.
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mt-2">
                 Diversify Your Income.
               </span>
               <span className="block text-foreground/90 mt-2">
-                Stay Ahead of the Curve.
+                Be A Tech Leader.
               </span>
             </h1>
 
