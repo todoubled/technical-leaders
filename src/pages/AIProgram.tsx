@@ -137,28 +137,44 @@ const AIProgram = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
         </div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-700 dark:text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Zap className="w-4 h-4" />
-              <span>12 spots open this month</span>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-5 py-2.5 rounded-full text-sm font-bold mb-6 shadow-lg shadow-orange-500/40 border border-orange-400/50">
+                <Zap className="w-4 h-4 fill-current" />
+                <span>12 spots open this month</span>
+              </div>
+
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+                Ship Your AI Project
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 mt-2">
+                  in 6 Weeks.
+                </span>
+              </h1>
+
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl">
+                No code. No overwhelm. Just support from AI experts.
+              </p>
+
+              <Button
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+                onClick={() => {
+                  document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Get Started
+              </Button>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Ship AI
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 mt-2">
-                In 6 Weeks.
-              </span>
-            </h1>
-
-            <Button
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-              onClick={() => {
-                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Get Started
-            </Button>
+            {/* Right Image */}
+            <div className="relative flex justify-center lg:justify-end">
+              <img
+                src="/ship-ai-sketch.jpeg"
+                alt="Ship AI Program"
+                className="w-full max-w-lg rounded-2xl shadow-2xl shadow-orange-500/20"
+              />
+            </div>
           </div>
 
           {/* Goal Content */}
@@ -181,6 +197,43 @@ const AIProgram = () => {
             <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
               We'll build the skills, the workflows and tools, and the confidence to use AI in real work, not in theory.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
+            What it's like in our hands-on AI program:
+          </h2>
+
+          <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/LyY-glR6P_8"
+              title="Ship AI Program"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+
+        </div>
+      </section>
+
+      {/* Company Logos */}
+      <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">
+            Members Come From
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+            <img src="/netflix.png" alt="Netflix" className="h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+            <img src="/nike.png" alt="Nike" className="h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+            <img src="/cashapp.svg" alt="Cash App" className="h-16 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+            <img src="/redhat.webp" alt="Red Hat" className="h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+            <img src="/calendly.webp" alt="Calendly" className="h-6 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+            <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
           </div>
         </div>
       </section>
@@ -283,25 +336,6 @@ const AIProgram = () => {
           <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-6 py-3 rounded-full font-semibold">
             <Shield className="w-5 h-5" />
             <span>14-day money-back guarantee</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-            Here's what it's like in our hands-on AI program:
-          </p>
-
-          <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
-            <iframe
-              src="https://www.youtube.com/embed/LyY-glR6P_8"
-              title="Ship AI Program"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
           </div>
         </div>
       </section>
