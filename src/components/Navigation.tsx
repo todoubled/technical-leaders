@@ -19,7 +19,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <a href="/ai-workflows" className="text-foreground hover:text-primary transition-colors flex items-center gap-2">
-                AI Workshop
+                Join the AI Workshop
                 <span className="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">FREE</span>
               </a>
             </div>
@@ -33,7 +33,7 @@ const Navigation = () => {
               }}
               className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold"
             >
-              Fortune 100 AI Prompt Library
+              Get the Fortune 100 AI Prompt Library
             </Button>
           </div>
 
