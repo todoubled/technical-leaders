@@ -5,69 +5,109 @@
 
     <url>
         <loc>https://technical-leaders.com/</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/articles</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/launch</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/december</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/scale</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/ai-trade-school</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/accredited</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/refer</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/privacy-policy</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call-confirmed</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/iso-iec-17024-explained-tech-leaders</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6938fd3adf12e5e3fea78708-1765344215681.jpg</image:loc>
+            <image:title>ISO/IEC 17024 Explained for Tech Leaders</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/key-stakeholders-ai-projects</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6938f1c9df12e5e3fea78608-1765342402038.jpg</image:loc>
+            <image:title>Key Stakeholders For AI Projects</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/ai-tools-cross-functional-collaboration</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6938e7ecdf12e5e3fea783a1-1765339411670.jpg</image:loc>
+            <image:title>Best AI Tools for Cross-Functional Collaboration</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/optimizing-workflows-real-time-communication-tools</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6938bde5df12e5e3fea77487-1765336708553.jpg</image:loc>
+            <image:title>Optimizing Workflows with Real-Time Communication Tools</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://technical-leaders.com/post/cross-border-ip-laws-virtual-worlds</loc>
@@ -161,7 +201,7 @@
     </url>
     <url>
         <loc>https://technical-leaders.com/post/ai-enhances-knowledge-sharing</loc>
-        <lastmod>2025-12-07</lastmod>
+        <lastmod>2025-12-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
