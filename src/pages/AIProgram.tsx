@@ -39,28 +39,13 @@ const AIProgram = () => {
   const whatYouGet = [
     {
       icon: BookOpen,
-      title: "6-Module Course",
+      title: "AI-First Training",
       description: "so you stay current on what matters instead of drowning in hype."
-    },
-    {
-      icon: Target,
-      title: "Research Agent",
-      description: "so you always know your next move and stay focused."
     },
     {
       icon: Calendar,
       title: "Weekly Office Hours + Implementation Sessions",
-      description: "so you actually ship instead of getting stuck."
-    },
-    {
-      icon: ClipboardCheck,
-      title: "AI Workflow Audit",
-      description: "so you instantly spot where to save 5-10 hours a week."
-    },
-    {
-      icon: Wrench,
-      title: "Tool Selection Matrix",
-      description: "so you stop chasing shiny objects and choose the right stack."
+      description: "so you deliver your project instead of getting stuck and stay current on AI best practices."
     },
     {
       icon: FileText,
@@ -71,11 +56,33 @@ const AIProgram = () => {
       icon: Users,
       title: "Private Skool Community",
       description: "so you get support and answers between calls."
+    }
+  ];
+
+  const aiFirstModules = [
+    {
+      title: "The AI Project Planner™",
+      description: "HOW to scope AI projects that ROI on time without blowing budgets"
     },
     {
-      icon: UserCheck,
-      title: "Accountability Check-ins",
-      description: "so you stay consistent and ship on time."
+      title: "The AI Workspace™",
+      description: "HOW to arrange your tools and data without leaking IP"
+    },
+    {
+      title: "The Agent Prompt Library™",
+      description: "HOW to get great AI outputs consistently across every function without fragmentation"
+    },
+    {
+      title: "AI Fundamentals™",
+      description: "HOW to think AI-First and confidently speak a shared language"
+    },
+    {
+      title: "The AI Workflow™",
+      description: "HOW to create better deliverables faster without manual work"
+    },
+    {
+      title: "The AI Strategy Builder™",
+      description: "HOW to right-size business strategy for AI without wasting resources"
     }
   ];
 
@@ -165,7 +172,7 @@ const AIProgram = () => {
               <img
                 src="/ship-ai-sketch.jpeg"
                 alt="Ship AI Program"
-                className="w-full max-w-lg rounded-2xl shadow-2xl shadow-orange-500/20"
+                className="w-full max-w-3xl rounded-2xl shadow-2xl shadow-orange-500/20"
               />
             </div>
           </div>
@@ -179,7 +186,7 @@ const AIProgram = () => {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                 <p className="text-lg text-foreground leading-relaxed">
-                  Want to deliver your own AI-first project in the next 30-60 days—without wasting time on trial-and-error or getting too technical
+                  Want help delivering your own AI-first project in the next 30-60 days, without wasting time on trial-and-error or getting too technical
                 </p>
               </div>
               <div className="flex items-start gap-3">
@@ -291,20 +298,28 @@ const AIProgram = () => {
             How it works:
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-            Three phases to take you from idea to shipping your first AI project
+            Three phases to take you from validated idea to shipping your first AI project
           </p>
 
           <div className="space-y-8">
             {phases.map((phase, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3 p-8 bg-gradient-to-br from-orange-500/20 to-red-600/20 relative overflow-hidden">
+                  <div className="md:w-1/3 p-8 text-white relative overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: index === 0 ? 'url(/ai-in-ar.png)' : index === 1 ? 'url(/launch-bg.png)' : 'url(/scale-bg.png)',
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-600/70 to-red-700/70"></div>
+                    </div>
                     <div className="relative z-10">
-                      <div className="w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white">
+                      <div className="w-16 h-16 mb-4 rounded-full bg-white/20 flex items-center justify-center">
                         <span className="text-3xl font-bold">{phase.number}</span>
                       </div>
-                      <h3 className="text-2xl font-bold mb-2 text-foreground">Phase {phase.number}: {phase.title}</h3>
-                      <p className="text-sm font-semibold text-orange-600 dark:text-orange-400">{phase.duration}</p>
+                      <h3 className="text-2xl font-bold mb-2">Phase {phase.number}: {phase.title}</h3>
+                      <p className="text-sm font-semibold text-orange-200">{phase.duration}</p>
                     </div>
                   </div>
                   <div className="md:w-2/3 p-8 flex items-center">
@@ -342,6 +357,21 @@ const AIProgram = () => {
                 </Card>
               );
             })}
+          </div>
+
+          {/* AI-1st Modules */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
+              The AI-1st Training Modules
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {aiFirstModules.map((module, index) => (
+                <Card key={index} className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-blue-600">
+                  <h4 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{module.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{module.description}</p>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
