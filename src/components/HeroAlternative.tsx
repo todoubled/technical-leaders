@@ -19,24 +19,19 @@ const HeroAlternative = () => {
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px] z-0" />
 
-      {/* Floating Glow Elements */}
-      <div className="absolute top-1/4 left-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-
       <div className="relative z-10 min-h-[80vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto text-center">
           {/* Tagline */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm border border-orange-500/30 text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
-            <span>🎯</span>
-            <span>TAKE THE 60-SECOND ASSESSMENT</span>
+          <div className="inline-flex items-center bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm border border-orange-500/30 text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
+            <span>Check The 60-Second Benchmark</span>
           </div>
 
           {/* Main Headline */}
           <h2 className="font-bold leading-tight mb-8 animate-fade-in">
-            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">60 SECONDS</span>
+            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">60 SECONDS</span>
             <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-3 mb-3">to find out if your AI strategy & positioning is</span>
-            <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-pink-500">LEAVING MONEY ON THE TABLE</span>
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-300 to-gray-500">LEAVING MONEY ON THE TABLE</span>
             <span className="block text-2xl sm:text-3xl text-foreground font-semibold mt-4">(& exactly how to fix it)</span>
           </h2>
 
@@ -59,7 +54,7 @@ const HeroAlternative = () => {
           {/* CTA Button */}
           <Button
             size="lg"
-            className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all hover:scale-105 mb-8"
+            className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105 mb-8"
             onClick={() => {
               (window as any).RM.push(['trigger', 'wdg_occg7qdv']);
               trackClick('Hero Alt - Start Benchmark', {
@@ -68,7 +63,7 @@ const HeroAlternative = () => {
               });
             }}
           >
-            Start the Benchmark
+            Check the Benchmark
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 
