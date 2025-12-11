@@ -18,21 +18,21 @@ const AIProgram = () => {
   const phases = [
     {
       number: 1,
-      title: "Time Back & AI Foundations",
+      title: "Workspace Setup & Research",
       duration: "First Few Days",
-      description: "We'll run an AI Workflow Audit to find the hours you're losing each week. Then we'll rebuild your core workflows using AI so you get 5-10 hours back fast. It's the momentum boost that pays for the program before we hit the bigger project."
+      description: "We'll help you set up your AI workspace with the best tools and workflows for your role. You'll begin researching, validating, and planning your AI project so you only spend time on the most impactful stuff. No more wasting time on hype and AI that doesn't actually deliver."
     },
     {
       number: 2,
-      title: "Ship Your First AI Project",
+      title: "Build Your AI Project",
       duration: "First Few Weeks",
       description: "Next, you'll build a simple, high-leverage AI tool for your role, team, or customers. It might be a decision helper, a summariser, a content engine, a workflow bot... whatever gives you the most leverage and usage. You'll walk away with something real that makes you look like the person who \"gets AI\" (with a viable path to monetize it)."
     },
     {
       number: 3,
-      title: "AI-First Leadership & Adoption",
-      duration: "Ongoing",
-      description: "Once you've got the skills and the first project done, we'll shift the focus to adoption and repeatable systems. You'll stay up to speed with AI, lead with clarity instead of hype, and your team/customers will actually use the tools you bring them."
+      title: "Launch Your AI Project",
+      duration: "In 6 Weeks",
+      description: "Once you've got the skills and the first project done, we'll shift the focus to adoption and repeatable systems. You'll stay up to speed with AI, lead with clarity instead of hype, and your team/customers will actually use the tools you bring them. This is where the real ROI starts."
     }
   ];
 
@@ -40,26 +40,30 @@ const AIProgram = () => {
     {
       icon: BookOpen,
       title: "AI-First Training",
-      description: "so you stay current on what matters instead of drowning in hype."
+      description: "so you can get up to speed on the latest AI tools and workflows without wasting time on hype and shiny objects."
     },
     {
       icon: Calendar,
       title: "Weekly Office Hours + Implementation Sessions",
-      description: "so you deliver your project instead of getting stuck and stay current on AI best practices."
+      description: "so you stay current on AI best practices and deliver your project instead of getting stuck."
     },
     {
       icon: FileText,
-      title: "Done-for-You AI Skills & Prompts",
-      description: "so you get results fast without reinventing anything."
+      title: "AI Skills & Prompts",
+      description: "Copy+Paste prompts, agents, and workflows so you get results fast without reinventing anything."
     },
     {
       icon: Users,
       title: "Private Skool Community",
-      description: "so you get support and answers between calls."
+      description: "so you get support and answers between calls. 24/7 access to the community and resources."
     }
   ];
 
   const aiFirstModules = [
+    {
+      title: "AI Fundamentals™",
+      description: "HOW to think AI-First and confidently speak a shared language"
+    },
     {
       title: "The AI Project Planner™",
       description: "HOW to scope AI projects that ROI on time without blowing budgets"
@@ -71,10 +75,6 @@ const AIProgram = () => {
     {
       title: "The Agent Prompt Library™",
       description: "HOW to get great AI outputs consistently across every function without fragmentation"
-    },
-    {
-      title: "AI Fundamentals™",
-      description: "HOW to think AI-First and confidently speak a shared language"
     },
     {
       title: "The AI Workflow™",
@@ -362,7 +362,7 @@ const AIProgram = () => {
           {/* AI-1st Modules */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
-              The AI-1st Training Modules
+              The AI-1st Tools & Frameworks
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {aiFirstModules.map((module, index) => (
