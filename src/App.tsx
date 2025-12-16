@@ -55,6 +55,7 @@ import Fortune100AiWorkspace from "./pages/Fortune100AiWorkspace";
 import Library from "./pages/Library";
 import Playbook from "./pages/Playbook";
 import AIWorkflows from "./pages/AIWorkflows";
+import AIAgentSkills from "./pages/AIAgentSkills";
 import AIProgram from "./pages/AIProgram";
 import AIFirstProgram from "./pages/AIFirstProgram";
 import Home2025 from "./pages/Home2025";
@@ -130,6 +131,7 @@ const App = () => (
           <Route path="/full-playbook" element={<GetPlaybook />} />
           <Route path="/ai-workspace" element={<AiWorkspace />} />
           <Route path="/ai-workflows" element={<AIWorkflows />} />
+          <Route path="/ai-agent-skills" element={<AIAgentSkills />} />
           <Route path="/ai-workflow" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/ai-agent-basics" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/advanced-claude" element={<AdvancedClaude />} />
