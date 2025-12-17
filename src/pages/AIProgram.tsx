@@ -18,71 +18,43 @@ const AIProgram = () => {
   const phases = [
     {
       number: 1,
-      title: "Workspace Setup & Research",
+      title: "Ship the AI Agent",
       duration: "First Few Days",
-      description: "We'll help you set up your AI workspace with the best tools and workflows for your role. You'll begin researching, validating, and planning your AI project so you only spend time on the most impactful stuff. No more wasting time on hype and AI that doesn't actually deliver."
+      description: "We design your custom workflow, define the agent’s skills, and get it live. You run it with a human-in-the-loop at first so outputs are checked, trusted, and safe. Result: a working AI agent in real use within 30 days."
     },
     {
       number: 2,
-      title: "Build Your AI Project",
+      title: "Improve & Extend",
       duration: "First Few Weeks",
-      description: "Next, you'll build a simple, high-leverage AI tool for your role, team, or customers. It might be a decision helper, a summariser, a content engine, a workflow bot... whatever gives you the most leverage and usage. You'll walk away with something real that makes you look like the person who \"gets AI\" (with a viable path to monetize it)."
-    },
-    {
-      number: 3,
-      title: "Launch Your AI Project",
-      duration: "In 6 Weeks",
-      description: "Once you've got the skills and the first project done, we'll shift the focus to adoption and repeatable systems. You'll stay up to speed with AI, lead with clarity instead of hype, and your team/customers will actually use the tools you bring them. This is where the real ROI starts."
+      description: "We refine performance, reliability, and usefulness. If it makes sense, we help you turn the agent into something your team or customers can use easily. Result: leverage, not experiments."
     }
   ];
 
   const whatYouGet = [
     {
       icon: BookOpen,
-      title: "AI-First Training",
-      description: "so you can get up to speed on the latest AI tools and workflows without wasting time on hype and shiny objects."
+      title: "AI-first Agent Skills Playbook",
+      description: "Immediate access so you know how to design workflows and agent skills without guessing."
     },
     {
       icon: Calendar,
-      title: "Weekly Office Hours + Implementation Sessions",
-      description: "so you stay current on AI best practices and deliver your project instead of getting stuck."
+      title: "Weekly Office Hours",
+      description: "to review builds, troubleshoot issues, and keep things moving, so your agent actually ships."
     },
     {
       icon: FileText,
-      title: "AI Skills & Prompts",
-      description: "Copy+Paste prompts, agents, and workflows so you get results fast without reinventing anything."
+      title: "AI Agent Skill Library",
+      description: "Access to a growing library so you can reuse proven skills instead of starting from scratch."
+    },
+    {
+      icon: Wrench,
+      title: "Hands-on Build Support",
+      description: "from me and the team while you design, test, and verify your agent, so you're not stuck duct-taping tools together alone."
     },
     {
       icon: Users,
-      title: "Private Skool Community",
-      description: "so you get support and answers between calls. 24/7 access to the community and resources."
-    }
-  ];
-
-  const aiFirstModules = [
-    {
-      title: "AI Fundamentals™",
-      description: "HOW to think AI-First and confidently speak a shared language"
-    },
-    {
-      title: "The AI Project Planner™",
-      description: "HOW to scope AI projects that ROI on time without blowing budgets"
-    },
-    {
-      title: "The AI Workspace™",
-      description: "HOW to arrange your tools and data without leaking IP"
-    },
-    {
-      title: "The Agent Prompt Library™",
-      description: "HOW to get great AI outputs consistently across every function without fragmentation"
-    },
-    {
-      title: "The AI Workflow™",
-      description: "HOW to create better deliverables faster without manual work"
-    },
-    {
-      title: "The AI Strategy Builder™",
-      description: "HOW to right-size business strategy for AI without wasting resources"
+      title: "Private Community",
+      description: "with async support for questions, examples, and fast feedback, so momentum doesn't die between sessions."
     }
   ];
 
@@ -151,11 +123,12 @@ const AIProgram = () => {
             {/* Left Content */}
             <div className="text-center lg:text-left">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-                Ship Your AI Project
+                Ship Real AI Agents
                 <span className="block text-foreground mt-2">
-                  in 6 Weeks.
+                  in 30 Days.
                 </span>
               </h1>
+
 
               <Button
                 className="bg-blue-800 hover:bg-blue-900 text-white text-lg px-8 py-6"
@@ -179,6 +152,15 @@ const AIProgram = () => {
 
           {/* Goal Content */}
           <div className="max-w-4xl mx-auto mt-16">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Not a demo. Not a toy. Something you, your team, or your customers actually use.
+            </p>
+            <p className="text-lg sm:text-xl text-muted-foreground mb-6 leading-relaxed">
+              The Ship AI Agents program is for founders, operators, consultants, and non-technical leaders who want to replace manual workflows with real AI agents that work without custom GPTs, complex SaaS tools, or messy "vibe coding".
+            </p>
+            <p className="text-lg sm:text-xl text-muted-foreground mb-12 leading-relaxed">
+              This isn't about learning AI. It's about shipping at least one useful agent that saves time every day, even if you're not a developer.
+            </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
               This is for you if you...
             </h2>
@@ -186,25 +168,25 @@ const AIProgram = () => {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                 <p className="text-lg text-foreground leading-relaxed">
-                  Want help delivering your own AI-first project in the next 30-60 days, without wasting time on trial-and-error or getting too technical
+                  Want help building and launching custom AI agents in the next 30 days, without wasting time on trial-and-error or getting too technical
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                 <p className="text-lg text-foreground leading-relaxed">
-                  Want to use the best AI tools and workflows beyond ChatGPT, Cursor, and Replit
+                  Want to use the best AI tools and techniques beyond custom GPTs, Cursor, and other tools
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                 <p className="text-lg text-foreground leading-relaxed">
-                  Need to deliver on deadlines faster without getting called out for "AI slop"
+                  Need to integrate AI into your existing workflows without messy "vibe coding" or complex SaaS tools
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                 <p className="text-lg text-foreground leading-relaxed">
-                  Have a new idea or current project you're focused on delivering to customers or stakeholders
+                  Have a new idea or current workflow to replace with AI agents without losing control of the process or leaking data
                 </p>
               </div>
             </div>
@@ -216,7 +198,7 @@ const AIProgram = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            What it's like in our hands-on AI program:
+            Hear what it's like in our program:
           </h2>
 
           <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
@@ -291,6 +273,30 @@ const AIProgram = () => {
         <p className="text-center text-sm text-foreground/50 mt-4">and many other startups, SMBs, and non-profits</p>
       </section>
 
+      {/* What You'll Have Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
+            What you'll have in 30 days
+          </h2>
+          <p className="text-lg text-foreground leading-relaxed mb-6">
+            You'll build and launch custom AI agents that replaces manual workflows you or your team deal with every week like:
+          </p>
+          <ul className="space-y-2 mb-6">
+            <li className="text-lg text-muted-foreground">Marketing and sales GTM</li>
+            <li className="text-lg text-muted-foreground">Product or research workflows</li>
+            <li className="text-lg text-muted-foreground">Customer support</li>
+            <li className="text-lg text-muted-foreground">HR or compliance workflows</li>
+            <li className="text-lg text-muted-foreground">Financial or accounting workflows</li>
+            <li className="text-lg text-muted-foreground">Legal or regulatory workflows</li>
+            <li className="text-lg text-muted-foreground">Other workflows and internals tools you or your team deal with every week</li>
+          </ul>
+          <p className="text-lg text-foreground leading-relaxed">
+            By day 30, your agents are live and being used regularly in your business, saving you time and money every day.
+          </p>
+        </div>
+      </section>
+
       {/* How It Works - Phases */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -298,7 +304,7 @@ const AIProgram = () => {
             How it works:
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-            Three phases to take you from validated idea to shipping your first AI project
+            Two phases to take you from expertise in a manual workflow to shipping real AI agents that saves time every week.
           </p>
 
           <div className="space-y-8">
@@ -342,7 +348,7 @@ const AIProgram = () => {
             Everything you need to build and ship AI tools
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
             {whatYouGet.map((item, index) => {
               const IconComponent = item.icon;
               return (
@@ -359,25 +365,66 @@ const AIProgram = () => {
             })}
           </div>
 
-          {/* AI-1st Modules */}
-          <div className="mt-16">
+          {/* Bonuses */}
+          <div className="mt-12">
             <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
-              The AI-1st Tools & Frameworks
+              Bonuses that speed things up
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {aiFirstModules.map((module, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-blue-600">
-                  <h4 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{module.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{module.description}</p>
-                </Card>
-              ))}
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-orange-500">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 flex items-center justify-center">
+                    <Target className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                  </div>
+                  <h4 className="font-bold text-foreground">Kickoff Agent Design Session</h4>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">We map your workflow, define the agent's role, and lock the first build, so you start with clarity instead of tinkering.</p>
+              </Card>
+              <Card className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-orange-500">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                  </div>
+                  <h4 className="font-bold text-foreground">Private Enterprise-Grade Agent Examples</h4>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">Real architectures and workflows from serious environments, so you can model what actually works.</p>
+              </Card>
             </div>
           </div>
+
+          {/* Good Fit */}
+          <div className="mt-16 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
+              This is a good fit if:
+            </h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="text-orange-500 mt-1">•</span>
+                <span className="text-lg text-muted-foreground">you're a founder, operator, consultant, or non-technical leader</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-500 mt-1">•</span>
+                <span className="text-lg text-muted-foreground">you already know which workflow is worth automating</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-500 mt-1">•</span>
+                <span className="text-lg text-muted-foreground">you want something live, not another thing to learn</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-500 mt-1">•</span>
+                <span className="text-lg text-muted-foreground">you're friendly and willing to be coached</span>
+              </li>
+            </ul>
+          </div>
+
+          <p className="text-lg text-muted-foreground text-center mt-12">
+            The Ship AI Agents program is open year-round, but spots are limited so we can actively support real builds.
+          </p>
         </div>
       </section>
 
       {/* Next Steps Section */}
-      <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="pricing" className="py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <Card className="p-10 bg-gray-900 border-gray-800 text-center">
             <div className="inline-flex items-center gap-2 bg-green-900/30 text-green-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
