@@ -130,7 +130,10 @@ const App = () => (
           <Route path="/10-before-10" element={<TenBeforeTen />} />
           <Route path="/full-playbook" element={<GetPlaybook />} />
           <Route path="/ai-workspace" element={<AiWorkspace />} />
-          <Route path="/ai-workflows" element={<AIWorkflows />} />
+          <Route path="/ai-workflows-old" element={<AIWorkflows />} />
+          <Route path="/ai-workflows" element={<Navigate to="/ai-agent-skills" replace />} />
+          <Route path="/ai-workshop" element={<Navigate to="/ai-agent-skills" replace />} />
+          <Route path="/workshop" element={<Navigate to="/ai-agent-skills" replace />} />
           <Route path="/ai-agent-skills" element={<AIAgentSkills />} />
           <Route path="/ai-workflow" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/ai-agent-basics" element={<Navigate to="/ai-workspace" replace />} />
