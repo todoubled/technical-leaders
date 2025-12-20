@@ -216,8 +216,19 @@ const Scale = () => {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
             <img
-              src="/netflix.png"
-              alt="Netflix"
+              src="/calendly.webp"
+              alt="Calendly"
+              className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+            />
+            <img
+              src="/cashapp.svg"
+              alt="Cash App"
+              className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
+              style={{ maxHeight: '5rem' }}
+            />
+            <img
+              src="/gitlab.png"
+              alt="GitLab"
               className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
             />
             <img
@@ -227,24 +238,13 @@ const Scale = () => {
               style={{ maxHeight: '6rem' }}
             />
             <img
-              src="/cashapp.svg"
-              alt="Cash App"
-              className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
-              style={{ maxHeight: '5rem' }}
-            />
-            <img
               src="/redhat.webp"
               alt="Red Hat"
               className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
             />
             <img
-              src="/calendly.webp"
-              alt="Calendly"
-              className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
-            />
-            <img
-              src="/gitlab.png"
-              alt="GitLab"
+              src="/netflix.png"
+              alt="Netflix"
               className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
             />
           </div>

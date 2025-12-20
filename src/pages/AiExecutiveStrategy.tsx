@@ -62,10 +62,10 @@ const AiExecutiveStrategy = () => {
 
 
   const companyLogos = [
-    { name: "Red Hat", src: "/redhat.webp", height: "h-8" },
-    { name: "Nike", src: "/nike.png", height: "h-8" },
     { name: "Calendly", src: "/calendly.webp", height: "h-12" },
-    { name: "GitLab", src: "/gitlab.png", height: "h-8" }
+    { name: "Red Hat", src: "/redhat.webp", height: "h-8" },
+    { name: "GitLab", src: "/gitlab.png", height: "h-8" },
+    { name: "Nike", src: "/nike.png", height: "h-8" }
   ];
 
   return (
