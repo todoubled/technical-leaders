@@ -5,7 +5,7 @@ const AISOS = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI SOS | Technical Leaders"
+        title="AI SOS™ | Technical Leaders"
         description="AI SOS presentation and resources from Technical Leaders."
         keywords={["AI SOS", "AI training", "technical leadership", "AI strategy"]}
       />
