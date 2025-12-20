@@ -41,9 +41,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Skills Operating System | Technical Leaders"
-        description="Stop choosing between slow proven systems and broken AI automation. The AI Skills Operating System delivers reliable AI execution with a 90-day transformation."
-        keywords={['AI SOS', 'AI Skills Operating System', 'AI transformation', 'reliable AI execution', 'skill specs', 'AI automation', 'tech leadership']}
+        title="AI Readiness Assessment | Technical Leaders"
+        description="Take the free 2-minute assessment to discover your Skill Maturity Level and get a personalized roadmap for AI-first operations. Join 6500+ tech leaders."
+        keywords={['AI readiness assessment', 'skill maturity', 'AI-first operations', 'AI SOS', 'tech leadership', 'AI transformation']}
       />
       <Navigation />
 
