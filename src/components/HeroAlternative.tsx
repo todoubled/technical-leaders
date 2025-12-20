@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Star } from "lucide-react";
+import { ArrowRight, Check, Star, Clock, Shield, TrendingUp, Database } from "lucide-react";
 import { trackClick } from "@/utils/posthog";
 
 const HeroAlternative = () => {
@@ -23,63 +23,84 @@ const HeroAlternative = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto text-center">
           {/* Tagline */}
-          <div className="inline-flex items-center bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm border border-orange-500/30 text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
-            <span>Check The 60-Second Benchmark</span>
+          <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
+            <span>The AI Skills Operating System</span>
           </div>
 
           {/* Main Headline */}
-          <h2 className="font-bold leading-tight mb-8 animate-fade-in">
-            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">60 SECONDS</span>
-            <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-3 mb-3">to find out if your AI strategy & positioning is</span>
-            <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-300 to-gray-500">LEAVING MONEY ON THE TABLE</span>
-            <span className="block text-2xl sm:text-3xl text-foreground font-semibold mt-4">(& exactly how to fix it)</span>
-          </h2>
+          <h1 className="font-bold leading-tight mb-6 animate-fade-in">
+            <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mb-3">It wasn't the AI tools.</span>
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">It Was The</span>
+            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">Operating System</span>
+          </h1>
 
-          {/* Bullet Points */}
-          <ul className="space-y-4 mb-10 max-w-xl mx-auto text-left">
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Know your <span className="font-semibold text-foreground">#1 AI blind spot</span> holding you back</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Get your <span className="font-semibold text-foreground">personalized action plan</span> (based on exactly what you do)</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90"><span className="font-bold text-orange-400">BONUS:</span> Our AI Workflows Cheat Sheet <span className="font-semibold text-foreground">(free download)</span></span>
-            </li>
-          </ul>
+          {/* Subheadline */}
+          <p className="text-lg sm:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in">
+            Stop choosing between slow "proven systems" and broken AI automation.
+            Get reliable AI execution with a <span className="font-semibold text-foreground">90-day transformation</span>.
+          </p>
+
+          {/* Benefit Grid */}
+          <div className="grid grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto text-left">
+            <div className="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+              <Clock className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <span className="text-sm font-semibold text-foreground block">90-Day Transformation</span>
+                <span className="text-xs text-foreground/60">Not 18-24 months</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+              <Shield className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <span className="text-sm font-semibold text-foreground block">Reliable AI Execution</span>
+                <span className="text-xs text-foreground/60">Not 70% failure rate</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+              <TrendingUp className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <span className="text-sm font-semibold text-foreground block">Compounding Leverage</span>
+                <span className="text-xs text-foreground/60">Not linear headcount</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+              <Database className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <span className="text-sm font-semibold text-foreground block">Skills as Assets</span>
+                <span className="text-xs text-foreground/60">Not tribal knowledge</span>
+              </div>
+            </div>
+          </div>
 
           {/* CTA Button */}
           <Button
             size="lg"
-            className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105 mb-8"
+            className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105 mb-8"
             onClick={() => {
-              (window as any).RM.push(['trigger', 'wdg_occg7qdv']);
-              trackClick('Hero Alt - Start Benchmark', {
-                location: 'hero_alternative',
-                action: 'trigger_rightmessage_widget'
+              trackClick('Hero - Learn AI SOS', {
+                location: 'hero_main',
+                destination: '/ai-sos'
               });
+              window.location.href = '/ai-sos';
             }}
           >
-            Check the Benchmark
+            See How It Works
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 
           {/* Trust Indicators */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground mb-10">
             <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>Takes only 1 minute</span>
+              <Check className="w-4 h-4 text-green-500" />
+              <span>3x output with same team</span>
             </div>
             <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>No-BS results</span>
+              <Check className="w-4 h-4 text-green-500" />
+              <span>Human oversight built-in</span>
             </div>
             <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>Immediate insights</span>
+              <Check className="w-4 h-4 text-green-500" />
+              <span>Start with one skill</span>
             </div>
           </div>
 

@@ -41,9 +41,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Technical Leaders - AI Training & Business Launch Programs"
-        description="Join 300+ tech leaders mastering AI and building independent businesses. Get the tools, playbooks, and coaching to transform your career in 2026."
-        keywords={['AI training', 'tech leadership', 'consulting business', 'career transformation', 'AI tools', 'fractional CTO', 'tech entrepreneurship']}
+        title="AI Skills Operating System | Technical Leaders"
+        description="Stop choosing between slow proven systems and broken AI automation. The AI Skills Operating System delivers reliable AI execution with a 90-day transformation."
+        keywords={['AI SOS', 'AI Skills Operating System', 'AI transformation', 'reliable AI execution', 'skill specs', 'AI automation', 'tech leadership']}
       />
       <Navigation />
 
