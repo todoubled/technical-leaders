@@ -86,7 +86,7 @@ const AIProgram = () => {
 
   // Generate structured data
   const courseStructuredData = generateCourseStructuredData(
-    "Ship AI - Build Your First AI Tool in 6 Weeks",
+    "The AI Agents Workflow Program - Build Your First AI Tool in 6 Weeks",
     "6-week program for non-technical leaders to add 5-10 hours back into your week and ship your first AI-powered tool. No code. No overwhelm.",
     "$2500"
   );
@@ -99,7 +99,7 @@ const AIProgram = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Ship AI - Build Your First AI Tool in 6 Weeks"
+        title="The AI Agents Workflow Program - Build Your First AI Tool in 6 Weeks"
         description="12 spots open. Add 5-10 hours back into your week and ship your first AI-powered tool in six weeks. No code. No overwhelm."
         keywords={['AI tools', 'AI productivity', 'AI for leaders', 'ship AI', 'AI adoption', 'business AI', 'AI automation', 'non-technical AI']}
         structuredData={combinedStructuredData}
@@ -135,6 +135,9 @@ const AIProgram = () => {
                 </span>
               </h1>
 
+              <p className="text-lg text-muted-foreground mb-6">
+                Not a demo. Not a toy. Something you, your team, or your customers actually use to save 10+ hours/week.
+              </p>
 
               <Button
                 className="bg-blue-800 hover:bg-blue-900 text-white text-lg px-8 py-6"
@@ -149,8 +152,8 @@ const AIProgram = () => {
             {/* Right Image */}
             <div className="relative flex justify-center lg:justify-end">
               <img
-                src="/ship-ai-sketch.jpeg"
-                alt="Ship AI Program"
+                src="/AI-before-after.jpeg"
+                alt="AI Agent Workflows Program"
                 className="w-full max-w-3xl rounded-2xl shadow-2xl shadow-orange-500/20"
               />
             </div>
@@ -159,7 +162,7 @@ const AIProgram = () => {
           {/* Goal Content */}
           <div className="max-w-4xl mx-auto mt-16">
             <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Not a demo. Not a toy. Something you, your team, or your customers actually use.
+              One system for all your unique expertise and process logic in as many simple workflows as you want.
             </p>
             <p className="text-lg sm:text-xl text-muted-foreground mb-6 leading-relaxed">
               The AI Agent Workflows program is for founders, operators, consultants, and non-technical leaders who want to replace manual workflows with real AI agents that work without custom GPTs, complex SaaS tools, or messy "vibe coding".
