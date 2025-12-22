@@ -11,8 +11,24 @@ const AIProgram = () => {
   // Track scroll depth for engagement
   useTrackScrollDepth('AI Program Page');
 
+  // Load testimonial.to embed script
   useEffect(() => {
-    // Page view tracking is handled centrally in App.tsx
+    const script = document.createElement('script');
+    script.src = 'https://testimonial.to/js/iframeResizer.min.js';
+    script.async = true;
+    script.onload = () => {
+      if ((window as any).iFrameResize) {
+        (window as any).iFrameResize(
+          { log: false, checkOrigin: false },
+          '#testimonialto-ai-program-948cd5e8'
+        );
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   const phases = [
@@ -135,8 +151,12 @@ const AIProgram = () => {
                 </span>
               </h1>
 
-              <p className="text-lg text-muted-foreground mb-6">
-                Not a demo. Not a toy. Something you, your team, or your customers actually use to save 10+ hours/week.
+              <p className="text-3xl text-muted-foreground mb-6">
+                Without a million chat windows, complex SaaS tools like N8N, or messy "vibe coding"
+              </p>
+
+              <p className="text-2xl text-white mb-6">
+                Even if you're not technical.
               </p>
 
               <Button
@@ -158,68 +178,6 @@ const AIProgram = () => {
               />
             </div>
           </div>
-
-          {/* Goal Content */}
-          <div className="max-w-4xl mx-auto mt-16">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              One system for all your unique expertise and process logic in as many simple workflows as you want.
-            </p>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-6 leading-relaxed">
-              The AI Agent Workflows program is for founders, operators, consultants, and non-technical leaders who want to replace manual workflows with real AI agents that work without custom GPTs, complex SaaS tools, or messy "vibe coding".
-            </p>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-12 leading-relaxed">
-              This isn't about learning AI. It's about shipping at least one useful agent that saves time every day, even if you're not a developer.
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
-              This is for you if you...
-            </h2>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
-                <p className="text-lg text-foreground leading-relaxed">
-                  Want help building and launching custom AI agents in the next 30 days, without wasting time on trial-and-error or getting too technical
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
-                <p className="text-lg text-foreground leading-relaxed">
-                  Want to use the best AI tools and techniques beyond custom GPTs, Cursor, and other tools
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
-                <p className="text-lg text-foreground leading-relaxed">
-                  Need to integrate AI into your existing workflows without messy "vibe coding" or complex SaaS tools
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
-                <p className="text-lg text-foreground leading-relaxed">
-                  Have a new idea or current workflow to replace with AI agents without losing control of the process or leaking data
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Hear what it's like in our program:
-          </h2>
-
-          <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
-            <iframe
-              src="https://www.youtube.com/embed/LyY-glR6P_8"
-              title="Ship AI Program"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
-
         </div>
       </section>
 
@@ -280,6 +238,85 @@ const AIProgram = () => {
           </div>
         </div>
         <p className="text-center text-sm text-foreground/50 mt-4">and many other startups, SMBs, and non-profits</p>
+      </section>
+
+      {/* Goal Content */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Image */}
+              <div>
+                <img
+                  src="/ai-program-product-shot.jpg"
+                  alt="AI Agent Workflows System"
+                  className="w-full rounded-2xl shadow-2xl"
+                />
+              </div>
+
+              {/* Right Column - Text */}
+              <div>
+                <p className="text-3xl sm:text-4xl font-bold text-foreground mb-6 leading-tight">
+                  One simple system for all your unique expertise and process logic in as many reliable workflows as you need.
+                </p>
+                <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                  The AI Agent Workflows program is for founders, operators, consultants, and non-technical leaders who want to replace manual workflows with real AI agents that work without custom GPTs, complex SaaS tools, or messy "vibe coding".
+                </p>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  This isn't about learning AI. It's about shipping at least one useful agent that saves time every day, even if you're not a developer.
+                </p>
+
+                <h2 className="text-2xl font-bold text-foreground mb-6">
+                  This is for you if you...
+                </h2>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" />
+                    <p className="text-foreground leading-relaxed">
+                      Want help building and launching custom AI agents in the next 30 days, without wasting time on trial-and-error or getting too technical
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" />
+                    <p className="text-foreground leading-relaxed">
+                      Want to use the best AI tools and techniques beyond custom GPTs, Cursor, and other tools
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" />
+                    <p className="text-foreground leading-relaxed">
+                      Need to integrate AI into your existing workflows without messy "vibe coding" or complex SaaS tools
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" />
+                    <p className="text-foreground leading-relaxed">
+                      Have a new idea or current workflow to replace with AI agents without losing control of the process or leaking data
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
+            Hear what it's like in our program:
+          </h2>
+
+          <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/LyY-glR6P_8"
+              title="Ship AI Program"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+
+        </div>
       </section>
 
       {/* What You'll Have Section */}
@@ -412,6 +449,32 @@ const AIProgram = () => {
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">Real architectures and workflows from serious environments, so you can model what actually works.</p>
               </Card>
+            </div>
+          </div>
+
+          {/* Testimonials Section */}
+          <div className="mt-16">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                Real Results
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
+                  for AI-First Leaders
+                </span>
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Don't just take our word for it. Here's what members in our program are saying.
+              </p>
+            </div>
+
+            {/* Testimonial.to Embed */}
+            <div>
+              <iframe
+                id='testimonialto-ai-program-948cd5e8'
+                src="https://embed-v2.testimonial.to/carousel/all/tech-leaders-mastermind-program?id=948cd5e8-1b47-43b4-8da1-a15b4bbdfb8e"
+                frameBorder="0"
+                scrolling="no"
+                width="100%"
+              ></iframe>
             </div>
           </div>
 

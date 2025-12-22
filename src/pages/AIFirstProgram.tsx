@@ -10,6 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import SEO from "@/components/SEO";
+import Testimonials from "@/components/Testimonials";
 import { trackConversion, trackClick } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { generateCourseStructuredData, generateFAQStructuredData } from "@/utils/seo-helpers";
@@ -463,6 +464,9 @@ const AIFirstProgram = () => {
           </Card>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* Image Modal */}
       <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
