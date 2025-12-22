@@ -68,7 +68,7 @@ const AIProgram = () => {
   const faqData = [
     {
       question: "How long is the program?",
-      answer: "Ship AI runs for 6 weeks. You'll get time back in the first 30 days, then ship your first AI tool in weeks 4-6, with ongoing support for adoption and leadership."
+      answer: "The AI Agent Workflows program runs for 10 weeks. You'll get time back in the first 30 days, then ship your first AI tool in weeks 4-6, with ongoing support for adoption and leadership."
     },
     {
       question: "What if I don't love it?",
@@ -162,7 +162,7 @@ const AIProgram = () => {
               Not a demo. Not a toy. Something you, your team, or your customers actually use.
             </p>
             <p className="text-lg sm:text-xl text-muted-foreground mb-6 leading-relaxed">
-              The Ship AI Agents program is for founders, operators, consultants, and non-technical leaders who want to replace manual workflows with real AI agents that work without custom GPTs, complex SaaS tools, or messy "vibe coding".
+              The AI Agent Workflows program is for founders, operators, consultants, and non-technical leaders who want to replace manual workflows with real AI agents that work without custom GPTs, complex SaaS tools, or messy "vibe coding".
             </p>
             <p className="text-lg sm:text-xl text-muted-foreground mb-12 leading-relaxed">
               This isn't about learning AI. It's about shipping at least one useful agent that saves time every day, even if you're not a developer.
@@ -362,10 +362,10 @@ const AIProgram = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
-            Here's what you get inside the Ship AI program:
+            Here's what you get inside the AI Agent Workflows program:
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Everything you need to build and ship AI tools
+            Everything you need to build and ship AI agents that save you time and money every week
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
@@ -442,7 +442,7 @@ const AIProgram = () => {
           </div>
 
           <p className="text-lg text-muted-foreground text-center mt-12">
-            The Ship AI Agents program is open year-round, but spots are limited so we can actively support real builds.
+            The AI Agent Workflows program is open year-round, but spots are limited so we can actively support real builds.
           </p>
         </div>
       </section>
@@ -456,13 +456,13 @@ const AIProgram = () => {
               <span>14-day money-back guarantee</span>
             </div>
             <p className="text-5xl sm:text-6xl font-bold text-white mb-3">$2,500</p>
-            <p className="text-xl text-gray-300 mb-8">Ship AI Program</p>
+            <p className="text-xl text-gray-300 mb-8">AI Agent Workflows Program</p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button
                 className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-6 text-lg"
                 onClick={() => {
-                  trackConversion('Ship AI Purchase Clicked', {
+                  trackConversion('AI Agent Workflows Program Purchase Clicked', {
                     location: 'next_steps_section',
                     price: 2500,
                     plan: 'single_payment'
@@ -476,7 +476,7 @@ const AIProgram = () => {
                 variant="outline"
                 className="border-gray-600 text-white hover:bg-gray-800 px-8 py-6 text-lg"
                 onClick={() => {
-                  trackConversion('Ship AI Strategy Session Clicked', {
+                  trackConversion('AI Agent Workflows Program Strategy Session Clicked', {
                     location: 'next_steps_section'
                   });
                   window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
@@ -491,7 +491,7 @@ const AIProgram = () => {
                 href="https://buy.stripe.com/6oU7sL8vngf52jw4F6aMU0L"
                 className="flex items-center gap-1.5 hover:text-orange-400 transition-colors"
                 onClick={() => {
-                  trackConversion('Ship AI Purchase Clicked', {
+                  trackConversion('AI Agent Workflows Program Purchase Clicked', {
                     location: 'next_steps_section',
                     price: 3000,
                     plan: 'weekly_payments'
