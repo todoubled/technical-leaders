@@ -18,15 +18,21 @@ const AIProgram = () => {
   const phases = [
     {
       number: 1,
-      title: "Ship the AI Agent",
-      duration: "First Few Days",
-      description: "We design your custom workflow, define the agent’s skills, and get it live. You run it with a human-in-the-loop at first so outputs are checked, trusted, and safe. Result: a working AI agent in real use within 30 days."
+      title: "Wins & Workflows",
+      duration: "First 7 Days",
+      description: "We start with a 1:1 strategy call to map your 30-day quick-win plan. Think of it like AI triage—we'll find your biggest workflow win and deploy your first working AI agent within 7 days. (And that first agent should more than pay for the whole program. Seriously.)"
     },
     {
       number: 2,
-      title: "Improve & Extend",
-      duration: "First Few Weeks",
-      description: "We refine performance, reliability, and usefulness. If it makes sense, we help you turn the agent into something your team or customers can use easily. Result: leverage, not experiments."
+      title: "Scale & Systemise",
+      duration: "Ongoing",
+      bullets: [
+        "You'll go through our Focus Finder Diagnostic™ to find the #1 area where AI can make you faster, smarter, or richer.",
+        "Every 6 weeks, we build out your next AI system. Rinse and repeat until your whole workflow stack is humming.",
+        "You'll get personal coaching every week—so when you hit friction, you're not stuck Googling \"what the hell is a vector database?\"",
+        "Monthly live workshops, deep-dive build sessions, and guest experts to keep your AI game sharp.",
+        "Your workflows get reviewed, your systems get critiqued, and your blockers get crushed—fast."
+      ]
     }
   ];
 
@@ -279,6 +285,9 @@ const AIProgram = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
             What you'll have in 30 days
           </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            The goal? Get you building production-ready AI workflows that drive real business outcomes (in days, not quarters), even if you're not technical.
+          </p>
           <p className="text-lg text-foreground leading-relaxed mb-6">
             You'll build and launch custom AI agents that replaces manual workflows you or your team deal with every week like:
           </p>
@@ -304,7 +313,7 @@ const AIProgram = () => {
             How it works:
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-            Two phases to take you from expertise in a manual workflow to shipping real AI agents that saves time every week.
+            You'll get the full stack: 1:1 Coaching. Templates. Battle-tested playbooks. Hands-on help. No hype or BS.
           </p>
 
           <div className="space-y-8">
@@ -329,7 +338,18 @@ const AIProgram = () => {
                     </div>
                   </div>
                   <div className="md:w-2/3 p-8 flex items-center">
-                    <p className="text-lg text-muted-foreground leading-relaxed">{phase.description}</p>
+                    {phase.description ? (
+                      <p className="text-lg text-muted-foreground leading-relaxed">{phase.description}</p>
+                    ) : phase.bullets ? (
+                      <ul className="space-y-3">
+                        {phase.bullets.map((bullet: string, i: number) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="text-orange-500 mt-1">•</span>
+                            <span className="text-lg text-muted-foreground">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
                 </div>
               </Card>
@@ -400,19 +420,23 @@ const AIProgram = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 mt-1">•</span>
-                <span className="text-lg text-muted-foreground">you're a founder, operator, consultant, or non-technical leader</span>
+                <span className="text-lg text-muted-foreground">You're leading a team, running a business, or managing ops—and AI is on your radar</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 mt-1">•</span>
-                <span className="text-lg text-muted-foreground">you already know which workflow is worth automating</span>
+                <span className="text-lg text-muted-foreground">You've got broken or manual workflows slowing you down</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 mt-1">•</span>
-                <span className="text-lg text-muted-foreground">you want something live, not another thing to learn</span>
+                <span className="text-lg text-muted-foreground">You're done with "AI theory" and want working systems now</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 mt-1">•</span>
-                <span className="text-lg text-muted-foreground">you're friendly and willing to be coached</span>
+                <span className="text-lg text-muted-foreground">You're friendly, coachable, and action-biased</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-500 mt-1">•</span>
+                <span className="text-lg text-muted-foreground">And you're not gonna ghost after watching one Loom video and blaming the robots</span>
               </li>
             </ul>
           </div>
