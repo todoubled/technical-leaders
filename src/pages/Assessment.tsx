@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   ChevronRight,
   Check,
@@ -74,12 +75,21 @@ interface CTAInfo {
 }
 
 const Assessment = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [showResults, setShowResults] = useState(false);
   const [started, setStarted] = useState(true);
 
   useTrackScrollDepth('Assessment');
+
+  // Redirect to home if user hasn't opted in via RightMessage widget
+  useEffect(() => {
+    const hasOptedIn = localStorage.getItem('rightmessage_opted_in');
+    if (!hasOptedIn) {
+      navigate('/', { replace: true });
+    }
+  }, [navigate]);
 
   // Track assessment start on page load
   useEffect(() => {
