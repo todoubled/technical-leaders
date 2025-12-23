@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, Zap, Download, Terminal, Copy, Sparkles } from "lucide-react";
+import { ArrowRight, Download, Terminal, Copy, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import SEO from "@/components/SEO";
 import { trackClick, trackEvent } from "@/utils/posthog";
@@ -59,7 +59,7 @@ const Fortune100PromptLibrary = () => {
           {/* Top Section - Subheadline */}
           <div className="text-center mb-12">
             <p className="text-xl sm:text-2xl lg:text-3xl mb-2 text-white">
-              How to build AI workflows to go from Objective to Key Result in minutes
+              Advanced AI Prompts To Automate Your Work In Minutes
             </p>
             <p className="text-lg sm:text-xl text-white/80">
               Without developer resources (even if you're non-technical)
@@ -73,7 +73,7 @@ const Fortune100PromptLibrary = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-white">
                 <span className="block text-white/80">The</span>
                 <span className="block">Fortune 100</span>
-                <span className="block">AI Skills</span>
+                <span className="block">AI Prompt</span>
                 <span className="block">Library<sup className="text-3xl sm:text-4xl">™</sup></span>
               </h1>
 
@@ -95,7 +95,7 @@ const Fortune100PromptLibrary = () => {
                   window.open('https://drive.google.com/drive/u/1/folders/1Qfutu_vNGqhh19UAZf9j08I5CPq3zp3b', '_blank');
                 }}
               >
-                Download the Skills Library
+                Get the AI Prompts
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
@@ -119,9 +119,22 @@ const Fortune100PromptLibrary = () => {
                     <li>Lead AI adoption without the hype</li>
                     <li>Stop chasing shiny objects and use what works</li>
                   </ul>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    This library is a sample of the prompts and workflows we use in our 6-week Ship AI program.
+                  <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                    This library is a small sample of the prompts and workflows we give you in our full AI Agent Workflows Program.
                   </p>
+                  <Button
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10"
+                    onClick={() => {
+                      trackClick('See Program - Fortune 100 Prompt Library', {
+                        location: 'hero_intro_section'
+                      });
+                      window.location.href = "/ai-program";
+                    }}
+                  >
+                    See How It Works
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
                 </div>
                 <div className="md:w-64 flex-shrink-0 flex flex-col gap-4">
                   <div
@@ -163,34 +176,6 @@ const Fortune100PromptLibrary = () => {
         </div>
       </section>
 
-      {/* Workshop CTA Section */}
-      <section className="bg-gradient-to-r from-orange-500/10 to-red-500/10 py-12 border-y border-orange-500/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg font-semibold text-orange-600 dark:text-orange-400 mb-2">
-            Want to learn how to use these prompts and skills in your own workflows?
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-            Join Our Free AI Workflows Workshop
-          </h2>
-          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-            See these prompts in action and learn how to build AI workflows that save you 5-10 hours per week.
-          </p>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
-            onClick={() => {
-              trackClick('Register for Workshop - Fortune 100 Library', {
-                location: 'below_hero_cta'
-              });
-              window.location.href = "/ai-workflows";
-            }}
-          >
-            Register for the Workshop
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
-        </div>
-      </section>
-
       {/* Installation Instructions Section */}
       <section id="how-to-use" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div className="max-w-5xl mx-auto">
@@ -200,7 +185,7 @@ const Fortune100PromptLibrary = () => {
               After You Download
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              How to Install Your AI Skills
+              How to Use These AI Prompts
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Choose your preferred AI tool and follow the simple steps below
@@ -429,87 +414,31 @@ const Fortune100PromptLibrary = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <Zap className="w-16 h-16 mx-auto mb-6 text-orange-500" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Ready For More?
+      {/* Workshop CTA Section */}
+      <section className="bg-gradient-to-r from-orange-500/10 to-red-500/10 py-12 border-y border-orange-500/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-lg font-semibold text-orange-600 dark:text-orange-400 mb-2">
+            Want to learn how to turn these prompts and your own into AI agent workflows?
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            Join Our Free AI Workflows Workshop
           </h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-            Join hundreds of professionals who've transformed how they work with AI
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            See these prompts in action and learn how to build AI workflows that save you 5-10 hours per week (even if you're non-technical).
           </p>
-
-          <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-              Choose Your AI Training Path
-            </h3>
-            <div className="space-y-6 mb-8">
-              {/* AI-First Program */}
-              <div className="border-l-4 border-blue-500 pl-4">
-                <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-2">AI-First Training Program</h4>
-                <p className="text-gray-700 dark:text-gray-300 mb-3">Intensive program to build AI competency fast</p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Custom AI playbook for your role</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Master prompt engineering for your use cases</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Drive AI adoption in your organization</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ship AI Program */}
-              <div className="border-l-4 border-purple-500 pl-4">
-                <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Ship AI Ongoing Support</h4>
-                <p className="text-gray-700 dark:text-gray-300 mb-3">Weekly training to stay ahead of the AI curve</p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Weekly hands-on training with new workflows</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Community of 300+ AI practitioners</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-purple-500 flex-shrink-0" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Expert support for your specific projects</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
-              onClick={() => {
-                trackClick('Get the Guide - Fortune 100 Prompt Library', {
-                  location: 'bottom_cta'
-                });
-                window.location.href = "/ai";
-              }}
-            >
-              Explore Training Programs
-            </Button>
-
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-              Choose intensive training or ongoing support—both get you results
-            </p>
-          </Card>
-
-          <p className="text-gray-700 dark:text-gray-300 mt-8">
-            Questions? Email{" "}
-            <a href="mailto:todd@technical-leaders.com" className="text-orange-600 hover:underline">
-              todd@technical-leaders.com
-            </a>
-          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+            onClick={() => {
+              trackClick('Register for Workshop - Fortune 100 Library', {
+                location: 'below_hero_cta'
+              });
+              window.location.href = "/ai-workflows";
+            }}
+          >
+            Register for the Workshop
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
       </section>
     </div>
