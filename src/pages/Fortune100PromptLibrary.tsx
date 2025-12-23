@@ -238,7 +238,7 @@ const Fortune100PromptLibrary = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">Install as Claude Skills</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">For Claude Code (Terminal) or Claude Desktop</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">These prompts can be installed as reusable Agent Skills in Claude Code or Claude Desktop</p>
                 </div>
               </div>
 
@@ -293,7 +293,7 @@ const Fortune100PromptLibrary = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">Copy & Paste into ChatGPT</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Use as Custom Instructions or paste into conversations</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">ChatGPT doesn't support Agent Skills, so prompts must be copy+pasted</p>
                 </div>
               </div>
 
@@ -349,7 +349,7 @@ const Fortune100PromptLibrary = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">Copy & Paste into Gemini</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Create Gems or paste into conversations</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Gemini doesn't support Agent Skills, so prompts must be copy+pasted</p>
                 </div>
               </div>
 
