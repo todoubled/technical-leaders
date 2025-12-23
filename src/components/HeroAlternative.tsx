@@ -1,18 +1,8 @@
-import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Star } from "lucide-react";
 import { trackClick } from "@/utils/posthog";
 
 const HeroAlternative = () => {
-  // Listen for RightMessage widget submission to set opt-in flag
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).RM) {
-      (window as any).RM.push(['on', 'widget.submitted', () => {
-        localStorage.setItem('rightmessage_opted_in', 'true');
-      }]);
-    }
-  }, []);
-
   return (
     <section className="relative overflow-hidden">
       {/* Background Image */}
