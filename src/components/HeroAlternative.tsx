@@ -30,7 +30,7 @@ const HeroAlternative = () => {
           {/* Main Headline */}
           <h1 className="font-bold leading-tight mb-8 animate-fade-in">
             <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">Are You Ready for</span>
-            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">AI-First Operations?</span>
+            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">AI Agents That Work?</span>
             <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-4">Find out in 2 minutes (and get your personalized roadmap)</span>
           </h1>
 
@@ -38,15 +38,15 @@ const HeroAlternative = () => {
           <ul className="space-y-4 mb-10 max-w-xl mx-auto text-left">
             <li className="flex items-start gap-3">
               <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Discover your <span className="font-semibold text-foreground">Skill Maturity Level</span> (L1-L5) and what it means for AI adoption</span>
+              <span className="text-lg text-foreground/90">Discover your <span className="font-semibold text-foreground">AI Maturity Level</span> (L1-L5) and what it means for adoption and ROI</span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Get your <span className="font-semibold text-foreground">top 3 skills to systematize first</span> for maximum leverage</span>
+              <span className="text-lg text-foreground/90">Get your <span className="font-semibold text-foreground">top 3 workflows to systematize first</span> for maximum leverage</span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90"><span className="font-bold text-orange-400">BONUS:</span> The AI SOS Framework Guide <span className="font-semibold text-foreground">(free download)</span></span>
+              <span className="text-lg text-foreground/90"><span className="font-bold text-orange-400">BONUS:</span> The AI Skills Operating System™ Guide <span className="font-semibold text-foreground">(free download)</span></span>
             </li>
           </ul>
 
