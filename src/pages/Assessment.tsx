@@ -93,7 +93,7 @@ const Assessment = () => {
     {
       id: 'role',
       headline: "First, let's personalize your roadmap...",
-      question: "Who will you be implementing AI-first operations for?",
+      question: "Who will you be implementing AI agent workflows for?",
       microcopy: "Your answer helps us focus on what matters most for your situation.",
       options: [
         { id: 'B2C-solo', label: 'Just me', sublabel: "I'm a solopreneur or freelancer", icon: User },
@@ -247,7 +247,7 @@ const Assessment = () => {
     if (urgency === 'urgent-now') {
       return {
         headline: 'Your Situation Calls for Speed',
-        desc: "Book a 30-minute AI Operations Audit. We'll identify your highest-leverage skill to systematize first and give you a 14-day implementation plan.",
+        desc: "Book a 30-minute AI Workflow Audit. We'll identify your highest-leverage skill to systematize first and give you a 14-day implementation plan.",
         primary: 'Book Your Audit Call',
         secondary: null
       };
@@ -255,22 +255,22 @@ const Assessment = () => {
     if (urgency === 'urgent-quarter') {
       return {
         headline: 'Ready for Your 90-Day Transformation?',
-        desc: 'Download your AI SOS Framework Guide and join our next workshop to systematize your first 5 skills this quarter.',
-        primary: 'Get the Framework Guide',
+        desc: 'Download your AI SOS™ Guide and join our next workshop to systematize your first 5 skills this quarter.',
+        primary: 'Get the Guide',
         secondary: 'See Workshop Dates'
       };
     }
     if (role === 'B2C-solo') {
       return {
         headline: 'Your Solo AI Operating System',
-        desc: 'Download the AI SOS Framework Guide and start with your #1 skill. Most solopreneurs see results within 2 weeks.',
-        primary: 'Get Your Framework Guide',
+        desc: 'Download the AI SOS™ Guide and start with your #1 skill. Most solopreneurs see results within 2 weeks.',
+        primary: 'Get Your Guide',
         secondary: null
       };
     }
     return {
       headline: 'Smart to Plan Ahead',
-      desc: 'Start with the AI SOS Framework Guide — it covers the Skill Spec template, maturity model, and 8-week implementation playbook.',
+      desc: 'Start with the AI SOS™ Guide — it covers the Skill Spec template, maturity model, and 8-week implementation playbook.',
       primary: 'Download the Guide (Free)',
       secondary: null
     };
@@ -351,7 +351,7 @@ const Assessment = () => {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
         <SEO
-          title="AI-First Operations Assessment | Technical Leaders"
+          title="AI Agent Workflows Assessment | Tech Leaders"
           description="Take our free 2-minute assessment to discover your Skill Maturity Level and get a personalized 90-day AI operations roadmap."
           keywords={['AI assessment', 'operations maturity', 'AI readiness', 'skill assessment', 'AI operations']}
         />
@@ -414,7 +414,7 @@ const Assessment = () => {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 py-12">
         <SEO
-          title="Your AI-First Readiness Results | Technical Leaders"
+          title="Your AI Agent Workflow Results | Technical Leaders"
           description="Your personalized AI operations assessment results and 90-day roadmap."
         />
         <div className="max-w-2xl mx-auto">
@@ -423,7 +423,7 @@ const Assessment = () => {
             <div className="inline-block px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium mb-4">
               Assessment Complete
             </div>
-            <h1 className="text-3xl font-bold text-white mb-2">Your AI-First Readiness Results</h1>
+            <h1 className="text-3xl font-bold text-white mb-2">Your AI Agent Workflow Results</h1>
           </div>
 
           {/* Maturity Level Card */}
