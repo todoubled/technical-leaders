@@ -1,11 +1,11 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
-import { Video, Download } from "lucide-react";
+import { Video, Download, ChevronRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const WorkshopReplay = () => {
-  const youtubeVideoId = "JA_tWS1LJqs";
+  const youtubeVideoId = "53P51ZtNdBM";
   const workbookUrl = "https://ai1stplaybook.com/workshop";
 
   const heroContent = {
@@ -85,6 +85,66 @@ const WorkshopReplay = () => {
               <Download className="mr-2 h-5 w-5" />
               Get the Workbook
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16 leading-tight">
+            You Came for the Workshop,<br />
+            But You're Staying for What's Next
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Image */}
+            <div className="flex justify-center lg:justify-start">
+              <img
+                src="/ai-program-product-shot.jpg"
+                alt="AI Agent Workflows Program"
+                className="w-full max-w-md rounded-2xl shadow-xl"
+              />
+            </div>
+
+            {/* Right Column - Content */}
+            <div className="space-y-6">
+              <p className="text-lg text-muted-foreground font-medium">
+                You're Here Because You Want More. Let's Not Pretend Otherwise.
+              </p>
+
+              <p className="text-lg text-muted-foreground">
+                If the workshop made you go, <em>"Where has this been all my life?"</em>—you're not alone. It happens.
+              </p>
+
+              <p className="text-lg text-muted-foreground">
+                So, here's the good news: I've opened the doors to the AI Agent Workflows Program, and I've stashed a few seats for the quick movers (you know who you are).
+              </p>
+
+              <p className="text-lg text-muted-foreground">
+                No fluff, no hustle culture slogans—just smarter strategies that actually work. You've seen how I roll. If you're ready to ship real AI agents and ditch the manual grind, this is your shot.
+              </p>
+
+              <p className="text-lg text-muted-foreground">
+                Click below to check it out, and maybe—if we're a good fit—we'll be working together soon. Let's do this.
+              </p>
+
+              <div className="pt-4">
+                <Button
+                  size="lg"
+                  className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6"
+                  onClick={() => {
+                    trackEvent('AI Program CTA Clicked', {
+                      location: 'workshop_replay_bottom'
+                    });
+                    window.location.href = "/ai-program";
+                  }}
+                >
+                  Get the Deets on the AI Program
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
