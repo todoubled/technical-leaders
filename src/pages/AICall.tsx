@@ -112,7 +112,7 @@ const AICall = () => {
               <iframe width="560" height="315" src="https://www.youtube.com/embed/LyY-glR6P_8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Watch this 1-minute overview to understand how we help.
+                Watch this quick overview to understand how we help.
               </p>
 
               <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
@@ -122,13 +122,13 @@ const AICall = () => {
                 <div className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0" />
                   <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Assess your current AI readiness and identify opportunities
+                    Assess your current AI usage and identify opportunities
                   </p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle2 className="h-5 w-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0" />
                   <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Uncover your "#1 blocker" preventing AI adoption success
+                    Uncover your "#1 blocker" preventing better AI results
                   </p>
                 </div>
                 <div className="flex items-start">
