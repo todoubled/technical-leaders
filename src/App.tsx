@@ -56,6 +56,7 @@ import Library from "./pages/Library";
 import Playbook from "./pages/Playbook";
 import AIWorkflows from "./pages/AIWorkflows";
 import AIAgentSkills from "./pages/AIAgentSkills";
+import WorkshopReplay from "./pages/WorkshopReplay";
 import AIProgram from "./pages/AIProgram";
 import AIFirstProgram from "./pages/AIFirstProgram";
 import AISOS from "./pages/AISOS";
@@ -137,6 +138,7 @@ const App = () => (
           <Route path="/ai-workshop" element={<Navigate to="/ai-agent-skills" replace />} />
           <Route path="/workshop" element={<Navigate to="/ai-agent-skills" replace />} />
           <Route path="/ai-agent-skills" element={<AIAgentSkills />} />
+          <Route path="/workshop-replay" element={<WorkshopReplay />} />
           <Route path="/ai-workflow" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/ai-agent-basics" element={<Navigate to="/ai-workspace" replace />} />
           <Route path="/advanced-claude" element={<AdvancedClaude />} />
