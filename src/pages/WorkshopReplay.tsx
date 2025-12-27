@@ -92,7 +92,7 @@ const WorkshopReplay = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-background mb-16 leading-tight">
             You Came for the Workshop,<br />
             But You're Staying for What's Next
           </h2>
@@ -109,8 +109,8 @@ const WorkshopReplay = () => {
 
             {/* Right Column - Content */}
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground font-medium">
-                You're Here Because You Want More. Let's Not Pretend Otherwise.
+              <p className="text-xl text-muted-foreground font-medium">
+                You're here because you want more out of AI.
               </p>
 
               <p className="text-lg text-muted-foreground">
@@ -118,15 +118,15 @@ const WorkshopReplay = () => {
               </p>
 
               <p className="text-lg text-muted-foreground">
-                So, here's the good news: I've opened the doors to the AI Agent Workflows Program, and I've stashed a few seats for the quick movers (you know who you are).
+                So, here's the good news: We've opened the doors to the AI Agent Workflows Program, and I've stashed a few seats for the quick movers (you know who you are).
               </p>
 
               <p className="text-lg text-muted-foreground">
-                No fluff, no hustle culture slogans—just smarter strategies that actually work. You've seen how I roll. If you're ready to ship real AI agents and ditch the manual grind, this is your shot.
+                No hype, no figuring it out own your own. Just smarter AI strategies that actually work. If you're ready to ship real AI agents and ditch the AI chaos, this is your shot.
               </p>
 
               <p className="text-lg text-muted-foreground">
-                Click below to check it out, and maybe—if we're a good fit—we'll be working together soon. Let's do this.
+                Click below to check it out, and maybe (if we're a good fit) we'll be working together soon. Let's do this.
               </p>
 
               <div className="pt-4">
@@ -140,7 +140,7 @@ const WorkshopReplay = () => {
                     window.location.href = "/ai-program";
                   }}
                 >
-                  Get the Deets on the AI Program
+                  Get the Details on the AI Program
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
