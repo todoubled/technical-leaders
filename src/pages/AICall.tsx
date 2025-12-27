@@ -94,7 +94,7 @@ const AICall = () => {
       <section className="pt-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            Book a 15-Minute AI Strategy Call
+            Book a 30-Minute AI Strategy Call
           </h1>
         </div>
       </section>
