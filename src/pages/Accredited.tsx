@@ -4,6 +4,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Award, Linkedin, CheckCircle2 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 export default function Accredited() {
   const leaders = [
@@ -41,6 +42,11 @@ export default function Accredited() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Accredited Tech Leaders"
+        description="Meet our team of accredited tech leaders who have demonstrated both technical and leadership skills to lead people and projects to successful outcomes."
+        keywords={['accredited tech leaders', 'CTO certification', 'technical leadership', 'leadership accreditation', 'VP Engineering']}
+      />
       <Navigation />
 
       {/* Hero Section */}

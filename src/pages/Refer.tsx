@@ -4,6 +4,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Users, DollarSign, Heart, CheckCircle2, Mail, Linkedin, Twitter, Youtube } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 export default function Refer() {
   const handleReferralEmail = () => {
@@ -54,6 +55,11 @@ Best regards,
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Referral Program"
+        description="Refer technical professionals to the Technical Leaders program and earn rewards. Help others advance their careers while earning subscription credits or cash payments."
+        keywords={['referral program', 'technical leadership referral', 'CTO referral', 'leadership program rewards']}
+      />
       <Navigation />
 
       {/* Hero Section */}
