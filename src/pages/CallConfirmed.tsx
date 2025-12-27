@@ -3,10 +3,16 @@ import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Calendar, Video, Trophy } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 export default function CallConfirmed() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Call Confirmed"
+        description="Your call with Technical Leaders is confirmed. Prepare for your strategy session to scale your income, influence, and impact as a technical leader."
+        keywords={['strategy call', 'technical leadership', 'career coaching', 'CTO mentoring']}
+      />
       <Navigation />
 
       {/* Hero Section */}

@@ -1,12 +1,18 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+import SEO from '@/components/SEO';
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Privacy Policy"
+        description="Learn how Technical Leaders, Inc. collects, uses, and protects your personal information. Read our complete privacy policy."
+        keywords={['privacy policy', 'data protection', 'personal information', 'Technical Leaders privacy']}
+      />
       <Navigation />
-      
+
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 sm:p-12">

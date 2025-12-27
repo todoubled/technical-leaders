@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import SEO from '@/components/SEO';
 
 const NotFound = () => {
   const location = useLocation();
@@ -30,6 +31,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
+      <SEO
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist. Redirecting you to Technical Leaders homepage."
+        keywords={['404', 'page not found']}
+      />
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4 text-foreground">404</h1>
         <p className="text-xl text-muted-foreground mb-4">Page not found</p>
