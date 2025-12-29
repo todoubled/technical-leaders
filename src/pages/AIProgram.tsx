@@ -116,7 +116,7 @@ const AIProgram = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="The AI Agents Workflow Program - Build Your First AI Tool in 6 Weeks"
-        description="12 spots open. Add 5-10 hours back into your week and ship your first AI-powered tool in six weeks. No code. No overwhelm."
+        description="3 spots left. Add 5-10 hours back into your week and ship your first AI-powered tool in six weeks. No code. No overwhelm."
         keywords={['AI tools', 'AI productivity', 'AI for leaders', 'ship AI', 'AI adoption', 'business AI', 'AI automation', 'non-technical AI']}
         structuredData={combinedStructuredData}
       />
@@ -125,7 +125,7 @@ const AIProgram = () => {
       <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3 px-4 text-center">
         <div className="flex items-center justify-center gap-2 text-sm sm:text-base font-semibold">
           <Zap className="w-4 h-4 fill-current" />
-          <span>12 spots open this month</span>
+          <span>3 spots left</span>
         </div>
       </div>
 
