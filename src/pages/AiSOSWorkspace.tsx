@@ -264,6 +264,19 @@ const AiSOSWorkspace = () => {
             {completedSteps.length > 0 ? 'Continue Tutorial' : 'Start Tutorial'}
             <ChevronRight className="ml-2 h-5 w-5" />
           </Button>
+
+          {/* Video Embed */}
+          <div className="mt-12 max-w-3xl mx-auto">
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-border/50">
+              <iframe
+                src="https://www.youtube.com/embed/2p0Vc3yKyg8"
+                title="AI SOS Workspace Tutorial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
