@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const WorkshopReplay = () => {
-  const youtubeVideoId = "53P51ZtNdBM";
+  const youtubeVideoId = "jOmV4GLh6BE";
   const workbookUrl = "https://ai1stplaybook.com/workshop";
 
   const heroContent = {
@@ -114,7 +114,7 @@ const WorkshopReplay = () => {
               </p>
 
               <p className="text-lg text-muted-foreground">
-                If the workshop made you go, <em>"Where has this been all my life?"</em>—you're not alone. It happens.
+                If the workshop made you go, <em>"I need more of this"</em>, you're not alone.
               </p>
 
               <p className="text-lg text-muted-foreground">
