@@ -223,7 +223,7 @@ const AiSOSWorkspace = () => {
           </h1>
 
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Build a fully configured Claude workspace with custom skills, connected tools, and repeatable workflows you can adapt to any business process.
+            Build a fully configured Claude agent workspace with custom skills, connected tools, and repeatable workflows you can adapt to any business process (without getting technical).
           </p>
 
           {/* Time Estimate */}
@@ -484,15 +484,8 @@ description: Real-time DM sales coaching using Trust Physics...
                       </ul>
                     </li>
                     <li className="pl-2">
-                      <strong>Navigate to Model Preferences or User Preferences</strong>
-                      <ul className="mt-2 ml-6 space-y-1 text-muted-foreground list-disc">
-                        <li>Look for "Thinking" or "Reasoning" settings</li>
-                      </ul>
-                    </li>
-                    <li className="pl-2">
                       <strong>Enable Extended Thinking / Atomic Reasoning</strong>
                       <ul className="mt-2 ml-6 space-y-1 text-muted-foreground list-disc">
-                        <li>Toggle on extended thinking capabilities</li>
                         <li>Add this instruction to your User Preferences:</li>
                       </ul>
                     </li>
@@ -1208,24 +1201,6 @@ description: [One-line description for when to use this skill]
           </div>
         </div>
       </section>
-
-      <ContentFooter
-        headline="Ready to Build Your AI Workspace?"
-        description="Join the AI SOS community to get access to skill libraries, share workflows, and learn from other practitioners."
-        primaryCTA={{
-          text: "Join AI SOS",
-          url: "/ai-sos",
-          description: "Get started with AI agent workflows"
-        }}
-        benefits={[
-          "Access to curated skill libraries",
-          "Community support and feedback",
-          "Weekly workshops and office hours",
-          "Templates for common workflows"
-        ]}
-        socialProof="Tutorial created for AI SOS participants"
-        trackingContext="AI SOS Workspace Tutorial"
-      />
     </div>
   );
 };
