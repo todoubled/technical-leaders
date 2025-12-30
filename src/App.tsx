@@ -41,6 +41,8 @@ import BrandCharacterWorkshop from "./pages/BrandCharacterWorkshop";
 import BrandWorkshopConfirmed from "./pages/BrandWorkshopConfirmed";
 import AIForVC from "./pages/AIForVC";
 import AIForLeaders from "./pages/AIForLeaders";
+import AILeader from "./pages/AILeader";
+import AILeaderApply from "./pages/AILeaderApply";
 import Benchmark from "./pages/Benchmark";
 import TenBeforeTen from "./pages/TenBeforeTen";
 import GetPlaybook from "./pages/GetPlaybook";
@@ -131,6 +133,8 @@ const App = () => (
           <Route path="/ai" element={<AIProgramSelector />} />
           <Route path="/ai-for-vc" element={<AIForVC />} />
           <Route path="/ai-for-leaders" element={<AIForLeaders />} />
+          <Route path="/ai-leader" element={<AILeader />} />
+          <Route path="/ai-leader-apply" element={<AILeaderApply />} />
           <Route path="/benchmark" element={<Benchmark />} />
           <Route path="/10-before-10" element={<TenBeforeTen />} />
           <Route path="/full-playbook" element={<GetPlaybook />} />
