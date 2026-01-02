@@ -1,5 +1,10 @@
 {
   "redirects": [
+    {
+      "source": "/ls",
+      "destination": "https://drive.google.com/drive/u/1/folders/1s_UNK3dw7EJiToqHUl1uYWgioZJ9xfpH",
+      "permanent": false
+    }
   ],
   "rewrites": [
     {
