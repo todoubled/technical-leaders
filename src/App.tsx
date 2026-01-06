@@ -67,6 +67,7 @@ import OfficeHoursDemo from "./pages/OfficeHoursDemo";
 import Podcast from "./pages/Podcast";
 import HealthcareAICaseStudy from "./pages/HealthcareAICaseStudy";
 import Assessment from "./pages/Assessment";
+import AIPriorities from "./pages/AIPriorities";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -163,6 +164,7 @@ const App = () => (
           <Route path="/2025" element={<Home2025 />} />
           <Route path="/2026" element={<Navigate to="/" replace />} />
           <Route path="/assessment" element={<Assessment />} />
+          <Route path="/ai-priorities" element={<AIPriorities />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
