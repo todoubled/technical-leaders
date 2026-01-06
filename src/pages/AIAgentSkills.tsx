@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import ContentFooter from "@/components/footers/ContentFooter";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,23 @@ import { trackEvent } from "@/utils/posthog";
 
 const AIAgentSkills = () => {
   const [copied, setCopied] = useState(false);
+  const formContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!formContainerRef.current) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://techleaders.kit.com/8273fe48f8/index.js';
+    script.async = true;
+    script.setAttribute('data-uid', '8273fe48f8');
+    formContainerRef.current.appendChild(script);
+
+    return () => {
+      if (formContainerRef.current) {
+        formContainerRef.current.innerHTML = '';
+      }
+    };
+  }, []);
 
   const heroContent = {
     badge: "Beyond Basic Prompting",
@@ -133,18 +150,7 @@ const AIAgentSkills = () => {
             </div>
           </div>
 
-          <Button
-            size="lg"
-            className="text-lg px-8 py-6"
-            onClick={() => handleCTA('Join the Workshop - Hero', 'hero_section')}
-          >
-            Save My Spot
-            <ChevronRight className="ml-2 h-5 w-5" />
-          </Button>
-
-          <p className="text-sm font-semibold mt-4 text-muted-foreground">
-            FREE Workshop on Tuesdays at 11am CST
-          </p>
+          <div ref={formContainerRef} className="max-w-md mx-auto"></div>
         </div>
       </section>
 
@@ -247,7 +253,7 @@ const AIAgentSkills = () => {
             <Button
               size="lg"
               className="text-lg px-8 py-6"
-              onClick={() => handleCTA('Join the Workshop - Curriculum', 'curriculum_section')}
+              onClick={() => formContainerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
             >
               Reserve Your Seat
               <ChevronRight className="ml-2 h-5 w-5" />
@@ -308,8 +314,8 @@ const AIAgentSkills = () => {
         description="No coding experience required. Learn how to build AI agents that automate your most tedious tasks—then use them immediately."
         primaryCTA={{
           text: "Save My Spot",
-          url: zoomRegistrationUrl,
-          description: "FREE on Tuesdays at 11am CST"
+          onClick: () => formContainerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }),
+          description: ""
         }}
         benefits={[
           "Build your first Agent Skill live",

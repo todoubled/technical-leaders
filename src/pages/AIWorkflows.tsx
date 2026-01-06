@@ -212,7 +212,7 @@ const AIWorkflows = () => {
         primaryCTA={{
           text: "Save My Spot",
           url: zoomRegistrationUrl,
-          description: "FREE on Tuesdays at 11am CST"
+          description: ""
         }}
         benefits={[
           "Live demos of real AI workflows",

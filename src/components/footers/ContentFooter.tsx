@@ -12,8 +12,9 @@ interface ContentFooterProps {
   // Next Step CTA
   primaryCTA: {
     text: string;
-    url: string;
+    url?: string;
     description?: string;
+    onClick?: () => void;
   };
 
   // Value Props
@@ -98,9 +99,13 @@ const ContentFooter = ({
                 onClick={() => {
                   trackClick(`${trackingContext} - Content Footer CTA`, {
                     location: 'content_footer',
-                    destination: primaryCTA.url
+                    destination: primaryCTA.url || 'custom_action'
                   });
-                  window.location.href = primaryCTA.url;
+                  if (primaryCTA.onClick) {
+                    primaryCTA.onClick();
+                  } else if (primaryCTA.url) {
+                    window.location.href = primaryCTA.url;
+                  }
                 }}
               >
                 <span className="flex items-center gap-3">
