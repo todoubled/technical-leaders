@@ -12,7 +12,7 @@ const AIPriorities = () => {
     {
       letter: "R",
       name: "Reach",
-      description: "How often is this skill executed?",
+      description: "How often is this workflow executed?",
       note: "Higher is better",
       icon: Clock,
       color: "from-blue-500 to-blue-600"
@@ -20,7 +20,7 @@ const AIPriorities = () => {
     {
       letter: "I",
       name: "Impact",
-      description: "How valuable is improving this skill?",
+      description: "How valuable is improving this workflow?",
       note: "Higher is better",
       icon: Sparkles,
       color: "from-amber-500 to-amber-600"
@@ -57,45 +57,12 @@ const AIPriorities = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              How to Prioritize: Use the RICE Framework for Skills
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Stop chasing random AI use cases. Start with strategic capability building.
-            </p>
+            <img
+              src="/rice-framework.png"
+              alt="RICE Framework for AI Priorities"
+              className="mt-8 max-w-full rounded-lg shadow-lg mx-auto"
+            />
           </div>
-        </div>
-      </section>
-
-      {/* Formula Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-8 sm:p-12 bg-gradient-to-br from-stone-50 to-stone-100 dark:from-stone-900 dark:to-stone-800 border-2">
-            <div className="flex flex-col items-center justify-center">
-              {/* Formula Display */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
-                <div className="flex flex-col items-center">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
-                    <span className="italic">(Reach</span>
-                    <span className="mx-2 text-muted-foreground">×</span>
-                    <span className="italic">Impact</span>
-                    <span className="mx-2 text-muted-foreground">×</span>
-                    <span className="italic">Confidence)</span>
-                  </div>
-                  <div className="w-full h-1 bg-foreground my-4"></div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground italic">
-                    (Effort)
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 mt-4 sm:mt-0">
-                  <span className="text-3xl sm:text-4xl text-muted-foreground">=</span>
-                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-500 underline decoration-2 underline-offset-4">
-                    Priority Score
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Card>
         </div>
       </section>
 
@@ -137,7 +104,7 @@ const AIPriorities = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Card className="p-8 sm:p-12 border-2 border-orange-500/20">
             <p className="text-xl sm:text-2xl text-foreground leading-relaxed">
-              This gives you a <span className="font-bold text-orange-500">ranked list</span>. Start with the highest-scoring skills to get the <span className="font-bold text-orange-500">biggest wins first</span>.
+              This gives you a <span className="font-bold text-orange-500">ranked list</span>. Start with the highest-scoring workflows to get the <span className="font-bold text-orange-500">biggest wins first</span>.
             </p>
           </Card>
         </div>
