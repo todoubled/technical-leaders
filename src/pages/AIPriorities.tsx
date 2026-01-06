@@ -113,7 +113,7 @@ const AIPriorities = () => {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-lg font-bold text-foreground">{factor.letter} - {factor.name}:</span>
+                        <span className="text-lg font-bold text-muted-foreground">{factor.letter} - {factor.name}:</span>
                         <span className="text-lg text-muted-foreground">{factor.description}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
@@ -139,9 +139,6 @@ const AIPriorities = () => {
             <p className="text-xl sm:text-2xl text-foreground leading-relaxed">
               This gives you a <span className="font-bold text-orange-500">ranked list</span>. Start with the highest-scoring skills to get the <span className="font-bold text-orange-500">biggest wins first</span>.
             </p>
-            <div className="mt-6 flex justify-center">
-              <ArrowRight className="w-8 h-8 text-orange-500 animate-pulse" />
-            </div>
           </Card>
         </div>
       </section>
