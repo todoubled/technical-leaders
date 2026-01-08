@@ -2,35 +2,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
-import { useEffect } from "react";
-import { trackEvent, trackConversion } from "@/utils/posthog";
+import { trackEvent } from "@/utils/posthog";
 import { ArrowRight } from "lucide-react";
 
 const AIWaitlist = () => {
-  useEffect(() => {
-    // Inject ConvertKit form script
-    const formContainer = document.getElementById('waitlist-form-container');
-    if (formContainer && !formContainer.querySelector('script')) {
-      const script = document.createElement('script');
-      script.async = true;
-      script.setAttribute('data-uid', '95cdfaa1de');
-      script.src = 'https://techleaders.kit.com/95cdfaa1de/index.js';
-      formContainer.appendChild(script);
-
-      // Listen for ConvertKit form submissions to track in PostHog
-      script.onload = () => {
-        window.addEventListener('message', (event) => {
-          if (event.origin === 'https://techleaders.kit.com' && event.data?.event === 'form_submitted') {
-            trackConversion('Waitlist Signup', {
-              source: 'ai_waitlist_page',
-              location: 'hero_section'
-            });
-          }
-        });
-      };
-    }
-  }, []);
-
   const programs = [
     {
       name: "CLIENTS",
@@ -81,23 +56,18 @@ const AIWaitlist = () => {
             If you're thinking about working with us this year, the waitlist is the only place to raise your hand.
           </p>
 
-          <div id="waitlist-form-container" className="w-full max-w-md mx-auto">
-            {/* ConvertKit form will be injected here */}
-            <noscript>
-              <Button
-                size="lg"
-                className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6"
-                onClick={() => {
-                  trackEvent('Join Waitlist Clicked', {
-                    location: 'hero_section'
-                  });
-                }}
-              >
-                Join The Waitlist
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </noscript>
-          </div>
+          <Button
+            size="lg"
+            className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6"
+            onClick={() => {
+              trackEvent('Join Waitlist Clicked', {
+                location: 'hero_section'
+              });
+            }}
+          >
+            Join The Waitlist
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </section>
 
