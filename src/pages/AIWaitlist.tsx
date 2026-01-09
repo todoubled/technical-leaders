@@ -29,6 +29,12 @@ const AIWaitlist = () => {
             We've stopped taking on new clients right now.
           </p>
 
+          <img
+            src="/ai-program-product-shot.jpg"
+            alt="AI Program"
+            className="w-full max-w-2xl mx-auto rounded-lg shadow-lg mb-12"
+          />
+
           <p className="text-lg sm:text-xl text-foreground mb-12">
             The <span className="font-bold">AI SOS</span> program reopens later this month.
           </p>
