@@ -6,21 +6,6 @@ import { trackEvent } from "@/utils/posthog";
 import { ArrowRight } from "lucide-react";
 
 const AIWaitlist = () => {
-  const programs = [
-    {
-      name: "CLIENTS",
-      description: "program is being rebuilt and relaunches later this month."
-    },
-    {
-      name: "Black Belt",
-      description: "is already full for January. We'll open for February soon."
-    },
-    {
-      name: "Boardroom",
-      description: "remains private and highly selective."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
@@ -44,13 +29,9 @@ const AIWaitlist = () => {
             We've stopped taking on new clients right now.
           </p>
 
-          <div className="space-y-4 mb-12 text-lg sm:text-xl text-foreground">
-            {programs.map((program, index) => (
-              <p key={index}>
-                <span className="font-bold">{program.name}</span> {program.description}
-              </p>
-            ))}
-          </div>
+          <p className="text-lg sm:text-xl text-foreground mb-12">
+            The <span className="font-bold">AI SOS</span> program reopens later this month.
+          </p>
 
           <p className="text-lg sm:text-xl text-foreground mb-10 max-w-3xl mx-auto">
             If you're thinking about working with us this year, the waitlist is the only place to raise your hand.
