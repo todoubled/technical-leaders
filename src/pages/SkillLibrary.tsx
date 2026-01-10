@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
-import ContentFooter from "@/components/footers/ContentFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -348,23 +347,6 @@ const SkillLibrary = () => {
           </div>
         </div>
       </section>
-
-      <ContentFooter
-        headline="Want to Create Your Own Skills?"
-        description="Join our free workshop to learn how to build custom Agent Skills for any workflow—no coding required."
-        primaryCTA={{
-          text: "Join the Workshop",
-          href: "/ai-agent-skills",
-          description: "",
-        }}
-        benefits={[
-          "Build your first Agent Skill live",
-          "No code required",
-          "Works with Claude Pro, Max, Team & Enterprise",
-        ]}
-        socialProof="Join leaders from venture-backed teams learning to automate with AI"
-        trackingContext="Skill Library"
-      />
     </div>
   );
 };
