@@ -17,14 +17,18 @@ const AIWaitlist = () => {
 
   useEffect(() => {
     if (isModalOpen) {
-      const formContainer = document.getElementById('waitlist-modal-form');
-      if (formContainer && !formContainer.querySelector('script')) {
-        const script = document.createElement('script');
-        script.async = true;
-        script.setAttribute('data-uid', 'b00140dfe6');
-        script.src = 'https://techleaders.kit.com/b00140dfe6/index.js';
-        formContainer.appendChild(script);
-      }
+      // Small delay to ensure the modal DOM is fully rendered
+      const timer = setTimeout(() => {
+        const formContainer = document.getElementById('waitlist-modal-form');
+        if (formContainer && !formContainer.querySelector('script')) {
+          const script = document.createElement('script');
+          script.async = true;
+          script.setAttribute('data-uid', 'b00140dfe6');
+          script.src = 'https://techleaders.kit.com/b00140dfe6/index.js';
+          formContainer.appendChild(script);
+        }
+      }, 100);
+      return () => clearTimeout(timer);
     }
   }, [isModalOpen]);
 
