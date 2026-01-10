@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Download,
   Search,
@@ -18,6 +19,8 @@ import {
   Filter,
   Grid3X3,
   List,
+  Gem,
+  Terminal,
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
@@ -311,40 +314,89 @@ const SkillLibrary = () => {
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-4">How to Install Skills</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Get up and running in three simple steps
+            Choose your platform and get up and running in minutes
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 text-left">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
-                1
-              </div>
-              <h3 className="font-semibold mb-2">Download</h3>
-              <p className="text-sm text-muted-foreground">
-                Click the download button on any skill to get the .zip file
-              </p>
-            </Card>
+          <Tabs defaultValue="claude" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+              <TabsTrigger value="claude" className="flex items-center gap-2">
+                <Terminal className="h-4 w-4" />
+                Claude Code
+              </TabsTrigger>
+              <TabsTrigger value="gemini" className="flex items-center gap-2">
+                <Gem className="h-4 w-4" />
+                Gemini Gems
+              </TabsTrigger>
+            </TabsList>
 
-            <Card className="p-6 text-left">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
-                2
-              </div>
-              <h3 className="font-semibold mb-2">Extract</h3>
-              <p className="text-sm text-muted-foreground">
-                Unzip the skill folder to your Claude Code skills directory
-              </p>
-            </Card>
+            <TabsContent value="claude">
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="p-6 text-left">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
+                    1
+                  </div>
+                  <h3 className="font-semibold mb-2">Download</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Click the download button on any skill to get the .zip file
+                  </p>
+                </Card>
 
-            <Card className="p-6 text-left">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
-                3
+                <Card className="p-6 text-left">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
+                    2
+                  </div>
+                  <h3 className="font-semibold mb-2">Extract</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Unzip the skill folder to your Claude Code skills directory
+                  </p>
+                </Card>
+
+                <Card className="p-6 text-left">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
+                    3
+                  </div>
+                  <h3 className="font-semibold mb-2">Use</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Claude will automatically detect and use the skill when relevant
+                  </p>
+                </Card>
               </div>
-              <h3 className="font-semibold mb-2">Use</h3>
-              <p className="text-sm text-muted-foreground">
-                Claude will automatically detect and use the skill when relevant
-              </p>
-            </Card>
-          </div>
+            </TabsContent>
+
+            <TabsContent value="gemini">
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="p-6 text-left">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
+                    1
+                  </div>
+                  <h3 className="font-semibold mb-2">Download & Extract</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Download the skill .zip file and unzip it to access the instructions
+                  </p>
+                </Card>
+
+                <Card className="p-6 text-left">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
+                    2
+                  </div>
+                  <h3 className="font-semibold mb-2">Create a Gem</h3>
+                  <p className="text-sm text-muted-foreground">
+                    In Gemini, go to Gem Manager and create a new Gem. Paste the skill instructions into the system prompt
+                  </p>
+                </Card>
+
+                <Card className="p-6 text-left">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
+                    3
+                  </div>
+                  <h3 className="font-semibold mb-2">Chat with Your Gem</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Save your Gem and start a conversation. The skill capabilities are now available
+                  </p>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
     </div>
