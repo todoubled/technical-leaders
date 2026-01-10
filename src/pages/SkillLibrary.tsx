@@ -335,9 +335,9 @@ const SkillLibrary = () => {
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
                     1
                   </div>
-                  <h3 className="font-semibold mb-2">Download & Extract</h3>
+                  <h3 className="font-semibold mb-2">Download</h3>
                   <p className="text-sm text-muted-foreground">
-                    Download the skill .zip file and unzip it to access the instructions
+                    Click the download button on any skill to get the .zip file
                   </p>
                 </Card>
 
@@ -345,9 +345,9 @@ const SkillLibrary = () => {
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
                     2
                   </div>
-                  <h3 className="font-semibold mb-2">Create a Project</h3>
+                  <h3 className="font-semibold mb-2">Add Skill</h3>
                   <p className="text-sm text-muted-foreground">
-                    In Claude (web, mobile, or desktop), create a new Project and paste the skill instructions into the project instructions
+                    In Claude, go to Settings, Capabilities, and click "Add Skill" to upload the skill zip file
                   </p>
                 </Card>
 
