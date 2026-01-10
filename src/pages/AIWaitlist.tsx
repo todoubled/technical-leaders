@@ -1,11 +1,33 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import SEO from "@/components/SEO";
+import { useState, useEffect } from "react";
 import { trackEvent } from "@/utils/posthog";
 import { ArrowRight } from "lucide-react";
 
 const AIWaitlist = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      const formContainer = document.getElementById('waitlist-modal-form');
+      if (formContainer && !formContainer.querySelector('script')) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.setAttribute('data-uid', 'b00140dfe6');
+        script.src = 'https://techleaders.kit.com/b00140dfe6/index.js';
+        formContainer.appendChild(script);
+      }
+    }
+  }, [isModalOpen]);
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
@@ -47,6 +69,7 @@ const AIWaitlist = () => {
                   trackEvent('Join Waitlist Clicked', {
                     location: 'hero_section'
                   });
+                  setIsModalOpen(true);
                 }}
               >
                 Join The Waitlist
@@ -65,6 +88,18 @@ const AIWaitlist = () => {
           </div>
         </div>
       </section>
+
+      {/* Waitlist Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Join The Waitlist</DialogTitle>
+          </DialogHeader>
+          <div id="waitlist-modal-form" className="min-h-[200px]">
+            {/* ConvertKit form will be injected here */}
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>
