@@ -20,7 +20,7 @@ import {
   Grid3X3,
   List,
   Gem,
-  Terminal,
+  MessageSquare,
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
@@ -151,7 +151,7 @@ const SkillLibrary = () => {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-              Skill Library
+              The Skill Library
             </span>
           </h1>
 
@@ -320,8 +320,8 @@ const SkillLibrary = () => {
           <Tabs defaultValue="claude" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
               <TabsTrigger value="claude" className="flex items-center gap-2">
-                <Terminal className="h-4 w-4" />
-                Claude Code
+                <MessageSquare className="h-4 w-4" />
+                Claude Apps
               </TabsTrigger>
               <TabsTrigger value="gemini" className="flex items-center gap-2">
                 <Gem className="h-4 w-4" />
@@ -335,9 +335,9 @@ const SkillLibrary = () => {
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
                     1
                   </div>
-                  <h3 className="font-semibold mb-2">Download</h3>
+                  <h3 className="font-semibold mb-2">Download & Extract</h3>
                   <p className="text-sm text-muted-foreground">
-                    Click the download button on any skill to get the .zip file
+                    Download the skill .zip file and unzip it to access the instructions
                   </p>
                 </Card>
 
@@ -345,9 +345,9 @@ const SkillLibrary = () => {
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
                     2
                   </div>
-                  <h3 className="font-semibold mb-2">Extract</h3>
+                  <h3 className="font-semibold mb-2">Create a Project</h3>
                   <p className="text-sm text-muted-foreground">
-                    Unzip the skill folder to your Claude Code skills directory
+                    In Claude (web, mobile, or desktop), create a new Project and paste the skill instructions into the project instructions
                   </p>
                 </Card>
 
@@ -355,9 +355,9 @@ const SkillLibrary = () => {
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold mb-4">
                     3
                   </div>
-                  <h3 className="font-semibold mb-2">Use</h3>
+                  <h3 className="font-semibold mb-2">Start a Chat</h3>
                   <p className="text-sm text-muted-foreground">
-                    Claude will automatically detect and use the skill when relevant
+                    Open a new chat in your Project. The skill capabilities are now available in every conversation
                   </p>
                 </Card>
               </div>
