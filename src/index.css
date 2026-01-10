@@ -98,6 +98,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Prevent descender clipping on large headlines */
+  h1, h2, h3, .text-4xl, .text-5xl, .text-6xl, .text-7xl {
+    @apply leading-tight;
+    padding-bottom: 0.2em;
+  }
 }
 
 @keyframes fadeIn {
