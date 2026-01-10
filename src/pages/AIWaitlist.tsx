@@ -1,35 +1,39 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import SEO from "@/components/SEO";
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/utils/posthog";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 
 const AIWaitlist = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Load ConvertKit form on page load
   useEffect(() => {
-    if (isModalOpen) {
-      // Small delay to ensure the modal DOM is fully rendered
-      const timer = setTimeout(() => {
-        const formContainer = document.getElementById('waitlist-modal-form');
-        if (formContainer && !formContainer.querySelector('script')) {
-          const script = document.createElement('script');
-          script.async = true;
-          script.setAttribute('data-uid', 'b00140dfe6');
-          script.src = 'https://techleaders.kit.com/b00140dfe6/index.js';
-          formContainer.appendChild(script);
-        }
-      }, 100);
-      return () => clearTimeout(timer);
+    const formContainer = document.getElementById('waitlist-modal-form');
+    if (formContainer && !formContainer.querySelector('script')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.setAttribute('data-uid', 'b00140dfe6');
+      script.src = 'https://techleaders.kit.com/b00140dfe6/index.js';
+      formContainer.appendChild(script);
     }
+  }, []);
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModalOpen(false);
+    };
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
   }, [isModalOpen]);
 
   return (
@@ -93,17 +97,38 @@ const AIWaitlist = () => {
         </div>
       </section>
 
-      {/* Waitlist Modal */}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Join The Waitlist</DialogTitle>
-          </DialogHeader>
-          <div id="waitlist-modal-form" className="min-h-[200px]">
-            {/* ConvertKit form will be injected here */}
+      {/* Waitlist Modal - Always rendered, visibility controlled by state */}
+      <div
+        className={`fixed inset-0 z-50 ${isModalOpen ? 'visible' : 'invisible'}`}
+        aria-hidden={!isModalOpen}
+      >
+        {/* Backdrop */}
+        <div
+          className={`absolute inset-0 bg-black/80 transition-opacity duration-200 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`}
+          onClick={() => setIsModalOpen(false)}
+        />
+
+        {/* Modal Content */}
+        <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+          <div
+            className={`w-full max-w-md bg-background border rounded-lg shadow-lg p-6 transition-all duration-200 ${isModalOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-semibold">Join The Waitlist</h2>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="rounded-sm opacity-70 hover:opacity-100 transition-opacity"
+              >
+                <X className="h-4 w-4" />
+                <span className="sr-only">Close</span>
+              </button>
+            </div>
+            <div id="waitlist-modal-form" className="min-h-[200px]">
+              {/* ConvertKit form is loaded here on page mount */}
+            </div>
           </div>
-        </DialogContent>
-      </Dialog>
+        </div>
+      </div>
 
       <Footer />
     </div>
