@@ -73,6 +73,7 @@ import Assessment from "./pages/Assessment";
 import AIPriorities from "./pages/AIPriorities";
 import AIWaitlist from "./pages/AIWaitlist";
 import TwentySixWorkflows from "./pages/TwentySixWorkflows";
+import SkillLibrary from "./pages/SkillLibrary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -175,6 +176,7 @@ const App = () => (
           <Route path="/ai-priorities" element={<AIPriorities />} />
           <Route path="/ai-waitlist" element={<AIWaitlist />} />
           <Route path="/26-workflows" element={<TwentySixWorkflows />} />
+          <Route path="/skill-library" element={<SkillLibrary />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
