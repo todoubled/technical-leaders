@@ -1,7 +1,8 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Clock, Target, ArrowRight, Zap, Star, Users, DollarSign, BarChart3, Settings, Briefcase, Shield, Code, ChevronDown, ChevronUp, Copy, Check, FileText, Brain } from "lucide-react";
+import { CheckCircle2, Clock, Target, ArrowRight, Zap, Star, Users, DollarSign, BarChart3, Settings, Briefcase, Shield, Code, ChevronDown, ChevronUp, Copy, Check, FileText, Brain, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { trackClick, trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
@@ -3080,9 +3081,35 @@ Write customer-facing release notes and internal notes for the support team.`,
             </p>
           </div>
 
-                  </div>
+        </div>
       </section>
 
+      {/* Top CTA - Workshop Promo */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-y border-primary/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-bold mb-4">
+            <Rocket className="w-4 h-4" />
+            <span>Free Weekly Workshop</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+            Want to Master AI Agent Skills?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Join our live workshop and learn how to build, customize, and deploy these skills in Claude Code.
+            No coding required.
+          </p>
+          <Link to="/ai-agent-skills">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8"
+              onClick={() => trackClick('Workshop CTA', 'top_banner')}
+            >
+              Join the AI Agent Skills Workshop
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
 
       {/* What is a Skill Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/30">
@@ -3461,6 +3488,53 @@ Write customer-facing release notes and internal notes for the support team.`,
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA - Workshop Promo */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/20 via-background to-primary/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
+            <Rocket className="w-4 h-4" />
+            <span>Take the Next Step</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Ready to Build Your Own AI Agent Skills?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
+            These 26 skills are just the beginning. In our free weekly workshop, you'll learn how to:
+          </p>
+          <ul className="text-left max-w-xl mx-auto mb-8 space-y-3">
+            <li className="flex items-center gap-3 text-lg">
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+              <span>Create custom skills from scratch (no coding required)</span>
+            </li>
+            <li className="flex items-center gap-3 text-lg">
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+              <span>Use the skill-creator to auto-generate new skills</span>
+            </li>
+            <li className="flex items-center gap-3 text-lg">
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+              <span>Chain skills together for complex workflows</span>
+            </li>
+            <li className="flex items-center gap-3 text-lg">
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+              <span>Deploy skills across your team and projects</span>
+            </li>
+          </ul>
+          <Link to="/ai-agent-skills">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-6 text-lg"
+              onClick={() => trackClick('Workshop CTA', 'bottom_banner')}
+            >
+              Join the Free Workshop
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+          <p className="text-sm text-muted-foreground mt-4">
+            Live sessions every week with Q&A and hands-on demos
+          </p>
         </div>
       </section>
 
