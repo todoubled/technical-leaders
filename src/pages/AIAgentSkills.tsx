@@ -3,13 +3,38 @@ import Navigation from "@/components/Navigation";
 import ContentFooter from "@/components/footers/ContentFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Brain, Rocket, Target, Users, Sparkles, ChevronRight, Copy, Check, FolderOpen, Zap, Settings, FileText } from "lucide-react";
+import { Brain, Rocket, Target, Users, Sparkles, ChevronRight, Copy, Check, FolderOpen, Zap, Settings, FileText, Calendar } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
+
+const getNextWednesday = () => {
+  const now = new Date();
+  const dayOfWeek = now.getDay();
+  // Wednesday is day 3
+  let daysUntilWednesday = (3 - dayOfWeek + 7) % 7;
+  // If today is Wednesday, show next Wednesday
+  if (daysUntilWednesday === 0) {
+    daysUntilWednesday = 7;
+  }
+  const nextWednesday = new Date(now);
+  nextWednesday.setDate(now.getDate() + daysUntilWednesday);
+  return nextWednesday;
+};
+
+const formatEventDate = (date: Date) => {
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  };
+  return date.toLocaleDateString('en-US', options);
+};
 
 const AIAgentSkills = () => {
   const [copied, setCopied] = useState(false);
   const formContainerRef = useRef<HTMLDivElement>(null);
+  const nextSessionDate = getNextWednesday();
+  const formattedDate = formatEventDate(nextSessionDate);
 
   useEffect(() => {
     if (!formContainerRef.current) return;
@@ -129,6 +154,11 @@ const AIAgentSkills = () => {
               </span>
             </div>
           </h1>
+
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-primary/20 text-foreground px-5 py-3 rounded-full text-base sm:text-lg font-medium mb-6">
+            <Calendar className="h-5 w-5 text-primary" />
+            <span>Next Session: {formattedDate} at 11am CST</span>
+          </div>
 
           <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
             {heroContent.subheadline}
