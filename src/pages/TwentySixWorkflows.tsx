@@ -3081,6 +3081,18 @@ Write customer-facing release notes and internal notes for the support team.`,
             </p>
           </div>
 
+          <div className="max-w-3xl mx-auto">
+            <div className="relative w-full pb-[56.25%] rounded-lg overflow-hidden shadow-2xl border border-white/10">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/TXiaDHn1dUk"
+                title="26 Claude Agent Skills Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
