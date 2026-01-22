@@ -16,80 +16,20 @@ const Marketing = () => {
       />
       <Navigation />
       <MarketingHero />
-      <CompanyLogos />
       <MarketingFeatures />
-      <MarketingTeam />
+      <ProcessSection />
+      <TestimonialSection />
+      <PricingSection />
       <MarketingCTA />
       <Footer />
     </div>
   );
 };
 
-// Marketing-specific Hero Component with Pricing
+// Marketing-specific Hero Component
 const MarketingHero = () => {
-  const plans = [
-    {
-      name: "The Lead Connector™",
-      price: "$850",
-      period: "/month",
-      description: "Perfect for learning how to get your first customers without being a marketer",
-      features: [
-        "Go-to-Market Strategy",
-        "Funnel optimization",
-        "3 months of high-quality content",
-        "Engagement strategy to convert leads"
-      ],
-      popular: false,
-      badge: "Get Started",
-      gradient: "from-emerald-500 to-teal-600",
-      badgeColor: "bg-emerald-500",
-      idealFor: "Growing audience and getting leads for outreach",
-      results: "Automated 500+ new ICP connections/followers",
-      link: "https://buy.stripe.com/6oEeYG62xetR304eVg"
-    },
-    {
-      name: "The Content Creator™",
-      price: "$1500",
-      period: "/month",
-      description: "For busy founders and leaders growing their audience and business",
-      features: [
-        "Everything in The Lead Connector™",
-        "Content calendar planning",
-        "Basic analytics & reporting",
-        "Weekly guidance & tracking",
-        "Private 1-on-1 coaching"
-      ],
-      popular: true,
-      gradient: "from-blue-500 to-purple-600",
-      badgeColor: "bg-primary",
-      idealFor: "Converting inbound leads with content marketing",
-      results: "Automated Inbound/Outbound Lead Conversion",
-      link: "https://buy.stripe.com/7sY7sLdPH1kbgamgnOaMU0D"
-    },
-    {
-      name: "The Multi-Channel Scaler™",
-      price: "Custom Packages",
-      period: "",
-      badge: "Most Effective",
-      description: "Complete multi-channel thought leadership dominance for industry leaders and serial entrepreneurs",
-      features: [
-        "Everything in The Lead Connector™",
-        "Evertying in The Content Creator™",
-        "Daily content across all channels",
-        "Channel-specific growth strategies",
-        "Media kit development"
-      ],
-      popular: false,
-      gradient: "from-orange-500 to-red-600",
-      badgeColor: "bg-orange-500",
-      idealFor: "Omni-present marketing and brand building",
-      results: "Performance-based goals TBD",
-      link: "https://calendly.com/tech-leaders/strategy-session"
-    }
-  ];
-
   return (
-    <section id="pricing" className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/20 relative overflow-hidden">
+    <section id="pillars" className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/20 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="/ai-in-ar.png"
@@ -98,140 +38,66 @@ const MarketingHero = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
       </div>
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 px-6">
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Done-for-You
-            <span className="text-primary block mt-2">Distribution & Marketing</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in max-w-5xl mx-auto">
+            Look Like a Marketing Genius Without the Effort
           </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto animate-fade-in">
-            Skip the trial and error. Use our <b>proven marketing systems</b> that position you as the <b>go-to solution</b> in your industry.
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
+            The done-for-you marketing solution for busy consultants and founders.
           </p>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 mt-8">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
-              Pick Your Marketing Plan
-            </span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
-            Each tier is designed to systematically build your authority and generate qualified opportunities. We handle everything so you can focus on what you do best.
-          </p>
-        </div>
-
-        {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative group bg-card rounded-lg p-6 border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
-                plan.popular
-                  ? 'border-primary shadow-xl scale-105 bg-gradient-to-br from-card to-primary/5'
-                  : 'border-border hover:border-primary/50'
-              }`}
-            >
-              {/* Gradient accent bar */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${plan.gradient} rounded-t-lg`} />
-
-              {/* Badge */}
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <span className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold shadow-xl border-2 border-white">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
-              {plan.badge && !plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <span className={`${plan.badgeColor} text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg`}>
-                    {plan.badge}
-                  </span>
-                </div>
-              )}
-
-              <div className="text-center pt-4">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-muted-foreground mb-4 text-sm">{plan.description}</p>
-
-                <div className="mb-4">
-                  <span className="text-3xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground ml-1">{plan.period}</span>
-                </div>
-
-                <div className="bg-secondary/50 rounded-lg p-2 mb-3">
-                  <div className="text-xs font-semibold text-primary">Ideal For:</div>
-                  <div className="text-xs text-muted-foreground">{plan.idealFor}</div>
-                </div>
-
-                <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-2 mb-4">
-                  <div className="text-xs font-semibold text-green-700 dark:text-green-400">Expected Results:</div>
-                  <div className="text-xs text-green-600 dark:text-green-300">{plan.results}</div>
-                </div>
-
-                <ul className="space-y-2 mb-6 text-left">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  onClick={() => { window.location.href = plan.link }}
-                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? `bg-gradient-to-r ${plan.gradient} hover:shadow-lg hover:scale-105 text-white`
-                      : `border border-primary/20 hover:border-primary bg-gradient-to-r ${plan.gradient} hover:shadow-lg text-white`
-                  }`}
-                >
-                  Get Started
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Strategy Call CTA below pricing */}
-        <div className="text-center mt-12">
-          <div className="bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/50 max-w-2xl mx-auto shadow-lg">
-            <h3 className="text-2xl font-bold text-foreground mb-3">
-              Not Sure Which Tier Is Right for You?
-            </h3>
-            <p className="text-muted-foreground mb-6 text-lg">
-              Book a strategy call and we'll recommend the perfect marketing investment level for your objectives.
-            </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
-              onClick={() => { window.location.href = "https://calendly.com/tech-leaders/strategy-session" }}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-xl hover:scale-105 text-lg"
+              onClick={() => { window.location.href = "https://calendly.com/amelia-pm/strategy-session" }}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 text-lg"
             >
-              Book Your Free Strategy Call
+              Book a Strategy Session →
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById('process');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="border-2 border-foreground/20 hover:border-primary text-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-200 text-lg hover:bg-secondary/50"
+            >
+              See How It Works
             </button>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
-// Company Logos Section Component
-const CompanyLogos = () => {
-  return (
-    <section className="bg-white py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-semibold uppercase tracking-wider text-gray-600 mb-8">
-          Trusted by Tech Leaders at
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-          <img src="/nike.png" alt="Nike" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="/redhat.webp" alt="Red Hat" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="/calendly.webp" alt="Calendly" className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="/gitlab.png" alt="GitLab" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="/cashapp.svg" alt="Cash App" className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-          <img src="/netflix.png" alt="Netflix" className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 mt-8 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600 leading-normal">
+            Put Your Marketing on Autopilot
+          </h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+            A comprehensive system that covers everything you need to grow your business.
+          </p>
+        </div>
+
+        {/* Three Pillars Cards */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+          <div className="bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 text-center">
+            <h3 className="font-bold text-foreground mb-4" style={{fontSize: '1.125rem'}}>Audience Building</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              We identify your ideal customers and help you connect with them intentionally.
+            </p>
+          </div>
+
+          <div className="bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 text-center">
+            <h3 className="font-bold text-foreground mb-4" style={{fontSize: '1.125rem'}}>Content Creation</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              We write thoughtful, expert LinkedIn posts and newsletters that actually get engagement.
+            </p>
+          </div>
+
+          <div className="bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 text-center">
+            <h3 className="font-bold text-foreground mb-4" style={{fontSize: '1.125rem'}}>Personal Brand</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              We build a high-leverage personal brand that earns trust and attracts the right opportunities.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -240,45 +106,249 @@ const CompanyLogos = () => {
 
 // Marketing-specific Features Component
 const MarketingFeatures = () => {
-  const features = [
+  return (
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background" data-section="features">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <span className="block text-foreground">Forget Forced Messages.</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">Generate Real Interest.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            Spam messages damage reputations. Your content should turn into natural conversations.
+          </p>
+        </div>
+
+        <ul className="space-y-4 mb-16 max-w-4xl mx-auto list-disc pl-6">
+          <li className="text-sm">
+            <span className="font-bold text-foreground">We write content that sparks interest:</span>{" "}
+            <span className="text-muted-foreground">designed to trigger responses like "How did you do this?", "Can you help?", or "Open to chat?"</span>
+          </li>
+
+          <li className="text-sm">
+            <span className="font-bold text-foreground">We leverage engagement to start conversations:</span>{" "}
+            <span className="text-muted-foreground">when someone engages with your content, we follow up to move things forward.</span>
+          </li>
+
+          <li className="text-sm">
+            <span className="font-bold text-foreground">We use "value-first" outreach only:</span>{" "}
+            <span className="text-muted-foreground">messages that offer genuine insight, instead of generic templates that scream automation.</span>
+          </li>
+        </ul>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="bg-card rounded-xl p-4 border border-border">
+            <img src="/251ebb97-d829-4ca2-99f3-33cec73bc4b5 (1).png" alt="LinkedIn conversation example 1" className="w-full rounded-lg" />
+          </div>
+          <div className="bg-card rounded-xl p-4 border border-border">
+            <img src="/Untitled design - 2026-01-22T114142.497.png" alt="LinkedIn conversation example 2" className="w-full rounded-lg" />
+          </div>
+          <div className="bg-card rounded-xl p-4 border border-border">
+            <img src="/Untitled design - 2026-01-22T114302.561.png" alt="LinkedIn conversation example 3" className="w-full rounded-lg" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Process Section Component
+const ProcessSection = () => {
+  const steps = [
     {
-      title: "Strategic Positioning",
-      description: "We position you as the definitive solution in your niche, not just another option.",
-      icon: "🎯"
+      number: "01",
+      title: "Define What Matters",
+      description: "You will receive free tools and coaching to help you define your target audience, clarify your offer, and translate your experience into messaging that resonates."
     },
     {
-      title: "Content That Converts",
-      description: "Social media posts that actually generate qualified leads and opportunities.",
-      icon: "✍️"
+      number: "02",
+      title: "Collect Genuine Insights",
+      description: "Once a month, you share ideas, priorities, or themes. We turn them into thoughtful content that reflects what you actually care about and are working on."
     },
     {
-      title: "Sustainable Systems",
-      description: "Marketing that works for you 24/7, not just when you're actively posting.",
-      icon: "⚙️"
+      number: "03",
+      title: "Publish and Optimize",
+      description: "We post on your behalf, track engagement, and continuously refine the strategy so your marketing improves over time without extra effort from you."
     }
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto">
+    <section id="process" className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            Why Choose Our
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
-              Marketing Approach
-            </span>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground">
+            Our Process is Built For Busy Leaders
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We understand that great technical leaders hate self-promotion but need market visibility. Our approach feels authentic and builds long-term authority.
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            If you feel like you don't have time to market yourself, you are in the right place. We leverage your insight where it counts and take care of the rest.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-card rounded-lg p-8 border border-border hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {steps.map((step, index) => (
+            <div key={index} className="bg-card/50 backdrop-blur-sm rounded-xl p-8 pt-12 border border-border/50 relative">
+              <div className="text-4xl font-bold text-muted-foreground/30 absolute top-2 right-6" style={{textShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
+                Step {index + 1}
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">{step.title}</h3>
+              <p className="text-muted-foreground leading-relaxed relative z-10">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Testimonial Section Component
+const TestimonialSection = () => {
+  return (
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="container mx-auto max-w-3xl">
+        <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          {/* Gradient accent line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-primary to-purple-600 rounded-t-2xl"></div>
+
+          <div className="mb-4">
+            <svg className="w-12 h-12 text-primary/40" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            </svg>
+          </div>
+
+          <blockquote className="text-lg text-foreground leading-relaxed mb-6 italic">
+            "Your system handles everything from content creation to engagement. My time spent on marketing dropped by 90%, so I'm only focused on responding to new leads and highest-leverage thinking now."
+          </blockquote>
+
+          <div className="flex items-center gap-3">
+            <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent"></div>
+            <div>
+              <div className="text-base font-bold text-foreground">Nick</div>
+              <div className="text-sm text-muted-foreground">Co-founder and Fractional CTO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Pricing Section Component
+const PricingSection = () => {
+  const plans = [
+    {
+      name: "Audience Engine",
+      price: "$850",
+      period: "/month",
+      forWho: "Business leaders who want steady audience growth.",
+      outcome: "Build a targeted audience and surface hand-raisers every week.",
+      features: [
+        "ICP refinement, list building, and profile optimisation",
+        "Connection workflow (up to 500 verified invites/month)",
+        "Engagement tracking, light DM support, and a weekly summary"
+      ],
+      popular: false,
+      link: "https://buy.stripe.com/6oEeYG62xetR304eVg"
+    },
+    {
+      name: "Brand System",
+      price: "$1,500",
+      period: "/month",
+      forWho: "Founders and consultants who need consistent, on-brand content.",
+      outcome: "Publish LinkedIn content in your voice that starts sales-ready conversations.",
+      features: [
+        "Brand voice workshop + monthly content calendar",
+        "12 LinkedIn posts published per month in your unique voice",
+        "Scheduling, comment monitoring, and a weekly performance report"
+      ],
+      popular: true,
+      link: "https://buy.stripe.com/7sY7sLdPH1kbgamgnOaMU0D"
+    },
+    {
+      name: "Conversion Pipeline",
+      price: "$2,000",
+      period: "/month",
+      forWho: "Operators ready to build owned audience growth and search visibility.",
+      outcome: "Convert attention into subscribers, search traffic, and booked calls.",
+      features: [
+        "Weekly newsletter to deepen engagement with your existing audience",
+        "One SEO blog per week with on-page optimisation for search visibility",
+        "Cross-channel distribution strategy to extend reach and support booked calls"
+      ],
+      popular: false,
+      link: "https://calendly.com/tech-leaders/strategy-session"
+    }
+  ];
+
+  return (
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
+            Pick Your Perfect Plan
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            We offer 3 levels of service depending on your needs and focus.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`relative rounded-2xl p-8 border-2 transition-all duration-300 ${
+                plan.popular
+                  ? 'border-primary bg-card/80 shadow-2xl'
+                  : 'border-border/50 bg-card/50 hover:border-primary/50'
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold">
+                    Most Popular
+                  </span>
+                </div>
+              )}
+
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-4">{plan.name}</h3>
+                <div className="mb-4">
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+                  <span className="text-muted-foreground">{plan.period}</span>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <div className="mb-3">
+                  <span className="font-bold text-foreground">For: </span>
+                  <span className="text-muted-foreground">{plan.forWho}</span>
+                </div>
+                <div>
+                  <span className="font-bold text-foreground">Outcome: </span>
+                  <span className="text-muted-foreground">{plan.outcome}</span>
+                </div>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {plan.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start">
+                    <svg className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-sm text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => { window.location.href = plan.link }}
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                  plan.popular
+                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl'
+                    : 'border-2 border-foreground/20 hover:border-primary text-foreground hover:bg-secondary/50'
+                }`}
+              >
+                Get Started →
+              </button>
             </div>
           ))}
         </div>
@@ -357,31 +427,22 @@ const MarketingTeam = () => {
 // CTA Section Component
 const MarketingCTA = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/30">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/30">
       <div className="container mx-auto">
         <div className="text-center">
-          <div className="bg-card rounded-xl p-12 border-2 border-primary/20 max-w-4xl mx-auto shadow-xl">
+          <div className="bg-card/50 backdrop-blur-sm rounded-xl p-12 border border-border/50 max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Ready to Stop Being the Best-Kept Secret in Your Industry?
+              Not Sure Which Tier Is Right for You?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Join hundreds of technical leaders who've transformed their market presence with our done-for-you marketing systems. Your expertise deserves the recognition.
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Book a strategy call and we'll recommend the perfect marketing investment level for your objectives.
             </p>
             <button
-              onClick={() => {
-                const element = document.getElementById('pricing');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-10 py-4 rounded-lg font-semibold transition-all duration-200 group shadow-lg hover:shadow-2xl hover:scale-105"
+              onClick={() => { window.location.href = "https://calendly.com/amelia-pm/strategy-session" }}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-10 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-2xl hover:scale-105"
             >
-              View Investment Options
-              <span className="ml-2 group-hover:translate-y--1 transition-transform inline-block">↑</span>
+              Book Your Free Strategy Call
             </button>
-            <p className="text-sm text-muted-foreground mt-6">
-              30-day money-back guarantee • No long-term contracts • Start seeing results in 90 days
-            </p>
           </div>
         </div>
       </div>
