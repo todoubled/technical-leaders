@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-10",
+  "categories": [
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "description": "Skills that help you work faster and smarter",
+      "icon": "zap"
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "description": "Skills for writing and messaging",
+      "icon": "mail"
+    },
+    {
+      "id": "documents",
+      "name": "Documents",
+      "description": "Skills for creating and editing documents",
+      "icon": "file-text"
+    },
+    {
+      "id": "data",
+      "name": "Data & Analysis",
+      "description": "Skills for working with data and spreadsheets",
+      "icon": "bar-chart"
+    },
+    {
+      "id": "development",
+      "name": "Development",
+      "description": "Skills for coding and software development",
+      "icon": "code"
+    }
+  ],
+  "skills": [
+    {
+      "id": "email-writer",
+      "name": "Email Writer",
+      "description": "Craft professional emails with the perfect tone. This skill helps you write clear, effective emails for any situation—from cold outreach to follow-ups, apologies to announcements.",
+      "shortDescription": "Write professional emails with the perfect tone",
+      "version": "1.0.0",
+      "author": "Technical Leaders",
+      "category": "communication",
+      "tags": ["email", "writing", "professional", "communication"],
+      "filename": "email-writer.zip",
+      "icon": "mail",
+      "featured": true,
+      "downloads": 150,
+      "createdAt": "2026-01-08",
+      "updatedAt": "2026-01-08"
+    }
+  ]
+}

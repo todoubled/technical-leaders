@@ -5,69 +5,219 @@
 
     <url>
         <loc>https://technical-leaders.com/</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/articles</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/launch</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/december</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/scale</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/ai-trade-school</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/accredited</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/refer</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/privacy-policy</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://technical-leaders.com/call-confirmed</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-01-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/price-ai-services-recurring-revenue</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6961bc5412e0ddc12524b898-1768014623079.jpg</image:loc>
+            <image:title>How to Price AI Services with Recurring Revenue</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/scenario-planning-ai-driven-crises</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/69619fd312e0ddc12524a63e-1768012771252.jpg</image:loc>
+            <image:title>Scenario Planning for AI-Driven Crises</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/ai-strategy-skill-converter</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6961992812e0ddc125249fd4-1768003965496.jpg</image:loc>
+            <image:title>AI Strategy Skill Converter</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/agile-mindset-drives-innovation</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6960768412e0ddc125243653-1767931465584.jpg</image:loc>
+            <image:title>How Agile Mindset Drives Innovation</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/consultant-fee-estimator</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6960759a12e0ddc1252435ee-1767929296182.jpg</image:loc>
+            <image:title>Consultant Fee Estimator</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/how-to-use-moscow-user-story-mapping</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6960519812e0ddc125241fc8-1767929111498.jpg</image:loc>
+            <image:title>How To Use MoSCoW for User Story Mapping</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/tech-career-growth-calculator</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/6960474712e0ddc125241524-1767917445058.jpg</image:loc>
+            <image:title>Tech Career Growth Calculator</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/cloud-ethics-lessons-security-breaches</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695f279b12e0ddc1251acbe1-1767845823682.jpg</image:loc>
+            <image:title>Cloud Ethics: Lessons from Security Breaches</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/blockchain-gdpr-hipaa-compliance</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695f1fe012e0ddc1251ac916-1767843513111.jpg</image:loc>
+            <image:title>How Blockchain Meets GDPR and HIPAA Compliance</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/erm-financial-services-common-challenges</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695efa1a12e0ddc1251aaeea-1767840645155.jpg</image:loc>
+            <image:title>ERM in Financial Services: Common Challenges</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/engineering-leadership-style-finder</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695ef65f12e0ddc1251aa1bd-1767831182430.jpg</image:loc>
+            <image:title>Engineering Leadership Style Finder</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/satya-nadella-leadership-lessons-engineers</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695de13a12e0ddc12516daaa-1767762185191.jpg</image:loc>
+            <image:title>Satya Nadellas Leadership: Lessons for Engineers</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/cultural-competence-matters-facilitator-training</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695ddaaa12e0ddc12516d915-1767760065312.jpg</image:loc>
+            <image:title>Why Cultural Competence Matters in Facilitator Training</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/ai-tools-personalizing-customer-experiences</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695dce7a12e0ddc12516d1da-1767758387632.jpg</image:loc>
+            <image:title>5 AI Tools for Personalizing Customer Experiences</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://technical-leaders.com/post/combine-agile-frameworks-guide</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/technical-leaders.com/695da56d12e0ddc12516a2d3-1767755253468.jpg</image:loc>
+            <image:title>How to Combine Agile Frameworks</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://technical-leaders.com/post/best-strengths-assessments-tech-leaders</loc>
@@ -1381,7 +1531,7 @@
     </url>
     <url>
         <loc>https://technical-leaders.com/post/kano-model-vs-other-prioritization-frameworks</loc>
-        <lastmod>2025-12-24</lastmod>
+        <lastmod>2026-01-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -1661,7 +1811,7 @@
     </url>
     <url>
         <loc>https://technical-leaders.com/post/top-workflow-tools-for-engineers-in-leadership-roles</loc>
-        <lastmod>2025-12-25</lastmod>
+        <lastmod>2026-01-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -2951,7 +3101,7 @@
     </url>
     <url>
         <loc>https://technical-leaders.com/post/top-ai-tools-for-cross-cultural-leadership</loc>
-        <lastmod>2025-10-20</lastmod>
+        <lastmod>2026-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>

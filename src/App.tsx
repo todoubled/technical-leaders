@@ -14,6 +14,7 @@ import CallConfirmed from "./pages/CallConfirmed";
 import AITradeSchool from "./pages/AITradeSchool";
 import Launch from "./pages/Launch";
 import December from "./pages/December";
+import January from "./pages/January";
 import Scale from "./pages/Scale";
 import Marketing from "./pages/Marketing";
 import CFO from "./pages/CFO";
@@ -70,6 +71,9 @@ import Podcast from "./pages/Podcast";
 import HealthcareAICaseStudy from "./pages/HealthcareAICaseStudy";
 import Assessment from "./pages/Assessment";
 import AIPriorities from "./pages/AIPriorities";
+import AIWaitlist from "./pages/AIWaitlist";
+import TwentySixWorkflows from "./pages/TwentySixWorkflows";
+import SkillLibrary from "./pages/SkillLibrary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -105,8 +109,9 @@ const App = () => (
           <Route path="/call-confirmed" element={<CallConfirmed />} />
           <Route path="/ai-trade-school" element={<AITradeSchool />} />
           <Route path="/launch-old" element={<Launch />} />
-          <Route path="/launch" element={<Navigate to="/december" replace />} />
+          <Route path="/launch" element={<Navigate to="/january" replace />} />
           <Route path="/december" element={<December />} />
+          <Route path="/january" element={<January />} />
           <Route path="/scale" element={<Scale />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/cfo" element={<CFO />} />
@@ -169,6 +174,9 @@ const App = () => (
           <Route path="/2026" element={<Navigate to="/" replace />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/ai-priorities" element={<AIPriorities />} />
+          <Route path="/ai-waitlist" element={<AIWaitlist />} />
+          <Route path="/26-workflows" element={<TwentySixWorkflows />} />
+          <Route path="/skill-library" element={<SkillLibrary />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
