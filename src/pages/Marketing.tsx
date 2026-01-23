@@ -430,7 +430,7 @@ const MarketingCTA = () => {
     <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-          Not Sure Which Tier Is Right for You?
+          Not Sure Which Tier Is Right For You?
         </h2>
         <p className="text-base text-muted-foreground mb-6 max-w-2xl mx-auto">
           Book a strategy call and we'll recommend the perfect marketing investment level for your objectives.
