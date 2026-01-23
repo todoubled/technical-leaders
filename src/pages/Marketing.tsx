@@ -427,7 +427,7 @@ const MarketingTeam = () => {
 // CTA Section Component
 const MarketingCTA = () => {
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="pt-0 pb-16 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
           Not Sure Which Tier Is Right for You?
