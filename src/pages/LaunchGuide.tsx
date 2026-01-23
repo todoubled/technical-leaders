@@ -98,7 +98,7 @@ const LaunchGuide = () => {
 
   const dailyActions = [
     { command: "conversations", description: "Get AI-assisted conversation starters for your connections" },
-    { command: "connections", description: "Find and prioritize new connections to reach out to" },
+    { command: "find icp", description: "Find and prioritize new connections to reach out to" },
     { command: "content", description: "Generate engaging content ideas and posts" }
   ];
 
@@ -343,7 +343,7 @@ const LaunchGuide = () => {
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <p className="text-4xl mb-3">25</p>
               <p className="text-gray-300 font-bold">Connections daily</p>
-              <p className="text-sm text-gray-500">from "connections" command</p>
+              <p className="text-sm text-gray-500">from "find icp" command</p>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <p className="text-4xl mb-3">10+</p>
