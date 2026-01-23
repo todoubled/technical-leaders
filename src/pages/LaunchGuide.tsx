@@ -1,10 +1,8 @@
 import Navigation from "@/components/Navigation";
-import ContentFooter from "@/components/footers/ContentFooter";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Download, FolderOpen, Upload, User, FileText, MessageSquare, RefreshCw, Rocket, Target, Sparkles } from "lucide-react";
+import { CheckCircle2, Download, FolderOpen, User, FileText, MessageSquare, RefreshCw, Rocket, Target, Sparkles } from "lucide-react";
 import SEO from "@/components/SEO";
-import { trackClick, trackEvent } from "@/utils/posthog";
+import { trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { useEffect, useState } from "react";
 
@@ -360,106 +358,6 @@ const LaunchGuide = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <Rocket className="w-16 h-16 mx-auto mb-6 text-orange-500" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Ready to Launch?
-          </h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-            Complete the setup checklist above, then run your daily workflow to start connecting with ideal clients.
-          </p>
-
-          <Card className="p-8 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-xl">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-              Need the Agent Skills?
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4 mb-6 text-left max-w-xl mx-auto">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100 font-semibold">ICP Cloner</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100 font-semibold">Case Study Landing Page</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100 font-semibold">DM Coach</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="text-gray-900 dark:text-gray-100 font-semibold">RGA Playbook</span>
-              </div>
-            </div>
-
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-12 py-6"
-              onClick={() => {
-                trackClick('Get Skills - Launch Guide CTA', {
-                  location: 'bottom_section'
-                });
-                window.location.href = "/skill-library";
-              }}
-            >
-              Get Agent Skills
-            </Button>
-
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 font-semibold">
-              Access the full skill library
-            </p>
-          </Card>
-
-          <p className="text-gray-700 dark:text-gray-300 mt-8">
-            Questions? Email{" "}
-            <a href="mailto:todd@technical-leaders.com" className="text-orange-600 hover:underline">
-              todd@technical-leaders.com
-            </a>
-            {" "}or{" "}
-            <button
-              onClick={() => {
-                trackClick('How It Works - Launch Guide', {
-                  location: 'bottom_section'
-                });
-                window.location.href = "/how-it-works";
-              }}
-              className="text-orange-600 hover:underline"
-            >
-              see how it works
-            </button>
-          </p>
-        </div>
-      </section>
-
-      <ContentFooter
-        headline="Start Landing Clients with AI-Powered Outreach"
-        description="This guide gets you set up. Launch Kit helps you execute consistently and convert connections into paying clients."
-        primaryCTA={{
-          text: "See How We Help",
-          url: "/how-it-works",
-          description: "Get Everything You Need to Succeed"
-        }}
-        benefits={[
-          "AI Agent Skills Library",
-          "ICP Cloning System",
-          "Profile Optimization",
-          "Daily Outreach Workflows"
-        ]}
-        socialProof="Join 300+ tech leaders already using this system"
-        testimonial={{
-          quote: "The AI-powered workflow changed everything. I went from random outreach to a systematic approach that brings in 3-5 qualified leads per week.",
-          author: "M.K.",
-          role: "Solutions Architect, Germany"
-        }}
-        secondaryCTA={{
-          text: "Book a Strategy Session",
-          url: "/benchmark"
-        }}
-        trackingContext="Launch Guide"
-      />
     </div>
   );
 };
