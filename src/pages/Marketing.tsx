@@ -427,24 +427,20 @@ const MarketingTeam = () => {
 // CTA Section Component
 const MarketingCTA = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/30">
-      <div className="container mx-auto">
-        <div className="text-center">
-          <div className="bg-card/50 backdrop-blur-sm rounded-xl p-12 border border-border/50 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Not Sure Which Tier Is Right for You?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book a strategy call and we'll recommend the perfect marketing investment level for your objectives.
-            </p>
-            <button
-              onClick={() => { window.location.href = "https://calendly.com/amelia-pm/strategy-session" }}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-10 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-2xl hover:scale-105"
-            >
-              Book Your Free Strategy Call
-            </button>
-          </div>
-        </div>
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="container mx-auto max-w-4xl text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+          Not Sure Which Tier Is Right for You?
+        </h2>
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          Book a strategy call and we'll recommend the perfect marketing investment level for your objectives.
+        </p>
+        <button
+          onClick={() => { window.location.href = "https://calendly.com/amelia-pm/strategy-session" }}
+          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-lg px-10 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-2xl hover:scale-105"
+        >
+          Book Your Free Strategy Call
+        </button>
       </div>
     </section>
   );
