@@ -74,6 +74,7 @@ import AIPriorities from "./pages/AIPriorities";
 import AIWaitlist from "./pages/AIWaitlist";
 import TwentySixWorkflows from "./pages/TwentySixWorkflows";
 import SkillLibrary from "./pages/SkillLibrary";
+import LaunchGuide from "./pages/LaunchGuide";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -177,6 +178,7 @@ const App = () => (
           <Route path="/ai-waitlist" element={<AIWaitlist />} />
           <Route path="/26-workflows" element={<TwentySixWorkflows />} />
           <Route path="/skill-library" element={<SkillLibrary />} />
+          <Route path="/launch-guide" element={<LaunchGuide />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
