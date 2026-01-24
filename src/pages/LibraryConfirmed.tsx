@@ -108,7 +108,7 @@ const LibraryConfirmed = () => {
       <section className="bg-white py-12 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-semibold uppercase tracking-wider text-gray-500 mb-10">
-            Members Come From
+            Helping Leaders With AI From Companies Like
           </p>
         </div>
         <div className="relative">
