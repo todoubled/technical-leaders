@@ -98,7 +98,7 @@ const LibraryConfirmed = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="text-center">
             <p className="text-green-800 dark:text-green-200 font-medium">
-              <span className="font-bold">Success!</span> Your library access has been confirmed. Check your email for access details.
+              <span className="font-bold">Success!</span> But wait, before you check your email inbox for the prompt library... <a href="/fortune-100-prompt-library" className="text-green-700 dark:text-green-300 underline hover:text-green-900 dark:hover:text-green-100">Get instant access here</a>
             </p>
           </div>
         </div>
