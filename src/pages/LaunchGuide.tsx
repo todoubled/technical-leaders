@@ -96,11 +96,31 @@ const LaunchGuide = () => {
     }
   ];
 
-  const dailyActions = [
-    { command: "start conversations", description: "Get AI-assisted conversation starters for your connections" },
-    { command: "find icp", description: "Find and prioritize new connections to reach out to" },
-    { command: "create content", description: "Generate engaging content ideas and posts" }
-  ];
+  const workflowCommands = {
+    monthly: {
+      label: "Monthly",
+      frequency: "First business day of every month",
+      commands: [
+        { command: "update positioning", description: "Refine your positioning and messaging based on market feedback" }
+      ]
+    },
+    weekly: {
+      label: "Weekly",
+      frequency: "First business day of every week",
+      commands: [
+        { command: "find icp", description: "Find and prioritize new connections to reach out to" },
+        { command: "create content", description: "Generate engaging content ideas and posts" }
+      ]
+    },
+    daily: {
+      label: "Daily",
+      frequency: "Every business day",
+      commands: [
+        { command: "get connections", description: "Review and organize your new LinkedIn connections" },
+        { command: "start conversations", description: "Get AI-assisted conversation starters for your connections" }
+      ]
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -289,20 +309,20 @@ const LaunchGuide = () => {
         </div>
       </section>
 
-      {/* Daily Workflow */}
+      {/* Recurring Workflow */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-gray-950 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-600/5"></div>
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-300 px-6 py-3 rounded-full font-bold mb-6 shadow-md">
               <RefreshCw className="w-5 h-5" />
-              <span>Daily Workflow</span>
+              <span>Recurring Workflow</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-              Do This Every Day
+              Your Ongoing Routine
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              After completing the setup, run this daily workflow in your Launch Kit folder.
+              After completing the setup, run these commands on a recurring schedule in your Launch Kit folder.
             </p>
           </div>
 
@@ -318,23 +338,65 @@ const LaunchGuide = () => {
               </div>
             </div>
 
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
-                Choose one of these commands:
-              </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {dailyActions.map((action, index) => (
-                  <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-orange-500/50 transition-all">
-                    <code className="text-xl font-mono text-orange-400 font-bold">{action.command}</code>
-                    <p className="text-sm text-gray-400 mt-2">{action.description}</p>
-                  </div>
-                ))}
+            <div className="space-y-6">
+              {/* Monthly Commands */}
+              <div className="bg-gray-900 rounded-xl p-6 border border-purple-500/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-bold">
+                    {workflowCommands.monthly.label}
+                  </span>
+                  <span className="text-sm text-gray-400">{workflowCommands.monthly.frequency}</span>
+                </div>
+                <div className="grid gap-4">
+                  {workflowCommands.monthly.commands.map((action, index) => (
+                    <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-purple-500/50 transition-all">
+                      <code className="text-xl font-mono text-purple-400 font-bold">{action.command}</code>
+                      <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Weekly Commands */}
+              <div className="bg-gray-900 rounded-xl p-6 border border-blue-500/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-bold">
+                    {workflowCommands.weekly.label}
+                  </span>
+                  <span className="text-sm text-gray-400">{workflowCommands.weekly.frequency}</span>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {workflowCommands.weekly.commands.map((action, index) => (
+                    <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-blue-500/50 transition-all">
+                      <code className="text-xl font-mono text-blue-400 font-bold">{action.command}</code>
+                      <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Daily Commands */}
+              <div className="bg-gray-900 rounded-xl p-6 border border-orange-500/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-sm font-bold">
+                    {workflowCommands.daily.label}
+                  </span>
+                  <span className="text-sm text-gray-400">{workflowCommands.daily.frequency}</span>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {workflowCommands.daily.commands.map((action, index) => (
+                    <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-orange-500/50 transition-all">
+                      <code className="text-xl font-mono text-orange-400 font-bold">{action.command}</code>
+                      <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             <div className="mt-6 flex items-center gap-2 text-gray-400">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium">Run one command each morning for consistent pipeline growth</span>
+              <span className="text-sm font-medium">Follow this schedule consistently for steady pipeline growth</span>
             </div>
           </Card>
 
@@ -342,12 +404,12 @@ const LaunchGuide = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <p className="text-4xl mb-3">25</p>
-              <p className="text-gray-300 font-bold">Connections daily</p>
+              <p className="text-gray-300 font-bold">Connections weekly</p>
               <p className="text-sm text-gray-500">from "find icp" command</p>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <p className="text-4xl mb-3">10+</p>
-              <p className="text-gray-300 font-bold">Conversations started</p>
+              <p className="text-gray-300 font-bold">Conversations daily</p>
               <p className="text-sm text-gray-500">from "start conversations" command</p>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
