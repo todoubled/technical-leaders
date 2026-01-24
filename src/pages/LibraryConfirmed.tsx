@@ -3,87 +3,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { useEffect } from "react";
 import SEO from "@/components/SEO";
-import { trackCalendlyEvent, trackEvent, trackClick } from "@/utils/posthog";
-
-declare global {
-  interface Window {
-    Calendly: {
-      initInlineWidget: (options: {
-        url: string;
-        parentElement: Element | null;
-        prefill?: Record<string, unknown>;
-        utm?: Record<string, string>;
-      }) => void;
-    };
-  }
-}
+import { trackClick } from "@/utils/posthog";
 
 const LibraryConfirmed = () => {
-  useEffect(() => {
-    // Track Calendly-specific initialization
-    trackEvent('Calendly Widget Initialized', {
-      calendly_url: 'ai-strategy',
-      source: 'library-confirmed'
-    });
-
-    // Check if Calendly is already loaded
-    if (window.Calendly) {
-      window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/tech-leaders/ai-strategy?hide_event_type_details=1&hide_gdpr_banner=1',
-        parentElement: document.querySelector('.calendly-inline-widget'),
-        prefill: {},
-        utm: {}
-      });
-
-      // Track when Calendly widget is viewed
-      trackCalendlyEvent('viewed', {
-        meeting_type: 'ai-strategy',
-        source: 'library-confirmed'
-      });
-    }
-
-    // Listen for Calendly events
-    const handleCalendlyEvent = (e: MessageEvent) => {
-      if (e.origin !== 'https://calendly.com') return;
-
-      if (e.data.event && e.data.event.indexOf('calendly.') === 0) {
-        const eventName = e.data.event;
-
-        // Track different Calendly events
-        if (eventName === 'calendly.event_scheduled') {
-          // Extract event details if available
-          const eventDetails = e.data.payload || {};
-
-          trackCalendlyEvent('scheduled', {
-            invitee: eventDetails.invitee,
-            event: eventDetails.event,
-            meeting_type: 'ai-strategy',
-            source: 'library-confirmed'
-          });
-
-          // Navigate to confirmation page
-          window.location.href = '/call-confirmed';
-        } else if (eventName === 'calendly.page_height') {
-          // Widget loaded
-          trackEvent('Calendly Widget Loaded', {
-            page: 'library-confirmed'
-          });
-        } else if (eventName === 'calendly.date_and_time_selected') {
-          trackEvent('Calendly Date Selected', {
-            page: 'library-confirmed'
-          });
-        }
-      }
-    };
-
-    window.addEventListener('message', handleCalendlyEvent);
-
-    return () => {
-      window.removeEventListener('message', handleCalendlyEvent);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -253,9 +176,15 @@ const LibraryConfirmed = () => {
                 Select a Time That Works for You
               </h3>
 
-              {/* Calendar Widget Placeholder */}
-              <div className="rounded-lg p-8 text-center min-h-[400px] flex flex-col items-center justify-center">
-                <div className="calendly-inline-widget" data-url="https://calendly.com/tech-leaders/ai-strategy?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: "320px", height: "700px" }}></div>
+              {/* Google Calendar Appointment Scheduling */}
+              <div className="rounded-lg text-center min-h-[400px] flex flex-col items-center justify-center">
+                <iframe
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1H47JNUu_WZJGKFxAknoYHGaZuC6FIQRYJIdaqd34KmkRpNos4N7SABAQ5QX9DGN50GmMABHto?gv=true"
+                  style={{ border: 0 }}
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                ></iframe>
               </div>
 
               <div className="mt-6 text-center">
