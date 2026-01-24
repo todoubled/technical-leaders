@@ -1,10 +1,11 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import SEO from "@/components/SEO";
-import { trackCalendlyEvent, trackEvent } from "@/utils/posthog";
+import { trackCalendlyEvent, trackEvent, trackClick } from "@/utils/posthog";
 
 declare global {
   interface Window {
@@ -161,6 +162,34 @@ const LibraryConfirmed = () => {
           </div>
         </div>
         <p className="text-center text-sm text-foreground/50 mt-4">and many other startups, SMBs, and non-profits</p>
+      </section>
+
+      {/* Workshop CTA Section */}
+      <section className="bg-gradient-to-r from-orange-500/10 to-red-500/10 py-12 border-y border-orange-500/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-lg font-semibold text-orange-600 dark:text-orange-400 mb-2">
+            Want to learn how to turn these prompts and your own into AI agent workflows?
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            Join Our Free AI Workflows Workshop
+          </h2>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            See these prompts in action and learn how to build AI workflows that save you 5-10 hours per week (even if you're non-technical).
+          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-8 py-6"
+            onClick={() => {
+              trackClick('Register for Workshop - Library Confirmed', {
+                location: 'workshop_cta_section'
+              });
+              window.location.href = "/ai-agent-skills";
+            }}
+          >
+            Register for the Workshop
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </div>
       </section>
 
       {/* Hero Section */}
