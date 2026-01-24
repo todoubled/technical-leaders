@@ -57,6 +57,7 @@ import AIProgramSelector from "./pages/AIProgramSelector";
 import Fortune100PromptLibrary from "./pages/Fortune100PromptLibrary";
 import Fortune100AiWorkspace from "./pages/Fortune100AiWorkspace";
 import Library from "./pages/Library";
+import LibraryConfirmed from "./pages/LibraryConfirmed";
 import Playbook from "./pages/Playbook";
 import AIWorkflows from "./pages/AIWorkflows";
 import AIAgentSkills from "./pages/AIAgentSkills";
@@ -163,6 +164,7 @@ const App = () => (
           <Route path="/fortune-100-prompt-library" element={<Fortune100PromptLibrary />} />
           <Route path="/fortune-100-ai-workspace" element={<Fortune100AiWorkspace />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/library-confirmed" element={<LibraryConfirmed />} />
           <Route path="/playbook" element={<Playbook />} />
           <Route path="/ai-program" element={<AIProgram />} />
           <Route path="/ai-first-program" element={<AIFirstProgram />} />
