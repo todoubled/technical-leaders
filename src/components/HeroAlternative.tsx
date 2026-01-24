@@ -172,7 +172,7 @@ const HeroAlternative = () => {
             </div>
           </div>
         </div>
-        <p className="text-center text-sm text-foreground/50 mt-4">and many other startups, SMBs, and non-profits</p>
+        <p className="text-center text-sm text-background mt-4">and many other startups, SMBs, and non-profits</p>
       </div>
     </section>
   );
