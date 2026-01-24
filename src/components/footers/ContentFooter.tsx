@@ -231,7 +231,7 @@ const ContentFooter = ({
             <div className="md:col-span-2">
               <img src="/orange-logo.png" alt="Tech Leaders" className="h-8 w-auto mb-4" />
               <p className="text-sm text-muted-foreground">
-                © 2025 Tech Leaders. All rights reserved.
+                © 2026 Tech Leaders. All rights reserved.
               </p>
             </div>
 

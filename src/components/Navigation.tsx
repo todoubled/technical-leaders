@@ -16,15 +16,6 @@ const Navigation = () => {
             <a href="/"><img src="/orange-logo.png" alt="Tech Leaders" className="h-10 w-auto" /></a>
           </div>
 
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <a href="/ai-workflows" className="text-foreground hover:text-primary transition-colors flex items-center gap-2">
-                Join the AI Workshop
-                <span className="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">FREE</span>
-              </a>
-            </div>
-          </div>
-
           <div className="hidden md:flex items-center space-x-4">
             <Button
               onClick={() => {
@@ -51,10 +42,6 @@ const Navigation = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/ai-workflows" className="block px-3 py-2 text-foreground hover:text-primary flex items-center">
-              AI Workshop
-              <span className="ml-2 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">FREE</span>
-            </a>
             <div className="px-3 py-2">
               <Button
                 onClick={() => {
