@@ -6,9 +6,32 @@ import { trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { useEffect, useState } from "react";
 
+const STORAGE_KEY = 'launch-guide-completed-steps';
+
 const LaunchGuide = () => {
   useTrackScrollDepth('Launch Guide Page');
-  const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
+  const [completedSteps, setCompletedSteps] = useState<Set<string>>(() => {
+    // Initialize from localStorage
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed)) {
+            return new Set(parsed);
+          }
+        } catch {
+          // Invalid JSON, start fresh
+        }
+      }
+    }
+    return new Set();
+  });
+
+  // Save to localStorage whenever completedSteps changes
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedSteps]));
+  }, [completedSteps]);
 
   useEffect(() => {
     trackEvent('Launch Guide Page View', {
