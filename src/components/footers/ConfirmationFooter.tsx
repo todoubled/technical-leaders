@@ -215,7 +215,7 @@ const ConfirmationFooter = ({
         <div className="border-t border-border pt-8 mt-12 text-center">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-muted-foreground">
             <img src="/orange-logo.png" alt="Tech Leaders" className="h-6 w-auto" />
-            <span>© 2025 Tech Leaders. All rights reserved.</span>
+            <span>© 2026 Tech Leaders. All rights reserved.</span>
             <span>•</span>
             <a href="mailto:todd@technical-leaders.com" className="hover:text-primary transition-colors">
               Questions? Contact us

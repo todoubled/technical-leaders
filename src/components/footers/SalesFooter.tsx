@@ -164,7 +164,7 @@ const SalesFooter = ({
             <div className="flex items-center gap-2">
               <img src="/orange-logo.png" alt="Tech Leaders" className="h-6 w-auto" />
               <p className="text-sm text-muted-foreground">
-                © 2025 Tech Leaders. All rights reserved.
+                © 2026 Tech Leaders. All rights reserved.
               </p>
             </div>
             <div className="flex gap-6 text-sm">

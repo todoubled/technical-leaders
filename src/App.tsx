@@ -57,6 +57,7 @@ import AIProgramSelector from "./pages/AIProgramSelector";
 import Fortune100PromptLibrary from "./pages/Fortune100PromptLibrary";
 import Fortune100AiWorkspace from "./pages/Fortune100AiWorkspace";
 import Library from "./pages/Library";
+import LibraryConfirmed from "./pages/LibraryConfirmed";
 import Playbook from "./pages/Playbook";
 import AIWorkflows from "./pages/AIWorkflows";
 import AIAgentSkills from "./pages/AIAgentSkills";
@@ -74,6 +75,7 @@ import AIPriorities from "./pages/AIPriorities";
 import AIWaitlist from "./pages/AIWaitlist";
 import TwentySixWorkflows from "./pages/TwentySixWorkflows";
 import SkillLibrary from "./pages/SkillLibrary";
+import LaunchGuide from "./pages/LaunchGuide";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -162,6 +164,7 @@ const App = () => (
           <Route path="/fortune-100-prompt-library" element={<Fortune100PromptLibrary />} />
           <Route path="/fortune-100-ai-workspace" element={<Fortune100AiWorkspace />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/library-confirmed" element={<LibraryConfirmed />} />
           <Route path="/playbook" element={<Playbook />} />
           <Route path="/ai-program" element={<AIProgram />} />
           <Route path="/ai-first-program" element={<AIFirstProgram />} />
@@ -177,6 +180,7 @@ const App = () => (
           <Route path="/ai-waitlist" element={<AIWaitlist />} />
           <Route path="/26-workflows" element={<TwentySixWorkflows />} />
           <Route path="/skill-library" element={<SkillLibrary />} />
+          <Route path="/launch-guide" element={<LaunchGuide />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
