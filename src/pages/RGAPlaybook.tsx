@@ -340,16 +340,18 @@ const RGAPlaybook = () => {
 
                     {/* Link to resource */}
                     {step.link && (
-                      <a
-                        href={step.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors mb-3"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Open in Skool Classroom
-                      </a>
+                      <div className="mt-2">
+                        <a
+                          href={step.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Open in Skool Classroom
+                        </a>
+                      </div>
                     )}
 
                     {/* Sub-items */}
