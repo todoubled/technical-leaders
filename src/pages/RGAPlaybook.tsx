@@ -346,7 +346,7 @@ const RGAPlaybook = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-background hover:text-background/80 transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
                           Open in Skool Classroom
