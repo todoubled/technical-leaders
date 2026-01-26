@@ -483,7 +483,7 @@ const RGAPlaybook = () => {
 
             <div className="mt-6 flex items-center gap-2 text-gray-400">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium">Follow this schedule consistently for steady pipeline growth</span>
+              <span className="text-2xl font-bold">Follow this schedule consistently for steady pipeline growth</span>
             </div>
           </Card>
 
@@ -491,7 +491,7 @@ const RGAPlaybook = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <p className="text-4xl mb-3">25</p>
-              <p className="text-gray-300 font-bold">Connections weekly</p>
+              <p className="text-gray-300 font-bold">Connections daily</p>
               <p className="text-sm text-gray-500">from "find icp" command</p>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
