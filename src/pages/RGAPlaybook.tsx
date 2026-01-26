@@ -1,15 +1,15 @@
 import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Download, FolderOpen, User, FileText, MessageSquare, RefreshCw, Rocket, Target, Sparkles } from "lucide-react";
+import { CheckCircle2, Download, FolderOpen, User, FileText, MessageSquare, RefreshCw, Target, Sparkles, DollarSign } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = 'launch-guide-completed-steps';
+const STORAGE_KEY = 'rga-playbook-completed-steps';
 
-const LaunchGuide = () => {
-  useTrackScrollDepth('Launch Guide Page');
+const RGAPlaybook = () => {
+  useTrackScrollDepth('RGA Playbook Page');
   const [completedSteps, setCompletedSteps] = useState<Set<string>>(() => {
     // Initialize from localStorage
     if (typeof window !== 'undefined') {
@@ -34,7 +34,7 @@ const LaunchGuide = () => {
   }, [completedSteps]);
 
   useEffect(() => {
-    trackEvent('Launch Guide Page View', {
+    trackEvent('RGA Playbook Page View', {
       has_checklist: true,
       has_cta: true
     });
@@ -148,9 +148,9 @@ const LaunchGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Launch Guide - Get Started with AI-Powered Outreach"
-        description="Step-by-step guide to setting up your AI-powered outreach system. Install agent skills, gather dependencies, and start landing clients."
-        keywords={['launch guide', 'AI outreach', 'Claude skills', 'consulting setup', 'ICP cloner']}
+        title="RGA Playbook - Revenue Generating Activities for Consultants"
+        description="The complete playbook for revenue generating activities to land consulting clients. AI-powered system for finding, connecting with, and converting ideal clients."
+        keywords={['RGA playbook', 'revenue generating activities', 'consulting clients', 'AI outreach', 'client acquisition']}
       />
       <Navigation />
 
@@ -159,7 +159,7 @@ const LaunchGuide = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/launch-bg.png"
-            alt="Launch Guide background"
+            alt="RGA Playbook background"
             className="w-full h-full object-cover object-top opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
@@ -167,23 +167,23 @@ const LaunchGuide = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold mb-6">
-            <Rocket className="w-4 h-4" />
-            <span>Launch Guide</span>
+            <DollarSign className="w-4 h-4" />
+            <span>RGA Playbook</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Set Up Your AI-Powered
+            Revenue Generating Activities
             <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
-              Outreach System
+              Playbook for Consultants
             </span>
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
-            Follow this step-by-step guide to configure your <span className="font-bold text-white">Launch Kit</span> and start connecting with ideal clients using AI.
+            The complete system for <span className="font-bold text-white">landing consulting clients</span> using AI-powered outreach, positioning, and relationship building.
           </p>
 
           <p className="text-2xl font-semibold mb-8 max-w-2xl mx-auto">
-            Complete the setup once, then run your daily workflow in minutes.
+            Set it up once. Run your client acquisition workflow in minutes each day.
           </p>
 
           <div className="bg-background/50 backdrop-blur border border-white/10 rounded-lg p-6 max-w-2xl mx-auto mb-8 shadow-xl">
@@ -229,7 +229,7 @@ const LaunchGuide = () => {
               Setup Checklist
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Complete these steps once to configure your AI-powered outreach system.
+              Complete these steps once to configure your AI-powered client acquisition system.
             </p>
           </div>
 
@@ -447,4 +447,4 @@ const LaunchGuide = () => {
   );
 };
 
-export default LaunchGuide;
+export default RGAPlaybook;
