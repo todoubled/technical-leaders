@@ -7,6 +7,7 @@ import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = 'rga-playbook-completed-steps';
+const ROUTINE_STORAGE_KEY = 'rga-playbook-completed-routine-tasks';
 
 const RGAPlaybook = () => {
   useTrackScrollDepth('RGA Playbook Page');
@@ -28,10 +29,33 @@ const RGAPlaybook = () => {
     return new Set();
   });
 
+  const [completedRoutineTasks, setCompletedRoutineTasks] = useState<Set<string>>(() => {
+    // Initialize from localStorage
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(ROUTINE_STORAGE_KEY);
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed)) {
+            return new Set(parsed);
+          }
+        } catch {
+          // Invalid JSON, start fresh
+        }
+      }
+    }
+    return new Set();
+  });
+
   // Save to localStorage whenever completedSteps changes
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedSteps]));
   }, [completedSteps]);
+
+  // Save to localStorage whenever completedRoutineTasks changes
+  useEffect(() => {
+    localStorage.setItem(ROUTINE_STORAGE_KEY, JSON.stringify([...completedRoutineTasks]));
+  }, [completedRoutineTasks]);
 
   useEffect(() => {
     trackEvent('RGA Playbook Page View', {
@@ -47,6 +71,18 @@ const RGAPlaybook = () => {
         newSet.delete(stepId);
       } else {
         newSet.add(stepId);
+      }
+      return newSet;
+    });
+  };
+
+  const toggleRoutineTask = (taskId: string) => {
+    setCompletedRoutineTasks(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(taskId)) {
+        newSet.delete(taskId);
+      } else {
+        newSet.add(taskId);
       }
       return newSet;
     });
@@ -172,23 +208,24 @@ const RGAPlaybook = () => {
       label: "Monthly",
       frequency: "First business day of every month",
       commands: [
-        { command: "update positioning", description: "Refine your positioning and messaging based on market feedback" }
+        { id: "monthly-update-positioning", command: "update positioning", description: "Refine your positioning and messaging based on market feedback" }
       ]
     },
     weekly: {
       label: "Weekly",
       frequency: "First business day of every week",
       commands: [
-        { command: "find icp", description: "Find and prioritize new connections to reach out to" },
-        { command: "create content", description: "Generate engaging content ideas and posts" }
+        { id: "weekly-find-icp", command: "find icp", description: "Find and prioritize new connections to reach out to" },
+        { id: "weekly-create-content", command: "create content", description: "Generate engaging content ideas and posts" }
       ]
     },
     daily: {
       label: "Daily",
       frequency: "Every business day",
       commands: [
-        { command: "get connections", description: "Review and organize your new LinkedIn connections" },
-        { command: "start conversations", description: "Get AI-assisted conversation starters for your connections" }
+        { id: "daily-get-connections", command: "get connections", description: "Review and organize your new LinkedIn connections" },
+        { id: "daily-start-conversations", command: "start conversations", description: "Get AI-assisted conversation starters for your connections" },
+        { id: "daily-get-paid-connections", command: "get paid connections", description: "Review and organize your new LinkedIn connections from paid ads", optional: true }
       ]
     }
   };
@@ -435,10 +472,37 @@ const RGAPlaybook = () => {
                   <span className="text-sm text-gray-400">{workflowCommands.monthly.frequency}</span>
                 </div>
                 <div className="grid gap-4">
-                  {workflowCommands.monthly.commands.map((action, index) => (
-                    <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-purple-500/50 transition-all">
-                      <code className="text-xl font-mono text-purple-400 font-bold">{action.command}</code>
-                      <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                  {workflowCommands.monthly.commands.map((action) => (
+                    <div
+                      key={action.id}
+                      className={`bg-gray-800 rounded-lg p-4 border transition-all cursor-pointer ${
+                        completedRoutineTasks.has(action.id)
+                          ? 'border-green-500/50 bg-green-900/20'
+                          : 'border-gray-700 hover:border-purple-500/50'
+                      }`}
+                      onClick={() => toggleRoutineTask(action.id)}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all mt-0.5 ${
+                            completedRoutineTasks.has(action.id)
+                              ? 'bg-green-500 border-green-500'
+                              : 'border-gray-500'
+                          }`}
+                        >
+                          {completedRoutineTasks.has(action.id) && (
+                            <CheckCircle2 className="w-4 h-4 text-white" />
+                          )}
+                        </div>
+                        <div className="flex-grow">
+                          <code className={`text-xl font-mono font-bold ${
+                            completedRoutineTasks.has(action.id)
+                              ? 'text-green-400 line-through'
+                              : 'text-purple-400'
+                          }`}>{action.command}</code>
+                          <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -453,10 +517,37 @@ const RGAPlaybook = () => {
                   <span className="text-sm text-gray-400">{workflowCommands.weekly.frequency}</span>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {workflowCommands.weekly.commands.map((action, index) => (
-                    <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-blue-500/50 transition-all">
-                      <code className="text-xl font-mono text-blue-400 font-bold">{action.command}</code>
-                      <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                  {workflowCommands.weekly.commands.map((action) => (
+                    <div
+                      key={action.id}
+                      className={`bg-gray-800 rounded-lg p-4 border transition-all cursor-pointer ${
+                        completedRoutineTasks.has(action.id)
+                          ? 'border-green-500/50 bg-green-900/20'
+                          : 'border-gray-700 hover:border-blue-500/50'
+                      }`}
+                      onClick={() => toggleRoutineTask(action.id)}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all mt-0.5 ${
+                            completedRoutineTasks.has(action.id)
+                              ? 'bg-green-500 border-green-500'
+                              : 'border-gray-500'
+                          }`}
+                        >
+                          {completedRoutineTasks.has(action.id) && (
+                            <CheckCircle2 className="w-4 h-4 text-white" />
+                          )}
+                        </div>
+                        <div className="flex-grow">
+                          <code className={`text-xl font-mono font-bold ${
+                            completedRoutineTasks.has(action.id)
+                              ? 'text-green-400 line-through'
+                              : 'text-blue-400'
+                          }`}>{action.command}</code>
+                          <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -471,10 +562,44 @@ const RGAPlaybook = () => {
                   <span className="text-sm text-gray-400">{workflowCommands.daily.frequency}</span>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {workflowCommands.daily.commands.map((action, index) => (
-                    <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-orange-500/50 transition-all">
-                      <code className="text-xl font-mono text-orange-400 font-bold">{action.command}</code>
-                      <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                  {workflowCommands.daily.commands.map((action) => (
+                    <div
+                      key={action.id}
+                      className={`bg-gray-800 rounded-lg p-4 border transition-all cursor-pointer ${
+                        completedRoutineTasks.has(action.id)
+                          ? 'border-green-500/50 bg-green-900/20'
+                          : 'border-gray-700 hover:border-orange-500/50'
+                      }`}
+                      onClick={() => toggleRoutineTask(action.id)}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all mt-0.5 ${
+                            completedRoutineTasks.has(action.id)
+                              ? 'bg-green-500 border-green-500'
+                              : 'border-gray-500'
+                          }`}
+                        >
+                          {completedRoutineTasks.has(action.id) && (
+                            <CheckCircle2 className="w-4 h-4 text-white" />
+                          )}
+                        </div>
+                        <div className="flex-grow">
+                          <div className="flex items-center gap-2">
+                            <code className={`text-xl font-mono font-bold ${
+                              completedRoutineTasks.has(action.id)
+                                ? 'text-green-400 line-through'
+                                : 'text-orange-400'
+                            }`}>{action.command}</code>
+                            {action.optional && (
+                              <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full font-semibold">
+                                Optional
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-sm text-gray-400 mt-2">{action.description}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
