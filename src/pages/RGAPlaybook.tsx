@@ -224,7 +224,8 @@ const RGAPlaybook = () => {
       frequency: "Every business day",
       commands: [
         { id: "daily-get-connections", command: "get connections", description: "Review and organize your new LinkedIn connections" },
-        { id: "daily-start-conversations", command: "start conversations", description: "Get AI-assisted conversation starters for your connections" }
+        { id: "daily-start-conversations", command: "start conversations", description: "Get AI-assisted conversation starters for your connections" },
+        { id: "daily-get-paid-connections", command: "get paid connections", description: "Review and organize your new LinkedIn connections from paid ads", optional: true }
       ]
     }
   };
@@ -584,11 +585,18 @@ const RGAPlaybook = () => {
                           )}
                         </div>
                         <div className="flex-grow">
-                          <code className={`text-xl font-mono font-bold ${
-                            completedRoutineTasks.has(action.id)
-                              ? 'text-green-400 line-through'
-                              : 'text-orange-400'
-                          }`}>{action.command}</code>
+                          <div className="flex items-center gap-2">
+                            <code className={`text-xl font-mono font-bold ${
+                              completedRoutineTasks.has(action.id)
+                                ? 'text-green-400 line-through'
+                                : 'text-orange-400'
+                            }`}>{action.command}</code>
+                            {action.optional && (
+                              <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full font-semibold">
+                                Optional
+                              </span>
+                            )}
+                          </div>
                           <p className="text-sm text-gray-400 mt-2">{action.description}</p>
                         </div>
                       </div>
