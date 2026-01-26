@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Download, FolderOpen, User, FileText, MessageSquare, RefreshCw, Target, Sparkles, DollarSign } from "lucide-react";
+import { CheckCircle2, Download, FolderOpen, User, FileText, MessageSquare, RefreshCw, Target, Sparkles, DollarSign, Eye, Crosshair, Megaphone, Package, ExternalLink, Compass } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
@@ -53,6 +53,54 @@ const RGAPlaybook = () => {
   };
 
   const setupSteps = [
+    {
+      id: "vision-goal-planner",
+      title: "The Vision and Goal Planner",
+      description: "Define your vision and set clear goals for your consulting business",
+      link: "https://www.skool.com/tech-leaders/classroom/cdfa54d0?md=d9122f8aa20141a6b60960e5a0614120",
+      icon: Compass,
+      color: "from-violet-500 to-violet-600"
+    },
+    {
+      id: "block-detector",
+      title: "The Block Detector",
+      description: "Identify and overcome the mental blocks holding you back",
+      link: "https://www.skool.com/tech-leaders/classroom/cdfa54d0?md=f813e81028c34f30ac37e946b6f8e450",
+      icon: Eye,
+      color: "from-rose-500 to-rose-600"
+    },
+    {
+      id: "icp-targeter",
+      title: "ICP Targeter",
+      description: "Define your ideal client profile with precision",
+      link: "https://www.skool.com/tech-leaders/classroom/cdfa54d0?md=59f87071b7e74141bba4b1e0b5049b02",
+      icon: Crosshair,
+      color: "from-amber-500 to-amber-600"
+    },
+    {
+      id: "market-messenger",
+      title: "The Market Messenger",
+      description: "Craft compelling messaging that resonates with your target market",
+      link: "https://www.skool.com/tech-leaders/classroom/cdfa54d0?md=527a7b2216c2487b9ceb2376db144c66",
+      icon: Megaphone,
+      color: "from-teal-500 to-teal-600"
+    },
+    {
+      id: "offer-designer",
+      title: "The Offer Designer",
+      description: "Design irresistible offers that convert prospects into clients",
+      link: "https://www.skool.com/tech-leaders/classroom/cdfa54d0?md=9c0f4b3ec0c64e60b681daf08e0c6c3d",
+      icon: Package,
+      color: "from-fuchsia-500 to-fuchsia-600"
+    },
+    {
+      id: "profile-optimizer",
+      title: "The Profile Optimizer",
+      description: "Optimize your LinkedIn profile to attract ideal clients",
+      link: "https://www.skool.com/tech-leaders/classroom/cdfa54d0?md=b86ddc6fb3764116a121972876fa8283",
+      icon: User,
+      color: "from-sky-500 to-sky-600"
+    },
     {
       id: "install-skills",
       title: "Download and Install Agent Skills",
@@ -289,6 +337,20 @@ const RGAPlaybook = () => {
                     <p className="text-gray-600 dark:text-gray-400 mb-3">
                       {step.description}
                     </p>
+
+                    {/* Link to resource */}
+                    {step.link && (
+                      <a
+                        href={step.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors mb-3"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Open in Skool Classroom
+                      </a>
+                    )}
 
                     {/* Sub-items */}
                     {step.items && (
