@@ -223,10 +223,10 @@ const RGAPlaybook = () => {
       label: "Daily",
       frequency: "Every business day",
       commands: [
+        { id: "daily-get-paid-connections", command: "get paid connections", description: "Review and organize your new LinkedIn connections from paid ads", optional: true },
         { id: "daily-get-connections", command: "get connections", description: "Review and organize your new LinkedIn connections" },
         { id: "daily-start-conversations", command: "start conversations", description: "Get AI-assisted conversation starters for your connections" },
-        { id: "daily-follow-up", command: "follow up", description: "Follow up with prospects and continue ongoing conversations" },
-        { id: "daily-get-paid-connections", command: "get paid connections", description: "Review and organize your new LinkedIn connections from paid ads", optional: true }
+        { id: "daily-follow-up", command: "follow up", description: "Follow up with prospects and continue ongoing conversations" }
       ]
     }
   };
