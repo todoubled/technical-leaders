@@ -20,8 +20,8 @@ const VideoWorkshop = () => {
     if (formContainer && !formContainer.querySelector('script')) {
       const script = document.createElement('script');
       script.async = true;
-      script.setAttribute('data-uid', 'd6c6cea067');
-      script.src = 'https://techleaders.kit.com/d6c6cea067/index.js';
+      script.setAttribute('data-uid', '702b596c6d');
+      script.src = 'https://techleaders.kit.com/702b596c6d/index.js';
       formContainer.appendChild(script);
 
       // Listen for ConvertKit form submissions to track in PostHog
