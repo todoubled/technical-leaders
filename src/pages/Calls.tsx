@@ -2,84 +2,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Target, Zap, Award, BarChart3 } from "lucide-react";
-import { useEffect } from "react";
 import SEO from "@/components/SEO";
-import { trackCalendlyEvent, trackEvent } from "@/utils/posthog";
-
-declare global {
-  interface Window {
-    Calendly: {
-      initInlineWidget: (options: {
-        url: string;
-        parentElement: Element | null;
-        prefill?: Record<string, unknown>;
-        utm?: Record<string, string>;
-      }) => void;
-    };
-  }
-}
 
 const Calls = () => {
-  useEffect(() => {
-    // Track Calendly-specific initialization
-    trackEvent('Calendly Widget Initialized', {
-      calendly_url: 'tech-leaders-intro-call'
-    });
-
-    // Check if Calendly is already loaded
-    if (window.Calendly) {
-      window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/d/cw2z-crw-rq2/tech-leaders-intro-call?hide_event_type_details=1&hide_gdpr_banner=1',
-        parentElement: document.querySelector('.calendly-inline-widget'),
-        prefill: {},
-        utm: {}
-      });
-
-      // Track when Calendly widget is viewed
-      trackCalendlyEvent('viewed', {
-        meeting_type: 'tech-leaders-intro-call'
-      });
-    }
-
-    // Listen for Calendly events
-    const handleCalendlyEvent = (e: MessageEvent) => {
-      if (e.origin !== 'https://calendly.com') return;
-
-      if (e.data.event && e.data.event.indexOf('calendly.') === 0) {
-        const eventName = e.data.event;
-
-        // Track different Calendly events
-        if (eventName === 'calendly.event_scheduled') {
-          // Extract event details if available
-          const eventDetails = e.data.payload || {};
-
-          trackCalendlyEvent('scheduled', {
-            invitee: eventDetails.invitee,
-            event: eventDetails.event,
-            meeting_type: 'tech-leaders-intro-call'
-          });
-
-          // Navigate to confirmation page
-          window.location.href = '/call-confirmed';
-        } else if (eventName === 'calendly.page_height') {
-          // Widget loaded
-          trackEvent('Calendly Widget Loaded', {
-            page: 'calls'
-          });
-        } else if (eventName === 'calendly.date_and_time_selected') {
-          trackEvent('Calendly Date Selected', {
-            page: 'calls'
-          });
-        }
-      }
-    };
-
-    window.addEventListener('message', handleCalendlyEvent);
-
-    return () => {
-      window.removeEventListener('message', handleCalendlyEvent);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -264,13 +189,12 @@ const Calls = () => {
                   Select a time that works for you to speak with our team.
                 </p>
 
-                {/* Calendly Widget */}
-                <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/d/cw2z-crw-rq2/tech-leaders-intro-call?hide_event_type_details=1&hide_gdpr_banner=1"
-                  style={{ minWidth: "320px", height: "650px" }}
+                {/* Google Calendar Booking */}
+                <iframe
+                  src="https://calendar.app.google/CsAijXzMccJNVrZ68"
+                  style={{ border: 0, width: "100%", height: "650px" }}
+                  frameBorder="0"
                 />
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
                 <div className="mt-6 pt-6 border-t">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
