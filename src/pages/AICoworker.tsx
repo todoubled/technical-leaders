@@ -53,7 +53,7 @@ const AICoworker = () => {
   };
 
   const copyPromptToClipboard = () => {
-    const prompt = `Create me a markdown-based system in this directory (Launch Kit) where I can regularly run you Claude, that lets me be the best world-class MY_ROLE possible (like ELITE_EXAMPLES_OF_ROLES). I'm planning to use you as my personal executive assistant and MY_ROLE expert. Document everything in a series of folders as you see fit`;
+    const prompt = `Create me a markdown-based system in this directory where I can regularly run you Claude, that lets me be the best world-class MY_ROLE possible (like ELITE_EXAMPLES_OF_ROLES). I'm planning to use you as my personal executive assistant and MY_ROLE expert. Document everything in a series of folders as you see fit`;
     navigator.clipboard.writeText(prompt);
     setCopiedPrompt(true);
     trackEvent('AI Coworker Prompt Copied');
@@ -130,8 +130,7 @@ const AICoworker = () => {
       color: "from-pink-500 to-pink-600",
       details: [
         "Add your specific goals and KPIs",
-        "Include relevant background information",
-        "Set up your recurring tasks and schedules"
+        "Include relevant background information"
       ]
     },
     {
@@ -142,7 +141,6 @@ const AICoworker = () => {
       color: "from-amber-500 to-amber-600",
       details: [
         "Open Claude Code in your Workspace folder",
-        "Reference your Launch Kit documentation",
         "Ask Claude to help with tasks specific to your role"
       ]
     }
@@ -186,14 +184,13 @@ const AICoworker = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Set Up Claude as Your
-            <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mt-2">
-              Personal AI Coworker
+            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+              The AI Coworker™
             </span>
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed">
-            Create a <span className="font-bold text-white">markdown-based command system</span> that turns Claude into your personal executive assistant and role-specific expert.
+            Set up Claude as your personal AI coworker. Create a <span className="font-bold text-white">markdown-based command system</span> that turns Claude into your personal executive assistant and role-specific expert.
           </p>
 
           <p className="text-2xl font-semibold mb-8 max-w-2xl mx-auto">
@@ -377,7 +374,7 @@ const AICoworker = () => {
                           </button>
                         </div>
                         <code className="block bg-white dark:bg-gray-800 rounded p-4 text-sm font-mono text-gray-800 dark:text-gray-200 border border-green-200 dark:border-green-700 whitespace-pre-wrap leading-relaxed">
-{`Create me a markdown-based system in this directory (Launch Kit) where I can regularly run you Claude, that lets me be the best world-class MY_ROLE possible (like ELITE_EXAMPLES_OF_ROLES). I'm planning to use you as my personal executive assistant and MY_ROLE expert. Document everything in a series of folders as you see fit`}
+{`Create me a markdown-based system in this directory where I can regularly run you Claude, that lets me be the best world-class MY_ROLE possible (like ELITE_EXAMPLES_OF_ROLES). I'm planning to use you as my personal executive assistant and MY_ROLE expert. Document everything in a series of folders as you see fit`}
                         </code>
                         <div className="mt-3 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded border border-yellow-200 dark:border-yellow-700">
                           <p className="text-xs text-yellow-800 dark:text-yellow-300">
