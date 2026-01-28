@@ -130,8 +130,7 @@ const AICoworker = () => {
       color: "from-pink-500 to-pink-600",
       details: [
         "Add your specific goals and KPIs",
-        "Include relevant background information",
-        "Set up your recurring tasks and schedules"
+        "Include relevant background information"
       ]
     },
     {
@@ -142,7 +141,6 @@ const AICoworker = () => {
       color: "from-amber-500 to-amber-600",
       details: [
         "Open Claude Code in your Workspace folder",
-        "Reference your Launch Kit documentation",
         "Ask Claude to help with tasks specific to your role"
       ]
     }
