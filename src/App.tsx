@@ -78,6 +78,7 @@ import TwentySixWorkflows from "./pages/TwentySixWorkflows";
 import SkillLibrary from "./pages/SkillLibrary";
 import RGAPlaybook from "./pages/RGAPlaybook";
 import AICoworker from "./pages/AICoworker";
+import AISOSLanding from "./pages/AISOSLanding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -185,6 +186,7 @@ const App = () => (
           <Route path="/skill-library" element={<SkillLibrary />} />
           <Route path="/rga-playbook" element={<RGAPlaybook />} />
           <Route path="/ai-coworker" element={<AICoworker />} />
+          <Route path="/t" element={<AISOSLanding />} />
           <Route path="/launch-guide" element={<Navigate to="/rga-playbook" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
