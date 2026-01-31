@@ -47,7 +47,6 @@ const AISOSLanding = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <p className="text-emerald-400 font-semibold tracking-wide text-sm mb-4">T</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
                 Meet T. Your GM and Chief of Staff,{" "}
                 <span className="text-emerald-400">on WhatsApp.</span>
