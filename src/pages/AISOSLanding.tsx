@@ -12,19 +12,19 @@ const STRIPE_LINKS = {
 };
 
 const handleCTA = (plan: string = "leader") => {
-  trackClick("AI SOS CTA", { plan, location: "landing-page" });
+  trackClick("T CTA", { plan, location: "landing-page" });
   window.location.href = STRIPE_LINKS[plan as keyof typeof STRIPE_LINKS] || STRIPE_LINKS.leader;
 };
 
 const AISOSLanding = () => {
-  useTrackScrollDepth("AI SOS Landing");
+  useTrackScrollDepth("T Landing");
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-gray-100">
       <SEO
-        title="AI SOS™ — Your AI Chief of Staff on WhatsApp"
-        description="Start every morning with a personalized strategic briefing. AI SOS™ is the operating system for how leaders think, plan, and execute. $97/mo."
-        keywords={["AI chief of staff", "executive AI", "WhatsApp AI", "leadership operating system", "AI SOS", "morning briefing"]}
+        title="T™ — Your AI General Manager on WhatsApp"
+        description="T™ is an AI agent that handles the grunt work of leadership — briefings, follow-ups, scheduling, and ops — so you can focus on what matters. On WhatsApp. $97/mo."
+        keywords={["AI general manager", "AI agent", "executive AI", "WhatsApp AI", "leadership automation", "T", "AI chief of staff"]}
       />
 
       {/* Navigation - minimal */}
@@ -47,14 +47,13 @@ const AISOSLanding = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <p className="text-emerald-400 font-semibold tracking-wide text-sm mb-4">AI SOS™</p>
+              <p className="text-emerald-400 font-semibold tracking-wide text-sm mb-4">T™</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-                Your AI Chief of Staff,{" "}
+                Your AI General Manager,{" "}
                 <span className="text-emerald-400">on WhatsApp</span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
-                Start every morning with clarity. End every day with confidence.
-                Finally, a strategic partner who knows your world.
+                T™ handles the grunt work — briefings, follow-ups, scheduling, ops — and gets your approval on the stuff that matters.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
@@ -75,9 +74,9 @@ const AISOSLanding = () => {
                 <div className="bg-[#111b21] rounded-3xl overflow-hidden shadow-2xl shadow-emerald-500/10 border border-white/5">
                   {/* WhatsApp header */}
                   <div className="bg-[#1f2c34] px-4 py-3 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-sm font-bold">AI</div>
+                    <div className="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-sm font-bold">T</div>
                     <div>
-                      <p className="text-white text-sm font-medium">AI SOS™</p>
+                      <p className="text-white text-sm font-medium">T™</p>
                       <p className="text-gray-400 text-xs">online</p>
                     </div>
                   </div>
@@ -94,11 +93,10 @@ const AISOSLanding = () => {
                         <p>1. Close the Acme proposal</p>
                         <p>2. Review Q1 hiring plan</p>
                         <p>3. Follow up with investor (day 5)</p>
-                        <p className="mt-3 font-medium">📬 2 FOLLOW-UPS DUE</p>
-                        <p>• Sarah Chen — proposal (5 days, no reply)</p>
-                        <p>• Mike Torres — intro request (3 days)</p>
-                        <p className="mt-3">💡 You've had back-to-back meetings 4 of 5 days. When is deep work happening this week?</p>
-                        <p className="mt-3">How's your energy today? (1-10)</p>
+                        <p className="mt-3 font-medium">✅ HANDLED FOR YOU</p>
+                        <p>• Sent follow-up to Sarah Chen (proposal, 5 days) — <em>approve draft?</em></p>
+                        <p>• Rescheduled 1:1 with Mike (conflict) — moved to Thu 3pm</p>
+                        <p className="mt-3">💡 You've had back-to-back meetings 4 of 5 days. I blocked 2 hours for deep work tomorrow. OK?</p>
                         <p className="text-[10px] text-gray-400 text-right mt-1">6:00 AM ✓✓</p>
                       </div>
                     </div>
@@ -118,7 +116,7 @@ const AISOSLanding = () => {
             {[
               { emoji: "😰", text: "I start every day reacting to my inbox instead of driving my priorities" },
               { emoji: "🕳️", text: "Follow-ups fall through the cracks. I lost a deal last month because I forgot to reply." },
-              { emoji: "🌀", text: "I know I should plan strategically, but there's never time. I'm always in the weeds." },
+              { emoji: "🌀", text: "Half my day is grunt work — scheduling, chasing, updating — not actual leadership." },
             ].map((item, i) => (
               <div key={i} className="bg-white/[0.03] border border-white/5 rounded-xl p-6">
                 <span className="text-3xl mb-4 block">{item.emoji}</span>
@@ -132,15 +130,15 @@ const AISOSLanding = () => {
       {/* The Solution */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">An operating system for how you lead</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">An AI agent that actually runs things</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            AI SOS™ is not another AI chatbot. It's a structured leadership operating system — delivered where you already are.
+            T™ is not another chatbot. It's an automated general manager that handles the grunt work and gets your approval on the important stuff — delivered on WhatsApp.
           </p>
           <div className="space-y-6">
             {[
-              { emoji: "☀️", title: "MORNING BRIEFING", desc: "Your calendar, priorities, and follow-ups — every morning at your time." },
+              { emoji: "☀️", title: "MORNING BRIEFING", desc: "Your calendar, priorities, and what T™ already handled overnight — every morning at your time." },
+              { emoji: "⚙️", title: "AUTOMATED OPS", desc: "Follow-ups sent, meetings rescheduled, reminders triggered — T™ does the grunt work and asks before acting on anything important." },
               { emoji: "🌙", title: "EVENING REVIEW", desc: "Capture wins, flag carry-overs, set up tomorrow in 2 minutes." },
-              { emoji: "📬", title: "FOLLOW-UP TRACKER", desc: "Never drop the ball. AI surfaces what needs your attention." },
               { emoji: "📊", title: "WEEKLY STRATEGIC REVIEW", desc: "Zoom out from tactics to strategy. Guided conversation every Sunday." },
               { emoji: "🧠", title: "MEMORY THAT LEARNS YOU", desc: "Gets smarter every day. After 30 days, it knows your org, your goals, your patterns." },
             ].map((f, i) => (
@@ -164,7 +162,7 @@ const AISOSLanding = () => {
             {[
               { icon: <CreditCard className="w-8 h-8 text-emerald-400" />, step: "1", title: "Subscribe", desc: "Choose your plan. Apple Pay, Google Pay, or card." },
               { icon: <QrCode className="w-8 h-8 text-emerald-400" />, step: "2", title: "Connect WhatsApp", desc: "Scan a QR code. That's it." },
-              { icon: <Sun className="w-8 h-8 text-emerald-400" />, step: "3", title: "Wake up to your first briefing", desc: "Tomorrow morning, your AI Chief of Staff shows up." },
+              { icon: <Sun className="w-8 h-8 text-emerald-400" />, step: "3", title: "Wake up to your first briefing", desc: "Tomorrow morning, T™ shows up and gets to work." },
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-4">
@@ -189,17 +187,17 @@ const AISOSLanding = () => {
                 <tr className="border-b border-white/10">
                   <th className="text-left py-3 pr-4 text-gray-400 font-medium"></th>
                   <th className="py-3 px-4 text-gray-400 font-medium text-center">ChatGPT</th>
-                  <th className="py-3 pl-4 text-emerald-400 font-semibold text-center">AI SOS™</th>
+                  <th className="py-3 pl-4 text-emerald-400 font-semibold text-center">T™</th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   "Proactive briefings",
-                  "Structured cadences",
+                  "Handles grunt work for you",
                   "Learns your context",
-                  "Follow-up tracking",
+                  "Follow-up tracking & sending",
                   "WhatsApp delivery",
-                  "Accountability",
+                  "Asks approval on important decisions",
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-white/5">
                     <td className="py-3 pr-4 text-gray-300">{row}</td>
@@ -216,7 +214,7 @@ const AISOSLanding = () => {
             </table>
           </div>
           <p className="text-center text-gray-500 mt-8 italic">
-            "ChatGPT answers questions. AI SOS™ runs your operating system."
+            "ChatGPT answers questions. T™ runs your operations."
           </p>
         </div>
       </section>
@@ -229,7 +227,7 @@ const AISOSLanding = () => {
             {[
               { emoji: "☕", title: "DAILY COFFEE", price: "$5-7/day ($150-210/mo)", desc: "Temporary energy boost" },
               { emoji: "🧑‍💼", title: "EXECUTIVE COACH", price: "$500-2,000/mo", desc: "2-4 sessions per month. No daily touchpoint." },
-              { emoji: "🤖", title: "AI SOS™", price: "$97-297/mo ($3.23/day)", desc: "Every single morning. Learns your context daily.", highlight: true },
+              { emoji: "🤖", title: "T™", price: "$97-297/mo ($3.23/day)", desc: "Works every day. Handles the grunt work. Gets smarter over time.", highlight: true },
             ].map((c, i) => (
               <div key={i} className={`rounded-xl p-6 border ${c.highlight ? "bg-emerald-500/10 border-emerald-500/30" : "bg-white/[0.03] border-white/5"}`}>
                 <span className="text-3xl mb-3 block">{c.emoji}</span>
@@ -248,9 +246,9 @@ const AISOSLanding = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">What leaders are saying</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { quote: "I've tried Notion, Todoist, and three different AI tools. AI SOS™ is the first thing that actually stuck — because it comes to me, I don't go to it.", author: "VP of Engineering", company: "SaaS company" },
-              { quote: "The morning briefing alone is worth $97. I haven't missed a follow-up in 3 weeks.", author: "Founder & CEO", company: "12-person agency" },
-              { quote: "It's like having a chief of staff who costs less than my Spotify family plan.", author: "Director of Operations", company: "Consulting firm" },
+              { quote: "I've tried Notion, Todoist, and three different AI tools. T™ is the first thing that actually stuck — because it comes to me and does the work, I don't go to it.", author: "VP of Engineering", company: "SaaS company" },
+              { quote: "The morning briefing alone is worth $97. But the fact that it sends follow-ups for me? That's where the magic is.", author: "Founder & CEO", company: "12-person agency" },
+              { quote: "It's like having a general manager who costs less than my Spotify family plan.", author: "Director of Operations", company: "Consulting firm" },
             ].map((t, i) => (
               <div key={i} className="bg-white/[0.03] border border-white/5 rounded-xl p-6">
                 <p className="text-gray-300 italic mb-4">"{t.quote}"</p>
@@ -278,7 +276,7 @@ const AISOSLanding = () => {
                 name: "Executive",
                 price: "$197",
                 popular: true,
-                features: ["Everything in Leader, plus:", "📊 Weekly strategic review", "📈 KPI tracking", "📰 AI news briefing"],
+                features: ["Everything in Leader, plus:", "⚙️ Automated follow-ups & scheduling", "📊 Weekly strategic review", "📰 AI news briefing"],
                 plan: "executive",
               },
               {
@@ -338,7 +336,11 @@ const AISOSLanding = () => {
             {[
               {
                 q: "Can't I just use ChatGPT for this?",
-                a: "ChatGPT is a blank canvas — you have to go to it, prompt it, and remember to use it. AI SOS™ comes to you with structured briefings, tracks your follow-ups, learns your context, and holds you accountable. It's the difference between owning a gym membership and having a personal trainer show up at your door every morning.",
+                a: "ChatGPT is a blank canvas — you have to go to it, prompt it, and remember to use it. T™ comes to you with structured briefings, handles follow-ups and scheduling on your behalf, learns your context, and asks your approval before acting on anything important. It's the difference between owning a gym membership and having a personal trainer show up at your door every morning.",
+              },
+              {
+                q: "What does T™ actually do automatically?",
+                a: "T™ handles the grunt work that eats your day — sending follow-up messages, rescheduling conflicts, surfacing overdue items, blocking time for deep work. For anything important, it drafts the action and asks for your approval first. You stay in control, but you stop doing the busywork.",
               },
               {
                 q: "Is my data private?",
@@ -350,7 +352,7 @@ const AISOSLanding = () => {
               },
               {
                 q: "How long before it 'knows' me?",
-                a: "Your AI Chief of Staff starts learning from your first conversation. By day 7, it knows your priorities and patterns. By day 30, it understands your org, your goals, and your working style. It only gets better from there.",
+                a: "T™ starts learning from your first conversation. By day 7, it knows your priorities and patterns. By day 30, it understands your org, your goals, and your working style. It only gets better from there.",
               },
               {
                 q: "What if I need to pause or cancel?",
@@ -358,7 +360,7 @@ const AISOSLanding = () => {
               },
               {
                 q: "Is this just for CEOs?",
-                a: "No. AI SOS™ is built for any senior leader — CEOs, VPs, directors, founders, fractional execs, GMs. If you're responsible for strategy and execution, this is for you.",
+                a: "No. T™ is built for any senior leader — CEOs, VPs, directors, founders, fractional execs, GMs. If you're responsible for strategy and execution, this is for you.",
               },
             ].map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border border-white/5 rounded-xl px-4 bg-white/[0.02]">
@@ -383,7 +385,7 @@ const AISOSLanding = () => {
             onClick={() => handleCTA("leader")}
             className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-6 rounded-xl"
           >
-            Get Your AI Chief of Staff — $97/mo
+            Get Your AI General Manager — $97/mo
           </Button>
           <p className="text-sm text-gray-500 mt-4">7-day money-back guarantee. Cancel anytime.</p>
         </div>
