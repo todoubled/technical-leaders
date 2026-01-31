@@ -1,19 +1,90 @@
+import { useEffect, useState } from "react";
 import SEO from "@/components/SEO";
+import { HeroHeadlinePlayer } from "@/components/HeroHeadlinePlayer";
+import { WhatsAppDemoPlayer } from "@/components/WhatsAppDemoPlayer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackClick } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
-import { Check, X, CreditCard, QrCode, Sun } from "lucide-react";
+import { Check, X, Download, QrCode, Sun, Lock, UserX, ShieldCheck } from "lucide-react";
 
-const STRIPE_LINKS = {
-  leader: "#", // Replace with Stripe checkout link
-  executive: "#", // Replace with Stripe checkout link
-  strategic: "#", // Replace with Stripe checkout link
+const DMG_URL = "#"; // Replace with .dmg download URL
+const WAITLIST_URL = "#"; // Replace with waitlist/email capture URL
+
+type Platform = "mac" | "windows" | "mobile";
+
+const usePlatform = (): Platform => {
+  const [platform, setPlatform] = useState<Platform>("mac");
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/iPhone|iPad|iPod|Android/i.test(ua)) {
+      setPlatform("mobile");
+    } else if (/Win/i.test(ua)) {
+      setPlatform("windows");
+    } else {
+      setPlatform("mac");
+    }
+  }, []);
+  return platform;
 };
 
-const handleCTA = (plan: string = "leader") => {
-  trackClick("T CTA", { plan, location: "landing-page" });
-  window.location.href = STRIPE_LINKS[plan as keyof typeof STRIPE_LINKS] || STRIPE_LINKS.leader;
+const handleDownload = () => {
+  trackClick("T CTA", { action: "download", location: "landing-page" });
+  window.location.href = DMG_URL;
+};
+
+const handleWaitlist = () => {
+  trackClick("T CTA", { action: "waitlist", location: "landing-page" });
+  window.location.href = WAITLIST_URL;
+};
+
+const NavCTA = () => {
+  const platform = usePlatform();
+  if (platform === "mac") {
+    return (
+      <Button onClick={handleDownload} className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">
+        Download T
+      </Button>
+    );
+  }
+  return (
+    <Button onClick={handleWaitlist} className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">
+      Join Waitlist
+    </Button>
+  );
+};
+
+const PlatformCTA = () => {
+  const platform = usePlatform();
+
+  if (platform === "mac") {
+    return (
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <Button
+          onClick={handleDownload}
+          className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-6 rounded-xl"
+        >
+          Download T — Free
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-4 justify-center lg:justify-start">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <Button
+          onClick={handleWaitlist}
+          className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-6 rounded-xl"
+        >
+          {platform === "windows" ? "Join the Waitlist — Windows Coming Soon" : "Join the Waitlist"}
+        </Button>
+      </div>
+      {platform === "mobile" && (
+        <p className="text-sm text-gray-500">Download on your Mac later</p>
+      )}
+    </div>
+  );
 };
 
 const AISOSLanding = () => {
@@ -22,8 +93,8 @@ const AISOSLanding = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-gray-100">
       <SEO
-        title="Meet T — Your GM and Chief of Staff on WhatsApp"
-        description="T is an agentic general manager and chief of staff that works for you. Goes wide or deep on any topic. Automates complete workflows safely and simply. On WhatsApp. $97/mo."
+        title="T — Your AI Chief of Staff on WhatsApp (Free)"
+        description="T is an agentic general manager and chief of staff that works for you. Give it your goals, connect your tools, and T does the work for you to approve. All on WhatsApp. Free during beta."
         keywords={["AI general manager", "AI chief of staff", "AI agent", "WhatsApp AI", "leadership automation", "T", "agentic workflows"]}
       />
 
@@ -33,12 +104,7 @@ const AISOSLanding = () => {
           <a href="/" className="flex items-center">
             <img src="/orange-logo.png" alt="Technical Leaders" className="h-8 w-auto" />
           </a>
-          <Button
-            onClick={() => handleCTA("leader")}
-            className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-lg"
-          >
-            Meet T
-          </Button>
+          <NavCTA />
         </div>
       </nav>
 
@@ -47,63 +113,34 @@ const AISOSLanding = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-                Meet T. Your GM and Chief of Staff,{" "}
-                <span className="text-emerald-400">on WhatsApp.</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
-                T goes wide or deep on any topic. Automates your workflows. Does the work so you can make the calls.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button
-                  onClick={() => handleCTA("leader")}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-6 rounded-xl"
-                >
-                  Get Started — $97/mo
-                </Button>
+              <div className="mb-6">
+                <HeroHeadlinePlayer />
               </div>
+              <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
+                Give T your goals and as much — or as little — context as you want. Connect your tools and systems, and T does the work for you to approve. All on WhatsApp. All running on your Mac.
+              </p>
+              <PlatformCTA />
               <p className="text-sm text-gray-500 mt-4">
-                Cancel anytime. First briefing tomorrow morning.
+                Free during beta · Mac only · Your first briefing tomorrow
               </p>
             </div>
 
-            {/* WhatsApp Mockup */}
+            {/* WhatsApp Demo */}
             <div className="flex justify-center">
-              <div className="w-full max-w-sm">
-                <div className="bg-[#111b21] rounded-3xl overflow-hidden shadow-2xl shadow-emerald-500/10 border border-white/5">
-                  {/* WhatsApp header */}
-                  <div className="bg-[#1f2c34] px-4 py-3 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-sm font-bold">T</div>
-                    <div>
-                      <p className="text-white text-sm font-medium">T</p>
-                      <p className="text-gray-400 text-xs">online</p>
-                    </div>
-                  </div>
-                  {/* Chat bubbles */}
-                  <div className="p-4 space-y-3 bg-[#0b141a]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }}>
-                    <div className="max-w-[85%]">
-                      <div className="bg-[#005c4b] rounded-lg rounded-tl-none px-3 py-2 text-sm leading-relaxed">
-                        <p>☀️ Good morning, Sarah. Friday, Jan 31.</p>
-                        <p className="mt-3 font-medium">📅 YOUR DAY</p>
-                        <p>• 9:00 — Team standup</p>
-                        <p>• 11:00 — Client call (Acme Corp)</p>
-                        <p>• 2:30 — Board prep with CFO</p>
-                        <p className="mt-3 font-medium">🎯 TOP 3 PRIORITIES</p>
-                        <p>1. Close the Acme proposal</p>
-                        <p>2. Review Q1 hiring plan</p>
-                        <p>3. Follow up with investor (day 5)</p>
-                        <p className="mt-3 font-medium">📬 2 FOLLOW-UPS DUE</p>
-                        <p>• Sarah Chen — proposal (5 days, no reply)</p>
-                        <p>• Mike Torres — intro request (3 days)</p>
-                        <p className="mt-3">💡 You've had back-to-back meetings 4 of 5 days. When is deep work happening this week?</p>
-                        <p className="mt-3">How's your energy today? (1-10)</p>
-                        <p className="text-[10px] text-gray-400 text-right mt-1">6:00 AM ✓✓</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <WhatsAppDemoPlayer />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Free During Beta Banner */}
+      <section className="py-12 px-4 sm:px-6 border-t border-white/5">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-8 text-center">
+            <p className="text-2xl font-bold mb-3">T is free during beta</p>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              We're building T in public with early users. Install it, connect WhatsApp, and tell us what works. No credit card. No catch.
+            </p>
           </div>
         </div>
       </section>
@@ -132,13 +169,13 @@ const AISOSLanding = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">A teammate that does the work</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            T is not another AI chatbot. It's an agentic general manager and chief of staff that goes wide or deep on any topic, automating complete workflows safely and simply — on WhatsApp.
+            T is not another AI chatbot. It's an agentic general manager and chief of staff that automates your workflows — on WhatsApp.
           </p>
           <div className="space-y-6">
             {[
               { emoji: "☀️", title: "MORNING BRIEFING", desc: "Your calendar, priorities, and follow-ups — every morning at your time." },
               { emoji: "🌙", title: "EVENING REVIEW", desc: "Capture wins, flag carry-overs, set up tomorrow in 2 minutes." },
-              { emoji: "📬", title: "FOLLOW-UP TRACKER", desc: "Never drop the ball. AI scans your email and surfaces what needs attention." },
+              { emoji: "📬", title: "FOLLOW-UP TRACKER", desc: "Never drop the ball. T surfaces what needs attention." },
               { emoji: "📊", title: "WEEKLY STRATEGIC REVIEW", desc: "Zoom out from tactics to strategy. Guided conversation every Sunday." },
               { emoji: "🧠", title: "MEMORY THAT LEARNS YOU", desc: "Gets smarter every day. After 30 days, it knows your org, your goals, your patterns." },
             ].map((f, i) => (
@@ -157,11 +194,11 @@ const AISOSLanding = () => {
       {/* How It Works */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Up and running in 5 minutes</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Up and running in 3 minutes</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: <CreditCard className="w-8 h-8 text-emerald-400" />, step: "1", title: "Subscribe", desc: "Choose your plan. Apple Pay, Google Pay, or card." },
-              { icon: <QrCode className="w-8 h-8 text-emerald-400" />, step: "2", title: "Connect WhatsApp", desc: "Scan a QR code. That's it." },
+              { icon: <Download className="w-8 h-8 text-emerald-400" />, step: "1", title: "Download T", desc: "One file. Drag to Applications. Done." },
+              { icon: <QrCode className="w-8 h-8 text-emerald-400" />, step: "2", title: "Connect WhatsApp", desc: "Scan a QR code inside the app." },
               { icon: <Sun className="w-8 h-8 text-emerald-400" />, step: "3", title: "Wake up to your first briefing", desc: "Tomorrow morning, your AI Chief of Staff shows up." },
             ].map((s, i) => (
               <div key={i} className="text-center">
@@ -171,6 +208,35 @@ const AISOSLanding = () => {
                 <p className="text-xs text-emerald-400 font-semibold mb-1">STEP {s.step}</p>
                 <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
                 <p className="text-gray-400 text-sm">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 flex justify-center">
+            <PlatformCTA />
+          </div>
+        </div>
+      </section>
+
+      {/* Install Guide */}
+      <section className="py-20 px-4 sm:px-6 border-t border-white/5">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Install in 60 seconds</h2>
+          <div className="space-y-8">
+            {[
+              { step: "1", title: "DOWNLOAD", desc: "Click \"Download T\" above (~30MB — smaller than a podcast episode)." },
+              { step: "2", title: "INSTALL", desc: "Open the .dmg and drag T to your Applications folder." },
+              { step: "3", title: "OPEN & SET UP", desc: "Open T. Enter your name, role, and priorities." },
+              { step: "4", title: "CONNECT WHATSAPP", desc: "Scan the QR code with your phone. That's it." },
+              { step: "5", title: "DONE", desc: "T lives in your menu bar. Your first morning briefing arrives tomorrow." },
+            ].map((s, i) => (
+              <div key={i} className="flex items-start gap-5">
+                <div className="w-10 h-10 rounded-full bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-emerald-400 font-bold text-sm">{s.step}</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-sm tracking-wide text-emerald-400 mb-1">{s.title}</h3>
+                  <p className="text-gray-400">{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -198,6 +264,7 @@ const AISOSLanding = () => {
                   "Follow-up tracking",
                   "WhatsApp delivery",
                   "Accountability",
+                  "Runs on your Mac",
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-white/5">
                     <td className="py-3 pr-4 text-gray-300">{row}</td>
@@ -208,7 +275,7 @@ const AISOSLanding = () => {
                 <tr className="border-b border-white/5">
                   <td className="py-3 pr-4 text-gray-300">Price</td>
                   <td className="py-3 px-4 text-center text-gray-400">$20/mo</td>
-                  <td className="py-3 pl-4 text-center text-emerald-400 font-semibold">$97/mo</td>
+                  <td className="py-3 pl-4 text-center text-emerald-400 font-semibold">Free (beta)</td>
                 </tr>
               </tbody>
             </table>
@@ -219,21 +286,23 @@ const AISOSLanding = () => {
         </div>
       </section>
 
-      {/* Value Anchor */}
+      {/* Privacy & Trust */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Less than coffee. More than coaching.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Your data stays on your Mac</h2>
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            T runs entirely on your computer. No cloud. No accounts. No data collection.
+          </p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { emoji: "☕", title: "DAILY COFFEE", price: "$5-7/day ($150-210/mo)", desc: "Temporary energy boost" },
-              { emoji: "🧑‍💼", title: "EXECUTIVE COACH", price: "$500-2,000/mo", desc: "2-4 sessions per month. No daily touchpoint." },
-              { emoji: "🤖", title: "T", price: "$97-297/mo ($3.23/day)", desc: "Every single morning. Learns your context daily.", highlight: true },
-            ].map((c, i) => (
-              <div key={i} className={`rounded-xl p-6 border ${c.highlight ? "bg-emerald-500/10 border-emerald-500/30" : "bg-white/[0.03] border-white/5"}`}>
-                <span className="text-3xl mb-3 block">{c.emoji}</span>
-                <h3 className="font-semibold text-sm tracking-wide text-gray-300 mb-2">{c.title}</h3>
-                <p className={`text-lg font-bold mb-2 ${c.highlight ? "text-emerald-400" : "text-white"}`}>{c.price}</p>
-                <p className="text-gray-400 text-sm">{c.desc}</p>
+              { icon: <Lock className="w-8 h-8 text-emerald-400" />, title: "LOCAL-FIRST", desc: "Everything — your conversations, memories, priorities — lives in a folder on your Mac. We never see it." },
+              { icon: <UserX className="w-8 h-8 text-emerald-400" />, title: "NO ACCOUNTS", desc: "No signup. No login. No email required to use T. Just download and go." },
+              { icon: <ShieldCheck className="w-8 h-8 text-emerald-400" />, title: "YOUR AI KEY", desc: "T uses your own AI provider key (OpenAI or Anthropic). Your conversations go directly to them — not through us." },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/[0.03] border border-white/5 rounded-xl p-6 text-center">
+                <div className="flex justify-center mb-4">{item.icon}</div>
+                <h3 className="font-semibold text-sm tracking-wide text-emerald-400 mb-2">{item.title}</h3>
+                <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -247,8 +316,8 @@ const AISOSLanding = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { quote: "I've tried Notion, Todoist, and three different AI tools. T is the first thing that actually stuck — because it comes to me, I don't go to it.", author: "VP of Engineering", company: "SaaS company" },
-              { quote: "The morning briefing alone is worth $97. I haven't missed a follow-up in 3 weeks.", author: "Founder & CEO", company: "12-person agency" },
-              { quote: "It's like having a chief of staff who costs less than my Spotify family plan.", author: "Director of Operations", company: "Consulting firm" },
+              { quote: "The morning briefing alone changed my mornings. I haven't missed a follow-up in 3 weeks.", author: "Founder & CEO", company: "12-person agency" },
+              { quote: "It's like having a chief of staff for free. I keep waiting for the catch.", author: "Director of Operations", company: "Consulting firm" },
             ].map((t, i) => (
               <div key={i} className="bg-white/[0.03] border border-white/5 rounded-xl p-6">
                 <p className="text-gray-300 italic mb-4">"{t.quote}"</p>
@@ -259,75 +328,6 @@ const AISOSLanding = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/5">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Choose your plan</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Leader",
-                price: "$97",
-                popular: false,
-                features: ["☀️ Morning briefing", "🌙 Evening review", "📬 Follow-up tracking", "🧠 Memory that learns you"],
-                plan: "leader",
-              },
-              {
-                name: "Executive",
-                price: "$197",
-                popular: true,
-                features: ["Everything in Leader, plus:", "📊 Weekly strategic review", "📈 KPI tracking", "📰 AI news briefing"],
-                plan: "executive",
-              },
-              {
-                name: "Strategic",
-                price: "$297",
-                popular: false,
-                features: ["Everything in Executive, plus:", "📅 Monthly deep dive", "🎯 Quarterly OKR planning", "⚡ Priority support"],
-                plan: "strategic",
-              },
-            ].map((p, i) => (
-              <div
-                key={i}
-                className={`rounded-xl p-6 border flex flex-col ${
-                  p.popular
-                    ? "bg-emerald-500/10 border-emerald-500/30 relative"
-                    : "bg-white/[0.03] border-white/5"
-                }`}
-              >
-                {p.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    MOST POPULAR
-                  </span>
-                )}
-                <h3 className="font-bold text-lg mb-1">{p.name}</h3>
-                <p className="text-3xl font-bold mb-1">
-                  {p.price}<span className="text-base font-normal text-gray-400">/mo</span>
-                </p>
-                <ul className="space-y-2 mt-4 mb-6 flex-1">
-                  {p.features.map((f, j) => (
-                    <li key={j} className="text-sm text-gray-300">{f}</li>
-                  ))}
-                </ul>
-                <Button
-                  onClick={() => handleCTA(p.plan)}
-                  className={`w-full font-semibold py-5 rounded-xl ${
-                    p.popular
-                      ? "bg-emerald-500 hover:bg-emerald-600 text-white"
-                      : "bg-white/10 hover:bg-white/15 text-white"
-                  }`}
-                >
-                  Get Started
-                </Button>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-gray-500 text-sm mt-6">
-            Annual billing: 2 months free. All plans include 7-day money-back guarantee. Cancel anytime.
-          </p>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-3xl mx-auto">
@@ -335,28 +335,40 @@ const AISOSLanding = () => {
           <Accordion type="single" collapsible className="space-y-2">
             {[
               {
+                q: "Is it really free?",
+                a: "Yes. T is completely free during beta. No credit card, no trial that converts, no \"freemium\" limits. We're building T with early users and want real feedback. When we introduce pricing (likely $97-297/mo), beta users will get generous early-adopter terms.",
+              },
+              {
+                q: "Why Mac only?",
+                a: "T runs as a native app on your computer (not in the cloud), and we started with Mac because most of our early users are on macOS. Windows support is actively in development. Join the waitlist and we'll notify you the moment it's ready.",
+              },
+              {
+                q: "What happens when beta ends?",
+                a: "We'll give you plenty of notice before any pricing changes. Beta users who help shape the product will get significant discounts or early-adopter pricing locked in. Your data and setup will carry over seamlessly.",
+              },
+              {
                 q: "Can't I just use ChatGPT for this?",
-                a: "ChatGPT is a blank canvas — you have to go to it, prompt it, and remember to use it. T comes to you with structured briefings, tracks your follow-ups, learns your context, and holds you accountable. It's the difference between owning a gym membership and having a personal trainer show up at your door every morning.",
+                a: "ChatGPT is a blank canvas — you go to it, prompt it, remember to use it. T comes to you with structured briefings, tracks follow-ups, learns your context, and holds you accountable. It's the difference between owning a gym membership and having a personal trainer show up every morning.",
               },
               {
                 q: "Is my data private?",
-                a: "Yes. Your conversations, priorities, and business data are never shared with other users or used to train AI models. Each user has an isolated, encrypted workspace.",
+                a: "Completely. T runs on your Mac. Your conversations, priorities, and memories stay in a local folder. We have zero access to your data. AI calls go directly from your machine to OpenAI/Anthropic using your own API key. No middleman.",
+              },
+              {
+                q: "Do I need an AI API key?",
+                a: "Yes — T uses your OpenAI or Anthropic API key to power the AI. The setup wizard walks you through getting one (takes 2 minutes). Typical cost is $5-15/month in API usage depending on how much you chat with T.",
               },
               {
                 q: "What if I don't use WhatsApp?",
-                a: "WhatsApp works on any smartphone and takes 30 seconds to set up. We chose it because it has the highest open rates of any messaging platform (98%) and you already check it daily. Slack and SMS support coming soon.",
+                a: "WhatsApp has 98% open rates and you already check it daily. That's why we chose it. It takes 30 seconds to set up if you don't have it already. Slack and SMS support are coming.",
               },
               {
                 q: "How long before it 'knows' me?",
-                a: "T starts learning from your first conversation. By day 7, it knows your priorities and patterns. By day 30, it understands your org, your goals, and your working style. It only gets better from there.",
+                a: "Day 1, it knows your name, role, and priorities. By day 7, it understands your patterns. By day 30, it knows your org, your goals, and your working style. It only gets better from there.",
               },
               {
-                q: "What if I need to pause or cancel?",
-                a: "Cancel anytime from your billing portal — no calls, no guilt. If you pause, we keep your data for 90 days so you can pick up right where you left off.",
-              },
-              {
-                q: "Is this just for CEOs?",
-                a: "No. T is built for any senior leader — CEOs, VPs, directors, founders, fractional execs, GMs. If you're responsible for strategy and execution, this is for you.",
+                q: "What are the system requirements?",
+                a: "macOS 13 (Ventura) or later, 500MB of disk space, and an internet connection. Works on both Apple Silicon and Intel Macs.",
               },
             ].map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border border-white/5 rounded-xl px-4 bg-white/[0.02]">
@@ -372,18 +384,48 @@ const AISOSLanding = () => {
         </div>
       </section>
 
+      {/* Windows Waitlist */}
+      <section className="py-20 px-4 sm:px-6 border-t border-white/5">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">On Windows? We're almost there.</h2>
+          <p className="text-gray-400 mb-8">
+            T for Windows is in development. Drop your email and we'll let you know the moment it's ready.
+          </p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              trackClick("T Waitlist", { location: "windows-section" });
+              const form = e.target as HTMLFormElement;
+              const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+              window.location.href = `${WAITLIST_URL}?email=${encodeURIComponent(email)}`;
+            }}
+            className="flex flex-col sm:flex-row gap-3 justify-center"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              className="flex-1 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-emerald-500/50"
+            />
+            <Button
+              type="submit"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-xl"
+            >
+              Notify Me
+            </Button>
+          </form>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Your first briefing is tomorrow morning</h2>
-          <p className="text-gray-400 text-lg mb-8">5 minutes to set up. A lifetime of clarity.</p>
-          <Button
-            onClick={() => handleCTA("leader")}
-            className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-6 rounded-xl"
-          >
-            Meet T — $97/mo
-          </Button>
-          <p className="text-sm text-gray-500 mt-4">7-day money-back guarantee. Cancel anytime.</p>
+          <p className="text-gray-400 text-lg mb-8">3 minutes to install. A lifetime of clarity.</p>
+          <PlatformCTA />
+          <p className="text-sm text-gray-500 mt-4">macOS 13+ · 30MB · No account needed</p>
+          <p className="text-xs text-gray-600 mt-2">Free during beta. No credit card required.</p>
         </div>
       </section>
 
@@ -401,10 +443,10 @@ const AISOSLanding = () => {
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-[#0a0a0f]/95 backdrop-blur-md border-t border-white/10 p-3 sm:hidden z-50">
         <Button
-          onClick={() => handleCTA("leader")}
+          onClick={handleWaitlist}
           className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-5 rounded-xl"
         >
-          Meet T — $97/mo
+          Join the Waitlist
         </Button>
       </div>
     </div>
