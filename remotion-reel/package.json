@@ -1,0 +1,22 @@
+{
+  "name": "remotion-reel",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion render MarketingReel out/reel.mp4",
+    "render": "remotion render MarketingReel out/reel.mp4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Instagram Reel for Technical Leaders Marketing",
+  "dependencies": {
+    "@remotion/cli": "^4.0.409",
+    "@remotion/media": "^4.0.409",
+    "@remotion/transitions": "^4.0.409",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "remotion": "^4.0.409"
+  }
+}
