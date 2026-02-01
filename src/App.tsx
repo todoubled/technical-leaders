@@ -75,7 +75,6 @@ import Assessment from "./pages/Assessment";
 import AIPriorities from "./pages/AIPriorities";
 import AIWaitlist from "./pages/AIWaitlist";
 import TwentySixWorkflows from "./pages/TwentySixWorkflows";
-import SkillLibrary from "./pages/SkillLibrary";
 import RGAPlaybook from "./pages/RGAPlaybook";
 import AICoworker from "./pages/AICoworker";
 import AISOSLanding from "./pages/AISOSLanding";
@@ -183,7 +182,6 @@ const App = () => (
           <Route path="/ai-priorities" element={<AIPriorities />} />
           <Route path="/ai-waitlist" element={<AIWaitlist />} />
           <Route path="/26-workflows" element={<TwentySixWorkflows />} />
-          <Route path="/skill-library" element={<SkillLibrary />} />
           <Route path="/rga-playbook" element={<RGAPlaybook />} />
           <Route path="/ai-coworker" element={<AICoworker />} />
           <Route path="/t" element={<AISOSLanding />} />
