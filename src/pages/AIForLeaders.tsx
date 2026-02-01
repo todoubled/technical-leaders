@@ -218,10 +218,10 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Hero Strategy CTA', {
                     location: 'hero_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    destination: 'https://calendar.app.google/K3DCsnXnXpYR1CKp9',
                     cta_text: 'Book Strategy Session'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                  window.location.href = "https://calendar.app.google/K3DCsnXnXpYR1CKp9";
                 }}
               >
                 Book Strategy Session
@@ -524,11 +524,11 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Organization Training', {
                     location: 'enrollment_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    destination: 'https://calendar.app.google/K3DCsnXnXpYR1CKp9',
                     cta_text: 'Book Discovery Call',
                     price: '$50000'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                  window.location.href = "https://calendar.app.google/K3DCsnXnXpYR1CKp9";
                 }}
               >
                 Book Discovery Call
@@ -1053,10 +1053,10 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Final Strategy CTA', {
                     location: 'final_cta_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    destination: 'https://calendar.app.google/K3DCsnXnXpYR1CKp9',
                     cta_text: 'Book Strategy Session'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                  window.location.href = "https://calendar.app.google/K3DCsnXnXpYR1CKp9";
                 }}
               >
                 Book Strategy Session
@@ -1078,7 +1078,7 @@ const AIForLeaders = () => {
         subheadline="100% confidential and no-obligation strategy call"
         primaryCTA={{
           text: "Book Strategy Session",
-          url: "https://calendly.com/tech-leaders/ai-strategy"
+          url: "https://calendar.app.google/K3DCsnXnXpYR1CKp9"
         }}
         socialProof="Trusted by executives at Netflix, Nike, GitLab, and more"
         guarantee={{
