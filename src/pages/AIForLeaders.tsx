@@ -1,5 +1,4 @@
 import Navigation from "@/components/Navigation";
-import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Sparkles, TrendingUp, Clock, Users, Award, Zap, AlertCircle, DollarSign, Shield, Target, Brain, Code2, Database, Wrench, GitBranch, ArrowRight, XCircle, Play } from "lucide-react";
@@ -218,10 +217,10 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Hero Strategy CTA', {
                     location: 'hero_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    destination: 'https://calendar.app.google/K3DCsnXnXpYR1CKp9',
                     cta_text: 'Book Strategy Session'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                  window.location.href = "https://calendar.app.google/K3DCsnXnXpYR1CKp9";
                 }}
               >
                 Book Strategy Session
@@ -236,7 +235,7 @@ const AIForLeaders = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Managers and Executives Today Face Key AI Challenges
+              Leaders Today Face Key AI Challenges
             </h2>
             <p className="text-lg text-muted-foreground">
               These leadership gaps are why most AI initiatives fail
@@ -524,11 +523,11 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Organization Training', {
                     location: 'enrollment_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    destination: 'https://calendar.app.google/K3DCsnXnXpYR1CKp9',
                     cta_text: 'Book Discovery Call',
                     price: '$50000'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                  window.location.href = "https://calendar.app.google/K3DCsnXnXpYR1CKp9";
                 }}
               >
                 Book Discovery Call
@@ -1053,10 +1052,10 @@ const AIForLeaders = () => {
                 onClick={() => {
                   trackClick('AI For Leaders - Final Strategy CTA', {
                     location: 'final_cta_section',
-                    destination: 'https://calendly.com/tech-leaders/ai-strategy',
+                    destination: 'https://calendar.app.google/K3DCsnXnXpYR1CKp9',
                     cta_text: 'Book Strategy Session'
                   });
-                  window.location.href = "https://calendly.com/tech-leaders/ai-strategy";
+                  window.location.href = "https://calendar.app.google/K3DCsnXnXpYR1CKp9";
                 }}
               >
                 Book Strategy Session
@@ -1072,21 +1071,6 @@ const AIForLeaders = () => {
           </p>
         </div>
       </section>
-
-      <SalesFooter
-        headline="Get Your Personalized AI Implementation Plan In Just 30 Minutes"
-        subheadline="100% confidential and no-obligation strategy call"
-        primaryCTA={{
-          text: "Book Strategy Session",
-          url: "https://calendly.com/tech-leaders/ai-strategy"
-        }}
-        socialProof="Trusted by executives at Netflix, Nike, GitLab, and more"
-        guarantee={{
-          text: "Free AI Readiness Assessment",
-          description: "On your call: AI readiness assessment, 3 quick wins you can implement immediately, custom program recommendation, and analysis of past AI initiative failures."
-        }}
-        trackingContext="AI For Leaders"
-      />
 
       <VideoModal
         isOpen={isVideoModalOpen}
