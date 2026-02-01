@@ -359,6 +359,25 @@ const AIForLeaders = () => {
         </div>
       </section>
 
+      {/* Testimonial Video Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
+            Hear what it's like in our program:
+          </h2>
+
+          <div className="w-full max-w-3xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/LyY-glR6P_8"
+              title="Hear what it's like in our program"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Training Overviews Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
