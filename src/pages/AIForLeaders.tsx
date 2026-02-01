@@ -182,7 +182,7 @@ const AIForLeaders = () => {
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-700">
                 AI Literacy
               </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 leading-normal pb-1">
                 Leverage Your Data
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-700">
