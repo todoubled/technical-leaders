@@ -236,7 +236,7 @@ const AIForLeaders = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Managers and Executives Today Face Key AI Challenges
+              Leaders Today Face Key AI Challenges
             </h2>
             <p className="text-lg text-muted-foreground">
               These leadership gaps are why most AI initiatives fail
