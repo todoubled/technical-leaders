@@ -93,9 +93,9 @@ const AISOSLanding = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-gray-100">
       <SEO
-        title="T — Your AI Chief of Staff on WhatsApp (Free)"
-        description="T is an agentic general manager and chief of staff that works for you. Give it your goals, connect your tools, and T does the work for you to approve. All on WhatsApp. Free during beta."
-        keywords={["AI general manager", "AI chief of staff", "AI agent", "WhatsApp AI", "leadership automation", "T", "agentic workflows"]}
+        title="T — Your AI Team That Works While You Lead"
+        description="You set business goals, T delegates the work to AI agents, and you approve the results. All from your private computer or securely over WhatsApp."
+        keywords={["AI team", "AI agents", "OKR", "delegation", "WhatsApp AI", "leadership automation", "T", "agentic workflows"]}
       />
 
       {/* Navigation - minimal */}
@@ -117,7 +117,7 @@ const AISOSLanding = () => {
                 <HeroHeadlinePlayer />
               </div>
               <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
-                Give T your goals and as much — or as little — context as you want. Connect your tools and systems, and T does the work for you to approve. All on WhatsApp. All running on your Mac.
+                You set business goals, T delegates the work to AI agents, and you approve the results. All from your private computer or securely over WhatsApp.
               </p>
               <PlatformCTA />
               <p className="text-sm text-gray-500 mt-4">
@@ -145,89 +145,49 @@ const AISOSLanding = () => {
         </div>
       </section>
 
-      {/* Pain Points */}
+      {/* The Problem */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Sound familiar?</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { emoji: "😰", text: "I start every day reacting to my inbox instead of driving my priorities" },
-              { emoji: "🕳️", text: "Follow-ups fall through the cracks. I lost a deal last month because I forgot to reply." },
-              { emoji: "🌀", text: "I know I should plan strategically, but there's never time. I'm always in the weeds." },
-            ].map((item, i) => (
-              <div key={i} className="bg-white/[0.03] border border-white/5 rounded-xl p-6">
-                <span className="text-3xl mb-4 block">{item.emoji}</span>
-                <p className="text-gray-300 italic">"{item.text}"</p>
-              </div>
-            ))}
+          <div className="bg-white/[0.03] border border-white/5 rounded-xl p-8 max-w-2xl mx-auto">
+            <p className="text-gray-300 text-lg leading-relaxed">
+              You know AI can help, but using it means copying prompts between ChatGPT tabs, managing outputs manually, and starting from scratch every time. There's no system, no quality control, and no way to build on what works.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* The Solution */}
+      {/* How T Works */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">A teammate that does the work</h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            T is not another AI chatbot. It's an agentic general manager and chief of staff that automates your workflows — on WhatsApp.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">How T works</h2>
           <div className="space-y-6">
             {[
-              { emoji: "☀️", title: "MORNING BRIEFING", desc: "Your calendar, priorities, and follow-ups — every morning at your time." },
-              { emoji: "🌙", title: "EVENING REVIEW", desc: "Capture wins, flag carry-overs, set up tomorrow in 2 minutes." },
-              { emoji: "📬", title: "FOLLOW-UP TRACKER", desc: "Never drop the ball. T surfaces what needs attention." },
-              { emoji: "📊", title: "WEEKLY STRATEGIC REVIEW", desc: "Zoom out from tactics to strategy. Guided conversation every Sunday." },
-              { emoji: "🧠", title: "MEMORY THAT LEARNS YOU", desc: "Gets smarter every day. After 30 days, it knows your org, your goals, your patterns." },
-            ].map((f, i) => (
-              <div key={i} className="flex items-start gap-4 bg-white/[0.02] border border-white/5 rounded-xl p-5">
-                <span className="text-2xl flex-shrink-0">{f.emoji}</span>
-                <div>
-                  <h3 className="font-semibold text-sm tracking-wide text-emerald-400 mb-1">{f.title}</h3>
-                  <p className="text-gray-400">{f.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Up and running in 3 minutes</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: <Download className="w-8 h-8 text-emerald-400" />, step: "1", title: "Download T", desc: "One file. Drag to Applications. Done." },
-              { icon: <QrCode className="w-8 h-8 text-emerald-400" />, step: "2", title: "Connect WhatsApp", desc: "Scan a QR code inside the app." },
-              { icon: <Sun className="w-8 h-8 text-emerald-400" />, step: "3", title: "Wake up to your first briefing", desc: "Tomorrow morning, your AI Chief of Staff shows up." },
-            ].map((s, i) => (
-              <div key={i} className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-4">
-                  {s.icon}
-                </div>
-                <p className="text-xs text-emerald-400 font-semibold mb-1">STEP {s.step}</p>
-                <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
-                <p className="text-gray-400 text-sm">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 flex justify-center">
-            <PlatformCTA />
-          </div>
-        </div>
-      </section>
-
-      {/* Install Guide */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/5">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Install in 60 seconds</h2>
-          <div className="space-y-8">
-            {[
-              { step: "1", title: "DOWNLOAD", desc: "Click \"Download T\" above (~30MB — smaller than a podcast episode)." },
-              { step: "2", title: "INSTALL", desc: "Open the .dmg and drag T to your Applications folder." },
-              { step: "3", title: "OPEN & SET UP", desc: "Open T. Enter your name, role, and priorities." },
-              { step: "4", title: "CONNECT WHATSAPP", desc: "Scan the QR code with your phone. That's it." },
-              { step: "5", title: "DONE", desc: "T lives in your menu bar. Your first morning briefing arrives tomorrow." },
+              {
+                step: "1",
+                title: "SET GOALS USING A FAMILIAR OKR FRAMEWORK",
+                desc: "Define objectives and measurable key results with deadlines. T tracks progress and signals what's on track, at risk, or behind.",
+              },
+              {
+                step: "2",
+                title: "HIT \"DELEGATE\" AND WALK AWAY",
+                desc: "T breaks your key result into a sequence of tasks, assigns AI agents to each one, and runs them automatically. You don't write prompts or manage tools — T plans the workflow for you.",
+              },
+              {
+                step: "3",
+                title: "REVIEW AND APPROVE FROM ONE QUEUE",
+                desc: "Every piece of AI output lands in your Work Stream for review. Approve good work (download it as a Word doc), or reject it with a note — T automatically retries with your feedback, up to 3 times.",
+              },
+              {
+                step: "4",
+                title: "BUILD INSTITUTIONAL KNOWLEDGE OVER TIME",
+                desc: "Upload your SOPs, add training examples, and T turns them into reusable Skills. The more you use it, the better it gets at your specific work.",
+              },
+              {
+                step: "5",
+                title: "STAY IN THE LOOP FROM ANYWHERE",
+                desc: "Connect WhatsApp to get notified when work is ready for review, approve or reject on the go, and get morning briefings and evening summaries on a schedule you set.",
+              },
             ].map((s, i) => (
               <div key={i} className="flex items-start gap-5">
                 <div className="w-10 h-10 rounded-full bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -240,88 +200,45 @@ const AISOSLanding = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/5">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">This isn't ChatGPT with a calendar</h2>
-          <div className="mt-12 overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-white/10">
-                  <th className="text-left py-3 pr-4 text-gray-400 font-medium"></th>
-                  <th className="py-3 px-4 text-gray-400 font-medium text-center">ChatGPT</th>
-                  <th className="py-3 pl-4 text-emerald-400 font-semibold text-center">T</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  "Proactive briefings",
-                  "Structured cadences",
-                  "Learns your context",
-                  "Follow-up tracking",
-                  "WhatsApp delivery",
-                  "Accountability",
-                  "Runs on your Mac",
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-white/5">
-                    <td className="py-3 pr-4 text-gray-300">{row}</td>
-                    <td className="py-3 px-4 text-center"><X className="w-4 h-4 text-gray-600 mx-auto" /></td>
-                    <td className="py-3 pl-4 text-center"><Check className="w-4 h-4 text-emerald-400 mx-auto" /></td>
-                  </tr>
-                ))}
-                <tr className="border-b border-white/5">
-                  <td className="py-3 pr-4 text-gray-300">Price</td>
-                  <td className="py-3 px-4 text-center text-gray-400">$20/mo</td>
-                  <td className="py-3 pl-4 text-center text-emerald-400 font-semibold">Free (beta)</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="mt-12 flex justify-center">
+            <PlatformCTA />
           </div>
-          <p className="text-center text-gray-500 mt-8 italic">
-            "ChatGPT answers questions. T does the work."
-          </p>
         </div>
       </section>
 
-      {/* Privacy & Trust */}
+      {/* Why Leaders Choose T */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Your data stays on your Mac</h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            T runs entirely on your computer. No cloud. No accounts. No data collection.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Why leaders choose T</h2>
+          <div className="space-y-6">
             {[
-              { icon: <Lock className="w-8 h-8 text-emerald-400" />, title: "LOCAL-FIRST", desc: "Everything — your conversations, memories, priorities — lives in a folder on your Mac. We never see it." },
-              { icon: <UserX className="w-8 h-8 text-emerald-400" />, title: "NO ACCOUNTS", desc: "No signup. No login. No email required to use T. Just download and go." },
-              { icon: <ShieldCheck className="w-8 h-8 text-emerald-400" />, title: "YOUR AI KEY", desc: "T uses your own AI provider key (OpenAI or Anthropic). Your conversations go directly to them — not through us." },
+              {
+                title: "You stay in control",
+                desc: "Nothing ships without your approval. You score outputs 1-10 and see your AI team's performance over time.",
+              },
+              {
+                title: "It fits how you already think",
+                desc: "Goals, key results, deadlines, delegation — not chat windows and prompt engineering.",
+              },
+              {
+                title: "Privacy when you need it",
+                desc: "Mark sensitive goals as private, or run everything on a local AI model that never leaves your machine.",
+              },
+              {
+                title: "Mark what's yours",
+                desc: "Tag key results as AI-delegated or human-owned (HI), so you always know what needs your hands versus your judgment.",
+              },
+              {
+                title: "It compounds",
+                desc: "Every SOP you upload, every skill you train, every workflow you approve makes the next one faster and better.",
+              },
             ].map((item, i) => (
-              <div key={i} className="bg-white/[0.03] border border-white/5 rounded-xl p-6 text-center">
-                <div className="flex justify-center mb-4">{item.icon}</div>
-                <h3 className="font-semibold text-sm tracking-wide text-emerald-400 mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">What leaders are saying</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { quote: "I've tried Notion, Todoist, and three different AI tools. T is the first thing that actually stuck — because it comes to me, I don't go to it.", author: "VP of Engineering", company: "SaaS company" },
-              { quote: "The morning briefing alone changed my mornings. I haven't missed a follow-up in 3 weeks.", author: "Founder & CEO", company: "12-person agency" },
-              { quote: "It's like having a chief of staff for free. I keep waiting for the catch.", author: "Director of Operations", company: "Consulting firm" },
-            ].map((t, i) => (
-              <div key={i} className="bg-white/[0.03] border border-white/5 rounded-xl p-6">
-                <p className="text-gray-300 italic mb-4">"{t.quote}"</p>
-                <p className="text-sm text-gray-500">— {t.author}, {t.company}</p>
+              <div key={i} className="flex items-start gap-4 bg-white/[0.02] border border-white/5 rounded-xl p-5">
+                <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-gray-200 mb-1">{item.title}</h3>
+                  <p className="text-gray-400">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -418,11 +335,11 @@ const AISOSLanding = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA - The Bottom Line */}
       <section className="py-24 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Your first briefing is tomorrow morning</h2>
-          <p className="text-gray-400 text-lg mb-8">3 minutes to install. A lifetime of clarity.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">T turns AI from a tool you use into a team you lead.</h2>
+          <p className="text-gray-400 text-lg mb-8">3 minutes to install. A lifetime of leverage.</p>
           <PlatformCTA />
           <p className="text-sm text-gray-500 mt-4">macOS 13+ · 30MB · No account needed</p>
           <p className="text-xs text-gray-600 mt-2">Free during beta. No credit card required.</p>
