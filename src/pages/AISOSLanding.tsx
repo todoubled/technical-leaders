@@ -127,9 +127,20 @@ const AISOSLanding = () => {
               </p>
             </div>
 
-            {/* WhatsApp Demo */}
-            <div className="flex justify-center">
-              <WhatsAppDemoPlayer />
+            {/* Product Shots */}
+            <div className="relative flex justify-center items-end min-h-[420px] sm:min-h-[480px]">
+              {/* Dashboard Screenshot - main, behind */}
+              <div className="w-full max-w-md lg:max-w-lg rounded-xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
+                <img
+                  src="/t-dashboard.png"
+                  alt="T app dashboard showing goals, key results, and performance metrics"
+                  className="w-full h-auto block"
+                />
+              </div>
+              {/* WhatsApp Demo - overlapping bottom-right */}
+              <div className="absolute -bottom-6 -right-2 sm:right-0 lg:-right-4 w-[160px] sm:w-[180px] lg:w-[200px] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
+                <WhatsAppDemoPlayer />
+              </div>
             </div>
           </div>
         </div>
