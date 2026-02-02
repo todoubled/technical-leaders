@@ -8,6 +8,8 @@ import { trackClick } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { Check, X, Download, QrCode, Sun, Lock, UserX, ShieldCheck } from "lucide-react";
 
+const T = () => <span className="text-emerald-400 font-bold">T</span>;
+
 const DMG_URL = "#"; // Replace with .dmg download URL
 const WAITLIST_URL = "#"; // Replace with waitlist/email capture URL
 
@@ -43,7 +45,7 @@ const NavCTA = () => {
   if (platform === "mac") {
     return (
       <Button onClick={handleDownload} className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-lg">
-        Download T
+        Download <T />
       </Button>
     );
   }
@@ -64,7 +66,7 @@ const PlatformCTA = () => {
           onClick={handleDownload}
           className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-6 rounded-xl"
         >
-          Download T — Free
+          Download <T /> — Free
         </Button>
       </div>
     );
@@ -117,7 +119,7 @@ const AISOSLanding = () => {
                 <HeroHeadlinePlayer />
               </div>
               <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
-                You set business goals, T delegates the work to AI agents, and you approve the results. All from your private computer or securely over WhatsApp.
+                You set business goals, <T /> delegates the work to AI agents, and you approve the results. All from your private computer or securely over WhatsApp.
               </p>
               <PlatformCTA />
               <p className="text-sm text-gray-500 mt-4">
@@ -137,9 +139,9 @@ const AISOSLanding = () => {
       <section className="py-12 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-3xl mx-auto">
           <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-8 text-center">
-            <p className="text-2xl font-bold mb-3">T is free during beta</p>
+            <p className="text-2xl font-bold mb-3"><T /> is free during beta</p>
             <p className="text-gray-400 max-w-xl mx-auto">
-              We're building T in public with early users. Install it, connect WhatsApp, and tell us what works. No credit card. No catch.
+              We're building <T /> in public with early users. Install it, connect WhatsApp, and tell us what works. No credit card. No catch.
             </p>
           </div>
         </div>
@@ -160,33 +162,33 @@ const AISOSLanding = () => {
       {/* How T Works */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">How T works</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">How <T /> works</h2>
           <div className="space-y-6">
             {[
               {
                 step: "1",
                 title: "SET GOALS USING A FAMILIAR OKR FRAMEWORK",
-                desc: "Define objectives and measurable key results with deadlines. T tracks progress and signals what's on track, at risk, or behind.",
+                desc: <>Define objectives and measurable key results with deadlines. <T /> tracks progress and signals what's on track, at risk, or behind.</>,
               },
               {
                 step: "2",
                 title: "HIT \"DELEGATE\" AND WALK AWAY",
-                desc: "T breaks your key result into a sequence of tasks, assigns AI agents to each one, and runs them automatically. You don't write prompts or manage tools — T plans the workflow for you.",
+                desc: <><T /> breaks your key result into a sequence of tasks, assigns AI agents to each one, and runs them automatically. You don't write prompts or manage tools — <T /> plans the workflow for you.</>,
               },
               {
                 step: "3",
                 title: "REVIEW AND APPROVE FROM ONE QUEUE",
-                desc: "Every piece of AI output lands in your Work Stream for review. Approve good work (download it as a Word doc), or reject it with a note — T automatically retries with your feedback, up to 3 times.",
+                desc: <>Every piece of AI output lands in your Work Stream for review. Approve good work (download it as a Word doc), or reject it with a note — <T /> automatically retries with your feedback, up to 3 times.</>,
               },
               {
                 step: "4",
                 title: "BUILD INSTITUTIONAL KNOWLEDGE OVER TIME",
-                desc: "Upload your SOPs, add training examples, and T turns them into reusable Skills. The more you use it, the better it gets at your specific work.",
+                desc: <>Upload your SOPs, add training examples, and <T /> turns them into reusable Skills. The more you use it, the better it gets at your specific work.</>,
               },
               {
                 step: "5",
                 title: "STAY IN THE LOOP FROM ANYWHERE",
-                desc: "Connect WhatsApp to get notified when work is ready for review, approve or reject on the go, and get morning briefings and evening summaries on a schedule you set.",
+                desc: <>Connect WhatsApp to get notified when work is ready for review, approve or reject on the go, and get morning briefings and evening summaries on a schedule you set.</>,
               },
             ].map((s, i) => (
               <div key={i} className="flex items-start gap-5">
@@ -209,7 +211,7 @@ const AISOSLanding = () => {
       {/* Why Leaders Choose T */}
       <section className="py-20 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Why leaders choose T</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Why leaders choose <T /></h2>
           <div className="space-y-6">
             {[
               {
@@ -253,11 +255,11 @@ const AISOSLanding = () => {
             {[
               {
                 q: "Is it really free?",
-                a: "Yes. T is completely free during beta. No credit card, no trial that converts, no \"freemium\" limits. We're building T with early users and want real feedback. When we introduce pricing (likely $97-297/mo), beta users will get generous early-adopter terms.",
+                a: <>Yes. <T /> is completely free during beta. No credit card, no trial that converts, no "freemium" limits. We're building <T /> with early users and want real feedback. When we introduce pricing (likely $97-297/mo), beta users will get generous early-adopter terms.</>,
               },
               {
                 q: "Why Mac only?",
-                a: "T runs as a native app on your computer (not in the cloud), and we started with Mac because most of our early users are on macOS. Windows support is actively in development. Join the waitlist and we'll notify you the moment it's ready.",
+                a: <><T /> runs as a native app on your computer (not in the cloud), and we started with Mac because most of our early users are on macOS. Windows support is actively in development. Join the waitlist and we'll notify you the moment it's ready.</>,
               },
               {
                 q: "What happens when beta ends?",
@@ -265,15 +267,15 @@ const AISOSLanding = () => {
               },
               {
                 q: "Can't I just use ChatGPT for this?",
-                a: "ChatGPT is a blank canvas — you go to it, prompt it, remember to use it. T comes to you with structured briefings, tracks follow-ups, learns your context, and holds you accountable. It's the difference between owning a gym membership and having a personal trainer show up every morning.",
+                a: <>ChatGPT is a blank canvas — you go to it, prompt it, remember to use it. <T /> comes to you with structured briefings, tracks follow-ups, learns your context, and holds you accountable. It's the difference between owning a gym membership and having a personal trainer show up every morning.</>,
               },
               {
                 q: "Is my data private?",
-                a: "Completely. T runs on your Mac. Your conversations, priorities, and memories stay in a local folder. We have zero access to your data. AI calls go directly from your machine to OpenAI/Anthropic using your own API key. No middleman.",
+                a: <>Completely. <T /> runs on your Mac. Your conversations, priorities, and memories stay in a local folder. We have zero access to your data. AI calls go directly from your machine to OpenAI/Anthropic using your own API key. No middleman.</>,
               },
               {
                 q: "Do I need an AI API key?",
-                a: "Yes — T uses your OpenAI or Anthropic API key to power the AI. The setup wizard walks you through getting one (takes 2 minutes). Typical cost is $5-15/month in API usage depending on how much you chat with T.",
+                a: <>Yes — <T /> uses your OpenAI or Anthropic API key to power the AI. The setup wizard walks you through getting one (takes 2 minutes). Typical cost is $5-15/month in API usage depending on how much you chat with <T />.</>,
               },
               {
                 q: "What if I don't use WhatsApp?",
@@ -306,7 +308,7 @@ const AISOSLanding = () => {
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">On Windows? We're almost there.</h2>
           <p className="text-gray-400 mb-8">
-            T for Windows is in development. Drop your email and we'll let you know the moment it's ready.
+            <T /> for Windows is in development. Drop your email and we'll let you know the moment it's ready.
           </p>
           <form
             onSubmit={(e) => {
@@ -338,7 +340,7 @@ const AISOSLanding = () => {
       {/* Final CTA - The Bottom Line */}
       <section className="py-24 px-4 sm:px-6 border-t border-white/5">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">T turns AI from a tool you use into a team you lead.</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4"><T /> turns AI from a tool you use into a team you lead.</h2>
           <p className="text-gray-400 text-lg mb-8">3 minutes to install. A lifetime of leverage.</p>
           <PlatformCTA />
           <p className="text-sm text-gray-500 mt-4">macOS 13+ · 30MB · No account needed</p>
