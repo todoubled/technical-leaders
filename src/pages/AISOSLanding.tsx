@@ -10,7 +10,7 @@ import { Check, Shield, Zap, Target, Brain, Heart, TreePine, GraduationCap } fro
 
 const T = () => <span className="text-emerald-400 font-bold">T</span>;
 
-const KIT_FORM_ID = "YOUR_FORM_ID"; // Replace with your Kit form ID
+const KIT_FORM_ID = "329f9e77f7";
 
 const KitForm = ({ className = "" }: { className?: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,7 @@ const KitForm = ({ className = "" }: { className?: string }) => {
     const script = document.createElement("script");
     script.async = true;
     script.dataset.uid = KIT_FORM_ID;
-    script.src = `https://technical-leaders.kit.com/${KIT_FORM_ID}/index.js`;
+    script.src = `https://techleaders.kit.com/${KIT_FORM_ID}/index.js`;
     containerRef.current.appendChild(script);
   }, []);
 
