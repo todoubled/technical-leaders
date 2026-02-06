@@ -9,12 +9,12 @@ import {
 } from "remotion";
 
 const ROLES = [
+  "Thought Partner",
   "Researcher",
   "Coach & Mentor",
   "Safe Sandbox",
   "Private Assistant",
   "Team Mate",
-  "Thought Partner"
 ];
 
 const ROLE_DISPLAY_SECONDS = 1.0;
@@ -122,7 +122,7 @@ const HeroHeadlineComp = () => {
             style={{
               position: "relative",
               clipPath: "inset(0 0)",
-              width: 1100,
+              width: 1400,
               flexShrink: 0,
             }}
           >
@@ -202,7 +202,7 @@ const HeroHeadlineComp = () => {
             maxWidth: 1800,
           }}
         >
-          Private, easy-to-use AI that gives back automatically.
+          Private, easy-to-use AI that works for you.
         </div>
       </div>
     </AbsoluteFill>

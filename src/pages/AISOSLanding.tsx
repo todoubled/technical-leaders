@@ -40,34 +40,45 @@ const NavCTA = () => (
   </Button>
 );
 
+const CHECKOUT_API = "https://licensing.t-app.workers.dev/checkout";
+
 const PricingSection = () => {
   const [annual, setAnnual] = useState(false);
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
 
-  const plans = [
-    {
-      name: "T Free",
-      monthly: 0,
-      annual: 0,
-      period: "free forever",
-      desc: "Privately teach yourself AI at your own pace. Bring your own keys, use any LLM.",
-      features: [
-        "Built-in local AI model",
-        "Bring your own API keys",
-        "Private, on-device processing",
-        "Learning mode with guided walkthroughs",
-        "Project & task management",
-      ],
-      cta: "Join Waitlist",
-      highlight: false,
-    },
+  const handleCheckout = async (planKey: string) => {
+    setLoadingPlan(planKey);
+    trackClick("Pricing CTA", { plan: planKey, billing: annual ? "annual" : "monthly", cta_text: "Get Started" });
+    try {
+      const res = await fetch(CHECKOUT_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: planKey, billing: annual ? "annual" : "monthly", machine_id: "", source: "web" }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        console.error("Checkout error:", data);
+        setLoadingPlan(null);
+      }
+    } catch (err) {
+      console.error("Checkout error:", err);
+      setLoadingPlan(null);
+    }
+  };
+
+  const paidPlans = [
     {
       name: "T Academy",
+      key: "premium",
       monthly: 50,
       annual: 33,
       period: annual ? "billed $400/year" : "billed monthly",
       desc: "Integrated learning management system with self-paced AI curriculum and certification.",
       features: [
         "Everything in Free, plus:",
+        "Learning mode with guided walkthroughs",
         "Self-paced AI curriculum (LMS)",
         "AI Operator certification path",
         "Guided skill-building exercises",
@@ -76,11 +87,13 @@ const PricingSection = () => {
         "Monthly impact receipt",
       ],
       impact: annual ? "$6.60" : "$10",
-      cta: "Join Waitlist",
-      highlight: true,
+      cta: "Join the Waitlist",
+      badge: "Learn AI",
+      badgeColor: "bg-blue-500",
     },
     {
       name: "T Pro",
+      key: "pro",
       monthly: 125,
       annual: 83,
       period: annual ? "billed $1,000/year" : "billed monthly",
@@ -95,8 +108,33 @@ const PricingSection = () => {
         "Early access to new features",
       ],
       impact: annual ? "$16.60" : "$25",
-      cta: "Join Waitlist",
-      highlight: false,
+      cta: "Join the Waitlist",
+      badge: "Best Value",
+      badgeColor: "bg-purple-500",
+    },
+  ];
+
+  const enterpriseOffers = [
+    {
+      name: "Branded License",
+      tag: "Turnkey",
+      desc: "Your name, logo, and colors on a fully managed app. We build it, deploy it, and push updates.",
+      pricing: "$10K setup + $1K/mo",
+      bestFor: "Budget, no dev team",
+    },
+    {
+      name: "OEM Partnership",
+      tag: "Revenue Share",
+      desc: "Zero setup cost. Co-branded or white-labeled with custom skill packs for your vertical.",
+      pricing: "$0 setup · 20% rev share · $2.5K/mo floor",
+      bestFor: "Large audience",
+    },
+    {
+      name: "Source License",
+      tag: "Self-Serve",
+      desc: "Full source code access with white-label build guide. Deploy and customize on your own.",
+      pricing: "$50K one-time license",
+      bestFor: "Dev team, wants ownership",
     },
   ];
 
@@ -106,25 +144,62 @@ const PricingSection = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">Simple, transparent pricing</h2>
         <p className="text-gray-500 text-center mb-8">Start free. Upgrade when you're ready.</p>
 
-        <div className="flex items-center justify-center gap-3 mb-12">
+        {/* Billing toggle */}
+        <div className="flex items-center justify-center gap-3 mb-8">
           <span className={`text-sm ${!annual ? "text-gray-800" : "text-gray-400"}`}>Monthly</span>
           <button
             onClick={() => setAnnual(!annual)}
             className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-emerald-500" : "bg-gray-300"}`}
           >
-            <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform ${annual ? "translate-x-6" : "translate-x-0.5"}`} />
+            <span className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform ${annual ? "translate-x-6" : "translate-x-0"}`} />
           </button>
           <span className={`text-sm ${annual ? "text-gray-800" : "text-gray-400"}`}>
             Annual <span className="text-emerald-600 text-xs font-medium">Save 33%</span>
           </span>
         </div>
 
+        {/* Free, Academy, Pro — 3-col grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {plans.map((plan, i) => (
-            <div key={i} className={`rounded-2xl border p-6 flex flex-col ${plan.highlight ? "border-emerald-500/40 bg-emerald-50 relative" : "border-gray-200 bg-white"}`}>
-              {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  Most Popular
+          {/* T Free */}
+          <div className="rounded-2xl border border-emerald-500/40 bg-emerald-50 p-6 flex flex-col relative">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+              Most Popular
+            </span>
+            <h3 className="font-semibold text-gray-800 mb-2">T Free</h3>
+            <div className="mb-1">
+              <span className="text-3xl font-bold text-gray-900">$0</span>
+            </div>
+            <p className="text-xs text-gray-500 mb-4">free forever</p>
+            <p className="text-gray-600 text-sm mb-6">Bring your own keys, use any LLM.</p>
+            <ul className="space-y-2 mb-6 flex-1">
+              {[
+                "Built-in local AI model",
+                "Bring your own LLM API keys",
+                "Private, on-device processing",
+                "Project & task management with Skill Studio, Workflow Builder, and Feedback Loop",
+              ].map((f, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm">
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">{f}</span>
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => {
+                trackClick("Pricing CTA", { plan: "T Free", cta_text: "Join the Waitlist" });
+                document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-center font-semibold py-3 rounded-lg transition-colors w-full bg-emerald-500 hover:bg-emerald-600 text-white"
+            >
+              Join the Waitlist
+            </button>
+          </div>
+
+          {paidPlans.map((plan, i) => (
+            <div key={i} className="rounded-2xl border border-gray-200 bg-white p-6 flex flex-col relative">
+              {plan.badge && (
+                <span className={`absolute -top-3 left-1/2 -translate-x-1/2 ${plan.badgeColor} text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap`}>
+                  {plan.badge}
                 </span>
               )}
               <h3 className="font-semibold text-gray-800 mb-2">{plan.name}</h3>
@@ -132,7 +207,7 @@ const PricingSection = () => {
                 <span className="text-3xl font-bold text-gray-900">
                   ${annual ? plan.annual : plan.monthly}
                 </span>
-                {plan.monthly > 0 && <span className="text-gray-500 text-sm">/mo</span>}
+                <span className="text-gray-500 text-sm">/mo</span>
               </div>
               <p className="text-xs text-gray-500 mb-4">{plan.period}</p>
               <p className="text-gray-600 text-sm mb-6">{plan.desc}</p>
@@ -144,29 +219,61 @@ const PricingSection = () => {
                   </li>
                 ))}
               </ul>
-              {plan.impact && (
-                <p className="text-xs text-emerald-600 mb-4 flex items-center gap-1.5">
-                  <Heart className="w-3.5 h-3.5" />
-                  {plan.impact}/mo funds environmental & workforce impact
-                </p>
-              )}
-              <a
-                href="#get-started"
-                onClick={(e) => {
-                  e.preventDefault();
-                  trackClick("Pricing CTA", { plan: plan.name, billing: annual ? "annual" : "monthly", cta_text: "Join Waitlist" });
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+              <p className="text-xs text-emerald-600 mb-4 flex items-center gap-1.5">
+                <Heart className="w-3.5 h-3.5" />
+                {plan.impact}/mo funds environmental & workforce impact
+              </p>
+              <button
+                onClick={() => {
+                  trackClick("Pricing CTA", { plan: plan.name, cta_text: "Join the Waitlist" });
+                  document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className={`text-center font-semibold py-3 rounded-lg transition-colors block ${
-                  plan.highlight
-                    ? "bg-emerald-500 hover:bg-emerald-600 text-white"
-                    : "bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-200"
-                }`}
+                className="text-center font-semibold py-3 rounded-lg transition-colors block w-full bg-emerald-500 hover:bg-emerald-600 text-white"
               >
                 {plan.cta}
-              </a>
+              </button>
             </div>
           ))}
+        </div>
+
+        {/* T Enterprise — full width */}
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 mt-6 relative">
+          <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+            White Label
+          </span>
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="font-semibold text-gray-800 text-lg">T Enterprise</h3>
+            <Building2 className="w-4 h-4 text-emerald-600" />
+          </div>
+          <p className="text-gray-600 text-sm mb-5">White-label T for your clients. Three packaging options — you control pricing, they get your brand.</p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {enterpriseOffers.map((offer, i) => (
+              <div key={i} className="border border-gray-100 rounded-lg p-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-medium text-sm text-gray-800">{offer.name}</span>
+                  <span className="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">{offer.tag}</span>
+                </div>
+                <p className="text-xs text-gray-500 mb-1.5">{offer.desc}</p>
+                <p className="text-xs font-medium text-gray-700">{offer.pricing}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between mt-4">
+            <p className="text-xs text-emerald-600 flex items-center gap-1.5">
+              <Heart className="w-3.5 h-3.5" />
+              20% impact contribution carries over to white-label
+            </p>
+            <a
+              href="https://calendar.app.google/ybv193j7WX1L56vr8"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackClick("Pricing CTA", { plan: "T Enterprise", cta_text: "Book a Call" })}
+              className="inline-flex items-center justify-center gap-2 font-semibold py-3 px-8 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-200"
+            >
+              <Calendar className="w-4 h-4" />
+              Book a Call
+            </a>
+          </div>
         </div>
         <p className="text-center text-sm text-gray-500 mt-8">Non-profit organization pricing available.</p>
       </div>
@@ -248,51 +355,6 @@ const AISOSLanding = () => {
             <Brain className="w-4 h-4 text-emerald-600" />
             <span>Optional offline AI mode</span>
           </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-10 px-4 sm:px-6 border-t border-gray-200">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-            {[
-              { stat: "50+", label: "Pre-built AI skills" },
-              { stat: "~15 min", label: "Saved per skill run" },
-              { stat: "37", label: "Trackable features" },
-              { stat: "< 5 min", label: "Project to first deliverable" },
-            ].map((s, i) => (
-              <div key={i}>
-                <p className="text-2xl sm:text-3xl font-bold text-emerald-600">{s.stat}</p>
-                <p className="text-xs sm:text-sm text-gray-500 mt-1">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Problem */}
-      <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">You're doing AI work your AI should be doing</h2>
-          <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">If any of this sounds familiar, you're not alone.</p>
-          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {[
-              "Copying outputs between ChatGPT tabs and docs",
-              "Rewriting the same prompts every week",
-              "No system for reviewing what AI produces",
-              "Starting from scratch every time you switch context",
-              "Wondering if AI actually saved you time today",
-              "No way to build on what worked last month",
-            ].map((pain, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white border border-gray-200 rounded-lg p-4">
-                <span className="text-red-500 text-lg leading-none mt-0.5">-</span>
-                <p className="text-gray-600 text-sm">{pain}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-gray-800 mt-10 text-lg font-medium">
-            <T /> replaces all of that with one loop: <span className="text-emerald-600">create project → delegate tasks → review deliverables → improve</span>
-          </p>
         </div>
       </section>
 
@@ -516,25 +578,6 @@ const AISOSLanding = () => {
       {/* Pricing Section */}
       <PricingSection />
 
-      {/* Free Tier Banner */}
-      <section className="py-12 px-4 sm:px-6 border-t border-gray-200">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center">
-            <p className="text-2xl font-bold mb-3"><T /> Free — no limits, no time pressure</p>
-            <p className="text-gray-600 max-w-xl mx-auto mb-6">
-              <T /> Free gives you full access to local AI and your own API keys. No credit card. No time limit. Create a project and see your first deliverable in under 5 minutes.
-            </p>
-            <a
-              href="#get-started"
-              onClick={() => { trackClick("T CTA", { action: "join-waitlist", location: "banner" }); document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              Join Waitlist
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
@@ -583,45 +626,21 @@ const AISOSLanding = () => {
         </div>
       </section>
 
-      {/* Enterprise / White-Label Teaser */}
-      <section className="py-16 px-4 sm:px-6 border-t border-gray-200">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-6">
-            <div className="w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center flex-shrink-0">
-              <Building2 className="w-6 h-6 text-emerald-600" />
-            </div>
-            <div className="text-center sm:text-left flex-1">
-              <h3 className="text-xl font-bold mb-2">Want <T /> for your organization?</h3>
-              <p className="text-gray-600 text-sm">
-                We offer white-label partnerships for organizations that want their own branded AI platform. Custom skills, your branding, your licensing.
-              </p>
-            </div>
-            <a
-              href="https://calendar.app.google/ybv193j7WX1L56vr8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-lg transition-colors flex-shrink-0"
-            >
-              <Calendar className="w-4 h-4" />
-              Book a Call
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-24 px-4 sm:px-6 border-t border-gray-200">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Stop managing AI. Start leading it.</h2>
           <p className="text-gray-600 text-lg mb-8">Create your first project. See deliverables before lunch.</p>
           <div className="flex justify-center mb-4">
-            <a
-              href="#get-started"
-              onClick={() => { trackClick("T CTA", { action: "join-waitlist", location: "final-cta" }); document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+            <button
+              onClick={() => {
+                trackClick("T CTA", { action: "join-waitlist", location: "final-cta" });
+                document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
-              Join Waitlist
-            </a>
+              Join the Waitlist
+            </button>
           </div>
           <p className="text-sm text-gray-500 mt-4">Mac · Apple Silicon & Intel · No account needed</p>
           <p className="text-xs text-gray-400 mt-2">Free forever. No credit card required.</p>
