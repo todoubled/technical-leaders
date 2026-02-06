@@ -61,7 +61,7 @@ const PricingSection = () => {
       highlight: false,
     },
     {
-      name: "T Premium",
+      name: "T Academy",
       monthly: 50,
       annual: 33,
       period: annual ? "billed $400/year" : "billed monthly",
@@ -86,7 +86,7 @@ const PricingSection = () => {
       period: annual ? "billed $1,000/year" : "billed monthly",
       desc: "For professionals who want cutting-edge tools, live community, and direct support.",
       features: [
-        "Everything in Premium, plus:",
+        "Everything in Academy, plus:",
         "Skill Forge — build custom AI skills",
         "Monthly AI release drops",
         "24/7 global community access",
@@ -168,6 +168,7 @@ const PricingSection = () => {
             </div>
           ))}
         </div>
+        <p className="text-center text-sm text-gray-500 mt-8">Non-profit organization pricing available.</p>
       </div>
     </section>
   );
