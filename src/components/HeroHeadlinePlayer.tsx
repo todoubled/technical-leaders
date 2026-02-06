@@ -9,47 +9,40 @@ import {
 } from "remotion";
 
 const ROLES = [
-  "General Manager",
-  "Chief of Staff",
-  "Marketer",
-  "Product Manager",
-  "Software Engineer",
-  "Sales Rep",
   "Researcher",
-  "Niche Consultant",
-  "Copywriter",
-  "Data Analyst",
-  "Ops Manager",
-  "Strategist",
-  "Recruiter",
-  "Customer Success Lead",
-  "Content Creator",
-  "Finance Lead",
+  "Coach & Mentor",
+  "Assistant",
+  "Co-Strategist",
+  "Team Mate"
 ];
 
 const ROLE_DISPLAY_SECONDS = 1.0;
 const TRANSITION_SECONDS = 0.25;
 const FPS = 30;
-const DURATION_FRAMES = ROLES.length * Math.round((ROLE_DISPLAY_SECONDS + TRANSITION_SECONDS) * FPS);
+
+const ROLE_DISPLAY_FRAMES = Math.round(ROLE_DISPLAY_SECONDS * FPS);
+const TRANSITION_FRAMES = Math.round(TRANSITION_SECONDS * FPS);
+const CYCLE_DURATION = ROLE_DISPLAY_FRAMES + TRANSITION_FRAMES;
+// Total duration = one full pass through all roles, ending with the last role
+// fully displayed (no dangling transition). The last transition (back to first)
+// happens seamlessly as the Player loops frame 0.
+const DURATION_FRAMES = ROLES.length * CYCLE_DURATION;
 
 const HeroHeadlineComp = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const roleDisplayFrames = Math.round(ROLE_DISPLAY_SECONDS * fps);
-  const transitionFrames = Math.round(TRANSITION_SECONDS * fps);
-  const cycleDuration = roleDisplayFrames + transitionFrames;
-
-  const cycleIndex = Math.floor(frame / cycleDuration);
+  const frameInLoop = frame % DURATION_FRAMES;
+  const cycleIndex = Math.floor(frameInLoop / CYCLE_DURATION);
   const roleIndex = cycleIndex % ROLES.length;
   const nextRoleIndex = (roleIndex + 1) % ROLES.length;
-  const frameInCycle = frame % cycleDuration;
+  const frameInCycle = frameInLoop % CYCLE_DURATION;
 
-  const isTransitioning = frameInCycle >= roleDisplayFrames;
-  const transitionFrame = isTransitioning ? frameInCycle - roleDisplayFrames : 0;
+  const isTransitioning = frameInCycle >= ROLE_DISPLAY_FRAMES;
+  const transitionFrame = isTransitioning ? frameInCycle - ROLE_DISPLAY_FRAMES : 0;
 
   const transitionProgress = isTransitioning
-    ? interpolate(transitionFrame, [0, transitionFrames], [0, 1], {
+    ? interpolate(transitionFrame, [0, TRANSITION_FRAMES], [0, 1], {
         extrapolateRight: "clamp",
         easing: Easing.inOut(Easing.cubic),
       })
@@ -64,12 +57,8 @@ const HeroHeadlineComp = () => {
     extrapolateLeft: "clamp",
   });
 
-  const entranceSpring = spring({ frame, fps, config: { damping: 200 } });
-  const staticOpacity = entranceSpring;
-  const staticY = interpolate(entranceSpring, [0, 1], [100, 0]);
-
   const underlineSpring = spring({
-    frame: isTransitioning ? transitionFrame : roleDisplayFrames,
+    frame: isTransitioning ? transitionFrame : ROLE_DISPLAY_FRAMES,
     fps,
     config: { damping: 15, stiffness: 200 },
   });
@@ -92,15 +81,13 @@ const HeroHeadlineComp = () => {
           flexDirection: "column",
           alignItems: "center",
           gap: 0,
-          opacity: staticOpacity,
-          transform: `translateY(${staticY}px)`,
         }}
       >
         <div
           style={{
             fontSize: 180,
             fontWeight: 700,
-            color: "#f3f4f6",
+            color: "#111827",
             fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
             letterSpacing: "-0.03em",
             lineHeight: 1.2,
@@ -112,90 +99,82 @@ const HeroHeadlineComp = () => {
 
         <div
           style={{
-            position: "relative",
-            height: 195,
-            clipPath: "inset(0 0)",
-            width: "100vw",
             display: "flex",
-            alignItems: "center",
+            alignItems: "baseline",
             justifyContent: "center",
+            gap: 40,
           }}
         >
-          <div
+          <span
             style={{
-              position: "absolute",
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "center",
-              gap: 50,
-              transform: `translateY(${currentY}px)`,
-              opacity: currentOpacity,
-              whiteSpace: "nowrap",
-              width: "100%",
+              fontSize: 155,
+              fontWeight: 700,
+              color: "#111827",
+              fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
+              letterSpacing: "-0.03em",
+              flexShrink: 0,
             }}
           >
+            Your AI
+          </span>
+          <div
+            style={{
+              position: "relative",
+              clipPath: "inset(0 0)",
+              width: 1100,
+              flexShrink: 0,
+            }}
+          >
+            {/* Invisible span to establish baseline and natural height */}
             <span
               style={{
                 fontSize: 155,
                 fontWeight: 700,
-                color: "#f3f4f6",
                 fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
                 letterSpacing: "-0.03em",
+                visibility: "hidden",
+                whiteSpace: "nowrap",
               }}
             >
-              Your
+              {currentRole}
             </span>
             <span
               style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
                 fontSize: 155,
                 fontWeight: 700,
                 color: "#f97316",
                 fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
                 letterSpacing: "-0.03em",
+                whiteSpace: "nowrap",
+                transform: `translateY(${currentY}px)`,
+                opacity: currentOpacity,
               }}
             >
               {currentRole}
             </span>
-          </div>
-
-          {isTransitioning && (
-            <div
-              style={{
-                position: "absolute",
-                display: "flex",
-                alignItems: "baseline",
-                justifyContent: "center",
-                gap: 50,
-                transform: `translateY(${nextY}px)`,
-                opacity: nextOpacity,
-                whiteSpace: "nowrap",
-                width: "100%",
-              }}
-            >
+            {isTransitioning && (
               <span
                 style={{
-                  fontSize: 155,
-                  fontWeight: 700,
-                  color: "#f3f4f6",
-                  fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
-                  letterSpacing: "-0.03em",
-                }}
-              >
-                Your
-              </span>
-              <span
-                style={{
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
                   fontSize: 155,
                   fontWeight: 700,
                   color: "#f97316",
                   fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
                   letterSpacing: "-0.03em",
+                  whiteSpace: "nowrap",
+                  transform: `translateY(${nextY}px)`,
+                  opacity: nextOpacity,
                 }}
               >
                 {nextRole}
               </span>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         <div
@@ -211,17 +190,18 @@ const HeroHeadlineComp = () => {
 
         <div
           style={{
-            fontSize: 180,
+            fontSize: 85,
             fontWeight: 700,
-            color: "#f3f4f6",
+            color: "#6b7280",
             fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
             letterSpacing: "-0.03em",
-            lineHeight: 1.2,
+            lineHeight: 1.3,
             textAlign: "center",
             marginTop: 40,
+            maxWidth: 1800,
           }}
         >
-          on WhatsApp.
+          Private, easy-to-use AI that gives back automatically.
         </div>
       </div>
     </AbsoluteFill>
@@ -233,7 +213,7 @@ export const HeroHeadlinePlayer = () => {
     <Player
       component={HeroHeadlineComp}
       compositionWidth={2400}
-      compositionHeight={700}
+      compositionHeight={1100}
       durationInFrames={DURATION_FRAMES}
       fps={FPS}
       loop

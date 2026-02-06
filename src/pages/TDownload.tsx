@@ -12,7 +12,7 @@ const TDownload = () => (
     />
     <div className="max-w-md w-full text-center">
       <h1 className="text-3xl font-bold mb-2">Download <span className="text-orange-400 font-bold">T</span></h1>
-      <p className="text-gray-400 mb-8">Free during beta. No account needed.</p>
+      <p className="text-gray-400 mb-8">Free forever. No account needed.</p>
 
       <a href={DMG_URL}>
         <Button className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold px-8 py-6 rounded-xl w-full">
