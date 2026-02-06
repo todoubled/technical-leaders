@@ -9,6 +9,17 @@
   "rewrites": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i).*(facebookexternalhit|Facebot|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Applebot|Googlebot|bingbot|yandex|baiduspider|DuckDuckBot|Pinterestbot|redditbot|Embedly|showyoubot|outbrain|quora link preview|vkShare|W3C_Validator|iframely|Iframely).*"
+        }
+      ],
+      "destination": "/api/og?path=$1"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
