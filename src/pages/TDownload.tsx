@@ -2,7 +2,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
-const DMG_URL = "#"; // Replace with .dmg download URL
+const DMG_URL = "https://drive.google.com/file/d/18F-BuyYCAzTajAhHi_U1y-WKKbNRl7Qb/view?usp=drive_link";
 
 const TDownload = () => (
   <div className="min-h-screen bg-[#0a0a0f] text-gray-100 flex items-center justify-center px-4">
