@@ -11,6 +11,7 @@ import {
 const ROLES = [
   "Researcher",
   "Coach & Mentor",
+  "Sandbox",
   "Assistant",
   "Co-Strategist",
   "Team Mate"
