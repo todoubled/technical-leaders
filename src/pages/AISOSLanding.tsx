@@ -290,6 +290,7 @@ const AISOSLanding = () => {
         title="T — Create Projects. Delegate to AI. Approve Deliverables."
         description="T is a free desktop AI assistant that runs privately on your Mac. Create projects, delegate tasks to AI agents, and review deliverables. Includes AI Operator certification, local LLM support, and human-in-the-loop review. 20% of paid subscriptions fund environmental and workforce impact."
         keywords={["local AI", "private AI assistant", "AI certification", "AI for executives", "human-in-the-loop AI", "AI Operator certification", "AI delegation", "AI agents", "AI productivity", "leadership automation", "T app", "agentic workflows"]}
+        image="https://technical-leaders.com/t-screenshot.png"
       />
 
       {/* Navigation — stays dark */}

@@ -116,6 +116,7 @@ const Fortune100AiWorkspace = () => {
         title="Fortune 100 AI Workspace - Complete Setup Guide"
         description="Set up the same AI workspace used by Fortune 100 companies. Combine NotebookLM for creative thinking with Claude Code for execution. Complete tutorial with step-by-step instructions."
         keywords={['AI workspace', 'NotebookLM', 'Claude Code', 'MCP', 'AI tools', 'productivity', 'Fortune 100', 'AI setup', 'business automation']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

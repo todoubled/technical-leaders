@@ -128,6 +128,7 @@ const BrandCharacterWorkshop = () => {
         title="Build Your Brand Character™ Workshop | Technical Leaders"
         description="Design the personal brand that makes you unforgettable. From generic to magnetic in one practical session."
         keywords={["brand character", "brand personality", "brand voice", "brand archetype", "brand storytelling"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

@@ -22,6 +22,7 @@ const FinanceWorkshopConfirmed = () => {
         title="Registration Confirmed - Finance for Founders™ Workshop"
         description="Your spot is reserved for the Finance for Founders™ Workshop. Check your email for important details."
         keywords={["workshop confirmation", "finance workshop", "registration confirmed"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

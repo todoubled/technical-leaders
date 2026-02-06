@@ -100,6 +100,7 @@ const Podcast = () => {
           "engineering leadership",
           "tech entrepreneurship",
         ]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

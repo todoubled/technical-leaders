@@ -17,6 +17,7 @@ const Home2025 = () => {
         title="Technical Leaders - Get Promoted or Promote Yourself"
         description="Stop waiting for promotions. Join 300+ CTOs, VPs of Engineering, and tech executives who took control of their careers and built their own opportunities."
         keywords={['get promoted', 'tech promotion', 'technical leadership', 'CTO coaching', 'VP Engineering', 'career advancement', 'promote yourself']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
       <Hero />

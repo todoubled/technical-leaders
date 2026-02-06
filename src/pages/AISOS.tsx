@@ -8,6 +8,7 @@ const AISOS = () => {
         title="AI SOS™ | Technical Leaders"
         description="AI SOS presentation and resources from Technical Leaders."
         keywords={["AI SOS", "AI training", "technical leadership", "AI strategy"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

@@ -9,6 +9,7 @@ const TDownload = () => (
     <SEO
       title="Download T"
       description="Download T for Mac. Set goals, delegate to AI, approve results."
+      image="https://technical-leaders.com/t-screenshot.png"
     />
     <div className="max-w-md w-full text-center">
       <h1 className="text-3xl font-bold mb-2">Download <span className="text-orange-400 font-bold">T</span></h1>

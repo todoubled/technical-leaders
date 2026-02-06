@@ -93,6 +93,7 @@ const AIFirstProgram = () => {
         title="AI-First - Private Cohort Training for Teams"
         description="Upskill your entire team to AI-proficiency within 6 weeks so they produce AI-assisted work twice as fast within 60 days. Private cohort for 30 leaders and operators."
         keywords={['AI training', 'AI proficiency', 'team AI training', 'AI-first', 'AI adoption', 'enterprise AI', 'AI workflows', 'corporate AI training']}
+        image="https://technical-leaders.com/launch-bg.png"
         structuredData={combinedStructuredData}
       />
 

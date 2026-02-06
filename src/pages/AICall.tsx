@@ -11,6 +11,7 @@ const AICall = () => {
         title="Book an AI Strategy Call - Technical Leaders"
         description="Schedule a free AI strategy call to discuss how to leverage AI in your organization. Get personalized guidance from experienced AI implementation experts."
         keywords={['AI strategy call', 'AI implementation', 'AI consulting', 'tech executive coaching', 'AI transformation']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

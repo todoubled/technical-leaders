@@ -22,6 +22,7 @@ const BrandWorkshopConfirmed = () => {
         title="Registration Confirmed - Build Your Brand Character™ Workshop"
         description="Your spot is reserved for the Build Your Brand Character™ Workshop. Check your email for important details."
         keywords={["workshop confirmation", "brand character workshop", "registration confirmed"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

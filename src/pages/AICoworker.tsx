@@ -163,6 +163,7 @@ const AICoworker = () => {
         title="AI Coworker - Set Up Claude as Your Personal Executive Assistant"
         description="Learn how to set up Claude Code as your AI coworker and personal executive assistant. A step-by-step tutorial to create your personalized AI workflow system."
         keywords={['AI coworker', 'Claude Code', 'AI assistant', 'executive assistant', 'AI workflow', 'productivity']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

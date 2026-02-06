@@ -12,6 +12,7 @@ export default function CallConfirmed() {
         title="Call Confirmed"
         description="Your call with Technical Leaders is confirmed. Prepare for your strategy session to scale your income, influence, and impact as a technical leader."
         keywords={['strategy call', 'technical leadership', 'career coaching', 'CTO mentoring']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

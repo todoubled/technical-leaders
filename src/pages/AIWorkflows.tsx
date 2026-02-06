@@ -66,6 +66,7 @@ const AIWorkflows = () => {
         title="AI Workflows Workshop | Technical Leaders"
         description="Go beyond ChatGPT. Learn the AI workflows that let venture-backed teams build MVPs in days, not months. Free weekly workshop with live demos and Q&A."
         keywords={["AI workflows", "AI agents", "Claude Code", "MVP development", "AI automation", "startup AI", "AI productivity"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

@@ -44,6 +44,7 @@ const Index = () => {
         title="AI Readiness Assessment | Technical Leaders"
         description="Take the free 2-minute assessment to discover your Skill Maturity Level and get a personalized roadmap for AI-first operations. Join 6500+ tech leaders."
         keywords={['AI readiness assessment', 'skill maturity', 'AI-first operations', 'AI SOS', 'tech leadership', 'AI transformation']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

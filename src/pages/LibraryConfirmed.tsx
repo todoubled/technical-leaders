@@ -14,6 +14,7 @@ const LibraryConfirmed = () => {
         title="Library Access Confirmed - Technical Leaders"
         description="Your library access is confirmed. Book a free AI strategy call to get personalized guidance on leveraging AI in your organization."
         keywords={['AI strategy call', 'AI implementation', 'AI consulting', 'tech executive coaching', 'AI transformation']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

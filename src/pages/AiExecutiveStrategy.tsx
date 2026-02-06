@@ -74,6 +74,7 @@ const AiExecutiveStrategy = () => {
         title="AI Executive Strategy Program | Transform Your Organization"
         description="Transform your organization with proven AI strategies for 3-5x efficiency gains. Cut OpEx 30% in under 6 months with our executive-focused AI program."
         keywords={['AI strategy', 'executive program', 'artificial intelligence', 'business transformation', 'operational efficiency']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

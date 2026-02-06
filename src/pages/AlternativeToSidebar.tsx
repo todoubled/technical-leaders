@@ -111,6 +111,7 @@ const AlternativeToSidebar = () => {
         title="Tech Leaders vs Sidebar - Why Tech Leaders Delivers Better ROI"
         description="Compare Tech Leaders to Sidebar. Get guaranteed $25K+ opportunities in 6 months vs generic networking. One-time investment vs ongoing subscription."
         keywords={['sidebar alternative', 'tech leaders vs sidebar', 'executive coaching comparison', 'leadership program comparison', 'sidebar competitor']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

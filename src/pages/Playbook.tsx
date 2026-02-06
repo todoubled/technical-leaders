@@ -172,6 +172,7 @@ const Playbook = () => {
         title="Productize & Monetize Your Expertise - Even If You Hate Promoting Yourself"
         description="Diversify and grow your income without burning out. Get 1000+ warm lead examples and proven tactics to find ideal clients - with ZERO ad spend or cold messaging."
         keywords={['technical leadership', 'consulting playbook', 'value-based pricing', 'tech consulting', 'productize expertise', 'independent consulting', 'consulting business', 'side income']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

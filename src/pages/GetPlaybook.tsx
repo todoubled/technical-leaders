@@ -84,6 +84,7 @@ const GetPlaybook = () => {
         title="The Productize & Monetize Your Expertise Playbook"
         description="Transform your technical expertise into scalable, high-value offerings that generate leverage, income, and impact. Complete step-by-step guide for tech leaders."
         keywords={['technical leadership', 'consulting playbook', 'value-based pricing', 'tech consulting', 'productize expertise']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

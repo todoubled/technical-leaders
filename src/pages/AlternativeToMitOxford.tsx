@@ -87,6 +87,7 @@ const AlternativeToMitOxford = () => {
         title="Tech Leaders vs MIT & Oxford AI Courses - Get Practical AI Skills"
         description="Why business leaders are choosing Tech Leaders over academic AI programs. Get practical AI implementation skills, not theory and certificates. Real guidance from practitioners."
         keywords={['MIT AI course alternative', 'Oxford AI alternative', 'practical AI training', 'AI implementation', 'AI for business', 'executive AI training']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

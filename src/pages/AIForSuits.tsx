@@ -91,6 +91,7 @@ const AIForSuits = () => {
         title="AI for Suits - Executive AI Strategy Without the Tech"
         description="Master AI for business growth without coding. Perfect for sales, BD, and executive leaders ready to innovate without waiting for engineering resources."
         keywords={['AI for executives', 'AI for sales', 'business AI strategy', 'non-technical AI', 'executive AI training', 'AI for business development']}
+        image="https://technical-leaders.com/ai-in-ar.png"
         structuredData={courseStructuredData}
       />
       <Navigation />

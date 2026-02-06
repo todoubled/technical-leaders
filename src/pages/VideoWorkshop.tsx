@@ -209,6 +209,7 @@ const VideoWorkshop = () => {
         title="Creating Viral Video Content 101 | Technical Leaders"
         description="Turn your expertise into video content that attracts the right clients. From scattered ideas and recording anxiety to a clear system you can use immediately."
         keywords={["video content", "viral video", "video marketing", "content creation", "video strategy"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

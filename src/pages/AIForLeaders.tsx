@@ -154,6 +154,7 @@ const AIForLeaders = () => {
         title="The AI Leader™ Program - Technical Leaders"
         description="8 hours of live intensive AI training built on Anthropic's Agent Skills standard. Get the AI SOS implementation playbook, Skill Spec templates, AI Leader™ certification, and 90-day implementation support. $2,500 per person."
         keywords={['AI for executives', 'AI for leaders', 'executive AI training', 'prompt engineering', 'enterprise AI', 'no-code AI tools', 'AI strategy']}
+        image="https://technical-leaders.com/ai-in-ar.png"
         structuredData={courseStructuredData}
       />
       <Navigation />

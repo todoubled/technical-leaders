@@ -49,6 +49,7 @@ const AIPriorities = () => {
         title="AI Priorities - Use the RICE Framework for Skills"
         description="Stop chasing random AI use cases. Start with strategic capability building using the RICE prioritization framework."
         keywords={['AI prioritization', 'RICE framework', 'AI skills', 'strategic capability building', 'AI use cases']}
+        image="https://technical-leaders.com/rice-framework.png"
       />
       <Navigation />
 

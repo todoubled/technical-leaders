@@ -118,6 +118,7 @@ const AIProgram = () => {
         title="The AI Agents Workflow Program - Build Your First AI Tool in 6 Weeks"
         description="3 spots left. Add 5-10 hours back into your week and ship your first AI-powered tool in six weeks. No code. No overwhelm."
         keywords={['AI tools', 'AI productivity', 'AI for leaders', 'ship AI', 'AI adoption', 'business AI', 'AI automation', 'non-technical AI']}
+        image="https://technical-leaders.com/launch-bg.png"
         structuredData={combinedStructuredData}
       />
 

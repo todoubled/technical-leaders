@@ -128,6 +128,7 @@ const HowToWinVisibilityWorkshop = () => {
         title="How to Win Visibility & Book More Meetings | Technical Leaders"
         description="A simple, repeatable system to become the first call when urgency hits. 45-minute workshop with the 3-7-1 Framework."
         keywords={["visibility strategy", "book meetings", "B2B sales", "thought leadership", "marketing funnel", "client acquisition"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

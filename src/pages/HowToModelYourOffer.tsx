@@ -11,6 +11,7 @@ const HowToModelYourOffer = () => {
         title="How to Design Your Offer Model | Technical Leaders"
         description="Workshop Training to learn how to assess your skillset, position your value, and design your offer model. More influence, impact, and income without burning out."
         keywords={["offer design", "technical leadership", "premium pricing", "consultant offers", "expert positioning"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

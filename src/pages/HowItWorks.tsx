@@ -61,6 +61,7 @@ const HowItWorks = () => {
         title="How It Works | Technical Leaders"
         description="Discover how Technical Leaders helps founders and executives launch and scale their businesses with proven strategies and systems."
         keywords={["how it works", "technical leaders process", "founder resources", "business scaling"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

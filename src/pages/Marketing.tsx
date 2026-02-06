@@ -13,6 +13,7 @@ const Marketing = () => {
         title="Done-for-You Founder-Led Marketing Services | Technical Leaders"
         description="Skip the trial and error. Get proven founder-led marketing systems that position you as the go-to solution in your industry. 3 tiers of done-for-you services for senior leaders, consultants, and business owners."
         keywords={['done for you marketing', 'founder led marketing', 'personal branding', 'thought leadership', 'content marketing', 'executive branding', 'CTO marketing', 'VP marketing']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
       <MarketingHero />

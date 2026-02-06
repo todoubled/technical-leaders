@@ -61,6 +61,7 @@ const AiWorkspace = () => {
         title="AI Workspace - Build Your Development Team"
         description="Learn terminal, Git, and AI collaboration fundamentals. Transform from coding alone to leading a team where AI agents accelerate your development."
         keywords={['AI development', 'terminal basics', 'git fundamentals', 'Claude Code', 'AI programming team']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

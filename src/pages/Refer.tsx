@@ -59,6 +59,7 @@ Best regards,
         title="Referral Program"
         description="Refer technical professionals to the Technical Leaders program and earn rewards. Help others advance their careers while earning subscription credits or cash payments."
         keywords={['referral program', 'technical leadership referral', 'CTO referral', 'leadership program rewards']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

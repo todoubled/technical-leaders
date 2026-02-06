@@ -116,6 +116,7 @@ const AIAgentSkills = () => {
         title="AI Agent Skills Workshop | Technical Leaders"
         description="Learn how to build modular AI agents with Claude's Agent Skills. Create automated workflows without code. Free weekly workshop with live demos."
         keywords={["AI agent skills", "Claude Skills", "AI automation", "Claude Code", "AI workflows", "no-code AI", "AI productivity", "agent development"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

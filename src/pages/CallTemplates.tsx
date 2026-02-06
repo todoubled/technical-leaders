@@ -31,6 +31,7 @@ const CallTemplates = () => {
         title="Free Consulting Call Templates - Technical Leaders"
         description="Get free consulting call templates and book a strategy session to boost your consulting income and impact. Templates for discovery calls, proposals, and more."
         keywords={['consulting call templates', 'technical consulting', 'CTO consulting', 'tech leadership consulting', 'strategy call']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

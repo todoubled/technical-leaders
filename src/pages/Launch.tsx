@@ -197,6 +197,7 @@ const Launch = () => {
         title="Launch Program - From Senior Engineer to Tech Executive"
         description="6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Build authority, expand income, and lead at scale."
         keywords={['tech leadership program', 'engineer to CTO', 'technical executive training', 'leadership coaching', 'career advancement']}
+        image="https://technical-leaders.com/launch-bg.png"
         structuredData={combinedStructuredData}
       />
       <Navigation />

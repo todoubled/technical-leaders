@@ -117,6 +117,7 @@ const AIForVC = () => {
         title="AI Executive Training for VCs & Private Equity - Technical Leaders"
         description="Master prompt engineering and AI workflows without coding. 4-week executive program for venture capitalists and private equity professionals to 10x productivity with AI."
         keywords={['AI for VC', 'AI for private equity', 'executive AI training', 'prompt engineering', 'AI workflows', 'venture capital AI', 'PE AI tools']}
+        image="https://technical-leaders.com/ai-in-ar.png"
         structuredData={courseStructuredData}
       />
       <Navigation />

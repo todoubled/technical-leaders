@@ -74,6 +74,7 @@ const AdvancedClaude = () => {
         title="Advanced Claude Code Pro Tips - Master AI Development"
         description="Learn advanced Claude Code techniques from Boris Churnney, creator of Claude Code at Anthropic. Master CLI automation, visual workflows, MCP servers, and cost optimization."
         keywords={['Claude Code', 'AI development', 'CLI automation', 'MCP servers', 'visual development', 'cost optimization', 'Boris Churnney']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

@@ -3037,6 +3037,7 @@ Write customer-facing release notes and internal notes for the support team.`,
         title="26 Claude Agent Skills for Business Automation | Technical Leaders"
         description="A comprehensive guide to building AI-powered workflows across Sales, Marketing, Operations, Finance, Legal, and Product & Engineering using Claude Agent Skills."
         keywords={["Claude Agent Skills", "AI automation", "business workflows", "AI agent skills", "sales automation", "marketing automation", "operations automation", "finance automation", "legal automation", "product automation"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

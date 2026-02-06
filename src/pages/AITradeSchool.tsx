@@ -83,6 +83,7 @@ const AITradeSchool = () => {
         title="AI Trade School - Master AI Tools Without Getting Technical"
         description="12-week intensive program to master AI tools, build workflows, and 10x productivity without coding. Learn to leverage AI for business success."
         keywords={['AI training program', 'AI tools course', 'AI productivity', 'AI workflow automation', 'non-technical AI training', 'AI business skills']}
+        image="https://technical-leaders.com/ai-in-ar.png"
         structuredData={courseStructuredData}
       />
       <Navigation />

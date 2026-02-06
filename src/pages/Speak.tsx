@@ -50,6 +50,7 @@ const Speak = () => {
         title="Speaking Request - Todd Larsen | Technical Leaders"
         description="Request Todd Larsen to speak at your event, podcast, or conference. Expert in AI leadership, technical leadership, and building consulting practices."
         keywords={['speaking request', 'tech speaker', 'AI leadership speaker', 'technical leadership', 'CTO speaker', 'tech conference speaker']}
+        image="https://technical-leaders.com/todd-media-kit.png"
       />
       <Navigation />
 

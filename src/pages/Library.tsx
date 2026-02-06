@@ -81,6 +81,7 @@ const Library = () => {
         title="The Fortune 100 AI Skills Library™ - Build AI Workflows in Minutes"
         description="Build AI workflows to go from Objective to Key Result in minutes—without developer resources. Agentic prompts and workflow designs. Copy, paste & edit in 60 seconds."
         keywords={['AI workflows', 'AI prompts', 'fortune 100 prompts', 'agentic prompts', 'AI productivity', 'workflow automation', 'no-code AI']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

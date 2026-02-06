@@ -111,6 +111,7 @@ const AiRdSystem = () => {
         title="AI R&D System Tutorial"
         description="Master the 6-step AI R&D framework. Learn systematic AI product development from market research to revenue launch using behavioral science and AI tools."
         keywords={['AI R&D system', 'AI R&D framework', 'product development', 'AI workflow', 'behavioral design', 'Claude Code tutorial']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
 
       <Navigation />

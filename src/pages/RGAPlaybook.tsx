@@ -237,6 +237,7 @@ const RGAPlaybook = () => {
         title="RGA Playbook - Revenue Generating Activities for Consultants"
         description="The complete playbook for revenue generating activities to land consulting clients. AI-powered system for finding, connecting with, and converting ideal clients."
         keywords={['RGA playbook', 'revenue generating activities', 'consulting clients', 'AI outreach', 'client acquisition']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

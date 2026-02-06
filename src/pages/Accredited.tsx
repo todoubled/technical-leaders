@@ -46,6 +46,7 @@ export default function Accredited() {
         title="Accredited Tech Leaders"
         description="Meet our team of accredited tech leaders who have demonstrated both technical and leadership skills to lead people and projects to successful outcomes."
         keywords={['accredited tech leaders', 'CTO certification', 'technical leadership', 'leadership accreditation', 'VP Engineering']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

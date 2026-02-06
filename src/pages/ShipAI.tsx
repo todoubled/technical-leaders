@@ -250,6 +250,7 @@ const ShipAI = () => {
         title="Ship AI Membership - Weekly AI Training & Office Hours"
         description="Master the latest AI tools and workflows with weekly live training sessions, expert office hours, and a community of builders. Monthly ($120) or Annual ($1000) membership."
         keywords={['AI training', 'AI office hours', 'AI tools', 'AI workflows', 'ChatGPT training', 'Claude AI', 'AI membership', 'learn AI tools']}
+        image="https://technical-leaders.com/ai-in-ar.png"
         structuredData={courseStructuredData}
       />
       <Navigation />

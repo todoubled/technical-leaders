@@ -7,6 +7,7 @@ const Benchmark = () => {
         title="AI Leadership Benchmark"
         description="Assess your AI leadership capabilities and discover how to leverage AI to scale your influence, impact, and income as a technical leader."
         keywords={['AI benchmark', 'leadership assessment', 'technical leadership', 'AI readiness', 'CTO skills']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <div className="mb-8">
         <img src="/orange-logo.png" alt="Technical Leaders" className="h-12 w-auto" />

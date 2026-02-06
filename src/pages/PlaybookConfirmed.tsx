@@ -31,6 +31,7 @@ const PlaybookConfirmed = () => {
         title="Book a 15-Minute Brainstorm - Technical Leaders"
         description="Schedule a brainstorm session to uncover your primary goal blocker and develop a 3-step action plan for more influence, impact, and income without burning out."
         keywords={['technical leadership brainstorm', 'career strategy session', 'tech executive coaching', 'leadership action plan']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

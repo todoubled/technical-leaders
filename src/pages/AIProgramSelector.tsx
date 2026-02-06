@@ -53,6 +53,7 @@ const AIProgramSelector = () => {
         title="AI Training Programs - Technical Leaders"
         description="Choose between intensive foundational training or ongoing AI support. Master AI on your timeline with programs designed for your learning style."
         keywords={['AI training', 'AI courses', 'AI programs', 'AI education', 'foundational AI', 'ongoing AI support']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

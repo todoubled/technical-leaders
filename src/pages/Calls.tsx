@@ -12,6 +12,7 @@ const Calls = () => {
         title="Book a Strategy Call - Technical Leaders"
         description="Schedule a free strategy call to discuss how to advance your technical leadership career. Get personalized guidance from experienced CTOs and tech executives."
         keywords={['technical leadership coaching', 'CTO mentorship', 'career strategy call', 'tech executive coaching']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

@@ -22,6 +22,7 @@ const VisibilityWorkshopConfirmed = () => {
         title="Registration Confirmed - How to Win Visibility & Book More Meetings"
         description="Your spot is reserved for the How to Win Visibility & Book More Meetings Workshop. Check your email for important details."
         keywords={["workshop confirmation", "visibility workshop", "registration confirmed"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

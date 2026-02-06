@@ -24,6 +24,7 @@ const AiPlaybookExecutives = () => {
         title="Maximize Business Impact with AI: The 5-Step Playbook for Executives"
         description="87% of all AI projects never make it into production. Download our free executive playbook to accelerate revenue growth, reduce operational costs, and scale AI projects effectively."
         keywords={['AI playbook', 'executive strategy', 'AI implementation', 'business impact', 'AI projects', 'operational efficiency']}
+        image="https://technical-leaders.com/ai-playbook-executives.png"
       />
       <Navigation />
 

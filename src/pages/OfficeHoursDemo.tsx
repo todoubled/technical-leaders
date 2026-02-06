@@ -66,6 +66,7 @@ const OfficeHoursDemo = () => {
         title="Claude Code in Desktop App | Technical Leaders"
         description="Learn how to use Claude Code in the Claude Desktop app. Build, debug, and ship production-ready code with AI-powered development. Free workshop with live demos."
         keywords={["Claude Code", "Claude Desktop", "AI coding", "AI development", "Claude Code tutorial", "AI programming", "Anthropic Claude"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

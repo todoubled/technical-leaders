@@ -13,6 +13,7 @@ const HealthcareAICaseStudy = () => {
         title="Healthcare AI Case Study - $75M Health Tech Company | Technical Leaders"
         description="How a $75M health tech company became AI-first in just weeks. Learn how we aligned 30 leaders from executives to analysts with a custom AI adoption program."
         keywords={['healthcare AI', 'AI case study', 'health tech AI', 'AI adoption', 'enterprise AI training', 'AI literacy']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

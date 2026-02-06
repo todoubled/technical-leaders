@@ -126,6 +126,7 @@ const AlternativeToMBA = () => {
         title="Tech Leaders vs MBA - Why Smart Engineers Skip the MBA"
         description="Compare Tech Leaders to an MBA. Get guaranteed $25K+ opportunities in 6 months vs 2 years of debt. Real tech leadership skills at 1/50th the cost."
         keywords={['mba alternative', 'tech leaders vs mba', 'engineering leadership without mba', 'skip mba', 'mba for engineers', 'technical mba alternative']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

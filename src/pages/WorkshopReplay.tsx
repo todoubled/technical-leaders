@@ -21,6 +21,7 @@ const WorkshopReplay = () => {
         title="AI Agent Skills Workshop Recording | Technical Leaders"
         description="Watch the complete AI Agent Skills workshop recording plus get exclusive bonus resources. Learn to build modular AI agents with lifetime access."
         keywords={["AI agent skills", "Claude Skills", "AI automation workshop", "Claude Code", "AI workflows", "no-code AI", "AI productivity recording"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

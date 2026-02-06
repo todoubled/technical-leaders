@@ -101,6 +101,7 @@ const RGAWorkshop = () => {
         title="The Invisible to In-Demand™ Workshop | Technical Leaders"
         description="Turn your expertise into daily opportunities without hours on LinkedIn. Join the lead system built for experts who hate selling themselves."
         keywords={["LinkedIn lead generation", "technical leadership", "expert positioning", "lead generation system", "LinkedIn for consultants"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

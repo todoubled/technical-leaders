@@ -139,6 +139,7 @@ const FinanceForFounders = () => {
         title="Finance for Founders™ Workshop | Technical Leaders"
         description="Master the financial fundamentals that drive business growth. From accounting basics to cash flow mastery in one practical session."
         keywords={["financial literacy", "cash flow forecasting", "accounting for founders", "financial statements", "business finance"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

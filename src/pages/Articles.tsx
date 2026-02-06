@@ -83,6 +83,7 @@ export default function Articles() {
         title="Technical Leadership Articles - Proven Strategies from 300+ CTOs"
         description="Practical insights from CTOs, VPs of Engineering, and tech executives. Real-world strategies for scaling teams, advancing careers, and building authority in 2024."
         keywords={['technical leadership articles', 'CTO insights', 'engineering management', 'tech leadership blog', 'career development', 'scaling engineering teams']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
       

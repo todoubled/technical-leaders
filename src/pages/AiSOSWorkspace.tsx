@@ -199,6 +199,7 @@ const AiSOSWorkspace = () => {
         title="AI SOS Workspace Setup Tutorial | Technical Leaders"
         description="Complete guide to setting up Claude Desktop for AI agent workflows. Learn to install skills, configure MCP connections, and build automated workflows."
         keywords={["AI SOS", "Claude Desktop", "AI agent workflows", "MCP", "skill libraries", "AI automation", "Claude projects", "AI workspace setup"]}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
 
       <Navigation />

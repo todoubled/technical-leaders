@@ -72,6 +72,7 @@ const TenBeforeTen = () => {
         title="10 Before 10 - Get Your Next Client Fast"
         description="The 3-step Do-or-Die strategy to shoot 10 shots before 10am and land your first consulting client. Proven system used by 300+ tech leaders."
         keywords={['10 before 10', 'consulting clients', 'outreach strategy', 'case study marketing', 'tech consulting']}
+        image="https://technical-leaders.com/launch-bg.png"
       />
       <Navigation />
 

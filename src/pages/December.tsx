@@ -133,6 +133,7 @@ const December = () => {
         title="Launch Kit - Turn Your Tech Expertise Into $10K/Month"
         description="Prove your offer works and hit $10K+/month by selling your expertise. Join 9 tech leaders in our December cohort. 2-week guarantee, flexible payment plans."
         keywords={['tech leadership', 'independent consulting', 'side hustle', 'tech entrepreneurship', 'consulting business', 'expertise monetization']}
+        image="https://technical-leaders.com/launch-bg.png"
         structuredData={combinedStructuredData}
       />
       <Navigation />

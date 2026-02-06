@@ -354,6 +354,7 @@ const Assessment = () => {
           title="AI Agent Workflows Assessment | Tech Leaders"
           description="Take our free 2-minute assessment to discover your Skill Maturity Level and get a personalized 90-day AI operations roadmap."
           keywords={['AI assessment', 'operations maturity', 'AI readiness', 'skill assessment', 'AI operations']}
+          image="https://technical-leaders.com/ai-in-ar.png"
         />
         <div className="max-w-xl w-full text-center">
           <div className="inline-block px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-medium mb-6">
@@ -416,6 +417,7 @@ const Assessment = () => {
         <SEO
           title="Your AI Agent Workflow Results | Technical Leaders"
           description="Your personalized AI operations assessment results and 90-day roadmap."
+          image="https://technical-leaders.com/ai-in-ar.png"
         />
         <div className="max-w-2xl mx-auto">
           {/* Header */}
@@ -547,6 +549,7 @@ const Assessment = () => {
       <SEO
         title={`AI Assessment - Question ${currentStep + 1} | Technical Leaders`}
         description="Complete your AI-first operations assessment to get personalized recommendations."
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <div className="max-w-xl w-full">
         {/* Progress */}

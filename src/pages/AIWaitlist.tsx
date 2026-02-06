@@ -42,6 +42,7 @@ const AIWaitlist = () => {
         title="Join the Waitlist | Technical Leaders"
         description="We're closed on purpose. Join the waitlist to be the first to know when we open enrollment for our programs."
         keywords={["waitlist", "technical leaders", "coaching", "consulting", "enrollment"]}
+        image="https://technical-leaders.com/ai-program-product-shot.jpg"
       />
 
       <Navigation />

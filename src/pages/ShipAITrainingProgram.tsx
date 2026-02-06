@@ -245,6 +245,7 @@ const ShipAITrainingProgram = () => {
         title="Ship AI Training Program - 6-Week AI Training"
         description="6-week comprehensive AI training program with coursework and live office hours. Learn AI workflows, tools, and implementation with hands-on support. Perfect for professionals seeking practical AI skills."
         keywords={['AI training program', 'AI course', 'AI workflows', 'Claude training', 'ChatGPT course', 'AI implementation', 'AI office hours', 'professional AI training', 'Ship AI']}
+        image="https://technical-leaders.com/ai-in-ar.png"
         structuredData={courseStructuredData}
       />
       <Navigation />

@@ -14,6 +14,7 @@ const CFO = () => {
         title="CFO Services for Tech Companies | Technical Leaders"
         description="Fractional CFO services designed for tech founders and leaders. Get expert financial strategy, planning, and execution to scale your business with confidence."
         keywords={['fractional cfo', 'cfo services', 'tech cfo', 'startup cfo', 'financial strategy', 'financial planning', 'tech finance', 'startup finance']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
       <CFOIntro />

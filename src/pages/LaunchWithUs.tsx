@@ -225,6 +225,7 @@ const LaunchWithUs = () => {
         title="Launch With Us - Personal Tech Leadership Accelerator Program"
         description="6-week intensive program for senior engineers ready to become CTOs, VPs, and technical executives. Personal coaching, done-for-you systems, and guaranteed results."
         keywords={['tech leadership accelerator', 'personal coaching program', 'CTO program', 'executive coaching', 'tech career advancement', 'leadership development']}
+        image="https://technical-leaders.com/ai-in-ar.png"
         structuredData={courseStructuredData}
       />
       <Navigation />

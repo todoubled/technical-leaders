@@ -39,6 +39,7 @@ const Fortune100PromptLibrary = () => {
         title="Fortune 100 Prompt Library - The Non-Technical Guide to Prompt Engineering"
         description="Master prompt engineering in 30 minutes. Learn how to give AI clear instructions that get amazing results. Includes real examples, templates, and exercises."
         keywords={['prompt engineering', 'AI prompts', 'ChatGPT prompts', 'AI writing', 'prompt templates', 'AI guide', 'fortune 100 prompts']}
+        image="https://technical-leaders.com/ai-in-ar.png"
       />
       <Navigation />
 

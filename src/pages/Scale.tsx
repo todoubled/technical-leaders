@@ -141,6 +141,7 @@ const Scale = () => {
         title="Scale Program - Grow Your Tech Leadership Business"
         description="Transform your expertise into a scalable business. For technical leaders ready to build consulting practices, advisory roles, and thought leadership platforms."
         keywords={['tech leadership business', 'consulting for CTOs', 'technical advisory', 'fractional CTO', 'tech thought leadership']}
+        image="https://technical-leaders.com/scale-bg.png"
         structuredData={combinedStructuredData}
       />
       <Navigation />
