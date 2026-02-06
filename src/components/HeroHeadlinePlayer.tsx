@@ -14,7 +14,8 @@ const ROLES = [
   "Safe Sandbox",
   "Private Assistant",
   "Co-Strategist",
-  "Team Mate"
+  "Team Mate",
+  "Thought Partner"
 ];
 
 const ROLE_DISPLAY_SECONDS = 1.0;
