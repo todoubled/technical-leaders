@@ -245,7 +245,7 @@ const PricingSection = () => {
             <h3 className="font-semibold text-gray-800 text-lg">T Enterprise</h3>
             <Building2 className="w-4 h-4 text-emerald-600" />
           </div>
-          <p className="text-gray-600 text-sm mb-5">White-label T for your clients. Three packaging options — you control pricing, they get your brand.</p>
+          <p className="text-gray-600 text-sm mb-5">White-label T for your clients. We train you/your team how to do it all. Three packaging options — you control pricing, they get your brand.</p>
           <div className="grid sm:grid-cols-3 gap-4">
             {enterpriseOffers.map((offer, i) => (
               <div key={i} className="border border-gray-100 rounded-lg p-3">
