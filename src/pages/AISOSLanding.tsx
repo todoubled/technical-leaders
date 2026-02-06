@@ -57,8 +57,7 @@ const PricingSection = () => {
         "Learning mode with guided walkthroughs",
         "Project & task management",
       ],
-      cta: "Get Started Free",
-      ctaLink: DMG_URL,
+      cta: "Join Waitlist",
       highlight: false,
     },
     {
@@ -77,8 +76,7 @@ const PricingSection = () => {
         "Monthly impact receipt",
       ],
       impact: annual ? "$6.60" : "$10",
-      cta: "Upgrade to Premium",
-      ctaLink: DMG_URL,
+      cta: "Join Waitlist",
       highlight: true,
     },
     {
@@ -97,8 +95,7 @@ const PricingSection = () => {
         "Early access to new features",
       ],
       impact: annual ? "$16.60" : "$25",
-      cta: "Upgrade to Pro",
-      ctaLink: DMG_URL,
+      cta: "Join Waitlist",
       highlight: false,
     },
   ];
@@ -154,8 +151,12 @@ const PricingSection = () => {
                 </p>
               )}
               <a
-                href={plan.ctaLink}
-                onClick={() => trackClick("Pricing CTA", { plan: plan.name, billing: annual ? "annual" : "monthly" })}
+                href="#get-started"
+                onClick={(e) => {
+                  e.preventDefault();
+                  trackClick("Pricing CTA", { plan: plan.name, billing: annual ? "annual" : "monthly", cta_text: "Join Waitlist" });
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
                 className={`text-center font-semibold py-3 rounded-lg transition-colors block ${
                   plan.highlight
                     ? "bg-emerald-500 hover:bg-emerald-600 text-white"
