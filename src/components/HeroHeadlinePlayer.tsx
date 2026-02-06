@@ -11,10 +11,10 @@ import {
 const ROLES = [
   "Researcher",
   "Coach & Mentor",
-  "Sandbox",
-  "Assistant",
-  "Co-Strategist",
-  "Team Mate"
+  "Safe Sandbox",
+  "Private Assistant",
+  "Team Mate",
+  "Thought Partner"
 ];
 
 const ROLE_DISPLAY_SECONDS = 1.0;
