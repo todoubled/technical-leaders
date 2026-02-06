@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackClick } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
-import { Check, Shield, Zap, Target, Brain, Heart, TreePine, GraduationCap, Download, Award, Star, Building2, Mail } from "lucide-react";
+import { Check, Shield, Zap, Target, Brain, Heart, TreePine, GraduationCap, Download, Award, Star, Building2, Mail, Calendar } from "lucide-react";
 
 const T = () => <span className="text-emerald-600 font-bold">T</span>;
 
@@ -590,17 +590,19 @@ const AISOSLanding = () => {
               <Building2 className="w-6 h-6 text-emerald-600" />
             </div>
             <div className="text-center sm:text-left flex-1">
-              <h3 className="text-xl font-bold mb-2">Want <T /> for your team or brand?</h3>
+              <h3 className="text-xl font-bold mb-2">Want <T /> for your organization?</h3>
               <p className="text-gray-600 text-sm">
                 We offer white-label partnerships for organizations that want their own branded AI platform. Custom skills, your branding, your licensing.
               </p>
             </div>
             <a
-              href="mailto:hello@technical-leaders.com?subject=Enterprise%20%2F%20White-Label%20Inquiry"
+              href="https://calendar.app.google/ybv193j7WX1L56vr8"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-lg transition-colors flex-shrink-0"
             >
-              <Mail className="w-4 h-4" />
-              Contact Us
+              <Calendar className="w-4 h-4" />
+              Book a Call
             </a>
           </div>
         </div>
