@@ -12,7 +12,7 @@ const ROLES = [
   "Researcher",
   "Coach & Mentor",
   "Safe Sandbox",
-  "Assistant",
+  "Private Assistant",
   "Co-Strategist",
   "Team Mate"
 ];
