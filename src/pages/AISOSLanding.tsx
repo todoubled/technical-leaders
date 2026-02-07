@@ -314,15 +314,13 @@ const AISOSLanding = () => {
                 Create a project. <T /> breaks it into tasks, runs workflows, and produces deliverables. You review and approve.
               </p>
               <p className="text-base text-gray-500 mb-8 max-w-lg mx-auto">
-                All from your desktop. No prompts. No copy-pasting. No starting from scratch. And no more wondering which AI tool is best for the job.
+                All from your desktop. Works with any LLM and AI tool provider. No prompts. No copy-pasting. No starting from scratch. And no more wondering which AI tool is best for the job.
               </p>
               <KitForm className="max-w-lg mx-auto" id="hero-kit-form" />
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500 mt-4 justify-center">
-                <span>Free forever</span>
+                <span>Learn advanced AI by starting simple</span>
                 <span className="hidden sm:inline">·</span>
-                <span>Private AI on your computer</span>
-                <span className="hidden sm:inline">·</span>
-                <span>No account needed</span>
+                <span>Works with ChatGPT, Claude, or Gemini</span>
               </div>
             </div>
 
@@ -345,15 +343,15 @@ const AISOSLanding = () => {
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-gray-500">
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-emerald-600" />
-            <span>Runs locally on your computer</span>
+            <span>Run safe, automated AI workflows that you control</span>
           </div>
           <div className="flex items-center gap-2">
             <Zap className="w-4 h-4 text-emerald-600" />
-            <span>Works with your own LLM API keys</span>
+            <span>Bring your own LLM keys</span>
           </div>
           <div className="flex items-center gap-2">
             <Brain className="w-4 h-4 text-emerald-600" />
-            <span>Optional offline AI mode</span>
+            <span>Offline private "sandbox mode"</span>
           </div>
         </div>
       </section>

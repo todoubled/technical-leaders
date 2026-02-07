@@ -9,12 +9,14 @@ import {
 } from "remotion";
 
 const ROLES = [
+  "All-in-One Tool",
   "Thought Partner",
-  "Researcher",
+  "Research Analyst",
   "Coach & Mentor",
   "Safe Sandbox",
   "Private Assistant",
-  "Team Mate",
+  "Team of Experts",
+  "Agent Skills Studio"
 ];
 
 const ROLE_DISPLAY_SECONDS = 1.0;
@@ -202,7 +204,7 @@ const HeroHeadlineComp = () => {
             maxWidth: 1800,
           }}
         >
-          Private, easy-to-use AI that works for you.
+          Private, easy-to-use AI that works for you without switching between tools.
         </div>
       </div>
     </AbsoluteFill>
