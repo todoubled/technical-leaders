@@ -295,9 +295,12 @@ const AISOSLanding = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl font-bold text-longhand-ink mb-6 tracking-tight">
-                Easy AI the Longhand way.
+              <h1 className="text-4xl sm:text-5xl font-bold text-longhand-ink mb-2 tracking-tight">
+                All your AI in one place.
               </h1>
+              <p className="text-xl sm:text-2xl text-longhand-ink/80 mb-6">
+                Longhand teaches while you work
+              </p>
               <p className="text-lg sm:text-xl text-longhand-ink/70 mb-4 max-w-lg mx-auto">
                 Create a project. Longhand breaks it into tasks, runs workflows, and produces deliverables. You review and approve.
               </p>
