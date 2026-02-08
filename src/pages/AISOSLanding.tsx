@@ -1,13 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import SEO from "@/components/SEO";
-import { HeroHeadlinePlayer } from "@/components/HeroHeadlinePlayer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackClick } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 import { Check, Shield, Zap, Target, Brain, Heart, TreePine, GraduationCap, Download, Award, Star, Building2, Mail, Calendar } from "lucide-react";
-
-const T = () => <span className="text-emerald-600 font-bold">T</span>;
 
 const DMG_URL = "https://drive.google.com/file/d/18F-BuyYCAzTajAhHi_U1y-WKKbNRl7Qb/view?usp=drive_link";
 
@@ -31,10 +28,10 @@ const KitForm = ({ className = "", id }: { className?: string; id?: string }) =>
 const NavCTA = () => (
   <Button
     onClick={() => {
-      trackClick("T CTA", { action: "scroll-to-form", location: "nav" });
+      trackClick("Longhand CTA", { action: "scroll-to-form", location: "nav" });
       document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" });
     }}
-    className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-lg"
+    className="bg-longhand-accent hover:bg-longhand-accent-hover text-white text-sm font-semibold px-4 py-2 rounded-lg"
   >
     Get Started Free
   </Button>
@@ -70,16 +67,16 @@ const PricingSection = () => {
 
   const paidPlans = [
     {
-      name: "T Academy",
+      name: "Longhand Academy",
       key: "premium",
       monthly: 50,
       annual: 33,
       period: annual ? "billed $400/year" : "billed monthly",
-      desc: "Integrated learning management system with self-paced AI curriculum and certification.",
+      desc: "Integrated learning system with self-paced AI curriculum and certification.",
       features: [
         "Everything in Free, plus:",
         "Learning mode with guided walkthroughs",
-        "Self-paced AI curriculum (LMS)",
+        "Self-paced AI curriculum",
         "AI Operator certification path",
         "Guided skill-building exercises",
         "Progress tracking & analytics",
@@ -88,16 +85,14 @@ const PricingSection = () => {
       ],
       impact: annual ? "$6.60" : "$10",
       cta: "Join the Waitlist",
-      badge: "Learn AI",
-      badgeColor: "bg-blue-500",
     },
     {
-      name: "T Pro",
+      name: "Longhand Pro",
       key: "pro",
       monthly: 125,
       annual: 83,
       period: annual ? "billed $1,000/year" : "billed monthly",
-      desc: "For professionals who want cutting-edge tools, live community, and direct support.",
+      desc: "For professionals who want advanced tools, live community, and direct support.",
       features: [
         "Everything in Academy, plus:",
         "Skill Forge — build custom AI skills",
@@ -109,8 +104,6 @@ const PricingSection = () => {
       ],
       impact: annual ? "$16.60" : "$25",
       cta: "Join the Waitlist",
-      badge: "Best Value",
-      badgeColor: "bg-purple-500",
     },
   ];
 
@@ -139,38 +132,38 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 border-t border-gray-200">
+    <section id="pricing" className="py-20 px-4 sm:px-6 border-t border-longhand-border">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">Simple, transparent pricing</h2>
-        <p className="text-gray-500 text-center mb-8">Start free. Upgrade when you're ready.</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 text-longhand-ink">Simple, transparent pricing</h2>
+        <p className="text-longhand-muted text-center mb-8">Start free. Upgrade when you're ready.</p>
 
         {/* Billing toggle */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <span className={`text-sm ${!annual ? "text-gray-800" : "text-gray-400"}`}>Monthly</span>
+          <span className={`text-sm ${!annual ? "text-longhand-ink" : "text-longhand-muted"}`}>Monthly</span>
           <button
             onClick={() => setAnnual(!annual)}
-            className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-emerald-500" : "bg-gray-300"}`}
+            className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-longhand-accent" : "bg-gray-300"}`}
           >
             <span className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform ${annual ? "translate-x-6" : "translate-x-0"}`} />
           </button>
-          <span className={`text-sm ${annual ? "text-gray-800" : "text-gray-400"}`}>
-            Annual <span className="text-emerald-600 text-xs font-medium">Save 33%</span>
+          <span className={`text-sm ${annual ? "text-longhand-ink" : "text-longhand-muted"}`}>
+            Annual <span className="text-longhand-accent text-xs font-medium">Save 33%</span>
           </span>
         </div>
 
         {/* Free, Academy, Pro — 3-col grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {/* T Free */}
-          <div className="rounded-2xl border border-emerald-500/40 bg-emerald-50 p-6 flex flex-col relative">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+          {/* Longhand Free */}
+          <div className="rounded-2xl border border-longhand-accent/40 bg-longhand-accent-light p-6 flex flex-col relative">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-longhand-accent text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
               Most Popular
             </span>
-            <h3 className="font-semibold text-gray-800 mb-2">T Free</h3>
+            <h3 className="font-semibold text-longhand-ink mb-2 font-sans">Longhand Free</h3>
             <div className="mb-1">
-              <span className="text-3xl font-bold text-gray-900">$0</span>
+              <span className="text-3xl font-bold text-longhand-ink font-sans">$0</span>
             </div>
-            <p className="text-xs text-gray-500 mb-4">free forever</p>
-            <p className="text-gray-600 text-sm mb-6">Bring your own keys, use any LLM.</p>
+            <p className="text-xs text-longhand-muted mb-4">free forever</p>
+            <p className="text-longhand-ink/70 text-sm mb-6">Bring your own keys, use any LLM.</p>
             <ul className="space-y-2 mb-6 flex-1">
               {[
                 "Built-in local AI model",
@@ -179,47 +172,42 @@ const PricingSection = () => {
                 "Project & task management with Skill Studio, Workflow Builder, and Feedback Loop",
               ].map((f, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{f}</span>
+                  <Check className="w-4 h-4 text-longhand-accent flex-shrink-0 mt-0.5" />
+                  <span className="text-longhand-ink/80">{f}</span>
                 </li>
               ))}
             </ul>
             <button
               onClick={() => {
-                trackClick("Pricing CTA", { plan: "T Free", cta_text: "Join the Waitlist" });
+                trackClick("Pricing CTA", { plan: "Longhand Free", cta_text: "Join the Waitlist" });
                 document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="text-center font-semibold py-3 rounded-lg transition-colors w-full bg-emerald-500 hover:bg-emerald-600 text-white"
+              className="text-center font-semibold py-3 rounded-lg transition-colors w-full bg-longhand-accent hover:bg-longhand-accent-hover text-white"
             >
               Join the Waitlist
             </button>
           </div>
 
           {paidPlans.map((plan, i) => (
-            <div key={i} className="rounded-2xl border border-gray-200 bg-white p-6 flex flex-col relative">
-              {plan.badge && (
-                <span className={`absolute -top-3 left-1/2 -translate-x-1/2 ${plan.badgeColor} text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap`}>
-                  {plan.badge}
-                </span>
-              )}
-              <h3 className="font-semibold text-gray-800 mb-2">{plan.name}</h3>
+            <div key={i} className="rounded-2xl border border-longhand-border bg-white p-6 flex flex-col relative">
+              <h3 className="font-semibold text-longhand-ink mb-2 font-sans">{plan.name}</h3>
               <div className="mb-1">
-                <span className="text-3xl font-bold text-gray-900">
+                <span className="text-3xl font-bold text-longhand-ink font-sans">
                   ${annual ? plan.annual : plan.monthly}
                 </span>
-                <span className="text-gray-500 text-sm">/mo</span>
+                <span className="text-longhand-muted text-sm">/mo</span>
               </div>
-              <p className="text-xs text-gray-500 mb-4">{plan.period}</p>
-              <p className="text-gray-600 text-sm mb-6">{plan.desc}</p>
+              <p className="text-xs text-longhand-muted mb-4">{plan.period}</p>
+              <p className="text-longhand-ink/70 text-sm mb-6">{plan.desc}</p>
               <ul className="space-y-2 mb-6 flex-1">
                 {plan.features.map((f, fi) => (
                   <li key={fi} className="flex items-start gap-2 text-sm">
-                    <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{f}</span>
+                    <Check className="w-4 h-4 text-longhand-accent flex-shrink-0 mt-0.5" />
+                    <span className="text-longhand-ink/80">{f}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-emerald-600 mb-4 flex items-center gap-1.5">
+              <p className="text-xs text-longhand-accent mb-4 flex items-center gap-1.5">
                 <Heart className="w-3.5 h-3.5" />
                 {plan.impact}/mo funds environmental & workforce impact
               </p>
@@ -228,7 +216,7 @@ const PricingSection = () => {
                   trackClick("Pricing CTA", { plan: plan.name, cta_text: "Join the Waitlist" });
                   document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-center font-semibold py-3 rounded-lg transition-colors block w-full bg-emerald-500 hover:bg-emerald-600 text-white"
+                className="text-center font-semibold py-3 rounded-lg transition-colors block w-full bg-longhand-accent hover:bg-longhand-accent-hover text-white"
               >
                 {plan.cta}
               </button>
@@ -236,30 +224,30 @@ const PricingSection = () => {
           ))}
         </div>
 
-        {/* T Enterprise — full width */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 mt-6 relative">
-          <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+        {/* Enterprise — full width */}
+        <div className="rounded-2xl border border-longhand-border bg-white p-6 sm:p-8 mt-6 relative">
+          <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-longhand-accent text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
             White Label
           </span>
           <div className="flex items-center gap-2 mb-2">
-            <h3 className="font-semibold text-gray-800 text-lg">T Enterprise</h3>
-            <Building2 className="w-4 h-4 text-emerald-600" />
+            <h3 className="font-semibold text-longhand-ink text-lg font-sans">Longhand Enterprise</h3>
+            <Building2 className="w-4 h-4 text-longhand-accent" />
           </div>
-          <p className="text-gray-600 text-sm mb-5">White-label T for your clients. We train you/your team how to do it all. Three packaging options — you control pricing, they get your brand.</p>
+          <p className="text-longhand-ink/70 text-sm mb-5">White-label Longhand for your clients. We train you and your team how to do it all. Three packaging options — you control pricing, they get your brand.</p>
           <div className="grid sm:grid-cols-3 gap-4">
             {enterpriseOffers.map((offer, i) => (
-              <div key={i} className="border border-gray-100 rounded-lg p-3">
+              <div key={i} className="border border-longhand-border/60 rounded-lg p-3">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-medium text-sm text-gray-800">{offer.name}</span>
-                  <span className="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">{offer.tag}</span>
+                  <span className="font-medium text-sm text-longhand-ink">{offer.name}</span>
+                  <span className="text-[10px] font-medium text-longhand-accent bg-longhand-accent-light px-1.5 py-0.5 rounded">{offer.tag}</span>
                 </div>
-                <p className="text-xs text-gray-500 mb-1.5">{offer.desc}</p>
-                <p className="text-xs font-medium text-gray-700">{offer.pricing}</p>
+                <p className="text-xs text-longhand-muted mb-1.5">{offer.desc}</p>
+                <p className="text-xs font-medium text-longhand-ink/80">{offer.pricing}</p>
               </div>
             ))}
           </div>
           <div className="flex items-center justify-between mt-4">
-            <p className="text-xs text-emerald-600 flex items-center gap-1.5">
+            <p className="text-xs text-longhand-accent flex items-center gap-1.5">
               <Heart className="w-3.5 h-3.5" />
               20% impact contribution carries over to white-label
             </p>
@@ -267,36 +255,36 @@ const PricingSection = () => {
               href="https://calendar.app.google/ybv193j7WX1L56vr8"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackClick("Pricing CTA", { plan: "T Enterprise", cta_text: "Book a Call" })}
-              className="inline-flex items-center justify-center gap-2 font-semibold py-3 px-8 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-200"
+              onClick={() => trackClick("Pricing CTA", { plan: "Longhand Enterprise", cta_text: "Book a Call" })}
+              className="inline-flex items-center justify-center gap-2 font-semibold py-3 px-8 rounded-lg transition-colors bg-longhand-paper hover:bg-longhand-border/50 text-longhand-ink border border-longhand-border"
             >
               <Calendar className="w-4 h-4" />
               Book a Call
             </a>
           </div>
         </div>
-        <p className="text-center text-sm text-gray-500 mt-8">Non-profit organization pricing available.</p>
+        <p className="text-center text-sm text-longhand-muted mt-8">Non-profit organization pricing available.</p>
       </div>
     </section>
   );
 };
 
 const AISOSLanding = () => {
-  useTrackScrollDepth("T Landing");
+  useTrackScrollDepth("Longhand Landing");
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-longhand-paper text-longhand-ink">
       <SEO
-        title="T — Create Projects. Delegate to AI. Approve Deliverables."
-        description="T is a free desktop AI assistant that runs privately on your Mac. Create projects, delegate tasks to AI agents, and review deliverables. Includes AI Operator certification, local LLM support, and human-in-the-loop review. 20% of paid subscriptions fund environmental and workforce impact."
-        keywords={["local AI", "private AI assistant", "AI certification", "AI for executives", "human-in-the-loop AI", "AI Operator certification", "AI delegation", "AI agents", "AI productivity", "leadership automation", "T app", "agentic workflows"]}
+        title="Longhand — The practiced way to master AI."
+        description="Longhand is a desktop app that teaches you AI by having you do real work with it. Create projects, delegate to AI agents, review deliverables. Private, local-first, works with any LLM. 20% of paid subscriptions fund environmental and workforce impact."
+        keywords={["AI literacy", "learn AI", "AI fluency", "AI certification", "AI Operator certification", "AI delegation", "AI agents", "AI education", "Longhand", "local AI", "private AI", "agentic workflows"]}
       />
 
-      {/* Navigation — stays dark */}
-      <nav className="fixed top-0 w-full bg-[#0a0a0f]/90 backdrop-blur-md z-50 border-b border-white/5">
+      {/* Navigation — warm, minimal */}
+      <nav className="fixed top-0 w-full bg-longhand-paper/90 backdrop-blur-md z-50 border-b border-longhand-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center h-14">
           <a href="/" className="flex items-center">
-            <img src="/orange-logo.png" alt="Technical Leaders" className="h-8 w-auto" />
+            <img src="/longhand-logo.png" alt="Longhand" className="h-8 w-auto" />
           </a>
           <NavCTA />
         </div>
@@ -307,18 +295,18 @@ const AISOSLanding = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center">
-              <div className="mb-6">
-                <HeroHeadlinePlayer />
-              </div>
-              <p className="text-lg sm:text-xl text-gray-600 mb-4 max-w-lg mx-auto">
-                Create a project. <T /> breaks it into tasks, runs workflows, and produces deliverables. You review and approve.
+              <h1 className="text-4xl sm:text-5xl font-bold text-longhand-ink mb-6 tracking-tight">
+                Easy AI the Longhand way.
+              </h1>
+              <p className="text-lg sm:text-xl text-longhand-ink/70 mb-4 max-w-lg mx-auto">
+                Create a project. Longhand breaks it into tasks, runs workflows, and produces deliverables. You review and approve.
               </p>
-              <p className="text-base text-gray-500 mb-8 max-w-lg mx-auto">
-                All from your desktop. Works with any LLM and AI tool provider. No prompts. No copy-pasting. No starting from scratch. And no more wondering which AI tool is best for the job.
+              <p className="text-base text-longhand-muted mb-8 max-w-lg mx-auto">
+                All from your desktop. Works with any LLM and AI tool provider. No prompts. No copy-pasting. No starting from scratch.
               </p>
               <KitForm className="max-w-lg mx-auto" id="hero-kit-form" />
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500 mt-4 justify-center">
-                <span>Learn advanced AI by starting simple</span>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-longhand-muted mt-4 justify-center">
+                <span>Learn by doing real work</span>
                 <span className="hidden sm:inline">·</span>
                 <span>Works with ChatGPT, Claude, or Gemini</span>
               </div>
@@ -326,10 +314,10 @@ const AISOSLanding = () => {
 
             {/* Product Shot */}
             <div className="flex justify-center items-center min-h-[420px] sm:min-h-[480px]">
-              <div className="w-full max-w-md lg:max-w-lg rounded-xl overflow-hidden shadow-xl shadow-gray-300/50 border border-gray-200">
+              <div className="w-full max-w-md lg:max-w-lg rounded-xl overflow-hidden shadow-xl shadow-longhand-ink/5 border border-longhand-border">
                 <img
-                  src="/t-screenshot.png"
-                  alt="T app dashboard showing projects, tasks, and deliverables"
+                  src="/longhand-screenshot.png"
+                  alt="Longhand app dashboard showing projects, tasks, and deliverables"
                   className="w-full h-auto block"
                 />
               </div>
@@ -339,62 +327,62 @@ const AISOSLanding = () => {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-6 px-4 sm:px-6 border-t border-gray-200">
-        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-gray-500">
+      <section className="py-6 px-4 sm:px-6 border-t border-longhand-border">
+        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-longhand-muted">
           <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-emerald-600" />
-            <span>Run safe, automated AI workflows that you control</span>
+            <Shield className="w-4 h-4 text-longhand-accent" />
+            <span>Safe, structured AI workflows you control</span>
           </div>
           <div className="flex items-center gap-2">
-            <Zap className="w-4 h-4 text-emerald-600" />
+            <Zap className="w-4 h-4 text-longhand-accent" />
             <span>Bring your own LLM keys</span>
           </div>
           <div className="flex items-center gap-2">
-            <Brain className="w-4 h-4 text-emerald-600" />
-            <span>Offline private "sandbox mode"</span>
+            <Brain className="w-4 h-4 text-longhand-accent" />
+            <span>Offline private sandbox mode</span>
           </div>
         </div>
       </section>
 
-      {/* How T Works */}
-      <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
+      {/* How Longhand Works */}
+      <section className="py-20 px-4 sm:px-6 border-t border-longhand-border">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">How it works</h2>
-          <p className="text-gray-500 text-center mb-12">From project to deliverable in four moves.</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 text-longhand-ink">How it works</h2>
+          <p className="text-longhand-muted text-center mb-12">From project to deliverable in four steps.</p>
           <div className="space-y-6">
             {[
               {
                 step: "1",
                 title: "CREATE A PROJECT",
-                desc: <>Define what you need and set a deadline. <T /> breaks it into tasks and tracks what's on track, at risk, or behind.</>,
+                desc: "Define what you need and set a deadline. Longhand breaks it into tasks and tracks what's on track, at risk, or behind.",
                 icon: <Target className="w-4 h-4" />,
               },
               {
                 step: "2",
                 title: "HIT DELEGATE",
-                desc: <><T /> builds a workflow for each task, picks the right skills and tools, and runs them. You don't write prompts — <T /> plans the workflow.</>,
+                desc: "Longhand builds a workflow for each task, picks the right skills and tools, and runs them. You don't write prompts — Longhand plans the workflow.",
                 icon: <Zap className="w-4 h-4" />,
               },
               {
                 step: "3",
                 title: "REVIEW FROM ONE QUEUE",
-                desc: <>Every deliverable — images, documents — lands in your Work Stream. Approve it, or reject with a note — <T /> retries with your feedback automatically.</>,
+                desc: "Every deliverable — images, documents — lands in your Work Stream. Approve it, or reject with a note. Longhand retries with your feedback automatically.",
                 icon: <Check className="w-4 h-4" />,
               },
               {
                 step: "4",
-                title: "GET SMARTER OVER TIME",
-                desc: <>Upload SOPs. Add training examples. Build reusable Skills. The more you use <T />, the better it gets at your specific work — it compounds.</>,
+                title: "GET BETTER OVER TIME",
+                desc: "Upload SOPs. Add training examples. Build reusable skills. The more you use Longhand, the better it gets at your specific work. It compounds.",
                 icon: <Brain className="w-4 h-4" />,
               },
             ].map((s, i) => (
               <div key={i} className="flex items-start gap-5">
-                <div className="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-emerald-600 font-bold text-sm">{s.step}</span>
+                <div className="w-10 h-10 rounded-full bg-longhand-accent-light border border-longhand-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-longhand-accent font-bold text-sm">{s.step}</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm tracking-wide text-emerald-600 mb-1">{s.title}</h3>
-                  <p className="text-gray-600">{s.desc}</p>
+                  <h3 className="font-semibold text-sm tracking-wide text-longhand-accent mb-1 font-sans">{s.title}</h3>
+                  <p className="text-longhand-ink/70">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -403,77 +391,77 @@ const AISOSLanding = () => {
       </section>
 
       {/* Certification Section */}
-      <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
+      <section className="py-20 px-4 sm:px-6 border-t border-longhand-border">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded-full px-4 py-1.5 mb-6">
-              <Award className="w-4 h-4 text-emerald-600" />
-              <span className="text-emerald-600 text-sm font-medium">AI Operator Certification</span>
+            <div className="inline-flex items-center gap-2 bg-longhand-accent-light border border-longhand-accent/20 rounded-full px-4 py-1.5 mb-6">
+              <Award className="w-4 h-4 text-longhand-accent" />
+              <span className="text-longhand-accent text-sm font-medium">AI Operator Certification</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Become a Certified AI Operator</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-longhand-ink">Become a Certified AI Operator</h2>
+            <p className="text-longhand-ink/70 max-w-2xl mx-auto">
               Learn AI by doing real work. Every feature has guided walkthroughs. Every task teaches a concept. Track your progress toward full certification.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
             {[
-              { tier: "Beginner", desc: "Core concepts", icon: "1", color: "text-gray-500 border-gray-300 bg-gray-50" },
-              { tier: "Explorer", desc: "10+ features used", icon: "2", color: "text-blue-600 border-blue-200 bg-blue-50" },
-              { tier: "Operator", desc: "25+ features mastered", icon: "3", color: "text-purple-600 border-purple-200 bg-purple-50" },
-              { tier: "Certified", desc: "Full certification", icon: "4", color: "text-emerald-600 border-emerald-200 bg-emerald-50" },
+              { tier: "Beginner", desc: "Core concepts", icon: "1", color: "text-longhand-muted border-longhand-border bg-longhand-paper" },
+              { tier: "Explorer", desc: "10+ features used", icon: "2", color: "text-longhand-accent/60 border-longhand-accent/20 bg-longhand-accent-light" },
+              { tier: "Operator", desc: "25+ features mastered", icon: "3", color: "text-longhand-accent/80 border-longhand-accent/30 bg-longhand-accent-light" },
+              { tier: "Certified", desc: "Full certification", icon: "4", color: "text-longhand-accent border-longhand-accent/40 bg-longhand-accent-light" },
             ].map((t, i) => (
               <div key={i} className={`rounded-xl border p-4 text-center ${t.color}`}>
                 <div className="w-10 h-10 rounded-full border border-current flex items-center justify-center mx-auto mb-3">
                   <span className="font-bold text-sm">{t.icon}</span>
                 </div>
-                <h3 className="font-semibold text-sm mb-1">{t.tier}</h3>
-                <p className="text-xs text-gray-500">{t.desc}</p>
+                <h3 className="font-semibold text-sm mb-1 font-sans">{t.tier}</h3>
+                <p className="text-xs text-longhand-muted">{t.desc}</p>
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
-            <Star className="w-4 h-4 text-emerald-600" />
-            <span>37 trackable features · 4 certification tiers · Included with Premium</span>
+          <div className="flex items-center justify-center gap-2 text-sm text-longhand-muted">
+            <Star className="w-4 h-4 text-longhand-accent" />
+            <span>37 trackable features · 4 certification tiers · Included with Academy</span>
           </div>
         </div>
       </section>
 
       {/* Impact Report Section */}
-      <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
+      <section className="py-20 px-4 sm:px-6 border-t border-longhand-border">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded-full px-4 py-1.5 mb-6">
-                <Heart className="w-4 h-4 text-emerald-600" />
-                <span className="text-emerald-600 text-sm font-medium">AI that gives back</span>
+              <div className="inline-flex items-center gap-2 bg-longhand-accent-light border border-longhand-accent/20 rounded-full px-4 py-1.5 mb-6">
+                <Heart className="w-4 h-4 text-longhand-accent" />
+                <span className="text-longhand-accent text-sm font-medium">AI that gives back</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">See exactly where your subscription makes a difference</h2>
-              <p className="text-gray-600 mb-6">
-                20% of every <T /> subscription goes directly to environmental offsets, AI reskilling grants, and mental health support for workers affected by AI. Your monthly Impact Report shows you exactly where every dollar went.
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-longhand-ink">See exactly where your subscription makes a difference</h2>
+              <p className="text-longhand-ink/70 mb-6">
+                20% of every Longhand subscription goes directly to environmental offsets, AI reskilling grants, and mental health support for workers affected by AI. Your monthly Impact Report shows you exactly where every dollar went.
               </p>
               <ul className="space-y-3">
                 {[
-                  { icon: <TreePine className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />, text: "2.4 tons of CO₂ offset per month via Gold Standard credits" },
-                  { icon: <GraduationCap className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />, text: "AI reskilling grants funded through TechBridge" },
-                  { icon: <Heart className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />, text: "Therapy and wellness sessions for AI-affected workers" },
-                  { icon: <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />, text: "Quarterly independent audits — full transparency" },
+                  { icon: <TreePine className="w-4 h-4 text-longhand-accent flex-shrink-0 mt-0.5" />, text: "2.4 tons of CO\u2082 offset per month via Gold Standard credits" },
+                  { icon: <GraduationCap className="w-4 h-4 text-longhand-accent flex-shrink-0 mt-0.5" />, text: "AI reskilling grants funded through TechBridge" },
+                  { icon: <Heart className="w-4 h-4 text-longhand-accent flex-shrink-0 mt-0.5" />, text: "Therapy and wellness sessions for AI-affected workers" },
+                  { icon: <Check className="w-4 h-4 text-longhand-accent flex-shrink-0 mt-0.5" />, text: "Quarterly independent audits — full transparency" },
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     {item.icon}
-                    <span className="text-gray-700 text-sm">{item.text}</span>
+                    <span className="text-longhand-ink/80 text-sm">{item.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="flex justify-center">
-              <div className="w-full max-w-[320px] bg-white border border-gray-200 rounded-2xl p-6 shadow-lg shadow-gray-200/50">
+              <div className="w-full max-w-[320px] bg-white border border-longhand-border rounded-2xl p-6 shadow-lg shadow-longhand-ink/5">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center">
-                    <Heart className="w-3.5 h-3.5 text-emerald-600" />
+                  <div className="w-6 h-6 rounded-full bg-longhand-accent-light flex items-center justify-center">
+                    <Heart className="w-3.5 h-3.5 text-longhand-accent" />
                   </div>
-                  <span className="text-xs text-gray-500 font-medium tracking-wide uppercase">Monthly Impact Receipt</span>
+                  <span className="text-xs text-longhand-muted font-medium tracking-wide uppercase">Monthly Impact Receipt</span>
                 </div>
-                <div className="border-t border-dashed border-gray-200 pt-4 space-y-3">
+                <div className="border-t border-dashed border-longhand-border pt-4 space-y-3">
                   {[
                     { label: "Environmental Offset", amount: "$3.00", detail: "Gold Standard" },
                     { label: "Workforce Development", amount: "$4.00", detail: "TechBridge" },
@@ -481,18 +469,18 @@ const AISOSLanding = () => {
                   ].map((line, i) => (
                     <div key={i} className="flex justify-between items-start">
                       <div>
-                        <p className="text-gray-800 text-sm font-medium">{line.label}</p>
-                        <p className="text-gray-500 text-xs">{line.detail}</p>
+                        <p className="text-longhand-ink text-sm font-medium">{line.label}</p>
+                        <p className="text-longhand-muted text-xs">{line.detail}</p>
                       </div>
-                      <span className="text-emerald-600 text-sm font-semibold">{line.amount}</span>
+                      <span className="text-longhand-accent text-sm font-semibold">{line.amount}</span>
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-dashed border-gray-200 mt-4 pt-4 flex justify-between items-center">
-                  <span className="text-gray-700 text-sm font-semibold">Your impact this month</span>
-                  <span className="text-emerald-600 font-bold">$10.00</span>
+                <div className="border-t border-dashed border-longhand-border mt-4 pt-4 flex justify-between items-center">
+                  <span className="text-longhand-ink text-sm font-semibold">Your impact this month</span>
+                  <span className="text-longhand-accent font-bold">$10.00</span>
                 </div>
-                <p className="text-gray-400 text-xs mt-3 text-center">20% of your $50/mo subscription</p>
+                <p className="text-longhand-muted text-xs mt-3 text-center">20% of your $50/mo subscription</p>
               </div>
             </div>
           </div>
@@ -500,15 +488,15 @@ const AISOSLanding = () => {
       </section>
 
       {/* Privacy Section */}
-      <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
+      <section className="py-20 px-4 sm:px-6 border-t border-longhand-border">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded-full px-4 py-1.5 mb-6">
-            <Shield className="w-4 h-4 text-emerald-600" />
-            <span className="text-emerald-600 text-sm font-medium">Private by default</span>
+          <div className="inline-flex items-center gap-2 bg-longhand-accent-light border border-longhand-accent/20 rounded-full px-4 py-1.5 mb-6">
+            <Shield className="w-4 h-4 text-longhand-accent" />
+            <span className="text-longhand-accent text-sm font-medium">Private by default</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Your data never leaves your machine</h2>
-          <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
-            <T /> runs entirely on your computer. Your projects, conversations, and work history stay in a local folder. We have zero access to your data.
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-longhand-ink">Your data never leaves your machine</h2>
+          <p className="text-longhand-ink/70 mb-10 max-w-2xl mx-auto">
+            Longhand runs entirely on your computer. Your projects, conversations, and work history stay in a local folder. We have zero access to your data.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {[
@@ -525,28 +513,28 @@ const AISOSLanding = () => {
                 desc: "Built-in local AI model — no setup required. Runs 100% offline. Nothing leaves your device.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-white border border-gray-200 rounded-xl p-5 text-left">
-                <h3 className="font-semibold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm">{item.desc}</p>
+              <div key={i} className="bg-white border border-longhand-border rounded-xl p-5 text-left">
+                <h3 className="font-semibold text-longhand-ink mb-2 font-sans">{item.title}</h3>
+                <p className="text-longhand-muted text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Leaders Choose T */}
-      <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
+      {/* Why People Choose Longhand */}
+      <section className="py-20 px-4 sm:px-6 border-t border-longhand-border">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Built for how people actually work</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-longhand-ink">Built for how people actually work</h2>
           <div className="space-y-4">
             {[
               {
                 title: "Nothing ships without your approval",
-                desc: "You review every output before it goes anywhere. Score work 1-10. Track your AI team's quality over time.",
+                desc: "You review every output before it goes anywhere. Score work 1-10. Track quality over time.",
               },
               {
                 title: "Projects and deadlines, not chat windows",
-                desc: "Projects, tasks, workflows, progress tracking — a system you already know, powered by AI agents.",
+                desc: "Projects, tasks, workflows, progress tracking — a system you already know, with AI agents doing the work.",
               },
               {
                 title: "Mark what's AI and what's yours",
@@ -554,18 +542,18 @@ const AISOSLanding = () => {
               },
               {
                 title: "Connect your tools",
-                desc: "Plug in MCP servers, APIs, and databases. T uses them as tools inside workflows — no coding required.",
+                desc: "Plug in MCP servers, APIs, and databases. Longhand uses them as tools inside workflows — no coding required.",
               },
               {
                 title: "It compounds",
                 desc: "Every SOP you upload, every skill you train, every workflow you approve makes the next one faster and better.",
               },
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-4 bg-white border border-gray-200 rounded-xl p-5">
-                <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <div key={i} className="flex items-start gap-4 bg-white border border-longhand-border rounded-xl p-5">
+                <Check className="w-5 h-5 text-longhand-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-gray-800 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <h3 className="font-semibold text-longhand-ink mb-1 font-sans">{item.title}</h3>
+                  <p className="text-longhand-ink/70 text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -577,45 +565,45 @@ const AISOSLanding = () => {
       <PricingSection />
 
       {/* FAQ */}
-      <section className="py-20 px-4 sm:px-6 border-t border-gray-200">
+      <section className="py-20 px-4 sm:px-6 border-t border-longhand-border">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Questions</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-longhand-ink">Questions</h2>
           <Accordion type="single" collapsible className="space-y-2">
             {[
               {
                 q: "Is it really free?",
-                a: <>Yes. <T /> Free gives you full access to local LLMs and your own API keys with complete privacy. No credit card required, no time limit. Premium and Pro tiers unlock certification, analytics, and advanced tools.</>,
+                a: "Yes. Longhand Free gives you full access to local LLMs and your own API keys with complete privacy. No credit card required, no time limit. Academy and Pro tiers unlock certification, analytics, and advanced tools.",
               },
               {
                 q: "What platforms do you support?",
-                a: <><T /> runs natively on Mac (Apple Silicon & Intel). It's a desktop app that runs locally on your computer — not in the cloud. Windows coming soon.</>,
+                a: "Longhand runs natively on Mac (Apple Silicon & Intel). It's a desktop app that runs locally on your computer — not in the cloud. Windows coming soon.",
               },
               {
                 q: "Can't I just use ChatGPT?",
-                a: <>ChatGPT is a blank canvas you go to. <T /> comes to you with structured work, tracks follow-ups, learns your context, and holds your AI team accountable. It's the difference between a gym membership and a trainer who shows up every morning.</>,
+                a: "ChatGPT is a blank canvas you go to. Longhand comes to you with structured work, tracks follow-ups, learns your context, and holds your AI team accountable. It's the difference between a gym membership and a trainer who shows up every morning.",
               },
               {
                 q: "Is my data private?",
-                a: <><T /> runs on your computer. Your data stays in a local folder. AI calls go directly from your machine to your provider using your own API key. We have zero access. You can also run fully offline with the built-in local AI model.</>,
+                a: "Longhand runs on your computer. Your data stays in a local folder. AI calls go directly from your machine to your provider using your own API key. We have zero access. You can also run fully offline with the built-in local AI model.",
               },
               {
                 q: "Do I need an API key?",
-                a: <>You can use <T /> with your own OpenAI, Anthropic, or Google Gemini key — or run fully offline with the built-in local AI model. No API key required to get started.</>,
+                a: "You can use Longhand with your own OpenAI, Anthropic, or Google Gemini key — or run fully offline with the built-in local AI model. No API key required to get started.",
               },
               {
                 q: "How fast does it learn?",
-                a: <>Day 1: your name, role, and priorities. Day 7: your patterns and preferences. Day 30: your org, projects, and working style. It only compounds from there.</>,
+                a: "Day 1: your name, role, and priorities. Day 7: your patterns and preferences. Day 30: your org, projects, and working style. It only compounds from there.",
               },
               {
                 q: "What are the requirements?",
                 a: "macOS 13+ (Apple Silicon or Intel). Around 10GB disk space for the app and local AI model. Internet connection optional — offline mode works without one.",
               },
             ].map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border border-gray-200 rounded-xl px-4 bg-white">
-                <AccordionTrigger className="text-left text-gray-800 hover:no-underline">
+              <AccordionItem key={i} value={`faq-${i}`} className="border border-longhand-border rounded-xl px-4 bg-white">
+                <AccordionTrigger className="text-left text-longhand-ink hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
+                <AccordionContent className="text-longhand-ink/70">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
@@ -625,33 +613,33 @@ const AISOSLanding = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-4 sm:px-6 border-t border-gray-200">
+      <section className="py-24 px-4 sm:px-6 border-t border-longhand-border">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Stop managing AI. Start leading it.</h2>
-          <p className="text-gray-600 text-lg mb-8">Create your first project. See deliverables before lunch.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-longhand-ink">Stop managing AI. Start leading it.</h2>
+          <p className="text-longhand-ink/70 text-lg mb-8">Your first project is the hardest part. After that, it compounds.</p>
           <div className="flex justify-center mb-4">
             <button
               onClick={() => {
-                trackClick("T CTA", { action: "join-waitlist", location: "final-cta" });
+                trackClick("Longhand CTA", { action: "join-waitlist", location: "final-cta" });
                 document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              className="bg-longhand-accent hover:bg-longhand-accent-hover text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
               Join the Waitlist
             </button>
           </div>
-          <p className="text-sm text-gray-500 mt-4">Mac · Apple Silicon & Intel · No account needed</p>
-          <p className="text-xs text-gray-400 mt-2">Free forever. No credit card required.</p>
+          <p className="text-sm text-longhand-muted mt-4">Mac · Apple Silicon & Intel · No account needed</p>
+          <p className="text-xs text-longhand-muted/70 mt-2">Free forever. No credit card required.</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Technical Leaders. All rights reserved.</p>
+      <footer className="py-8 px-4 sm:px-6 border-t border-longhand-border">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-longhand-muted">
+          <p>&copy; {new Date().getFullYear()} Longhand. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="/privacy-policy" className="hover:text-gray-700 transition-colors">Privacy</a>
-            <a href="mailto:hello@technical-leaders.com" className="hover:text-gray-700 transition-colors">Contact</a>
+            <a href="/privacy-policy" className="hover:text-longhand-ink transition-colors">Privacy</a>
+            <a href="mailto:hello@technical-leaders.com" className="hover:text-longhand-ink transition-colors">Contact</a>
           </div>
         </div>
       </footer>

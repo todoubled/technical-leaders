@@ -185,7 +185,8 @@ const App = () => (
           <Route path="/26-workflows" element={<TwentySixWorkflows />} />
           <Route path="/rga-playbook" element={<RGAPlaybook />} />
           <Route path="/ai-coworker" element={<AICoworker />} />
-          <Route path="/t" element={<AISOSLanding />} />
+          <Route path="/longhand" element={<AISOSLanding />} />
+          <Route path="/t" element={<Navigate to="/longhand" replace />} />
           <Route path="/t-download" element={<TDownload />} />
           <Route path="/launch-guide" element={<Navigate to="/rga-playbook" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
