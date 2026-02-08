@@ -296,13 +296,13 @@ const AISOSLanding = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center">
               <h1 className="text-4xl sm:text-5xl font-bold text-longhand-ink mb-2 tracking-tight">
-                All your AI in one place.
+                All your AI in one private place.
               </h1>
               <p className="text-xl sm:text-2xl text-longhand-ink/80 mb-6">
                 Longhand teaches while you work.
               </p>
               <p className="text-lg sm:text-xl text-longhand-ink/70 mb-4 max-w-lg mx-auto">
-                Create a project. Longhand breaks it into tasks, runs workflows, and produces deliverables. You review and approve.
+                Describe your project. Longhand breaks it into tasks, builds custom agent skills, runs workflows, and produces deliverables. You review and approve.
               </p>
               <p className="text-base text-longhand-muted mb-8 max-w-lg mx-auto">
                 All from your desktop. Works with any LLM and AI tool provider. No prompts. No copy-pasting. No starting from scratch.
