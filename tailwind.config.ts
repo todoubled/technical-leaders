@@ -18,10 +18,25 @@ export default {
 			}
 		},
 		fontFamily: {
-			sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+			sans: ['"Source Sans 3"', 'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+			serif: ['"Lora"', 'ui-serif', 'Georgia', 'serif'],
 		},
 		extend: {
 			colors: {
+				longhand: {
+					paper: '#FAF8F5',
+					ink: '#2C2520',
+					muted: '#8C8279',
+					accent: {
+						DEFAULT: '#C8550A',
+						light: '#FEF3EC',
+						hover: '#A84709',
+					},
+					success: '#6B8F71',
+					warning: '#C49A3C',
+					error: '#A0453E',
+					border: '#E8E2DB',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
