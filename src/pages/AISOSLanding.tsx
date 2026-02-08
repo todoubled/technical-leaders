@@ -296,7 +296,7 @@ const AISOSLanding = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center">
               <h1 className="text-4xl sm:text-5xl font-bold text-longhand-ink mb-2 tracking-tight">
-                All your AI in one place.
+                All your AI in one private place.
               </h1>
               <p className="text-xl sm:text-2xl text-longhand-ink/80 mb-6">
                 Longhand teaches while you work.
