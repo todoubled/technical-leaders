@@ -301,7 +301,7 @@ const AISOSLanding = () => {
                 in one private place.
               </h1>
               <p className="text-xl sm:text-2xl text-longhand-ink/80 mb-6">
-                Longhand teaches while you work.
+                Longhand learns what you like and explains while it works for you.
               </p>
               <p className="text-lg sm:text-xl text-longhand-ink/70 mb-4 max-w-lg mx-auto">
                 Describe your project. Longhand breaks it into tasks, builds custom agent skills, runs workflows, and produces deliverables. You review and approve.
