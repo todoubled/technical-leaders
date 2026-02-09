@@ -603,6 +603,42 @@ const AISOSLanding = () => {
                 q: "What are the requirements?",
                 a: "macOS 13+ (Apple Silicon or Intel). Around 10GB disk space for the app and local AI model. Internet connection optional — offline mode works without one.",
               },
+              {
+                q: "How is Longhand different from ChatGPT or other AI chatbots?",
+                a: "Longhand is goal-driven, not chat-driven. You set OKRs with projects, key results, metrics, and deadlines — and AI work ties back to measurable objectives. ChatGPT doesn't know what you're trying to accomplish next week.",
+              },
+              {
+                q: "What are Skills?",
+                a: "Skills are portable, versioned, shareable AI \"apps\" — packages with training examples, model preferences, and MCP tool requirements. The Skill Forge lets AI generate new skills from descriptions or uploaded SOPs. This goes miles beyond saving a custom GPT.",
+              },
+              {
+                q: "Can I build multi-step workflows?",
+                a: "Yes. Chain skills together with structured data piping between steps, human-in-the-loop approval checkpoints, and deliverable marking. It's process automation in natural language — closer to Zapier than a chatbot.",
+              },
+              {
+                q: "How do I review AI output?",
+                a: "AI outputs go to your Work Inbox — a review queue where you score, approve, reject, or redirect them. You're managing AI like a team member, not just reading chat bubbles.",
+              },
+              {
+                q: "Can Longhand run 100% offline?",
+                a: "Yes. Longhand bundles llama-server with the Qwen3-30B model, running entirely on-device. No data leaves your machine. ChatGPT, Claude, and Gemini can't offer this level of privacy.",
+              },
+              {
+                q: "Am I locked into one AI provider?",
+                a: "No. Longhand routes to Anthropic, OpenAI, Gemini, or local models with model tier abstraction (fast/balanced/powerful). Set per-workflow, daily, and monthly cost limits. You're never locked to one vendor or surprised by a bill.",
+              },
+              {
+                q: "What is MCP extensibility?",
+                a: "Longhand connects to MCP servers and CLI tools, giving AI access to real-world systems. You can import existing Claude Desktop servers, and skills can declare required connections.",
+              },
+              {
+                q: "Does Longhand help me learn AI?",
+                a: "Yes. Longhand has a built-in learning system with guided exercises, a certification path (\"AI Operator\"), and learning mode with tooltips. The app teaches you to be effective with AI, not just use it.",
+              },
+              {
+                q: "What is the Impact Model?",
+                a: "20% of Longhand subscriptions fund environmental offsets and workforce reskilling. You receive monthly impact receipts. No other AI tool does this.",
+              },
             ].map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border border-longhand-border rounded-xl px-4 bg-white">
                 <AccordionTrigger className="text-left text-longhand-ink hover:no-underline">
