@@ -582,6 +582,10 @@ const AISOSLanding = () => {
                 a: "Yes. Longhand Free gives you full access to local LLMs and your own API keys with complete privacy. No credit card required, no time limit. Academy and Pro tiers unlock certification, analytics, and advanced tools.",
               },
               {
+                q: "Does Longhand help me learn AI?",
+                a: "Yes. Longhand has a built-in learning system with guided exercises, a certification path (\"AI Operator\"), and learning mode with tooltips. The app teaches you to be effective with AI, not just use it.",
+              },
+              {
                 q: "What platforms do you support?",
                 a: "Longhand runs natively on Mac (Apple Silicon & Intel). It's a desktop app that runs locally on your computer — not in the cloud. Windows coming soon.",
               },
@@ -592,6 +596,10 @@ const AISOSLanding = () => {
               {
                 q: "Is my data private?",
                 a: "Longhand runs on your computer. Your data stays in a local folder. AI calls go directly from your machine to your provider using your own API key. We have zero access. You can also run fully offline with the built-in local AI model.",
+              },
+              {
+                q: "What is the Impact Model?",
+                a: "20% of Longhand subscriptions fund environmental offsets and workforce reskilling. You receive monthly impact receipts. No other AI tool does this.",
               },
               {
                 q: "Do I need an API key?",
@@ -632,14 +640,6 @@ const AISOSLanding = () => {
               {
                 q: "What is MCP extensibility?",
                 a: "Longhand connects to MCP servers and CLI tools, giving AI access to real-world systems. You can import existing Claude Desktop servers, and skills can declare required connections.",
-              },
-              {
-                q: "Does Longhand help me learn AI?",
-                a: "Yes. Longhand has a built-in learning system with guided exercises, a certification path (\"AI Operator\"), and learning mode with tooltips. The app teaches you to be effective with AI, not just use it.",
-              },
-              {
-                q: "What is the Impact Model?",
-                a: "20% of Longhand subscriptions fund environmental offsets and workforce reskilling. You receive monthly impact receipts. No other AI tool does this.",
               },
             ].map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border border-longhand-border rounded-xl px-4 bg-white">
