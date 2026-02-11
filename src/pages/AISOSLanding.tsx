@@ -95,10 +95,10 @@ const PricingSection = () => {
       desc: "For professionals who want advanced tools, live community, and direct support.",
       features: [
         "Everything in Academy, plus:",
-        "Skill Forge — build custom AI skills",
+        <strong>Skill Forge — build custom AI skills</strong>,
         "Monthly AI release drops",
         "24/7 global community access",
-        "Weekly office hours with experts",
+        <strong>Weekly office hours with experts</strong>,
         "Advanced workflow automation",
         "Early access to new features",
       ],
