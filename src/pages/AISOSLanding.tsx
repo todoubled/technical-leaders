@@ -154,10 +154,7 @@ const PricingSection = () => {
         {/* Free, Academy, Pro — 3-col grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {/* Longhand Free */}
-          <div className="rounded-2xl border border-longhand-accent/40 bg-longhand-accent-light p-6 flex flex-col relative">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-longhand-accent text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
-              Most Popular
-            </span>
+          <div className="rounded-2xl border border-longhand-border bg-white p-6 flex flex-col relative">
             <h3 className="font-semibold text-longhand-ink mb-2 font-sans">Longhand Free</h3>
             <div className="mb-1">
               <span className="text-3xl font-bold text-longhand-ink font-sans">$0</span>
@@ -189,7 +186,12 @@ const PricingSection = () => {
           </div>
 
           {paidPlans.map((plan, i) => (
-            <div key={i} className="rounded-2xl border border-longhand-border bg-white p-6 flex flex-col relative">
+            <div key={i} className={`rounded-2xl border p-6 flex flex-col relative ${plan.key === "pro" ? "border-longhand-accent/40 bg-longhand-accent-light" : "border-longhand-border bg-white"}`}>
+              {plan.key === "pro" && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-longhand-accent text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+                  Most Popular
+                </span>
+              )}
               <h3 className="font-semibold text-longhand-ink mb-2 font-sans">{plan.name}</h3>
               <div className="mb-1">
                 <span className="text-3xl font-bold text-longhand-ink font-sans">
