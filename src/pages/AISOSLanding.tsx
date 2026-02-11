@@ -75,9 +75,9 @@ const PricingSection = () => {
       desc: "Integrated learning system with self-paced AI curriculum and certification.",
       features: [
         "Everything in Free, plus:",
-        "Learning mode with guided walkthroughs",
+        <strong>Learning mode with guided walkthroughs</strong>,
         "Self-paced AI curriculum",
-        "AI Operator certification path",
+        <strong>AI Operator certification path</strong>,
         "Guided skill-building exercises",
         "Progress tracking & analytics",
         "Priority model access",
@@ -95,10 +95,10 @@ const PricingSection = () => {
       desc: "For professionals who want advanced tools, live community, and direct support.",
       features: [
         "Everything in Academy, plus:",
-        "Skill Forge — build custom AI skills",
+        <strong>Skill Forge — build custom AI skills</strong>,
         "Monthly AI release drops",
         "24/7 global community access",
-        "Weekly office hours with experts",
+        <strong>Weekly office hours with experts</strong>,
         "Advanced workflow automation",
         "Early access to new features",
       ],
@@ -154,10 +154,7 @@ const PricingSection = () => {
         {/* Free, Academy, Pro — 3-col grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {/* Longhand Free */}
-          <div className="rounded-2xl border border-longhand-accent/40 bg-longhand-accent-light p-6 flex flex-col relative">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-longhand-accent text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
-              Most Popular
-            </span>
+          <div className="rounded-2xl border border-longhand-border bg-white p-6 flex flex-col relative">
             <h3 className="font-semibold text-longhand-ink mb-2 font-sans">Longhand Free</h3>
             <div className="mb-1">
               <span className="text-3xl font-bold text-longhand-ink font-sans">$0</span>
@@ -168,7 +165,7 @@ const PricingSection = () => {
               {[
                 "Built-in local AI model",
                 "Bring your own LLM API keys",
-                "Private, on-device processing",
+                <strong>Private, on-device processing</strong>,
                 "Project & task management with Skill Studio, Workflow Builder, and Feedback Loop",
               ].map((f, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm">
@@ -189,7 +186,12 @@ const PricingSection = () => {
           </div>
 
           {paidPlans.map((plan, i) => (
-            <div key={i} className="rounded-2xl border border-longhand-border bg-white p-6 flex flex-col relative">
+            <div key={i} className={`rounded-2xl border p-6 flex flex-col relative ${plan.key === "pro" ? "border-longhand-accent/40 bg-longhand-accent-light" : "border-longhand-border bg-white"}`}>
+              {plan.key === "pro" && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-longhand-accent text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
+                  Most Popular
+                </span>
+              )}
               <h3 className="font-semibold text-longhand-ink mb-2 font-sans">{plan.name}</h3>
               <div className="mb-1">
                 <span className="text-3xl font-bold text-longhand-ink font-sans">
@@ -580,6 +582,10 @@ const AISOSLanding = () => {
                 a: "Yes. Longhand Free gives you full access to local LLMs and your own API keys with complete privacy. No credit card required, no time limit. Academy and Pro tiers unlock certification, analytics, and advanced tools.",
               },
               {
+                q: "Does Longhand help me learn AI?",
+                a: "Yes. Longhand has a built-in learning system with guided exercises, a certification path (\"AI Operator\"), and learning mode with tooltips. The app teaches you to be effective with AI, not just use it.",
+              },
+              {
                 q: "What platforms do you support?",
                 a: "Longhand runs natively on Mac (Apple Silicon & Intel). It's a desktop app that runs locally on your computer — not in the cloud. Windows coming soon.",
               },
@@ -590,6 +596,10 @@ const AISOSLanding = () => {
               {
                 q: "Is my data private?",
                 a: "Longhand runs on your computer. Your data stays in a local folder. AI calls go directly from your machine to your provider using your own API key. We have zero access. You can also run fully offline with the built-in local AI model.",
+              },
+              {
+                q: "What is the Impact Model?",
+                a: "20% of Longhand subscriptions fund environmental offsets and workforce reskilling. You receive monthly impact receipts. No other AI tool does this.",
               },
               {
                 q: "Do I need an API key?",
@@ -630,14 +640,6 @@ const AISOSLanding = () => {
               {
                 q: "What is MCP extensibility?",
                 a: "Longhand connects to MCP servers and CLI tools, giving AI access to real-world systems. You can import existing Claude Desktop servers, and skills can declare required connections.",
-              },
-              {
-                q: "Does Longhand help me learn AI?",
-                a: "Yes. Longhand has a built-in learning system with guided exercises, a certification path (\"AI Operator\"), and learning mode with tooltips. The app teaches you to be effective with AI, not just use it.",
-              },
-              {
-                q: "What is the Impact Model?",
-                a: "20% of Longhand subscriptions fund environmental offsets and workforce reskilling. You receive monthly impact receipts. No other AI tool does this.",
               },
             ].map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border border-longhand-border rounded-xl px-4 bg-white">
