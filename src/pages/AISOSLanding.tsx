@@ -75,9 +75,9 @@ const PricingSection = () => {
       desc: "Integrated learning system with self-paced AI curriculum and certification.",
       features: [
         "Everything in Free, plus:",
-        "Learning mode with guided walkthroughs",
+        <strong>Learning mode with guided walkthroughs</strong>,
         "Self-paced AI curriculum",
-        "AI Operator certification path",
+        <strong>AI Operator certification path</strong>,
         "Guided skill-building exercises",
         "Progress tracking & analytics",
         "Priority model access",
@@ -165,7 +165,7 @@ const PricingSection = () => {
               {[
                 "Built-in local AI model",
                 "Bring your own LLM API keys",
-                "Private, on-device processing",
+                <strong>Private, on-device processing</strong>,
                 "Project & task management with Skill Studio, Workflow Builder, and Feedback Loop",
               ].map((f, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm">
