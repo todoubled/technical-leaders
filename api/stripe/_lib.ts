@@ -181,9 +181,35 @@ export function generateCode(): string {
     .join("");
 }
 
+export function generateBulkCode(): string {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  const bytes = globalThis.crypto.getRandomValues(new Uint8Array(8));
+  return Array.from(bytes)
+    .map((b) => chars[b % chars.length])
+    .join("");
+}
+
+export function generatePurchaseId(): string {
+  const bytes = globalThis.crypto.getRandomValues(new Uint8Array(12));
+  return "pur_" + bytesToHex(bytes);
+}
+
 export function generateLicenseKey(): string {
   const bytes = globalThis.crypto.getRandomValues(new Uint8Array(16));
   return bytesToHex(bytes);
+}
+
+// --- Bulk Types ---
+
+export interface BulkKeyEntry {
+  code: string;
+  license_key: string;
+}
+
+export interface BulkRecord {
+  purchase_id: string;
+  tier: string;
+  keys: BulkKeyEntry[];
 }
 
 // --- CORS + Response Helpers ---
