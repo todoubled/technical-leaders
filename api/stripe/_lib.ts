@@ -162,12 +162,13 @@ export function getTierFromPriceId(priceId: string): string {
 }
 
 export function getPriceId(plan: string, billing: string): string {
-  if (plan === "premium" && billing === "annual")
+  const p = plan === "academy" ? "premium" : plan;
+  if (p === "premium" && billing === "annual")
     return process.env.STRIPE_PRICE_ACADEMY_ANNUAL!;
-  if (plan === "premium") return process.env.STRIPE_PRICE_ACADEMY_MONTHLY!;
-  if (plan === "pro" && billing === "annual")
+  if (p === "premium") return process.env.STRIPE_PRICE_ACADEMY_MONTHLY!;
+  if (p === "pro" && billing === "annual")
     return process.env.STRIPE_PRICE_PRO_ANNUAL!;
-  if (plan === "pro") return process.env.STRIPE_PRICE_PRO_MONTHLY!;
+  if (p === "pro") return process.env.STRIPE_PRICE_PRO_MONTHLY!;
   throw new Error(`Unknown plan: ${plan}`);
 }
 

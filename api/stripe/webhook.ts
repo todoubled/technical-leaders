@@ -69,7 +69,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         await db.set(`customer:${customerId}`, { license_key: licenseKey });
 
         const code = generateCode();
-        await db.set(`activation:${code}`, { license_key: licenseKey }, { ex: 3600 });
+        const quantity = Number(session.metadata?.quantity) || 1;
+        await db.set(
+          `activation:${code}`,
+          { license_key: licenseKey, quantity, tier },
+          { ex: quantity > 1 ? 7 * 24 * 3600 : 3600 }
+        );
         await db.set(
           `session:${session.id}`,
           { license_key: licenseKey, activation_code: code },
