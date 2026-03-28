@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const WORKSHOP_DATE = new Date("2026-04-03T16:00:00Z"); // 12pm ET = 4pm UTC
-const STRIPE_BUY_LINK = "#"; // Replace with actual Stripe buy link
+const STRIPE_BUY_LINK = "https://buy.stripe.com/4gM14nh1T1kb3nA4F6aMU0O";
 
 const useCountdown = (targetDate: Date) => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
