@@ -234,21 +234,6 @@ const ClaudeWorkshop = () => {
             How to Stop Prompting and Build Custom Claude AI Agent Workflows Without Writing a Single Line of Code
           </p>
 
-          {/* Hero image placeholder */}
-          <div className="w-full max-w-3xl mx-auto mb-8 rounded-lg overflow-hidden border border-primary/20 bg-primary/5 p-8">
-            <div className="flex items-center justify-center gap-3 text-muted-foreground">
-              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm font-medium">
-                <span className="bg-primary/10 px-3 py-1 rounded">Inputs</span>
-                <ArrowRight className="h-4 w-4 hidden sm:block" />
-                <span className="bg-primary/10 px-3 py-1 rounded">Steps</span>
-                <ArrowRight className="h-4 w-4 hidden sm:block" />
-                <span className="bg-primary/10 px-3 py-1 rounded">Logic</span>
-                <ArrowRight className="h-4 w-4 hidden sm:block" />
-                <span className="bg-primary/10 px-3 py-1 rounded">Outputs</span>
-              </div>
-            </div>
-          </div>
-
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             In one live session, you'll map a real business task, build the workflow inside Claude, and leave with at least one working agent you can use in your business right away.
           </p>
@@ -287,7 +272,7 @@ const ClaudeWorkshop = () => {
               Then "AI agents" show up and suddenly it sounds like a developer project. Too technical. Too messy. Too much setup. Too much risk of wasting time building something that never gets used.
             </p>
             <p className="text-foreground font-semibold text-xl">
-              That's where most business owners get stuck.
+              That's where most people get stuck.
             </p>
             <p>They've outgrown basic prompting.</p>
             <p>But they still haven't built a real workflow.</p>
@@ -308,7 +293,7 @@ const ClaudeWorkshop = () => {
             <p className="text-muted-foreground">That's what we'll do in this workshop.</p>
 
             <div className="mt-10 space-y-4 text-lg text-muted-foreground">
-              <p>You'll pick a real, high-value task from your business.</p>
+              <p>You'll pick a real, high-value task from your (or your team's) daily work.</p>
               <p>We'll map the steps.</p>
               <p>Build the logic.</p>
               <p>Use proven templates.</p>
