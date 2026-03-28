@@ -7,7 +7,7 @@ import { CheckCircle2, Clock, Gift, ArrowRight, Zap, Target, Brain, Rocket, User
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
-const WORKSHOP_DATE = new Date("2025-04-03T16:00:00Z"); // 12pm ET = 4pm UTC
+const WORKSHOP_DATE = new Date("2026-04-03T16:00:00Z"); // 12pm ET = 4pm UTC
 const STRIPE_BUY_LINK = "#"; // Replace with actual Stripe buy link
 
 const useCountdown = (targetDate: Date) => {
@@ -166,7 +166,7 @@ const ClaudeWorkshop = () => {
           "eventStatus": "https://schema.org/EventScheduled",
           "offers": {
             "@type": "Offer",
-            "price": "50",
+            "price": "100",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
           },
@@ -357,7 +357,7 @@ const ClaudeWorkshop = () => {
 
           <div className="mt-10">
             <p className="text-sm text-muted-foreground mb-2">Investment:</p>
-            <p className="text-5xl font-bold text-primary">$50 <span className="text-lg font-normal text-muted-foreground">USD</span></p>
+            <p className="text-5xl font-bold text-primary">$100 <span className="text-lg font-normal text-muted-foreground">USD</span></p>
           </div>
         </div>
       </section>
@@ -460,7 +460,7 @@ const ClaudeWorkshop = () => {
         headline="Join The Claude Agent Workshop™"
         subheadline="One live session. One working workflow. No code required."
         primaryCTA={{
-          text: "Join The Claude Agent Workshop™ — $50",
+          text: "Join The Claude Agent Workshop™ — $100",
           url: STRIPE_BUY_LINK,
         }}
         guarantee={{
