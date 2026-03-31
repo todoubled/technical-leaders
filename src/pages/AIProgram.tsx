@@ -360,7 +360,7 @@ const AIProgram = () => {
             {phases.map((phase, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3 p-8 text-white relative overflow-hidden">
+                  <div className="md:w-1/3 pt-6 pb-8 px-8 text-white relative overflow-hidden">
                     <div
                       className="absolute inset-0 bg-cover bg-center"
                       style={{
