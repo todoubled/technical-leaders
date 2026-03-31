@@ -250,7 +250,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="pt-16 pb-20 bg-secondary/30">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">
             Most people are still using AI the slow way
@@ -281,7 +281,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20">
+      <section className="pt-16 pb-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 text-lg leading-relaxed">
             <p className="text-muted-foreground">
@@ -308,7 +308,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Live Workshop Banner */}
-      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5 border-y border-primary/20">
+      <section className="pt-12 pb-16 bg-gradient-to-br from-primary/10 to-primary/5 border-y border-primary/20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Users className="h-4 w-4" />
@@ -348,7 +348,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Curriculum Section */}
-      <section className="py-20">
+      <section className="pt-16 pb-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -379,7 +379,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Bonuses Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="pt-16 pb-20 bg-secondary/30">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -410,7 +410,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20">
+      <section className="pt-16 pb-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 text-lg leading-relaxed text-center">
             <p className="text-xl font-semibold text-foreground">
