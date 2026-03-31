@@ -250,7 +250,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Problem Section */}
-      <section className="pt-16 pb-20 bg-secondary/30">
+      <section className="pt-16 pb-10 sm:pb-20 bg-secondary/30">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">
             Most people are still using AI the slow way
@@ -281,7 +281,7 @@ const ClaudeWorkshop = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="pt-16 pb-20">
+      <section className="pt-10 sm:pt-16 pb-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 text-lg leading-relaxed">
             <p className="text-muted-foreground">
