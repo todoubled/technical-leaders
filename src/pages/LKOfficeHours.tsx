@@ -7,16 +7,17 @@ import { Brain, Rocket, Target, Users, Sparkles, ChevronRight, Copy, Check, Zap,
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
-const getNextWednesday = () => {
+const getNextMonday = () => {
   const now = new Date();
   const dayOfWeek = now.getDay();
-  let daysUntilWednesday = (3 - dayOfWeek + 7) % 7;
-  if (daysUntilWednesday === 0) {
-    daysUntilWednesday = 7;
+  // Monday is day 1
+  let daysUntilMonday = (1 - dayOfWeek + 7) % 7;
+  if (daysUntilMonday === 0) {
+    daysUntilMonday = 7;
   }
-  const nextWednesday = new Date(now);
-  nextWednesday.setDate(now.getDate() + daysUntilWednesday);
-  return nextWednesday;
+  const nextMonday = new Date(now);
+  nextMonday.setDate(now.getDate() + daysUntilMonday);
+  return nextMonday;
 };
 
 const formatEventDate = (date: Date) => {
@@ -31,7 +32,7 @@ const formatEventDate = (date: Date) => {
 const LKOfficeHours = () => {
   const [copied, setCopied] = useState(false);
   const formContainerRef = useRef<HTMLDivElement>(null);
-  const nextSessionDate = getNextWednesday();
+  const nextSessionDate = getNextMonday();
   const formattedDate = formatEventDate(nextSessionDate);
 
   useEffect(() => {
@@ -139,7 +140,7 @@ const LKOfficeHours = () => {
 
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-primary/20 text-foreground px-5 py-3 rounded-full text-base sm:text-lg font-medium mb-6">
             <Calendar className="h-5 w-5 text-primary" />
-            <span>Next Session: {formattedDate} at 11am CST</span>
+            <span>Next Session: {formattedDate} at 10am CST</span>
           </div>
 
           <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
