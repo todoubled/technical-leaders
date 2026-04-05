@@ -128,7 +128,7 @@ const LKOfficeHours = () => {
             </div>
             <div className="text-4xl sm:text-5xl lg:text-6xl mb-2">
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                Consulting
+                Launch Kit
               </span>
             </div>
             <div className="text-2xl sm:text-3xl lg:text-4xl">
