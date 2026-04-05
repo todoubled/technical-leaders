@@ -54,32 +54,32 @@ const LKOfficeHours = () => {
   const benefits = [
     {
       icon: Target,
-      title: "Clarify Your Offer",
-      description: "Nail exactly what you're selling, how it's priced, and who it's for—so you can sell with confidence and integrity from day one"
+      title: "Sharpen Your Offer",
+      description: "Get clear on what you're selling, who it's for, and how to price it—so the right clients say yes faster"
     },
     {
       icon: CheckCircle2,
-      title: "Prove It Works",
-      description: "Land your first clients and stack up to $10K+ in revenue, giving you hard proof your offer works and people are happy to pay for it"
+      title: "Fill Your Pipeline",
+      description: "Learn the outreach, content, and positioning strategies that consistently attract high-quality clients—without feeling salesy"
     },
     {
       icon: Zap,
-      title: "Scale With Support",
-      description: "Once proven, turn it into steady income or hand off marketing to our team so you can focus on client delivery and revenue growth"
+      title: "Grow Your Revenue",
+      description: "Stop trading time for money. Build repeatable systems that keep clients coming in so you can focus on delivering great work"
     },
     {
       icon: Star,
-      title: "Done-With-You System",
-      description: "1:1 strategy calls, weekly group sessions, proven frameworks and templates—everything you need to go from idea to paying clients"
+      title: "Get Unstuck Live",
+      description: "Bring your real challenges—pricing, proposals, positioning, pipeline—and get actionable feedback from consultants who've been there"
     }
   ];
 
   const whatYouGet = [
-    "1:1 Strategy Call to build a plan that fits your goals",
-    "Weekly Group Sessions for accountability and momentum",
-    "Offer Frameworks & Playbooks to package and price your expertise",
-    "Client-Attracting Templates that convert without second-guessing",
-    "Private Founder Community for real-time feedback and peer connection"
+    "Live Q&A where you can bring your specific consulting challenges",
+    "Proven frameworks for packaging and pricing your expertise",
+    "Client acquisition strategies that work across industries",
+    "Templates for outreach, proposals, and content that convert",
+    "A community of consultants sharing what's working right now"
   ];
 
   const handleCopyLink = async () => {
@@ -96,9 +96,9 @@ const LKOfficeHours = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Launch Kit Office Hours | Technical Leaders"
-        description="Turn your tech expertise into $10K+/month. Join our free office hours to learn how tech leaders are building independent businesses selling their knowledge."
-        keywords={["tech leadership", "independent consulting", "office hours", "tech entrepreneurship", "consulting business", "expertise monetization", "side hustle", "launch kit"]}
+        title="Consulting Office Hours | Get More Clients"
+        description="Join our free office hours for consultants who want more clients. Learn proven frameworks to sharpen your offer, attract better clients, and grow your consulting revenue."
+        keywords={["consulting", "get more clients", "consulting business", "office hours", "independent consulting", "grow consulting practice", "client acquisition", "consulting revenue"]}
       />
 
       <Navigation />
@@ -117,13 +117,13 @@ const LKOfficeHours = () => {
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Rocket className="h-4 w-4" />
-            Tech Leaders Launch Kit
+            For Independent Consultants
           </div>
 
           <h1 className="font-bold tracking-tight mb-6">
             <div className="text-2xl sm:text-3xl lg:text-4xl mb-2">
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                Turn Your Tech Expertise
+                Get More Clients
               </span>
             </div>
             <div className="text-4xl sm:text-5xl lg:text-6xl mb-2">
@@ -144,11 +144,11 @@ const LKOfficeHours = () => {
           </div>
 
           <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            You've spent years building a valuable track record leading teams and shipping products.
+            You're great at what you do. But finding the next client shouldn't feel like starting from scratch every time.
           </p>
 
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Now it's time to make your own ideas pay you directly—as a side hustle or a full replacement for your primary income.
+            Join a free weekly session where consultants sharpen their offers, fix their pipelines, and learn what's actually working to attract better clients.
           </p>
 
           <div ref={formContainerRef} className="max-w-md mx-auto"></div>
@@ -161,7 +161,7 @@ const LKOfficeHours = () => {
           <div className="bg-white dark:bg-gray-900 rounded-lg border border-primary/20 p-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
-                <h3 className="text-lg font-semibold mb-1 text-background">Know a tech leader ready to go independent?</h3>
+                <h3 className="text-lg font-semibold mb-1 text-background">Know a consultant who wants more clients?</h3>
                 <p className="text-sm text-muted-foreground">Share this office hours with them</p>
               </div>
               <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -197,13 +197,13 @@ const LKOfficeHours = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="h-4 w-4" />
-              The Path to Independence
+              Grow Your Practice
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              From Employee to Independent in 12 Weeks
+              Stop Guessing. Start Growing.
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Three clear phases take you from idea to proven $10K+/month offer—with hands-on support every step of the way.
+              Whether you're looking to land your next client or build a steady pipeline, these sessions give you the clarity and tools to make it happen.
             </p>
           </div>
 
@@ -230,10 +230,10 @@ const LKOfficeHours = () => {
               What's Included
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Everything You Need to Launch
+              What You Get Each Session
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Build and prove your offer with expert guidance and a proven system
+              Practical guidance to attract more clients and grow your consulting practice
             </p>
           </div>
 
@@ -281,9 +281,9 @@ const LKOfficeHours = () => {
               <div className="p-4 bg-primary/10 rounded-full w-fit mx-auto mb-4">
                 <Target className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Technical Leaders</h3>
+              <h3 className="text-xl font-semibold mb-3">Independent Consultants</h3>
               <p className="text-muted-foreground">
-                Who've led teams or built products and are ready to package that expertise into an independent offer
+                In any industry who want a more predictable way to attract and close high-quality clients
               </p>
             </Card>
 
@@ -291,9 +291,9 @@ const LKOfficeHours = () => {
               <div className="p-4 bg-primary/10 rounded-full w-fit mx-auto mb-4">
                 <Rocket className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Side Hustlers</h3>
+              <h3 className="text-xl font-semibold mb-3">Fractional Executives</h3>
               <p className="text-muted-foreground">
-                Who can carve out at least 3 hours a week to validate and launch their offer properly
+                Looking to build a pipeline that keeps engagements flowing without constant hustle
               </p>
             </Card>
 
@@ -301,9 +301,9 @@ const LKOfficeHours = () => {
               <div className="p-4 bg-primary/10 rounded-full w-fit mx-auto mb-4">
                 <MessageCircle className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Content Creators</h3>
+              <h3 className="text-xl font-semibold mb-3">Expert Advisors</h3>
               <p className="text-muted-foreground">
-                Already creating content but not yet seeing the traction or revenue they deserve from their expertise
+                With deep domain expertise who want to turn what they know into a thriving consulting practice
               </p>
             </Card>
           </div>
@@ -311,20 +311,20 @@ const LKOfficeHours = () => {
       </section>
 
       <ContentFooter
-        headline="Join the Free Launch Kit Office Hours"
-        description="Learn how tech leaders are turning their expertise into $10K+/month independent businesses. No pitch, just real talk about what's working."
+        headline="Join the Free Consulting Office Hours"
+        description="Learn what's actually working for consultants who are landing more clients and growing their practices. No pitch, just real talk."
         primaryCTA={{
           text: "Save My Spot",
           onClick: () => formContainerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }),
           description: ""
         }}
         benefits={[
-          "Live Q&A with fellow tech leaders",
-          "Proven frameworks for packaging expertise",
-          "Real examples from successful launches",
+          "Live Q&A—bring your real challenges",
+          "Proven frameworks for getting more clients",
+          "Strategies that work across industries",
           "No sales pitch—just value"
         ]}
-        socialProof="Join tech leaders building independent businesses on their own terms"
+        socialProof="Join consultants from every industry who are growing their practices"
         trackingContext="LK Office Hours"
       />
     </div>
