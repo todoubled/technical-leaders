@@ -148,7 +148,7 @@ const LKOfficeHours = () => {
           </p>
 
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Join a free weekly session where consultants sharpen their offers, fix their pipelines, and learn what's actually working to attract better clients.
+            Join one of our weekly sessions as a free guest where consultants sharpen their offers, fix their pipelines, and learn what's actually working to attract better clients.
           </p>
 
           <div ref={formContainerRef} className="max-w-md mx-auto"></div>
