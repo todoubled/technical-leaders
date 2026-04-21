@@ -7,8 +7,7 @@ import { trackEvent } from "@/utils/posthog";
 const ClaudeWorkshopReplay = () => {
   const youtubeVideoId = "x1r9mmJgMkQ";
   const slidesPdfUrl = "https://drive.google.com/file/d/1cnTWxACMwDJ45R7VKBob3QXzKQlk7bkl/view?usp=sharing";
-  // TODO: Drop the real templates asset into /public (or replace with a hosted URL).
-  const templatesUrl = "/claude-workshop-templates.pdf";
+  const templatesUrl = slidesPdfUrl;
 
   const heroContent = {
     badge: "Workshop Recording",
