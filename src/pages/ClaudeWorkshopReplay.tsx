@@ -5,10 +5,9 @@ import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const ClaudeWorkshopReplay = () => {
-  // TODO: Replace with the real YouTube video ID once the recording is uploaded.
-  const youtubeVideoId = "YOUR_VIDEO_ID";
-  // TODO: Drop the real assets into /public with these filenames (or update the paths).
-  const slidesPdfUrl = "/claude-workshop-slides.pdf";
+  const youtubeVideoId = "x1r9mmJgMkQ";
+  const slidesPdfUrl = "https://drive.google.com/file/d/1cnTWxACMwDJ45R7VKBob3QXzKQlk7bkl/view?usp=sharing";
+  // TODO: Drop the real templates asset into /public (or replace with a hosted URL).
   const templatesUrl = "/claude-workshop-templates.pdf";
 
   const heroContent = {
