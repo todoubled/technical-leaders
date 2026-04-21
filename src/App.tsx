@@ -79,6 +79,7 @@ import RGAPlaybook from "./pages/RGAPlaybook";
 import AICoworker from "./pages/AICoworker";
 import AISOSLanding from "./pages/AISOSLanding";
 import ClaudeWorkshop from "./pages/ClaudeWorkshop";
+import ClaudeWorkshopReplay from "./pages/ClaudeWorkshopReplay";
 import LKOfficeHours from "./pages/LKOfficeHours";
 import TDownload from "./pages/TDownload";
 import NotFound from "./pages/NotFound";
@@ -192,6 +193,7 @@ const App = () => (
           <Route path="/t-download" element={<TDownload />} />
           <Route path="/launch-guide" element={<Navigate to="/rga-playbook" replace />} />
           <Route path="/claude-workshop" element={<ClaudeWorkshop />} />
+          <Route path="/claude-workshop-replay" element={<ClaudeWorkshopReplay />} />
           <Route path="/lk-office-hours" element={<LKOfficeHours />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
