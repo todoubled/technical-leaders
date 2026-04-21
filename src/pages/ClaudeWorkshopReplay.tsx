@@ -1,13 +1,12 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
-import { Video, Download, FileText, ChevronRight } from "lucide-react";
+import { Video, Download, ChevronRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
 const ClaudeWorkshopReplay = () => {
   const youtubeVideoId = "x1r9mmJgMkQ";
   const slidesPdfUrl = "https://drive.google.com/file/d/1cnTWxACMwDJ45R7VKBob3QXzKQlk7bkl/view?usp=sharing";
-  const templatesUrl = slidesPdfUrl;
 
   const heroContent = {
     badge: "Workshop Recording",
@@ -72,33 +71,19 @@ const ClaudeWorkshopReplay = () => {
           </div>
 
           {/* Download Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-8 flex justify-center">
             <Button
               size="lg"
               className="text-lg px-8 py-6"
               onClick={() => {
-                trackEvent('Download Slides Clicked', {
+                trackEvent('Download Slides And Templates Clicked', {
                   location: 'claude_workshop_replay_hero'
                 });
                 window.open(slidesPdfUrl, '_blank');
               }}
             >
               <Download className="mr-2 h-5 w-5" />
-              Download PDF Slides
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6"
-              onClick={() => {
-                trackEvent('Download Templates Clicked', {
-                  location: 'claude_workshop_replay_hero'
-                });
-                window.open(templatesUrl, '_blank');
-              }}
-            >
-              <FileText className="mr-2 h-5 w-5" />
-              Download Agent Templates
+              Download Slides &amp; Templates
             </Button>
           </div>
         </div>
