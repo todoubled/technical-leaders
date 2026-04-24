@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import SalesFooter from "@/components/footers/SalesFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Gift, ArrowRight, Zap, Target, Brain, Rocket, Users, FileText, Workflow, Repeat, AlertTriangle, GitBranch, Wrench, Award, BookOpen, Link2, Calendar, Sparkles, PenTool } from "lucide-react";
+import { Gift, ArrowRight, Zap, Target, Brain, Rocket, Users, FileText, Workflow, Repeat, AlertTriangle, GitBranch, Wrench, Award, BookOpen, Link2, Calendar, Sparkles, PenTool, Shield } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 
@@ -255,6 +255,24 @@ const AIAgentSystem = () => {
             Join The AI Agent System™
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
+        </div>
+      </section>
+
+      {/* Trust Bar */}
+      <section className="py-8 px-4 sm:px-6 border-t border-border/50">
+        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-base text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <Zap className="w-5 h-5 text-primary" />
+            <span>Works with ChatGPT, Claude, Gemini &amp; any AI model</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Link2 className="w-5 h-5 text-primary" />
+            <span>Plugs into the tools you already use</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Shield className="w-5 h-5 text-primary" />
+            <span>No code required</span>
+          </div>
         </div>
       </section>
 
