@@ -175,7 +175,7 @@ const AIAgentSystem = () => {
           "eventStatus": "https://schema.org/EventScheduled",
           "offers": {
             "@type": "Offer",
-            "price": "50",
+            "price": "100",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
           },
@@ -371,7 +371,7 @@ const AIAgentSystem = () => {
 
           <div className="mt-10">
             <p className="text-sm text-muted-foreground mb-2">Investment:</p>
-            <p className="text-5xl font-bold text-primary">$50 <span className="text-lg font-normal text-muted-foreground">USD</span></p>
+            <p className="text-5xl font-bold text-primary">$100 <span className="text-lg font-normal text-muted-foreground">USD</span></p>
           </div>
 
           <div className="mt-8">
@@ -489,7 +489,7 @@ const AIAgentSystem = () => {
         headline="Join The AI Agent System™"
         subheadline="One live session. Working agents. No code required."
         primaryCTA={{
-          text: "Join The AI Agent System™ — $50",
+          text: "Join The AI Agent System™ — $100",
           url: STRIPE_BUY_LINK,
         }}
         guarantee={{
