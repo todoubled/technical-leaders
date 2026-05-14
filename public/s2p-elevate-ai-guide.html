@@ -1938,7 +1938,7 @@
     border-width: 1px;
   }
   .theme-card--org::after {
-    content: "Theme 2";
+    content: "Perspective 2";
     position: absolute;
     top: 12px;
     right: 14px;
@@ -1953,7 +1953,7 @@
     padding: 3px 9px;
   }
   .theme-card--personal::after {
-    content: "Theme 1";
+    content: "Perspective 1";
     position: absolute;
     top: 12px;
     right: 14px;
@@ -2888,8 +2888,8 @@
 
 <!-- ============ THEMES — two themes carry the series ============ -->
 <section class="block" id="themes">
-  <h2 class="block-title">Two themes carry the series</h2>
-  <p class="lede">Across the two themes of this workshop, you're after two distinct deliverables — and the structure of the guide is built to make both of them legible.</p>
+  <h2 class="block-title">Two perspectives carry the series</h2>
+  <p class="lede">Across the two perspectives of this workshop, you're after two distinct deliverables — and the structure of the guide is built to make both of them legible.</p>
   <div class="grid">
     <div class="card theme-card theme-card--personal">
       <h5>AI for Personal Productivity</h5>
@@ -2931,13 +2931,6 @@
 <section class="block" id="showcase" aria-label="What's already possible — agent and assistant showcase">
   <div class="showcase-session-tag">Showcase · before Theme 1</div>
   <h2 class="block-title">What's already possible</h2>
-  <p class="lede">Before you decide what to automate, see what other leaders are already running. Pick the card that pulls at you most — that's your Part 1 starting point.</p>
-  <ul class="showcase-key-list">
-    <li><strong>Option 1 — Personal-assistant cards.</strong> AI inside the tools you already use.</li>
-    <li><strong>Option 2 — Productivity-agent cards.</strong> You bring work into AI; the agent runs the multi-step job.</li>
-    <li><strong>Theme split.</strong> Half Theme 1 (Personal Productivity, you as beneficiary); half Theme 2 (Organizational Leverage, team as beneficiary).</li>
-  </ul>
-
   <div class="showcase-grid">
 
     <!-- CARD 1 — NEW · NotebookLM Studio (strategic leverage) — Gemini primary
@@ -2954,6 +2947,17 @@
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Personal Productivity demo · Theme 1</div>
       <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
+      <h3 class="showcase-title">Upload your sources once, get a studio of artifacts back</h3>
+      <div class="showcase-body">
+        <p>Drop your PDFs, Google Docs, web pages, and YouTube links into one notebook. From the Studio panel, NotebookLM spins up an Audio Overview as a two-host conversation, a short Video Overview, a Mind Map of the relationships across your sources, and structured Reports like a Briefing Doc, Study Guide, or Flashcard set. Same corpus, six or more formats, each one grounded in the documents you uploaded.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent</strong>
+          The Studio runs multi-step generation against a corpus the leader owns, not the open web. Each output is reasoned across the same sources, cited back to those sources, and re-runnable when the corpus changes.
+        </div>
+        <div class="showcase-forward">
+          The "corpus plus reusable artifact" pattern is the warm-up for the Skill you package in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: generate multi-format artifacts from a corpus the leader uploads">
         <span class="support-matrix-title">Cross-stack support: generate multi-format artifacts from a corpus the leader uploads</span>
         <div class="support-row">
@@ -2977,17 +2981,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">Upload your sources once, get a studio of artifacts back</h3>
-      <div class="showcase-body">
-        <p>Drop your PDFs, Google Docs, web pages, and YouTube links into one notebook. From the Studio panel, NotebookLM spins up an Audio Overview as a two-host conversation, a short Video Overview, a Mind Map of the relationships across your sources, and structured Reports like a Briefing Doc, Study Guide, or Flashcard set. Same corpus, six or more formats, each one grounded in the documents you uploaded.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent</strong>
-          The Studio runs multi-step generation against a corpus the leader owns, not the open web. Each output is reasoned across the same sources, cited back to those sources, and re-runnable when the corpus changes.
-        </div>
-        <div class="showcase-forward">
-          The "corpus plus reusable artifact" pattern is the warm-up for the Skill you package in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 2 — NEW · LinkedIn Prospecting with Claude for Chrome + Claude Cowork (time back) — Claude primary
@@ -3005,6 +2998,17 @@
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
       <span class="showcase-framing showcase-framing--timeback">Time back</span>
+      <h3 class="showcase-title">Prospect on LinkedIn from your own logged-in session</h3>
+      <div class="showcase-body">
+        <p>Claude for Chrome drives your actual LinkedIn tab. Cowork wraps that with multi-step orchestration: search Sales Navigator on a criteria string, qualify each result against your ICP doc, draft a personalized connection note from the prospect's posts, pause for your approval, then send. You watch the work happen, approve at the key decision points, and walk away with a queue of warm requests sent from your real account.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent</strong>
+          Cowork chains computer-use steps against your live session, holds at the approval gate, and resumes when you say go. It is your account doing the work, not a separate API persona, which is why the messages read like you.
+        </div>
+        <div class="showcase-forward">
+          Wire the same pattern into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>, then watch it run end-to-end in <a href="#demo-leads-connection-request">Part 4 · Leads to LinkedIn demo</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: prospect inside your own logged-in LinkedIn session with an approval gate">
         <span class="support-matrix-title">Cross-stack support: prospect inside your own logged-in LinkedIn session with an approval gate</span>
         <div class="support-row">
@@ -3028,17 +3032,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">Prospect on LinkedIn from your own logged-in session</h3>
-      <div class="showcase-body">
-        <p>Claude for Chrome drives your actual LinkedIn tab. Cowork wraps that with multi-step orchestration: search Sales Navigator on a criteria string, qualify each result against your ICP doc, draft a personalized connection note from the prospect's posts, pause for your approval, then send. You watch the work happen, approve at the key decision points, and walk away with a queue of warm requests sent from your real account.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent</strong>
-          Cowork chains computer-use steps against your live session, holds at the approval gate, and resumes when you say go. It is your account doing the work, not a separate API persona, which is why the messages read like you.
-        </div>
-        <div class="showcase-forward">
-          Wire the same pattern into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>, then watch it run end-to-end in <a href="#demo-leads-connection-request">Part 4 · Leads to LinkedIn demo</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 3 — NEW · Admin Data Entry with Claude for Chrome (strategic leverage) — Claude primary
@@ -3053,6 +3046,17 @@
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Organizational Leverage demo · Theme 2</div>
       <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
+      <h3 class="showcase-title">Run admin data entry without the click-and-type tax</h3>
+      <div class="showcase-body">
+        <p>Give Claude a spreadsheet of new hires, vendors, or candidates and the URL of the form you would normally hand-key into your HRIS, CRM, or ATS. Claude reads each row, walks the fields on the page, types the values, submits, and advances to the next record. Useful exactly where there is no bulk-import API and the admin owner is paying the click-and-type tax themselves.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent</strong>
+          Computer use against your real session, looped across a structured input, with the leader watching for the rows where the form does not match the data. The work that used to mean a Friday afternoon of paste-tab-paste-tab becomes review-and-approve.
+        </div>
+        <div class="showcase-forward">
+          Set this up alongside your tool stack in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: drive multi-field admin form entry inside a browser-based business system">
         <span class="support-matrix-title">Cross-stack support: drive multi-field admin form entry inside a browser-based business system</span>
         <div class="support-row">
@@ -3076,17 +3080,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/power-automate/desktop-flows/introduction" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">Run admin data entry without the click-and-type tax</h3>
-      <div class="showcase-body">
-        <p>Give Claude a spreadsheet of new hires, vendors, or candidates and the URL of the form you would normally hand-key into your HRIS, CRM, or ATS. Claude reads each row, walks the fields on the page, types the values, submits, and advances to the next record. Useful exactly where there is no bulk-import API and the admin owner is paying the click-and-type tax themselves.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent</strong>
-          Computer use against your real session, looped across a structured input, with the leader watching for the rows where the form does not match the data. The work that used to mean a Friday afternoon of paste-tab-paste-tab becomes review-and-approve.
-        </div>
-        <div class="showcase-forward">
-          Set this up alongside your tool stack in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 4 — NEW · Automating Reports with Claude Cowork plus Scheduled Tasks (strategic leverage) — Claude primary
@@ -3103,6 +3096,17 @@
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Organizational Leverage demo · Theme 2</div>
       <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
+      <h3 class="showcase-title">Ship the same report every Monday without writing it</h3>
+      <div class="showcase-body">
+        <p>Package the report logic once as a Skill: the queries, the table layouts, the narrative voice, the section headers. Hand the Skill to Cowork and set a scheduled task for Mondays at 7am, weekdays, or hourly. Each run, Cowork pulls the fresh numbers through your connectors, assembles the deliverable, and drops it where the team picks it up. You stop writing the report and start editing the exceptions.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent</strong>
+          The Skill carries the recipe, scheduled tasks carry the cadence, and Cowork orchestrates the multi-step assembly across your tools. The leader sets the standard once, and the cadence runs itself.
+        </div>
+        <div class="showcase-forward">
+          Build your first packaged Skill in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: run a recurring report on a schedule with a packaged Skill">
         <span class="support-matrix-title">Cross-stack support: run a recurring report on a schedule with a packaged Skill</span>
         <div class="support-row">
@@ -3126,17 +3130,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">Ship the same report every Monday without writing it</h3>
-      <div class="showcase-body">
-        <p>Package the report logic once as a Skill: the queries, the table layouts, the narrative voice, the section headers. Hand the Skill to Cowork and set a scheduled task for Mondays at 7am, weekdays, or hourly. Each run, Cowork pulls the fresh numbers through your connectors, assembles the deliverable, and drops it where the team picks it up. You stop writing the report and start editing the exceptions.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent</strong>
-          The Skill carries the recipe, scheduled tasks carry the cadence, and Cowork orchestrates the multi-step assembly across your tools. The leader sets the standard once, and the cadence runs itself.
-        </div>
-        <div class="showcase-forward">
-          Build your first packaged Skill in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 5 — Claude Skills (strategic leverage) -->
@@ -3146,6 +3139,23 @@
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Organizational Leverage demo · Theme 2</div>
       <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
+      <h3 class="showcase-title">Package a recurring job once, run it forever as a Skill</h3>
+      <figure class="showcase-figure">
+        <img loading="lazy"
+             src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/690267e194f8fd4618cb330e_image.webp"
+             alt="Claude.ai Capabilities settings panel listing installed Skills with toggles next to each one — the place where a leader installs and manages reusable Skills for recurring jobs.">
+        <figcaption>Source: <a href="https://claude.com/blog/skills" target="_blank" rel="noopener">Anthropic — Introducing Agent Skills</a></figcaption>
+      </figure>
+      <div class="showcase-body">
+        <p>Bundle the instructions, reference docs, and guardrails for a recurring deliverable — your LinkedIn newsletter, your weekly board update, your quarterly investor brief — into one named Skill. From then on you ask for the deliverable in a sentence and Claude runs the packaged workflow, not the raw chat.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent</strong>
+          The Skill chains tools (browser, files, connectors), loads its own reference material on demand, and behaves the same way every run. You give feedback into the Skill, not the output, and the next run is better.
+        </div>
+        <div class="showcase-forward">
+          Build your first one in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: package a recurring deliverable as a reusable Skill">
         <span class="support-matrix-title">Cross-stack support: package a recurring deliverable as a reusable Skill</span>
         <div class="support-row">
@@ -3169,23 +3179,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">Package a recurring job once, run it forever as a Skill</h3>
-      <figure class="showcase-figure">
-        <img loading="lazy"
-             src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/690267e194f8fd4618cb330e_image.webp"
-             alt="Claude.ai Capabilities settings panel listing installed Skills with toggles next to each one — the place where a leader installs and manages reusable Skills for recurring jobs.">
-        <figcaption>Source: <a href="https://claude.com/blog/skills" target="_blank" rel="noopener">Anthropic — Introducing Agent Skills</a></figcaption>
-      </figure>
-      <div class="showcase-body">
-        <p>Bundle the instructions, reference docs, and guardrails for a recurring deliverable — your LinkedIn newsletter, your weekly board update, your quarterly investor brief — into one named Skill. From then on you ask for the deliverable in a sentence and Claude runs the packaged workflow, not the raw chat.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent</strong>
-          The Skill chains tools (browser, files, connectors), loads its own reference material on demand, and behaves the same way every run. You give feedback into the Skill, not the output, and the next run is better.
-        </div>
-        <div class="showcase-forward">
-          Build your first one in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 6 — Claude for Chrome (time back) -->
@@ -3195,6 +3188,23 @@
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
       <span class="showcase-framing showcase-framing--timeback">Time back</span>
+      <h3 class="showcase-title">Hand Claude your already-logged-in browser</h3>
+      <figure class="showcase-figure">
+        <img loading="lazy"
+             src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/68e95d91c3728899c99ce1aa_d2a23a7e8cd07f47eda84ac44135f770d624915f-1920x1030.png"
+             alt="Claude operating inside a Chrome browser tab — the agent reading the on-screen email content and reasoning about which action to take next, with a side panel showing its in-progress thinking.">
+        <figcaption>Source: <a href="https://claude.com/blog/claude-for-chrome" target="_blank" rel="noopener">Anthropic — Claude for Chrome</a></figcaption>
+      </figure>
+      <div class="showcase-body">
+        <p>The browser extension lets Claude sit in your Chrome session and act on what you're already logged into — CRM, LinkedIn, your scheduler, your inbox. Same model, same skills, but now it can actually do the click-and-type work instead of telling you how to do it.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent</strong>
+          Computer use plus your real logins. Claude isn't simulating; it's driving the same browser you'd drive, which is why the leads-to-LinkedIn skill in Part 4 runs end-to-end without an API integration.
+        </div>
+        <div class="showcase-forward">
+          Wire it into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>, then see it run live in <a href="#demo-leads-connection-request">Part 4 · Leads to LinkedIn demo</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: drive your already-logged-in browser end to end">
         <span class="support-matrix-title">Cross-stack support: drive your already-logged-in browser end to end</span>
         <div class="support-row">
@@ -3218,23 +3228,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">Hand Claude your already-logged-in browser</h3>
-      <figure class="showcase-figure">
-        <img loading="lazy"
-             src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/68e95d91c3728899c99ce1aa_d2a23a7e8cd07f47eda84ac44135f770d624915f-1920x1030.png"
-             alt="Claude operating inside a Chrome browser tab — the agent reading the on-screen email content and reasoning about which action to take next, with a side panel showing its in-progress thinking.">
-        <figcaption>Source: <a href="https://claude.com/blog/claude-for-chrome" target="_blank" rel="noopener">Anthropic — Claude for Chrome</a></figcaption>
-      </figure>
-      <div class="showcase-body">
-        <p>The browser extension lets Claude sit in your Chrome session and act on what you're already logged into — CRM, LinkedIn, your scheduler, your inbox. Same model, same skills, but now it can actually do the click-and-type work instead of telling you how to do it.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent</strong>
-          Computer use plus your real logins. Claude isn't simulating; it's driving the same browser you'd drive, which is why the leads-to-LinkedIn skill in Part 4 runs end-to-end without an API integration.
-        </div>
-        <div class="showcase-forward">
-          Wire it into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>, then see it run live in <a href="#demo-leads-connection-request">Part 4 · Leads to LinkedIn demo</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 7 — Gemini in Gmail / Workspace (time back) — Gemini primary -->
@@ -3244,6 +3237,17 @@
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
       <span class="showcase-framing showcase-framing--timeback">Time back</span>
+      <h3 class="showcase-title">Triage and reply to email without leaving your inbox</h3>
+      <div class="showcase-body">
+        <p>Gemini lives inside Gmail as a side panel. It summarizes a thirty-message thread in a paragraph, drafts the reply in your voice using context from your other Workspace files, and surfaces the calendar conflict you would have missed. For leaders who run their day from the inbox, this is the lowest-friction agent in the stack — because it shows up inside the tool they already keep open.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent</strong>
+          Gemini reads your inbox, Docs, and Calendar with permission, reasons across them, and produces a finished draft inside the same surface. The leader doesn't switch tools, doesn't paste in context, and doesn't re-explain who they are.
+        </div>
+        <div class="showcase-forward">
+          The same "agent shows up where the work already lives" pattern is built in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: triage and draft email inside the inbox you already use">
         <span class="support-matrix-title">Cross-stack support: triage and draft email inside the inbox you already use</span>
         <div class="support-row">
@@ -3267,17 +3271,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">Triage and reply to email without leaving your inbox</h3>
-      <div class="showcase-body">
-        <p>Gemini lives inside Gmail as a side panel. It summarizes a thirty-message thread in a paragraph, drafts the reply in your voice using context from your other Workspace files, and surfaces the calendar conflict you would have missed. For leaders who run their day from the inbox, this is the lowest-friction agent in the stack — because it shows up inside the tool they already keep open.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent</strong>
-          Gemini reads your inbox, Docs, and Calendar with permission, reasons across them, and produces a finished draft inside the same surface. The leader doesn't switch tools, doesn't paste in context, and doesn't re-explain who they are.
-        </div>
-        <div class="showcase-forward">
-          The same "agent shows up where the work already lives" pattern is built in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 8 — Persistent project workspace (time back) — ChatGPT primary -->
@@ -3287,6 +3280,17 @@
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
       <span class="showcase-framing showcase-framing--timeback">Time back</span>
+      <h3 class="showcase-title">A persistent workspace that remembers your role, files, and instructions</h3>
+      <div class="showcase-body">
+        <p>A project pins your role, your files, and your standing instructions to one workspace. Open it, ask one question, and the answer already knows you're the CEO, that the board meets in three weeks, and that the deck template is the one you uploaded last quarter. Every major provider now ships this surface — ChatGPT Projects, Claude Projects, Copilot Notebooks, Gemini Gems — so the question is no longer whether to use one but which two or three earn the slot.</p>
+        <div class="showcase-agentic">
+          <strong>What makes this an agent-ish setup</strong>
+          Memory and context that persist across sessions. The leader stops re-explaining themselves every morning, which is the difference between a chat tool and a workspace.
+        </div>
+        <div class="showcase-forward">
+          Configure the equivalent Claude surface in <a href="#ex-1-2">Part 1 · Exercise 1.2</a>, then plug your business tools into it in <a href="#ex-3-2">Part 3 · Exercise 3.2</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: persistent project workspace with files, instructions, and memory">
         <span class="support-matrix-title">Cross-stack support: persistent project workspace with files, instructions, and memory</span>
         <div class="support-row">
@@ -3310,17 +3314,6 @@
           <a class="support-source" href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview" target="_blank" rel="noopener">Source</a>
         </div>
       </div>
-      <h3 class="showcase-title">A persistent workspace that remembers your role, files, and instructions</h3>
-      <div class="showcase-body">
-        <p>A project pins your role, your files, and your standing instructions to one workspace. Open it, ask one question, and the answer already knows you're the CEO, that the board meets in three weeks, and that the deck template is the one you uploaded last quarter. Every major provider now ships this surface — ChatGPT Projects, Claude Projects, Copilot Notebooks, Gemini Gems — so the question is no longer whether to use one but which two or three earn the slot.</p>
-        <div class="showcase-agentic">
-          <strong>What makes this an agent-ish setup</strong>
-          Memory and context that persist across sessions. The leader stops re-explaining themselves every morning, which is the difference between a chat tool and a workspace.
-        </div>
-        <div class="showcase-forward">
-          Configure the equivalent Claude surface in <a href="#ex-1-2">Part 1 · Exercise 1.2</a>, then plug your business tools into it in <a href="#ex-3-2">Part 3 · Exercise 3.2</a>.
-        </div>
-      </div>
     </article>
 
     <!-- CARD 9 — Microsoft 365 Copilot Researcher + Analyst (strategic leverage) -->
@@ -3330,6 +3323,23 @@
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Organizational Leverage demo · Theme 2</div>
       <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
+      <h3 class="showcase-title">Researcher and Analyst agents inside your Microsoft 365 stack</h3>
+      <figure class="showcase-figure">
+        <img loading="lazy"
+             src="https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2025/03/Prompt-2-1.webp"
+             alt="Microsoft 365 Copilot Researcher agent producing a multi-page quarterly business review report from a leader's work documents, emails, and meeting notes, displayed inside the Copilot chat surface.">
+        <figcaption>Source: <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/" target="_blank" rel="noopener">Microsoft — Introducing Researcher and Analyst in Microsoft 365 Copilot</a></figcaption>
+      </figure>
+      <div class="showcase-body">
+        <p>If your shop runs on Microsoft, Researcher pulls together a deep multi-source brief — internal docs, emails, meetings, and the web — and Analyst reasons step-by-step over your Excel data with Python. Both run inside the Copilot you already pay for, against the data you already own.</p>
+        <div class="showcase-agentic">
+          <strong>What makes these agents</strong>
+          Multi-step reasoning over your real corpus, not single-turn chat. The same pattern as the Sea of Demand research skill and the Excel reverse-engineer demo in the workshop — different vendor, same agentic shape.
+        </div>
+        <div class="showcase-forward">
+          See the Claude-side equivalent in <a href="#demo-sea-of-demand-research">Part 4 · Sea of Demand</a>.
+        </div>
+      </div>
       <div class="support-matrix" aria-label="Cross-platform support: deep multi-source research and spreadsheet analysis with citations">
         <span class="support-matrix-title">Cross-stack support: deep multi-source research and spreadsheet analysis with citations</span>
         <div class="support-row">
@@ -3351,23 +3361,6 @@
           <span class="support-provider">Microsoft Copilot</span>
           <span class="support-status support-status--yes">Supported<span class="support-qualifier">Researcher + Analyst agents</span></span>
           <a class="support-source" href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/" target="_blank" rel="noopener">Source</a>
-        </div>
-      </div>
-      <h3 class="showcase-title">Researcher and Analyst agents inside your Microsoft 365 stack</h3>
-      <figure class="showcase-figure">
-        <img loading="lazy"
-             src="https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2025/03/Prompt-2-1.webp"
-             alt="Microsoft 365 Copilot Researcher agent producing a multi-page quarterly business review report from a leader's work documents, emails, and meeting notes, displayed inside the Copilot chat surface.">
-        <figcaption>Source: <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/" target="_blank" rel="noopener">Microsoft — Introducing Researcher and Analyst in Microsoft 365 Copilot</a></figcaption>
-      </figure>
-      <div class="showcase-body">
-        <p>If your shop runs on Microsoft, Researcher pulls together a deep multi-source brief — internal docs, emails, meetings, and the web — and Analyst reasons step-by-step over your Excel data with Python. Both run inside the Copilot you already pay for, against the data you already own.</p>
-        <div class="showcase-agentic">
-          <strong>What makes these agents</strong>
-          Multi-step reasoning over your real corpus, not single-turn chat. The same pattern as the Sea of Demand research skill and the Excel reverse-engineer demo in the workshop — different vendor, same agentic shape.
-        </div>
-        <div class="showcase-forward">
-          See the Claude-side equivalent in <a href="#demo-sea-of-demand-research">Part 4 · Sea of Demand</a>.
         </div>
       </div>
     </article>
