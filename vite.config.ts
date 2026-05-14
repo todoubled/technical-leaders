@@ -10,6 +10,17 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
+    {
+      name: "s2p-elevate-ai-guide-rewrite",
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          if (req.url === "/s2p-elevate-ai-guide") {
+            req.url = "/s2p-elevate-ai-guide.html";
+          }
+          next();
+        });
+      },
+    },
     react(),
     mode === 'development' &&
     componentTagger(),

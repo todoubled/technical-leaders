@@ -19,6 +19,10 @@
       "destination": "/api/og?path=$1"
     },
     {
+      "source": "/s2p-elevate-ai-guide",
+      "destination": "/s2p-elevate-ai-guide.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
