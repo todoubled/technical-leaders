@@ -1510,7 +1510,7 @@
   }
 
   /* ====================================================================
-     PRESENTATION MODE — live-facilitator surface.
+     PRESENTATION MODE — live presentation surface.
      The body carries a permanent "presentation" class; reading mode was
      removed in prompt 071, leaving body.presentation as the universal gate.
      ==================================================================== */
@@ -2561,7 +2561,6 @@
      .showcase-plan — 45-min plan paragraph inside the Showcase.
      .three-two-one-compressed — compressed Part 1 pointer to the
        full 3,2,1 Go primer.
-     .demos-appendix — Demos appendix at the foot of the document.
      .showcase-session-tag — session-tag pill in the Showcase block-title area.
      .ex-pointer-note — pointer note where content moved out of the
        live envelope.
@@ -2726,6 +2725,18 @@
     max-width: 64ch;
   }
   body.presentation .showcase-plan { font-size: 18px; }
+
+  .showcase-key-list {
+    margin: 12px 0 18px;
+    padding-left: 22px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--s2p-slate);
+    max-width: 64ch;
+  }
+  .showcase-key-list > li { margin: 0 0 8px; }
+  .showcase-key-list strong { color: var(--s2p-ink); }
+  body.presentation .showcase-key-list { font-size: 18px; }
 
   .three-two-one-compressed {
     list-style: none;
@@ -2978,8 +2989,12 @@
 <section class="block" id="showcase" aria-label="What's already possible — agent and assistant showcase">
   <div class="showcase-session-tag">Showcase · before Theme 1</div>
   <h2 class="block-title">What's already possible</h2>
-  <p class="lede">Before you decide what to automate, see what other leaders are already running. Each card below is a shipped use case anchored to one primary product, with a four-row support matrix and the vendor's own page as citation. <strong>Personal-assistant cards are Option 1 demos</strong>, where AI shows up inside the tools you already use. <strong>Productivity-agent cards are Option 2 demos</strong>, where you bring your work into AI and the agent runs the multi-step job. Cards split roughly half and half across Theme 1 (Personal Productivity, you as the beneficiary) and Theme 2 (Organizational Leverage, a team or function as the beneficiary). Notice which one pulls at you. Start Part 1 with that pull in mind.</p>
-  <p class="showcase-plan">Open with facilitator narration across the nine cards. Then independent scan and table discussion. Walk into Theme 1 having picked the card that pulls at you most.</p>
+  <p class="lede">Before you decide what to automate, see what other leaders are already running. Pick the card that pulls at you most — that's your Part 1 starting point.</p>
+  <ul class="showcase-key-list">
+    <li><strong>Option 1 — Personal-assistant cards.</strong> AI inside the tools you already use.</li>
+    <li><strong>Option 2 — Productivity-agent cards.</strong> You bring work into AI; the agent runs the multi-step job.</li>
+    <li><strong>Theme split.</strong> Half Theme 1 (Personal Productivity, you as beneficiary); half Theme 2 (Organizational Leverage, team as beneficiary).</li>
+  </ul>
 
   <div class="showcase-grid">
 
@@ -3177,7 +3192,7 @@
           The Skill carries the recipe, scheduled tasks carry the cadence, and Cowork orchestrates the multi-step assembly across your tools. The leader sets the standard once, and the cadence runs itself.
         </div>
         <div class="showcase-forward">
-          Build your first packaged Skill in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>, then put it on a cadence at the <a href="#workshop-closer">Workshop closer's Compounding sub-block</a>.
+          Build your first packaged Skill in <a href="#ex-4-1">Part 4 · Exercise 4.1 (How might we…)</a>.
         </div>
       </div>
     </article>
@@ -3322,7 +3337,7 @@
           Gemini reads your inbox, Docs, and Calendar with permission, reasons across them, and produces a finished draft inside the same surface. The leader doesn't switch tools, doesn't paste in context, and doesn't re-explain who they are.
         </div>
         <div class="showcase-forward">
-          The same "agent shows up where the work already lives" pattern is built in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a> and scheduled via the <a href="#workshop-closer">Workshop closer's Compounding sub-block</a>.
+          The same "agent shows up where the work already lives" pattern is built in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>.
         </div>
       </div>
     </article>
@@ -3573,7 +3588,7 @@
             <p><em>If Option 2 requires admin rights you don't have, start with Option 1 and revisit Option 2 with IT after Part 3.</em></p>
             <div class="worked">
               <strong class="tag">Why this matters for the rest of the guide</strong>
-              Option 1 leaders pay off Part 3 Exercise 3.1 (10 / 80 / 10) first; the workflow design lives inside the tool they already use. Option 2 leaders pay off Part 3 Exercise 3.2 (Toolbox + MCP) first; the connector wiring is their starting line. Both Options converge in Part 4 when you build a Skill, and both compound via the Workshop closer's Compounding sub-block (schedule + cron) and Week 2 deliverable (second granular Skill). Picking now is about <em>where to start</em>, not <em>what you'll end up doing</em>.
+              Option 1 leaders pay off Part 3 Exercise 3.1 (10 / 80 / 10) first; the workflow design lives inside the tool they already use. Option 2 leaders pay off Part 3 Exercise 3.2 (Toolbox + MCP) first; the connector wiring is their starting line. Both Options converge in Part 4 when you build a Skill. Picking now is about <em>where to start</em>, not <em>what you'll end up doing</em>.
             </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>you've written three lines that name a real Option, a real tool, and a real first move — not a category but a specific job you'll do by Friday.</div>
           </div>
@@ -3599,7 +3614,7 @@
             <p>The How Trap is jumping to "how do I use Claude" before stopping to ask "what should I apply AI to, and why is that the most valuable thing." The headlines about "no ROI from AI" almost always come from leaders deep in the How Trap. Write down the one How question you've been asking that you now suspect is premature — the one whose <em>What</em> and <em>Why</em> you haven't actually decided yet.</p>
             <div class="callout tip">
               <strong>Cross-reference — TDAR</strong>
-              <strong>T</strong>hinking -&gt; <strong>D</strong>ecision -&gt; <strong>A</strong>ction -&gt; <strong>R</strong>esult. Quality of thinking determines ROI. That's why Parts 2 and 3 of this guide are about picking the right work and designing the workflow <em>before</em> Part 4 builds the skill. The full TDAR card lives in the methodology appendix at the foot of the guide.
+              <strong>T</strong>hinking -&gt; <strong>D</strong>ecision -&gt; <strong>A</strong>ction -&gt; <strong>R</strong>esult. Quality of thinking determines ROI. That's why Parts 2 and 3 of this guide are about picking the right work and designing the workflow <em>before</em> Part 4 builds the skill.
             </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>you have one How question written down with a one-line note: "I haven't decided the What / Why yet."</div>
           </div>
@@ -3617,7 +3632,7 @@
               <span class="tag">From the live session — audience questions</span>
               <h5>Why Claude vs ChatGPT vs Copilot vs Gemini?</h5>
               <p>An audience question asked why Claude specifically. The live-session answer: it's the best model for professional / enterprise work right now; ChatGPT is the consumer product; Microsoft Copilot is the enterprise path inside the Microsoft 365 stack, and because Microsoft + Anthropic partnered, Microsoft Copilot Cowork gives you Claude inside that ecosystem. If you're a Microsoft shop, that's a strong path.</p>
-              <p>Another audience question asked about Gemini for Google Workspace shops. Tech Leaders uses Gemini too: NotebookLM is excellent, Nano Banana for images is excellent, and Gemini is strong at computer vision (handwritten receipts, screenshots, that kind of thing). See the methodology appendix for the Longhand multi-model handoff note.</p>
+              <p>Another audience question asked about Gemini for Google Workspace shops. Tech Leaders uses Gemini too: NotebookLM is excellent, Nano Banana for images is excellent, and Gemini is strong at computer vision (handwritten receipts, screenshots, that kind of thing).</p>
               <p class="speaker">Source: live-session Q&amp;A, 2026-05-13.</p>
             </div>
 
@@ -3953,7 +3968,7 @@ After scoring, apply the live-session reframe: the right pick may not
 be the most critical activity. It may be the work that steals time
 from the $10 task. For each Top 3 Job, also note time-by-task,
 value-by-task, and what it steals from.</div>
-            <p>The output of this step is your Top 3 Jobs: the one you lock in next, plus two more you carry to the Workshop closer's Top 3 Jobs requirements prep (relocated from Ex 3.2). The Top 3 is the unit of planning for the rest of the workshop.</p>
+            <p>The output of this step is your Top 3 Jobs: the one you lock in next, plus two more you carry in your queue. The Top 3 is the unit of planning for the rest of the workshop.</p>
             <div class="step-check"><strong>You'll know you've got it when</strong>you have a Top 3 sorted by RICE with the time-steal lens applied, and you can explain in one sentence why your new #1 is #1.</div>
           </div>
         </div>
@@ -3976,7 +3991,7 @@ value-by-task, and what it steals from.</div>
               <strong>Sandbox first</strong>
               Don't make your first AI build your most critical business process. Pick a Job you can play with and break. If your locked-in Job is mission-critical, find a sandbox-safe variant first.
             </div>
-            <p>The locked-in Job is the #1 of your Top 3. Park the other two by RICE rank; they earn their place in the Workshop closer's Top 3 Jobs requirements prep.</p>
+            <p>The locked-in Job is the #1 of your Top 3. Park the other two by RICE rank; they're your queue for the next builds.</p>
             <div class="step-check"><strong>You'll know you've got it when</strong>you have one Job written cleanly with RICE, time-steal, and sandbox-safety notes, and you'd defend the pick to a peer.</div>
           </div>
         </div>
@@ -3991,7 +4006,7 @@ value-by-task, and what it steals from.</div>
     <ol>
       <li><strong>Save the prioritized Jobs table</strong> with RICE scores and time-steal notes into a doc you'll reuse in Parts 3 and 4.</li>
       <li><strong>Confirm the one locked-in Job</strong> is written cleanly in canonical "When X, I want Y, so I can Z" form.</li>
-      <li><strong>Park the rest of the list.</strong> You'll come back to it after the first Skill ships and chains (Workshop closer Week 2 deliverable); that's the trust-the-process loop.</li>
+      <li><strong>Park the rest of the list.</strong> You'll come back to it after the first Skill ships and chains; that's the trust-the-process loop.</li>
       <li><strong>In the next 24 hours:</strong> tell one peer or report which Job you've picked and why. If they push back, that's data — your Job description either has a missing motivation or the wrong outcome.</li>
     </ol>
 
@@ -4003,7 +4018,7 @@ value-by-task, and what it steals from.</div>
         <li>Over-claiming Confidence on synthesis Jobs. They look easy. They're not, until you've watched a real output.</li>
         <li>Defaulting to your most critical business activity for the first build. The live session was firm — that's the wrong pick. Take the time-stealer.</li>
         <li>Over-budgeting Effort by tradition. Things that took humans an hour often take the agent ten minutes. Penalize Effort accordingly.</li>
-        <li>Locking in more than one Job for Parts 3 and 4. You'll come back to the list after the first Skill ships (Workshop closer Week 2 deliverable). Trust the process.</li>
+        <li>Locking in more than one Job for Parts 3 and 4. You'll come back to the list after the first Skill ships. Trust the process.</li>
       </ul>
     </div>
   </div>
@@ -4031,7 +4046,6 @@ value-by-task, and what it steals from.</div>
   </div>
   <h2 class="theme-marker-title">Build something your team can run</h2>
   <p class="theme-marker-lede">Design the workflow (Part 3), then build, schedule, and chain the Skill (Part 4) — at every step, design as if you were onboarding a new teammate. The "AI as teammate" reframe is the spine of this theme; the Skill you ship is the artifact your team or function can run.</p>
-  <p class="theme-marker-lede">By the end of Theme 2 you have the option to sketch two named artifacts in the Workshop closer: an AI-First org chart for your team and a 30-day change-management plan to roll it out.</p>
   <p class="theme-marker-bridge"><strong>Theme 2 entry move:</strong> carry your Option forward, but reframe the work. If you picked Option 1, name the team member whose Outlook / Excel / Chrome you'd roll this out to next. If you picked Option 2, name the function whose connectors you'd plug into next. Write the name. The Skill you build in Part 4 is for them, not just you.</p>
   <p class="theme-marker-budget"><em>Theme 2 is where the leverage compounds — budget the time. Part 4's four demos are walk-through, not all-required; pick the closest one and treat the others as bonus.</em></p>
 </section>
@@ -4045,7 +4059,6 @@ value-by-task, and what it steals from.</div>
     <li>What work gets stuck waiting for review or synthesis?</li>
     <li>What would "better, faster, more consistent" look like for that work in 30 days?</li>
   </ul>
-  <p class="warmup-questions-note">The 30-day horizon in the third question is the same horizon you'll commit to in the Workshop closer's 30-day change-management plan.</p>
 </section>
 
 <!-- ============================================================
@@ -4094,7 +4107,7 @@ value-by-task, and what it steals from.</div>
     <hr class="session-block-divider">
     <p class="session-block-label">Exercise 3</p>
     <h3>Exercise 3 — Map the workflow on 10 / 80 / 10</h3>
-    <!-- inferred from transcript: Exercise 3 — trigger / steps / done / edge cases + 10/80/10 distribution + live-session "AI as teammate" reframe. Compressed in the 5 x 45 cut: Definition of Done + Edge Cases folded into one step; back-10% reviewer pointer to the Workshop closer. -->
+    <!-- inferred from transcript: Exercise 3 — trigger / steps / done / edge cases + 10/80/10 distribution + live-session "AI as teammate" reframe. Compressed in the 5 x 45 cut: Definition of Done + Edge Cases folded into one step. -->
 
     <div class="exercise" id="ex-3-1">
       <div class="exercise-head">
@@ -4180,7 +4193,6 @@ value-by-task, and what it steals from.</div>
                 <li>If the title contains "[DRAFT]" or "[TEST]", stop. Do not publish.</li>
               </ul>
             </div>
-            <p class="ex-pointer-note"><em>Naming the back-10% reviewer moves to the <a href="#workshop-closer">Workshop closer</a> (hand-off prep paired with the AI-First org chart).</em></p>
             <div class="step-check"><strong>You'll know you've got it when</strong>Definition of Done is observable in 30 seconds tied to a measurable outcome, and at least three edge cases are written with at least one explicit "if X, stop" guardrail.</div>
           </div>
         </div>
@@ -4191,7 +4203,7 @@ value-by-task, and what it steals from.</div>
     <hr class="session-block-divider">
     <p class="session-block-label">Exercise 4</p>
     <h3>Exercise 4 — Your toolbox: MCP connections + computer use</h3>
-    <!-- inferred from transcript: Exercise 4 — toolbox = the tools your business already runs on, MCP connections, computer use fallback. Steps 4 (kill switch), 5 (back-10% reviewer), and 6 (Top 3 worksheet) moved out in the 5 x 45 cut: kill-switch template moves to Ex 4.1; back-10% reviewer and Top 3 worksheet move to the Workshop closer. -->
+    <!-- inferred from transcript: Exercise 4 — toolbox = the tools your business already runs on, MCP connections, computer use fallback. Step 4 (kill switch) folds into Ex 4.1. -->
 
     <div class="exercise" id="ex-3-2">
       <div class="exercise-head">
@@ -4256,7 +4268,7 @@ value-by-task, and what it steals from.</div>
           </div>
         </div>
 
-        <p class="ex-pointer-note"><em>The kill-switch template moves to <a href="#ex-4-1">Ex 4.1</a> (paste-in block inside the Skill build). The back-10% reviewer naming and the Top 3 Jobs requirements worksheet both move to the <a href="#workshop-closer">Workshop closer</a> as between-sessions prep.</em></p>
+        <p class="ex-pointer-note"><em>The kill-switch template moves to <a href="#ex-4-1">Ex 4.1</a> (paste-in block inside the Skill build).</em></p>
       </div>
     </div>
 
@@ -4393,11 +4405,11 @@ structure a step than I described, propose it. The point is the
 outcome, not the steps I wrote.</div>
             <div class="callout tip">
               <strong>Optional addition for Theme 2 Organizational arc</strong>
-              Append one line to your "How might we…" prompt: <em>". . . and design it so [name the team or function] can run it without me in the loop after Week 2."</em> This is the Theme 2 hinge — the Skill stops being "mine to run" and becomes "ours to run." Use the team / function you wrote in your Part 2 Theme 2 carry sentence.
+              Append one line to your "How might we…" prompt: <em>". . . and design it so [name the team or function] can run it without me in the loop within two weeks."</em> This is the Theme 2 hinge — the Skill stops being "mine to run" and becomes "ours to run." Use the team / function you wrote in your Part 2 Theme 2 carry sentence.
             </div>
             <div class="callout tip">
               <strong>One suggested first build for Theme 1</strong>
-              If your locked-in Job is content-shaped (talks, decks, newsletters, internal explainers), one strong first build is the Elevate slides Skill: turn your own slide deck into an agent Skill so Claude can deliver the talk-track on demand for prep, recap, or a teammate's onboarding. Use the meta-prompt template above; the inputs are your slide deck and your facilitator notes.
+              If your locked-in Job is content-shaped (talks, decks, newsletters, internal explainers), one strong first build is the Elevate slides Skill: turn your own slide deck into an agent Skill so Claude can deliver the talk-track on demand for prep, recap, or a teammate's onboarding. Use the meta-prompt template above; the inputs are your slide deck and your speaker notes.
             </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>the meta-prompt is one block, ends with "ask clarifying questions before generating," and includes the kill-switch rules from Part 3.</div>
           </div>
@@ -4445,7 +4457,7 @@ Be literal. The more literal the better.</div>
               <strong>Feedback into the skill, not the output</strong>
               Spend your time making the <em>skill</em> better, not the deliverable. Most people back-and-forth-edit every output. Put that feedback <em>into the skill</em>.
             </div>
-            <p class="ex-pointer-note"><em>Schedule this with /schedule once it works. Full cron + stagger + run-log content is in the <a href="#workshop-closer">Workshop closer</a> (Compounding sub-block).</em></p>
+            <p class="ex-pointer-note"><em>Schedule this with /schedule once it works.</em></p>
             <div class="step-check"><strong>You'll know you've got it when</strong>the Skill is installed, the kill-switch lines are pasted in, and the Skill has produced one output that satisfies your Definition of Done (or you've added one new instruction so the next run will).</div>
           </div>
         </div>
@@ -4453,11 +4465,10 @@ Be literal. The more literal the better.</div>
     </div>
 
     <!-- ============ DEMO WALK-THROUGH — 1 LIVE in Part 4 ============ -->
-    <!-- The other 3 demos moved to the Demos appendix after the Workshop closer / Methodology. -->
     <hr class="session-block-divider">
     <p class="session-block-label">Demo walk-through</p>
     <h3>Live demo walk-through — LinkedIn newsletter publish</h3>
-    <p>One live demo in Part 4. The other three demos (Leads to LinkedIn connection request, PowerPoint screenshot via computer use, Sea of Demand research) live in the <a href="#demos-appendix">Demos appendix</a> for scan outside the live envelope. The newsletter publish demo is the canonical "How might we…" build and works as a model for most first builds.</p>
+    <p>One live demo in Part 4. The newsletter publish demo is the canonical "How might we…" build and works as a model for most first builds.</p>
 
     <!-- ============ DEMO 1 — LINKEDIN NEWSLETTER PUBLISH (KEPT in Part 4) ============ -->
     <!-- inferred from transcript: Live demo 1 — LinkedIn newsletter skill, verbatim live-session prompt, three clarifying questions -->
@@ -4496,9 +4507,6 @@ Be literal. The more literal the better.</div>
       </div>
     </section>
 
-    <!-- Demos 2, 3, 4 relocated to the Demos appendix (#demos-appendix). -->
-    <!-- Ex 4.2 (Schedules + cron) relocated to the Workshop closer as a Compounding sub-block. -->
-    <!-- Ex 4.3 (Second granular skill + feedback loop) relocated to the Workshop closer as a Week 2 deliverable. -->
 
     <section class="wwhn-section">
       <span class="wwhn-label">Now what to do next</span>
@@ -4511,7 +4519,6 @@ Be literal. The more literal the better.</div>
       <li><strong>Save your "How might we…" prompt</strong> and the clarifying-question answers in your notes. You'll reuse the pattern on every subsequent skill.</li>
       <li><strong>Loop back to your Part-2 Jobs list.</strong> Pick the next-priority Job. Schedule a time to start the loop again. Trust the process.</li>
     </ol>
-    <p class="ex-pointer-note"><em>The schedule + cron, the second granular skill, the Theme 1 capstone personal AI productivity system, the back-10% reviewer naming, and the Top 3 Jobs requirements prep all live in the <a href="#workshop-closer">Workshop closer</a> as between-sessions deliverables.</em></p>
 
 
     <div class="callout pitfall">
@@ -4540,422 +4547,6 @@ Be literal. The more literal the better.</div>
 </section>
 
 
-<!-- ============ WORKSHOP CLOSER — write both commitments ============ -->
-<section class="block up-next" id="workshop-closer">
-  <h2 class="block-title">Before Week 1 starts — write both commitments</h2>
-  <p class="lede">You walked four Parts and two themes. Now write the two deliverables down — in the same notes file as your Part 1 Loop / Option notes. The Day 7 cell below will ask you for them again; that's the second touchpoint. Two prompts, not one, so both halves of the dual outcome are on the page.</p>
-  <div class="callout tip">
-    <strong>Write these now</strong>
-    <ul style="margin:6px 0 0;">
-      <li><strong>Personal Productivity win:</strong> the personal AI productivity system from the Theme 1 capstone sub-block below, or the Loop you closed, or the Skill that makes your own week faster. One sentence. Concrete. Yours.</li>
-      <li><strong>Organizational Leverage move:</strong> the AI-First org chart and 30-day change-management plan you sketched below, or the Skill you're handing to a team, the workspace you're standardizing, the agent you're piloting across a function. One sentence. Name the team member or function lead.</li>
-    </ul>
-  </div>
-
-  <div class="outcome-artifact">
-    <span class="outcome-artifact-tag">Theme 2 artifact template (optional)</span>
-    <h4 class="outcome-artifact-title">Sketch your AI-First org chart and 30-day change-management plan</h4>
-    <p>The Theme 2 outcome artifact lives in two halves. Sketch both in your notes now; you can refine them across Week 1. The artifact is what turns the Organizational Leverage move from a one-sentence commitment into a plan the team can read.</p>
-
-    <p><strong>Part A: the AI-First org chart.</strong> Four prompts:</p>
-    <ol class="outcome-artifact-prompt-list">
-      <li>Which roles exist on your team today? Name them.</li>
-      <li>Which of those roles will AI agents take over the middle 80% of in the next 90 days? Use Ex 2.1's Theme 2 carry sentence to name the function and the reason.</li>
-      <li>Which roles keep human ownership (the back 10%) for review, judgment, and accountability? Use the back-10% reviewer naming sub-block below to anchor each one.</li>
-      <li>Which new roles emerge to operate the agents themselves (agent reviewer, workflow owner, prompt librarian)? Name them and the person you'd hire or appoint for each.</li>
-    </ol>
-
-    <p><strong>Part B: the 30-day change-management plan.</strong> Four prompts:</p>
-    <ol class="outcome-artifact-prompt-list">
-      <li>Weeks 1 to 4: what ships when? Name the Skill or workflow that goes live each week.</li>
-      <li>Who is accountable per week? Name the team member or function lead by name, not category.</li>
-      <li>What is the communication plan? Name who hears what, when, and through which channel.</li>
-      <li>What is the success metric per week? Use one concrete measure per week: time reclaimed, error rate, throughput, named adoption count.</li>
-    </ol>
-
-    <p>The plan is a sketch, not a contract. Refine across Week 1 as your first Skill goes live and you learn the real rhythm.</p>
-  </div>
-
-  <!-- ============ Top 3 Jobs requirements prep (relocated from Ex 3.2 Step 6) ============ -->
-  <div class="outcome-artifact">
-    <span class="outcome-artifact-tag">Top 3 Jobs requirements prep</span>
-    <h4 class="outcome-artifact-title">Inventory requirements for your Top 3 Jobs</h4>
-    <p>You have a locked-in Job and two more from your Part 2 RICE Top 3. Run a structured inventory across all three so the next Skill build cycle starts with what each will need before you build it. The four rows below are the requirements lens; the three columns are the Top 3 Jobs.</p>
-    <table class="requirements-worksheet">
-      <thead>
-        <tr>
-          <th>Requirement</th>
-          <th>Job 1 (locked-in)</th>
-          <th>Job 2</th>
-          <th>Job 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Data and files the AI needs</th>
-          <td>[list the inputs, sources, and reference docs]</td>
-          <td>[same]</td>
-          <td>[same]</td>
-        </tr>
-        <tr>
-          <th scope="row">Business tools and systems to connect</th>
-          <td>[list the MCP connectors and computer-use targets]</td>
-          <td>[same]</td>
-          <td>[same]</td>
-        </tr>
-        <tr>
-          <th scope="row">Skills describing HOW to do the Job</th>
-          <td>[name the Skill or Skills the agent will run]</td>
-          <td>[same]</td>
-          <td>[same]</td>
-        </tr>
-        <tr>
-          <th scope="row">Human-in / on-the-Loop oversight</th>
-          <td>[who reviews, when, and what they scan for]</td>
-          <td>[same]</td>
-          <td>[same]</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>For Job 1, most of this is already on your page from Ex 3.1 and Ex 3.2. For Jobs 2 and 3, this is the first pass. Don't over-build; one or two lines per cell is enough.</p>
-  </div>
-
-  <!-- ============ Back-10% reviewer naming (relocated from Ex 3.2 Step 5) ============ -->
-  <div class="outcome-artifact">
-    <span class="outcome-artifact-tag">Hand-off prep (paired with the AI-First org chart)</span>
-    <h4 class="outcome-artifact-title">Name the back-10% reviewer for each Top 3 Job</h4>
-    <p>One named human reviews each agent's output before it ships (or after, for low-stakes recurring work). Name them. Decide the cadence (per-output for the first run; daily or weekly later). Decide what they're scanning for in 3 to 5 specific items, not "is it good," specifically "did it cite the right product version" or "is the customer name spelled correctly."</p>
-    <p>For the locked-in Job, this is almost certainly <em>you</em> for the first run, the sandbox-mindset move from Part 2. After two or three clean runs, hand the back 10% to a teammate. Two honest options:</p>
-    <ul>
-      <li><strong>You for the first two weeks.</strong> Sandbox-mindset move while the Skill stabilizes. Write the handoff date when the reviewer becomes someone else.</li>
-      <li><strong>A team member or function lead from Day 1.</strong> Name them, and confirm they know they're the reviewer.</li>
-    </ul>
-    <p>If you wrote "you" with no handoff date, that's the failure mode: the Skill never becomes Organizational Leverage. Pick a date now, even if it slips later. Anchor each named reviewer in the AI-First org chart above.</p>
-  </div>
-
-  <!-- ============ Theme 1 capstone — Week 1 deliverable (relocated from Ex 4.1) ============ -->
-  <div class="outcome-artifact">
-    <span class="outcome-artifact-tag">Theme 1 capstone (Week 1 deliverable)</span>
-    <h4 class="outcome-artifact-title">Generate your personal AI productivity system</h4>
-    <p>This is the Theme 1 outcome artifact: a personal HTML-based system, generated by Claude, that becomes the surface you re-run weekly. It chains your locked-in Job with the other two Jobs in your Top 3 and sets up the cadence to operate them. Paste the meta-prompt below into Claude. Use the configured surface from Ex 1.2. Answer Claude's clarifying questions the same way you did in Ex 4.1.</p>
-    <div class="prompt-box"><span class="tag">Theme 1 capstone meta-prompt, paste into Claude</span>How might we create an HTML-based system where I can regularly run
-Claude, that lets me be the best world-class [your role] possible.
-
-I am planning to use Claude as my personal executive assistant and
-[your role] expert. Document everything in a series of folders as
-you see fit and suggest Skills and recurring tasks to help me
-perform and achieve our goals.
-
-Inputs you can use:
-- My "who I am" block (from Ex 1.2 Step 3).
-- My locked-in Job and the two other Jobs in my Top 3 (from Ex 2.2).
-- My toolbox and MCP connector list (from Ex 3.2).
-- The Skill I just built in Ex 4.1.
-
-Ask me clarifying questions before generating. Where you have a
-better idea for a recurring Skill than I would have thought of,
-propose it. The point is the personal AI productivity system, not
-the steps I wrote.</div>
-    <p>You'll know you've got it when Claude has generated an HTML system with at least three folders, three recurring Skills proposed, and one weekly cadence written down.</p>
-  </div>
-
-  <!-- ============ Compounding — Schedule + cron (relocated from Ex 4.2) ============ -->
-  <div class="outcome-artifact">
-    <span class="outcome-artifact-tag">Compounding (Week 1 deliverable)</span>
-    <h4 class="outcome-artifact-title">Put the Skill on a cron in Schedules and plan the stagger</h4>
-    <p>Two to three clean validation runs from Ex 4.1 first; a brittle skill on a cron becomes a noisy notifications problem. Then open Schedules in Claude and create a recurring run. There are two ways to run skills in Claude: <strong>Projects</strong> (manual invocation in chat) and <strong>Schedules</strong> (on a cron). Pick a time the agent can safely act, usually early morning before the human-on-the-loop reviewer's day starts.</p>
-    <p><strong>If you built in Cowork:</strong> scheduled runs of Cowork-built Skills require the install step from Ex 4.1 (Settings -&gt; Capabilities -&gt; Skills -&gt; Customize). If your schedule doesn't fire, that's the first thing to check.</p>
-    <p><strong>Plan the stagger.</strong> The live-session example: four marketing activities run automatically, staggered through the day. Write the slots you'll fill as you build more Skills.</p>
-    <div class="worked">
-      <strong class="tag">Sample stagger — four scheduled skills across a day</strong>
-      <ul style="margin:0;">
-        <li><strong>6:00 a.m.</strong>: Leads -&gt; LinkedIn connection request (see <a href="#demo-leads-connection-request">Demos appendix</a>).</li>
-        <li><strong>8:30 a.m.</strong>: Sea of Demand research digest for the morning meeting (see <a href="#demo-sea-of-demand-research">Demos appendix</a>).</li>
-        <li><strong>11:00 a.m.</strong>: Newsletter publish if a newsletter is approved (Part 4 live demo).</li>
-        <li><strong>4:00 p.m.</strong>: End-of-day summary for the back-10% reviewer.</li>
-      </ul>
-    </div>
-    <p><strong>Confirm the run-log shape</strong> and <strong>who else sees it.</strong> For the scheduled Skill, name what the run log should capture each time: input snapshot, output produced, any kill-switch trigger, time-to-complete. Plain language; no log-format spec required. Then decide who else sees the run log: a team member, a function lead, or just you for one more week before you hand it over. The Skill stops being Personal Productivity and starts being Organizational Leverage the moment a second human is reading the run log.</p>
-  </div>
-
-  <!-- ============ Second granular skill — Week 2 deliverable (relocated from Ex 4.3) ============ -->
-  <div class="outcome-artifact">
-    <span class="outcome-artifact-tag">Second granular Skill (Week 2 deliverable)</span>
-    <h4 class="outcome-artifact-title">Build a second granular skill and run the feedback-into-the-skill loop</h4>
-    <p>Chain Skills by building several <em>small, granular</em> Skills, not one mega-skill. Each Skill should be as <strong>A -&gt; B</strong> as possible: clear input, clear output. Then chain to the next one. Each is smaller, more reusable, easier to iterate, and combinable. Tech Leaders' "qualified sales conversations with prospects" is four separate Skills, one per step in the sales funnel, not one mega-skill.</p>
-    <p><em>The second granular skill is a great place to widen the scope from yourself to your team. Use the meta-prompt below.</em></p>
-    <div class="prompt-box"><span class="tag">Meta-prompt — paste into Claude</span>How might we create a small follow-on skill that takes the output of
-[your Ex 4.1 skill name] and does [one specific A -&gt; B step]. Keep
-this skill as small and A -&gt; B as possible. Do not absorb the work of
-the previous skill; just pick up its output, do this one step, and
-pass to the next. Ask clarifying questions before generating.</div>
-    <p><strong>Run the feedback-into-the-skill loop.</strong> Pull up the last 2 to 3 outputs from your Ex 4.1 Skill. Find one miss: a phrase that's not in your voice, a fact that was wrong, a step the agent skipped. <em>Do not edit the output.</em> Open the Skill instead. Write one new instruction in plain language. "Always do X." "Never do Y." "When unsure, ask." Save the Skill. The next run is better. Then repeat with the second granular Skill once it has its first runs.</p>
-    <p>Measure the loop close as you go: time-to-output, time saved, skill-quality drift across runs. Plain notes are fine; the measurement tells you whether to keep iterating, hand it off, or retire it.</p>
-  </div>
-
-  <blockquote class="pullquote" style="margin-top:18px;">Hour 1 you made yourself faster. Hour 2 you built something your team can run.<span class="attribution">The dual-outcome promise, in past tense</span></blockquote>
-</section>
-
-
-<!-- ============ WEEK 1 OF YOUR NEW OPERATING SYSTEM ============ -->
-<section class="block up-next" id="week-1">
-  <h2 class="block-title">Week 1 of your new operating system</h2>
-  <p class="lede">Seven days, one move per day, two arcs in the week. End the week with one Personal Productivity win captured (the Loop you closed in Day 1) and one Organizational Leverage move queued (the Skill you scheduled in Day 5 for a team or function to run).</p>
-  <div class="day-grid">
-    <div class="day">
-      <div class="day-num">Day 1</div>
-      <strong>Set up</strong>
-      <span class="day-theme-tag">Personal Productivity</span>
-      <p>Part 1. Pick which Option you're starting with and the tool(s) you're starting in, name your Loop, configure Claude the Tech Leaders way: privacy off, adaptive reasoning system prompt, "who I am" block. Run the smoke-test prompt once.</p>
-    </div>
-    <div class="day">
-      <div class="day-num">Day 2</div>
-      <strong>Strategy</strong>
-      <span class="day-theme-tag">Personal Productivity</span>
-      <p>Part 2. Write 2 to 3 Jobs to be Done in "When X, I want Y, so I can Z" form. RICE-score them. Apply the live-session "steals time from the $10 task" reframe. Lock in one Job. <em>Lock in one Personal Productivity Job for the week.</em></p>
-    </div>
-    <div class="day">
-      <div class="day-num">Day 3</div>
-      <strong>Tactics</strong>
-      <span class="day-theme-tag">Personal &rarr; Organizational</span>
-      <p>Part 3. Map the workflow on 10 / 80 / 10: trigger, steps, definition of done, edge cases. Build the toolbox — authorize MCPs in Claude. Design the kill switch (soft + hard). <em>In the workflow map, name the back-10% reviewer — yourself for Week 1, or the team member who picks it up in Week 2?</em></p>
-    </div>
-    <div class="day">
-      <div class="day-num">Day 4</div>
-      <strong>Tasks</strong>
-      <span class="day-theme-tag">Organizational Leverage</span>
-      <p>Part 4. Write the "How might we create a new skill to ___" meta-prompt. Answer Claude's clarifying questions. Generate, install, validate. Ship one working skill. <em>Build the Skill on a Job a function or team could adopt — even if you run it yourself for Week 1.</em></p>
-    </div>
-    <div class="day">
-      <div class="day-num">Day 5</div>
-      <strong>Schedule + granular #2</strong>
-      <span class="day-theme-tag">Organizational Leverage</span>
-      <p>Workshop closer Compounding sub-block + Week 2 deliverable. Put the Day-4 Skill on a cron in Schedules. Build the second granular Skill: A -&gt; B, chained to the first. Don't merge them. <em>The second granular skill is the natural moment to design for someone else's role.</em></p>
-    </div>
-    <div class="day">
-      <div class="day-num">Day 6</div>
-      <strong>Iterate</strong>
-      <span class="day-theme-tag">Both — Personal and Organizational</span>
-      <p>Workshop closer Week 2 deliverable. Pull the last 2 to 3 outputs. Find the miss. Don't edit the output; write the fix into the Skill in plain language. Wake up at 11 p.m. with an idea? Throw it in. <em>Feedback into the skill, in plain language a team member could write; that's the discipline that survives the handoff.</em></p>
-    </div>
-    <div class="day">
-      <div class="day-num">Day 7</div>
-      <strong>Loop back — dual outcome</strong>
-      <span class="day-theme-tag">Both — dual outcome</span>
-      <p>Open the Part-2 Jobs list. Write your Week 1 Personal Productivity win (the Loop you closed) and your Week 2 Organizational Leverage move (the Skill or workspace you'll hand to a team or function). <strong>Write the name</strong> — the team member or function lead who will run the Skill. If you can't name them, you don't have the commitment yet. Pick the next-priority Job. Trust the process. Confirm both Workshop closer artifact templates are filled in: the AI-First org chart and the 30-day change-management plan, alongside the dual-outcome write-down.</p>
-    </div>
-  </div>
-  <blockquote class="pullquote" style="margin-top:20px;">Trust the process. That's what gets AI that actually works, that delivers ROI, and that doesn't hallucinate.<span class="attribution">From the live session — closing</span></blockquote>
-</section>
-
-
-<!-- ============ METHODOLOGY APPENDIX ============ -->
-<section class="block up-next" id="methodology">
-  <h2 class="block-title">Methodology appendix</h2>
-  <p class="lede">Three frameworks anchor this guide. They're named where they appear in the Parts — this is the reference card.</p>
-
-  <div class="method-grid">
-    <div class="method-card">
-      <div class="label">Framework 1</div>
-      <h4>AI ROI Triangle</h4>
-      <p><strong>Literacy (WHY / WHAT)</strong> -&gt; <strong>Adoption (WHAT IF / HOW set-up)</strong> -&gt; <strong>Leverage (HOW + Result)</strong>. ROI from AI follows this order. Skip Literacy and Adoption stalls. Skip Adoption and Leverage never compounds. The four Parts of this guide map onto the triangle — Parts 1 to 2 are Literacy, Part 3 is Adoption, Part 4 is Leverage.</p>
-      <p>Part 4 delivers the AI ROI Triangle's Leverage step, including the Compounding moves (schedule + granular skill chain) — which in this workshop map to Organizational Leverage as the theme outcome.</p>
-      <p>Literacy is yours. Adoption is your surface. Leverage is your team's surface — Themes 1 and 2 follow that arc. (The theme name for that team surface is <strong>AI for Organizational Leverage</strong>; for the leader's own surface it is <strong>AI for Personal Productivity</strong>.)</p>
-    </div>
-    <div class="method-card">
-      <div class="label">Framework 2</div>
-      <h4>People Transformation Capability Process</h4>
-      <p>The transformation flow inside the leader: <strong>Awareness</strong> (2 Options self-placement, the Loop diagnosis), <strong>Adoption</strong> (the configured surface and the right-Job pick), <strong>Application</strong> (the workflow design and toolbox), <strong>Mastery</strong> (the first skill ships and iterates), <strong>Compounding</strong> (granular skills chain, scheduled runs stack). Movement between layers is what the four Parts deliver.</p>
-      <p>Awareness through Adoption is Personal-first (Theme 1). Application through Mastery is the bridge (Theme 2 Part 4 Ex 4.1). Compounding is Organizational-first (Workshop closer Compounding sub-block + Week 2 deliverable, plus Week 1 Day 5+).</p>
-    </div>
-    <div class="method-card">
-      <div class="label">Framework 3</div>
-      <h4>TDAR — Thinking -&gt; Decision -&gt; Action -&gt; Result</h4>
-      <p>From the live session, almost verbatim: real results come from actions, which come from decisions, which come from thinking. The quality of your thinking determines the ROI. Picking the <em>why</em> is harder and more important than picking the <em>how</em>. This is the frame for why Parts 2 and 3 come before Part 4 in this guide — Thinking before Action.</p>
-    </div>
-  </div>
-
-  <h3>Themes &times; Options — reference 2&times;2</h3>
-  <p>Every Showcase card, every exercise, every Skill build lands somewhere on this 2&times;2. Themes (rows) answer <em>who benefits</em>; Options (columns) answer <em>how AI plugs in</em>.</p>
-  <div class="theme-options-2x2">
-    <div class="theme-options-2x2-cell theme-options-2x2-corner"></div>
-    <div class="theme-options-2x2-cell theme-options-2x2-col-head"><strong>Option 1</strong><br><span>AI into tools</span></div>
-    <div class="theme-options-2x2-cell theme-options-2x2-col-head"><strong>Option 2</strong><br><span>Tools into AI</span></div>
-    <div class="theme-options-2x2-cell theme-options-2x2-row-head"><strong>Theme A</strong><br><span>Personal Productivity</span></div>
-    <div class="theme-options-2x2-cell"><strong>Claude for Chrome</strong> driving the leader's own logged-in browser; <strong>Gemini in Gmail</strong> triaging the leader's inbox.</div>
-    <div class="theme-options-2x2-cell">A <strong>Claude Project</strong> for the leader's board pack; <strong>ChatGPT Projects + connectors</strong> for the CEO's weekly brief.</div>
-    <div class="theme-options-2x2-cell theme-options-2x2-row-head"><strong>Theme B</strong><br><span>Organizational Leverage</span></div>
-    <div class="theme-options-2x2-cell"><strong>Microsoft 365 Copilot in Outlook</strong> rolled out to the executive team's inboxes; <strong>Microsoft 365 Copilot in Excel</strong> standardized across finance.</div>
-    <div class="theme-options-2x2-cell"><strong>Claude Skills + MCP</strong> connectors serving the sales function's CRM corpus; <strong>Microsoft 365 Copilot agents</strong> (Researcher + Analyst) on team data.</div>
-  </div>
-
-  <h3>Cheat sheet — frameworks named in the live session</h3>
-  <ul>
-    <li><strong>2 Options</strong> — AI into tools (Option 1, personal-assistant pattern) vs. Tools into AI (Option 2, productivity-agent pattern). The strategic direction-of-integration call in Part 1.</li>
-    <li><strong>AI for Personal Productivity</strong> — the leader makes themselves more productive (drafts, reads, triages, builds, reasons faster). The unit of impact is the individual. <strong>Theme 1 demos</strong> in the Showcase.</li>
-    <li><strong>AI for Organizational Leverage</strong> — the leader makes their team, function, or company more productive (distributes AI as a teammate, scales workflows, captures institutional context). The unit of impact is the organization. <strong>Theme 2 demos</strong> in the Showcase.</li>
-    <li><strong>The Loop</strong> — the old way: copy / paste / revise / repeat with an LLM (Part 1).</li>
-    <li><strong>The How Trap</strong> — jumping to "how" instead of "what / why first" (Part 1).</li>
-    <li><strong>Job to be Done</strong> — When X, I want Y, so I can Z (Part 2).</li>
-    <li><strong>RICE</strong> — (Reach × Impact × Confidence) ÷ Effort (Part 2).</li>
-    <li><strong>TDAR</strong> — Thinking -&gt; Decision -&gt; Action -&gt; Result (methodology appendix, cross-referenced from Part 1).</li>
-    <li><strong>10 / 80 / 10</strong> — human in / AI / human after distribution of a workflow (Part 3).</li>
-    <li><strong>Meta-prompting / "How might we…"</strong> — let AI design the path (Part 4).</li>
-    <li><strong>MCP connections</strong> — your business toolbox plugged into the agent (Part 3).</li>
-    <li><strong>Skill / Workflow / Agent</strong> — a packaged reusable prompt + reference docs; one or more skills running; the thing that runs them (Part 4).</li>
-    <li><strong>Sandbox mindset</strong> — practice on a low-stakes skill first (Part 4).</li>
-    <li><strong>Granular &gt; Monolithic</strong> — many small skills beat one mega-skill (Workshop closer Week 2 deliverable).</li>
-    <li><strong>Trust the process</strong> — loop back to the Jobs to be Done list after each skill ships (Part 4 close).</li>
-    <li><strong>Compounding</strong> — the methodology layer where granular skills chain and scheduled runs stack. Lives inside the Workshop closer's Compounding sub-block (Schedule + cron) and Week 2 deliverable (Second granular Skill), and continues into Week 1 Day 5+. The People Transformation Capability Process names this as the fifth layer after Mastery.</li>
-    <li><strong>Longhand (in beta)</strong> — Tech Leaders' multi-model, multi-skill surface built to remove the copy-paste handoff between chatbots (Claude, ChatGPT, Gemini, Microsoft Copilot) and to provide a path for regulated industries where nothing can hit a cloud LLM. Referenced from Part 1 Ex 1.1 Step 4 as the answer to the "running Claude + Gemini side by side" audience question.</li>
-  </ul>
-</section>
-
-
-<!-- ============ DEMOS APPENDIX — outside the 45-min Part budget ============
-     Holds the three demos relocated from Part 4 (Leads -> LinkedIn connection
-     request, PowerPoint screenshot via computer use, Sea of Demand research).
-     Part 4 retains the LinkedIn newsletter demo as a 5-min live walk-through.
-     Source: elevate-guide-timing-audit.md (open question 1). -->
-<section class="block demos-appendix up-next" id="demos-appendix">
-  <h2 class="block-title">Appendix · Demos and post-workshop deliverables</h2>
-  <p class="lede">Three Part 4 demos relocated from the live envelope. They're outside the 45-min Part budget and available for reference. Each shares the same shape as the LinkedIn newsletter demo inside Part 4: the Job, the toolbox, the verbatim "How might we…" prompt, the clarifying questions Claude asked (or would ask), and the human-on-the-loop validation step. Use whichever is closest to your build.</p>
-
-  <!-- ============ DEMO — LEADS -> CONNECTION REQUEST (relocated) ============ -->
-  <section class="demo" id="demo-leads-connection-request" data-demo-id="leads-connection-request">
-    <div class="demo-head">
-      <span class="badge">Demo</span>
-      <h4>Leads -&gt; LinkedIn connection request (with the kill switch)</h4>
-    </div>
-    <div class="demo-body">
-      <h5>Job to be Done</h5>
-      <p>When we get a new lead, I want to automatically send a connection request.</p>
-      <p class="demo-arc-tag"><em>Arc tag: Organizational Leverage demo — outreach is a function move, not a personal one. The Skill is built so the sales function can run it without the leader in the loop.</em></p>
-
-      <h5>Toolbox</h5>
-      <ul>
-        <li><strong>CRM</strong> (HubSpot or similar): MCP connector.</li>
-        <li><strong>LinkedIn</strong>: no MCP. Logged-in browser session via computer use.</li>
-        <li><strong>Schedules</strong>: runs at 6 a.m. daily (cron the Skill via the Workshop closer's Compounding sub-block).</li>
-      </ul>
-
-      <h5>The "How might we…" prompt</h5>
-      <div class="prompt-box"><span class="tag">Prompt — model on the live-session wording</span>How might we create a new skill that, every morning at 6 a.m., pulls
-new leads from my CRM, opens each lead's LinkedIn profile in the
-browser, and sends a connection request, stopping immediately if any
-of these conditions hit: the lead has a tag indicating do-not-contact,
-the lead's company appears on my excluded-accounts list, the
-LinkedIn profile is private or not found, or you encounter any
-unexpected page state. Log every action.</div>
-
-      <h5>Clarifying questions Claude is likely to ask</h5>
-      <ol>
-        <li>Which CRM view defines "new leads"? Point at a saved view or filter.</li>
-        <li>What's the connection request message template? Either a static template or "personalize per lead from profile content."</li>
-        <li>How many requests per run? Cap at a number to avoid LinkedIn rate-limiting.</li>
-      </ol>
-
-      <h5>Kill switch — soft + hard</h5>
-      <p>The "if X, stop" lines in the prompt above are the soft kill switch; Claude will refuse to act when the condition fires. The hard kill switch is the platform Stop button on every response. In the live session, this Skill was run on stage with the Stop button clicked mid-run to demonstrate: one click and Claude killed the action. Combined, you have a soft + hard guardrail.</p>
-
-      <h5>Human-on-the-loop validation</h5>
-      <p>Run sandbox-safe first: cap at 2 to 3 requests per run, point at a non-critical lead view, watch every run for the first week. After two clean weeks, raise the cap and move the back-10% review to weekly.</p>
-
-      <h5>Why this demo matters</h5>
-      <p>This is the canonical "scheduled outbound action" build. If your locked-in Job is recurring outreach or any "trigger -&gt; action across a logged-in browser session" shape, this is your template, and the kill-switch pattern here is the discipline to bring into every other Skill.</p>
-    </div>
-  </section>
-
-  <!-- ============ DEMO — POWERPOINT SCREENSHOT VIA COMPUTER USE (relocated) ============ -->
-  <section class="demo" id="demo-powerpoint-screenshot" data-demo-id="powerpoint-screenshot">
-    <div class="demo-head">
-      <span class="badge">Demo</span>
-      <h4>PowerPoint screenshot and summarize via computer use</h4>
-    </div>
-    <div class="demo-body">
-      <h5>Job to be Done</h5>
-      <p>When I'm away from my computer and need to know what's on slide N of a deck on my machine, I want a summary in my email or Slack within a minute, so I can stay informed without being at the desk.</p>
-      <p class="demo-arc-tag"><em>Arc tag: Personal Productivity demo — the leader's own surface, the leader's own deck, the leader's own pocket. This one stays Personal even at scale.</em></p>
-
-      <h5>Toolbox</h5>
-      <ul>
-        <li><strong>Local desktop</strong>: PowerPoint (or Keynote / Google Slides) open on the machine. Driven via computer use.</li>
-        <li><strong>Email or Slack</strong>: MCP connector for delivery.</li>
-      </ul>
-
-      <h5>The "How might we…" prompt</h5>
-      <div class="prompt-box"><span class="tag">Prompt — paste into Claude Cowork</span>How might we create a new skill that opens the PowerPoint file
-currently loaded on my machine (or named [filename] if I specify),
-navigates to slide [N], takes a screenshot of that slide, summarizes
-the contents in three bullets, and emails the screenshot + summary to
-me at [my email] (or posts to [Slack channel] if I prefix the request
-with "slack:").
-
-Ask me which delivery channel I want and which file before running
-the first time, then remember my defaults.</div>
-
-      <h5>Clarifying questions Claude is likely to ask</h5>
-      <ol>
-        <li>Default file: the one most recently opened, or a specific file path?</li>
-        <li>Default channel: email or Slack?</li>
-        <li>Summary style: terse bullets or one paragraph?</li>
-      </ol>
-
-      <h5>Human-on-the-loop validation</h5>
-      <p>First run from your phone: text yourself, ask Claude (via mobile) to run the Skill against slide 5 of a deck open on your laptop. The summary should land in your inbox within about 60 seconds, with the screenshot attached. Confirm the screenshot matches what's on screen and the bullets capture the substance.</p>
-
-      <h5>Why this demo matters</h5>
-      <p>This is the "you're away from your computer" use case from the live session, and it's the demo that proves computer use is real. If your locked-in Job involves driving a desktop app that has no MCP (Excel, Tableau Desktop, a proprietary CAD or legal-research tool), model on this demo.</p>
-    </div>
-  </section>
-
-  <!-- ============ DEMO — SEA OF DEMAND RESEARCH (relocated) ============ -->
-  <section class="demo" id="demo-sea-of-demand-research" data-demo-id="sea-of-demand-research">
-    <div class="demo-head">
-      <span class="badge">Demo</span>
-      <h4>Sea of Demand research skill — public data on a target market / ICP</h4>
-    </div>
-    <div class="demo-body">
-      <h5>Job to be Done</h5>
-      <p>When I need to understand the publicly-available demand signals for a target market or Ideal Customer Profile, I want a research Skill that pulls and synthesizes the data from public sources, so I can make a market move without paying for a research firm. (This is the live-session answer to the "I don't know where the data lives" audience question.)</p>
-      <p class="demo-arc-tag"><em>Arc tag: Organizational Leverage demo — a research function move. The Skill becomes the strategy team's, the sales-ops team's, or the founder-office's, not just the leader's.</em></p>
-
-      <h5>Toolbox</h5>
-      <ul>
-        <li><strong>Public web</strong> via Claude's research / web capability. No MCP needed; it's just public data.</li>
-        <li><strong>NotebookLM (Gemini)</strong> in an adjacent tab if you want source-grounded synthesis on the result.</li>
-        <li><strong>Google Drive</strong> or your doc store: MCP connector to save the synthesis.</li>
-      </ul>
-
-      <h5>The "How might we…" prompt</h5>
-      <div class="prompt-box"><span class="tag">Prompt — paste into Claude</span>How might we create a new skill that, given a target market or ICP I
-specify (industry, role, geography, company size, any specific
-signals like "raised Series B in the last 18 months"), researches the
-publicly-available demand signals for that ICP and returns:
-(1) the top 3 to 5 public sources where the signal lives,
-(2) a short synthesis of what the signals are saying right now,
-(3) the smallest first move I could make this week to test the demand,
-(4) what I would not know without the research.
-
-You don't need to ask me how to do the research. Research how to find
-the research, then propose. If a source is paywalled, flag it and
-suggest an open alternative.</div>
-
-      <h5>Clarifying questions Claude is likely to ask</h5>
-      <ol>
-        <li>How tight should the ICP be? Narrow (one industry + one role) or broad (a category)?</li>
-        <li>How recent should the signal be? Last 30 days, last quarter, last year?</li>
-        <li>Where should the output land: chat, a Google Doc in a specific folder, or both?</li>
-      </ol>
-
-      <h5>Human-on-the-loop validation</h5>
-      <p>First run against an ICP you know well, one where you already know what the "right" answer should roughly look like. If the synthesis matches your intuition, you've calibrated. If it surprises you in a defensible way, that's the value. If it's generic, push back with a sharper ICP and run again.</p>
-
-      <h5>Why this demo matters</h5>
-      <p>This is the worked answer to the "I don't know where the data is" audience question from the live session. Most leaders are limited by imagination, not by capability. Anything publicly available, Claude can find. Anything you have access to (logged-in browser), Claude can use. Outside those two channels, Claude can't help. That's the boundary.</p>
-    </div>
-  </section>
-</section>
 
 
 </main>
