@@ -2619,16 +2619,7 @@
     user-select: none;
   }
   @media print {
-    .up-next::before { display: none; }
-    .up-next .session-body,
-    .up-next .theme-marker-lede,
-    .up-next .theme-marker-bridge,
-    .up-next .theme-marker-budget,
-    .up-next .warmup-questions-list,
-    .up-next .warmup-questions-note,
-    .up-next .qa-anchor-list,
-    .up-next .qa-note,
-    .up-next > h2.block-title ~ * { filter: none; user-select: auto; }
+    .up-next { display: none; }
   }
   .qa-block-eyebrow {
     display: inline-block;
@@ -3777,7 +3768,7 @@ the smallest reversible first move.</div>
 
 
 <!-- ============ Q&A 1 — after Part 1 (outside the content envelope) ============ -->
-<section class="qa-block" id="qa-1">
+<section class="qa-block up-next" id="qa-1">
   <span class="qa-block-eyebrow">Q&amp;A</span>
   <h2 class="qa-block-heading">Open discussion</h2>
   <ol class="qa-anchor-list">
