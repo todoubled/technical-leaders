@@ -1373,6 +1373,28 @@
     font-size: 14px;
     margin: 0;
   }
+  footer.site .powered-by {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    align-self: center;
+    text-decoration: none;
+  }
+  footer.site .powered-by:hover { text-decoration: none; }
+  footer.site .powered-by-label {
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+  }
+  footer.site .powered-by-logo {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
   footer.site .legal {
     margin-top: 24px;
     padding-top: 18px;
@@ -1507,6 +1529,7 @@
     footer.site { background: #fff; color: var(--s2p-navy); border-top: 2px solid var(--s2p-blue); padding: 24px 0; margin-top: 24px; }
     footer.site img.logo { filter: none; }
     footer.site p, footer.site .legal { color: var(--s2p-slate); }
+    footer.site .powered-by-label { color: var(--s2p-slate); }
   }
 
   /* ====================================================================
@@ -4452,6 +4475,10 @@ Be literal. The more literal the better.</div>
       <p><strong style="color:#fff;">Serve2Perform · ELEVATE Program</strong></p>
       <p style="margin-top:10px;"><a href="https://serve2perform.com" style="color:#9DB6FF;">serve2perform.com</a></p>
     </div>
+    <a class="powered-by" href="https://technical-leaders.com" target="_blank" rel="noopener">
+      <span class="powered-by-label">Powered by</span>
+      <img class="powered-by-logo" src="https://technical-leaders.com/transparent-bg-logo.png" alt="Tech Leaders">
+    </a>
   </div>
 </footer>
 
