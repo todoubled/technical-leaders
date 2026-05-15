@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Tools &amp; Workflows for Leaders — Serve2Perform ELEVATE</title>
+<link rel="icon" type="image/png" href="/favicon.webp" />
 
 <!-- Brand tokens, content sources, and revision audit live in elevate-workshop-guide.audit.md (sibling file). -->
 
@@ -2508,6 +2509,42 @@
   ul.countdown-list--techniques > li {
     padding-left: 18px;
   }
+  ul.countdown-list--definitions {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  ul.countdown-list--definitions > li {
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid var(--s2p-line);
+    border-top: 3px solid #0047FF;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: static;
+  }
+  ul.countdown-list--definitions > li::before { display: none; }
+  .definition-term {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--s2p-navy);
+    letter-spacing: .005em;
+    line-height: 1.15;
+  }
+  .definition-body {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--s2p-ink);
+  }
+  @media (max-width: 700px) {
+    ul.countdown-list--definitions { grid-template-columns: 1fr; }
+  }
+  body.presentation ul.countdown-list--definitions { gap: 18px; }
+  body.presentation ul.countdown-list--definitions > li { padding: 22px 22px; }
+  body.presentation .definition-term { font-size: 28px; }
+  body.presentation .definition-body { font-size: 17px; }
   .technique-name {
     margin: 0 0 4px;
     font-size: 16px;
@@ -2541,19 +2578,111 @@
   .example-prompt {
     font-size: 13px;
   }
-  .mindset-shift {
-    font-size: 17px;
+  .cross-check-mocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0 0;
+  }
+  .cross-check-mock {
+    background: #fff;
+    border: 1px solid var(--s2p-line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cross-check-mock--claude { border-left: 3px solid #6B3FA0; }
+  .cross-check-mock--chatgpt { border-left: 3px solid #047857; }
+  .cross-check-mock-label {
+    font-family: var(--body);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .cross-check-mock--claude .cross-check-mock-label { color: #6B3FA0; }
+  .cross-check-mock--chatgpt .cross-check-mock-label { color: #047857; }
+  .cross-check-mock-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .cross-check-mock-list > li {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: var(--s2p-ink);
+  }
+  .cross-check-mock-list > li strong { color: var(--s2p-navy); }
+  .cross-check-takeaway {
+    margin: 10px 0 0;
+    font-size: 13px;
     line-height: 1.5;
     color: var(--s2p-ink);
-    margin: 0 0 12px;
-    max-width: 760px;
   }
-  .mindset-shift em {
-    font-style: italic;
-    color: var(--s2p-navy);
+  .cross-check-takeaway strong { color: var(--s2p-blue-dark); }
+  @media (max-width: 600px) {
+    .cross-check-mocks { grid-template-columns: 1fr; }
+  }
+  body.presentation .cross-check-mock-list > li { font-size: 15px; }
+  body.presentation .cross-check-takeaway { font-size: 16px; }
+  .mindset-shift {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 14px;
+    align-items: stretch;
+    margin: 0 0 18px;
+    max-width: 920px;
+  }
+  .mindset-shift-from,
+  .mindset-shift-to {
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid var(--s2p-line);
+  }
+  .mindset-shift-from {
+    background: var(--s2p-cloud);
+  }
+  .mindset-shift-to {
+    background: var(--s2p-blue-bg);
+    border-color: var(--s2p-blue);
+  }
+  .mindset-shift-label {
+    font-family: var(--body);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .mindset-shift-from .mindset-shift-label { color: var(--s2p-slate); }
+  .mindset-shift-to .mindset-shift-label { color: var(--s2p-blue-dark); }
+  .mindset-shift-quote {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.25;
+  }
+  .mindset-shift-from .mindset-shift-quote { color: var(--s2p-slate); }
+  .mindset-shift-to .mindset-shift-quote { color: var(--s2p-navy); }
+  .mindset-shift-arrow {
+    font-size: 26px;
+    color: var(--s2p-blue);
+    align-self: center;
+    line-height: 1;
+  }
+  @media (max-width: 700px) {
+    .mindset-shift { grid-template-columns: 1fr; }
+    .mindset-shift-arrow { transform: rotate(90deg); justify-self: center; }
   }
   .mindset-examples-lede {
-    margin: 8px 0 6px;
+    margin: 8px 0 10px;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .14em;
@@ -2565,25 +2694,24 @@
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 8px;
-    max-width: 760px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: none;
   }
   ul.mindset-examples > li {
-    position: relative;
-    padding-left: 18px;
-    font-size: 15.5px;
-    line-height: 1.55;
+    position: static;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--s2p-line);
+    border-left: 3px solid var(--s2p-blue);
+    border-radius: 6px;
+    font-size: 14.5px;
+    line-height: 1.4;
     color: var(--s2p-ink);
   }
-  ul.mindset-examples > li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: .55em;
-    width: 8px;
-    height: 8px;
-    background: var(--s2p-blue);
-    border-radius: 2px;
+  ul.mindset-examples > li::before { display: none; }
+  @media (max-width: 700px) {
+    ul.mindset-examples { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
     .countdown-section {
@@ -2602,8 +2730,10 @@
   body.presentation ul.countdown-list > li,
   body.presentation ul.mindset-examples > li,
   body.presentation .technique-sub,
-  body.presentation .countdown-lede,
-  body.presentation .mindset-shift { font-size: 19px; }
+  body.presentation .countdown-lede { font-size: 19px; }
+  body.presentation .mindset-shift-quote { font-size: 24px; }
+  body.presentation .mindset-shift-arrow { font-size: 38px; }
+  body.presentation .mindset-shift-label { font-size: 12.5px; }
   @media print {
     section.block.countdown {
       background: #fff;
@@ -2634,21 +2764,22 @@
      requirements-worksheet table inside Ex 3.2 Step 6.
      ============================================================ */
   .warmup-questions {
-    border: 1px solid #0A1F44;
+    border: none;
     background: transparent;
-    padding: 16px 20px;
+    padding: 8px 0 16px;
     margin: 18px auto;
-    max-width: 880px;
+    max-width: 1020px;
   }
   .warmup-questions-eyebrow {
-    display: inline-block;
+    display: block;
     font-family: "Oswald", "Bebas Neue", sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.12em;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.20em;
     text-transform: uppercase;
     color: #0047FF;
-    margin-bottom: 6px;
+    margin: 0 0 18px;
+    text-align: center;
   }
   .warmup-questions-title {
     font-family: "Oswald", "Bebas Neue", sans-serif;
@@ -2656,31 +2787,49 @@
     color: #0A1F44;
     font-size: 22px;
     line-height: 1.25;
-    margin: 0 0 10px;
+    margin: 0 0 14px;
+    text-align: center;
   }
   .warmup-questions-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 10px;
-    max-width: 62ch;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: none;
+    counter-reset: warmup-q;
   }
   .warmup-questions-list > li {
     position: relative;
-    padding-left: 18px;
-    font-family: "Inter", system-ui, sans-serif;
-    font-weight: 400;
-    color: #111827;
-    line-height: 1.5;
-    margin: 6px 0;
+    padding: 22px 26px 22px 78px;
+    background: #fff;
+    border: 1px solid var(--s2p-line);
+    border-left: 4px solid #0047FF;
+    border-radius: 8px;
+    font-family: "Oswald", "Bebas Neue", sans-serif;
+    font-weight: 600;
+    color: #0A1F44;
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: .005em;
+    margin: 0;
   }
   .warmup-questions-list > li::before {
-    content: "";
+    counter-increment: warmup-q;
+    content: counter(warmup-q, decimal-leading-zero);
     position: absolute;
-    left: 0;
-    top: 0.55em;
-    width: 8px;
-    height: 8px;
-    background: #0047FF;
+    left: 24px;
+    top: 22px;
+    width: auto;
+    height: auto;
+    background: transparent;
+    font-family: "Oswald", "Bebas Neue", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #0047FF;
+    letter-spacing: 0;
+    line-height: 1.3;
   }
   .warmup-questions-note {
     font-family: "Inter", system-ui, sans-serif;
@@ -2688,11 +2837,17 @@
     color: #475569;
     font-size: 14px;
     line-height: 1.55;
-    margin: 8px 0 0;
+    margin: 14px 0 0;
     max-width: 62ch;
   }
-  body.presentation .warmup-questions-title { font-size: 26px; }
-  body.presentation .warmup-questions-list > li { font-size: 19px; }
+  @media (max-width: 600px) {
+    .warmup-questions-list > li { padding: 18px 18px 18px 60px; font-size: 18px; }
+    .warmup-questions-list > li::before { left: 18px; top: 18px; font-size: 18px; }
+  }
+  body.presentation .warmup-questions-eyebrow { font-size: 18px; letter-spacing: .22em; margin-bottom: 28px; }
+  body.presentation .warmup-questions-title { font-size: 28px; margin-bottom: 20px; }
+  body.presentation .warmup-questions-list > li { font-size: 30px; padding: 30px 32px 30px 96px; }
+  body.presentation .warmup-questions-list > li::before { font-size: 28px; left: 30px; top: 30px; }
   body.presentation .warmup-questions-note { font-size: 16px; }
 
   .outcome-artifact {
@@ -3801,10 +3956,19 @@
     <span class="countdown-number">3</span>
     <div class="countdown-content">
       <h4 class="countdown-title">Definitions to Know</h4>
-      <ul class="countdown-list">
-        <li><strong>Personal Agent</strong> is a chatbot assistant that takes action for you (OpenClaw, etc.).</li>
-        <li><strong>Skill</strong> is a pre-trained reusable prompt for an agent that accomplishes a specific task.</li>
-        <li><strong>Workflow</strong> is a series of Skills and human-in-the-loop (HitL) decisions.</li>
+      <ul class="countdown-list countdown-list--definitions">
+        <li>
+          <span class="definition-term">Agent</span>
+          <span class="definition-body">A chatbot assistant that takes action for you (OpenClaw, etc.).</span>
+        </li>
+        <li>
+          <span class="definition-term">Skill</span>
+          <span class="definition-body">A pre-trained, reusable prompt for an agent that accomplishes a specific task.</span>
+        </li>
+        <li>
+          <span class="definition-term">Workflow</span>
+          <span class="definition-body">A series of Skills and human-in-the-loop (HitL) decisions.</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -3826,6 +3990,25 @@
           <p class="technique-name"><strong>Chatbot Cross Check</strong> (dueling chatbots)</p>
           <div class="technique-exercise">
             <p class="technique-exercise-lede"><strong>Exercise.</strong> Cross check the same prompt with your other chatbot.</p>
+            <div class="cross-check-mocks" role="img" aria-label="Illustrative side-by-side comparison of Claude versus ChatGPT outputs on the same AI Readiness prompt.">
+              <div class="cross-check-mock cross-check-mock--claude">
+                <span class="cross-check-mock-label">Claude</span>
+                <ul class="cross-check-mock-list">
+                  <li><strong>5 dimensions:</strong> Strategy, Data, Talent, Tools, Change Management</li>
+                  <li><strong>20 questions,</strong> rubric-weighted by dimension</li>
+                  <li><strong>Likert scale</strong> plus a prescriptive improvement path</li>
+                </ul>
+              </div>
+              <div class="cross-check-mock cross-check-mock--chatgpt">
+                <span class="cross-check-mock-label">ChatGPT</span>
+                <ul class="cross-check-mock-list">
+                  <li><strong>6 dimensions,</strong> adds <em>Governance &amp; Ethics</em></li>
+                  <li><strong>24 questions,</strong> mapped to maturity stages</li>
+                  <li><strong>5-point agreement scale</strong> with stage-by-stage recommendations</li>
+                </ul>
+              </div>
+            </div>
+            <p class="cross-check-takeaway"><strong>Takeaway.</strong> Claude tightened the rubric; ChatGPT surfaced Governance &amp; Ethics as a missing dimension. Combine both &mdash; Claude's scoring with ChatGPT's broader dimension set.</p>
           </div>
         </li>
       </ul>
@@ -3836,7 +4019,17 @@
     <span class="countdown-number">1</span>
     <div class="countdown-content">
       <h4 class="countdown-title">Mindset Shift to Make</h4>
-      <p class="mindset-shift">From <em>"How can I use this new AI tool?"</em> to <em>"How might we optimize this Job-to-be-Done?"</em></p>
+      <div class="mindset-shift">
+        <div class="mindset-shift-from">
+          <span class="mindset-shift-label">From</span>
+          <span class="mindset-shift-quote">&ldquo;How can I use this new AI tool?&rdquo;</span>
+        </div>
+        <div class="mindset-shift-arrow" aria-hidden="true">&rarr;</div>
+        <div class="mindset-shift-to">
+          <span class="mindset-shift-label">To</span>
+          <span class="mindset-shift-quote">&ldquo;How might we optimize this Job-to-be-Done?&rdquo;</span>
+        </div>
+      </div>
       <p class="mindset-examples-lede">Examples of Jobs-to-be-Done:</p>
       <ul class="mindset-examples">
         <li>Draft the weekly board update.</li>
@@ -3868,14 +4061,6 @@
   </div>
   <div class="session-body">
 
-    <ul class="part-promise-list">
-      <li>Pick which <strong>Option</strong> you're starting with and the tool(s) you're starting in.</li>
-      <li>Name the <strong>repetitive task</strong> you've been stuck on and dodge the <strong>How Trap</strong>.</li>
-      <li>Configure your primary chatbot the Tech Leaders way: privacy off, adaptive reasoning system prompt loaded.</li>
-      <li>Map Claude, ChatGPT, Microsoft Copilot, and Gemini against the jobs they're best at — which tool for which job.</li>
-      <li>Walk out with one Personal Productivity move scheduled for Friday — yourself first.</li>
-    </ul>
-
 <!--
   ============================================================================
   PRESERVE: "Two Options for where AI plugs into your work" block (Part 1 opener)
@@ -3888,7 +4073,6 @@
   ============================================================================
 -->
 <section class="wwhn-section">
-      <span class="wwhn-label">What this is</span>
       <h3>Two Options for where AI plugs into your work</h3>
     </section>
 
@@ -3920,23 +4104,6 @@
         </ul>
       </article>
     </div>
-
-    <p class="option-reversibility">
-      Most leaders start with one Option and add the other within a few weeks. The call today is about <em>where you start</em>, not where you finish.
-    </p>
-
-    <p class="option-showcase-link">
-      <em>See live examples in the <a href="#showcase">Showcase gallery</a> — personal-assistant cards are Option 1; productivity-agent cards are Option 2.</em>
-    </p>
-
-    <ul class="talk-points">
-      <li><strong>Option 1 — Bring AI into your existing tools.</strong> Personal-assistant pattern: Claude for Chrome, Gemini in Gmail, Microsoft 365 Copilot in Excel.</li>
-      <li><strong>Option 2 — Bring your existing tools into AI.</strong> Productivity-agent pattern: Claude Skills + MCP, ChatGPT Projects + connectors, Microsoft 365 Copilot agents.</li>
-      <li>Option 1 is faster to start; context is shallow each session.</li>
-      <li>Option 2 has a setup cost; context compounds across sessions.</li>
-      <li>Most leaders do both within a few weeks — the call today is about where to start, not where to finish.</li>
-      <li>Part 1 sets your primary surface — Claude, ChatGPT, Copilot, or Gemini — with the other three sitting adjacent for specific jobs.</li>
-    </ul>
 
     <!-- ============ EXERCISE 1.2 — CONFIGURE YOUR PRIMARY CHATBOT THE TECH LEADERS WAY ============ -->
     <hr class="session-block-divider">
