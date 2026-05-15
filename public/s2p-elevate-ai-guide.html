@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Applied AI for Leaders — Serve2Perform ELEVATE</title>
+<title>AI Tools &amp; Workflows for Leaders — Serve2Perform ELEVATE</title>
 
 <!-- Brand tokens, content sources, and revision audit live in elevate-workshop-guide.audit.md (sibling file). -->
 
@@ -767,6 +767,139 @@
     border-top: 1px solid var(--s2p-line);
   }
 
+  .showcase-mock {
+    margin: 0;
+    background: var(--s2p-cloud);
+    border-top: 1px solid var(--s2p-line);
+    border-bottom: 1px solid var(--s2p-line);
+  }
+  .showcase-mock .showcase-mock-canvas {
+    height: 200px;
+    background: #fff;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+  }
+  .showcase-mock .showcase-mock-canvas--studio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .showcase-mock .showcase-mock-tile {
+    background: var(--s2p-cloud);
+    border: 1px solid var(--s2p-line);
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--s2p-ink);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .showcase-mock .showcase-mock-tile--primary {
+    background: var(--s2p-blue-bg);
+    border-color: var(--s2p-blue);
+    color: var(--s2p-blue-dark);
+  }
+  .showcase-mock .showcase-mock-tile-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    background: var(--s2p-blue);
+    display: inline-block;
+    opacity: .85;
+  }
+  .showcase-mock .showcase-mock-tile--primary .showcase-mock-tile-icon { background: var(--s2p-blue-dark); }
+  .showcase-mock .showcase-mock-tile:not(.showcase-mock-tile--primary) .showcase-mock-tile-icon {
+    background: var(--s2p-slate);
+    opacity: .55;
+  }
+  .showcase-mock .showcase-mock-canvas--prospect {
+    display: grid;
+    grid-template-columns: 1fr auto 1.4fr;
+    align-items: center;
+    gap: 14px;
+  }
+  .showcase-mock .showcase-mock-prospect {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: var(--s2p-cloud);
+    border: 1px solid var(--s2p-line);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .showcase-mock .showcase-mock-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--s2p-blue);
+    opacity: .55;
+    flex-shrink: 0;
+  }
+  .showcase-mock .showcase-mock-prospect-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 10.5px;
+    line-height: 1.3;
+    min-width: 0;
+  }
+  .showcase-mock .showcase-mock-prospect-name { font-weight: 700; color: var(--s2p-navy); }
+  .showcase-mock .showcase-mock-prospect-headline { color: var(--s2p-ink); }
+  .showcase-mock .showcase-mock-prospect-mutual { color: var(--s2p-blue-dark); font-weight: 600; }
+  .showcase-mock .showcase-mock-arrow {
+    font-size: 22px;
+    color: var(--s2p-slate);
+    line-height: 1;
+    text-align: center;
+  }
+  .showcase-mock .showcase-mock-note {
+    background: var(--s2p-blue-bg);
+    border: 1px solid var(--s2p-blue);
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .showcase-mock .showcase-mock-note-label {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--s2p-blue-dark);
+    font-weight: 700;
+  }
+  .showcase-mock .showcase-mock-note-body {
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--s2p-ink);
+  }
+  .showcase-mock .showcase-mock-cta {
+    align-self: flex-start;
+    background: var(--s2p-blue);
+    color: #fff;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 5px 9px;
+    border-radius: 4px;
+  }
+  .showcase-mock figcaption {
+    font-size: 12px;
+    color: var(--s2p-slate);
+    padding: 8px 18px 10px;
+    background: #fff;
+    border-top: 1px solid var(--s2p-line-soft);
+    font-style: italic;
+  }
+
   .showcase-body {
     padding: 14px 18px 16px;
     flex-grow: 1;
@@ -810,6 +943,118 @@
     border-bottom-color: var(--s2p-blue);
     text-decoration: none;
   }
+  .showcase-applies {
+    margin: 6px 0 12px;
+    padding: 12px 14px;
+    background: var(--s2p-cloud);
+    border: 1px solid var(--s2p-line-soft);
+    border-radius: 6px;
+  }
+  .showcase-applies-eyebrow {
+    display: block;
+    font-family: var(--body);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--s2p-blue-dark);
+    margin-bottom: 6px;
+  }
+  .showcase-applies-implication {
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--s2p-ink);
+    margin: 0 0 10px;
+    max-width: 62ch;
+  }
+  .showcase-applies-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .showcase-applies-list > li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+  .showcase-applies-function {
+    font-family: var(--body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--s2p-blue-dark);
+    background: #fff;
+    border: 1px solid var(--s2p-line-soft);
+    border-radius: 999px;
+    padding: 3px 9px;
+    text-align: center;
+    align-self: center;
+    justify-self: start;
+  }
+  .showcase-applies-use { color: var(--s2p-ink); }
+  body.presentation .showcase-applies-implication { font-size: 17px; }
+  body.presentation .showcase-applies-list > li { font-size: 15.5px; }
+
+  /* --- Showcase card readability for live presentation (prompt 082) ---
+     Bigger title, lead-line + bulleted points replace the prose body,
+     and presentation-mode size bumps so the card scaffolds spoken
+     delivery rather than competing with it. Cross-stack matrix cells
+     also tighten so the lower half of the card no longer dominates. */
+  .showcase-title { font-size: 24px; }
+
+  .showcase-body p.showcase-lead {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--s2p-ink);
+    margin: 0 0 12px;
+    max-width: 62ch;
+  }
+  .showcase-body .showcase-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 62ch;
+  }
+  .showcase-body .showcase-points > li {
+    font-family: var(--body);
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: var(--s2p-ink);
+    padding-left: 22px;
+    position: relative;
+  }
+  .showcase-body .showcase-points > li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: .55em;
+    width: 8px;
+    height: 8px;
+    background: var(--s2p-blue);
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  .support-row { min-height: 110px; padding: 12px 12px; }
+  .support-status { font-size: 13px; }
+  .support-qualifier { font-size: 11.5px; }
+
+  body.presentation .showcase-title { font-size: clamp(26px, 2.4vw, 36px); }
+  body.presentation .showcase-body p.showcase-lead { font-size: clamp(17px, 1.4vw, 21px); }
+  body.presentation .showcase-body .showcase-points > li { font-size: clamp(15px, 1.2vw, 19px); }
+  body.presentation .showcase-category { font-size: 12px; }
+  body.presentation .showcase-framing { font-size: 11.5px; }
 
   @media print {
     #showcase { page-break-before: always; break-before: page; }
@@ -1960,36 +2205,6 @@
     border-color: var(--s2p-blue);
     border-width: 1px;
   }
-  .theme-card--org::after {
-    content: "Perspective 2";
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    font-family: var(--body);
-    font-weight: 700;
-    font-size: 10.5px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--s2p-blue);
-    background: var(--s2p-blue-bg);
-    border-radius: 999px;
-    padding: 3px 9px;
-  }
-  .theme-card--personal::after {
-    content: "Perspective 1";
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    font-family: var(--body);
-    font-weight: 700;
-    font-size: 10.5px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--s2p-navy);
-    background: var(--s2p-line-soft);
-    border-radius: 999px;
-    padding: 3px 9px;
-  }
 
   /* Theme marker blocks (between #themes and #part1; between #part2
      and #part3). Always visible in both modes; print keeps them. */
@@ -2227,13 +2442,17 @@
     grid-template-columns: 96px 1fr;
     gap: 18px;
     align-items: start;
-    padding: 18px 0;
-    border-top: 1px solid #E5E9F2;
+    padding: 24px 24px;
+    background: #fff;
+    border: 1px solid var(--s2p-line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    margin: 0 0 36px;
   }
-  .countdown-section:first-of-type {
-    border-top: none;
-    padding-top: 8px;
+  .countdown-section:last-of-type {
+    margin-bottom: 0;
   }
+  body.presentation .countdown-section { margin-bottom: 56px; }
   .countdown-number {
     font-family: var(--display);
     font-weight: 700;
@@ -2388,11 +2607,19 @@
   @media print {
     section.block.countdown {
       background: #fff;
-      border: 1px solid #E5E9F2;
+      border: none;
+      box-shadow: none;
     }
     .countdown-section {
       break-inside: avoid;
       page-break-inside: avoid;
+      page-break-before: always;
+      break-before: page;
+      box-shadow: none;
+    }
+    .countdown-section:first-of-type {
+      page-break-before: auto;
+      break-before: auto;
     }
     .technique-exercise {
       break-inside: avoid;
@@ -2833,7 +3060,7 @@
   <div class="nav-inner">
     <a href="#top" aria-label="Serve2Perform home" style="display:flex; align-items:center; gap:12px;">
       <img class="logo" src="https://static.wixstatic.com/media/4ce1e7_d4ba0c497f044d28b4584718c3af739b~mv2.png/v1/fill/w_506,h_80,al_c,q_85,enc_auto/Primary_ForWhite.png" alt="Serve2Perform logo">
-      <span class="nav-title">Applied AI for Leaders<span>ELEVATE Program</span></span>
+      <span class="nav-title">AI Tools &amp; Workflows for Leaders<span>ELEVATE Program</span></span>
     </a>
     <nav class="anchors" aria-label="Tutorial sections">
       <a href="#showcase">Showcase</a>
@@ -2851,7 +3078,7 @@
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="eyebrow">Live Workshop Guide · Hands-On AI Training</div>
-    <h1>Applied AI<br>for <span class="accent">Leaders</span></h1>
+    <h1>AI Tools &amp; Workflows<br>for <span class="accent">Leaders</span></h1>
     <ul class="hero-promises">
       <li>
         <span class="hero-promise-main">How to multiply your personal productivity and leadership capacity with AI</span>
@@ -2911,8 +3138,7 @@
 
 <!-- ============ THEMES — two themes carry the series ============ -->
 <section class="block" id="themes">
-  <h2 class="block-title">Two perspectives carry the series</h2>
-  <p class="lede">Across the two perspectives of this workshop, you're after two distinct deliverables — and the structure of the guide is built to make both of them legible.</p>
+  <h2 class="block-title">Two perspectives</h2>
   <div class="grid">
     <div class="card theme-card theme-card--personal">
       <h5>AI for Personal Productivity</h5>
@@ -2935,12 +3161,10 @@
   <!-- ============ THEME 1 WARMUPS (relocated from before Part 1) ============ -->
   <section class="block warmup-questions" id="theme-1-warmups">
     <span class="warmup-questions-eyebrow">Warmups before you start</span>
-    <h3 class="warmup-questions-title">Hold these in mind as you begin Theme 1</h3>
     <ul class="warmup-questions-list">
       <li>Where is time disappearing each week?</li>
       <li>Which of your daily, weekly, monthly, and quarterly responsibilities are the most challenging?</li>
     </ul>
-    <p class="warmup-questions-note">No need to write answers yet. These are the questions Part 2's Jobs to be Done inventory will give you the structure to answer in writing.</p>
   </section>
 </section>
 
@@ -2952,7 +3176,6 @@
      each card forward-links to the Part that builds the technique.
      Audit detail in elevate-workshop-guide.audit.md. -->
 <section class="block" id="showcase" aria-label="What's already possible — agent and assistant showcase">
-  <div class="showcase-session-tag">Showcase · before Theme 1</div>
   <h2 class="block-title">What's already possible</h2>
   <div class="showcase-grid">
 
@@ -2969,10 +3192,38 @@
         <span class="pill gemini">Gemini</span>
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Personal Productivity demo · Theme 1</div>
-      <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
       <h3 class="showcase-title">Upload your sources once, get a studio of artifacts back</h3>
+      <figure class="showcase-mock" aria-label="Illustration of the NotebookLM Studio panel showing four primary output tiles above four secondary output tiles, generated from the leader's uploaded sources.">
+        <div class="showcase-mock-canvas showcase-mock-canvas--studio" role="img" aria-hidden="true">
+          <div class="showcase-mock-tile showcase-mock-tile--primary"><span class="showcase-mock-tile-icon"></span>Audio Overview</div>
+          <div class="showcase-mock-tile showcase-mock-tile--primary"><span class="showcase-mock-tile-icon"></span>Video Overview</div>
+          <div class="showcase-mock-tile showcase-mock-tile--primary"><span class="showcase-mock-tile-icon"></span>Mind Map</div>
+          <div class="showcase-mock-tile showcase-mock-tile--primary"><span class="showcase-mock-tile-icon"></span>Reports</div>
+          <div class="showcase-mock-tile"><span class="showcase-mock-tile-icon"></span>Briefing Doc</div>
+          <div class="showcase-mock-tile"><span class="showcase-mock-tile-icon"></span>Study Guide</div>
+          <div class="showcase-mock-tile"><span class="showcase-mock-tile-icon"></span>Flashcards</div>
+          <div class="showcase-mock-tile"><span class="showcase-mock-tile-icon"></span>FAQ / Timeline</div>
+        </div>
+        <figcaption>Illustrative — NotebookLM Studio output tiles, generated from the leader's uploaded corpus.</figcaption>
+      </figure>
       <div class="showcase-body">
-        <p>Drop your PDFs, Google Docs, web pages, and YouTube links into one notebook. From the Studio panel, NotebookLM spins up an Audio Overview as a two-host conversation, a short Video Overview, a Mind Map of the relationships across your sources, and structured Reports like a Briefing Doc, Study Guide, or Flashcard set. Same corpus, six or more formats, each one grounded in the documents you uploaded.</p>
+        <p class="showcase-lead">Drop a corpus in, generate a Studio of artifacts from it.</p>
+        <ul class="showcase-points">
+          <li>Sources: PDFs, Docs, web pages, YouTube — all in one notebook</li>
+          <li>Outputs: Audio Overview, Video Overview, Mind Map, Briefing Doc, Study Guide, Flashcards</li>
+          <li>One corpus, six-plus formats, each grounded in the documents you uploaded</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">One corpus, six teams generating their own briefings off it — no one re-reads the source docs to make the artifact they need.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Upload policies and JDs &rarr; onboarding briefings, training quizzes, FAQ for new hires</span></li>
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Upload 10-K + audit memos &rarr; investor brief, board summary, study guide for analysts</span></li>
+            <li><span class="showcase-applies-function">Marketing</span><span class="showcase-applies-use">Upload positioning docs &rarr; sales decks, blog drafts, social cards from one source of truth</span></li>
+            <li><span class="showcase-applies-function">Operations</span><span class="showcase-applies-use">Upload SOPs and incident reports &rarr; training videos, checklists, briefing docs per shift</span></li>
+            <li><span class="showcase-applies-function">Product Engineering</span><span class="showcase-applies-use">Upload PRDs and architecture decisions &rarr; dev briefings, QA test plans, release notes</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
           The Studio runs multi-step generation against a corpus the leader owns, not the open web. Each output is reasoned across the same sources, cited back to those sources, and re-runnable when the corpus changes.
@@ -3020,10 +3271,44 @@
         <span class="pill claude">Claude</span>
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
-      <span class="showcase-framing showcase-framing--timeback">Time back</span>
       <h3 class="showcase-title">Prospect on LinkedIn from your own logged-in session</h3>
+      <figure class="showcase-mock" aria-label="Illustration of Claude prospecting on LinkedIn: a prospect profile on the left, a draft connection note on the right, with an Approve and Send action — the approval-gate moment before sending from the leader's real account.">
+        <div class="showcase-mock-canvas showcase-mock-canvas--prospect" role="img" aria-hidden="true">
+          <div class="showcase-mock-prospect">
+            <div class="showcase-mock-avatar"></div>
+            <div class="showcase-mock-prospect-meta">
+              <span class="showcase-mock-prospect-name">VP Marketing &middot; SaaS</span>
+              <span class="showcase-mock-prospect-headline">Posted about pipeline this week</span>
+              <span class="showcase-mock-prospect-mutual">5 mutual &middot; ICP match</span>
+            </div>
+          </div>
+          <div class="showcase-mock-arrow">&rarr;</div>
+          <div class="showcase-mock-note">
+            <span class="showcase-mock-note-label">Draft connection note</span>
+            <span class="showcase-mock-note-body">Saw your post on widening top-of-funnel &mdash; we built something for exactly that&hellip;</span>
+            <span class="showcase-mock-cta">Approve &amp; Send</span>
+          </div>
+        </div>
+        <figcaption>Illustrative &mdash; Claude pauses at the approval gate before sending from your logged-in LinkedIn session.</figcaption>
+      </figure>
       <div class="showcase-body">
-        <p>Claude for Chrome drives your actual LinkedIn tab. Cowork wraps that with multi-step orchestration: search Sales Navigator on a criteria string, qualify each result against your ICP doc, draft a personalized connection note from the prospect's posts, pause for your approval, then send. You watch the work happen, approve at the key decision points, and walk away with a queue of warm requests sent from your real account.</p>
+        <p class="showcase-lead">Claude drives your real LinkedIn tab, with you approving at the decision points.</p>
+        <ul class="showcase-points">
+          <li>Searches Sales Navigator on your criteria, qualifies each result against your ICP doc</li>
+          <li>Drafts a personalized connection note from the prospect's recent posts</li>
+          <li>Pauses for your approval, then sends from your real account — not an API persona</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">Outreach, sourcing, and follow-up run from real accounts with a human on the approval gate — no bot personas, no API rebuild.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">Source ICP-matched accounts in Sales Navigator, draft personalized notes, send on approval</span></li>
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Surface passive candidates by role criteria, draft InMail referencing their work</span></li>
+            <li><span class="showcase-applies-function">Marketing</span><span class="showcase-applies-use">Identify event attendees, draft post-event connection notes referencing the session</span></li>
+            <li><span class="showcase-applies-function">Operations</span><span class="showcase-applies-use">Reach out to vendors and partners through your real account, log replies in the CRM</span></li>
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Outreach to banking and investor contacts for diligence calls, drafted in your voice</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
           Cowork chains computer-use steps against your live session, holds at the approval gate, and resumes when you say go. It is your account doing the work, not a separate API persona, which is why the messages read like you.
@@ -3068,10 +3353,31 @@
         <span class="pill claude">Claude</span>
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Organizational Leverage demo · Theme 2</div>
-      <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
       <h3 class="showcase-title">Run admin data entry without the click-and-type tax</h3>
+      <figure class="showcase-figure">
+        <img loading="lazy"
+             src="https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/694320254c2733b2fc057890_f897789b6a1506818f1885082c9dd49b_chrome-cal.avif"
+             alt="Claude for Chrome operating inside a calendar form in the leader's already-logged-in browser tab — walking the fields, typing the values, and advancing. The same pattern runs against HRIS, CRM, or ATS forms where no bulk-import API exists, turning the Friday-afternoon paste-tab tax into review-and-approve.">
+        <figcaption>Source: <a href="https://claude.com/claude-for-chrome" target="_blank" rel="noopener">Anthropic — Claude for Chrome</a></figcaption>
+      </figure>
       <div class="showcase-body">
-        <p>Give Claude a spreadsheet of new hires, vendors, or candidates and the URL of the form you would normally hand-key into your HRIS, CRM, or ATS. Claude reads each row, walks the fields on the page, types the values, submits, and advances to the next record. Useful exactly where there is no bulk-import API and the admin owner is paying the click-and-type tax themselves.</p>
+        <p class="showcase-lead">Hand Claude a spreadsheet and a form URL; it fills the form row by row.</p>
+        <ul class="showcase-points">
+          <li>Reads each row, walks the fields, types the values, submits, advances</li>
+          <li>Works against your HRIS, CRM, or ATS — anywhere there is no bulk-import API</li>
+          <li>The Friday-afternoon paste-tab tax becomes review-and-approve</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">Every system that lacks a bulk-import API becomes bulk-importable, freeing the team from the rote click-and-type tax across the org.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Load new hires into the HRIS from the offer spreadsheet, row by row, on Day 1</span></li>
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Enter vendor invoices into the AP portal from a coded spreadsheet, reviewed before submit</span></li>
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">Push tradeshow lead lists into the CRM with stage, owner, and source pre-filled</span></li>
+            <li><span class="showcase-applies-function">Operations</span><span class="showcase-applies-use">Update asset records in the ticketing system from a quarterly inventory sheet</span></li>
+            <li><span class="showcase-applies-function">Product Engineering</span><span class="showcase-applies-use">Bulk-create Jira tickets from a planning sheet with epic, labels, and assignees set</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
           Computer use against your real session, looped across a structured input, with the leader watching for the rows where the form does not match the data. The work that used to mean a Friday afternoon of paste-tab-paste-tab becomes review-and-approve.
@@ -3118,10 +3424,31 @@
         <span class="pill claude">Claude</span>
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Organizational Leverage demo · Theme 2</div>
-      <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
       <h3 class="showcase-title">Ship the same report every Monday without writing it</h3>
+      <figure class="showcase-figure">
+        <img loading="lazy"
+             src="https://downloads.intercomcdn.com/i/o/lupk8zyo/2104085399/4dda7e6f76026fd827db0b9323a9/f20635bf-15e7-4978-a213-5b9f67e9fb9a"
+             alt="Claude Cowork's scheduling confirmation dialog — the moment the leader sets the cadence (hourly, daily, weekly, weekdays) for a recurring task. Pair this with a packaged Skill that carries the queries, layouts, and voice, and the cadence runs itself.">
+        <figcaption>Source: <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" target="_blank" rel="noopener">Anthropic — Schedule recurring tasks in Claude Cowork</a></figcaption>
+      </figure>
       <div class="showcase-body">
-        <p>Package the report logic once as a Skill: the queries, the table layouts, the narrative voice, the section headers. Hand the Skill to Cowork and set a scheduled task for Mondays at 7am, weekdays, or hourly. Each run, Cowork pulls the fresh numbers through your connectors, assembles the deliverable, and drops it where the team picks it up. You stop writing the report and start editing the exceptions.</p>
+        <p class="showcase-lead">Package the report once as a Skill, schedule it, stop writing it.</p>
+        <ul class="showcase-points">
+          <li>Skill carries the queries, table layouts, narrative voice, section headers</li>
+          <li>Scheduled tasks carry the cadence — Mondays at 7am, weekdays, or hourly</li>
+          <li>Each run pulls fresh numbers, assembles the deliverable, drops it where the team picks it up</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">The recurring deliverable that used to consume a person-day every week becomes a Monday-morning email everyone walks into.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Weekly variance analysis, drafted with commentary, ready by Monday standup</span></li>
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">Monday pipeline review &mdash; at-risk deals flagged, next steps drafted, before the team meets</span></li>
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Weekly hiring scorecard &mdash; open reqs, time-to-fill, candidate health, sent before staff meeting</span></li>
+            <li><span class="showcase-applies-function">Operations</span><span class="showcase-applies-use">Daily incident summary &mdash; open tickets, escalations, vendor SLAs, in the team channel by 7am</span></li>
+            <li><span class="showcase-applies-function">Marketing</span><span class="showcase-applies-use">Weekly campaign report &mdash; funnel deltas, top creative, recommendations, in the standup deck</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
           The Skill carries the recipe, scheduled tasks carry the cadence, and Cowork orchestrates the multi-step assembly across your tools. The leader sets the standard once, and the cadence runs itself.
@@ -3161,7 +3488,6 @@
         <span class="pill claude">Claude</span>
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Organizational Leverage demo · Theme 2</div>
-      <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
       <h3 class="showcase-title">Package a recurring job once, run it forever as a Skill</h3>
       <figure class="showcase-figure">
         <img loading="lazy"
@@ -3170,7 +3496,23 @@
         <figcaption>Source: <a href="https://claude.com/blog/skills" target="_blank" rel="noopener">Anthropic — Introducing Agent Skills</a></figcaption>
       </figure>
       <div class="showcase-body">
-        <p>Bundle the instructions, reference docs, and guardrails for a recurring deliverable — your LinkedIn newsletter, your weekly board update, your quarterly investor brief — into one named Skill. From then on you ask for the deliverable in a sentence and Claude runs the packaged workflow, not the raw chat.</p>
+        <p class="showcase-lead">Bundle a recurring deliverable's instructions, references, and guardrails into one named Skill.</p>
+        <ul class="showcase-points">
+          <li>Use cases: LinkedIn newsletter, weekly board update, quarterly investor brief</li>
+          <li>Trigger the Skill in a sentence; Claude runs the packaged workflow, not the raw chat</li>
+          <li>Feedback goes into the Skill, not the output — each run gets better</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">Recurring deliverables stop living in someone's head &mdash; each one becomes a named Skill the whole team can trigger and improve.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Offer-letter Skill &mdash; pulls comp band, role template, signing block; runs the same every time</span></li>
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Month-end close Skill &mdash; reconciliation checklist, variance commentary template, audit trail</span></li>
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">QBR-deck Skill &mdash; account metrics, win/loss commentary, next-quarter plan, branded layout</span></li>
+            <li><span class="showcase-applies-function">Marketing</span><span class="showcase-applies-use">Launch-brief Skill &mdash; positioning, audience, channels, success metrics in the team's template</span></li>
+            <li><span class="showcase-applies-function">Product Engineering</span><span class="showcase-applies-use">Incident postmortem Skill &mdash; timeline, root cause, action items, ready for review by next standup</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
           The Skill chains tools (browser, files, connectors), loads its own reference material on demand, and behaves the same way every run. You give feedback into the Skill, not the output, and the next run is better.
@@ -3210,7 +3552,6 @@
         <span class="pill claude">Claude</span>
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
-      <span class="showcase-framing showcase-framing--timeback">Time back</span>
       <h3 class="showcase-title">Hand Claude your already-logged-in browser</h3>
       <figure class="showcase-figure">
         <img loading="lazy"
@@ -3219,7 +3560,23 @@
         <figcaption>Source: <a href="https://claude.com/blog/claude-for-chrome" target="_blank" rel="noopener">Anthropic — Claude for Chrome</a></figcaption>
       </figure>
       <div class="showcase-body">
-        <p>The browser extension lets Claude sit in your Chrome session and act on what you're already logged into — CRM, LinkedIn, your scheduler, your inbox. Same model, same skills, but now it can actually do the click-and-type work instead of telling you how to do it.</p>
+        <p class="showcase-lead">Claude sits in your Chrome session and acts on what you are already logged into.</p>
+        <ul class="showcase-points">
+          <li>Drives your real tabs: CRM, LinkedIn, scheduler, inbox</li>
+          <li>Same model, same skills — now it does the click-and-type work, not just instruct you</li>
+          <li>No API integration required; it uses your existing logins</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">Any tool the team already has logged in becomes agent-addressable &mdash; the integration question dissolves into "open the tab and assign the task."</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">Log call notes into the CRM straight from the live deal page after each conversation</span></li>
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Move candidates through ATS stages, send rejection notes, schedule loops from the live ATS</span></li>
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Pull statements from the bank portal and categorize transactions into the GL</span></li>
+            <li><span class="showcase-applies-function">Operations</span><span class="showcase-applies-use">Triage the ticket queue &mdash; assign owners, tag priority, draft the first response in-tool</span></li>
+            <li><span class="showcase-applies-function">Marketing</span><span class="showcase-applies-use">Schedule posts across LinkedIn, X, and the CMS from one queue without per-tool integrations</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
           Computer use plus your real logins. Claude isn't simulating; it's driving the same browser you'd drive, which is why the leads-to-LinkedIn skill in Part 4 runs end-to-end without an API integration.
@@ -3259,10 +3616,25 @@
         <span class="pill gemini">Gemini</span>
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
-      <span class="showcase-framing showcase-framing--timeback">Time back</span>
       <h3 class="showcase-title">Triage and reply to email without leaving your inbox</h3>
       <div class="showcase-body">
-        <p>Gemini lives inside Gmail as a side panel. It summarizes a thirty-message thread in a paragraph, drafts the reply in your voice using context from your other Workspace files, and surfaces the calendar conflict you would have missed. For leaders who run their day from the inbox, this is the lowest-friction agent in the stack — because it shows up inside the tool they already keep open.</p>
+        <p class="showcase-lead">Gemini lives in Gmail as a side panel — the lowest-friction agent for inbox-driven leaders.</p>
+        <ul class="showcase-points">
+          <li>Summarizes thirty-message threads in a paragraph</li>
+          <li>Drafts replies in your voice using context from your other Workspace files</li>
+          <li>Surfaces the calendar conflict you would have missed</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">Agent help shows up inside the tool the team already lives in &mdash; no new app, no context paste, no re-explaining the role.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">Draft follow-ups pulling context from the deal thread, the proposal Doc, and the demo notes</span></li>
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Reply to candidate questions referencing the offer letter and onboarding checklist in Drive</span></li>
+            <li><span class="showcase-applies-function">Operations</span><span class="showcase-applies-use">Triage the shared inbox &mdash; categorize, summarize, draft replies on common vendor threads</span></li>
+            <li><span class="showcase-applies-function">Marketing</span><span class="showcase-applies-use">Draft press and partner outreach pulling from the launch brief and event calendar</span></li>
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Reply to AP and audit threads with line-item context drawn from the Sheet attachments</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
           Gemini reads your inbox, Docs, and Calendar with permission, reasons across them, and produces a finished draft inside the same surface. The leader doesn't switch tools, doesn't paste in context, and doesn't re-explain who they are.
@@ -3302,10 +3674,25 @@
         <span class="pill chatgpt">ChatGPT</span>
       </div>
       <div class="showcase-category">Personal assistant (Option 1) · Personal Productivity demo · Theme 1</div>
-      <span class="showcase-framing showcase-framing--timeback">Time back</span>
       <h3 class="showcase-title">A persistent workspace that remembers your role, files, and instructions</h3>
       <div class="showcase-body">
-        <p>A project pins your role, your files, and your standing instructions to one workspace. Open it, ask one question, and the answer already knows you're the CEO, that the board meets in three weeks, and that the deck template is the one you uploaded last quarter. Every major provider now ships this surface — ChatGPT Projects, Claude Projects, Copilot Notebooks, Gemini Gems — so the question is no longer whether to use one but which two or three earn the slot.</p>
+        <p class="showcase-lead">A project pins your role, files, and standing instructions to one persistent workspace.</p>
+        <ul class="showcase-points">
+          <li>Answers already know you are the CEO, the board meets in three weeks, the deck template is the one you uploaded last quarter</li>
+          <li>Every major provider ships this surface: ChatGPT Projects, Claude Projects, Copilot Notebooks, Gemini Gems</li>
+          <li>The question is not whether to use one — it is which two or three earn the slot</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">Every function pins its role, files, and standing instructions to a workspace &mdash; the team stops re-uploading context to start each chat.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">People-Ops Project &mdash; org chart, comp bands, policies, JD templates always in context</span></li>
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Close Project &mdash; chart of accounts, latest TB, audit memos, board template ready to go</span></li>
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">Account Project per top-10 account &mdash; ICP fit, stakeholder map, prior calls, current proposal</span></li>
+            <li><span class="showcase-applies-function">Marketing</span><span class="showcase-applies-use">Campaign Project &mdash; brand voice, positioning, audience personas, channel calendar pinned</span></li>
+            <li><span class="showcase-applies-function">Product Engineering</span><span class="showcase-applies-use">System Project &mdash; architecture docs, ADRs, runbooks, on-call schedule loaded for every question</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent-ish setup</strong>
           Memory and context that persist across sessions. The leader stops re-explaining themselves every morning, which is the difference between a chat tool and a workspace.
@@ -3345,7 +3732,6 @@
         <span class="pill copilot">Microsoft Copilot</span>
       </div>
       <div class="showcase-category">Productivity agent (Option 2) · Organizational Leverage demo · Theme 2</div>
-      <span class="showcase-framing showcase-framing--strategic">Strategic leverage</span>
       <h3 class="showcase-title">Researcher and Analyst agents inside your Microsoft 365 stack</h3>
       <figure class="showcase-figure">
         <img loading="lazy"
@@ -3354,7 +3740,23 @@
         <figcaption>Source: <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/" target="_blank" rel="noopener">Microsoft — Introducing Researcher and Analyst in Microsoft 365 Copilot</a></figcaption>
       </figure>
       <div class="showcase-body">
-        <p>If your shop runs on Microsoft, Researcher pulls together a deep multi-source brief — internal docs, emails, meetings, and the web — and Analyst reasons step-by-step over your Excel data with Python. Both run inside the Copilot you already pay for, against the data you already own.</p>
+        <p class="showcase-lead">If your shop runs on Microsoft, two agents ship inside the Copilot you already pay for.</p>
+        <ul class="showcase-points">
+          <li>Researcher: deep multi-source briefs from your internal docs, emails, meetings, and the web</li>
+          <li>Analyst: step-by-step reasoning over your Excel data with Python</li>
+          <li>Same agentic shape as the Claude-side patterns — different vendor, same idea</li>
+        </ul>
+        <div class="showcase-applies">
+          <span class="showcase-applies-eyebrow">Apply across the business</span>
+          <p class="showcase-applies-implication">If the org runs on Microsoft, every function gets deep research and step-by-step Excel reasoning without procuring a single new tool.</p>
+          <ul class="showcase-applies-list">
+            <li><span class="showcase-applies-function">Finance</span><span class="showcase-applies-use">Analyst reverse-engineers a competitor model in Excel; Researcher drafts the M&amp;A target brief</span></li>
+            <li><span class="showcase-applies-function">HR</span><span class="showcase-applies-use">Researcher compiles a benchmarking brief on comp and benefits across named peer companies</span></li>
+            <li><span class="showcase-applies-function">Sales</span><span class="showcase-applies-use">Researcher builds the pre-meeting account brief from emails, meetings, internal docs, and the web</span></li>
+            <li><span class="showcase-applies-function">Operations</span><span class="showcase-applies-use">Analyst runs vendor-spend analysis in Excel with step-by-step Python reasoning shown</span></li>
+            <li><span class="showcase-applies-function">Product Engineering</span><span class="showcase-applies-use">Researcher synthesizes a technology-decision memo from RFCs, incident reports, and vendor docs</span></li>
+          </ul>
+        </div>
         <div class="showcase-agentic">
           <strong>What makes these agents</strong>
           Multi-step reasoning over your real corpus, not single-turn chat. The same pattern as the Sea of Demand research skill and the Excel reverse-engineer demo in the workshop — different vendor, same agentic shape.
@@ -3395,10 +3797,7 @@
      Foundational vocabulary, the two thinking techniques, and the single
      mindset shift the workshop teaches. Moved here to follow the Showcase. -->
 <section class="block countdown" id="three-two-one">
-  <h3 class="countdown-banner">3, 2, 1<span class="countdown-ellipsis">...</span> <span class="countdown-go">Go</span></h3>
-  <p class="countdown-lede">Three words, two techniques, one mindset shift. The 60 second grounding before you pick an Option.</p>
-
-  <div class="countdown-section">
+  <div class="countdown-section" id="three-definitions">
     <span class="countdown-number">3</span>
     <div class="countdown-content">
       <h4 class="countdown-title">Definitions to Know</h4>
@@ -3410,7 +3809,7 @@
     </div>
   </div>
 
-  <div class="countdown-section">
+  <div class="countdown-section" id="two-techniques">
     <span class="countdown-number">2</span>
     <div class="countdown-content">
       <h4 class="countdown-title">Techniques for Today</h4>
@@ -3433,7 +3832,7 @@
     </div>
   </div>
 
-  <div class="countdown-section">
+  <div class="countdown-section" id="one-mindset">
     <span class="countdown-number">1</span>
     <div class="countdown-content">
       <h4 class="countdown-title">Mindset Shift to Make</h4>
@@ -3463,7 +3862,6 @@
       <span>Part 1 of 4 · Techniques</span>
       <span class="dots" aria-hidden="true"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>
     </div>
-    <div class="session-tag"><span class="session-tag-theme">Theme 1</span> · Part 1 of 4</div>
     <h2>Techniques
       <small>Set up your primary chatbot and your thinking so AI starts compounding instead of feeling like a chore</small>
     </h2>
@@ -3509,8 +3907,6 @@
           <li><strong>Gemini in Gmail</strong> drafts, summarizes, and triages inside the inbox.</li>
           <li><strong>Microsoft 365 Copilot in Excel and Word</strong> sits next to the cell or paragraph you're already editing.</li>
         </ul>
-        <p class="option-friction"><strong>Friction:</strong> shallow context — AI sees only what's on screen right now, so you re-explain yourself each session.</p>
-        <p class="option-firstmove"><strong>Best first move:</strong> one tool you live in, one repeating manual job inside it, this week.</p>
       </article>
       <article class="option-card option-card--two">
         <span class="option-badge">Option 2</span>
@@ -3522,8 +3918,6 @@
           <li><strong>ChatGPT Projects + connectors</strong> persist files, instructions, and access in one workspace.</li>
           <li><strong>Microsoft 365 Copilot agents</strong> (Researcher + Analyst) reason multi-step over your real corpus.</li>
         </ul>
-        <p class="option-friction"><strong>Friction:</strong> setup cost up front, and you decide scope and kill switches before you turn it loose.</p>
-        <p class="option-firstmove"><strong>Best first move:</strong> one connector or one Project, plugged in, with one job handed off, this week.</p>
       </article>
     </div>
 
@@ -3727,7 +4121,6 @@ the smallest reversible first move.</div>
       <span>Part 2 of 4 · Strategy</span>
       <span class="dots" aria-hidden="true"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></span>
     </div>
-    <div class="session-tag"><span class="session-tag-theme">Theme 1</span> · Part 2 of 4</div>
     <h2>Strategy: Prioritizing the right work for AI
       <small>Jobs to be Done + RICE — and the live-session reminder that the right pick may not be your most critical activity</small>
     </h2>
@@ -3993,7 +4386,6 @@ value-by-task, and what it steals from.</div>
       <span>Part 3 of 4 · Tactics</span>
       <span class="dots" aria-hidden="true"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></span>
     </div>
-    <div class="session-tag"><span class="session-tag-theme">Theme 2</span> · Part 3 of 4</div>
     <h2>Tactics: Design the AI Workflow
       <small>10 / 80 / 10 + your toolbox — and the live-session "AI as teammate" reframe</small>
     </h2>
@@ -4240,7 +4632,6 @@ value-by-task, and what it steals from.</div>
       <span>Part 4 of 4 · Practice</span>
       <span class="dots" aria-hidden="true"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></span>
     </div>
-    <div class="session-tag"><span class="session-tag-theme">Theme 2</span> · Part 4 of 4</div>
     <h2>Practice: Building the AI Agent Workflow
       <small>"How might we…" + meta-prompting — build, schedule, and chain the Skill into something that compounds</small>
     </h2>
