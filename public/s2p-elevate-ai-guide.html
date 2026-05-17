@@ -3332,6 +3332,37 @@
      Audit detail in elevate-workshop-guide.audit.md. -->
 <section class="block" id="showcase" aria-label="What's already possible — agent and assistant showcase">
   <h2 class="block-title">What's already possible</h2>
+
+  <div class="grid">
+    <div class="card">
+      <div class="num">A</div>
+      <h5>Agent</h5>
+      <p class="card-lead">A chatbot that doesn't just answer — it takes actions on your behalf.</p>
+      <ul class="card-bullets">
+        <li>Clicks, types, sends, reads files.</li>
+        <li>Like a delegated direct report, not a search bar.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="num">S</div>
+      <h5>Skill</h5>
+      <p class="card-lead">A saved recipe that runs itself.</p>
+      <ul class="card-bullets">
+        <li>Bundle instructions, references, and stop-rules into one named Skill.</li>
+        <li>Save once. Trigger by name. Re-run forever.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="num">M</div>
+      <h5>MCP</h5>
+      <p class="card-lead">The USB-C cable for AI — one standard plug for your business apps.</p>
+      <ul class="card-bullets">
+        <li>Fits Airtable, Drive, HubSpot, Slack, GitHub, Linear, more.</li>
+        <li>Authorize each one once; Claude can read and write from then on.</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="showcase-grid">
 
     <!-- CARD 6 — Claude for Chrome (time back) -->
@@ -3367,14 +3398,14 @@
         </div>
         <div class="showcase-agentic">
           <strong>What makes this an agent</strong>
-          Computer use plus your real logins. Claude isn't simulating; it's driving the same browser you'd drive, which is why the leads-to-LinkedIn skill in Part 4 runs end-to-end without an API integration.
+          Computer use means Claude sits at your already-logged-in browser and clicks and types like a contractor over your shoulder. No new logins. No backend integration project — Claude uses the same browser you'd use.
         </div>
         <div class="showcase-forward">
-          Wire it into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>, then see it run live in <a href="#demo-leads-connection-request">Part 4 · Leads to LinkedIn demo</a>.
+          Wire it into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>. We walk the leads-to-LinkedIn build live in the workshop session.
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: drive your already-logged-in browser end to end">
-        <span class="support-matrix-title">Cross-stack support: drive your already-logged-in browser end to end</span>
+        <span class="support-matrix-title">How the four AI vendors compare: drive your already-logged-in browser end to end</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--yes">Supported<span class="support-qualifier">Claude for Chrome</span></span>
@@ -3432,7 +3463,7 @@
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: triage and draft email inside the inbox you already use">
-        <span class="support-matrix-title">Cross-stack support: triage and draft email inside the inbox you already use</span>
+        <span class="support-matrix-title">How the four AI vendors compare: triage and draft email inside the inbox you already use</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--partial">Partial<span class="support-qualifier">Gmail connector, no inline UI</span></span>
@@ -3493,7 +3524,7 @@
       <div class="showcase-body">
         <p class="showcase-lead">Claude drives your real LinkedIn tab, with you approving at the decision points.</p>
         <ul class="showcase-points">
-          <li>Searches Sales Navigator on your criteria, qualifies each result against your ICP doc</li>
+          <li>Searches Sales Navigator on your criteria, qualifies each result against your Ideal Customer Profile (ICP) doc</li>
           <li>Drafts a personalized connection note from the prospect's recent posts</li>
           <li>Pauses for your approval, then sends from your real account (not an API persona)</li>
         </ul>
@@ -3513,11 +3544,11 @@
           Cowork chains computer-use steps against your live session, holds at the approval gate, and resumes when you say go. It is your account doing the work, not a separate API persona, which is why the messages read like you.
         </div>
         <div class="showcase-forward">
-          Wire the same pattern into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>, then watch it run end-to-end in <a href="#demo-leads-connection-request">Part 4 · Leads to LinkedIn demo</a>.
+          Wire the same pattern into your toolbox in <a href="#ex-3-2">Part 3 · Exercise 3.2 (Toolbox + MCP)</a>. See it run end-to-end in <a href="#demo-linkedin-newsletter">Part 4's live demo</a> (the LinkedIn newsletter build uses the same shape).
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: prospect inside your own logged-in LinkedIn session with an approval gate">
-        <span class="support-matrix-title">Cross-stack support: prospect inside your own logged-in LinkedIn session with an approval gate</span>
+        <span class="support-matrix-title">How the four AI vendors compare: prospect inside your own logged-in LinkedIn session with an approval gate</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--yes">Supported<span class="support-qualifier">Claude for Chrome plus Cowork</span></span>
@@ -3586,7 +3617,7 @@
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: drive multi-field admin form entry inside a browser-based business system">
-        <span class="support-matrix-title">Cross-stack support: drive multi-field admin form entry inside a browser-based business system</span>
+        <span class="support-matrix-title">How the four AI vendors compare: drive multi-field admin form entry inside a browser-based business system</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--yes">Supported<span class="support-qualifier">Claude for Chrome, beta on paid plans</span></span>
@@ -3624,7 +3655,7 @@
         <figcaption>Source: <a href="https://claude.com/blog/skills" target="_blank" rel="noopener">Anthropic — Introducing Agent Skills</a></figcaption>
       </figure>
       <div class="showcase-body">
-        <p class="showcase-lead">Bundle a recurring deliverable's instructions, references, and guardrails into one named Skill.</p>
+        <p class="showcase-lead">A Skill is a saved recipe that runs itself. Bundle instructions, references, and guardrails into one named Skill.</p>
         <ul class="showcase-points">
           <li>Use cases: LinkedIn newsletter, weekly board update, quarterly investor brief</li>
           <li>Trigger the Skill in a sentence; Claude runs the packaged workflow, not the raw chat</li>
@@ -3650,7 +3681,7 @@
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: package a recurring deliverable as a reusable Skill">
-        <span class="support-matrix-title">Cross-stack support: package a recurring deliverable as a reusable Skill</span>
+        <span class="support-matrix-title">How the four AI vendors compare: package a recurring deliverable as a reusable Skill</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--yes">Supported<span class="support-qualifier">native Skills</span></span>
@@ -3721,7 +3752,7 @@
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: run a recurring report on a schedule with a packaged Skill">
-        <span class="support-matrix-title">Cross-stack support: run a recurring report on a schedule with a packaged Skill</span>
+        <span class="support-matrix-title">How the four AI vendors compare: run a recurring report on a schedule with a packaged Skill</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--yes">Supported<span class="support-qualifier">Cowork scheduled tasks plus Skills</span></span>
@@ -3799,7 +3830,7 @@
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: generate multi-format artifacts from a corpus the leader uploads">
-        <span class="support-matrix-title">Cross-stack support: generate multi-format artifacts from a corpus the leader uploads</span>
+        <span class="support-matrix-title">How the four AI vendors compare: generate multi-format artifacts from a corpus the leader uploads</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--partial">Partial<span class="support-qualifier">Projects plus Skills, no audio or video</span></span>
@@ -3841,7 +3872,7 @@
         <ul class="showcase-points">
           <li>Researcher: deep multi-source briefs from your internal docs, emails, meetings, and the web</li>
           <li>Analyst: step-by-step reasoning over your Excel data with Python</li>
-          <li>Same agentic shape as the Claude-side patterns, different vendor, same idea</li>
+          <li>Same agent pattern as the Claude-side examples, different vendor, same idea</li>
         </ul>
         <div class="showcase-applies">
           <span class="showcase-applies-eyebrow">Apply across the business</span>
@@ -3856,14 +3887,14 @@
         </div>
         <div class="showcase-agentic">
           <strong>What makes these agents</strong>
-          Multi-step reasoning over your real corpus, not single-turn chat. The same pattern as the Sea of Demand research skill and the Excel reverse-engineer demo in the workshop. Different vendor, same agentic shape.
+          Multi-step reasoning over your real corpus, not single-turn chat. Different vendor, same agent pattern.
         </div>
         <div class="showcase-forward">
-          See the Claude-side equivalent in <a href="#demo-sea-of-demand-research">Part 4 · Sea of Demand</a>.
+          The Claude-side equivalent (deep research over your own files) is walked live in the workshop session.
         </div>
       </div>
       <div class="support-matrix" aria-label="Cross-platform support: deep multi-source research and spreadsheet analysis with citations">
-        <span class="support-matrix-title">Cross-stack support: deep multi-source research and spreadsheet analysis with citations</span>
+        <span class="support-matrix-title">How the four AI vendors compare: deep multi-source research and spreadsheet analysis with citations</span>
         <div class="support-row">
           <span class="support-provider">Claude</span>
           <span class="support-status support-status--yes">Supported<span class="support-qualifier">Research mode + connectors</span></span>
@@ -3909,7 +3940,7 @@
         </li>
         <li>
           <span class="definition-term">Workflow</span>
-          <span class="definition-body">A series of Skills and human-in-the-loop (HitL) decisions.</span>
+          <span class="definition-body">An end-to-end sequence: a trigger fires, the agent does the heavy work, a human approves. A relay race — humans hand off to the agent, agent hands back.</span>
         </li>
       </ul>
     </div>
@@ -4051,6 +4082,7 @@
     <hr class="session-block-divider">
     <p class="session-block-label">Exercise 1</p>
     <h3>Configure your primary chatbot: privacy off, adaptive reasoning system prompt, cross-platform fit</h3>
+    <p>Three settings to flip once, then never again. Each one changes how every chat goes for the next 12 months.</p>
     <!-- inferred from transcript: privacy toggle off, adaptive reasoning system prompt loaded, "secret weapon" -->
 
     <div class="exercise" id="ex-1-2">
@@ -4066,7 +4098,7 @@
             <span class="step-goal">Turn the privacy / training-data toggle off in each chat surface.</span>
           </div>
           <div class="step-body">
-            <p>Open your primary chatbot's settings, find the privacy / training-data toggle, and switch it off. These toggles are usually <em>on</em> by default (a dark pattern the live session flagged), and they send your conversations to model training. Repeat for every chat surface you'll touch in the next four Parts.</p>
+            <p>Open your primary chatbot's settings (click your initials or account icon — usually top-right), find the privacy / training-data toggle, and switch it off. These toggles are usually <em>on</em> by default (a dark pattern the live session flagged), and they send your conversations to model training. Repeat for every chat surface you'll touch in the next four Parts.</p>
             <table class="kv">
               <tr><th>Claude</th><td>Settings &rarr; Privacy &rarr; "Help improve Claude" &rarr; off.</td></tr>
               <tr><th>ChatGPT</th><td>Settings &rarr; Data Controls &rarr; "Improve the model for everyone" &rarr; off.</td></tr>
@@ -4087,7 +4119,7 @@
             <span class="step-goal">Paste the adaptive reasoning system prompt into your primary chatbot's instructions field.</span>
           </div>
           <div class="step-body">
-            <p>Open your primary chatbot's settings and find the system prompt / custom instructions / general instructions field. Paste the prompt below. Tech Leaders refines this prompt continuously. It's the "secret weapon" the live session called out and it changes how every other chat goes. Without it, chatbots default to linear logic; with it, they think in atoms (many pieces at once, then synthesize), which is how good human leaders think.</p>
+            <p>Open your primary chatbot's settings and find the system prompt / custom instructions / general instructions field — a one-time text box, separate from where you type chats. Paste the prompt below exactly as-is; the names inside ("Atom of Thought", "Feynman Loop") are workshop labels you don't have to decode — the prompt does the work. What changes: the chatbot stops giving one linear answer and starts thinking in parallel, the way a strategy team would.</p>
             <table class="kv">
               <tr><th>Claude</th><td>Settings &rarr; General &rarr; overall system prompt field.</td></tr>
               <tr><th>ChatGPT</th><td>Settings &rarr; Personalization &rarr; Custom Instructions &rarr; "Anything else…" field.</td></tr>
@@ -4123,7 +4155,7 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
             <span class="step-goal">Add a one-paragraph "who I am" block to custom instructions / memory.</span>
           </div>
           <div class="step-body">
-            <p>Six lines: role, voice, decision filters, current priorities, closest collaborators, and the leadership behaviors you're working on. This carries across every chat. Paste it into your primary chatbot's profile / custom instructions / memory field, and mirror it to the adjacent tools you keep open.</p>
+            <p>Six lines: role, voice, decision filters, current priorities, closest collaborators, and the leadership behaviors you're working on. This carries across every chat. You're filling out the chatbot's "remember about me forever" field — each vendor calls it something different. Paste it into your primary chatbot's profile / custom instructions / memory field (see the row below for your tool), and mirror it to the adjacent tools you keep open.</p>
             <table class="kv">
               <tr><th>Claude</th><td>Settings &rarr; Profile (or the equivalent for your tier).</td></tr>
               <tr><th>ChatGPT</th><td>Custom Instructions ("What would you like ChatGPT to know about you") + Memory.</td></tr>
@@ -4200,37 +4232,40 @@ the smallest reversible first move.</div>
      critical activity" reframe, real-world calibration ("the live-session
      pair set aside an hour; it took 10 minutes").
      ============================================================ -->
-<section class="block session up-next" id="part2">
+<section class="block session" id="part2">
   <div class="s2p-header-bar">
     <div class="journey-indicator" aria-label="Part 2 of 4">
       <span>Part 2 of 4 · Strategy</span>
       <span class="dots" aria-hidden="true"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></span>
     </div>
-    <h2>Strategy: Prioritizing the right work for AI
-      <small>Jobs to be Done + RICE, and the live-session reminder that the right pick may not be your most critical activity</small>
+    <h2>Pick the right work for AI
+      <small>Write 2-3 Jobs to be Done, score them with RICE, lock in #1 for Parts 3 and 4</small>
     </h2>
   </div>
   <div class="session-body">
 
-    <ul class="part-promise-list">
-      <li>Write 2 to 3 Jobs to be Done in the canonical "When X, I want Y, so I can Z" frame.</li>
-      <li>Score them with <strong>RICE</strong> (Reach × Impact × Confidence ÷ Effort).</li>
-      <li>Apply the live-session reframe: the right pick is often the work that <em>steals time</em> from your highest-value work.</li>
-      <li>Pick the one Job you'll design in Part 3 and build in Part 4, on a defensible basis.</li>
-      <li>Pick the one Job that steals time from your $10 task this week. Your week, your call. Organizational scope opens in Part 3.</li>
-    </ul>
-<section class="wwhn-section">
-      <span class="wwhn-label">What this is</span>
-      <h3>The "When X, I want Y, so I can Z" inventory, and the live-session reframe of "right"</h3>
-    </section>
-    <ul class="talk-points">
-      <li>Part 1 set the surface. Part 2 picks the work with two exercises: Jobs to be Done, then RICE.</li>
-      <li>Together they pull you out of the How Trap and the "throw AI on everything" failure mode.</li>
-      <li>AI is grand and abstract by default. The JTBD frame collapses it into a fundable activity.</li>
-      <li>RICE forces comparison so you don't anchor on the loudest item.</li>
-      <li>The live-session reframe: the right pick may not be your most critical activity; it's often what <em>steals time</em> from your $10 work.</li>
-      <li>You leave with one Job, defensibly chosen, to design in Part 3 and build in Part 4.</li>
-    </ul>
+    <div class="grid">
+      <div class="card">
+        <div class="num">J</div>
+        <h5>Jobs to be Done</h5>
+        <p class="card-lead">Outcome-shaped, not task-shaped.</p>
+        <ul class="card-bullets">
+          <li><strong>Situation:</strong> recurring (weekly or more often).</li>
+          <li><strong>Motivation:</strong> revenue, a real hour saved, or a pain removed.</li>
+          <li><strong>Outcome:</strong> observable at a glance — you can tell whether the Job got done.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">R</div>
+        <h5>RICE prioritization</h5>
+        <p class="card-lead">(Reach × Impact × Confidence) ÷ Effort.</p>
+        <ul class="card-bullets">
+          <li><strong>Reach × Impact:</strong> how often it runs, how meaningful when it does.</li>
+          <li><strong>Confidence:</strong> 1 to 10, calibrated honestly.</li>
+          <li><strong>Effort:</strong> data, toolbox, and computer-use availability.</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- ============ EXERCISE 2.1 — JOBS TO BE DONE ============ -->
     <hr class="session-block-divider">
@@ -4251,10 +4286,9 @@ the smallest reversible first move.</div>
             <span class="step-goal">Read the frame. Read the two live-session examples.</span>
           </div>
           <div class="step-body">
-            <p>The canonical Job frame, in the live session's words:</p>
+            <p>The canonical frame, in the live session's words:</p>
             <blockquote class="pullquote" style="font-size:22px; padding:18px 24px; margin:14px 0;">When ___, I want to ___ so I can ___.<span class="attribution">Situation + motivation = outcome</span></blockquote>
-            <p>Treat this exercise as a structured inventory of your Roles and Responsibilities, lifted into the canonical Job frame. The frame is the discipline; the inventory is the substance.</p>
-            <p>The format is deliberate. AI is so grand it leads to abstract goals ("use AI for marketing" is not a Job). The frame forces specificity and turns the abstract into a fundable activity. Two live-session examples, taken verbatim:</p>
+            <p>The frame forces specificity. "Use AI for marketing" is not a Job. Two examples, verbatim:</p>
             <div class="worked">
               <strong class="tag">Live-session example 1: newsletter publish</strong>
               <p style="margin:0;">When we have a newsletter that's approved, I want to automatically post it on LinkedIn to drive conversions and traffic.</p>
@@ -4263,7 +4297,7 @@ the smallest reversible first move.</div>
               <strong class="tag">Live-session example 2: leads to connection request</strong>
               <p style="margin:0;">When we get a new lead, I want to automatically send a connection request.</p>
             </div>
-            <p>(The live session noted the second one used to be a paid manual job and now runs every day on a schedule. We'll see both as live demos in Part 4.)</p>
+            <p class="ex-pointer-note"><em>Both run as live demos in Part 4 — see the newsletter publish walk-through below.</em></p>
             <div class="step-check"><strong>You'll know you've got it when</strong>you can read both examples aloud and spot the situation, motivation, and outcome inside each.</div>
           </div>
         </div>
@@ -4274,13 +4308,19 @@ the smallest reversible first move.</div>
             <span class="step-goal">Write 2 to 3 Jobs of your own. Don't edit. Just get them down.</span>
           </div>
           <div class="step-body">
-            <p>Live-session coaching during this exercise, in three lines:</p>
             <ul>
               <li><strong>Don't edit the idea.</strong> Just get 2 to 3 down on the page.</li>
               <li><strong>Stretch your thinking.</strong> Not "what can I do with AI" but "how can I work differently by understanding AI."</li>
               <li><strong>If you can't think of one for yourself,</strong> think of something a colleague would want done.</li>
             </ul>
-            <p>Write 2 to 3 Jobs in the frame. Aim for ones where the situation is recurring (weekly or more often), the motivation is honest (drives revenue, saves a real hour, removes a pain), and the outcome is observable (you can tell at a glance whether the Job got done).</p>
+            <div class="callout tip">
+              <strong>What makes a good Job</strong>
+              <ul style="margin:6px 0 0;">
+                <li><strong>Situation:</strong> recurring (weekly or more often).</li>
+                <li><strong>Motivation:</strong> honest — revenue, a real hour saved, a pain removed.</li>
+                <li><strong>Outcome:</strong> observable at a glance.</li>
+              </ul>
+            </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>each Job is one sentence and follows the "When X, I want Y, so I can Z" frame end-to-end. Resist the urge to write a fourth one this round.</div>
           </div>
         </div>
@@ -4317,7 +4357,7 @@ My current Jobs:
             <span class="step-goal">Write the Theme 2 carry sentence for your locked-in Job.</span>
           </div>
           <div class="step-body">
-            <p>For your locked-in Job, write the org-distribution sentence in canonical form:</p>
+            <p>The carry sentence is the one line that hands the Skill from you to the team — the bridge from "I run this" to "we run this." For your locked-in Job, write it in canonical form:</p>
             <blockquote class="pullquote" style="font-size:20px; padding:16px 22px; margin:12px 0;">When this Skill is good enough, [team / function / role] will run it because [reason].<span class="attribution">Theme 2 carry sentence</span></blockquote>
             <div class="step-check"><strong>You'll know you've got it when</strong>the carry sentence names a specific team, function, or role and a one-line reason, not a category.</div>
           </div>
@@ -4351,6 +4391,10 @@ My current Jobs:
               <tr><th>Effort</th><td>How hard to deliver. Is the data available, the toolbox in place, computer-use available if there's no API?</td></tr>
             </table>
             <div class="prompt-box"><span class="tag">RICE formula</span>(Reach × Impact × Confidence) ÷ Effort</div>
+            <div class="callout tip">
+              <strong>The $10 task vs. the $1,000 task</strong>
+              Tech Leaders idiom: "$10 work" is the low-leverage stuff (formatting, copy-pasting, scheduling) that steals time from the "$1,000 work" only you can do. The right Job for AI often isn't your most critical activity — it's the work that steals time from your most critical activity.
+            </div>
             <p>Paste your 4 to 5 Jobs back into Claude. Run this prompt.</p>
             <div class="prompt-box"><span class="tag">Prompt — RICE scoring, score 3 and pick 1</span>Role: You are my prioritization partner. You have my custom instructions
       and the Jobs to be Done list above.
@@ -4365,7 +4409,7 @@ After scoring, apply the live-session reframe: the right pick may not
 be the most critical activity. It may be the work that steals time
 from the $10 task. For each Top 3 Job, also note time-by-task,
 value-by-task, and what it steals from.</div>
-            <p>The output of this step is your Top 3 Jobs: the one you lock in next, plus two more you carry in your queue. The Top 3 is the unit of planning for the rest of the workshop.</p>
+            <p>Top 3 = your #1 plus your queue. That's the unit of planning for Parts 3 and 4.</p>
             <div class="step-check"><strong>You'll know you've got it when</strong>you have a Top 3 sorted by RICE with the time-steal lens applied, and you can explain in one sentence why your new #1 is #1.</div>
           </div>
         </div>
@@ -4386,44 +4430,20 @@ value-by-task, and what it steals from.</div>
             </div>
             <div class="callout pitfall">
               <strong>Sandbox first</strong>
-              Don't make your first AI build your most critical business process. Pick a Job you can play with and break. If your locked-in Job is mission-critical, find a sandbox-safe variant first.
+              Don't make your first AI build your most critical business process. Pick a practice version — something you can play with and break. Your first AI build is a dress rehearsal, not opening night. If your locked-in Job is mission-critical, find a low-stakes variant for the first build (workshop name: sandbox).
             </div>
-            <p>The locked-in Job is the #1 of your Top 3. Park the other two by RICE rank; they're your queue for the next builds.</p>
-            <div class="step-check"><strong>You'll know you've got it when</strong>you have one Job written cleanly with RICE, time-steal, and sandbox-safety notes, and you'd defend the pick to a peer.</div>
+            <div class="step-check"><strong>You'll know you've got it when</strong>you have one Job written cleanly with RICE, time-steal, and low-stakes-first notes, and you'd defend the pick to a peer.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="wwhn-section">
-      <span class="wwhn-label">Now what to do next</span>
-      <h3>Close Part 2: what you walk away with</h3>
-    </section>
-    <p>Before you close the tab:</p>
-    <ol>
-      <li><strong>Save the prioritized Jobs table</strong> with RICE scores and time-steal notes into a doc you'll reuse in Parts 3 and 4.</li>
-      <li><strong>Confirm the one locked-in Job</strong> is written cleanly in canonical "When X, I want Y, so I can Z" form.</li>
-      <li><strong>Park the rest of the list.</strong> You'll come back to it after the first Skill ships and chains; that's the trust-the-process loop.</li>
-      <li><strong>In the next 24 hours:</strong> tell one peer or report which Job you've picked and why. If they push back, that's data. Your Job description either has a missing motivation or the wrong outcome.</li>
-    </ol>
-
-
-    <div class="callout pitfall">
-      <strong>Watch out for these (Part 2)</strong>
-      <ul style="margin:6px 0 0;">
-        <li>Writing Jobs as tasks. "Send the Monday update" is a task. The Job is the underlying outcome the task hires itself to deliver. If it reads like a to-do, lift it.</li>
-        <li>Over-claiming Confidence on synthesis Jobs. They look easy. They're not, until you've watched a real output.</li>
-        <li>Defaulting to your most critical business activity for the first build. The live session was firm: that's the wrong pick. Take the time-stealer.</li>
-        <li>Over-budgeting Effort by tradition. Things that took humans an hour often take the agent ten minutes. Penalize Effort accordingly.</li>
-        <li>Locking in more than one Job for Parts 3 and 4. You'll come back to the list after the first Skill ships. Trust the process.</li>
-      </ul>
-    </div>
   </div>
 </section>
 
 
 <!-- ============ Q&A 2 — after Part 2 (outside the content envelope) ============ -->
-<section class="qa-block up-next" id="qa-2">
+<section class="qa-block" id="qa-2">
   <span class="qa-block-eyebrow">Q&amp;A</span>
   <h2 class="qa-block-heading">Open discussion</h2>
   <ol class="qa-anchor-list">
@@ -4434,7 +4454,7 @@ value-by-task, and what it steals from.</div>
 
 
 <!-- ============ THEME 2 MARKER — Organizational Leverage ============ -->
-<section class="block theme-marker up-next" id="theme-2">
+<section class="block theme-marker" id="theme-2">
   <div class="theme-marker-bar">
     <span class="theme-marker-num">Theme 2 of 2</span>
     <span class="theme-marker-label">AI for Organizational Leverage</span>
@@ -4443,11 +4463,11 @@ value-by-task, and what it steals from.</div>
   <h2 class="theme-marker-title">Build something your team can run</h2>
   <p class="theme-marker-lede">Design the workflow (Part 3), then build, schedule, and chain the Skill (Part 4). At every step, design as if you were onboarding a new teammate. The "AI as teammate" reframe is the spine of this theme; the Skill you ship is the artifact your team or function can run.</p>
   <p class="theme-marker-bridge"><strong>Theme 2 entry move:</strong> carry your Option forward, but reframe the work. If you picked Option 1, name the team member whose Outlook / Excel / Chrome you'd roll this out to next. If you picked Option 2, name the function whose connectors you'd plug into next. Write the name. The Skill you build in Part 4 is for them, not just you.</p>
-  <p class="theme-marker-budget"><em>Theme 2 is where the gains compound. Budget the time. Part 4's four demos are walk-through, not all-required; pick the closest one and treat the others as bonus.</em></p>
+  <p class="theme-marker-budget"><em>Theme 2 is where the gains compound. Budget the time. Part 4 walks one live demo end-to-end; the other agent patterns get walked through in the workshop session.</em></p>
 </section>
 
 <!-- ============ THEME 2 WARMUPS — held-back-pause block before Part 3 ============ -->
-<section class="block warmup-questions up-next" id="theme-2-warmups">
+<section class="block warmup-questions" id="theme-2-warmups">
   <span class="warmup-questions-eyebrow">Warmups before you start</span>
   <h3 class="warmup-questions-title">Hold these in mind as you begin Theme 2</h3>
   <ul class="warmup-questions-list">
@@ -4465,38 +4485,62 @@ value-by-task, and what it steals from.</div>
      workflow — trigger / steps / done / edge cases), Exercise 4
      (toolbox / MCP connections), kill-switch + an audience question from the live session.
      ============================================================ -->
-<section class="block session up-next" id="part3">
+<section class="block session" id="part3">
   <div class="s2p-header-bar">
     <div class="journey-indicator" aria-label="Part 3 of 4">
       <span>Part 3 of 4 · Tactics</span>
       <span class="dots" aria-hidden="true"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></span>
     </div>
-    <h2>Tactics: Design the AI Workflow
-      <small>10 / 80 / 10 + your toolbox, and the live-session "AI as teammate" reframe</small>
+    <h2>Design the workflow
+      <small>Map onto 10 / 80 / 10, build the toolbox, treat AI as a teammate</small>
     </h2>
   </div>
   <div class="session-body">
 
     <ul class="part-promise-list">
-      <li>Map your locked-in Job onto <strong>10 / 80 / 10</strong> (human-in / AI / human-after).</li>
-      <li>Write the workflow as <strong>trigger -&gt; steps -&gt; definition of done -&gt; edge cases</strong>.</li>
-      <li>List the <strong>toolbox / MCP connections</strong> Claude needs, plus computer-use fallback.</li>
-      <li>Specify the kill-switch plan (soft "if X, stop" + platform-level Stop button).</li>
-      <li>Carry the live-session "AI as teammate" reframe into the build.</li>
-      <li>Map the workflow as if onboarding a new teammate. The back-10% reviewer is not always you. Name a team member or function lead now.</li>
+      <li>Map your Job onto <strong>10 / 80 / 10</strong>.</li>
+      <li>Spec it: <strong>trigger → steps → done → edge cases</strong>.</li>
+      <li>Wire the toolbox: hook Claude into your business apps (<strong>MCPs</strong>), with browser-driving as the fallback (<strong>computer use</strong>).</li>
     </ul>
-<section class="wwhn-section">
-      <span class="wwhn-label">What this is</span>
-      <h3>10 / 80 / 10 + the toolbox: the workflow spec the agent needs</h3>
-    </section>
-    <ul class="talk-points">
-      <li>Part 2 picked the Job. Part 3 designs the workflow that delivers it.</li>
-      <li>Exercise 3: map the workflow (trigger / steps / done / edge cases).</li>
-      <li>Exercise 4: build the toolbox (MCP connections Claude can drive).</li>
-      <li><strong>10 / 80 / 10</strong>: 10% human-in (inputs), 80% AI heavy lifting, 10% human-after (approve + feedback).</li>
-      <li>The live-session reframe: <strong>AI is less a tool than a teammate.</strong> Onboard it; review its work. Don't push buttons.</li>
-      <li>The teammate is faster than any human at the middle 80%, but only when the 10s are real.</li>
-    </ul>
+
+    <p>Part 2 picked the Job. Part 3 designs the workflow that delivers it. 10 / 80 / 10 is the same shape as briefing a new hire: 10% setting up the context and data, 80% them doing the work, 10% you reviewing before it ships.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="num">10</div>
+        <h5>Front 10% — Human-in</h5>
+        <p class="card-lead">What the agent needs before it can start.</p>
+        <ul class="card-bullets">
+          <li>Data, the latest input, the relevant rows.</li>
+          <li>Approvals and gating decisions.</li>
+          <li>Context: brand voice, role, what good looks like.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">80</div>
+        <h5>Middle 80% — AI heavy lifting</h5>
+        <p class="card-lead">Research, extraction, drafting, processing.</p>
+        <ul class="card-bullets">
+          <li>Faster than a human, in parallel.</li>
+          <li>Processes more, repeats reliably.</li>
+          <li>The actual work — once the 10s are real.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">10</div>
+        <h5>Back 10% — Human-after</h5>
+        <p class="card-lead">Approve, reject, one note back to the Skill.</p>
+        <ul class="card-bullets">
+          <li>Not line-editing the deliverable.</li>
+          <li>Feedback goes into the Skill, not the output.</li>
+          <li>Definition-of-Done check before shipping.</li>
+        </ul>
+      </div>
+    </div>
+
+    <blockquote class="pullquote">
+      AI is less a tool than a teammate. Onboard it. Review its work. Don't push buttons.
+    </blockquote>
 
     <!-- ============ EXERCISE 3.1 — 10/80/10 MAP THE WORKFLOW ============ -->
     <hr class="session-block-divider">
@@ -4514,28 +4558,12 @@ value-by-task, and what it steals from.</div>
         <div class="step">
           <div class="step-head">
             <span class="step-num">Step 1</span>
-            <span class="step-goal">Read the 10 / 80 / 10 frame and the "AI as teammate" reframe.</span>
-          </div>
-          <div class="step-body">
-            <table class="kv">
-              <tr><th>Front 10%: Human-in / before</th><td>What the agent needs before it can start: data, approvals, context, the latest input, the relevant lead list, the brand voice samples. Without this, the middle 80% is generic.</td></tr>
-              <tr><th>Middle 80%: AI does the heavy lifting</th><td>Research, extraction, processing, drafting, doing the actual job. This is where AI is dramatically different from a human teammate: faster, parallel, can process more.</td></tr>
-              <tr><th>Back 10%: Human-in / after</th><td>Final approval. Feedback that makes the skill better next time. <em>Not</em> editing the deliverable line-by-line. The back 10% is "approve, reject, one note to the skill."</td></tr>
-            </table>
-            <p>The live-session reframe: <em>"AI is less a tool than a teammate."</em> You wouldn't let a new team member start work without instructions (the front 10%). You wouldn't ship their work without checking it (the back 10%). The middle 80% is the work, where AI is faster and more parallel than a person.</p>
-            <div class="step-check"><strong>You'll know you've got it when</strong>you can recite the 10 / 80 / 10 split and say one sentence about the teammate reframe.</div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-head">
-            <span class="step-num">Step 2</span>
             <span class="step-goal">Write the Trigger and Inputs (the front 10%).</span>
           </div>
           <div class="step-body">
             <p>For the Job you locked in at the end of Part 2, name:</p>
             <ul>
-              <li><strong>Trigger:</strong> what kicks the workflow off. A schedule (every morning at 6 a.m.), a new record (a new lead), an explicit invocation (you typing "run this skill"), or a manual cron.</li>
+              <li><strong>Trigger:</strong> what kicks the workflow off. A schedule (every morning at 6 a.m.), a new record (a new lead), or you typing "run this skill" by name.</li>
               <li><strong>Inputs / dependencies:</strong> what data, what approvals, what apps and systems someone opens to do this Job today.</li>
             </ul>
             <div class="worked">
@@ -4551,11 +4579,11 @@ value-by-task, and what it steals from.</div>
 
         <div class="step">
           <div class="step-head">
-            <span class="step-num">Step 3</span>
+            <span class="step-num">Step 2</span>
             <span class="step-goal">Write the Steps (the middle 80%).</span>
           </div>
           <div class="step-body">
-            <p>List the high-level steps as you'd describe them to a new team member. No SOP needed; imperfect bullet points are fine. The next move is asking Claude to fill in what you've missed.</p>
+            <p>Describe the steps the way you'd brief a new teammate. Imperfect bullets are fine.</p>
             <div class="worked">
               <strong class="tag">Sample: newsletter publish Steps</strong>
               <ol style="margin:0;">
@@ -4573,11 +4601,14 @@ value-by-task, and what it steals from.</div>
 
         <div class="step">
           <div class="step-head">
-            <span class="step-num">Step 4</span>
+            <span class="step-num">Step 3</span>
             <span class="step-goal">Write the Definition of Done and the Edge Cases together.</span>
           </div>
           <div class="step-body">
-            <p>Definition of Done is the gap most people miss; without it, ROI is ambiguous. Be specific and bold. Then list the past problems and failure modes (the edge cases). At least one edge case should be an explicit "if X, stop" guardrail. That's the soft kill switch in disguise.</p>
+            <ul>
+              <li><strong>Definition of Done:</strong> the finish line you can see in 30 seconds. If you can't eyeball whether the agent finished the job, you haven't defined it. Specific. Bold. Observable.</li>
+              <li><strong>Edge Cases:</strong> the weird inputs that break the agent. Write what should happen when data is missing, wrong, or marked DRAFT. Each one is a stop-rule (workshop name: "if X, stop" guardrail, or "soft kill switch").</li>
+            </ul>
             <div class="worked">
               <strong class="tag">Sample: newsletter publish Definition of Done + Edge Cases</strong>
               <p style="margin:0;"><strong>Definition of Done:</strong> Newsletter drafted on LinkedIn with formatting matching the Airtable row exactly; human reviewer approves in 5 minutes or less and clicks Publish. Net 45 minutes per week reclaimed.</p>
@@ -4613,7 +4644,7 @@ value-by-task, and what it steals from.</div>
             <span class="step-goal">List the tools your business already runs on.</span>
           </div>
           <div class="step-body">
-            <p>The toolbox is the tools your business already runs on. The more context Claude has on your systems, the better its suggestions, workflows, and skills. Common categories from the live session:</p>
+            <p>More context = better skills. Aim for 5 to 10 systems your business actually uses.</p>
             <ul>
               <li>CRM</li>
               <li>Project management / issue tracker</li>
@@ -4622,8 +4653,10 @@ value-by-task, and what it steals from.</div>
               <li>Email / calendar / docs / drive</li>
               <li>Industry-specific tools</li>
             </ul>
-            <p>Write yours down. Aim for 5 to 10 entries. You'll plug in the ones the locked-in Job needs in the next step.</p>
-            <p><em>If you're rolling this out to a team, list the connectors the team's tooling stack already has, not just your personal stack.</em></p>
+            <div class="callout tip">
+              <strong>Rolling this out to a team</strong>
+              List the connectors the team's stack already has, not just your personal stack.
+            </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>you have a written toolbox list with at least 5 systems your business actually uses.</div>
           </div>
         </div>
@@ -4634,7 +4667,11 @@ value-by-task, and what it steals from.</div>
             <span class="step-goal">Map the Job's toolbox: which MCPs does it need?</span>
           </div>
           <div class="step-body">
-            <p><strong>MCP connections</strong>, the protocol that connects third-party systems to the agent, is the mechanism. Many MCPs are available out of the box in Claude (Connectors menu): Airtable, HubSpot, Google Drive, GitHub, Linear, Slack, plus more. For legacy software with no MCP, there are two workarounds: <strong>computer use</strong> (Claude drives the browser and any desktop app) or a hosted MCP server stood up for you.</p>
+            <ul>
+              <li><strong>MCP:</strong> the standard plug between Claude and your apps — USB-C for AI. One shape, fits Airtable, HubSpot, Drive, GitHub, Linear, Slack. You'll find them in Claude's Connectors menu.</li>
+              <li><strong>Computer use:</strong> Claude sits at your already-logged-in browser and clicks and types like a contractor over your shoulder. The fallback for anything that doesn't have an MCP plug.</li>
+              <li><strong>Hosted server:</strong> for older or homegrown systems with no off-the-shelf connector, your IT team or partner can build one (workshop name: hosted MCP server). Out of scope today — flag it as a "later" item.</li>
+            </ul>
             <div class="worked">
               <strong class="tag">Sample: newsletter publish toolbox</strong>
               <ol style="margin:0;">
@@ -4643,7 +4680,6 @@ value-by-task, and what it steals from.</div>
                 <li><strong>LinkedIn</strong>: no MCP. Use a logged-in browser session via computer use.</li>
               </ol>
             </div>
-            <p>Note the third entry: LinkedIn has no official MCP, but Claude can drive a logged-in browser session, which is the same thing in effect.</p>
             <div class="step-check"><strong>You'll know you've got it when</strong>every system the Job needs is mapped to either an MCP connector or a "computer use via logged-in session" path.</div>
           </div>
         </div>
@@ -4654,7 +4690,10 @@ value-by-task, and what it steals from.</div>
             <span class="step-goal">Connect the MCPs in Claude. Verify each one.</span>
           </div>
           <div class="step-body">
-            <p>Open Claude -&gt; Settings -&gt; Connectors. Authorize each MCP the Job needs. After each one, verify by asking Claude a connector-grounded question ("list the most recent five rows in my [Airtable base] table" or "what is the most recently modified file in my [Drive folder]") and confirm it returns real data, not a generic answer.</p>
+            <p>In Claude, click your initials (top-right) → Settings → Connectors. Each row is an app. Click "Authorize" next to the apps your Job needs — a window from that app will pop up asking permission; click Allow. The row flips to "Connected." Then verify each one with a real-data question — something only your actual data can answer.</p>
+            <div class="prompt-box"><span class="tag">Verification prompts — paste one per connector</span>list the most recent five rows in my [Airtable base] table
+
+what is the most recently modified file in my [Drive folder]</div>
             <div class="callout pitfall">
               <strong>Login risk note</strong>
               Claude doesn't get your password when it drives a browser via computer use. It uses the already-logged-in session, like inviting a teammate to sit at your computer while you step away. If you're regulated, treat computer use the same way you'd treat a contractor over your shoulder.
@@ -4693,7 +4732,7 @@ value-by-task, and what it steals from.</div>
 
 
 <!-- ============ Q&A 3 — after Part 3 (outside the content envelope) ============ -->
-<section class="qa-block up-next" id="qa-3">
+<section class="qa-block" id="qa-3">
   <span class="qa-block-eyebrow">Q&amp;A</span>
   <h2 class="qa-block-heading">Open discussion</h2>
   <ol class="qa-anchor-list">
@@ -4711,39 +4750,32 @@ value-by-task, and what it steals from.</div>
      (LinkedIn newsletter); the other three demos live in the Demos
      appendix.
      ============================================================ -->
-<section class="block session up-next" id="part4">
+<section class="block session" id="part4">
   <div class="s2p-header-bar">
     <div class="journey-indicator" aria-label="Part 4 of 4">
       <span>Part 4 of 4 · Practice</span>
       <span class="dots" aria-hidden="true"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></span>
     </div>
-    <h2>Practice: Building the AI Agent Workflow
-      <small>"How might we…" + meta-prompting: build, schedule, and chain the Skill into something that compounds</small>
+    <h2>Build the Skill
+      <small>"How might we…" meta-prompt + sandbox build + first validated run</small>
     </h2>
   </div>
   <div class="session-body">
 
+    <p>A <strong>meta-prompt</strong> is a prompt that asks Claude to design the Skill, not to run it — the same move as scoping a project with a consultant before they execute. You hand over the outcome; Claude proposes the structure.</p>
+
     <ul class="part-promise-list">
-      <li>Generate and install a working Claude skill for your Part-2 Job.</li>
-      <li>Use the <strong>"How might we…"</strong> meta-prompt formula.</li>
-      <li>Answer Claude's own clarifying questions before generation.</li>
-      <li>Apply the sandbox mindset. First build is low-stakes.</li>
-      <li>Put the skill on a schedule (or commit a go-live date) and plan the stagger.</li>
-      <li>Build a second <strong>granular</strong> skill that chains with the first; install the <strong>feedback into the skill, not the output</strong> discipline.</li>
-      <li>Walk four documented demos (newsletter, leads, PowerPoint screenshot, research) and pick the closest model.</li>
-      <li>Build the Skill on a Job a function or team could adopt, then schedule it and chain it into something that compounds. The four demos model org-distributable shapes.</li>
+      <li>Write your <strong>"How might we…"</strong> meta-prompt and answer Claude's clarifying questions.</li>
+      <li>Generate and install your first Skill (low-stakes first build), with stop-rules baked in.</li>
+      <li>Validate one run that hits your Part 3 Definition of Done.</li>
     </ul>
-<section class="wwhn-section">
-      <span class="wwhn-label">What this is</span>
-      <h3>"How might we…": the three-word prefix that gets you out of the How Trap</h3>
-    </section>
+
+    <h3>"How might we…": the three-word prefix that gets you out of the How Trap</h3>
+    <p>The <strong>How Trap</strong> is jumping to "how do I do this in Claude?" when the real question is "what outcome do I want?" Describe the destination. Claude will propose the steps. Three magic words turn a one-time build into a Skill.</p>
     <ul class="talk-points">
-      <li>Part 4 is the build. The meta-prompt formula is three words: <strong>"How might we ___"</strong>. That's what turns a one-time build into something that compounds.</li>
-      <li>The live session still prefixes with it even when the answer seems obvious, and is regularly surprised.</li>
-      <li>Paste in your Part-2 Job, Part-3 workflow, Part-3 toolbox. Let Claude ask clarifying questions, then generate.</li>
-      <li>Then make it compound: <strong>schedule</strong> it on a cron, build <strong>granular &gt; monolithic</strong>, send <strong>feedback into the skill, not the output</strong>.</li>
-      <li>Four demos in this Part are the worked examples. Pick the one closest to your build; the others are bonus.</li>
-      <li>Language: a <strong>skill</strong> is a packaged reusable prompt + docs; a <strong>workflow</strong> runs one or more skills; an <strong>agent</strong> is what runs them. Don't get lost in marketing.</li>
+      <li>Paste in your Part 2 Job + Part 3 workflow + Part 3 toolbox.</li>
+      <li>Let Claude ask 2–5 clarifying questions before it generates.</li>
+      <li>The live session still prefixes with these three words even when the answer seems obvious — and is regularly surprised.</li>
     </ul>
 
     <!-- ============ EXERCISE 4.1 — "HOW MIGHT WE" META-PROMPT + SANDBOX BUILD ============ -->
@@ -4765,7 +4797,23 @@ value-by-task, and what it steals from.</div>
             <span class="step-goal">Confirm chat vs Cowork.</span>
           </div>
           <div class="step-body">
-            <p>Re-read the Steps from Part 3 Exercise 3.1 Step 3. If any step requires driving a browser or a desktop app (clicking inside LinkedIn, screenshotting a PowerPoint, navigating a logged-in CRM tab), build the skill in <strong>Claude Cowork</strong>. Otherwise build it in <strong>Claude chat</strong>. The chat-vs-Cowork gotcha from the live session: Cowork-built skills don't auto-install; you'll download and install under Settings -&gt; Capabilities -&gt; Skills -&gt; Customize after generation.</p>
+            <p><strong>Cowork</strong> is Claude's separate desktop app — the one you launch when the Skill needs to click and type in a browser, not just chat. Same Claude underneath; different surface.</p>
+            <div class="grid">
+              <div class="card">
+                <h5>Claude chat</h5>
+                <p class="card-lead">If no step drives a browser or desktop app.</p>
+                <ul class="card-bullets">
+                  <li>Auto-installs on generation.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h5>Claude Cowork</h5>
+                <p class="card-lead">If any step drives a browser or desktop app — LinkedIn, PowerPoint, a logged-in CRM tab.</p>
+                <ul class="card-bullets">
+                  <li>Install manually inside Cowork: click your initials → Settings → Capabilities → Skills → Customize.</li>
+                </ul>
+              </div>
+            </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>you've written "chat" or "Cowork" next to your Job and you've opened the right surface.</div>
           </div>
         </div>
@@ -4776,7 +4824,7 @@ value-by-task, and what it steals from.</div>
             <span class="step-goal">Write your "How might we" meta-prompt.</span>
           </div>
           <div class="step-body">
-            <p>Use the formula. Paste in your Part 2 Job + your Part 3 workflow spec + your Part 3 toolbox. Don't over-prescribe the path; describe the outcome and constraints.</p>
+            <p>Paste in your Part 2 Job + Part 3 workflow + Part 3 toolbox. Describe the outcome, not the steps.</p>
             <div class="prompt-box"><span class="tag">Meta-prompt template — paste into Claude (chat or Cowork)</span>How might we create a new skill (or set of skills) to do
 [your Job to be Done in canonical form].
 
@@ -4802,7 +4850,7 @@ outcome, not the steps I wrote.</div>
             </div>
             <div class="callout tip">
               <strong>One suggested first build for Theme 1</strong>
-              If your locked-in Job is content-shaped (talks, decks, newsletters, internal explainers), one strong first build is the Elevate slides Skill: turn your own slide deck into an agent Skill so Claude can deliver the talk-track on demand for prep, recap, or a teammate's onboarding. Use the meta-prompt template above; the inputs are your slide deck and your speaker notes.
+              If your Job is content-shaped (talks, decks, newsletters), try the Elevate slides Skill: feed your deck + speaker notes, let Claude deliver the talk-track on demand.
             </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>the meta-prompt is one block, ends with "ask clarifying questions before generating," and includes the kill-switch rules from Part 3.</div>
           </div>
@@ -4814,14 +4862,14 @@ outcome, not the steps I wrote.</div>
             <span class="step-goal">Answer Claude's clarifying questions.</span>
           </div>
           <div class="step-body">
-            <p>Claude will ask 2 to 5 clarifying questions before generating. Answer them honestly and concretely. Where you don't know, say "I don't know, please research this and propose, then ask me to confirm." That's meta-prompting at its best. You don't have to know the steps; you have to know the outcome.</p>
+            <p>Claude asks 2 to 5 clarifying questions before generating. Answer concretely — or say "I don't know, please research this and propose." You don't have to know the steps. You have to know the outcome.</p>
             <div class="live-session-sidebar">
               <span class="tag">From the live session: audience question #1</span>
               <h5>What if I don't know where the data lives?</h5>
               <p>An audience question asked: how do I do this when I don't know what tools or data are even out there for the new approach? People online are getting data I don't know how to get.</p>
               <p>The live-session answer: two legitimate channels, (1) publicly available and (2) accessible via your logged-in browser. Claude can do both. If you don't know the steps, <em>ask Claude to research the steps for you, then become the human in the loop on the result.</em> You don't need to know how to do the research; you need to ask Claude to research how to find the research.</p>
               <p>A live-session frame: "It's almost as loose as that. You're working with a very strange new employee that doesn't know your subject matter but is an expert in finding out."</p>
-              <p>See the Sea of Demand demo below. It's the worked answer to that question.</p>
+              <p>We walk this exact "research the steps, then act" pattern live in the workshop session.</p>
               <p class="speaker">Source: live-session Q&amp;A, 2026-05-13.</p>
             </div>
             <div class="step-check"><strong>You'll know you've got it when</strong>you've answered every clarifying question with a specific answer or an explicit "I don't know, please research and propose."</div>
@@ -4834,9 +4882,9 @@ outcome, not the steps I wrote.</div>
             <span class="step-goal">Answer Claude's questions and ship: generate, install, validate.</span>
           </div>
           <div class="step-body">
-            <p>Claude will generate the skill: instructions, called connectors and computer-use moves, kill-switch rules baked in, definition of done. If you built in chat, the skill auto-installs. If you built in Cowork, install it now under Settings -&gt; Capabilities -&gt; Skills -&gt; Customize.</p>
-            <p>Paste in the kill-switch template (relocated from Part 3) so the generated Skill carries the soft guardrails from the start.</p>
-            <div class="prompt-box"><span class="tag">Kill-switch template — paste into the Skill's instructions</span>If any of the following are true, STOP immediately and notify me:
+            <p>Claude generates the Skill. If chat, it auto-installs. If Cowork, install under Settings &gt; Capabilities &gt; Skills &gt; Customize.</p>
+            <p>Paste these stop-rules into the Skill's instructions. They tell the agent the conditions where it has to halt and ping you, instead of guessing. (Workshop name: the kill-switch template.)</p>
+            <div class="prompt-box"><span class="tag">Stop-rules — paste into the Skill's instructions</span>If any of the following are true, STOP immediately and notify me:
 - The title or content contains [DRAFT], [TEST], or [HOLD].
 - The data source returns zero rows or a 404 / 5xx error.
 - The action would touch a [list of high-stakes accounts or contacts].
@@ -4845,12 +4893,16 @@ outcome, not the steps I wrote.</div>
   clarifying question instead of guessing.
 
 Be literal. The more literal the better.</div>
-            <p>Then run the Skill once. Sandbox-safe. Watch Claude show its work. If anything looks off, hit the platform-level Stop button (the hard kill switch) and add a literal instruction to the Skill. Be literal. This is the back-10% review: not editing the output, but improving the Skill.</p>
+            <ul>
+              <li>Run the Skill once. Sandbox-safe.</li>
+              <li>Watch Claude show its work. If anything looks off, hit Stop.</li>
+              <li>Add a literal instruction to the Skill. Be literal. That's the back-10%.</li>
+            </ul>
             <div class="callout tip">
               <strong>Feedback into the skill, not the output</strong>
               Spend your time making the <em>skill</em> better, not the deliverable. Most people back-and-forth-edit every output. Put that feedback <em>into the skill</em>.
             </div>
-            <p class="ex-pointer-note"><em>Schedule this with /schedule once it works.</em></p>
+            <p class="ex-pointer-note"><em>Once the Skill works, put it on a schedule (hourly, daily, weekly, weekdays). In Cowork, you'll see a Schedule option on the Skill's settings; in chat, ask Claude "schedule this skill to run every Monday at 7am."</em></p>
             <div class="step-check"><strong>You'll know you've got it when</strong>the Skill is installed, the kill-switch lines are pasted in, and the Skill has produced one output that satisfies your Definition of Done (or you've added one new instruction so the next run will).</div>
           </div>
         </div>
@@ -4861,7 +4913,7 @@ Be literal. The more literal the better.</div>
     <hr class="session-block-divider">
     <p class="session-block-label">Demo walk-through</p>
     <h3>Live demo walk-through: LinkedIn newsletter publish</h3>
-    <p>One live demo in Part 4. The newsletter publish demo is the canonical "How might we…" build and works as a model for most first builds.</p>
+    <p>The canonical "How might we…" build. Use it as a template if your Job is "data store → transform → browser action."</p>
 
     <!-- ============ DEMO 1 — LINKEDIN NEWSLETTER PUBLISH (KEPT in Part 4) ============ -->
     <!-- inferred from transcript: Live demo 1 — LinkedIn newsletter skill, verbatim live-session prompt, three clarifying questions -->
@@ -4873,7 +4925,6 @@ Be literal. The more literal the better.</div>
       <div class="demo-body">
         <h5>Job to be Done</h5>
         <p>When we have a newsletter that's approved, I want to automatically post it on LinkedIn to drive conversions and traffic.</p>
-        <p class="demo-arc-tag"><em>Arc tag: Personal Productivity anchor with Organizational expansion. The first run pays off your own newsletter cadence; the second-week handoff makes it the marketing team's surface.</em></p>
 
         <h5>Toolbox</h5>
         <ul>
@@ -4889,14 +4940,15 @@ Be literal. The more literal the better.</div>
         <ol>
           <li><strong>Which Airtable base holds the newsletters?</strong> The live session shared a link to a sample post; Claude figured out the table and key field details from the link.</li>
           <li><strong>How should the skill determine which newsletter is "next"?</strong> By date and by approved status (most recent approved).</li>
-          <li><strong>Auto-publish or stop for review?</strong> Draft and stop for review (the back-10% human-in-the-loop guard, since this was the first run).</li>
+          <li><strong>Auto-publish or stop for review?</strong> Draft and stop for review (the back-10% human check, since this was the first run).</li>
         </ol>
 
         <h5>Human-on-the-loop validation</h5>
-        <p>The skill generated, ran, downloaded the linked image from Google Drive (writing the code to do so behind the scenes, so the live-session host never had to see or care about it), opened LinkedIn in the browser, and drafted the newsletter formatted correctly on the first try. Historically humans had formatting errors copy-pasting; the agent had none. The live-session host reviewed and clicked Publish.</p>
-
-        <h5>Why this demo matters</h5>
-        <p>This is the canonical "How might we…" build. If your locked-in Job is content publishing or any "data store -&gt; transform -&gt; browser action" shape, use this demo as your template.</p>
+        <ul>
+          <li>Skill generated, ran, pulled the linked image from Google Drive (writing the code behind the scenes).</li>
+          <li>Opened LinkedIn in the browser, drafted the newsletter formatted correctly on the first try.</li>
+          <li>Live-session host reviewed and clicked Publish. Zero formatting errors — historically humans had several.</li>
+        </ul>
       </div>
     </section>
 
@@ -4929,7 +4981,7 @@ Be literal. The more literal the better.</div>
 </section>
 
 <!-- ============ Q&A 4 — after Part 4 (outside the content envelope) ============ -->
-<section class="qa-block up-next" id="qa-4">
+<section class="qa-block" id="qa-4">
   <span class="qa-block-eyebrow">Q&amp;A</span>
   <h2 class="qa-block-heading">Open discussion</h2>
   <ol class="qa-anchor-list">
