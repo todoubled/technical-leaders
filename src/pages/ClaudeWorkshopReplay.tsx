@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Video, Download, ChevronRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
+import WorkshopAccessGate from "@/components/WorkshopAccessGate";
 
 const ClaudeWorkshopReplay = () => {
   const youtubeVideoId = "x1r9mmJgMkQ";
@@ -55,99 +56,106 @@ const ClaudeWorkshopReplay = () => {
           <p className="text-2xl font-semibold mb-12 max-w-2xl mx-auto">
             {heroContent.description}
           </p>
-
-          {/* YouTube Video Embed */}
-          <div className="w-full max-w-5xl mx-auto">
-            <div className="relative pb-[56.25%] h-0">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-                src={`https://www.youtube.com/embed/${youtubeVideoId}`}
-                title="The Claude Agent Workshop Recording"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-          {/* Download Buttons */}
-          <div className="mt-8 flex justify-center">
-            <Button
-              size="lg"
-              className="text-lg px-8 py-6"
-              onClick={() => {
-                trackEvent('Download Slides And Templates Clicked', {
-                  location: 'claude_workshop_replay_hero'
-                });
-                window.open(slidesPdfUrl, '_blank');
-              }}
-            >
-              <Download className="mr-2 h-5 w-5" />
-              Download Slides &amp; Templates
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center text-background mb-16 leading-tight">
-            You Came for the Workshop,<br />
-            But You're Staying for What's Next
-          </h2>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Image */}
-            <div className="flex justify-center lg:justify-start">
-              <img
-                src="/ai-program-product-shot.jpg"
-                alt="AI Agent Workflows Program"
-                className="w-full max-w-md rounded-2xl shadow-xl"
-              />
+      <WorkshopAccessGate>
+        {/* Gated: Video, slide downloads, and the CTA section */}
+        <section className="relative bg-background pb-20 -mt-12">
+          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+            {/* YouTube Video Embed */}
+            <div className="w-full max-w-5xl mx-auto">
+              <div className="relative pb-[56.25%] h-0">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
+                  src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+                  title="The Claude Agent Workshop Recording"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
 
-            {/* Right Column - Content */}
-            <div className="space-y-6">
-              <p className="text-xl text-muted-foreground font-medium">
-                You built your first Claude agent. Now build the system.
-              </p>
+            {/* Download Buttons */}
+            <div className="mt-8 flex justify-center">
+              <Button
+                size="lg"
+                className="text-lg px-8 py-6"
+                onClick={() => {
+                  trackEvent('Download Slides And Templates Clicked', {
+                    location: 'claude_workshop_replay_hero'
+                  });
+                  window.open(slidesPdfUrl, '_blank');
+                }}
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Slides &amp; Templates
+              </Button>
+            </div>
+          </div>
+        </section>
 
-              <p className="text-lg text-muted-foreground">
-                If the workshop made you go, <em>"I need more of this"</em>, you're not alone.
-              </p>
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold text-center text-background mb-16 leading-tight">
+              You Came for the Workshop,<br />
+              But You're Staying for What's Next
+            </h2>
 
-              <p className="text-lg text-muted-foreground">
-                We've opened the doors to the AI Agent Workflows Program, and we've stashed a few seats for the quick movers (you know who you are).
-              </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Image */}
+              <div className="flex justify-center lg:justify-start">
+                <img
+                  src="/ai-program-product-shot.jpg"
+                  alt="AI Agent Workflows Program"
+                  className="w-full max-w-md rounded-2xl shadow-xl"
+                />
+              </div>
 
-              <p className="text-lg text-muted-foreground">
-                No hype, no figuring it out on your own. Just smarter AI strategies that actually work. If you're ready to ship real Claude agents and ditch the AI chaos, this is your shot.
-              </p>
+              {/* Right Column - Content */}
+              <div className="space-y-6">
+                <p className="text-xl text-muted-foreground font-medium">
+                  You built your first Claude agent. Now build the system.
+                </p>
 
-              <p className="text-lg text-muted-foreground">
-                Click below to check it out, and maybe (if we're a good fit) we'll be working together soon. Let's do this.
-              </p>
+                <p className="text-lg text-muted-foreground">
+                  If the workshop made you go, <em>"I need more of this"</em>, you're not alone.
+                </p>
 
-              <div className="pt-4">
-                <Button
-                  size="lg"
-                  className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6"
-                  onClick={() => {
-                    trackEvent('AI Program CTA Clicked', {
-                      location: 'claude_workshop_replay_bottom'
-                    });
-                    window.location.href = "/ai-program";
-                  }}
-                >
-                  Get the Details on the AI Program
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
+                <p className="text-lg text-muted-foreground">
+                  We've opened the doors to the AI Agent Workflows Program, and we've stashed a few seats for the quick movers (you know who you are).
+                </p>
+
+                <p className="text-lg text-muted-foreground">
+                  No hype, no figuring it out on your own. Just smarter AI strategies that actually work. If you're ready to ship real Claude agents and ditch the AI chaos, this is your shot.
+                </p>
+
+                <p className="text-lg text-muted-foreground">
+                  Click below to check it out, and maybe (if we're a good fit) we'll be working together soon. Let's do this.
+                </p>
+
+                <div className="pt-4">
+                  <Button
+                    size="lg"
+                    className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6"
+                    onClick={() => {
+                      trackEvent('AI Program CTA Clicked', {
+                        location: 'claude_workshop_replay_bottom'
+                      });
+                      window.location.href = "/ai-program";
+                    }}
+                  >
+                    Get the Details on the AI Program
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </WorkshopAccessGate>
     </div>
   );
 };
