@@ -11,7 +11,7 @@ const ClaudeWorkshopReplay = () => {
 
   const heroContent = {
     badge: "Workshop Recording",
-    headline: "The Claude Agent Workshop™",
+    headline: "The Claude Agent Workshop",
     subheadline: "Build custom Claude AI agent workflows without writing a single line of code.",
     description: "Watch the Complete Workshop + Download Slides and Templates"
   };
@@ -19,7 +19,7 @@ const ClaudeWorkshopReplay = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="The Claude Agent Workshop™ Recording | Technical Leaders"
+        title="The Claude Agent Workshop Recording | Technical Leaders"
         description="Watch the complete Claude Agent Workshop recording and download the slides and agent templates. Build custom Claude AI agent workflows without writing code."
         keywords={["Claude workshop replay", "Claude agent workshop", "Claude AI", "AI agent templates", "Claude workflow", "no-code AI", "Claude Code recording"]}
       />

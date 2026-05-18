@@ -31,6 +31,8 @@ import {
   Mail,
   Calendar,
   Star,
+  Quote,
+  Users,
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
@@ -216,7 +218,7 @@ const ClaudeWorkshop = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="The Claude Agent Workshop™ Recording | Build Custom AI Workflows Without Code"
+        title="The Claude Agent Workshop Recording | Build Custom AI Workflows Without Code"
         description="Get instant access to the Claude Agent Workshop recording, the agent starter templates, and a 1:1 strategy session with Todd. Build your first working Claude AI agent workflow without writing code. $100."
         keywords={[
           "Claude workshop recording",
@@ -232,7 +234,7 @@ const ClaudeWorkshop = () => {
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Product",
-          "name": "The Claude Agent Workshop™ Recording",
+          "name": "The Claude Agent Workshop Recording",
           "description":
             "Permanent access to the Claude Agent Workshop recording, starter templates, cheat sheet, build examples, Q&A notes, and a 1:1 strategy session with Todd. Build a working Claude AI agent workflow without writing code.",
           "brand": {
@@ -276,7 +278,7 @@ const ClaudeWorkshop = () => {
             </div>
             <div className="text-4xl sm:text-5xl lg:text-6xl mb-2">
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                Claude Agent Workshop™
+                Claude Agent Workshop
               </span>
             </div>
           </h1>
@@ -727,8 +729,83 @@ const ClaudeWorkshop = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
 
-          {/* TODO: real attendee quotes can go here once collected. Do not invent testimonials. */}
+      {/* From the Live Session — attendee questions and actions from the live workshop */}
+      <section className="pt-16 pb-20 bg-secondary/30">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Users className="h-4 w-4" aria-hidden="true" />
+              From the Live Session
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Real questions from the room
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The audience asked. The audience built. This is what happened during the live session.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <Card className="p-6 hover:shadow-lg transition-all duration-300">
+              <Quote className="h-6 w-6 text-primary mb-4 opacity-60" aria-hidden="true" />
+              <p className="text-lg leading-relaxed mb-6">
+                "I don't want to use a model I can't go in and dissect."
+              </p>
+              <p className="text-sm italic text-muted-foreground">
+                Nathan, live workshop attendee
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-all duration-300">
+              <Quote className="h-6 w-6 text-primary mb-4 opacity-60" aria-hidden="true" />
+              <p className="text-lg leading-relaxed mb-6">
+                "Do you have a rollback instruction in there? If something accidentally goes off the rails, can you stop the agent and revert?"
+              </p>
+              <p className="text-sm italic text-muted-foreground">
+                Allison, live workshop attendee
+              </p>
+            </Card>
+          </div>
+
+          <Card className="p-8 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-6">
+              What happened during the live session
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <CheckCircle2
+                  className="h-5 w-5 text-primary shrink-0 mt-1"
+                  aria-hidden="true"
+                />
+                <p className="text-muted-foreground leading-relaxed">
+                  Joe built and installed a working Claude agent skill before the session ended.
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2
+                  className="h-5 w-5 text-primary shrink-0 mt-1"
+                  aria-hidden="true"
+                />
+                <p className="text-muted-foreground leading-relaxed">
+                  Alice's feedback was incorporated into the prioritization framework on the spot.
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2
+                  className="h-5 w-5 text-primary shrink-0 mt-1"
+                  aria-hidden="true"
+                />
+                <p className="text-muted-foreground leading-relaxed">
+                  Sarah, Pamela, John, Jennifer, and Brad asked questions about workflows, privacy, model selection, and platform integration. All answered live and included in the recording.
+                </p>
+              </li>
+            </ul>
+          </Card>
+
+          {/* TODO: real buyer testimonials from the first 10-20 purchasers go here when collected. Do not invent. */}
         </div>
       </section>
 
