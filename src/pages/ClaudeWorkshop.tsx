@@ -31,7 +31,6 @@ import {
   Mail,
   Calendar,
   Star,
-  Quote,
   Users,
 } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -732,7 +731,7 @@ const ClaudeWorkshop = () => {
         </div>
       </section>
 
-      {/* From the Live Session — attendee questions and actions from the live workshop */}
+      {/* From the Live Session — attendee actions during the live workshop */}
       <section className="pt-16 pb-20 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -741,69 +740,44 @@ const ClaudeWorkshop = () => {
               From the Live Session
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Real questions from the room
+              What happened in the room
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The audience asked. The audience built. This is what happened during the live session.
+              Real builds, real feedback, real Q&amp;A. All of it lives in the recording you get.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 gap-6">
             <Card className="p-6 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-primary mb-4 opacity-60" aria-hidden="true" />
-              <p className="text-lg leading-relaxed mb-6">
-                "I don't want to use a model I can't go in and dissect."
-              </p>
-              <p className="text-sm italic text-muted-foreground">
-                Nathan, live workshop attendee
+              <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                <Rocket className="h-6 w-6 text-primary" aria-hidden="true" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">A working agent, shipped live</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Joe built and installed a working Claude agent skill before the session ended.
               </p>
             </Card>
 
             <Card className="p-6 hover:shadow-lg transition-all duration-300">
-              <Quote className="h-6 w-6 text-primary mb-4 opacity-60" aria-hidden="true" />
-              <p className="text-lg leading-relaxed mb-6">
-                "Do you have a rollback instruction in there? If something accidentally goes off the rails, can you stop the agent and revert?"
+              <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                <Lightbulb className="h-6 w-6 text-primary" aria-hidden="true" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Feedback shaping the build</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Alice's feedback was incorporated into the prioritization framework on the spot.
               </p>
-              <p className="text-sm italic text-muted-foreground">
-                Allison, live workshop attendee
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                <MessageSquare className="h-6 w-6 text-primary" aria-hidden="true" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Q&amp;A baked into the recording</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Sarah, Pamela, John, Jennifer, and Brad asked questions about workflows, privacy, model selection, and platform integration. All answered live and included in the recording.
               </p>
             </Card>
           </div>
-
-          <Card className="p-8 hover:shadow-lg transition-all duration-300">
-            <h3 className="text-xl font-semibold mb-6">
-              What happened during the live session
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <CheckCircle2
-                  className="h-5 w-5 text-primary shrink-0 mt-1"
-                  aria-hidden="true"
-                />
-                <p className="text-muted-foreground leading-relaxed">
-                  Joe built and installed a working Claude agent skill before the session ended.
-                </p>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2
-                  className="h-5 w-5 text-primary shrink-0 mt-1"
-                  aria-hidden="true"
-                />
-                <p className="text-muted-foreground leading-relaxed">
-                  Alice's feedback was incorporated into the prioritization framework on the spot.
-                </p>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2
-                  className="h-5 w-5 text-primary shrink-0 mt-1"
-                  aria-hidden="true"
-                />
-                <p className="text-muted-foreground leading-relaxed">
-                  Sarah, Pamela, John, Jennifer, and Brad asked questions about workflows, privacy, model selection, and platform integration. All answered live and included in the recording.
-                </p>
-              </li>
-            </ul>
-          </Card>
 
           {/* TODO: real buyer testimonials from the first 10-20 purchasers go here when collected. Do not invent. */}
         </div>
