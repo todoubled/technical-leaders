@@ -82,6 +82,7 @@ import ClaudeWorkshop from "./pages/ClaudeWorkshop";
 import ClaudeWorkshopReplay from "./pages/ClaudeWorkshopReplay";
 import AIAgentSystem from "./pages/AIAgentSystem";
 import LKOfficeHours from "./pages/LKOfficeHours";
+import OfficeHours from "./pages/OfficeHours";
 import TDownload from "./pages/TDownload";
 import NotFound from "./pages/NotFound";
 
@@ -197,6 +198,7 @@ const App = () => (
           <Route path="/claude-workshop-replay" element={<ClaudeWorkshopReplay />} />
           <Route path="/ai-agent-system" element={<AIAgentSystem />} />
           <Route path="/lk-office-hours" element={<LKOfficeHours />} />
+          <Route path="/office-hours" element={<OfficeHours />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
