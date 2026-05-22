@@ -14,6 +14,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 
+import Navigation from '@/components/Navigation';
 import SEO from '@/components/SEO';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Progress } from '@/components/ui/progress';
@@ -28,7 +29,7 @@ import {
   type Phase,
 } from '@/data/founderCurriculum';
 import { useFounderProgress } from '@/hooks/useFounderProgress';
-import { mockupComponents, Confetti } from '@/components/founder-curriculum';
+import { mockupComponents, Confetti, MaterialsYouNeed } from '@/components/founder-curriculum';
 
 const phaseIcons: Record<string, typeof Compass> = {
   'phase-1-idea': Compass,
@@ -528,9 +529,11 @@ const FirstTimeFounder = () => {
         structuredData={structuredData}
       />
 
+      <Navigation hideCTA />
+
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 pb-32">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-24 md:pt-28 pb-32">
         {/* Hero */}
         <header className="mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300 mb-5">
@@ -568,6 +571,9 @@ const FirstTimeFounder = () => {
             </p>
           </div>
         </header>
+
+        {/* Materials You Need */}
+        <MaterialsYouNeed />
 
         {/* Celebration */}
         {showCelebration && completedAt && (

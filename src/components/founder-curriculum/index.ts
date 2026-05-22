@@ -23,3 +23,5 @@ export const mockupComponents: Record<string, FC> = {
 };
 
 export { default as Confetti } from './Confetti';
+export { MaterialsYouNeed } from './MaterialsYouNeed';
+export { SourceScreenshots } from './SourceScreenshots';
