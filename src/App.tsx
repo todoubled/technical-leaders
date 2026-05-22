@@ -84,6 +84,7 @@ import AIAgentSystem from "./pages/AIAgentSystem";
 import LKOfficeHours from "./pages/LKOfficeHours";
 import OfficeHours from "./pages/OfficeHours";
 import TDownload from "./pages/TDownload";
+import FirstTimeFounder from "./pages/FirstTimeFounder";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -199,6 +200,7 @@ const App = () => (
           <Route path="/ai-agent-system" element={<AIAgentSystem />} />
           <Route path="/lk-office-hours" element={<LKOfficeHours />} />
           <Route path="/office-hours" element={<OfficeHours />} />
+          <Route path="/first-time-founder" element={<FirstTimeFounder />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
