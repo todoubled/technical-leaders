@@ -44,9 +44,9 @@ import { PRICING_AS_OF } from '@/lib/token-calculator';
 // SEO + Page
 // ─────────────────────────────────────────────────────────────────────────
 
-const PAGE_TITLE = "What Are Tokens? An Executive's Guide to LLM Costs";
+const PAGE_TITLE = "What is a token? An executive's guide to LLM costs";
 const PAGE_DESCRIPTION =
-  'A plain-English guide to LLM tokens and pricing for non-technical leaders. Interactive cost calculator, multi-provider comparison, and 7 cost levers — no jargon, no upsell.';
+  'Tokens explained in plain English. Where teams waste them, the seven cost levers that cut bills, and an interactive calculator with multi-provider comparison. Built for non-technical leaders.';
 const CANONICAL_URL = 'https://technical-leaders.com/tokens';
 const OG_IMAGE = 'https://technical-leaders.com/opengraph-image-p98pqg.png';
 
