@@ -7,13 +7,28 @@ import { trackClick } from "@/utils/posthog";
 
 interface NavigationProps {
   hideCTA?: boolean;
+  variant?: "dark" | "light";
 }
 
-const Navigation = ({ hideCTA = false }: NavigationProps) => {
+const variantClasses = {
+  dark: {
+    nav: "bg-background/95 border-border",
+    menuButton: "text-foreground hover:text-primary",
+    mobileMenu: "bg-background border-border",
+  },
+  light: {
+    nav: "bg-longhand-paper/95 border-longhand-border",
+    menuButton: "text-longhand-ink hover:text-longhand-accent",
+    mobileMenu: "bg-longhand-paper border-longhand-border",
+  },
+} as const;
+
+const Navigation = ({ hideCTA = false, variant = "dark" }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const styles = variantClasses[variant];
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md z-50 border-b border-border">
+    <nav className={`fixed top-0 w-full backdrop-blur-md z-50 border-b ${styles.nav}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -38,7 +53,7 @@ const Navigation = ({ hideCTA = false }: NavigationProps) => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-foreground hover:text-primary"
+                className={styles.menuButton}
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -48,7 +63,7 @@ const Navigation = ({ hideCTA = false }: NavigationProps) => {
       </div>
 
       {!hideCTA && isMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className={`md:hidden border-b ${styles.mobileMenu}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <div className="px-3 py-2">
               <Button

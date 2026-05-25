@@ -35,6 +35,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 
+import Navigation from '@/components/Navigation';
 import { CostCalculator } from '@/components/tokens/CostCalculator';
 import { ModelComparisonTable } from '@/components/tokens/ModelComparisonTable';
 import { CostLeverCard } from '@/components/tokens/CostLeverCard';
@@ -60,7 +61,9 @@ export default function Tokens() {
       <PageHead />
       <PrintStyles />
 
-      <main className="max-w-5xl mx-auto px-5 sm:px-8 py-10 sm:py-14 space-y-16 sm:space-y-20">
+      <Navigation hideCTA variant="light" />
+
+      <main className="max-w-5xl mx-auto px-5 sm:px-8 pt-24 md:pt-28 pb-10 sm:pb-14 space-y-16 sm:space-y-20">
         <Hero />
         <WhatIsAToken />
         <WhereTokensGetWasted />
