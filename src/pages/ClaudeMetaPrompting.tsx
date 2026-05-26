@@ -200,10 +200,10 @@ const ClaudeMetaPrompting = () => {
         <header className="mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300 mb-5">
             <Sparkles className="w-3.5 h-3.5" />
-            Free · No signup · ~5 minute setup
+            ~5 minute setup
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-            Give Claude Code Superpowers
+            Turn Claude Code Into a Senior Engineer
           </h1>
           <p className="mt-4 text-base md:text-lg text-slate-300 leading-relaxed">
             A free starter pack of prompts and skills you drop into Claude Code. It teaches Claude to write better prompts, plan big projects, and remember the steps so you don’t have to.
@@ -399,12 +399,10 @@ const ClaudeMetaPrompting = () => {
             </div>
             <p className="text-sm md:text-base text-slate-300 leading-relaxed">
               Try typing{' '}
-              <span className="font-mono text-emerald-200">/create-prompt</span> and
-              describe a task you do often — something like “write a weekly
-              investor update” or “draft a polite follow-up email.” Claude will turn it
-              into a reusable prompt and save it for next time. From then on,{' '}
-              <span className="font-mono text-emerald-200">/run-prompt</span> pulls it
-              back up whenever you need it.
+              <span className="font-mono text-emerald-200">/create-prompt how might we implement a feature that does X</span>.
+              Claude will ask you questions about how the feature should work and then it
+              will generate a contextual prompt following software engineering best
+              practices for you.
             </p>
 
             <a
@@ -422,7 +420,7 @@ const ClaudeMetaPrompting = () => {
         <footer className="pt-8 border-t border-slate-800 text-xs text-slate-500 leading-relaxed">
           <p>
             These commands and skills were created and shared by Todd Larsen and the
-            Technical Leaders community. Free to use, modify, and share.
+            Technical Leaders community.
           </p>
         </footer>
       </main>
