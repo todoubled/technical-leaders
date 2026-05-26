@@ -61,7 +61,7 @@ export default function Tokens() {
       <PageHead />
       <PrintStyles />
 
-      <Navigation hideCTA variant="light" />
+      <Navigation hideCTA variant="light" logoSrc="/transparent-bg-logo.png" />
 
       <main className="max-w-5xl mx-auto px-5 sm:px-8 pt-24 md:pt-28 pb-10 sm:pb-14 space-y-16 sm:space-y-20">
         <Hero />

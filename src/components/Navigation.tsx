@@ -8,6 +8,8 @@ import { trackClick } from "@/utils/posthog";
 interface NavigationProps {
   hideCTA?: boolean;
   variant?: "dark" | "light";
+  logoSrc?: string;
+  logoAlt?: string;
 }
 
 const variantClasses = {
@@ -23,7 +25,12 @@ const variantClasses = {
   },
 } as const;
 
-const Navigation = ({ hideCTA = false, variant = "dark" }: NavigationProps) => {
+const Navigation = ({
+  hideCTA = false,
+  variant = "dark",
+  logoSrc = "/orange-logo.png",
+  logoAlt = "Tech Leaders",
+}: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const styles = variantClasses[variant];
 
@@ -32,7 +39,7 @@ const Navigation = ({ hideCTA = false, variant = "dark" }: NavigationProps) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <a href="/"><img src="/orange-logo.png" alt="Tech Leaders" className="h-10 w-auto" /></a>
+            <a href="/"><img src={logoSrc} alt={logoAlt} className="h-10 w-auto" /></a>
           </div>
 
           {!hideCTA && (
