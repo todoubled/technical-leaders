@@ -41,9 +41,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Readiness Assessment | Technical Leaders"
-        description="Take the free 2-minute assessment to discover your Skill Maturity Level and get a personalized roadmap for AI-first operations. Join 6500+ tech leaders."
-        keywords={['AI readiness assessment', 'skill maturity', 'AI-first operations', 'AI SOS', 'tech leadership', 'AI transformation']}
+        title="Fortune 100 AI Prompts for Leaders | Technical Leaders"
+        description="Get the same AI prompts Fortune 100 leaders use. Copy, paste & edit in 60 seconds — no developer required. Free instant access. Join 10k+ tech leaders."
+        keywords={['fortune 100 AI prompts', 'AI prompt library', 'AI workflows', 'agentic prompts', 'tech leaders', 'AI productivity', 'no-code AI']}
       />
       <Navigation />
 

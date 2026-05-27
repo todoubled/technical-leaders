@@ -26,13 +26,6 @@ import SEO from '@/components/SEO';
 import { trackEvent, trackClick } from '@/utils/posthog';
 import { useTrackScrollDepth } from '@/hooks/use-posthog';
 
-// Extend Window interface for RightMessage
-declare global {
-  interface Window {
-    RM: any[];
-  }
-}
-
 interface QuestionOption {
   id: string;
   label: string;
@@ -84,9 +77,6 @@ const Assessment = () => {
   // Track assessment start on page load
   useEffect(() => {
     trackEvent('Assessment Started', { page: 'assessment' });
-    if (typeof window !== 'undefined' && window.RM) {
-      window.RM.push(['setCustomField', 'assessment_started', 'true']);
-    }
   }, []);
 
   const questions: Question[] = [
@@ -167,29 +157,6 @@ const Assessment = () => {
       ]
     }
   ];
-
-  // Send segment data to RightMessage
-  const sendToRightMessage = (key: string, value: string) => {
-    if (typeof window !== 'undefined' && window.RM) {
-      // RightMessage segment API
-      window.RM.push(['setCustomField', key, value]);
-    }
-  };
-
-  // Send all final segments to RightMessage on completion
-  const sendAllSegmentsToRightMessage = (finalAnswers: Answers) => {
-    if (typeof window !== 'undefined' && window.RM) {
-      // Map answers to RightMessage custom fields
-      Object.entries(finalAnswers).forEach(([key, value]) => {
-        window.RM.push(['setCustomField', `assessment_${key}`, value]);
-      });
-
-      // Also set the maturity level as a separate field
-      const maturity = getMaturityInfo();
-      window.RM.push(['setCustomField', 'maturity_level', `L${maturity.level}`]);
-      window.RM.push(['setCustomField', 'assessment_completed', 'true']);
-    }
-  };
 
   const getMaturityInfo = (): MaturityInfo => {
     const maturityMap: Record<string, MaturityInfo> = {
@@ -279,11 +246,6 @@ const Assessment = () => {
   const handleStartAssessment = () => {
     setStarted(true);
     trackEvent('Assessment Started', { page: 'assessment' });
-
-    // Trigger RightMessage to track assessment start
-    if (typeof window !== 'undefined' && window.RM) {
-      window.RM.push(['setCustomField', 'assessment_started', 'true']);
-    }
   };
 
   const handleAnswer = (questionId: string, answerId: string) => {
@@ -297,15 +259,11 @@ const Assessment = () => {
       step: currentStep + 1
     });
 
-    // Send to RightMessage immediately for real-time segmentation
-    sendToRightMessage(`assessment_${questionId}`, answerId);
-
     if (currentStep < questions.length - 1) {
       setTimeout(() => setCurrentStep(currentStep + 1), 300);
     } else {
       setTimeout(() => {
         setShowResults(true);
-        sendAllSegmentsToRightMessage(newAnswers);
         trackEvent('Assessment Completed', {
           answers: newAnswers,
           maturity_level: getMaturityInfo().level
@@ -398,7 +356,7 @@ const Assessment = () => {
             <div className="flex items-center gap-1">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-orange-400 text-orange-400" />)}
             </div>
-            <span className="text-gray-400 text-sm">Join <strong className="text-white">6,500+</strong> tech leaders</span>
+            <span className="text-gray-400 text-sm">Join <strong className="text-white">10k+</strong> tech leaders</span>
           </div>
         </div>
       </div>
