@@ -1,7 +1,10 @@
 import { useEffect } from "react";
+import { ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
-import { trackEvent } from "@/utils/posthog";
+import { trackEvent, trackClick } from "@/utils/posthog";
+
+const LONGHAND_URL = "https://www.getlonghand.com";
 
 const OfficeHours = () => {
   useEffect(() => {
@@ -111,7 +114,7 @@ const OfficeHours = () => {
         </div>
       </section>
 
-      {/* Slide 5 — Try This intro */}
+      {/* Slide 5 — Try This: Longhand */}
       <section className="min-h-screen flex items-center px-6 py-24 border-t border-white/10">
         <div className="max-w-5xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-12 sm:mb-16">
@@ -119,8 +122,26 @@ const OfficeHours = () => {
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Try This</h2>
           </div>
           <p className="text-white text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-            Data Extraction & Processing Agent
+            Organize & schedule your skills
           </p>
+          <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
+            With Longhand, package your repeatable AI workflows into skills, organize them in one place, and schedule them to run on autopilot, so the work happens whether you're at your desk or not.
+          </p>
+          <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
+            <a
+              href={LONGHAND_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackClick("Longhand CTA", { action: "visit-site", location: "office-hours-try-this" })}
+              className="inline-flex items-center gap-2 bg-longhand-accent hover:bg-longhand-accent-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors drop-shadow-lg"
+            >
+              Try it at getlonghand.com
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <span className="text-white/70 text-base sm:text-lg drop-shadow">
+              Free to use. Mac &amp; Windows. No account required.
+            </span>
+          </div>
         </div>
       </section>
 
