@@ -37,7 +37,7 @@ const OfficeHours = () => {
             AI Office Hours
           </h1>
           <p className="mt-10 text-xl sm:text-2xl text-white/90 max-w-2xl mx-auto drop-shadow">
-            A weekly session for leaders to share what's working with AI, get answers to real questions, and see what's new.
+            A weekly session for Builders to share what's working with AI, get answers to real questions, and see what's new.
           </p>
         </div>
       </section>
@@ -114,11 +114,16 @@ const OfficeHours = () => {
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Try This</h2>
           </div>
           <p className="text-white text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-            Organize & schedule your skills
+            Build your AI Personal Assistant
           </p>
           <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
-            With Longhand, package your repeatable AI workflows into skills, organize them in one place, and schedule them to run on autopilot, so the work happens whether you're at your desk or not.
+            Open Longhand and hit the "Let's Start" button. Five quick questions and your Personal Assistant starts shaping everything around how you actually work. Update it anytime.
           </p>
+          <img
+            src="/longhand-personal-assistant.png"
+            alt="Longhand Personal Assistant onboarding: Let's get to know each other"
+            className="mt-12 w-full max-w-2xl rounded-xl border border-white/10 shadow-2xl"
+          />
           <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
             <a
               href={LONGHAND_URL}
@@ -130,9 +135,6 @@ const OfficeHours = () => {
               Try it at getlonghand.com
               <ArrowRight className="w-5 h-5" />
             </a>
-            <span className="text-white/70 text-base sm:text-lg drop-shadow">
-              Free to use. Mac &amp; Windows. No account required.
-            </span>
           </div>
         </div>
       </section>
