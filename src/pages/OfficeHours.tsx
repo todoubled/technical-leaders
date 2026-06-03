@@ -125,7 +125,7 @@ const OfficeHours = () => {
             Organize & schedule your skills
           </p>
           <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
-            With Longhand, package your repeatable AI workflows into skills, organize them in one place, and schedule them to run on autopilot — so the work happens whether you're at your desk or not.
+            With Longhand, package your repeatable AI workflows into skills, organize them in one place, and schedule them to run on autopilot, so the work happens whether you're at your desk or not.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
             <a
