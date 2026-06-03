@@ -100,17 +100,9 @@ const OfficeHours = () => {
             <span className="text-3xl sm:text-4xl font-bold text-white/40 tabular-nums">02</span>
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Open Q&A</h2>
           </div>
-          <ul className="space-y-8 sm:space-y-10">
-            <li className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-tight drop-shadow">
-              The one thing I could use some help with…
-            </li>
-            <li className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-tight drop-shadow">
-              My specific question is…
-            </li>
-            <li className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-tight drop-shadow">
-              How can I…
-            </li>
-          </ul>
+          <p className="text-white text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight drop-shadow-lg">
+            How do I build AI to…
+          </p>
         </div>
       </section>
 
