@@ -88,7 +88,7 @@ const OfficeHours = () => {
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">AI Review</h2>
           </div>
           <p className="text-white text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight drop-shadow-lg">
-            How did you use AI this week?
+            What did you build?
           </p>
         </div>
       </section>
