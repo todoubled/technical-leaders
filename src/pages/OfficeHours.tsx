@@ -122,10 +122,10 @@ const OfficeHours = () => {
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Try This</h2>
           </div>
           <p className="text-white text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-            Longhand
+            Organize & schedule your skills
           </p>
           <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
-            All your AI in one private place — a desktop app that learns what you like and explains while it works for you. Local-first, works with any LLM.
+            With Longhand, package your repeatable AI workflows into skills, organize them in one place, and schedule them to run on autopilot — so the work happens whether you're at your desk or not.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
             <a
