@@ -168,21 +168,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Faculty callout */}
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-xl p-8 mb-20 border border-blue-100 dark:border-blue-900/50">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center flex-shrink-0">
-                <Award className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">Taught by executive faculty</h3>
-                <p className="text-sm text-muted-foreground">
-                  Our programs are led by former Microsoft, Groupon, AugmentAI, and Bottega8 executives with 14+ years of hands-on AI and ML experience. No junior instructors.
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Testimonials */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
