@@ -1,10 +1,7 @@
 import { useEffect } from "react";
-import { ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
-import { trackEvent, trackClick } from "@/utils/posthog";
-
-const LONGHAND_URL = "https://www.getlonghand.com";
+import { trackEvent } from "@/utils/posthog";
 
 const OfficeHours = () => {
   useEffect(() => {
@@ -150,19 +147,6 @@ const OfficeHours = () => {
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
-            <a
-              href={LONGHAND_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackClick("Longhand CTA", { action: "visit-site", location: "office-hours-try-this" })}
-              className="inline-flex items-center gap-2 bg-longhand-accent hover:bg-longhand-accent-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors drop-shadow-lg"
-            >
-              Try it at getlonghand.com
-              <ArrowRight className="w-5 h-5" />
-            </a>
           </div>
         </div>
       </section>
