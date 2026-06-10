@@ -106,7 +106,7 @@ const OfficeHours = () => {
         </div>
       </section>
 
-      {/* Slide 5 — Try This: Longhand */}
+      {/* Slide 5 — Try This: /goal loops with agents */}
       <section className="min-h-screen flex items-center px-6 py-24 border-t border-white/10">
         <div className="max-w-5xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-12 sm:mb-16">
@@ -114,16 +114,44 @@ const OfficeHours = () => {
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Try This</h2>
           </div>
           <p className="text-white text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-            Build your AI Personal Assistant
+            Run "/goal" loops with agents
           </p>
           <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
-            Open Longhand and hit the "Let's Start" button. Five quick questions and your Personal Assistant starts shaping everything around how you actually work. Update it anytime.
+            Hand an agent a goal, not a task list. It spins up a workflow — multiple agents working in parallel to critique, verify, and iterate — and loops until the goal is met. Describe the outcome you want and let the loop do the work.
           </p>
-          <img
-            src="/longhand-personal-assistant.png"
-            alt="Longhand Personal Assistant onboarding: Let's get to know each other"
-            className="mt-12 w-full max-w-2xl rounded-xl border border-white/10 shadow-2xl"
-          />
+
+          <div className="mt-12 space-y-5">
+            {[
+              {
+                label: "Pressure-test it",
+                prompt:
+                  "Here's my business plan — run a workflow where different agents tear it apart from an investor's, a customer's, and a competitor's perspective.",
+              },
+              {
+                label: "Fact-check it",
+                prompt:
+                  "Go through this blog post draft and use a workflow to verify every technical claim against the codebase. I don't want to ship anything wrong.",
+              },
+              {
+                label: "Name it",
+                prompt:
+                  "I need a name for this new tool. Use a workflow to brainstorm a bunch of options and run a tournament to pick the top 3.",
+              },
+            ].map(({ label, prompt }) => (
+              <div
+                key={label}
+                className="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-7 backdrop-blur-sm"
+              >
+                <span className="inline-block text-sm sm:text-base font-semibold uppercase tracking-wide text-longhand-accent">
+                  {label}
+                </span>
+                <p className="mt-3 text-white text-lg sm:text-xl lg:text-2xl font-medium leading-snug">
+                  "{prompt}"
+                </p>
+              </div>
+            ))}
+          </div>
+
           <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
             <a
               href={LONGHAND_URL}
