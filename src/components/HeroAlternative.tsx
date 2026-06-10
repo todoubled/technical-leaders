@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { trackClick } from "@/utils/posthog";
 
 const HeroAlternative = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative overflow-hidden">
       {/* Background Image */}
@@ -22,96 +25,61 @@ const HeroAlternative = () => {
       <div className="relative z-10 min-h-[80vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto text-center">
-          {/* Tagline */}
-          <div className="inline-flex items-center bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm border border-orange-500/30 text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
-            <span>Free 2-Minute Assessment</span>
-          </div>
 
-          {/* Main Headline */}
-          <h1 className="font-bold leading-tight mb-8 animate-fade-in">
-            <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">Are You Ready for</span>
-            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">AI Agents That Work?</span>
-            <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-4">Find out in 2 minutes (and get your personalized roadmap)</span>
-          </h1>
-
-          {/* Bullet Points */}
-          <ul className="space-y-4 mb-10 max-w-xl mx-auto text-left">
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Discover your <span className="font-semibold text-foreground">AI Maturity Level</span> (L1-L5) and what it means for adoption and ROI</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Get your <span className="font-semibold text-foreground">top 3 workflows to systematize first</span> for maximum leverage</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90"><span className="font-bold text-orange-400">BONUS:</span> The AI Skills Operating System™ Guide <span className="font-semibold text-foreground">(free download)</span></span>
-            </li>
-          </ul>
-
-          {/* CTA Button */}
-          <Button
-            size="lg"
-            className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105 mb-8"
-            onClick={() => {
-              (window as any).RM.push(['trigger', 'wdg_occg7qdv']);
-              trackClick('Hero - Start Assessment', {
-                location: 'hero_main',
-                action: 'trigger_rightmessage_widget'
-              });
-            }}
-          >
-            Take the Assessment
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground mb-10">
-            <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>Takes only 2 minutes</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>Instant results</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>Personalized roadmap</span>
-            </div>
-          </div>
-
-          {/* Social Proof */}
-          <div className="flex items-center justify-center gap-4">
-            {/* Avatar Stack */}
-            <div className="flex -space-x-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                JK
-              </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                SM
-              </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                RC
-              </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                TL
-              </div>
+            {/* Label */}
+            <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
+              <span>Practical AI Training &amp; Adoption</span>
             </div>
 
-            {/* Stars and Count */}
-            <div>
-              <div className="flex items-center gap-1 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-orange-500 text-orange-500" />
-                ))}
-              </div>
-              <p className="text-muted-foreground text-sm">
-                Join <span className="text-foreground font-semibold">6500+</span> tech leaders
-              </p>
+            {/* Main Headline */}
+            <h1 className="font-bold leading-tight mb-8 animate-fade-in">
+              <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                Help your leaders and teams
+              </span>
+              <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">
+                actually use AI at work
+              </span>
+              <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-4">
+                Training, coaching, and adoption support for organizations that want real results
+              </span>
+            </h1>
+
+            {/* Primary CTA */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Button
+                size="lg"
+                className="text-lg px-10 py-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105"
+                onClick={() => {
+                  trackClick('Hero - Book Strategy Session', {
+                    location: 'hero_main',
+                    destination: '/ai-call'
+                  });
+                  navigate('/ai-call');
+                }}
+              >
+                Book a Strategy Session
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+
+              {/* Secondary / ghost CTA */}
+              <button
+                className="text-sm text-foreground/60 hover:text-foreground/80 underline underline-offset-4 transition-colors"
+                onClick={() => {
+                  (window as any).RM.push(['trigger', 'wdg_occg7qdv']);
+                  trackClick('Hero - Take Assessment', {
+                    location: 'hero_secondary',
+                    action: 'trigger_rightmessage_widget'
+                  });
+                }}
+              >
+                Take the 2-minute assessment
+              </button>
             </div>
-            </div>
+
+            {/* Trust line */}
+            <p className="text-sm text-muted-foreground">
+              250+ organizations trained. Taught by executive faculty.
+            </p>
           </div>
         </div>
       </div>
