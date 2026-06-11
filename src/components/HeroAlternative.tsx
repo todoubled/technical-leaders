@@ -40,7 +40,7 @@ const HeroAlternative = () => {
                 actually use AI at work
               </span>
               <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-4">
-                Training, coaching, and adoption support for organizations that want real results
+                Training, coaching, and adoption support for organizations that want real AI transformation
               </span>
             </h1>
 
