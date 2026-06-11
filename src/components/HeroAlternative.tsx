@@ -60,20 +60,6 @@ const HeroAlternative = () => {
                 Book a Strategy Session
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-
-              {/* Secondary / ghost CTA */}
-              <button
-                className="text-sm text-foreground/60 hover:text-foreground/80 underline underline-offset-4 transition-colors"
-                onClick={() => {
-                  (window as any).RM.push(['trigger', 'wdg_occg7qdv']);
-                  trackClick('Hero - Take Assessment', {
-                    location: 'hero_secondary',
-                    action: 'trigger_rightmessage_widget'
-                  });
-                }}
-              >
-                Take the 2-minute assessment
-              </button>
             </div>
 
             {/* Trust line */}
