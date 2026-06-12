@@ -654,10 +654,10 @@ const ShipAITrainingProgram = () => {
             onClick={() => {
               trackClick('Ship AI Training Program - Ship AI CTA', {
                 location: 'ongoing_support_section',
-                destination: '/ship-ai',
+                destination: '/ai-office-hours',
                 cta_text: 'Learn About Ship AI'
               });
-              window.location.href = "/ship-ai";
+              window.location.href = "/ai-office-hours";
             }}
           >
             Learn About Ship AI

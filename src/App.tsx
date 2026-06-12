@@ -138,7 +138,8 @@ const App = () => (
           <Route path="/alternative-to-mit-oxford" element={<AlternativeToMitOxford />} />
           <Route path="/in-demand" element={<RGAWorkshop />} />
           <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
-          <Route path="/ship-ai" element={<ShipAI />} />
+          <Route path="/ai-office-hours" element={<ShipAI />} />
+          <Route path="/ship-ai" element={<Navigate to="/ai-office-hours" replace />} />
           <Route path="/ship-ai-training-program" element={<ShipAITrainingProgram />} />
           <Route path="/ai-executive-strategy-program" element={<AiExecutiveStrategy />} />
           <Route path="/ai-playbook-executives" element={<AiPlaybookExecutives />} />
