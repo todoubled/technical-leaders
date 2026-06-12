@@ -156,7 +156,7 @@ const Index = () => {
             </div>
             <div className="text-center">
               <p className="text-4xl font-bold text-foreground mb-1">8,000+</p>
-              <p className="text-sm text-muted-foreground">professionals trained</p>
+              <p className="text-sm text-muted-foreground">students and professionals trained</p>
             </div>
             <div className="text-center">
               <p className="text-4xl font-bold text-foreground mb-1">12,000+</p>
