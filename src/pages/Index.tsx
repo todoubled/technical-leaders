@@ -149,21 +149,17 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
 
           {/* Stats row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20">
             <div className="text-center">
-              <p className="text-4xl font-bold text-foreground mb-1">250+</p>
+              <p className="text-4xl font-bold text-foreground mb-1">2000+</p>
               <p className="text-sm text-muted-foreground">organizations trained</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl font-bold text-foreground mb-1">[[TRAINED_PROFESSIONALS]]</p>
+              <p className="text-4xl font-bold text-foreground mb-1">8,000+</p>
               <p className="text-sm text-muted-foreground">professionals trained</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl font-bold text-foreground mb-1">5</p>
-              <p className="text-sm text-muted-foreground">executive faculty members</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-foreground mb-1">[[COMMUNITY_SIZE]]</p>
+              <p className="text-4xl font-bold text-foreground mb-1">12,000+</p>
               <p className="text-sm text-muted-foreground">community members</p>
             </div>
           </div>

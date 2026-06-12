@@ -64,7 +64,7 @@ const HeroAlternative = () => {
 
             {/* Trust line */}
             <p className="text-sm text-muted-foreground">
-              250+ organizations trained. Taught by AI frontier practitioners.
+              2000+ organizations trained. Taught by AI frontier practitioners.
             </p>
           </div>
         </div>
