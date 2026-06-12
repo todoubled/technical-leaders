@@ -28,19 +28,19 @@ const HeroAlternative = () => {
 
             {/* Label */}
             <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
-              <span>Practical AI Training &amp; Adoption</span>
+              <span>AI Training for Whole Orgs</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-bold leading-tight mb-8 animate-fade-in">
               <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
-                Help your leaders and teams
+                You set the AI direction.
               </span>
               <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">
-                actually use AI at work
+                We get your team actually using it.
               </span>
               <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-4">
-                Training, coaching, and adoption support for organizations that want real AI transformation
+                Live executive training plus hands-on coaching for the people who build, so adoption sticks past the kickoff.
               </span>
             </h1>
 
@@ -64,7 +64,7 @@ const HeroAlternative = () => {
 
             {/* Trust line */}
             <p className="text-sm text-muted-foreground">
-              2000+ organizations trained. Taught by AI frontier practitioners.
+              8,000+ professionals trained across 2000+ organizations.
             </p>
           </div>
         </div>
