@@ -113,7 +113,7 @@ const OfficeHours = () => {
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Try This</h2>
           </div>
           <p className="text-white text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-            Run the Claude Masterclass
+            The Claude Masterclass
           </p>
           <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
             A guided, hands-on walkthrough of every version of Claude — from your first chat to running agents on your own machine. Four modules, beginner to advanced, each with action steps, copy-paste prompts, and checkpoints you tick off as you go.
