@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   BookOpen,
   Copy,
+  Download,
   ExternalLink,
   Link2
 } from "lucide-react";
@@ -139,6 +140,7 @@ interface Step {
   actionSteps: ActionStep[];
   table?: { headers: string[]; rows: string[][] };
   codeBlock?: { caption?: string; code: string };
+  download?: { href: string; label: string; note?: string; eventName?: string };
   checkpoint: string;
 }
 
@@ -542,9 +544,9 @@ Error handling:
     title: "Module 3: Claude Code (Advanced)",
     navLabel: "Claude Code",
     level: "Advanced",
-    tagline: "Claude Code in a desktop app",
+    tagline: "Claude Code, plus reusable prompts and skills",
     intro:
-      "Claude Code is the version of Claude that runs as a desktop app and can create files, edit them, and run tasks for you directly on your machine. It sounds technical, and it can be, but plenty of everyday uses need no programming at all. This module eases you in: what it is, when to use it, and a few real tasks you can try safely.",
+      "Claude Code is the version of Claude that runs as a desktop app and can create files, edit them, and run tasks for you directly on your machine. It sounds technical, and it can be, but plenty of everyday uses need no programming at all. This module eases you in: what it is, when to use it, a few real tasks you can try safely, and a free starter pack that powers it up with reusable prompts and skills.",
     steps: [
       {
         title: "Understand what Claude Code is and when to use it",
@@ -661,6 +663,83 @@ Error handling:
           "You saw Claude Code ask for permission before acting and understand that you approve changes before they take effect."
       },
       {
+        title: "Meet the meta-prompting starter pack",
+        description: "A small free download that adds reusable prompts and skills.",
+        whatThisStepDoes:
+          "Once Claude Code feels comfortable, you can teach it a few new tricks. The meta-prompting starter pack is a small free download (about 166 KB) that adds two slash commands and two skills to the Claude Code you already have. A slash command is a shortcut you type with a slash in front, like /create-prompt. These help Claude Code write better prompts, save and reuse them, and break a big job into steps. These commands and skills are different from the Cowork Skills in Module 2. The Cowork Skills live inside the Cowork desktop app. These live in a hidden folder on your computer called .claude, and Claude Code loads them every time it starts.",
+        actionSteps: [
+          "Read the table below so you know what each of the four pieces does.",
+          "Notice that two are slash commands you type, and two are skills Claude Code uses on its own when a job calls for them.",
+          "You do not need all four at once. /create-prompt is the one most people start with.",
+          "When you are ready to add them, the next step walks through the install."
+        ],
+        table: {
+          headers: ["Piece", "Type", "What it does for you"],
+          rows: [
+            ["/create-prompt", "Slash command", "A coach that helps you write a strong prompt. You answer a few quick questions and Claude writes the well-worded prompt, then saves it so you can reuse it."],
+            ["/run-prompt", "Slash command", "Your saved-prompts shelf. Pick a prompt you saved earlier and run it again, with no copy-pasting or rewriting from memory."],
+            ["create-meta-prompts", "Skill", "A recipe for prompts that build other prompts. When a job needs research, then a plan, then the work, in that order, it stitches those three steps together. Good for repeatable, multi-step jobs."],
+            ["create-plans", "Skill", "Breaks a big, fuzzy goal like \"migrate our docs to the new site\" into small, testable steps Claude can finish one at a time."]
+          ]
+        },
+        checkpoint:
+          "You can name the four pieces and explain how these Claude Code commands and skills differ from the Cowork Skills in Module 2."
+      },
+      {
+        title: "Install the starter pack",
+        description: "Download it, then drag the files into your hidden .claude folder.",
+        whatThisStepDoes:
+          "Installing means putting the downloaded files where Claude Code looks for them. It is all drag and drop, with nothing to run. You unzip the download, open a hidden folder called .claude on your computer, and drag the command files and skill folders into place. The one thing to do first: open Claude Code at least once, because that first launch is what creates the .claude folder you are about to drop files into.",
+        actionSteps: [
+          "Make sure you have opened Claude Code at least once already, so the hidden .claude folder exists.",
+          { text: "Download the starter pack and unzip it.", subSteps: [
+            "Use the download button below to get claude-meta-prompting.zip.",
+            "On Mac, double-click the file to unzip it. On Windows, right-click it and choose Extract All.",
+            "You now have a claude-meta-prompting folder with a commands folder and a skills folder inside."
+          ] },
+          { text: "Open the hidden .claude folder using the row for your computer in the table below.", subSteps: [
+            "On Mac, open Finder, press Command + Shift + G, type ~/.claude, and press Return.",
+            "On Windows, open File Explorer and type %USERPROFILE%\\.claude in the address bar, then press Enter."
+          ] },
+          "Drag the two .md files from the unzipped commands folder into the commands folder inside .claude. If there is no commands folder yet, drag the whole commands folder over instead.",
+          "Drag the create-meta-prompts and create-plans folders from the unzipped skills folder into the skills folder inside .claude. If there is no skills folder yet, drag the whole skills folder over instead.",
+          "Open Claude Code and type /create-prompt. If it appears in the menu, the install worked. The .md files now live in commands, the two skill folders live in skills, and Claude Code reads both folders automatically every time it starts."
+        ],
+        table: {
+          headers: ["Your computer", "How to open the hidden .claude folder"],
+          rows: [
+            ["Mac", "In Finder, press Command + Shift + G, type ~/.claude, and press Return."],
+            ["Windows", "In the File Explorer address bar, type %USERPROFILE%\\.claude and press Enter."]
+          ]
+        },
+        download: {
+          href: "/claude-meta-prompting.zip",
+          label: "Download the starter pack",
+          note: "About 166 KB. A single zip file. Nothing runs on its own; you just drop the folders into place.",
+          eventName: "Claude Masterclass Starter Pack Download"
+        },
+        checkpoint:
+          "The command files and skill folders are inside your .claude folder, and typing /create-prompt in Claude Code shows the new command in the menu."
+      },
+      {
+        title: "Run your first prompt",
+        description: "Try /create-prompt, then reuse it later with /run-prompt.",
+        whatThisStepDoes:
+          "Now you use what you installed. You type /create-prompt followed by a plain description of a task, starting with \"how might we.\" Claude asks a few questions about how the task should work, then writes a well-worded prompt for you and saves it. Later, when you want that same prompt again, /run-prompt pulls it off your saved-prompts shelf so you do not rewrite it from memory.",
+        actionSteps: [
+          "Open Claude Code and type /create-prompt followed by a task, like the example below.",
+          "Answer the few questions it asks about how the task should work.",
+          "Read the prompt it writes for you. It is saved automatically for next time.",
+          "Later, type /run-prompt to pick that saved prompt and run it again."
+        ],
+        codeBlock: {
+          caption: "Example to type in Claude Code",
+          code: `/create-prompt how might we write a weekly update from my meeting notes`
+        },
+        checkpoint:
+          "You ran /create-prompt on a real task, got a saved prompt back, and know that /run-prompt brings it back later."
+      },
+      {
         title: "Know when to graduate and where to get help",
         description: "Signs you are ready for Code, and where to turn when stuck.",
         whatThisStepDoes:
@@ -724,6 +803,23 @@ const StepBody = ({ step }: { step: Step }) => (
       </div>
     )}
 
+    {step.download && (
+      <div>
+        <a
+          href={step.download.href}
+          download
+          onClick={() => step.download?.eventName && trackEvent(step.download.eventName)}
+          className="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground font-semibold px-5 py-3 transition-colors hover:bg-primary/90"
+        >
+          <Download className="h-5 w-5" />
+          {step.download.label}
+        </a>
+        {step.download.note && (
+          <p className="text-sm text-muted-foreground mt-2">{step.download.note}</p>
+        )}
+      </div>
+    )}
+
     <Checkpoint>{step.checkpoint}</Checkpoint>
   </div>
 );
@@ -776,6 +872,7 @@ const ClaudeMasterclass = () => {
     "Set up the desktop app with safe connections to tools like Gmail and Calendar so Claude can act, not just advise.",
     "Build, run, and improve a repeatable workflow using Skills, connections, and a simple scorecard.",
     "Use the Claude Code desktop app for real non-technical tasks like a one-page website, folder cleanup, and document drafting.",
+    "Install the free meta-prompting starter pack and use /create-prompt and /run-prompt to write and reuse strong prompts, plus skills that plan big jobs.",
     "Decide confidently which version of Claude fits a given task, and protect your data with deliberate privacy settings."
   ];
 
@@ -786,12 +883,15 @@ const ClaudeMasterclass = () => {
     { term: "Skill", definition: "A plain-text (.md) instruction set that gives Claude focused expertise for a specific task." },
     { term: "Connection (MCP)", definition: "A safe, approved link that lets Claude reach an outside tool like Gmail or Drive, turning chat into action." },
     { term: "Workspace folder", definition: "The folder you open in the Claude Code app, which sets the files and folders Claude is allowed to work with." },
-    { term: "Safety model", definition: "Claude Code shows what it plans to do and waits for your approval before changing anything." }
+    { term: "Safety model", definition: "Claude Code shows what it plans to do and waits for your approval before changing anything." },
+    { term: "Slash command", definition: "A shortcut you type in Claude Code with a slash in front, like /create-prompt, that runs a saved instruction." },
+    { term: "Starter pack", definition: "A small free download of Claude Code commands and skills that load from your .claude folder every time Claude Code starts." }
   ];
 
   const nextSteps = [
     "Build one real Cowork workflow for a task you repeat weekly, then refine it with the scorecard until edits are minor.",
     "Create a practice folder and complete all three Claude Code tasks: a one-page site, a folder cleanup, and a document draft.",
+    "Download the meta-prompting starter pack, install it into your .claude folder, and run /create-prompt on a real task.",
     "Review your privacy settings across the website, desktop app, and Claude Code so each reflects a choice you made.",
     "Bookmark Anthropic's official documentation and turn your best workflow instructions into a saved Skill you can reuse."
   ];
@@ -811,7 +911,7 @@ const ClaudeMasterclass = () => {
       <SEO
         title="Claude Masterclass: Chat, Cowork, and Code"
         description="A step-by-step Claude masterclass for non-technical people. Learn Claude Chat, the agentic Cowork desktop setup, and the Claude Code desktop app from the ground up."
-        keywords={["Claude masterclass", "Claude Chat", "Claude Cowork", "Claude Code", "Claude Code desktop app", "Claude for beginners", "Claude tutorial", "AI for non-technical teams", "Claude Desktop", "MCP"]}
+        keywords={["Claude masterclass", "Claude Chat", "Claude Cowork", "Claude Code", "Claude Code desktop app", "Claude for beginners", "Claude tutorial", "AI for non-technical teams", "Claude Desktop", "MCP", "meta prompting", "create-prompt"]}
       />
 
       <Navigation />
@@ -1108,6 +1208,20 @@ const ClaudeMasterclass = () => {
                     <p className="text-sm text-muted-foreground">Model Context Protocol documentation</p>
                   </div>
                   <ExternalLink className="h-4 w-4 text-muted-foreground ml-auto" />
+                </div>
+              </Card>
+            </a>
+            <a href="/claude-meta-prompting" className="block">
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Download className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Meta-Prompting Starter Pack</h3>
+                    <p className="text-sm text-muted-foreground">Download and install the Claude Code commands and skills from Module 3</p>
+                  </div>
+                  <ChevronRight className="h-4 w-4 text-muted-foreground ml-auto" />
                 </div>
               </Card>
             </a>
