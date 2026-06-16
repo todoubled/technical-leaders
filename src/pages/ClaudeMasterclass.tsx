@@ -542,9 +542,9 @@ Error handling:
     title: "Module 3: Claude Code (Advanced)",
     navLabel: "Claude Code",
     level: "Advanced",
-    tagline: "Claude in your terminal",
+    tagline: "Claude Code in a desktop app",
     intro:
-      "Claude Code is the version of Claude that runs in your computer's terminal and can create files, edit them, and run tasks for you directly on your machine. It sounds technical, and it can be, but plenty of everyday uses need no programming at all. This module eases you in: what it is, when to use it, and a few real tasks you can try safely.",
+      "Claude Code is the version of Claude that runs as a desktop app and can create files, edit them, and run tasks for you directly on your machine. It sounds technical, and it can be, but plenty of everyday uses need no programming at all. This module eases you in: what it is, when to use it, and a few real tasks you can try safely.",
     steps: [
       {
         title: "Understand what Claude Code is and when to use it",
@@ -562,7 +562,7 @@ Error handling:
           rows: [
             ["Claude Chat", "Browser or app", "Questions, drafts, learning"],
             ["Claude Cowork", "Desktop app with connections", "Workflows across Gmail, Calendar, Drive"],
-            ["Claude Code", "Your computer's terminal", "Creating and editing files and folders on your machine"]
+            ["Claude Code", "Its own desktop app", "Creating and editing files and folders on your own computer"]
           ]
         },
         checkpoint:
@@ -583,54 +583,46 @@ Error handling:
           "You feel ready to try a tool that takes plain-language requests, even though it looks technical."
       },
       {
-        title: "Understand what the terminal is",
-        description: "One plain paragraph on the black text window.",
+        title: "Get to know the Claude Code app",
+        description: "One plain paragraph on the app window before you do anything.",
         whatThisStepDoes:
-          "The terminal is a simple app already on your computer where you type commands as text instead of clicking buttons. It looks like a plain window with a blinking cursor. It has been around since before mouse-driven screens, and it is still here because typing an instruction is sometimes faster and more exact than clicking through menus. Claude Code lives in this window, but you will mostly type ordinary sentences, not cryptic commands.",
+          "The Claude Code app is a normal window, the same as any other program on your computer. You open a folder so Claude knows which files you are working with, you type your request in plain language, and Claude works through it while you watch. When it wants to create or change a file, it pauses and asks first. Knowing where those three things live removes most of the early confusion before you type anything real.",
         actionSteps: [
-          "On a Mac, open the app called Terminal (search for it with Spotlight). On Windows, open Windows Terminal or PowerShell.",
-          "Look at the window. The blinking cursor is waiting for input.",
-          "Do not type anything risky yet. You are just getting familiar with how it looks.",
-          "Close it again if you like. You now know where it is."
+          "Open the Claude Code app and look around the window. There is nothing to break by looking.",
+          "Find where you open a folder. This tells Claude which files and folders it is allowed to work with.",
+          "Find the box where you type your request, the same way you type a message in any other version of Claude.",
+          "Notice where it asks for your approval. That is where you will accept or decline anything it proposes."
         ],
         checkpoint:
-          "You opened the terminal, saw the cursor, and understand it is just a text-based way to give your computer instructions."
+          "You opened the app and can point to where you open a folder, where you type a request, and where approvals appear."
       },
       {
-        title: "Install Claude Code",
-        description: "Use the official installer, or npm if you already have Node.",
+        title: "Install the Claude Code app",
+        description: "Download and install the Claude Code desktop app.",
         whatThisStepDoes:
-          "Installing puts Claude Code on your computer so the terminal can run it. There are two paths. The official installer is the simplest and is built for non-technical users. The other path uses a tool called npm, which comes with Node (a free program developers install to run certain software). If you have never heard of Node, use the official installer and skip the npm line entirely.",
+          "Claude Code has its own desktop app, separate from the Claude Desktop app you installed in Module 2. That one is for working across your online tools. This one is for working with the files and folders on your computer, so it is a different download for a different job. Installing it is a normal app install, the same as any other program.",
         actionSteps: [
-          "Go to the official Claude Code download or setup page from Anthropic.",
-          "Follow the installer for your computer. This is the recommended path for most people.",
-          "Only if you already have Node, you may instead type this in the terminal: npm install -g @anthropic-ai/claude-code",
-          "Wait for it to finish. The installer or the command will tell you when it is done."
+          "Go to the official Claude Code download page from Anthropic.",
+          "Choose the version for your computer, Mac or Windows, and download it.",
+          "Run the installer and follow the prompts, the same way you would install any other app.",
+          "Wait for it to finish. The installer tells you when it is done."
         ],
-        codeBlock: {
-          caption: "Optional, only for people who already have Node installed",
-          code: `npm install -g @anthropic-ai/claude-code`
-        },
         checkpoint:
-          "The installer finished without errors, or the npm command reported a successful install."
+          "The Claude Code app finished installing without errors and is ready to open."
       },
       {
-        title: "Start it for the first time and sign in",
-        description: "Launch Claude Code and connect your account.",
+        title: "Open it for the first time and sign in",
+        description: "Launch the app and connect your account.",
         whatThisStepDoes:
-          "With it installed, you start Claude Code from the terminal and sign in with the same Claude account you have used all along. The first run usually opens your browser to log in, then hands you back to the terminal. After this, starting it is a one-word command.",
+          "With it installed, you open the Claude Code app and sign in with the same Claude account you have used all along. The first time, it usually opens your browser to log in, then hands you back to the app. After this, opening it works like any other program.",
         actionSteps: [
-          "Open the terminal.",
-          "Type claude and press Enter.",
-          "When it prompts you to sign in, follow the link or steps. Log in with your usual account.",
-          "Return to the terminal. You should see a prompt where you can type a request."
+          "Open the Claude Code app.",
+          "When it prompts you to sign in, follow the steps. Log in with your usual account.",
+          "Return to the app once you are signed in.",
+          "You should see a box where you can type a request."
         ],
-        codeBlock: {
-          caption: "The command that starts Claude Code",
-          code: `claude`
-        },
         checkpoint:
-          "Claude Code is running in your terminal, you are signed in, and it is waiting for your first request."
+          "The Claude Code app is open, you are signed in, and it is waiting for your first request."
       },
       {
         title: "Try a few real, non-technical tasks",
@@ -638,7 +630,7 @@ Error handling:
         whatThisStepDoes:
           "This is where it gets concrete. You can ask Claude Code to build a simple one-page website, tidy and rename a messy folder of files, or draft and revise documents that live in a folder. You describe the goal in plain words and let it do the work, reviewing as you go. Start with a practice folder so nothing important is at stake.",
         actionSteps: [
-          "Make a new, empty folder for practicing, then point your terminal at it. If unsure how, ask Claude Code: \"How do I move into my practice folder?\"",
+          "Make a new, empty folder for practicing, then open that folder in the Claude Code app so it works only on those files.",
           "Try a website: \"Build a simple one-page website for my dog-walking service with my name, services, and a contact email.\"",
           "Try tidying files: \"This folder has photos with messy names. Rename them by the date each was taken.\" Review the proposed names before approving.",
           "Try documents: \"Draft three short blog post outlines in this folder, then revise the second one to be more casual.\""
@@ -783,7 +775,7 @@ const ClaudeMasterclass = () => {
     "Share files and images with Claude and organize ongoing work using Projects, custom instructions, and memory.",
     "Set up the desktop app with safe connections to tools like Gmail and Calendar so Claude can act, not just advise.",
     "Build, run, and improve a repeatable workflow using Skills, connections, and a simple scorecard.",
-    "Use Claude Code in the terminal for real non-technical tasks like a one-page website, folder cleanup, and document drafting.",
+    "Use the Claude Code desktop app for real non-technical tasks like a one-page website, folder cleanup, and document drafting.",
     "Decide confidently which version of Claude fits a given task, and protect your data with deliberate privacy settings."
   ];
 
@@ -793,7 +785,7 @@ const ClaudeMasterclass = () => {
     { term: "Project", definition: "A reusable container that bundles instructions, reference files, and (in Cowork) connections for one kind of work." },
     { term: "Skill", definition: "A plain-text (.md) instruction set that gives Claude focused expertise for a specific task." },
     { term: "Connection (MCP)", definition: "A safe, approved link that lets Claude reach an outside tool like Gmail or Drive, turning chat into action." },
-    { term: "Terminal", definition: "A text window already on your computer where you type instructions instead of clicking, and where Claude Code runs." },
+    { term: "Workspace folder", definition: "The folder you open in the Claude Code app, which sets the files and folders Claude is allowed to work with." },
     { term: "Safety model", definition: "Claude Code shows what it plans to do and waits for your approval before changing anything." }
   ];
 
@@ -808,7 +800,7 @@ const ClaudeMasterclass = () => {
     ["Claude's answers are vague or off-target.", "Add context and an example to your prompt, then say what was wrong and ask for a revision."],
     ["A Cowork connection will not answer with live data.", "Reopen Connections, confirm it is signed in and enabled for that Project, then reconnect if needed."],
     ["A workflow stops partway through.", "Check that every tool it needs is connected and any referenced folder is not empty, as your error-handling instructions should report."],
-    ["The terminal says \"command not found\" when you type claude.", "The install did not finish or needs a restart. Close the terminal, reopen it, and if it persists, run the official installer again."],
+    ["The Claude Code app will not open or sign you in.", "Quit and reopen it, and check your internet connection for the sign-in step. If it persists, reinstall it from the official download page."],
     ["Claude Code changed something you did not want.", "Decline the next prompt, ask it to undo or revise, and going forward review each proposed change before approving."]
   ];
 
@@ -818,8 +810,8 @@ const ClaudeMasterclass = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Claude Masterclass: Chat, Cowork, and Code"
-        description="A step-by-step Claude masterclass for non-technical people. Learn Claude Chat, the agentic Cowork desktop setup, and Claude Code from the ground up."
-        keywords={["Claude masterclass", "Claude Chat", "Claude Cowork", "Claude Code", "Claude for beginners", "Claude tutorial", "AI for non-technical teams", "Claude Desktop", "MCP"]}
+        description="A step-by-step Claude masterclass for non-technical people. Learn Claude Chat, the agentic Cowork desktop setup, and the Claude Code desktop app from the ground up."
+        keywords={["Claude masterclass", "Claude Chat", "Claude Cowork", "Claude Code", "Claude Code desktop app", "Claude for beginners", "Claude tutorial", "AI for non-technical teams", "Claude Desktop", "MCP"]}
       />
 
       <Navigation />
@@ -844,7 +836,7 @@ const ClaudeMasterclass = () => {
           </h1>
 
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Go from never using Claude to comfortable across three products: everyday chat, an agentic desktop setup that runs real work, and Claude Code in your terminal. No coding background needed.
+            Go from never using Claude to comfortable across three products: everyday chat, an agentic desktop setup that runs real work, and the Claude Code desktop app. No coding background needed.
           </p>
 
           {/* Progress Bar */}
