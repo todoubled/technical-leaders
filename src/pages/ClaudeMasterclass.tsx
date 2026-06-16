@@ -312,7 +312,141 @@ Always suggest one seasonal item to feature.`
   },
   {
     id: "module-2",
-    title: "Module 2: Claude Cowork (Intermediate)",
+    title: "Module 2: Claude for Chrome (Beginner)",
+    navLabel: "Claude for Chrome",
+    level: "Beginner",
+    tagline: "Browser use, with Claude acting on websites",
+    intro:
+      "Claude for Chrome is a browser extension that lets Claude see the website you have open and take actions on it for you: clicking, typing, and moving between pages while you watch. In plain chat you copy and paste; here Claude works on the live page. Anthropic calls this browser use, and it is a beta feature on paid plans. It sits between everyday chat and the deeper Cowork workflows on purpose, so you get a gentle first taste of Claude taking actions, with you in control the whole way. Because Claude is acting inside your browser, this module gives safety real weight. Work through the steps in order.",
+    steps: [
+      {
+        title: "Understand what Claude for Chrome is and when it helps",
+        description: "Browser use lets Claude act on the page in front of you.",
+        whatThisStepDoes:
+          "Plain Chat is a conversation. You describe a web page or paste text in, and Claude answers in the chat. Claude for Chrome goes a step further: it can see the tab you have open and act on it, clicking buttons, filling fields, and moving between pages the way you would. You reach for it when the work is on a website and copy-paste is tedious, like pulling details off a page into a note or stepping through a form. For a plain question or a draft, regular Chat is still the simpler choice.",
+        actionSteps: [
+          "Notice the difference. Chat talks about the web. The extension acts on the page you are looking at.",
+          "Think of one website task you repeat that involves a lot of clicking or copying.",
+          "Keep that task in mind. You will try a safe version of it later in this module.",
+          "Reach for plain Chat when you only need an answer or a draft, and for the extension when the work lives on a live page."
+        ],
+        table: {
+          headers: ["You want to", "Reach for"],
+          rows: [
+            ["Ask a question or draft something", "Plain Claude Chat"],
+            ["Summarize the exact page you have open", "Claude for Chrome"],
+            ["Pull details off a website into a note", "Claude for Chrome"],
+            ["Work with files on your computer", "Claude Code, later in this masterclass"]
+          ]
+        },
+        checkpoint:
+          "You can say in one sentence when browser use helps and when plain Chat is the better fit."
+      },
+      {
+        title: "Install the extension and check you can use it",
+        description: "Add it from the Chrome Web Store, on a paid plan.",
+        whatThisStepDoes:
+          "Claude for Chrome is a Chrome extension, so you add it the same way you add any extension, from the Chrome Web Store. Two things to know before you start. It runs in Google Chrome only, not in other browsers or on phones. And it is a beta feature for paid plans (Pro, Max, Team, or Enterprise), so it is not available on the free plan. If you are on Free, you would upgrade first. None of this requires any setup beyond a normal browser extension install.",
+        actionSteps: [
+          "Confirm you are using Google Chrome on a computer. The extension does not run in other browsers or on mobile.",
+          "Confirm you are on a paid Claude plan. Browser use is in beta and not part of the free plan.",
+          "Open the Chrome Web Store and search for the Claude extension from Anthropic.",
+          "Add it to Chrome and approve the permissions Chrome asks for. Pinning it to the toolbar makes it easy to find."
+        ],
+        checkpoint:
+          "The Claude extension is installed in Chrome and you can see its icon in the toolbar."
+      },
+      {
+        title: "Sign in and connect your Claude account",
+        description: "Open the extension and log in with your usual account.",
+        whatThisStepDoes:
+          "The extension uses the same Claude account you have used all along. Opening it for the first time walks you through signing in, and after that it stays connected. This is also where you confirm browser use is available to you. If the extension says the feature needs a paid plan, that matches the access limits from the last step rather than anything going wrong.",
+        actionSteps: [
+          "Click the Claude extension icon in the Chrome toolbar to open it.",
+          "Sign in with the same Claude account you use on the website.",
+          "Let it finish connecting. A panel for talking to Claude should appear.",
+          "If it tells you browser use needs a paid plan, upgrade first, then sign in again."
+        ],
+        checkpoint:
+          "The extension is open, you are signed in, and you can see where you type a request to Claude."
+      },
+      {
+        title: "Grant access one site at a time",
+        description: "Claude works on a website only after you allow that site.",
+        whatThisStepDoes:
+          "This is the control that keeps browser use in your hands. Claude cannot act on a website until you approve that site, and approval is per site. Visiting a page does not hand it over. When you ask Claude to work on a site, it asks for access first, and you decide: allow just this one action, allow that site going forward, or decline. You can review and remove the sites you have approved later in the extension's settings, so access never silently piles up.",
+        actionSteps: [
+          "Open a safe, ordinary website, like a news article or a public help page.",
+          "Ask Claude in the extension to do something with the page, such as summarizing it.",
+          "When it asks for access, read the request. Choose to allow this one action, or grant that single site ongoing access, or decline.",
+          "Look in the extension settings for the list of approved sites, so you know where to review or remove access later."
+        ],
+        table: {
+          headers: ["When Claude asks for access, you can", "What it means"],
+          rows: [
+            ["Allow once", "Claude acts a single time on this page, then has to ask again"],
+            ["Allow this site", "Claude can keep working on this one site until you remove it"],
+            ["Decline", "Claude does not touch the page"]
+          ]
+        },
+        checkpoint:
+          "You granted access to one site, saw that it applied to that site only, and know where to review approved sites."
+      },
+      {
+        title: "Learn the safety model for browser use",
+        description: "The most important step. Read it before you trust the extension widely.",
+        whatThisStepDoes:
+          "Browser use is powerful because Claude acts on real pages, and that is exactly why it carries weight. Two risks matter most. First, a web page can hide instructions meant to trick an AI into doing something you did not ask, such as a page or email that quietly says to find and share your private information. This is called prompt injection. Second, Claude is acting inside your logged-in sessions, so on a site where you are signed in it can reach what your browser can reach. The protections are real but not perfect, so you stay the safeguard. Claude asks before acting and pauses for high-risk actions like purchases, you grant access per site, and you review what it proposes. Keep it away from sensitive places, banking, investments, medical and legal accounts, and anything with other people's private information, until you trust it. Anthropic blocks some of those categories outright. You stay in control the whole time.",
+        actionSteps: [
+          "Treat anything on a web page as something Claude might read, including hidden text. Do not assume a page is harmless just because it looks plain.",
+          "Keep browser use away from banking, investing, medical, legal, and work accounts with sensitive data while you are learning.",
+          "Watch for the moments Claude asks before acting, and read what it plans before you approve. Decline anything you did not intend.",
+          "Write clear, specific requests. A vague ask gives Claude more room to do something you did not want."
+        ],
+        table: {
+          headers: ["Risk", "What it is", "How you stay safe"],
+          rows: [
+            ["Prompt injection", "Hidden instructions on a page or in an email try to redirect Claude", "Approve per site, review actions, avoid sketchy pages"],
+            ["Your logged-in sessions", "On a signed-in site Claude can reach what your browser can", "Keep it off sensitive accounts until you trust it"],
+            ["A wrong action", "Claude does something you did not intend", "It asks before acting and pauses for purchases and the like; you review and decline"]
+          ]
+        },
+        checkpoint:
+          "You can explain prompt injection in one sentence, you know which sites to avoid for now, and you understand that you approve and review every action."
+      },
+      {
+        title: "Try one safe, low-stakes browser task",
+        description: "Summarize the open page or pull a few details into a note.",
+        whatThisStepDoes:
+          "Now you try it for real on something harmless. Good first tasks read the page and hand you back something useful without changing anything important: a short summary of a long article, or a few key details pulled off a page so you do not have to copy them by hand. Starting low-stakes lets you watch how the extension asks for access and how it works the page, with nothing at risk.",
+        actionSteps: [
+          "Open a long but ordinary page, like a news article or a public documentation page.",
+          "Ask for a summary, such as \"Summarize the main points of this page in five bullets.\" Grant access to that one site when asked.",
+          "Try pulling details next, like \"List the dates and names mentioned on this page,\" and watch Claude read the page to answer.",
+          "Read the result and confirm it matches what is actually on the page. Decline anything you did not intend."
+        ],
+        checkpoint:
+          "You completed one safe task on a real page, approved access for that site, and got a result drawn from the actual page."
+      },
+      {
+        title: "Set your privacy and data preferences, then look ahead to Cowork",
+        description: "Manage approved sites, and see how browser use complements Cowork.",
+        whatThisStepDoes:
+          "Two things close out the module. First, tidy your settings: the extension keeps the list of sites you have approved, and you can review or remove any of them so access stays only where you want it. Carry over the same habits from earlier modules about what is safe to let Claude see. Second, a look ahead. The next module, Cowork, connects Claude to specific tools like Gmail and Calendar through dedicated connections. Browser use is the complement to that: when a website has no dedicated connection, Claude can still act on it directly through the extension. They are separate tools, and the extension does not power Cowork, but together they widen what Claude can reach for you.",
+        actionSteps: [
+          "Open the extension settings and review the list of sites you have approved. Remove any you no longer need.",
+          "Apply your usual rule about sensitive information. If you would not let a contractor see it, keep the extension away from it.",
+          "Note the split for later: Cowork uses dedicated connections for tools like Gmail, while the extension acts on websites that have no such connection.",
+          "Keep both in mind. As you move into Cowork next, you will have browser use available for sites the connections do not cover."
+        ],
+        checkpoint:
+          "Your approved-site list reflects choices you made, and you can describe how browser use complements the Cowork connections in the next module."
+      }
+    ]
+  },
+  {
+    id: "module-3",
+    title: "Module 3: Claude Cowork (Intermediate)",
     navLabel: "Claude Cowork",
     level: "Intermediate",
     tagline: "Agentic desktop workflows",
@@ -406,7 +540,7 @@ Always suggest one seasonal item to feature.`
         actionSteps: [
           "Open Settings and find the features or capabilities area.",
           "Enable Skills, Artifacts, file creation, and code execution.",
-          "Confirm extended thinking is still on from Step 11.",
+          "Confirm extended thinking is still on from the earlier step where you turned on stronger reasoning.",
           "If a feature asks for confirmation the first time it runs, that is the safety model working as intended."
         ],
         checkpoint:
@@ -416,7 +550,7 @@ Always suggest one seasonal item to feature.`
         title: "Install your Skills",
         description: "Add Skills globally or, better, to a single Project.",
         whatThisStepDoes:
-          "Now you load the .md Skill files from Step 9. You have two choices. Global means a Skill applies everywhere, across all your chats. Per-Project means it applies only inside one Project. Per-Project is recommended because it keeps each workflow self-contained and predictable, so a support Skill does not bleed into your newsletter writing.",
+          "Now you load the .md Skill files you downloaded earlier. You have two choices. Global means a Skill applies everywhere, across all your chats. Per-Project means it applies only inside one Project. Per-Project is recommended because it keeps each workflow self-contained and predictable, so a support Skill does not bleed into your newsletter writing.",
         actionSteps: [
           "Decide which one or two Skills match the workflow you want to build first.",
           "Find where the app lets you add a Skill (in Settings for global, or inside a Project for per-Project).",
@@ -435,7 +569,7 @@ Always suggest one seasonal item to feature.`
           "In the desktop app, create a new Project and name it for the job, like \"Weekly Customer Update.\"",
           "Write a short description of what this Project is for.",
           "Add any reference files the workflow needs, such as a template or past examples.",
-          "Confirm the Skill from Step 15 is attached to this Project if you chose per-Project."
+          "Confirm the Skill you installed a moment ago is attached to this Project if you chose per-Project."
         ],
         checkpoint:
           "A named Project exists with a clear purpose, its reference files, and its Skill in place."
@@ -448,7 +582,7 @@ Always suggest one seasonal item to feature.`
         actionSteps: [
           "List what your workflow must do. For example: read this week's meetings, gather project notes, draft and send a summary.",
           "For each item, name the connection it needs (Calendar, Drive, Gmail).",
-          "Make sure each of those connections is enabled from Step 13 and available to this Project.",
+          "Make sure each of those connections is among the ones you enabled earlier and available to this Project.",
           "Write the mapping into your notes so the next step's instructions can reference it."
         ],
         table: {
@@ -540,8 +674,8 @@ Error handling:
     ]
   },
   {
-    id: "module-3",
-    title: "Module 3: Claude Code (Advanced)",
+    id: "module-4",
+    title: "Module 4: Claude Code (Advanced)",
     navLabel: "Claude Code",
     level: "Advanced",
     tagline: "Claude Code, plus reusable prompts and skills",
@@ -550,25 +684,26 @@ Error handling:
     steps: [
       {
         title: "Understand what Claude Code is and when to use it",
-        description: "A short comparison of Chat, Cowork, and Code.",
+        description: "A short comparison of Chat, Claude for Chrome, Cowork, and Code.",
         whatThisStepDoes:
-          "All three are Claude, with different reach. Chat is conversation in a browser or app. Cowork is the desktop app connected to your online tools, running workflows. Code goes one level deeper: it works directly with the files and folders on your computer, creating and changing them for you. You reach for Code when the job is about files on your machine rather than a conversation or an online tool.",
+          "All four are Claude, with different reach. Chat is conversation in a browser or app. Claude for Chrome is a browser extension that acts on the website in front of you. Cowork is the desktop app connected to your online tools, running workflows. Code goes one level deeper: it works directly with the files and folders on your computer, creating and changing them for you. You reach for Code when the job is about files on your machine rather than a conversation, a website, or an online tool.",
         actionSteps: [
           "Read the comparison below to place each one.",
           "Notice the dividing line. If the work lives in your computer's folders, Code fits.",
           "For now, just recognize the cases. You do not have to use Code today.",
-          "Keep Chat and Cowork for everything they already handle well."
+          "Keep Chat, Claude for Chrome, and Cowork for everything they already handle well."
         ],
         table: {
           headers: ["Version", "Where it runs", "Best for"],
           rows: [
             ["Claude Chat", "Browser or app", "Questions, drafts, learning"],
+            ["Claude for Chrome", "A Chrome extension in your browser", "Acting on the website in front of you for you"],
             ["Claude Cowork", "Desktop app with connections", "Workflows across Gmail, Calendar, Drive"],
             ["Claude Code", "Its own desktop app", "Creating and editing files and folders on your own computer"]
           ]
         },
         checkpoint:
-          "You can say in one sentence when Code is the right choice instead of Chat or Cowork."
+          "You can say in one sentence when Code is the right choice instead of Chat, Claude for Chrome, or Cowork."
       },
       {
         title: "Know that basic uses do not require programming",
@@ -602,7 +737,7 @@ Error handling:
         title: "Install the Claude Code app",
         description: "Download and install the Claude Code desktop app.",
         whatThisStepDoes:
-          "Claude Code has its own desktop app, separate from the Claude Desktop app you installed in Module 2. That one is for working across your online tools. This one is for working with the files and folders on your computer, so it is a different download for a different job. Installing it is a normal app install, the same as any other program.",
+          "Claude Code has its own desktop app, separate from the Claude Desktop app you installed in Module 3. That one is for working across your online tools. This one is for working with the files and folders on your computer, so it is a different download for a different job. Installing it is a normal app install, the same as any other program.",
         actionSteps: [
           "Go to the official Claude Code download page from Anthropic.",
           "Choose the version for your computer, Mac or Windows, and download it.",
@@ -666,7 +801,7 @@ Error handling:
         title: "Meet the meta-prompting starter pack",
         description: "A small free download that adds reusable prompts and skills.",
         whatThisStepDoes:
-          "Once Claude Code feels comfortable, you can teach it a few new tricks. The meta-prompting starter pack is a small free download (about 166 KB) that adds two slash commands and two skills to the Claude Code you already have. A slash command is a shortcut you type with a slash in front, like /create-prompt. These help Claude Code write better prompts, save and reuse them, and break a big job into steps. These commands and skills are different from the Cowork Skills in Module 2. The Cowork Skills live inside the Cowork desktop app. These live in a hidden folder on your computer called .claude, and Claude Code loads them every time it starts.",
+          "Once Claude Code feels comfortable, you can teach it a few new tricks. The meta-prompting starter pack is a small free download (about 166 KB) that adds two slash commands and two skills to the Claude Code you already have. A slash command is a shortcut you type with a slash in front, like /create-prompt. These help Claude Code write better prompts, save and reuse them, and break a big job into steps. These commands and skills are different from the Cowork Skills in Module 3. The Cowork Skills live inside the Cowork desktop app. These live in a hidden folder on your computer called .claude, and Claude Code loads them every time it starts.",
         actionSteps: [
           "Read the table below so you know what each of the four pieces does.",
           "Notice that two are slash commands you type, and two are skills Claude Code uses on its own when a job calls for them.",
@@ -683,7 +818,7 @@ Error handling:
           ]
         },
         checkpoint:
-          "You can name the four pieces and explain how these Claude Code commands and skills differ from the Cowork Skills in Module 2."
+          "You can name the four pieces and explain how these Claude Code commands and skills differ from the Cowork Skills in Module 3."
       },
       {
         title: "Install the starter pack",
@@ -869,6 +1004,7 @@ const ClaudeMasterclass = () => {
   const learningOutcomes = [
     "Sign in to Claude, hold a productive conversation, and write prompts that get usable answers on the first or second try.",
     "Share files and images with Claude and organize ongoing work using Projects, custom instructions, and memory.",
+    "Install Claude for Chrome and use browser use safely, letting Claude see the current tab and take actions for you while you approve access site by site.",
     "Set up the desktop app with safe connections to tools like Gmail and Calendar so Claude can act, not just advise.",
     "Build, run, and improve a repeatable workflow using Skills, connections, and a simple scorecard.",
     "Use the Claude Code desktop app for real non-technical tasks like a one-page website, folder cleanup, and document drafting.",
@@ -879,6 +1015,7 @@ const ClaudeMasterclass = () => {
   const keyConcepts = [
     { term: "Prompt", definition: "The message you send Claude. Clear ask plus context plus an example gets the best result." },
     { term: "Artifact", definition: "A panel beside the chat where Claude builds a document, table, or small app you can edit in place." },
+    { term: "Browser use", definition: "Claude acting in your browser tab on your behalf through the Claude for Chrome extension, with your approval granted per site." },
     { term: "Project", definition: "A reusable container that bundles instructions, reference files, and (in Cowork) connections for one kind of work." },
     { term: "Skill", definition: "A plain-text (.md) instruction set that gives Claude focused expertise for a specific task." },
     { term: "Connection (MCP)", definition: "A safe, approved link that lets Claude reach an outside tool like Gmail or Drive, turning chat into action." },
@@ -889,6 +1026,7 @@ const ClaudeMasterclass = () => {
   ];
 
   const nextSteps = [
+    "Install Claude for Chrome and try one safe browser task, like summarizing the page you have open, granting access to that single site.",
     "Build one real Cowork workflow for a task you repeat weekly, then refine it with the scorecard until edits are minor.",
     "Create a practice folder and complete all three Claude Code tasks: a one-page site, a folder cleanup, and a document draft.",
     "Download the meta-prompting starter pack, install it into your .claude folder, and run /create-prompt on a real task.",
@@ -899,6 +1037,7 @@ const ClaudeMasterclass = () => {
   const troubleshooting: [string, string][] = [
     ["Claude's answers are vague or off-target.", "Add context and an example to your prompt, then say what was wrong and ask for a revision."],
     ["A Cowork connection will not answer with live data.", "Reopen Connections, confirm it is signed in and enabled for that Project, then reconnect if needed."],
+    ["Claude for Chrome will not act on a website.", "Open the extension and grant access for that site, since access is per site, and check you are on a paid plan with the extension turned on in Chrome."],
     ["A workflow stops partway through.", "Check that every tool it needs is connected and any referenced folder is not empty, as your error-handling instructions should report."],
     ["The Claude Code app will not open or sign you in.", "Quit and reopen it, and check your internet connection for the sign-in step. If it persists, reinstall it from the official download page."],
     ["Claude Code changed something you did not want.", "Decline the next prompt, ask it to undo or revise, and going forward review each proposed change before approving."]
@@ -909,9 +1048,9 @@ const ClaudeMasterclass = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Claude Masterclass: Chat, Cowork, and Code"
-        description="A step-by-step Claude masterclass for non-technical people. Learn Claude Chat, the agentic Cowork desktop setup, and the Claude Code desktop app from the ground up."
-        keywords={["Claude masterclass", "Claude Chat", "Claude Cowork", "Claude Code", "Claude Code desktop app", "Claude for beginners", "Claude tutorial", "AI for non-technical teams", "Claude Desktop", "MCP", "meta prompting", "create-prompt"]}
+        title="Claude Masterclass: Chat, Chrome, Cowork, and Code"
+        description="A step-by-step Claude masterclass for non-technical people. Learn Claude Chat, the Claude for Chrome browser extension, the agentic Cowork desktop setup, and the Claude Code desktop app from the ground up."
+        keywords={["Claude masterclass", "Claude Chat", "Claude for Chrome", "Claude browser extension", "browser use", "Claude Cowork", "Claude Code", "Claude Code desktop app", "Claude for beginners", "Claude tutorial", "AI for non-technical teams", "Claude Desktop", "MCP", "meta prompting", "create-prompt"]}
       />
 
       <Navigation />
@@ -931,12 +1070,12 @@ const ClaudeMasterclass = () => {
             </span>
             <br />
             <span className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground">
-              Chat, Cowork, and Code
+              Chat, Chrome, Cowork, and Code
             </span>
           </h1>
 
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Go from never using Claude to comfortable across three products: everyday chat, an agentic desktop setup that runs real work, and the Claude Code desktop app. No coding background needed.
+            Go from never using Claude to comfortable across four products: everyday chat, the Claude for Chrome browser extension that acts on websites for you, an agentic desktop setup that runs real work, and the Claude Code desktop app. No coding background needed.
           </p>
 
           {/* Progress Bar */}
@@ -1044,7 +1183,11 @@ const ClaudeMasterclass = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span>A Claude account (free to start; Pro unlocks Projects and the Cowork features in Module 2)</span>
+                  <span>A Claude account (free to start; a paid plan unlocks Projects, the Cowork features in Module 3, and Claude for Chrome in Module 2)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                  <span>Google Chrome installed, for the Claude for Chrome module (Module 2)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
@@ -1079,7 +1222,7 @@ const ClaudeMasterclass = () => {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Masterclass Steps</h2>
-            <p className="text-xl text-muted-foreground">Work through three modules at your own pace</p>
+            <p className="text-xl text-muted-foreground">Work through four modules at your own pace</p>
           </div>
 
           <div className="space-y-16">
@@ -1219,7 +1362,7 @@ const ClaudeMasterclass = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold">Meta-Prompting Starter Pack</h3>
-                    <p className="text-sm text-muted-foreground">Download and install the Claude Code commands and skills from Module 3</p>
+                    <p className="text-sm text-muted-foreground">Download and install the Claude Code commands and skills from Module 4</p>
                   </div>
                   <ChevronRight className="h-4 w-4 text-muted-foreground ml-auto" />
                 </div>
