@@ -145,6 +145,9 @@ interface Step {
 interface Module {
   id: string;
   title: string;
+  navLabel: string;
+  level: string;
+  tagline: string;
   intro: string;
   steps: Step[];
 }
@@ -153,6 +156,9 @@ const MODULES: Module[] = [
   {
     id: "module-1",
     title: "Module 1: Claude Chat (Beginner)",
+    navLabel: "Claude Chat",
+    level: "Beginner",
+    tagline: "Everyday chat and prompting",
     intro:
       "This is the version most people meet first. It is a website (claude.ai) and a desktop app where you type questions and Claude types back. By the end of this module you can sign in, hold a useful conversation, share files, and keep your work organized.",
     steps: [
@@ -305,6 +311,9 @@ Always suggest one seasonal item to feature.`
   {
     id: "module-2",
     title: "Module 2: Claude Cowork (Intermediate)",
+    navLabel: "Claude Cowork",
+    level: "Intermediate",
+    tagline: "Agentic desktop workflows",
     intro:
       "Cowork is not a separate product. It is the Claude desktop app set up to do real work: stronger reasoning turned on, safe connections to your tools like Gmail and Calendar, specialized instruction sets called Skills, and Projects that run start-to-finish workflows. This module takes you from a chat assistant to something that completes tasks. Work through the steps in order, since each one builds on the last.",
     steps: [
@@ -531,6 +540,9 @@ Error handling:
   {
     id: "module-3",
     title: "Module 3: Claude Code (Advanced)",
+    navLabel: "Claude Code",
+    level: "Advanced",
+    tagline: "Claude in your terminal",
     intro:
       "Claude Code is the version of Claude that runs in your computer's terminal and can create files, edit them, and run tasks for you directly on your machine. It sounds technical, and it can be, but plenty of everyday uses need no programming at all. This module eases you in: what it is, when to use it, and a few real tasks you can try safely.",
     steps: [
@@ -757,6 +769,15 @@ const ClaudeMasterclass = () => {
 
   const progressPercent = Math.round((completedSteps.length / TOTAL_STEPS) * 100);
 
+  let _offset = 0;
+  const moduleProgress = MODULES.map((m, i) => {
+    const start = _offset + 1;
+    const end = _offset + m.steps.length;
+    _offset = end;
+    const done = completedSteps.filter((n) => n >= start && n <= end).length;
+    return { id: m.id, navLabel: m.navLabel, level: m.level, tagline: m.tagline, number: i + 1, total: m.steps.length, done };
+  });
+
   const learningOutcomes = [
     "Sign in to Claude, hold a productive conversation, and write prompts that get usable answers on the first or second try.",
     "Share files and images with Claude and organize ongoing work using Projects, custom instructions, and memory.",
@@ -853,6 +874,50 @@ const ClaudeMasterclass = () => {
             <ChevronRight className="ml-2 h-5 w-5" />
           </Button>
 
+          {/* Module Jump Cards */}
+          <div className="mt-12 max-w-3xl mx-auto text-left">
+            <p className="text-sm text-muted-foreground mb-3">Jump to a module</p>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {moduleProgress.map((m) => {
+                const modulePercent = Math.round((m.done / m.total) * 100);
+                return (
+                  <button
+                    key={m.id}
+                    type="button"
+                    aria-label={`Jump to ${m.navLabel}`}
+                    onClick={() => {
+                      document.getElementById(m.id)?.scrollIntoView({ behavior: 'smooth' });
+                      trackEvent('Claude Masterclass Module Jump', { module: m.id });
+                    }}
+                    className="block w-full text-left"
+                  >
+                    <Card className="h-full p-4 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+                      <div className="flex items-start gap-3">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full font-bold text-lg bg-primary text-primary-foreground flex-shrink-0">
+                          {m.number}
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-semibold leading-tight">{m.navLabel}</h3>
+                          <p className="text-xs text-muted-foreground">{m.level}</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground mt-3">{m.tagline}</p>
+                      <div className="mt-3">
+                        <div className="h-2 bg-muted rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-primary to-primary/80 transition-all duration-500"
+                            style={{ width: `${modulePercent}%` }}
+                          />
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-2">{m.done}/{m.total} steps</p>
+                      </div>
+                    </Card>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Video Embed */}
           <div className="mt-12 max-w-3xl mx-auto">
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-border/50">
@@ -927,7 +992,7 @@ const ClaudeMasterclass = () => {
 
           <div className="space-y-16">
             {MODULES.map((module) => (
-              <div key={module.id}>
+              <div key={module.id} id={module.id} className="scroll-mt-24">
                 <div className="mb-8">
                   <h3 className="text-2xl sm:text-3xl font-bold mb-3">{module.title}</h3>
                   <p className="text-muted-foreground">{module.intro}</p>
