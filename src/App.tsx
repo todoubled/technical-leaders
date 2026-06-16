@@ -66,7 +66,7 @@ import WorkshopReplay from "./pages/WorkshopReplay";
 import AIProgram from "./pages/AIProgram";
 import AIFirstProgram from "./pages/AIFirstProgram";
 import AISOS from "./pages/AISOS";
-import AiSOSWorkspace from "./pages/AiSOSWorkspace";
+import ClaudeMasterclass from "./pages/ClaudeMasterclass";
 import Home2025 from "./pages/Home2025";
 import OfficeHoursDemo from "./pages/OfficeHoursDemo";
 import Podcast from "./pages/Podcast";
@@ -182,7 +182,8 @@ const App = () => (
           <Route path="/ai-program" element={<AIProgram />} />
           <Route path="/ai-first-program" element={<AIFirstProgram />} />
           <Route path="/ai-sos" element={<AISOS />} />
-          <Route path="/ai-sos-workspace" element={<AiSOSWorkspace />} />
+          <Route path="/claude-masterclass" element={<ClaudeMasterclass />} />
+          <Route path="/ai-sos-workspace" element={<Navigate to="/claude-masterclass" replace />} />
           <Route path="/office-hours-demo" element={<OfficeHoursDemo />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/healthcare-ai-case-study" element={<HealthcareAICaseStudy />} />
