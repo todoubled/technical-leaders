@@ -29,6 +29,33 @@ interface StepProps {
   children: React.ReactNode;
 }
 
+const CopyLink = ({ id, label = 'Copy link', className = '' }: { id: string; label?: string; className?: string }) => {
+  const [copied, setCopied] = useState(false);
+  const kind = id.startsWith('step-') ? 'step' : 'module';
+
+  const copyLink = () => {
+    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+    window.history.replaceState(null, '', `#${id}`);
+    navigator.clipboard?.writeText(url).then(() => {
+      setCopied(true);
+      trackEvent('Claude Masterclass Link Copied', { target: id });
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={copyLink}
+      aria-label={`Copy link to this ${kind}`}
+      className={`inline-flex flex-shrink-0 items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors ${className}`}
+    >
+      {copied ? <Check className="h-4 w-4" /> : <Link2 className="h-4 w-4" />}
+      {copied ? 'Copied!' : label}
+    </button>
+  );
+};
+
 const TutorialStep = ({ stepNumber, title, description, isCompleted, isActive, onToggleComplete, children }: StepProps) => {
   const [isExpanded, setIsExpanded] = useState(isActive);
 
@@ -37,7 +64,7 @@ const TutorialStep = ({ stepNumber, title, description, isCompleted, isActive, o
   }, [isActive]);
 
   return (
-    <div className={`border rounded-lg transition-all duration-300 ${isCompleted ? 'border-green-500/50 bg-green-500/5' : isActive ? 'border-primary/50 bg-primary/5' : 'border-border'}`}>
+    <div id={`step-${stepNumber}`} className={`scroll-mt-24 border rounded-lg transition-all duration-300 ${isCompleted ? 'border-green-500/50 bg-green-500/5' : isActive ? 'border-primary/50 bg-primary/5' : 'border-border'}`}>
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full px-6 py-4 flex items-center justify-between text-left"
@@ -67,6 +94,7 @@ const TutorialStep = ({ stepNumber, title, description, isCompleted, isActive, o
               <CheckCircle2 className="h-5 w-5" />
               {isCompleted ? 'Completed!' : 'Mark as Complete'}
             </button>
+            <CopyLink id={`step-${stepNumber}`} />
           </div>
         </div>
       )}
@@ -1090,32 +1118,6 @@ const StepBody = ({ step }: { step: Step }) => (
   </div>
 );
 
-const ModuleLink = ({ id }: { id: string }) => {
-  const [copied, setCopied] = useState(false);
-
-  const copyLink = () => {
-    const url = `${window.location.origin}${window.location.pathname}#${id}`;
-    window.history.replaceState(null, '', `#${id}`);
-    navigator.clipboard?.writeText(url).then(() => {
-      setCopied(true);
-      trackEvent('Claude Masterclass Module Link Copied', { module: id });
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
-
-  return (
-    <button
-      type="button"
-      onClick={copyLink}
-      aria-label="Copy link to this module"
-      className="inline-flex flex-shrink-0 items-center gap-1.5 mt-1 text-sm text-muted-foreground hover:text-primary transition-colors"
-    >
-      {copied ? <Check className="h-4 w-4" /> : <Link2 className="h-4 w-4" />}
-      {copied ? 'Copied!' : 'Copy link'}
-    </button>
-  );
-};
-
 const ClaudeMasterclass = () => {
   const [completedSteps, setCompletedSteps] = useState<number[]>(() => {
     const saved = localStorage.getItem('claude-masterclass-progress');
@@ -1131,8 +1133,8 @@ const ClaudeMasterclass = () => {
     trackEvent('Claude Masterclass View', { context: 'tutorial_page' });
   }, []);
 
-  // Deep links: scroll to a specific module when arriving via a shared link
-  // (e.g. /claude-masterclass#module-3) or via browser back/forward.
+  // Deep links: scroll to a specific module or step when arriving via a shared
+  // link (e.g. /claude-masterclass#module-3 or #step-7) or via back/forward.
   const goToModule = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     if (window.location.hash !== `#${id}`) {
@@ -1144,8 +1146,11 @@ const ClaudeMasterclass = () => {
     const scrollToHash = (behavior: ScrollBehavior) => {
       const id = decodeURIComponent(window.location.hash.slice(1));
       if (!id) return;
+      // A step is collapsed by default, so expand it before scrolling.
+      const stepMatch = id.match(/^step-(\d+)$/);
+      if (stepMatch) setActiveStep(Number(stepMatch[1]));
       const el = document.getElementById(id);
-      // Defer until after paint so the module sections exist in the DOM.
+      // Defer until after paint so the module/step sections exist in the DOM.
       if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior }));
     };
     scrollToHash('auto'); // cold load / shared link: jump straight there
@@ -1419,7 +1424,7 @@ const ClaudeMasterclass = () => {
                 <div className="mb-8">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-2xl sm:text-3xl font-bold mb-3">{module.title}</h3>
-                    <ModuleLink id={module.id} />
+                    <CopyLink id={module.id} className="mt-1" />
                   </div>
                   <p className="text-muted-foreground">{module.intro}</p>
                 </div>
