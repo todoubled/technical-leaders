@@ -508,6 +508,9 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
           "If it arrives zipped, unzip it. You should see several files ending in .md.",
           "Leave them there for now. You will install the ones you want in a later step."
         ],
+        links: [
+          { href: "https://drive.google.com/drive/folders/1Qfutu_vNGqhh19UAZf9j08I5CPq3zp3b", label: "Download the Skill Library", eventName: "Masterclass Link Skill Library" }
+        ],
         checkpoint:
           "You have a folder of .md Skill files saved somewhere you can locate."
       },
