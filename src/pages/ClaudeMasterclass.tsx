@@ -889,6 +889,25 @@ Error handling:
         examples: {
           caption: "Workflow and loop examples to adapt and paste into Claude Code",
           items: [
+            `/goal Build report.md comparing the five options in brief.md.
+
+Finish line:
+- Every section in brief.md is answered.
+- The comparison table has no unexplained blank cells.
+- Every factual claim includes a source link and source date.
+- Assumptions and unresolved questions are listed separately.
+
+Prove it:
+- Print all section headings.
+- Print the completed comparison table.
+- Print every unresolved question and blocked source.
+
+Show me:
+- Recommend one option in three sentences.
+- Name the strongest reason not to choose it.
+
+If blocked:
+- Mark the cell "Not verified" and explain why. Do not guess.`,
             "/loop babysit all my GitHub PRs. Auto-fix build issues, and when comments come in, use /create-prompt in a worktree agent to fix them.",
             "This test fails maybe 1 in 50 runs. Set up a workflow to reproduce it, form theories, and adversarially test them in worktrees. /goal don't stop until one theory works.",
             "Use a workflow to dig through #incidents in Slack for the past six months and find recurring root causes where nobody has filed a ticket.",
