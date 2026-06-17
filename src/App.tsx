@@ -67,6 +67,7 @@ import AIProgram from "./pages/AIProgram";
 import AIFirstProgram from "./pages/AIFirstProgram";
 import AISOS from "./pages/AISOS";
 import ClaudeMasterclass from "./pages/ClaudeMasterclass";
+import CopilotCowork from "./pages/CopilotCowork";
 import Home2025 from "./pages/Home2025";
 import OfficeHoursDemo from "./pages/OfficeHoursDemo";
 import Podcast from "./pages/Podcast";
@@ -183,6 +184,7 @@ const App = () => (
           <Route path="/ai-first-program" element={<AIFirstProgram />} />
           <Route path="/ai-sos" element={<AISOS />} />
           <Route path="/claude-masterclass" element={<ClaudeMasterclass />} />
+          <Route path="/copilot-cowork" element={<CopilotCowork />} />
           <Route path="/ai-sos-workspace" element={<Navigate to="/claude-masterclass" replace />} />
           <Route path="/office-hours-demo" element={<OfficeHoursDemo />} />
           <Route path="/podcast" element={<Podcast />} />
