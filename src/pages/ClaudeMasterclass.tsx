@@ -274,6 +274,42 @@ Always suggest one seasonal item to feature.`
           "You have a Project with at least one reference file and custom instructions, and a chat inside it reflects them without being reminded."
       },
       {
+        title: "Install the Adaptive Reasoning Protocol custom instruction",
+        description: "Paste one ready-made instruction that makes Claude pick the right thinking method.",
+        whatThisStepDoes:
+          "Custom instructions do not have to be about your bio and tone. They can also tell Claude how to think. The Adaptive Reasoning Protocol below is a single instruction you paste once that teaches Claude to size up each request and switch methods automatically: it breaks problems into small, checkable pieces when you ask it to solve or debug, it explains things plainly like a patient teacher when you ask it to learn or understand, and it does both in order when a task needs both. You do not have to remember which mode to ask for; the instruction handles that for you.",
+        actionSteps: [
+          "Open the custom instructions area, either in a Project (from the previous step) or in your account's settings.",
+          "Copy the Adaptive Reasoning Protocol below exactly as written and paste it in.",
+          "Save the instruction. Every new chat that uses it will follow the protocol without being reminded.",
+          "Test it. Ask Claude to debug something and watch it decompose the problem, then ask it to explain a concept and watch it switch to plain teaching."
+        ],
+        codeBlock: {
+          caption: "Adaptive Reasoning Protocol custom instruction to copy and paste",
+          code: `Use the Adaptive Reasoning Protocol:
+
+Assess the request type, then apply the appropriate method:
+
+If solving, analyzing, or debugging → Atom of Thought: Decompose into atomic reasoning units. For each atom:
+
+State the logical component
+Validate independence
+Verify correctness
+Then synthesize atoms into final answer.
+
+If explaining, learning, or teaching → Feynman Loop: Explain as if teaching a curious beginner. For each cycle:
+
+Use a concrete analogy
+Flag confusion points
+Ask questions that reveal gaps
+Then compress into a teachable snapshot.
+
+If both are needed → Chain them: First solve via Atom of Thought, then explain the solution via Feynman Loop.`
+        },
+        checkpoint:
+          "You pasted the Adaptive Reasoning Protocol into your custom instructions, saved it, and saw Claude switch methods on its own across a solving task and an explaining task."
+      },
+      {
         title: "Understand memory and history",
         description: "What Claude remembers between chats, and how to revisit past work.",
         whatThisStepDoes:
