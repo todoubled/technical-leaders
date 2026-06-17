@@ -142,6 +142,7 @@ interface Step {
   codeBlock?: { caption?: string; code: string };
   examples?: { caption?: string; items: string[] };
   download?: { href: string; label: string; note?: string; eventName?: string };
+  links?: { href: string; label: string; eventName?: string }[];
   checkpoint: string;
 }
 
@@ -185,6 +186,9 @@ const MODULES: Module[] = [
             ["Projects feature", "No", "Yes"]
           ]
         },
+        links: [
+          { href: "https://claude.ai", label: "Open claude.ai", eventName: "Masterclass Link Claude Chat" }
+        ],
         checkpoint:
           "You are signed in and looking at an empty chat box with a cursor ready for your first message."
       },
@@ -390,6 +394,9 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
           "Open the Chrome Web Store and search for the Claude extension from Anthropic.",
           "Add it to Chrome and approve the permissions Chrome asks for. Pinning it to the toolbar makes it easy to find."
         ],
+        links: [
+          { href: "https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn", label: "Get Claude for Chrome", eventName: "Masterclass Link Claude for Chrome" }
+        ],
         checkpoint:
           "The Claude extension is installed in Chrome and you can see its icon in the toolbar."
       },
@@ -514,6 +521,9 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
           "Choose the version for your computer (Mac or Windows) and run the installer.",
           "Open the app and sign in with the same account from Module 1.",
           "Confirm you are on Pro. The workflow features below need it."
+        ],
+        links: [
+          { href: "https://claude.ai/download", label: "Get Claude Desktop", eventName: "Masterclass Link Claude Desktop" }
         ],
         checkpoint:
           "Claude Desktop is open on your computer and you are signed in."
@@ -780,6 +790,9 @@ Error handling:
           "Choose the version for your computer, Mac or Windows, and download it.",
           "Run the installer and follow the prompts, the same way you would install any other app.",
           "Wait for it to finish. The installer tells you when it is done."
+        ],
+        links: [
+          { href: "https://code.claude.com/docs/en/desktop-quickstart", label: "Get Claude Code", eventName: "Masterclass Link Claude Code" }
         ],
         checkpoint:
           "The Claude Code app finished installing without errors and is ready to open."
@@ -1049,6 +1062,24 @@ const StepBody = ({ step }: { step: Step }) => (
         {step.download.note && (
           <p className="text-sm text-muted-foreground mt-2">{step.download.note}</p>
         )}
+      </div>
+    )}
+
+    {step.links && (
+      <div className="flex flex-wrap gap-3">
+        {step.links.map((link, i) => (
+          <a
+            key={i}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => link.eventName && trackEvent(link.eventName)}
+            className="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground font-semibold px-5 py-3 transition-colors hover:bg-primary/90"
+          >
+            <ExternalLink className="h-5 w-5" />
+            {link.label}
+          </a>
+        ))}
       </div>
     )}
 
