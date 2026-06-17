@@ -1239,7 +1239,7 @@ const ClaudeMasterclass = () => {
           {/* Module Jump Cards */}
           <div className="mt-12 max-w-3xl mx-auto text-left">
             <p className="text-sm text-muted-foreground mb-3">Jump to a module</p>
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               {moduleProgress.map((m) => {
                 const modulePercent = Math.round((m.done / m.total) * 100);
                 return (
@@ -1285,7 +1285,7 @@ const ClaudeMasterclass = () => {
       {/* Prerequisites & Learning Outcomes */}
       <section className="py-16 bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-8">
             {/* Prerequisites */}
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-4">
@@ -1301,11 +1301,31 @@ const ClaudeMasterclass = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span>A Claude account (free to start; a paid plan unlocks Projects, the Cowork features in Module 3, and Claude for Chrome in Module 2)</span>
+                  <div>
+                    <span>A Claude account (free to start; a paid plan unlocks Projects, the Cowork features in Module 3, and Claude for Chrome in Module 2)</span>
+                    <div className="mt-2">
+                      <Button asChild variant="outline" size="sm">
+                        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">
+                          Create a Claude account
+                          <ExternalLink />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span>Google Chrome installed, for the Claude for Chrome module (Module 2)</span>
+                  <div>
+                    <span>Google Chrome installed, for the Claude for Chrome module (Module 2)</span>
+                    <div className="mt-2">
+                      <Button asChild variant="outline" size="sm">
+                        <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">
+                          Download Chrome
+                          <ExternalLink />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
