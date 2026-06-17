@@ -140,6 +140,7 @@ interface Step {
   actionSteps: ActionStep[];
   table?: { headers: string[]; rows: string[][] };
   codeBlock?: { caption?: string; code: string };
+  examples?: { caption?: string; items: string[] };
   download?: { href: string; label: string; note?: string; eventName?: string };
   checkpoint: string;
 }
@@ -875,6 +876,53 @@ Error handling:
           "You ran /create-prompt on a real task, got a saved prompt back, and know that /run-prompt brings it back later."
       },
       {
+        title: "Level up with workflows and loops",
+        description: "Hand Claude Code a bigger, open-ended job and let it run on its own.",
+        whatThisStepDoes:
+          "Once single prompts feel natural, the next step is a workflow: one plain-language request that sets Claude Code off on a multi-step job, often spinning up several helper agents that work in parallel. A few words unlock the real power. \"Use a workflow\" tells it to plan the steps and split the work. A loop keeps it going on its own: /loop reruns a task on a schedule, and /goal tells it not to stop until a goal is met. \"In a worktree\" lets agents try ideas in separate, throwaway copies of your files so nothing collides. And it can interview you with the AskUserQuestion tool when it needs your judgment. You still approve real changes, so a workflow is ambitious but not reckless. The examples below show the range, from babysitting code to ranking resumes.",
+        actionSteps: [
+          "Pick one example below that sounds like a job you actually have.",
+          "Open the right folder in Claude Code, then paste the example and adjust the details to your situation.",
+          "Watch it plan the steps and, where useful, fan out into parallel agents. Answer its questions and approve changes as they come.",
+          "For a job that should keep running, start the request with /loop to repeat it on a schedule, or /goal to have it keep working until the goal is met."
+        ],
+        examples: {
+          caption: "Workflow and loop examples to adapt and paste into Claude Code",
+          items: [
+            `/goal Build report.md comparing the five options in brief.md.
+
+Finish line:
+- Every section in brief.md is answered.
+- The comparison table has no unexplained blank cells.
+- Every factual claim includes a source link and source date.
+- Assumptions and unresolved questions are listed separately.
+
+Prove it:
+- Print all section headings.
+- Print the completed comparison table.
+- Print every unresolved question and blocked source.
+
+Show me:
+- Recommend one option in three sentences.
+- Name the strongest reason not to choose it.
+
+If blocked:
+- Mark the cell "Not verified" and explain why. Do not guess.`,
+            "/loop babysit all my GitHub PRs. Auto-fix build issues, and when comments come in, use /create-prompt in a worktree agent to fix them.",
+            "This test fails maybe 1 in 50 runs. Set up a workflow to reproduce it, form theories, and adversarially test them in worktrees. /goal don't stop until one theory works.",
+            "Use a workflow to dig through #incidents in Slack for the past six months and find recurring root causes where nobody has filed a ticket.",
+            "Take my business plan and run a workflow where different agents tear it apart from an investor's, a customer's, and a competitor's perspective.",
+            "Here's a folder of 80 resumes. Use a workflow to rank them for the backend role and double-check the top ten. Interview me using the AskUserQuestion tool for a rubric.",
+            "I need a name for this CLI tool. Use a workflow to brainstorm a bunch of options and run a tournament to pick the top 3.",
+            "Use a workflow to rename our User model to Account everywhere.",
+            "Go through my blog post draft and, using a workflow, verify every technical claim against the codebase. I don't want to ship anything wrong.",
+            "Using a workflow, go through my last 50 sessions and mine them for corrections I keep making, then turn the recurring ones into CLAUDE.md rules."
+          ]
+        },
+        checkpoint:
+          "You ran one workflow from a single plain-language request, saw it break the job into steps, and know that /loop and /goal keep a job running on their own."
+      },
+      {
         title: "Know when to graduate and where to get help",
         description: "Signs you are ready for Code, and where to turn when stuck.",
         whatThisStepDoes:
@@ -935,6 +983,19 @@ const StepBody = ({ step }: { step: Step }) => (
           <h4 className="font-semibold mb-3">{step.codeBlock.caption}</h4>
         )}
         <CodeBlock>{step.codeBlock.code}</CodeBlock>
+      </div>
+    )}
+
+    {step.examples && (
+      <div>
+        {step.examples.caption && (
+          <h4 className="font-semibold mb-3">{step.examples.caption}</h4>
+        )}
+        <div className="space-y-3">
+          {step.examples.items.map((item, i) => (
+            <CodeBlock key={i}>{item}</CodeBlock>
+          ))}
+        </div>
       </div>
     )}
 
