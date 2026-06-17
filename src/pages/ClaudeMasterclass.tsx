@@ -1090,6 +1090,32 @@ const StepBody = ({ step }: { step: Step }) => (
   </div>
 );
 
+const ModuleLink = ({ id }: { id: string }) => {
+  const [copied, setCopied] = useState(false);
+
+  const copyLink = () => {
+    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+    window.history.replaceState(null, '', `#${id}`);
+    navigator.clipboard?.writeText(url).then(() => {
+      setCopied(true);
+      trackEvent('Claude Masterclass Module Link Copied', { module: id });
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={copyLink}
+      aria-label="Copy link to this module"
+      className="inline-flex flex-shrink-0 items-center gap-1.5 mt-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+    >
+      {copied ? <Check className="h-4 w-4" /> : <Link2 className="h-4 w-4" />}
+      {copied ? 'Copied!' : 'Copy link'}
+    </button>
+  );
+};
+
 const ClaudeMasterclass = () => {
   const [completedSteps, setCompletedSteps] = useState<number[]>(() => {
     const saved = localStorage.getItem('claude-masterclass-progress');
@@ -1103,6 +1129,29 @@ const ClaudeMasterclass = () => {
 
   useEffect(() => {
     trackEvent('Claude Masterclass View', { context: 'tutorial_page' });
+  }, []);
+
+  // Deep links: scroll to a specific module when arriving via a shared link
+  // (e.g. /claude-masterclass#module-3) or via browser back/forward.
+  const goToModule = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.hash !== `#${id}`) {
+      window.history.pushState(null, '', `#${id}`);
+    }
+  };
+
+  useEffect(() => {
+    const scrollToHash = (behavior: ScrollBehavior) => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (!id) return;
+      const el = document.getElementById(id);
+      // Defer until after paint so the module sections exist in the DOM.
+      if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior }));
+    };
+    scrollToHash('auto'); // cold load / shared link: jump straight there
+    const onHashChange = () => scrollToHash('smooth'); // back/forward
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
   const toggleStepComplete = (stepNumber: number) => {
@@ -1243,12 +1292,13 @@ const ClaudeMasterclass = () => {
               {moduleProgress.map((m) => {
                 const modulePercent = Math.round((m.done / m.total) * 100);
                 return (
-                  <button
+                  <a
                     key={m.id}
-                    type="button"
+                    href={`#${m.id}`}
                     aria-label={`Jump to ${m.navLabel}`}
-                    onClick={() => {
-                      document.getElementById(m.id)?.scrollIntoView({ behavior: 'smooth' });
+                    onClick={(e) => {
+                      e.preventDefault();
+                      goToModule(m.id);
                       trackEvent('Claude Masterclass Module Jump', { module: m.id });
                     }}
                     className="block w-full text-left"
@@ -1274,7 +1324,7 @@ const ClaudeMasterclass = () => {
                         <p className="text-xs text-muted-foreground mt-2">{m.done}/{m.total} steps</p>
                       </div>
                     </Card>
-                  </button>
+                  </a>
                 );
               })}
             </div>
@@ -1367,7 +1417,10 @@ const ClaudeMasterclass = () => {
             {MODULES.map((module) => (
               <div key={module.id} id={module.id} className="scroll-mt-24">
                 <div className="mb-8">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-3">{module.title}</h3>
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-3">{module.title}</h3>
+                    <ModuleLink id={module.id} />
+                  </div>
                   <p className="text-muted-foreground">{module.intro}</p>
                 </div>
 
