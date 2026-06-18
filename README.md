@@ -60,6 +60,34 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Blog articles (snapshot + prerender)
+
+Blog articles (`/articles` and `/post/:slug`) are served from a committed snapshot,
+not fetched from the SEObot API at runtime. The snapshot lives in
+`src/data/articles/`:
+
+- `index.json` — lightweight summaries for the grid.
+- `posts/<slug>.json` — one full article (with HTML body) per slug.
+
+The running app reads only this snapshot (`src/lib/articles.ts`). The build does
+not call SEObot and needs no API key.
+
+To refresh article content:
+
+```sh
+# Requires VITE_SEOBOT_API_KEY in .env. Re-fetches every article and rewrites
+# the snapshot files; commit whatever changes.
+npm run fetch-articles
+```
+
+`npm run build` then prerenders each article route to static HTML
+(`scripts/prerender.mjs`) so `/post/:slug` and `/articles` are served as fully
+rendered pages with correct per-article title, meta, and JSON-LD. The fetch
+script is the only consumer of the SEObot API and is never run by the build.
+
+Note: featured images still point at the remote SEObot/CDN URLs. Localizing them
+into the repo is possible future work and is intentionally not done here.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/27d19ac4-23b0-40c3-b3f1-1f333c59a4e3) and click on Share -> Publish.

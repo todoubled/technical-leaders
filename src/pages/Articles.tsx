@@ -7,7 +7,7 @@ import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Article, ArticleCategory } from '../types/article';
-import { seobotClient } from '../lib/seobot';
+import { getArticles } from '../lib/articles';
 import SEO from '../components/SEO';
 
 const categories: ArticleCategory[] = [
@@ -19,41 +19,30 @@ const categories: ArticleCategory[] = [
 ];
 
 export default function Articles() {
-  const [articles, setArticles] = useState<Article[]>([]);
+  // Read the committed snapshot synchronously so the grid renders on first paint
+  // (this is what gets statically prerendered). No API call, no loading flash.
+  const initial = getArticles({ page: 0, pageSize: 12 });
+  const [articles, setArticles] = useState<Article[]>(initial.articles);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const [hasMore, setHasMore] = useState(true);
+  const [hasMore, setHasMore] = useState(initial.hasMore);
 
-  // Fetch articles from SEObot
+  // Read articles from the local snapshot (replaces the runtime SEObot call).
   useEffect(() => {
-    const fetchArticles = async () => {
-      setLoading(true);
-      try {
-        const params = {
-          page: currentPage,
-          pageSize: 12,
-          category: selectedCategory === 'all' ? undefined : selectedCategory,
-        };
-        
-        const response = await seobotClient.getArticles(params);
-        
-        if (currentPage === 0) {
-          setArticles(response.articles);
-        } else {
-          setArticles(prev => [...prev, ...response.articles]);
-        }
-        
-        setHasMore(response.hasMore);
-      } catch (error) {
-        console.error('Error fetching articles:', error);
-        // Articles will remain empty array and show no results
-      } finally {
-        setLoading(false);
-      }
-    };
+    const response = getArticles({
+      page: currentPage,
+      pageSize: 12,
+      category: selectedCategory === 'all' ? undefined : selectedCategory,
+    });
 
-    fetchArticles();
+    if (currentPage === 0) {
+      setArticles(response.articles);
+    } else {
+      setArticles(prev => [...prev, ...response.articles]);
+    }
+
+    setHasMore(response.hasMore);
   }, [selectedCategory, currentPage]);
 
   const handleCategoryChange = (category: string) => {
@@ -79,10 +68,11 @@ export default function Articles() {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
+      <SEO
         title="Technical Leadership Articles - Proven Strategies from 300+ CTOs"
         description="Practical insights from CTOs, VPs of Engineering, and tech executives. Real-world strategies for scaling teams, advancing careers, and building authority in 2024."
         keywords={['technical leadership articles', 'CTO insights', 'engineering management', 'tech leadership blog', 'career development', 'scaling engineering teams']}
+        url="https://technical-leaders.com/articles"
       />
       <Navigation />
       

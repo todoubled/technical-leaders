@@ -28,7 +28,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!post/|articles).*)",
       "has": [
         {
           "type": "header",

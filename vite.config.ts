@@ -30,4 +30,11 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssr: {
+    // Bundle these into the SSR build (instead of leaving them external) so their
+    // CommonJS/ESM interop is handled by Vite. Without this, Node's ESM loader
+    // fails on named imports like `import { Helmet } from "react-helmet-async"`
+    // during the prerender (scripts/prerender.mjs).
+    noExternal: ["react-helmet-async", "react-router-dom", "react-router"],
+  },
 }));
