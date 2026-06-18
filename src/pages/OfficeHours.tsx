@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
@@ -103,7 +105,7 @@ const OfficeHours = () => {
         </div>
       </section>
 
-      {/* Slide 5 — Try This: /goal loops with agents */}
+      {/* Slide 5 — Try This: The Claude Masterclass guide */}
       <section className="min-h-screen flex items-center px-6 py-24 border-t border-white/10">
         <div className="max-w-5xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-12 sm:mb-16">
@@ -111,42 +113,66 @@ const OfficeHours = () => {
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Try This</h2>
           </div>
           <p className="text-white text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-            Run "/goal" loops with agents
+            The Claude Masterclass
           </p>
           <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
-            Hand an agent a goal, not a task list. It spins up a workflow — multiple agents working in parallel to critique, verify, and iterate — and loops until the goal is met. Describe the outcome you want and let the loop do the work.
+            A guided, hands-on walkthrough of every version of Claude — from your first chat to running agents on your own machine. Four modules, beginner to advanced, each with action steps, copy-paste prompts, and checkpoints you tick off as you go.
           </p>
 
-          <div className="mt-12 space-y-5">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {[
               {
-                label: "Pressure-test it",
-                prompt:
-                  "Here's my business plan — run a workflow where different agents tear it apart from an investor's, a customer's, and a competitor's perspective.",
+                level: "Beginner",
+                title: "Claude Chat",
+                blurb: "Everyday chat, prompting, files, and Projects.",
               },
               {
-                label: "Fact-check it",
-                prompt:
-                  "Go through this blog post draft and use a workflow to verify every technical claim against the codebase. I don't want to ship anything wrong.",
+                level: "Beginner",
+                title: "Claude for Chrome",
+                blurb: "Let Claude see and act on the page in front of you, safely.",
               },
               {
-                label: "Name it",
-                prompt:
-                  "I need a name for this new tool. Use a workflow to brainstorm a bunch of options and run a tournament to pick the top 3.",
+                level: "Intermediate",
+                title: "Claude Cowork",
+                blurb: "Connect Gmail and Calendar, install Skills, run real workflows.",
               },
-            ].map(({ label, prompt }) => (
+              {
+                level: "Advanced",
+                title: "Claude Code",
+                blurb: "Work with files on your machine, plus reusable prompts and skills.",
+              },
+            ].map(({ level, title, blurb }, i) => (
               <div
-                key={label}
+                key={title}
                 className="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-7 backdrop-blur-sm"
               >
-                <span className="inline-block text-sm sm:text-base font-semibold uppercase tracking-wide text-longhand-accent">
-                  {label}
-                </span>
-                <p className="mt-3 text-white text-lg sm:text-xl lg:text-2xl font-medium leading-snug">
-                  "{prompt}"
+                <div className="flex items-baseline gap-3">
+                  <span className="text-2xl sm:text-3xl font-bold text-white/40 tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-wide text-longhand-accent">
+                    {level}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-white text-xl sm:text-2xl font-semibold tracking-tight">
+                  {title}
+                </h3>
+                <p className="mt-2 text-white/80 text-base sm:text-lg leading-snug">
+                  {blurb}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <Link
+              to="/claude-masterclass"
+              onClick={() => trackEvent("AI Office Hours Masterclass CTA Clicked")}
+              className="inline-flex items-center gap-3 rounded-xl bg-white px-7 py-4 text-lg sm:text-xl font-semibold text-black transition-colors hover:bg-white/90"
+            >
+              Open the masterclass guide
+              <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
