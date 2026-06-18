@@ -10,28 +10,34 @@ const STORAGE_KEY = 'ai-coworker-completed-steps';
 
 const AICoworker = () => {
   useTrackScrollDepth('AI Coworker Page');
-  const [completedSteps, setCompletedSteps] = useState<Set<string>>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed)) {
-            return new Set(parsed);
-          }
-        } catch {
-          // Invalid JSON, start fresh
-        }
-      }
-    }
-    return new Set();
-  });
+  // Start empty so the server-prerendered HTML matches the client's first render
+  // (localStorage is unavailable during prerender). Saved progress is loaded in a
+  // post-mount effect below, after hydration.
+  const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
+  const [progressLoaded, setProgressLoaded] = useState(false);
 
   const [copiedPrompt, setCopiedPrompt] = useState(false);
 
+  // Load persisted progress once, on mount (client only).
   useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) setCompletedSteps(new Set(parsed));
+      }
+    } catch {
+      // Invalid/unavailable storage — keep the empty default.
+    }
+    setProgressLoaded(true);
+  }, []);
+
+  // Persist progress, but only after the initial load so we don't clobber saved
+  // progress with the empty default on first paint.
+  useEffect(() => {
+    if (!progressLoaded) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedSteps]));
-  }, [completedSteps]);
+  }, [completedSteps, progressLoaded]);
 
   useEffect(() => {
     trackEvent('AI Coworker Page View', {

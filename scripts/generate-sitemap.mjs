@@ -1,27 +1,60 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const ROOT = path.join(__dirname, '..');
+const SSR_ENTRY = path.join(ROOT, 'dist-ssr', 'entry-server.js');
 
-// Define your routes with their priorities and change frequencies
-const routes = [
-  { path: '/', priority: 1.0, changefreq: 'daily' },
-  { path: '/articles', priority: 0.9, changefreq: 'daily' },
-  { path: '/launch', priority: 0.9, changefreq: 'weekly' },
-  { path: '/december', priority: 0.9, changefreq: 'weekly' },
-  { path: '/scale', priority: 0.9, changefreq: 'weekly' },
-  { path: '/call', priority: 0.8, changefreq: 'weekly' },
-  { path: '/ai-trade-school', priority: 0.7, changefreq: 'weekly' },
-  { path: '/accredited', priority: 0.7, changefreq: 'weekly' },
+// The set of static page routes comes from the SAME shared source the app and the
+// prerender use (src/routes.tsx -> getStaticRoutePaths, compiled into the SSR
+// bundle). This is why `npm run build` builds the SSR bundle BEFORE generating the
+// sitemap: it guarantees the sitemap, the prerendered pages, and the route table
+// can never drift apart. If the SSR bundle is missing (e.g. running this script on
+// its own), we fall back to a minimal hand list so the script still produces output.
+const getStaticRoutePathsSafe = async () => {
+  if (fs.existsSync(SSR_ENTRY)) {
+    const mod = await import(pathToFileURL(SSR_ENTRY).href);
+    if (typeof mod.getStaticRoutePaths === 'function') {
+      return mod.getStaticRoutePaths();
+    }
+  }
+  console.warn(
+    '⚠️  SSR bundle not found; sitemap falling back to a minimal route list.\n' +
+      '   Run `npm run build:ssr` first (the full `npm run build` does this for you).'
+  );
+  return ['/', '/articles'];
+};
+
+// Per-route sitemap hints. The route SET is derived from the shared source above;
+// this map only overrides priority/changefreq for routes where the default isn't
+// ideal. Any route not listed here uses DEFAULT_HINT. Keys must be route paths.
+const ROUTE_HINTS = {
+  '/': { priority: 1.0, changefreq: 'daily' },
+  '/articles': { priority: 0.9, changefreq: 'daily' },
+  '/january': { priority: 0.9, changefreq: 'weekly' },
+  '/december': { priority: 0.9, changefreq: 'weekly' },
+  '/scale': { priority: 0.9, changefreq: 'weekly' },
+  '/call': { priority: 0.8, changefreq: 'weekly' },
+  '/claude-masterclass': { priority: 0.8, changefreq: 'monthly' },
+  '/copilot-cowork': { priority: 0.8, changefreq: 'monthly' },
+  '/longhand': { priority: 0.8, changefreq: 'monthly' },
+  '/tokens': { priority: 0.8, changefreq: 'monthly' },
+  '/ai-trade-school': { priority: 0.7, changefreq: 'weekly' },
+  '/accredited': { priority: 0.7, changefreq: 'weekly' },
+  '/first-time-founder': { priority: 0.7, changefreq: 'monthly' },
+  '/refer': { priority: 0.6, changefreq: 'monthly' },
+  '/call-confirmed': { priority: 0.3, changefreq: 'monthly' },
+  '/privacy-policy': { priority: 0.3, changefreq: 'yearly' },
+};
+
+const DEFAULT_HINT = { priority: 0.7, changefreq: 'monthly' };
+
+// Extra static URLs that are NOT React routes (served as standalone static files
+// via vercel.json), so they don't appear in getStaticRoutePaths().
+const EXTRA_STATIC_ROUTES = [
   { path: '/s2p-elevate-ai-guide', priority: 0.7, changefreq: 'monthly' },
-  { path: '/refer', priority: 0.6, changefreq: 'monthly' },
-  { path: '/first-time-founder', priority: 0.7, changefreq: 'monthly' },
-  { path: '/claude-masterclass', priority: 0.8, changefreq: 'monthly' },
-  { path: '/copilot-cowork', priority: 0.8, changefreq: 'monthly' },
-  { path: '/privacy-policy', priority: 0.3, changefreq: 'yearly' },
-  { path: '/call-confirmed', priority: 0.3, changefreq: 'monthly' },
 ];
 
 // Read articles from the committed snapshot (src/data/articles/index.json).
@@ -29,7 +62,7 @@ const routes = [
 // truth. Refresh it with `npm run fetch-articles`.
 const fetchArticles = async () => {
   try {
-    const indexPath = path.join(__dirname, '..', 'src', 'data', 'articles', 'index.json');
+    const indexPath = path.join(ROOT, 'src', 'data', 'articles', 'index.json');
     const articles = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
     console.log(`📄 Loaded ${articles.length} articles from snapshot`);
     return articles;
@@ -42,6 +75,13 @@ const fetchArticles = async () => {
 const generateSitemap = async () => {
   const domain = 'https://technical-leaders.com';
   const today = new Date().toISOString().split('T')[0];
+
+  // Build the static route list from the shared source + extra static files.
+  const staticPaths = await getStaticRoutePathsSafe();
+  const routes = [
+    ...staticPaths.map((p) => ({ path: p, ...(ROUTE_HINTS[p] || DEFAULT_HINT) })),
+    ...EXTRA_STATIC_ROUTES,
+  ];
 
   // Generate static URLs
   const staticUrls = routes.map(route => `
@@ -90,8 +130,8 @@ const generateSitemap = async () => {
 ${staticUrls}${dynamicUrls}
 </urlset>`;
 
-  // Write to public directory
-  const publicPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
+  // Write to public directory (the client build copies public/ into dist/).
+  const publicPath = path.join(ROOT, 'public', 'sitemap.xml');
   fs.writeFileSync(publicPath, sitemap, 'utf8');
 
   console.log(`✅ Sitemap generated successfully with ${routes.length} static + ${articles.length} article URLs`);
@@ -111,7 +151,7 @@ const generateSitemapIndex = () => {
     </sitemap>
 </sitemapindex>`;
 
-  const publicPath = path.join(__dirname, '..', 'public', 'sitemap-index.xml');
+  const publicPath = path.join(ROOT, 'public', 'sitemap-index.xml');
   fs.writeFileSync(publicPath, sitemapIndex, 'utf8');
 
   console.log('✅ Sitemap index generated at public/sitemap-index.xml');

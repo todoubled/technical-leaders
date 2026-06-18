@@ -1,18 +1,25 @@
-// Static prerender (SSG) for article routes.
+// Static prerender (SSG) for EVERY real page route.
 //
 // Runs at the end of `npm run build`, after both the client build (dist/) and the
-// SSR build (dist-ssr/entry-server.js). For each article route it server-renders the
-// app, injects the collected <head> tags and the rendered body into the built
+// SSR build (dist-ssr/entry-server.js). For each route it server-renders the app,
+// injects the collected <head> tags and the rendered body into the built
 // index.html template, and writes a static HTML file. Crawlers and users receive
-// fully-rendered HTML with the correct per-article title, meta, OG/Twitter tags, and
+// fully-rendered HTML with the correct per-page title, meta, OG/Twitter tags, and
 // JSON-LD — no JavaScript or API call required to see the content.
 //
 // Routes prerendered:
-//   /articles          -> dist/articles/index.html
-//   /post/<slug>       -> dist/post/<slug>/index.html   (one per snapshot slug)
+//   every fixed-path page from getStaticRoutePaths() (the shared route source in
+//     src/routes.tsx) -> dist/<path>/index.html  (and "/" -> dist/index.html)
+//   /post/<slug>      -> dist/post/<slug>/index.html   (one per snapshot slug)
+//
+// Pure <Navigate> redirects, the dynamic /post/:slug pattern, and the "*" catch-all
+// are intentionally NOT in getStaticRoutePaths(), so no blank shell is written for
+// them. Redirects resolve client-side via the SPA fallback (or via vercel.json).
 //
 // For /post/<slug>, the article's full data is also inlined as window.__ARTICLE__ so
 // the client hydrates the prerendered markup synchronously (no flash, no refetch).
+// Other pages need no preloaded data; they render inside the same StaticRouter and
+// hydrate to full content on the client.
 //
 // This script does NOT call the SEObot API — it reads only the committed snapshot.
 
@@ -82,14 +89,36 @@ async function main() {
     process.exit(1);
   }
 
-  const { render, getAllSlugs, loadArticle } = await import(pathToFileURL(SSR_ENTRY).href);
+  const { render, getAllSlugs, loadArticle, getStaticRoutePaths } = await import(
+    pathToFileURL(SSR_ENTRY).href
+  );
 
+  // Map a route path to its output file: "/" -> dist/index.html,
+  // "/foo/bar" -> dist/foo/bar/index.html.
+  const outFileFor = (routePath) => {
+    const clean = routePath.replace(/^\/+/, '').replace(/\/+$/, '');
+    return clean
+      ? path.join(DIST, ...clean.split('/'), 'index.html')
+      : path.join(DIST, 'index.html');
+  };
+
+  // Every fixed-path page from the shared route source (includes "/", "/articles",
+  // and all marketing/landing pages). Redirects, the dynamic /post/:slug pattern,
+  // and "*" are excluded at the source, so nothing blank is generated for them.
+  const staticPaths = getStaticRoutePaths();
   const slugs = getAllSlugs();
-  console.log(`🧩 Prerendering ${slugs.length} article routes + /articles...`);
+  console.log(
+    `🧩 Prerendering ${staticPaths.length} page routes + ${slugs.length} article routes...`
+  );
 
-  // Build the list of routes to prerender.
+  // Build the list of routes to prerender: fixed-path pages first, then one
+  // /post/<slug> per article in the snapshot.
   const routes = [
-    { url: '/articles', outFile: path.join(DIST, 'articles', 'index.html'), slug: null },
+    ...staticPaths.map((routePath) => ({
+      url: routePath,
+      outFile: outFileFor(routePath),
+      slug: null,
+    })),
     ...slugs.map((slug) => ({
       url: `/post/${slug}`,
       outFile: path.join(DIST, 'post', slug, 'index.html'),

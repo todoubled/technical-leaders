@@ -536,15 +536,30 @@ const StepBody = ({ step }: { step: Step }) => (
 );
 
 const CopilotCowork = () => {
-  const [completedSteps, setCompletedSteps] = useState<number[]>(() => {
-    const saved = localStorage.getItem('copilot-cowork-progress');
-    return saved ? JSON.parse(saved) : [];
-  });
+  // Start empty so the server-prerendered HTML and the client's first render match
+  // (localStorage is unavailable during prerender). Saved progress is loaded in a
+  // post-mount effect below, after hydration.
+  const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+  const [progressLoaded, setProgressLoaded] = useState(false);
   const [activeStep, setActiveStep] = useState(1);
 
+  // Load persisted progress once, on mount (client only).
   useEffect(() => {
+    try {
+      const saved = localStorage.getItem('copilot-cowork-progress');
+      if (saved) setCompletedSteps(JSON.parse(saved));
+    } catch {
+      // Invalid/unavailable storage — keep the empty default.
+    }
+    setProgressLoaded(true);
+  }, []);
+
+  // Persist progress, but only after the initial load so we don't clobber saved
+  // progress with the empty default on first paint.
+  useEffect(() => {
+    if (!progressLoaded) return;
     localStorage.setItem('copilot-cowork-progress', JSON.stringify(completedSteps));
-  }, [completedSteps]);
+  }, [completedSteps, progressLoaded]);
 
   useEffect(() => {
     trackEvent('Copilot Cowork View', { context: 'tutorial_page' });

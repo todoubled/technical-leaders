@@ -9,53 +9,48 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = 'rga-playbook-completed-steps';
 const ROUTINE_STORAGE_KEY = 'rga-playbook-completed-routine-tasks';
 
+// Parse a stored array of ids into a Set, tolerating missing/invalid storage.
+const readStoredSet = (key: string): Set<string> => {
+  try {
+    const saved = localStorage.getItem(key);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) return new Set(parsed);
+    }
+  } catch {
+    // Invalid JSON or unavailable storage — start fresh.
+  }
+  return new Set();
+};
+
 const RGAPlaybook = () => {
   useTrackScrollDepth('RGA Playbook Page');
-  const [completedSteps, setCompletedSteps] = useState<Set<string>>(() => {
-    // Initialize from localStorage
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed)) {
-            return new Set(parsed);
-          }
-        } catch {
-          // Invalid JSON, start fresh
-        }
-      }
-    }
-    return new Set();
-  });
+  // Start empty so the server-prerendered HTML matches the client's first render
+  // (localStorage is unavailable during prerender). Saved progress is loaded in a
+  // post-mount effect below, after hydration.
+  const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
+  const [completedRoutineTasks, setCompletedRoutineTasks] = useState<Set<string>>(new Set());
+  const [progressLoaded, setProgressLoaded] = useState(false);
 
-  const [completedRoutineTasks, setCompletedRoutineTasks] = useState<Set<string>>(() => {
-    // Initialize from localStorage
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(ROUTINE_STORAGE_KEY);
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed)) {
-            return new Set(parsed);
-          }
-        } catch {
-          // Invalid JSON, start fresh
-        }
-      }
-    }
-    return new Set();
-  });
-
-  // Save to localStorage whenever completedSteps changes
+  // Load persisted progress once, on mount (client only).
   useEffect(() => {
+    setCompletedSteps(readStoredSet(STORAGE_KEY));
+    setCompletedRoutineTasks(readStoredSet(ROUTINE_STORAGE_KEY));
+    setProgressLoaded(true);
+  }, []);
+
+  // Save to localStorage whenever completedSteps changes (after the initial load,
+  // so the empty default doesn't clobber saved progress on first paint).
+  useEffect(() => {
+    if (!progressLoaded) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedSteps]));
-  }, [completedSteps]);
+  }, [completedSteps, progressLoaded]);
 
   // Save to localStorage whenever completedRoutineTasks changes
   useEffect(() => {
+    if (!progressLoaded) return;
     localStorage.setItem(ROUTINE_STORAGE_KEY, JSON.stringify([...completedRoutineTasks]));
-  }, [completedRoutineTasks]);
+  }, [completedRoutineTasks, progressLoaded]);
 
   useEffect(() => {
     trackEvent('RGA Playbook Page View', {
