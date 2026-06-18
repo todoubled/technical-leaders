@@ -66,7 +66,8 @@ import WorkshopReplay from "./pages/WorkshopReplay";
 import AIProgram from "./pages/AIProgram";
 import AIFirstProgram from "./pages/AIFirstProgram";
 import AISOS from "./pages/AISOS";
-import AiSOSWorkspace from "./pages/AiSOSWorkspace";
+import ClaudeMasterclass from "./pages/ClaudeMasterclass";
+import CopilotCowork from "./pages/CopilotCowork";
 import Home2025 from "./pages/Home2025";
 import OfficeHoursDemo from "./pages/OfficeHoursDemo";
 import Podcast from "./pages/Podcast";
@@ -138,7 +139,8 @@ const App = () => (
           <Route path="/alternative-to-mit-oxford" element={<AlternativeToMitOxford />} />
           <Route path="/in-demand" element={<RGAWorkshop />} />
           <Route path="/playbook-confirmed" element={<PlaybookConfirmed />} />
-          <Route path="/ship-ai" element={<ShipAI />} />
+          <Route path="/ai-office-hours" element={<ShipAI />} />
+          <Route path="/ship-ai" element={<Navigate to="/ai-office-hours" replace />} />
           <Route path="/ship-ai-training-program" element={<ShipAITrainingProgram />} />
           <Route path="/ai-executive-strategy-program" element={<AiExecutiveStrategy />} />
           <Route path="/ai-playbook-executives" element={<AiPlaybookExecutives />} />
@@ -181,7 +183,9 @@ const App = () => (
           <Route path="/ai-program" element={<AIProgram />} />
           <Route path="/ai-first-program" element={<AIFirstProgram />} />
           <Route path="/ai-sos" element={<AISOS />} />
-          <Route path="/ai-sos-workspace" element={<AiSOSWorkspace />} />
+          <Route path="/claude-masterclass" element={<ClaudeMasterclass />} />
+          <Route path="/copilot-cowork" element={<CopilotCowork />} />
+          <Route path="/ai-sos-workspace" element={<Navigate to="/claude-masterclass" replace />} />
           <Route path="/office-hours-demo" element={<OfficeHoursDemo />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/healthcare-ai-case-study" element={<HealthcareAICaseStudy />} />

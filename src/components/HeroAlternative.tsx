@@ -1,34 +1,10 @@
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-import { ArrowRight, Check, Star, Sparkles, Lock } from "lucide-react";
-import { trackClick, trackConversion } from "@/utils/posthog";
-import { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { trackClick } from "@/utils/posthog";
 
 const HeroAlternative = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Track Kit form submissions via postMessage from the embedded iframe.
-  // The iframe sidesteps the script-embed's currentScript/portal issues that
-  // were preventing the form from rendering inside the Radix Dialog portal.
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      if (event.origin === 'https://techleaders.kit.com' &&
-          event.data?.event === 'form_submitted') {
-        trackConversion('Fortune 100 Library Signup', {
-          source: 'kit_form',
-          location: 'hero_modal'
-        });
-      }
-    };
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, []);
+  const navigate = useNavigate();
 
   return (
     <section className="relative overflow-hidden">
@@ -49,96 +25,47 @@ const HeroAlternative = () => {
       <div className="relative z-10 min-h-[80vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto text-center">
-          {/* Tagline */}
-          <div className="inline-flex items-center bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm border border-orange-500/30 text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
-            <span>Free Prompt Library</span>
-          </div>
 
-          {/* Main Headline */}
-          <h1 className="font-bold leading-tight mb-8 animate-fade-in">
-            <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">Get the Same AI Prompts</span>
-            <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">Fortune 100 Leaders Use</span>
-            <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-4">Copy, paste & edit in 60 seconds — no developer required.</span>
-          </h1>
-
-          {/* Bullet Points */}
-          <ul className="space-y-4 mb-10 max-w-xl mx-auto text-left">
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Use <span className="font-semibold text-foreground">Fortune 100 prompts</span> for real business outcomes (not toy examples)</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90">Build <span className="font-semibold text-foreground">agentic AI workflows in minutes</span> — no developer resources required</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
-              <span className="text-lg text-foreground/90"><span className="font-bold text-orange-400">BONUS:</span> Free <span className="font-semibold text-foreground">30-minute AI Workflow Audit</span> — we'll map your highest-leverage workflow</span>
-            </li>
-          </ul>
-
-          {/* CTA Button */}
-          <Button
-            size="lg"
-            className="text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105 mb-8"
-            onClick={() => {
-              setIsOpen(true);
-              trackClick('Hero - Get Library', {
-                location: 'hero_main',
-                action: 'open_library_modal'
-              });
-            }}
-          >
-            Get the Library
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground mb-10">
-            <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>60-second setup</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>Instant download</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Check className="w-4 h-4 text-muted-foreground" />
-              <span>No developer needed</span>
-            </div>
-          </div>
-
-          {/* Social Proof */}
-          <div className="flex items-center justify-center gap-4">
-            {/* Avatar Stack */}
-            <div className="flex -space-x-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                JK
-              </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                SM
-              </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                RC
-              </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 border-2 border-background flex items-center justify-center text-white text-xs font-bold">
-                TL
-              </div>
+            {/* Label */}
+            <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fade-in">
+              <span>AI Training for Whole Orgs</span>
             </div>
 
-            {/* Stars and Count */}
-            <div>
-              <div className="flex items-center gap-1 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-orange-500 text-orange-500" />
-                ))}
-              </div>
-              <p className="text-muted-foreground text-sm">
-                Join <span className="text-foreground font-semibold">10k+</span> tech leaders
-              </p>
+            {/* Main Headline */}
+            <h1 className="font-bold leading-tight mb-8 animate-fade-in">
+              <span className="block text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                You set the AI direction.
+              </span>
+              <span className="block text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mt-2">
+                We get your team actually using it.
+              </span>
+              <span className="block text-xl sm:text-2xl text-foreground/70 font-medium mt-4">
+                Live executive training plus hands-on coaching for the people who build, so adoption sticks past the kickoff.
+              </span>
+            </h1>
+
+            {/* Primary CTA */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Button
+                size="lg"
+                className="text-lg px-10 py-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105"
+                onClick={() => {
+                  trackClick('Hero - Book Strategy Session', {
+                    location: 'hero_main',
+                    destination: '/ai-call'
+                  });
+                  navigate('/ai-call');
+                }}
+              >
+                Book a Strategy Session
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
-            </div>
+
+            {/* Trust line */}
+            <p className="text-sm text-muted-foreground">
+              8,000+ professionals trained across 2000+ organizations.
+            </p>
           </div>
         </div>
       </div>
@@ -199,63 +126,6 @@ const HeroAlternative = () => {
         </div>
         <p className="text-center text-sm text-background mt-4">and many other startups, SMBs, and non-profits</p>
       </div>
-
-      {/* Library Signup Dialog (Kit form fb2b5743bc — same UID as /library) */}
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-lg p-0 gap-0 overflow-hidden">
-          {/* Gradient header */}
-          <DialogHeader className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 px-6 pt-6 pb-5 space-y-0 text-left">
-            <div className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 self-start w-fit">
-              <Sparkles className="w-3 h-3" />
-              Free — Instant Access
-            </div>
-            <DialogTitle className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-              The Fortune 100 AI Prompt Library™
-            </DialogTitle>
-            <DialogDescription className="text-white/85 mt-2 text-sm sm:text-base leading-relaxed">
-              Copy-paste AI workflows used by leaders at Netflix, Amazon, Salesforce & more.
-            </DialogDescription>
-          </DialogHeader>
-
-          {/* Value bullets */}
-          <ul className="px-6 pt-4 pb-2 space-y-2.5">
-            <li className="flex items-start gap-2.5 text-sm">
-              <Check className="w-5 h-5 text-green-500 mt-0 shrink-0" />
-              <span className="text-foreground/90">Save <strong className="text-foreground">5–10 hours/week</strong> with proven AI workflows</span>
-            </li>
-            <li className="flex items-start gap-2.5 text-sm">
-              <Check className="w-5 h-5 text-green-500 mt-0 shrink-0" />
-              <span className="text-foreground/90"><strong className="text-foreground">Real Fortune 100 prompts</strong> — not toy examples</span>
-            </li>
-            <li className="flex items-start gap-2.5 text-sm">
-              <Check className="w-5 h-5 text-green-500 mt-0 shrink-0" />
-              <span className="text-foreground/90">Works with <strong className="text-foreground">Claude, ChatGPT & Gemini</strong> — no developer needed</span>
-            </li>
-          </ul>
-
-          {/* Kit form */}
-          <iframe
-            src="https://techleaders.kit.com/fb2b5743bc"
-            className="w-full h-[260px] border-0"
-            title="Fortune 100 AI Skills Library signup"
-          />
-
-          {/* Trust footer */}
-          <div className="px-6 pb-5 pt-1 flex flex-col sm:flex-row items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-orange-500 text-orange-500" />
-              ))}
-              <span className="ml-1">Join <strong className="text-foreground">10k+</strong> tech leaders</span>
-            </div>
-            <span className="hidden sm:inline text-muted-foreground/50">•</span>
-            <div className="flex items-center gap-1">
-              <Lock className="w-3 h-3" />
-              <span>No spam. Unsubscribe anytime.</span>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

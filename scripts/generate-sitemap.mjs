@@ -32,6 +32,8 @@ const routes = [
   { path: '/s2p-elevate-ai-guide', priority: 0.7, changefreq: 'monthly' },
   { path: '/refer', priority: 0.6, changefreq: 'monthly' },
   { path: '/first-time-founder', priority: 0.7, changefreq: 'monthly' },
+  { path: '/claude-masterclass', priority: 0.8, changefreq: 'monthly' },
+  { path: '/copilot-cowork', priority: 0.8, changefreq: 'monthly' },
   { path: '/privacy-policy', priority: 0.3, changefreq: 'yearly' },
   { path: '/call-confirmed', priority: 0.3, changefreq: 'monthly' },
 ];

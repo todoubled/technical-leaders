@@ -50,6 +50,32 @@
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_MUER631cGWIajjaJy9iInHRvhJJVb4lPz8OTpjosKpk', {
         api_host: 'https://us.i.posthog.com',
+        // Drop ONLY three known browser/extension noise signatures so they stop
+        // burying real errors on the error board. This is intentionally narrow:
+        // it returns every other event (including all real $exception events)
+        // unchanged. Do NOT broaden this to suppress exceptions generally.
+        //   1. "Object Not Found Matching Id:..., MethodName:update" — injected by
+        //      Microsoft Outlook SafeLinks / Office page-rewriting scripts, not our code.
+        //   2. "ResizeObserver loop completed with undelivered notifications." —
+        //      benign browser warning triggered by Radix/shadcn layout measurement.
+        //   3. "Script error." — opaque cross-origin error from third-party embeds
+        //      (Calendly/ConvertKit/LinkedIn/etc.) with no actionable detail.
+        before_send: function (event) {
+            if (event && event.event === '$exception') {
+                var props = event.properties || {};
+                var list = props['$exception_list'] || [];
+                var message = (list[0] && list[0].value) || props['$exception_message'] || '';
+                if (typeof message === 'string') {
+                    var isObjectNotFoundNoise = message.indexOf('Object Not Found Matching Id:') !== -1 && message.indexOf('MethodName:update') !== -1;
+                    var isResizeObserverNoise = message.indexOf('ResizeObserver loop completed with undelivered notifications.') !== -1;
+                    var isBareScriptError = message === 'Script error.' || message === 'Script error';
+                    if (isObjectNotFoundNoise || isResizeObserverNoise || isBareScriptError) {
+                        return null; // drop this noise event
+                    }
+                }
+            }
+            return event; // keep everything else, unchanged
+        },
         person_profiles: 'always', // Creates profiles when users are identified with email
         capture_pageview: false, // Disable automatic page views - we handle this manually in React
         capture_pageleave: true, // Track when users leave pages
