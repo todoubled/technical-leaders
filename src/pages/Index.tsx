@@ -4,17 +4,20 @@ import HeroAlternative from "@/components/HeroAlternative";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
-  Brain,
   Award,
-  Sparkles
+  Users,
+  GraduationCap,
+  MessageSquare,
 } from "lucide-react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-import { trackClick, trackEvent } from "@/utils/posthog";
+import { trackClick } from "@/utils/posthog";
 import { useTrackScrollDepth } from "@/hooks/use-posthog";
 
 const Index = () => {
   useTrackScrollDepth('Home');
+  const navigate = useNavigate();
 
   // Load testimonial.to embed script
   useEffect(() => {
@@ -41,29 +44,137 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Readiness Assessment | Technical Leaders"
-        description="Take the free 2-minute assessment to discover your Skill Maturity Level and get a personalized roadmap for AI-first operations. Join 6500+ tech leaders."
-        keywords={['AI readiness assessment', 'skill maturity', 'AI-first operations', 'AI SOS', 'tech leadership', 'AI transformation']}
+        title="Practical AI Training & Adoption | Technical Leaders"
+        description="Practical AI training and adoption programs for leaders and their teams. 250+ organizations trained. Book a strategy session to get started."
+        keywords={['AI training', 'AI adoption', 'AI for leaders', 'executive AI training', 'AI program', 'tech leadership', 'AI transformation']}
       />
       <Navigation />
 
       {/* Hero Section */}
       <HeroAlternative />
 
-      {/* Testimonials Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      {/* Role Cards Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Find the right program for you
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We run three programs depending on what you need to do.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* For Leaders card */}
+            <button
+              className="group text-left bg-card border border-border rounded-xl p-8 hover:shadow-lg hover:border-blue-500/40 transition-all"
+              onClick={() => {
+                trackClick('Home - Role Card: For Leaders', {
+                  location: 'role_cards_section',
+                  destination: '/ai-for-leaders'
+                });
+                navigate('/ai-for-leaders');
+              }}
+            >
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center mb-5">
+                <GraduationCap className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                For Leaders
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                8 hours of live intensive AI training for executives who need to build confidence, drive adoption, and make real decisions about AI at their org.
+              </p>
+              <span className="inline-flex items-center text-sm font-medium text-blue-500 group-hover:text-blue-400 transition-colors">
+                Learn more <ArrowRight className="ml-1.5 w-4 h-4" />
+              </span>
+            </button>
+
+            {/* For ICs / builders card */}
+            <button
+              className="group text-left bg-card border border-border rounded-xl p-8 hover:shadow-lg hover:border-orange-500/40 transition-all"
+              onClick={() => {
+                trackClick('Home - Role Card: For ICs and Builders', {
+                  location: 'role_cards_section',
+                  destination: '/ai-program'
+                });
+                navigate('/ai-program');
+              }}
+            >
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center mb-5">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                For ICs, builders &amp; operators
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                Ship your first production AI agent in 30 days. Hands-on coaching and a proven system for founders, operators, and non-technical leaders who want working results fast.
+              </p>
+              <span className="inline-flex items-center text-sm font-medium text-orange-500 group-hover:text-orange-400 transition-colors">
+                Learn more <ArrowRight className="ml-1.5 w-4 h-4" />
+              </span>
+            </button>
+
+            {/* Office Hours card */}
+            <button
+              className="group text-left bg-card border border-border rounded-xl p-8 hover:shadow-lg hover:border-purple-500/40 transition-all"
+              onClick={() => {
+                trackClick('Home - Role Card: Office Hours', {
+                  location: 'role_cards_section',
+                  destination: '/ship-ai'
+                });
+                navigate('/ship-ai');
+              }}
+            >
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-5">
+                <MessageSquare className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Office Hours
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                Weekly live training and community membership. Stay current on the latest AI tools and workflows with hands-on sessions and a community of builders.
+              </p>
+              <span className="inline-flex items-center text-sm font-medium text-purple-500 group-hover:text-purple-400 transition-colors">
+                Learn more <ArrowRight className="ml-1.5 w-4 h-4" />
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Proof Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+
+          {/* Stats row */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20">
+            <div className="text-center">
+              <p className="text-4xl font-bold text-foreground mb-1">2000+</p>
+              <p className="text-sm text-muted-foreground">organizations trained</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-foreground mb-1">8,000+</p>
+              <p className="text-sm text-muted-foreground">students and professionals trained</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-foreground mb-1">12,000+</p>
+              <p className="text-sm text-muted-foreground">community members</p>
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Award className="w-4 h-4" />
               <span>SUCCESS STORIES</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Real Results from
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600"> Real Leaders</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              What participants say
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what tech leaders are saying.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real feedback from leaders and teams who have been through our programs.
             </p>
           </div>
 
@@ -80,48 +191,29 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Free Workshop CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950/30 dark:via-indigo-950/30 dark:to-purple-950/30 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-slate-900/[0.02] dark:bg-grid-white/[0.02] bg-[size:40px_40px]" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl" />
-
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span>FREE WEEKLY WORKSHOP</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-6">
-            Go Beyond ChatGPT with
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> AI Workflows</span>
+      {/* Bottom CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/20">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
+            Not sure where to start?
           </h2>
-
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Learn the exact AI workflows we use with venture-backed teams to build MVPs in days, not months. Live demos, Q&A, and actionable takeaways.
+          <p className="text-lg text-muted-foreground mb-8">
+            Book a 30-minute strategy session. We will look at where your team is today and tell you which program makes sense.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <Button
-              size="lg"
-              className="text-lg px-8 py-6 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105"
-              onClick={() => {
-                trackClick('Home - Free Workshop CTA', {
-                  location: 'free_workshop_section',
-                  destination: '/ai-workflows'
-                });
-                window.location.href = '/ai-workflows';
-              }}
-            >
-              <Brain className="w-5 h-5 mr-2" />
-              Join Free Workshop
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-
-          <p className="text-sm text-muted-foreground">
-            New session every week
-          </p>
+          <Button
+            size="lg"
+            className="text-lg px-10 py-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105"
+            onClick={() => {
+              trackClick('Home - Bottom CTA: Book Strategy Session', {
+                location: 'bottom_cta_section',
+                destination: '/ai-call'
+              });
+              navigate('/ai-call');
+            }}
+          >
+            Book a Strategy Session
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </section>
 
