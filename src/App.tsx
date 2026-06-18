@@ -107,15 +107,16 @@ const PageViewTracker = () => {
   return null;
 };
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <PageViewTracker />
-          <Routes>
+// Providers + route table, WITHOUT a router. Shared by the client entry (wrapped
+// in BrowserRouter, below) and the SSG prerender entry (wrapped in StaticRouter in
+// src/entry-server.tsx), so both render the exact same tree.
+export const AppRoutes = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <PageViewTracker />
+      <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/call" element={<Call />} />
           <Route path="/ai-call" element={<AICall />} />
@@ -211,10 +212,17 @@ const App = () => (
           <Route path="/tokens" element={<Tokens />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      </Routes>
     </TooltipProvider>
   </QueryClientProvider>
+);
+
+// Client app: HelmetProvider + BrowserRouter around the shared route table.
+const App = () => (
+  <HelmetProvider>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   </HelmetProvider>
 );
 

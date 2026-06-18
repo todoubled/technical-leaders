@@ -31,7 +31,11 @@ const SEO = ({
 }: SEOProps) => {
   const siteTitle = 'Technical Leaders';
   const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
-  const canonicalUrl = url || window.location.href;
+  // Prefer an explicit `url`. Fall back to window.location.href in the browser,
+  // but guard `window` so this component can render during static prerendering
+  // (SSR), where `window` is undefined. Prerendered pages should pass `url`.
+  const canonicalUrl =
+    url || (typeof window !== 'undefined' ? window.location.href : undefined);
   
   // Base structured data for organization
   const organizationSchema = {
@@ -68,19 +72,20 @@ const SEO = ({
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content="Technical Leaders" />
       
-      {/* Article specific Open Graph tags */}
-      {type === 'article' && (
-        <>
-          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-          {author && <meta property="article:author" content={author} />}
-          {section && <meta property="article:section" content={section} />}
-          {tags.map((tag, index) => (
-            <meta key={index} property="article:tag" content={tag} />
-          ))}
-        </>
-      )}
-      
+      {/* Article specific Open Graph tags.
+          These are direct children of <Helmet> (not wrapped in a fragment) because
+          react-helmet-async's server-side head collector does not recurse into
+          nested fragments, so a fragment here would silently drop these tags from
+          prerendered HTML. The rendered tags and conditions are otherwise identical
+          to before, so browser output is unchanged. */}
+      {type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {type === 'article' && author && <meta property="article:author" content={author} />}
+      {type === 'article' && section && <meta property="article:section" content={section} />}
+      {type === 'article' && tags.map((tag, index) => (
+        <meta key={`article-tag-${index}`} property="article:tag" content={tag} />
+      ))}
+
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={canonicalUrl} />

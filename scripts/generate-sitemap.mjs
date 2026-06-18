@@ -5,20 +5,6 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load environment variables manually
-const loadEnv = () => {
-  try {
-    const envPath = path.join(__dirname, '..', '.env');
-    const envContent = fs.readFileSync(envPath, 'utf-8');
-    const apiKeyMatch = envContent.match(/VITE_SEOBOT_API_KEY=(.+)/);
-    return apiKeyMatch ? apiKeyMatch[1].trim() : null;
-  } catch (error) {
-    return null;
-  }
-};
-
-const SEOBOT_API_KEY = loadEnv();
-
 // Define your routes with their priorities and change frequencies
 const routes = [
   { path: '/', priority: 1.0, changefreq: 'daily' },
@@ -38,43 +24,17 @@ const routes = [
   { path: '/call-confirmed', priority: 0.3, changefreq: 'monthly' },
 ];
 
-// Fetch articles from SEObot
+// Read articles from the committed snapshot (src/data/articles/index.json).
+// The build no longer calls the SEObot API — the snapshot is the single source of
+// truth. Refresh it with `npm run fetch-articles`.
 const fetchArticles = async () => {
   try {
-    if (!SEOBOT_API_KEY) {
-      console.warn('⚠️  VITE_SEOBOT_API_KEY not found, skipping article routes');
-      return [];
-    }
-
-    // Dynamically import seobot
-    const { BlogClient } = await import('seobot');
-    const client = new BlogClient(SEOBOT_API_KEY);
-
-    console.log('📥 Fetching articles from SEObot...');
-
-    // Fetch multiple pages to get all articles
-    const allArticles = [];
-    let page = 0;
-    let hasMore = true;
-
-    while (hasMore && page < 10) { // Limit to 10 pages for safety
-      const response = await client.getArticles(page, 100);
-      const articles = Array.isArray(response) ? response : response.articles || [];
-
-      if (articles.length > 0) {
-        allArticles.push(...articles);
-        console.log(`   Page ${page + 1}: ${articles.length} articles`);
-        page++;
-        hasMore = articles.length === 100; // If we got 100, there might be more
-      } else {
-        hasMore = false;
-      }
-    }
-
-    console.log(`✅ Fetched ${allArticles.length} articles total`);
-    return allArticles;
+    const indexPath = path.join(__dirname, '..', 'src', 'data', 'articles', 'index.json');
+    const articles = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+    console.log(`📄 Loaded ${articles.length} articles from snapshot`);
+    return articles;
   } catch (error) {
-    console.error('❌ Error fetching articles:', error.message);
+    console.warn('⚠️  Could not read article snapshot, skipping article routes:', error.message);
     return [];
   }
 };

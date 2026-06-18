@@ -10,7 +10,8 @@ import { Separator } from '../components/ui/separator';
 import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Link as LinkIcon } from 'lucide-react';
 import { Article } from '../types/article';
 import { useToast } from '../components/ui/use-toast';
-import { seobotClient, articleUtils } from '../lib/seobot';
+import { articleUtils } from '../lib/seobot';
+import { getArticleSync, loadArticle, hasArticle, getRelatedArticles } from '../lib/articles';
 import SEO from '../components/SEO';
 import ArticleContent from '../components/ArticleContent';
 import TableOfContents from '../components/TableOfContents';
@@ -21,165 +22,56 @@ import { useScrollTracking } from '../hooks/useScrollTracking';
 import { trackEvent } from '../utils/posthog';
 import { toISODateTime } from '../utils/seo-helpers';
 
-// Mock data - replace with SEObot API call
-const mockArticle: Article = {
-  id: '1',
-  slug: 'scaling-engineering-teams-lessons-learned',
-  title: 'Scaling Engineering Teams: Lessons Learned from 10x Growth',
-  description: 'Practical insights on building and scaling high-performing engineering teams from seed to series C.',
-  content: `
-# Scaling Engineering Teams: Lessons Learned from 10x Growth
-
-When I joined my last startup as VP of Engineering, we had 8 engineers. Two years later, we had 85. Here's what I learned about scaling engineering teams effectively while maintaining culture and velocity.
-
-## The Challenge of Hypergrowth
-
-Scaling an engineering team isn't just about hiring more people. It's about evolving your processes, culture, and technology choices to support a larger organization while maintaining the agility that made you successful in the first place.
-
-### Key Challenges We Faced:
-- **Communication overhead** increased exponentially
-- **Decision-making** became slower and more complex
-- **Technical debt** accumulated faster than we could address it
-- **Culture dilution** threatened our core values
-- **Onboarding efficiency** became critical to productivity
-
-## Lessons Learned
-
-### 1. Hire for Culture Add, Not Culture Fit
-
-Instead of looking for people who fit our existing culture, we looked for those who could add to it. This approach brought diverse perspectives and helped us avoid groupthink.
-
-**What worked:**
-- Defined core values but left room for interpretation
-- Celebrated different working styles and backgrounds
-- Created inclusive interview processes
-
-### 2. Invest in Developer Experience Early
-
-As the team grew, small friction points became major productivity killers. We invested heavily in:
-- **CI/CD pipelines** that could handle increased load
-- **Development environments** that could be spun up in minutes
-- **Documentation** that was searchable and up-to-date
-- **Internal tools** that automated repetitive tasks
-
-### 3. Structure Teams Around Business Domains
-
-We moved from functional teams (frontend, backend, etc.) to cross-functional teams organized around business domains. This:
-- Increased ownership and accountability
-- Reduced dependencies between teams
-- Improved time-to-market for features
-- Made it easier to scale horizontally
-
-### 4. Over-Communicate Everything
-
-What felt like over-communication at 8 people was barely adequate at 85. We implemented:
-- **Weekly all-hands** for engineering updates
-- **Written culture** for important decisions
-- **Public roadmaps** visible to everyone
-- **Regular 1-on-1s** at all levels
-
-### 5. Build Leadership from Within
-
-Promoting from within helped maintain culture and provided growth paths for engineers. We:
-- Created clear career ladders for both IC and management tracks
-- Invested in leadership training and coaching
-- Gave people stretch opportunities before formal promotions
-- Celebrated both technical and people leadership
-
-## The Results
-
-After two years of hypergrowth:
-- **Deployment frequency** increased 3x despite team size increasing 10x
-- **Employee satisfaction** remained above 85%
-- **Time to productivity** for new hires decreased from 3 months to 6 weeks
-- **Technical debt** remained manageable through dedicated allocation
-
-## Key Takeaways
-
-1. **Culture is not static** - it should evolve with your team
-2. **Process is necessary** but should enable, not constrain
-3. **Communication can't be an afterthought** - it needs intentional design
-4. **Leadership development** is as important as technical skills
-5. **Measure what matters** - both output and team health
-
-Scaling engineering teams is one of the hardest challenges in tech leadership. But with the right approach, you can grow rapidly while building something even better than what you started with.
-
-*What's your experience with scaling engineering teams? I'd love to hear your stories and lessons learned.*
-  `,
-  author: {
-    name: 'Todd Kerpelman',
-    role: 'CTO Coach',
-    avatar: 'TK'
-  },
-  publishedAt: '2024-01-15',
-  updatedAt: '2024-01-16',
-  category: 'Leadership',
-  tags: ['Team Building', 'Scaling', 'Management', 'Engineering Culture'],
-  featuredImage: '/placeholder.svg',
-  readingTime: 8,
-  seo: {
-    metaTitle: 'Scaling Engineering Teams: Lessons from 10x Growth | Technical Leaders',
-    metaDescription: 'Learn practical strategies for scaling engineering teams from 8 to 85 engineers while maintaining culture and velocity.',
-    keywords: ['engineering team scaling', 'tech leadership', 'team growth', 'engineering management']
-  }
-};
-
-// Related articles mock data
-const relatedArticles: Article[] = [
-  {
-    id: '2',
-    slug: 'building-high-performance-engineering-culture',
-    title: 'Building a High-Performance Engineering Culture',
-    description: 'How to create and maintain a culture of excellence in your engineering organization.',
-    content: '',
-    author: { name: 'Sara Mazer', role: 'Field CTO', avatar: 'SM' },
-    publishedAt: '2024-01-12',
-    category: 'Leadership',
-    tags: ['Culture', 'Team Building'],
-    readingTime: 10
-  },
-  {
-    id: '3',
-    slug: 'technical-debt-strategies-growing-teams',
-    title: 'Managing Technical Debt in Growing Teams',
-    description: 'Strategies for addressing technical debt while maintaining feature velocity.',
-    content: '',
-    author: { name: 'Miguel Suárez', role: 'Technical Director', avatar: 'MS' },
-    publishedAt: '2024-01-08',
-    category: 'Technical Strategy',
-    tags: ['Technical Debt', 'Architecture'],
-    readingTime: 12
-  }
-];
-
 export default function ArticlePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [article, setArticle] = useState<Article | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Resolve the article from the committed snapshot synchronously when its body is
+  // already available — i.e. on a prerendered /post/:slug page (the build inlines
+  // the body) or after it's been loaded this session. This makes the full content
+  // present on first paint and lets hydration match the prerendered markup.
+  const [article, setArticle] = useState<Article | null>(() =>
+    slug ? getArticleSync(slug) : null
+  );
+  // `null` until we know: only show "not found" after a load attempt resolves.
+  const [notFound, setNotFound] = useState(false);
 
   // Track scroll progress for dynamic CTAs
   const { scrollProgress, scrollDepth, hasReachedMidpoint, hasReachedEnd, timeOnPage, maxScrollDepth } = useScrollTracking();
 
+  // Read the article from the local snapshot (replaces the runtime SEObot call).
+  // Synchronous when the body is already available; otherwise lazy-load the
+  // code-split body (client-side navigation between articles).
   useEffect(() => {
-    const fetchArticle = async () => {
-      setLoading(true);
-      try {
-        if (slug) {
-          const articleData = await seobotClient.getArticle(slug);
-          setArticle(articleData);
-        }
-      } catch (error) {
-        console.error('Error fetching article:', error);
-        setArticle(null);
-      } finally {
-        setLoading(false);
-      }
+    setNotFound(false);
+    if (!slug) {
+      setArticle(null);
+      return;
+    }
+    const sync = getArticleSync(slug);
+    if (sync) {
+      setArticle(sync);
+      return;
+    }
+    if (!hasArticle(slug)) {
+      setArticle(null);
+      setNotFound(true);
+      return;
+    }
+    let active = true;
+    setArticle(null);
+    loadArticle(slug).then((loaded) => {
+      if (!active) return;
+      setArticle(loaded);
+      setNotFound(!loaded);
+    });
+    return () => {
+      active = false;
     };
-
-    fetchArticle();
   }, [slug]);
+
+  // Related articles, derived from the snapshot (same category first).
+  const relatedArticles = article ? getRelatedArticles(article, 3) : [];
 
   // Track scroll milestones for analytics
   useEffect(() => {
@@ -230,19 +122,7 @@ export default function ArticlePage() {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Navigation />
-        <div className="flex items-center justify-center py-32">
-          <p className="text-muted-foreground">Loading article...</p>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (!article) {
+  if (!article && notFound) {
     return (
       <div className="min-h-screen bg-background">
         <Navigation />
@@ -257,6 +137,18 @@ export default function ArticlePage() {
     );
   }
 
+  if (!article) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <div className="flex items-center justify-center py-32">
+          <p className="text-muted-foreground">Loading article...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <ReadingProgress />
@@ -265,6 +157,7 @@ export default function ArticlePage() {
         description={article?.seo?.metaDescription || article?.description || 'Read this article on Technical Leaders'}
         keywords={article?.seo?.keywords || article?.tags || []}
         author={article?.author?.name}
+        url={`https://technical-leaders.com/post/${article.slug}`}
         type="article"
         publishedTime={article?.publishedAt}
         modifiedTime={article?.updatedAt}

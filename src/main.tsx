@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
@@ -16,4 +16,14 @@ window.addEventListener('vite:preloadError', () => {
   window.location.reload();
 });
 
-createRoot(document.getElementById("root")!).render(<App />);
+const rootElement = document.getElementById("root")!;
+
+// Article and /articles routes are statically prerendered (see scripts/prerender.mjs),
+// so their HTML is already in #root on load. Hydrate that markup in place instead of
+// discarding it. All other (non-prerendered) routes ship an empty #root, so we mount
+// fresh with createRoot.
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, <App />);
+} else {
+  createRoot(rootElement).render(<App />);
+}
