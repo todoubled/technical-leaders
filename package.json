@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate-sitemap && npm run build:client && npm run build:ssr && npm run prerender",
+    "build": "npm run build:ssr && npm run generate-sitemap && npm run build:client && npm run prerender",
     "build:client": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "prerender": "node scripts/prerender.mjs",

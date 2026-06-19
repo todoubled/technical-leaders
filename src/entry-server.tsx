@@ -60,3 +60,8 @@ export async function render(url: string): Promise<RenderResult> {
 // Re-export snapshot helpers so the prerender script can enumerate routes and
 // preload each article body before rendering.
 export { getAllSlugs, loadArticle } from './lib/articles';
+
+// Re-export the static route list (every real, fixed-path page) so the prerender
+// script generates exactly the routes the app actually serves — no second,
+// hand-maintained list that can drift from the route table.
+export { getStaticRoutePaths } from './routes';

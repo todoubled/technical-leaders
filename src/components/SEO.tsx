@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
+
+const SITE_ORIGIN = 'https://technical-leaders.com';
 
 interface SEOProps {
   title?: string;
@@ -30,12 +33,25 @@ const SEO = ({
   structuredData
 }: SEOProps) => {
   const siteTitle = 'Technical Leaders';
-  const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
-  // Prefer an explicit `url`. Fall back to window.location.href in the browser,
-  // but guard `window` so this component can render during static prerendering
-  // (SSR), where `window` is undefined. Prerendered pages should pass `url`.
-  const canonicalUrl =
-    url || (typeof window !== 'undefined' ? window.location.href : undefined);
+  // Append the brand suffix, but only when the title doesn't already end in the
+  // brand (some pages bake "... | Technical Leaders" or "... Tech Leaders" into
+  // their own title). This prevents doubled brands like
+  // "Foo | Technical Leaders | Technical Leaders" in the prerendered HTML.
+  const alreadyBranded = /(technical leaders|tech leaders)\s*$/i.test(title);
+  const fullTitle = alreadyBranded ? title : `${title} | ${siteTitle}`;
+  // Current route path, from the router. Works in the browser AND during static
+  // prerendering (StaticRouter), where `window` is undefined — this is what lets
+  // every prerendered page ship a correct, page-specific canonical and og:url
+  // without each page having to pass `url` by hand.
+  const { pathname } = useLocation();
+  // Canonical resolution order:
+  //   1. an explicit `url` prop (e.g. /post/:slug passes its computed URL), else
+  //   2. the site origin + the current path (stable on server and client, so no
+  //      hydration mismatch and no empty canonical in prerendered HTML).
+  // Drop a trailing slash (except for the root "/") so the canonical is stable.
+  const normalizedPath =
+    pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+  const canonicalUrl = url || `${SITE_ORIGIN}${normalizedPath}`;
   
   // Base structured data for organization
   const organizationSchema = {
