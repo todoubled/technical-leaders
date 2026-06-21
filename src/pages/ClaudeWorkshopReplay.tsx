@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
-import { Video, Download, ChevronRight } from "lucide-react";
+import { Video, Download, ChevronRight, GraduationCap, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
 import WorkshopAccessGate from "@/components/WorkshopAccessGate";
@@ -93,6 +93,32 @@ const ClaudeWorkshopReplay = () => {
                 Download Slides &amp; Templates
               </Button>
             </div>
+
+            {/* Primary next step: the complete Claude Masterclass, included with purchase */}
+            <div className="mt-10 max-w-2xl mx-auto rounded-2xl border-2 border-sky-500/40 bg-sky-500/5 p-8">
+              <div className="flex justify-center mb-4">
+                <div className="p-3 bg-sky-500/10 rounded-xl">
+                  <GraduationCap className="h-7 w-7 text-sky-500" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Your next step is ready</h3>
+              <p className="text-muted-foreground mb-6">
+                The complete Claude Masterclass is included with your purchase. It's the full step-by-step Claude guide: setup, prompts, agents, and the workflows that make Claude useful day to day.
+              </p>
+              <Button
+                size="lg"
+                className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6"
+                onClick={() => {
+                  trackEvent('Claude Masterclass CTA Clicked', {
+                    location: 'claude_workshop_replay_top'
+                  });
+                  window.location.href = "/claude-masterclass";
+                }}
+              >
+                Start the Complete Claude Masterclass
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -139,7 +165,8 @@ const ClaudeWorkshopReplay = () => {
                 <div className="pt-4">
                   <Button
                     size="lg"
-                    className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6"
+                    variant="outline"
+                    className="border-sky-500 text-sky-600 dark:text-sky-400 hover:bg-sky-500/10 text-base px-6 py-5"
                     onClick={() => {
                       trackEvent('AI Program CTA Clicked', {
                         location: 'claude_workshop_replay_bottom'
