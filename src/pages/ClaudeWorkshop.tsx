@@ -32,6 +32,7 @@ import {
   Calendar,
   Star,
   Users,
+  GraduationCap,
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { trackEvent } from "@/utils/posthog";
@@ -137,6 +138,16 @@ const ClaudeWorkshop = () => {
       value: "$497",
     },
     {
+      // Todd: name and value are a default. Adjust "The Complete Claude Masterclass"
+      // and "$297" here if you want different wording or a different price.
+      icon: GraduationCap,
+      title: "The Complete Claude Masterclass",
+      tag: "Included Guide",
+      description:
+        "The full step-by-step Claude guide: setup, prompts, agents, and the workflows that make Claude actually useful day to day. Self-paced and yours to keep. You reach it from the replay page after you confirm your email.",
+      value: "$297",
+    },
+    {
       icon: FileText,
       title: "Claude Agent Starter Templates",
       tag: "Toolkit",
@@ -177,7 +188,9 @@ const ClaudeWorkshop = () => {
     value: "$497",
   };
 
-  const totalValue = "$1,482";
+  // Sum of the marquee bonus ($497) plus every value-stack item
+  // ($497 + $297 + $197 + $97 + $147 + $47 = $1,282). Total = $1,779.
+  const totalValue = "$1,779";
 
   const faqs = [
     {
@@ -201,6 +214,10 @@ const ClaudeWorkshop = () => {
       a: "You get permanent access. Buy once, watch as many times as you want, download the templates, and come back whenever you want to build another agent.",
     },
     {
+      q: "Is the Claude Masterclass included, and where do I find it?",
+      a: "Yes, the complete Claude Masterclass is included with your purchase at no extra cost. It's the full step-by-step Claude guide: setup, prompts, agents, and the everyday workflows. After you buy, go to the replay page, confirm the email you used at checkout, and you'll find a button that takes you straight into it. Nothing extra to pay.",
+    },
+    {
       q: "What happens at the 1:1 Agent Audit with Todd?",
       a: "You bring the first agent you built during the workshop. Todd reviews it live, points out what to tighten or simplify, and helps you decide what to build next. Most people leave the call with a sharper version of their agent and a clear next step.",
     },
@@ -218,7 +235,7 @@ const ClaudeWorkshop = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="The Claude Agent Workshop Recording | Build Custom AI Workflows Without Code"
-        description="Get instant access to the Claude Agent Workshop recording, the agent starter templates, and a 1:1 strategy session with Todd. Build your first working Claude AI agent workflow without writing code. $100."
+        description="Get instant access to the Claude Agent Workshop recording, the complete Claude Masterclass, the agent starter templates, and a 1:1 strategy session with Todd. Build your first working Claude AI agent workflow without writing code. $100."
         keywords={[
           "Claude workshop recording",
           "Claude agent workshop",
@@ -235,7 +252,7 @@ const ClaudeWorkshop = () => {
           "@type": "Product",
           "name": "The Claude Agent Workshop Recording",
           "description":
-            "Permanent access to the Claude Agent Workshop recording, starter templates, cheat sheet, build examples, Q&A notes, and a 1:1 strategy session with Todd. Build a working Claude AI agent workflow without writing code.",
+            "Permanent access to the Claude Agent Workshop recording, the complete Claude Masterclass guide, starter templates, cheat sheet, build examples, Q&A notes, and a 1:1 strategy session with Todd. Build a working Claude AI agent workflow without writing code.",
           "brand": {
             "@type": "Brand",
             "name": "Technical Leaders",
@@ -287,7 +304,7 @@ const ClaudeWorkshop = () => {
           </p>
 
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Get instant access to the 90-minute workshop recording, the agent starter templates, and a 1:1 strategy session with Todd to tighten what you build.
+            Get instant access to the 90-minute workshop recording, the complete Claude Masterclass, the agent starter templates, and a 1:1 strategy session with Todd to tighten what you build.
           </p>
 
           <Button
@@ -377,7 +394,7 @@ const ClaudeWorkshop = () => {
               What's Inside the Workshop Package
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The recording, the toolkit, the notes, and a private 1:1 with Todd to tighten what you build.
+              The recording, the complete Claude Masterclass, the toolkit, the notes, and a private 1:1 with Todd to tighten what you build.
             </p>
           </div>
 
@@ -546,7 +563,7 @@ const ClaudeWorkshop = () => {
                 icon: Video,
                 title: "Confirm and Watch",
                 description:
-                  "On the replay page, enter the email you used at checkout. The video, slides, and templates unlock.",
+                  "On the replay page, enter the email you used at checkout. The video, slides, templates, and the complete Claude Masterclass unlock.",
               },
               {
                 step: 4,
@@ -602,6 +619,20 @@ const ClaudeWorkshop = () => {
                   <h3 className="text-xl font-semibold mb-2">The Workshop Recording</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     The full 90-minute build session. Todd walks through how to pick a real business task, map it to a Claude workflow, and ship a working agent without writing code. Pause it, rewatch it, build along with it.
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-primary/10 rounded-lg shrink-0">
+                  <GraduationCap className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">The Complete Claude Masterclass</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    The full step-by-step Claude guide, included with your purchase. It covers setup, the prompts that work, how to build agents, and the everyday workflows that make Claude useful. Self-paced and yours to keep. You open it from the replay page once you confirm the email you bought with.
                   </p>
                 </div>
               </div>
