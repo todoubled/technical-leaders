@@ -165,6 +165,7 @@ interface Step {
   title: string;
   description: string;
   whatThisStepDoes: string;
+  image?: { src: string; alt: string; caption?: string };
   actionSteps: ActionStep[];
   table?: { headers: string[]; rows: string[][] };
   codeBlock?: { caption?: string; code: string };
@@ -225,6 +226,10 @@ const MODULES: Module[] = [
         description: "Learn the three parts of the interface you will use most.",
         whatThisStepDoes:
           "The screen has a few simple parts, and knowing them removes most of the early confusion. The main area is where the conversation happens. The sidebar on the left holds your past conversations so you can return to them. A \"new chat\" button starts a fresh, blank conversation with no earlier context carried over.",
+        image: {
+          src: "/screenshots/masterclass/02-chat-tour.png",
+          alt: "The Claude chat home screen showing the sidebar on the left, the message box, and the model picker."
+        },
         actionSteps: [
           "Find the large text box. This is where you type. Press Enter to send.",
           "Find the sidebar on the left. Each line there is a past conversation. Click one to reopen it.",
@@ -239,6 +244,10 @@ const MODULES: Module[] = [
         description: "Three habits that turn vague replies into useful ones.",
         whatThisStepDoes:
           "A prompt is just the message you send Claude. The quality of the answer follows the quality of the ask. Three things do most of the work: say clearly what you want, give the background Claude cannot see, and show an example of the result you have in mind. Without context, Claude has to guess. With it, the reply lands much closer to what you needed.",
+        image: {
+          src: "/screenshots/masterclass/03-good-prompt.png",
+          alt: "A structured prompt in the chat box with a clear ask, context, and example, alongside Claude's drafted reply."
+        },
         actionSteps: [
           "State the task plainly. \"Write a thank-you email to a client\" beats \"help with email.\"",
           "Add the context Claude lacks. Who is the client, what are you thanking them for, what tone fits.",
@@ -261,6 +270,10 @@ Here is an email whose style I like, please match it:
         description: "Upload a document or photo and have Claude work from it.",
         whatThisStepDoes:
           "You are not limited to typing. You can attach files (a PDF, a spreadsheet, a Word document) and images (a screenshot, a photo of a page) and ask Claude questions about what is inside. This is how you get a summary of a long report, a plain explanation of a contract, or the numbers pulled out of a photographed receipt.",
+        image: {
+          src: "/screenshots/masterclass/04-share-files.png",
+          alt: "The plus attach menu open in the chat box, showing options to add files and photos, take a screenshot, and use Skills and Connectors."
+        },
         actionSteps: [
           "Click the attachment icon (a paperclip or plus) near the text box.",
           "Choose a file or image from your computer.",
@@ -275,6 +288,10 @@ Here is an email whose style I like, please match it:
         description: "When Claude builds something, it opens in a panel beside the chat.",
         whatThisStepDoes:
           "An Artifact is a workspace that appears next to the conversation when Claude makes something substantial: a document, a table, a checklist, or a small interactive app. Instead of the result scrolling away in the chat, it sits in its own panel where you can read it, copy it, and ask for changes that update it in place. Think of the chat as the discussion and the Artifact as the thing you are actually producing.",
+        image: {
+          src: "/screenshots/masterclass/05-artifacts.png",
+          alt: "The Artifacts library with a New artifact button and a list of saved artifacts."
+        },
         actionSteps: [
           "Ask for something concrete, like \"Make a one-page packing checklist for a winter trip.\"",
           "Watch for a panel to open on the right. That is the Artifact.",
@@ -289,6 +306,10 @@ Here is an email whose style I like, please match it:
         description: "A reusable space that remembers your context and preferences.",
         whatThisStepDoes:
           "A Project (available on Pro) is a folder for related conversations. You can add reference files once and write custom instructions, which are standing notes about who you are and how you like answers. Every chat inside that Project starts already knowing them, so you stop re-explaining yourself. A freelancer might keep a \"Client Work\" Project with their bios, rates, and preferred tone loaded in.",
+        image: {
+          src: "/screenshots/masterclass/06-project-setup.png",
+          alt: "The Projects gallery with a New project button and existing project tiles."
+        },
         actionSteps: [
           "In the sidebar, find Projects and click \"New Project.\" Give it a name.",
           "Add knowledge by uploading a few reference files (a style guide, past examples, key facts).",
@@ -310,6 +331,10 @@ Always suggest one seasonal item to feature.`
         description: "Paste one ready-made instruction that makes Claude pick the right thinking method.",
         whatThisStepDoes:
           "Custom instructions do not have to be about your bio and tone. They can also tell Claude how to think. The Adaptive Reasoning Protocol below is a single instruction you paste once that teaches Claude to size up each request and switch methods automatically: it breaks problems into small, checkable pieces when you ask it to solve or debug, it explains things plainly like a patient teacher when you ask it to learn or understand, and it does both in order when a task needs both. You do not have to remember which mode to ask for; the instruction handles that for you.",
+        image: {
+          src: "/screenshots/masterclass/07-adaptive-reasoning.png",
+          alt: "The Settings Instructions for Claude field with the Adaptive Reasoning Protocol pasted in."
+        },
         actionSteps: [
           "Open the custom instructions area, either in a Project (from the previous step) or in your account's settings.",
           "Copy the Adaptive Reasoning Protocol below exactly as written and paste it in.",
@@ -346,6 +371,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "What Claude remembers between chats, and how to revisit past work.",
         whatThisStepDoes:
           "Two different things are easy to mix up. History is the list of your past conversations in the sidebar, which you can reopen anytime. Memory is a newer ability where Claude can carry helpful details forward across chats so you repeat yourself less. History is always there. Memory you can review and control in settings, which the next step covers.",
+        image: {
+          src: "/screenshots/masterclass/08-memory-history.png",
+          alt: "The Settings Capabilities Memory panel with controls to search and reference past chats and generate memory."
+        },
         actionSteps: [
           "Scroll the sidebar to see your history. Click any conversation to continue it.",
           "Use the search box (if shown) to find an old chat by a word you remember.",
@@ -360,6 +389,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Decide what is kept, what trains models, and what you share.",
         whatThisStepDoes:
           "You control a few important switches. You can delete conversations from your history. You can choose whether your chats are used to improve Claude's models through a training setting. And it is on you to decide what is safe to paste in. These choices are yours to make, and knowing where they live matters more than any single default.",
+        image: {
+          src: "/screenshots/masterclass/09-privacy.png",
+          alt: "The Settings Privacy panel with the model training toggle, export, shared chats, and memory controls."
+        },
         actionSteps: [
           "Open Settings, usually under your name or initials in a corner.",
           "Find the privacy or data controls. Review the training toggle and set it to your preference.",
@@ -416,6 +449,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Add it from the Chrome Web Store, on a paid plan.",
         whatThisStepDoes:
           "Claude for Chrome is a Chrome extension, so you add it the same way you add any extension, from the Chrome Web Store. Two things to know before you start. It runs in Google Chrome only, not in other browsers or on phones. And it is a beta feature for paid plans (Pro, Max, Team, or Enterprise), so it is not available on the free plan. If you are on Free, you would upgrade first. None of this requires any setup beyond a normal browser extension install.",
+        image: {
+          src: "/screenshots/masterclass/11-install-extension.png",
+          alt: "The Chrome Web Store listing for the Claude extension by Anthropic with an Add to Chrome button."
+        },
         actionSteps: [
           "Confirm you are using Google Chrome on a computer. The extension does not run in other browsers or on mobile.",
           "Confirm you are on a paid Claude plan. Browser use is in beta and not part of the free plan.",
@@ -447,6 +484,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Claude works on a website only after you allow that site.",
         whatThisStepDoes:
           "This is the control that keeps browser use in your hands. Claude cannot act on a website until you approve that site, and approval is per site. Visiting a page does not hand it over. When you ask Claude to work on a site, it asks for access first, and you decide: allow just this one action, allow that site going forward, or decline. You can review and remove the sites you have approved later in the extension's settings, so access never silently piles up.",
+        image: {
+          src: "/screenshots/masterclass/13-grant-site-access.png",
+          alt: "The Settings panel for Claude in Chrome showing per-site permission controls."
+        },
         actionSteps: [
           "Open a safe, ordinary website, like a news article or a public help page.",
           "Ask Claude in the extension to do something with the page, such as summarizing it.",
@@ -547,6 +588,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Move from the website to the desktop app, which unlocks more.",
         whatThisStepDoes:
           "The website is fine for chatting, but the desktop app is where the advanced features live. Only the desktop app can connect to your other tools and run the Skills you just downloaded. Installing it is the gateway to everything else in this module.",
+        image: {
+          src: "/screenshots/masterclass/27-cowork-intro.png",
+          alt: "The Cowork intro screen reading Hand off complex tasks with an Open in desktop app option."
+        },
         actionSteps: [
           "Go to claude.ai and find the \"Download\" option for the desktop app, or visit the downloads page directly.",
           "Choose the version for your computer (Mac or Windows) and run the installer.",
@@ -564,6 +609,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Tell Claude to break problems into small, checkable pieces.",
         whatThisStepDoes:
           "For multi-step work, you want Claude to slow down and reason carefully rather than rush to an answer. This masterclass calls that \"Atomic Thought.\" The idea is simple: Claude breaks a problem into independent pieces it can check one at a time, which catches mistakes a single fast pass would miss. You turn it on through a setting and by asking for it in your instructions.",
+        image: {
+          src: "/screenshots/masterclass/07-adaptive-reasoning.png",
+          alt: "The Instructions for Claude field showing an Atom of Thought reasoning instruction."
+        },
         actionSteps: [
           "Open Settings in the desktop app and look for \"Extended thinking\" or a similar reasoning option. Turn it on.",
           "In prompts for complex tasks, add a line like \"Think through this step by step and check each part before moving on.\"",
@@ -601,6 +650,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "The step that turns a chatbot into an agent.",
         whatThisStepDoes:
           "This is the heart of Cowork. A Connection uses something called MCP (Model Context Protocol), which is a safe, standard way for Claude to reach an outside tool such as Gmail, Calendar, Google Drive, Linear, or Stripe. You approve each connection, so Claude only touches what you allow. Once connected, Claude can read and act in those tools instead of only talking about them. That shift, from describing work to doing it, is what makes it an agent.",
+        image: {
+          src: "/screenshots/masterclass/21-connections-mcp.png",
+          alt: "The Connectors panel listing tools like Airtable, Gmail, and Slack with per-tool permission controls."
+        },
         actionSteps: [
           "In the desktop app, open Settings and find Connections (sometimes labeled MCP or Connectors).",
           "Browse the available connections. Pick one you actually use, such as Google Calendar.",
@@ -615,6 +668,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Switch on Artifacts, file creation, code execution, and thinking.",
         whatThisStepDoes:
           "A few capabilities power real workflows, and some live behind toggles. Artifacts give you editable documents beside the chat. File creation lets Claude produce actual files you can save. Code execution lets it run small tasks to compute or transform data. Extended thinking is the careful reasoning from earlier. Turning these on now means your Skills have everything they need.",
+        image: {
+          src: "/screenshots/masterclass/22-skills-features.png",
+          alt: "The Capabilities settings showing toggles for Visuals and for code execution and file creation."
+        },
         actionSteps: [
           "Open Settings and find the features or capabilities area.",
           "Enable Skills, Artifacts, file creation, and code execution.",
@@ -629,6 +686,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Add Skills globally or, better, to a single Project.",
         whatThisStepDoes:
           "Now you load the .md Skill files you downloaded earlier. You have two choices. Global means a Skill applies everywhere, across all your chats. Per-Project means it applies only inside one Project. Per-Project is recommended because it keeps each workflow self-contained and predictable, so a support Skill does not bleed into your newsletter writing.",
+        image: {
+          src: "/screenshots/masterclass/23-install-skills.png",
+          alt: "The Skills list with a skill enabled and its trigger shown."
+        },
         actionSteps: [
           "Decide which one or two Skills match the workflow you want to build first.",
           "Find where the app lets you add a Skill (in Settings for global, or inside a Project for per-Project).",
@@ -643,6 +704,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "Build the container that holds one workflow's instructions and context.",
         whatThisStepDoes:
           "A Project here works like the one in Module 1, but now it anchors a whole workflow. It bundles the instructions, the reference knowledge, and the connections for one job in one place. Think of it as a dedicated workspace: open it and Claude already knows the task, the background, and which tools it may use.",
+        image: {
+          src: "/screenshots/masterclass/06-project-setup.png",
+          alt: "The Projects gallery with a New project button and existing project tiles."
+        },
         actionSteps: [
           "In the desktop app, create a new Project and name it for the job, like \"Weekly Customer Update.\"",
           "Write a short description of what this Project is for.",
@@ -679,6 +744,10 @@ If both are needed → Chain them: First solve via Atom of Thought, then explain
         description: "A clear framework Claude can follow the same way every time.",
         whatThisStepDoes:
           "Instructions are where you turn a vague wish into a repeatable routine. Good ones cover six things: the purpose, the trigger that starts it, the steps in order, the output format you want, quality checks, and what to do when something goes wrong. Spelling these out means Claude runs the workflow consistently instead of improvising. The skeleton below is a starting template you can copy.",
+        image: {
+          src: "/screenshots/masterclass/07-adaptive-reasoning.png",
+          alt: "The Instructions for Claude field where workflow instructions are written."
+        },
         actionSteps: [
           "Open your Project's instructions area.",
           "Fill in each section of the framework below for your own workflow.",
@@ -717,6 +786,10 @@ Error handling:
         description: "Trigger it, watch it work, correct it in the moment, save the good results.",
         whatThisStepDoes:
           "Instructions written, now you run it. You start the workflow, watch Claude move through your steps, and step in if something drifts. This is normal and expected on early runs. You are coaching it toward the result you want, and good outputs are worth saving as examples to make future runs even better.",
+        image: {
+          src: "/screenshots/masterclass/27-cowork-intro.png",
+          alt: "The Cowork intro screen reading Hand off complex tasks."
+        },
         actionSteps: [
           "In the Project, give the trigger phrase from your instructions.",
           "Watch each step. When Claude pauses to show a draft, read it.",
@@ -731,6 +804,10 @@ Error handling:
         description: "Score each run, improve the weak parts, and turn wins into Skills.",
         whatThisStepDoes:
           "The first run is rarely the best one. A simple scorecard tells you what to fix instead of guessing. You rate the run against a few metrics, compare target to actual, and note what to change. When a workflow consistently works well, you can capture it as a new Skill (a fresh .md file) and reuse it elsewhere. This is the loop that compounds.",
+        image: {
+          src: "/screenshots/masterclass/23-install-skills.png",
+          alt: "The Skills library showing a skill detail view."
+        },
         actionSteps: [
           "After a run, fill in the scorecard below.",
           "Pick the lowest-scoring row and adjust your instructions to address it.",
@@ -802,6 +879,10 @@ Error handling:
         description: "One plain paragraph on the app window before you do anything.",
         whatThisStepDoes:
           "The Claude Code app is a normal window, the same as any other program on your computer. You open a folder so Claude knows which files you are working with, you type your request in plain language, and Claude works through it while you watch. When it wants to create or change a file, it pauses and asks first. Knowing where those three things live removes most of the early confusion before you type anything real.",
+        image: {
+          src: "/screenshots/masterclass/31-app-tour.png",
+          alt: "The Claude Code app window showing New session, Routines, Recents, and Pull requests."
+        },
         actionSteps: [
           "Open the Claude Code app and look around the window. There is nothing to break by looking.",
           "Find where you open a folder. This tells Claude which files and folders it is allowed to work with.",
@@ -816,6 +897,10 @@ Error handling:
         description: "Download and install the Claude Code desktop app.",
         whatThisStepDoes:
           "Claude Code has its own desktop app, separate from the Claude Desktop app you installed in Module 3. That one is for working across your online tools. This one is for working with the files and folders on your computer, so it is a different download for a different job. Installing it is a normal app install, the same as any other program.",
+        image: {
+          src: "/screenshots/masterclass/32-install-code.png",
+          alt: "The Claude Code download page with a Download for macOS button."
+        },
         actionSteps: [
           "Go to the official Claude Code download page from Anthropic.",
           "Choose the version for your computer, Mac or Windows, and download it.",
@@ -869,6 +954,10 @@ Error handling:
         description: "It asks before acting, and you review changes before they stick.",
         whatThisStepDoes:
           "This is the part that should put you at ease. Claude Code does not silently change your files. It shows you what it intends to do and asks permission first. You see the proposed changes and approve or decline them. Nothing becomes permanent without your say-so, which means you can experiment without fear of breaking things.",
+        image: {
+          src: "/screenshots/masterclass/35-code-safety.png",
+          alt: "Claude Code settings showing session classification, model switching, and an Accept edits control."
+        },
         actionSteps: [
           "When Claude Code proposes an action, read the summary it shows you.",
           "Approve only what you understand and want. Decline or ask questions otherwise.",
@@ -883,6 +972,10 @@ Error handling:
         description: "A small free download that adds reusable prompts and skills.",
         whatThisStepDoes:
           "Once Claude Code feels comfortable, you can teach it a few new tricks. The meta-prompting starter pack is a small free download (about 166 KB) that adds two slash commands and two skills to the Claude Code you already have. A slash command is a shortcut you type with a slash in front, like /create-prompt. These help Claude Code write better prompts, save and reuse them, and break a big job into steps. These commands and skills are different from the Cowork Skills in Module 3. The Cowork Skills live inside the Cowork desktop app. These live in a hidden folder on your computer called .claude, and Claude Code loads them every time it starts.",
+        image: {
+          src: "/screenshots/masterclass/36-meta-prompting.png",
+          alt: "The technical-leaders.com Claude meta-prompting landing page."
+        },
         actionSteps: [
           "Read the table below so you know what each of the four pieces does.",
           "Notice that two are slash commands you type, and two are skills Claude Code uses on its own when a job calls for them.",
@@ -1007,6 +1100,10 @@ If blocked:
         description: "Signs you are ready for Code, and where to turn when stuck.",
         whatThisStepDoes:
           "You do not need Claude Code on day one. It earns its place when your work moves onto your own computer in volume: lots of files to organize, documents to generate and revise in batches, or a simple site to stand up. When you hit something confusing, the fastest help is often Claude itself, plus Anthropic's official docs and community.",
+        image: {
+          src: "/screenshots/masterclass/40-graduate.png",
+          alt: "The official Claude documentation home at docs.claude.com."
+        },
         actionSteps: [
           "Watch for the signal: repetitive file work on your machine that Chat and Cowork cannot touch.",
           "Start small with the practice tasks before trusting it on real folders.",
@@ -1032,6 +1129,22 @@ const StepBody = ({ step }: { step: Step }) => (
         <p className="text-muted-foreground mt-1">{step.whatThisStepDoes}</p>
       </div>
     </div>
+
+    {step.image && (
+      <figure className="overflow-hidden rounded-lg border border-border">
+        <img
+          src={step.image.src}
+          alt={step.image.alt}
+          loading="lazy"
+          className="w-full h-auto"
+        />
+        {step.image.caption && (
+          <figcaption className="px-4 py-2 text-sm text-muted-foreground">
+            {step.image.caption}
+          </figcaption>
+        )}
+      </figure>
+    )}
 
     <div>
       <h4 className="font-semibold mb-3">Action Steps:</h4>
