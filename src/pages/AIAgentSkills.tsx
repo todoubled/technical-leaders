@@ -139,23 +139,23 @@ const AIAgentSkills = () => {
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Rocket className="h-4 w-4" />
-            Free guest pass, no membership required
+            This week, live and free
           </div>
 
           <h1 className="font-bold tracking-tight mb-6">
             <div className="text-2xl sm:text-3xl lg:text-4xl mb-2">
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                Sit in on a weekly
+                Build a working
               </span>
             </div>
             <div className="text-4xl sm:text-5xl lg:text-6xl mb-2">
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                AI Office Hours
+                AI Agent Skill
               </span>
             </div>
             <div className="text-2xl sm:text-3xl lg:text-4xl">
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                session, free
+                in one hour
               </span>
             </div>
           </h1>
@@ -166,11 +166,11 @@ const AIAgentSkills = () => {
           </div>
 
           <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            This is one of the live sessions Technical Leaders members get every week. Come as a guest and see how it works.
+            Drop in on our weekly AI office hours as a free guest. No membership required.
           </p>
 
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            This week we build Agent Skills with Claude: reusable AI capabilities that turn repetitive work into something you run once and reuse. No code needed.
+            Bring a task you want to automate and leave with a skill that does it.
           </p>
 
           <div className="mb-8 max-w-2xl mx-auto">
@@ -186,7 +186,7 @@ const AIAgentSkills = () => {
           </div>
 
           <p className="text-base font-medium text-foreground mb-3">
-            Save your guest spot for {formattedDate}
+            Save my free seat for {formattedDate}
           </p>
           <div ref={formContainerRef} className="max-w-md mx-auto"></div>
         </div>
