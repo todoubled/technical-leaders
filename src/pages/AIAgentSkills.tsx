@@ -107,7 +107,7 @@ const AIAgentSkills = () => {
 
   const handleCopyLink = async () => {
     try {
-      await navigator.clipboard.writeText('https://technical-leaders.com/ai-agent-skills');
+      await navigator.clipboard.writeText('https://technical-leaders.com/join');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -203,7 +203,7 @@ const AIAgentSkills = () => {
               </div>
               <div className="flex items-center gap-2 w-full sm:w-auto">
                 <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg flex-1 sm:flex-none">
-                  <span className="text-sm font-mono text-muted-foreground">technical-leaders.com/ai-agent-skills</span>
+                  <span className="text-sm font-mono text-muted-foreground">technical-leaders.com/join</span>
                 </div>
                 <Button
                   onClick={handleCopyLink}

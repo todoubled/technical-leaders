@@ -293,7 +293,7 @@ const Assessment = () => {
       button: 'See Workshop Dates',
       urgency: answers.urgency
     });
-    window.location.href = '/ai-agent-skills';
+    window.location.href = '/join';
   };
 
   const resetAssessment = () => {

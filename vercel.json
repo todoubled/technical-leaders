@@ -24,6 +24,26 @@
       "source": "/ls",
       "destination": "https://drive.google.com/drive/u/1/folders/1s_UNK3dw7EJiToqHUl1uYWgioZJ9xfpH",
       "permanent": false
+    },
+    {
+      "source": "/ai-agent-skills",
+      "destination": "/join",
+      "permanent": true
+    },
+    {
+      "source": "/ai-workshop",
+      "destination": "/join",
+      "permanent": true
+    },
+    {
+      "source": "/ai-workflows",
+      "destination": "/join",
+      "permanent": true
+    },
+    {
+      "source": "/workshop",
+      "destination": "/join",
+      "permanent": true
     }
   ],
   "rewrites": [
