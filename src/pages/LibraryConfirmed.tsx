@@ -104,7 +104,7 @@ const LibraryConfirmed = () => {
               trackClick('Register for Workshop - Library Confirmed', {
                 location: 'workshop_cta_section'
               });
-              window.location.href = "/ai-agent-skills";
+              window.location.href = "/join";
             }}
           >
             Register for the Workshop

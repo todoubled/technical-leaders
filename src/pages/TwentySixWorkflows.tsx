@@ -3110,7 +3110,7 @@ Write customer-facing release notes and internal notes for the support team.`,
             Join our live workshop and learn how to build, customize, and deploy these skills in Claude Code.
             No coding required.
           </p>
-          <Link to="/ai-agent-skills">
+          <Link to="/join">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8"
@@ -3534,7 +3534,7 @@ Write customer-facing release notes and internal notes for the support team.`,
               <span>Deploy skills across your team and projects</span>
             </li>
           </ul>
-          <Link to="/ai-agent-skills">
+          <Link to="/join">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-6 text-lg"

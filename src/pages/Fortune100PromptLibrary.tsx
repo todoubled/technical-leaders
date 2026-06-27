@@ -433,7 +433,7 @@ const Fortune100PromptLibrary = () => {
               trackClick('Register for Workshop - Fortune 100 Library', {
                 location: 'below_hero_cta'
               });
-              window.location.href = "/ai-workflows";
+              window.location.href = "/join";
             }}
           >
             Register for the Workshop
