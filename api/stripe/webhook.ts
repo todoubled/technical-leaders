@@ -8,7 +8,7 @@ import {
   stripeGet,
   verifyStripeSignature,
   LicenseRecord,
-} from "./_lib";
+} from "./_lib.js";
 
 // Disable body parsing so we get the raw body for signature verification
 export const config = {
