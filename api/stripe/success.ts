@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { kv, signJwt, LicenseRecord } from "./_lib";
+import { kv, signJwt, LicenseRecord } from "./_lib.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const sessionId = req.query.session_id as string;

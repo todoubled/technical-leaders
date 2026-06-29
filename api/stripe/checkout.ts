@@ -7,7 +7,7 @@ import {
   getPriceId,
   generateLicenseKey,
   stripeRequest,
-} from "./_lib";
+} from "./_lib.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (handleCors(req, res)) return;
