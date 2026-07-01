@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
@@ -105,74 +104,106 @@ const OfficeHours = () => {
         </div>
       </section>
 
-      {/* Slide 5 — Try This: The Claude Masterclass guide */}
+      {/* Slide 5 — Try This: Replace software with a personal system of documents */}
       <section className="min-h-screen flex items-center px-6 py-24 border-t border-white/10">
         <div className="max-w-5xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-12 sm:mb-16">
             <span className="text-3xl sm:text-4xl font-bold text-white/40 tabular-nums">03</span>
             <h2 className="text-white/80 text-3xl sm:text-4xl font-semibold tracking-tight">Try This</h2>
           </div>
-          <p className="text-white text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-lg">
-            The Claude Masterclass
-          </p>
-          <p className="mt-8 text-white/90 text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug max-w-3xl drop-shadow">
-            A guided, hands-on walkthrough of every version of Claude — from your first chat to running agents on your own machine. Four modules, beginner to advanced, each with action steps, copy-paste prompts, and checkpoints you tick off as you go.
+          <p className="text-white text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] drop-shadow-lg max-w-4xl">
+            Replace custom software with a system of documents.
           </p>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {[
-              {
-                level: "Beginner",
-                title: "Claude Chat",
-                blurb: "Everyday chat, prompting, files, and Projects.",
-              },
-              {
-                level: "Beginner",
-                title: "Claude for Chrome",
-                blurb: "Let Claude see and act on the page in front of you, safely.",
-              },
-              {
-                level: "Intermediate",
-                title: "Claude Cowork",
-                blurb: "Connect Gmail and Calendar, install Skills, run real workflows.",
-              },
-              {
-                level: "Advanced",
-                title: "Claude Code",
-                blurb: "Work with files on your machine, plus reusable prompts and skills.",
-              },
-            ].map(({ level, title, blurb }, i) => (
-              <div
-                key={title}
-                className="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-7 backdrop-blur-sm"
-              >
-                <div className="flex items-baseline gap-3">
-                  <span className="text-2xl sm:text-3xl font-bold text-white/40 tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-wide text-longhand-accent">
-                    {level}
-                  </span>
-                </div>
-                <h3 className="mt-3 text-white text-xl sm:text-2xl font-semibold tracking-tight">
-                  {title}
-                </h3>
-                <p className="mt-2 text-white/80 text-base sm:text-lg leading-snug">
-                  {blurb}
+          <div className="mt-14 sm:mt-20 space-y-12 sm:space-y-16">
+            {/* WHAT */}
+            <div className="grid gap-3 sm:grid-cols-[7rem_1fr] sm:gap-10">
+              <span className="text-sm font-semibold uppercase tracking-widest text-longhand-accent sm:pt-2">
+                What
+              </span>
+              <ul className="space-y-3 text-white text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug drop-shadow">
+                <li>Convert complicated software into a simple, personal system of documents.</li>
+                <li>Use artifacts, not databases.</li>
+              </ul>
+            </div>
+
+            {/* WHY */}
+            <div className="grid gap-3 sm:grid-cols-[7rem_1fr] sm:gap-10">
+              <span className="text-sm font-semibold uppercase tracking-widest text-longhand-accent sm:pt-2">
+                Why
+              </span>
+              <p className="text-white text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug drop-shadow">
+                You don't want to maintain custom software or write code.
+              </p>
+            </div>
+
+            {/* HOW */}
+            <div className="grid gap-3 sm:grid-cols-[7rem_1fr] sm:gap-10">
+              <span className="text-sm font-semibold uppercase tracking-widest text-longhand-accent sm:pt-2">
+                How
+              </span>
+              <div className="space-y-6">
+                <p className="text-white text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug drop-shadow">
+                  Connect Claude Code to your codebase if possible — otherwise ask for exports of the logic and data sources.
                 </p>
+                <figure className="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm">
+                  <figcaption className="mb-4 text-xs sm:text-sm font-semibold uppercase tracking-wide text-longhand-accent">
+                    Example prompt
+                  </figcaption>
+                  <blockquote className="text-white/90 text-base sm:text-lg lg:text-xl leading-relaxed">
+                    &ldquo;How might we create a system of skills that captures a company
+                    profile (Pre-Money Valuation, Current Founder Ownership, Funding Sources,
+                    Cash On Hand, Monthly Burn, Monthly Inflows, Pending Awards) and does
+                    thorough research (based on the sea-of-demand skill) for investor
+                    discovery, evidence enrichment, and signal monitors (SEC EDGAR, news, FDA,
+                    etc.) to find the best-fit potential investors for the company based on the
+                    attached scoring model. Store your research in markdown files, improve the
+                    scoring engine over time, and store all research and scoring rationale in a
+                    spreadsheet so we can audit it. Final output should be a PDF investor brief
+                    for the company.&rdquo;
+                  </blockquote>
+                </figure>
               </div>
-            ))}
+            </div>
+
+            {/* NOW */}
+            <div className="grid gap-3 sm:grid-cols-[7rem_1fr] sm:gap-10">
+              <span className="text-sm font-semibold uppercase tracking-widest text-longhand-accent sm:pt-2">
+                Now
+              </span>
+              <div className="space-y-6">
+                <p className="text-white text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug drop-shadow">
+                  Operate and deliver for your clients — or sell them the skills to DIY.
+                </p>
+                <div className="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-7 backdrop-blur-sm">
+                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-wide text-white/50">
+                    New problem
+                  </p>
+                  <p className="mt-2 text-white text-lg sm:text-xl font-medium tracking-tight leading-snug">
+                    Claude becomes a single point of failure.
+                  </p>
+                  <p className="mt-6 text-xs sm:text-sm font-semibold uppercase tracking-wide text-longhand-accent">
+                    Solution
+                  </p>
+                  <p className="mt-2 text-white text-lg sm:text-xl font-medium tracking-tight leading-snug">
+                    Run your skills in Longhand for multi-provider AI support with zero downtime.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-12">
-            <Link
-              to="/claude-masterclass"
-              onClick={() => trackEvent("AI Office Hours Masterclass CTA Clicked")}
+          <div className="mt-14">
+            <a
+              href="https://www.getlonghand.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("AI Office Hours Longhand CTA Clicked")}
               className="inline-flex items-center gap-3 rounded-xl bg-white px-7 py-4 text-lg sm:text-xl font-semibold text-black transition-colors hover:bg-white/90"
             >
-              Open the masterclass guide
+              Run your skills in Longhand
               <ArrowRight className="h-5 w-5" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
