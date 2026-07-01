@@ -123,7 +123,7 @@ const OfficeHours = () => {
               </span>
               <ul className="space-y-3 text-white text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight leading-snug drop-shadow">
                 <li>Convert complicated software into a simple, personal system of documents.</li>
-                <li>Use artifacts, not databases.</li>
+                <li>Use artifacts, not apps.</li>
               </ul>
             </div>
 
