@@ -94,6 +94,9 @@ import RGAPlaybook from './pages/RGAPlaybook';
 import AICoworker from './pages/AICoworker';
 import AISOSLanding from './pages/AISOSLanding';
 import ClaudeWorkshop from './pages/ClaudeWorkshop';
+import ClaudeWorkshopA from './pages/ClaudeWorkshopA';
+import ClaudeWorkshopB from './pages/ClaudeWorkshopB';
+import ClaudeWorkshopC from './pages/ClaudeWorkshopC';
 import ClaudeWorkshopReplay from './pages/ClaudeWorkshopReplay';
 import AIAgentSystem from './pages/AIAgentSystem';
 import LKOfficeHours from './pages/LKOfficeHours';
@@ -234,6 +237,9 @@ export const appRoutes: AppRoute[] = [
   page('/t-download', TDownload),
   redirect('/launch-guide', '/rga-playbook'),
   page('/claude-workshop', ClaudeWorkshop),
+  page('/claude-workshop-a', ClaudeWorkshopA),
+  page('/claude-workshop-b', ClaudeWorkshopB),
+  page('/claude-workshop-c', ClaudeWorkshopC),
   page('/claude-workshop-replay', ClaudeWorkshopReplay),
   page('/ai-agent-system', AIAgentSystem),
   page('/lk-office-hours', LKOfficeHours),
