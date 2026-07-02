@@ -1,0 +1,49 @@
+{
+  "sessionId": "2026-06-18-agentic-research",
+  "provider": "sample",
+  "generatedAt": "2026-07-02T00:00:00.000Z",
+  "segments": [
+    {
+      "start": 0,
+      "end": 22,
+      "half": "free",
+      "text": "This week we're building an agentic investor-discovery system that starts from a one-line company profile and returns a ranked list of best-fit investors."
+    },
+    {
+      "start": 22,
+      "end": 70,
+      "half": "free",
+      "text": "The whole thing is a system of skills. One skill researches the company, another enriches each investor, and a third scores the match. You compose small skills instead of one giant prompt."
+    },
+    {
+      "start": 70,
+      "end": 118,
+      "half": "free",
+      "text": "A quick note on how to build skills that agents can actually reuse: give each skill a crisp name, a single responsibility, and example inputs and outputs. That's what makes them composable."
+    },
+    {
+      "start": 118,
+      "end": 160,
+      "half": "free",
+      "text": "For research we lean on MCP servers so the agent can pull live data from our CRM and enrichment providers without us hand-copying anything."
+    },
+    {
+      "start": 0,
+      "end": 46,
+      "half": "gated",
+      "text": "Let's go deep on the scoring engine. The ranking is a weighted model over stage fit, sector fit, check size, and warm-intro distance."
+    },
+    {
+      "start": 46,
+      "end": 104,
+      "half": "gated",
+      "text": "The trick is to make the model explain itself. Every score comes with the segments of evidence that produced it, so a human can audit why an investor ranked where they did."
+    },
+    {
+      "start": 104,
+      "end": 158,
+      "half": "gated",
+      "text": "We also wire in more MCP servers here for the private data, and I'll show the cost optimization pass that cut our per-run spend by more than half."
+    }
+  ]
+}

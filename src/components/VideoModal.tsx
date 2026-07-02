@@ -4,12 +4,19 @@ interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoUrl: string;
+  /**
+   * Start playback at this offset (seconds) — used by search results that
+   * deep-link to the moment a topic is discussed. Defaults to 0 (from the start).
+   */
+  startSeconds?: number;
 }
 
-const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
+const VideoModal = ({ isOpen, onClose, videoUrl, startSeconds = 0 }: VideoModalProps) => {
   const getEmbedUrl = (url: string) => {
     const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/)?.[1];
-    return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : url;
+    if (!videoId) return url;
+    const start = startSeconds > 0 ? `&start=${Math.floor(startSeconds)}` : "";
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1${start}`;
   };
 
   return (

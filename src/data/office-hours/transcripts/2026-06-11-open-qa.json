@@ -1,0 +1,49 @@
+{
+  "sessionId": "2026-06-11-open-qa",
+  "provider": "sample",
+  "generatedAt": "2026-07-02T00:00:00.000Z",
+  "segments": [
+    {
+      "start": 0,
+      "end": 20,
+      "half": "free",
+      "text": "Open Q&A this week. The theme in the questions is adoption: how do you get AI workflows to actually stick across a team, not just with the one champion?"
+    },
+    {
+      "start": 20,
+      "end": 68,
+      "half": "free",
+      "text": "First question. Someone asks: my team wants to level up but doesn't know where to start. My answer is to build skills as a team ritual, one small reusable skill per week, reviewed together."
+    },
+    {
+      "start": 68,
+      "end": 120,
+      "half": "free",
+      "text": "When you build skills that way, the workflow stops living in one person's head. It becomes shared infrastructure, and that's the difference between a demo and adoption."
+    },
+    {
+      "start": 120,
+      "end": 168,
+      "half": "free",
+      "text": "Second question is about tooling. Yes, you can connect internal systems with MCP servers so the whole team hits the same data through the same skills."
+    },
+    {
+      "start": 0,
+      "end": 50,
+      "half": "gated",
+      "text": "Into the unedited half. A member asks how to keep spend under control at scale. This is the cost optimization conversation everyone eventually has."
+    },
+    {
+      "start": 50,
+      "end": 110,
+      "half": "gated",
+      "text": "The levers are: cache aggressively, keep context lean, and pick the smallest model that clears the bar. Most teams overspend on context they never needed."
+    },
+    {
+      "start": 110,
+      "end": 170,
+      "half": "gated",
+      "text": "Last one is a deeper MCP servers question about auth. I'll walk through how we scope tokens so an agent only ever sees the data that particular workflow needs."
+    }
+  ]
+}

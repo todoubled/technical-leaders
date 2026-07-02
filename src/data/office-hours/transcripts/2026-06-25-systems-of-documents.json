@@ -1,0 +1,49 @@
+{
+  "sessionId": "2026-06-25-systems-of-documents",
+  "provider": "sample",
+  "generatedAt": "2026-07-02T00:00:00.000Z",
+  "segments": [
+    {
+      "start": 0,
+      "end": 18,
+      "half": "free",
+      "text": "Welcome to office hours. Today we're replacing a piece of custom internal software with a simple system of documents you run with Claude."
+    },
+    {
+      "start": 18,
+      "end": 52,
+      "half": "free",
+      "text": "The core idea is artifacts over apps. Instead of maintaining a bespoke tool nobody wants to own, you keep a few structured documents and let Claude Code operate on them."
+    },
+    {
+      "start": 52,
+      "end": 96,
+      "half": "free",
+      "text": "So the first question is always: what is the software actually doing? Ninety percent of the time it's reading some records, applying a rule, and writing an update. That's a document plus a prompt."
+    },
+    {
+      "start": 96,
+      "end": 140,
+      "half": "free",
+      "text": "We map each screen to a document and each button to an instruction. No database migrations, no deploy pipeline, no on-call. The maintenance cost basically goes to zero."
+    },
+    {
+      "start": 0,
+      "end": 40,
+      "half": "gated",
+      "text": "Now the live build. I'll take the internal tool we just described and rebuild it as a system of documents in front of you, step by step with Claude Code."
+    },
+    {
+      "start": 40,
+      "end": 88,
+      "half": "gated",
+      "text": "Notice how I structure the folder so Claude can find everything: one document per entity, a README that explains the rules, and a skills file that encodes the repeatable steps."
+    },
+    {
+      "start": 88,
+      "end": 150,
+      "half": "gated",
+      "text": "This is also where cost optimization matters. Keeping the context small and the documents tight means each run is cheap, so you can afford to run it constantly instead of batching."
+    }
+  ]
+}

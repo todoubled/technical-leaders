@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "strategy": "keyword",
+  "generatedAt": "2026-07-02T14:01:54.925Z",
+  "records": [
+    {
+      "sessionId": "2026-06-25-systems-of-documents",
+      "title": "Replace custom software with a system of documents",
+      "date": "2026-06-25",
+      "half": "free",
+      "youtubeId": "x1r9mmJgMkQ",
+      "start": 0,
+      "text": "Welcome to office hours. Today we're replacing a piece of custom internal software with a simple system of documents you run with Claude."
+    },
+    {
+      "sessionId": "2026-06-25-systems-of-documents",
+      "title": "Replace custom software with a system of documents",
+      "date": "2026-06-25",
+      "half": "free",
+      "youtubeId": "x1r9mmJgMkQ",
+      "start": 18,
+      "text": "The core idea is artifacts over apps. Instead of maintaining a bespoke tool nobody wants to own, you keep a few structured documents and let Claude Code operate on them."
+    },
+    {
+      "sessionId": "2026-06-25-systems-of-documents",
+      "title": "Replace custom software with a system of documents",
+      "date": "2026-06-25",
+      "half": "free",
+      "youtubeId": "x1r9mmJgMkQ",
+      "start": 52,
+      "text": "So the first question is always: what is the software actually doing? Ninety percent of the time it's reading some records, applying a rule, and writing an update. That's a document plus a prompt."
+    },
+    {
+      "sessionId": "2026-06-25-systems-of-documents",
+      "title": "Replace custom software with a system of documents",
+      "date": "2026-06-25",
+      "half": "free",
+      "youtubeId": "x1r9mmJgMkQ",
+      "start": 96,
+      "text": "We map each screen to a document and each button to an instruction. No database migrations, no deploy pipeline, no on-call. The maintenance cost basically goes to zero."
+    },
+    {
+      "sessionId": "2026-06-25-systems-of-documents",
+      "title": "Replace custom software with a system of documents",
+      "date": "2026-06-25",
+      "half": "gated",
+      "youtubeId": "oHg5SJYRHA0",
+      "start": 0,
+      "text": "Now the live build. I'll take the internal tool we just described and rebuild it as a system of documents in front of you, step by step with Claude Code."
+    },
+    {
+      "sessionId": "2026-06-25-systems-of-documents",
+      "title": "Replace custom software with a system of documents",
+      "date": "2026-06-25",
+      "half": "gated",
+      "youtubeId": "oHg5SJYRHA0",
+      "start": 40,
+      "text": "Notice how I structure the folder so Claude can find everything: one document per entity, a README that explains the rules, and a skills file that encodes the repeatable steps."
+    },
+    {
+      "sessionId": "2026-06-25-systems-of-documents",
+      "title": "Replace custom software with a system of documents",
+      "date": "2026-06-25",
+      "half": "gated",
+      "youtubeId": "oHg5SJYRHA0",
+      "start": 88,
+      "text": "This is also where cost optimization matters. Keeping the context small and the documents tight means each run is cheap, so you can afford to run it constantly instead of batching."
+    },
+    {
+      "sessionId": "2026-06-18-agentic-research",
+      "title": "Building an agentic investor-discovery system",
+      "date": "2026-06-18",
+      "half": "free",
+      "youtubeId": "M7lc1UVf-VE",
+      "start": 0,
+      "text": "This week we're building an agentic investor-discovery system that starts from a one-line company profile and returns a ranked list of best-fit investors."
+    },
+    {
+      "sessionId": "2026-06-18-agentic-research",
+      "title": "Building an agentic investor-discovery system",
+      "date": "2026-06-18",
+      "half": "free",
+      "youtubeId": "M7lc1UVf-VE",
+      "start": 22,
+      "text": "The whole thing is a system of skills. One skill researches the company, another enriches each investor, and a third scores the match. You compose small skills instead of one giant prompt."
+    },
+    {
+      "sessionId": "2026-06-18-agentic-research",
+      "title": "Building an agentic investor-discovery system",
+      "date": "2026-06-18",
+      "half": "free",
+      "youtubeId": "M7lc1UVf-VE",
+      "start": 70,
+      "text": "A quick note on how to build skills that agents can actually reuse: give each skill a crisp name, a single responsibility, and example inputs and outputs. That's what makes them composable."
+    },
+    {
+      "sessionId": "2026-06-18-agentic-research",
+      "title": "Building an agentic investor-discovery system",
+      "date": "2026-06-18",
+      "half": "free",
+      "youtubeId": "M7lc1UVf-VE",
+      "start": 118,
+      "text": "For research we lean on MCP servers so the agent can pull live data from our CRM and enrichment providers without us hand-copying anything."
+    },
+    {
+      "sessionId": "2026-06-18-agentic-research",
+      "title": "Building an agentic investor-discovery system",
+      "date": "2026-06-18",
+      "half": "gated",
+      "youtubeId": "aqz-KE-bpKQ",
+      "start": 0,
+      "text": "Let's go deep on the scoring engine. The ranking is a weighted model over stage fit, sector fit, check size, and warm-intro distance."
+    },
+    {
+      "sessionId": "2026-06-18-agentic-research",
+      "title": "Building an agentic investor-discovery system",
+      "date": "2026-06-18",
+      "half": "gated",
+      "youtubeId": "aqz-KE-bpKQ",
+      "start": 46,
+      "text": "The trick is to make the model explain itself. Every score comes with the segments of evidence that produced it, so a human can audit why an investor ranked where they did."
+    },
+    {
+      "sessionId": "2026-06-18-agentic-research",
+      "title": "Building an agentic investor-discovery system",
+      "date": "2026-06-18",
+      "half": "gated",
+      "youtubeId": "aqz-KE-bpKQ",
+      "start": 104,
+      "text": "We also wire in more MCP servers here for the private data, and I'll show the cost optimization pass that cut our per-run spend by more than half."
+    },
+    {
+      "sessionId": "2026-06-11-open-qa",
+      "title": "Open Q&A: shipping AI workflows that stick",
+      "date": "2026-06-11",
+      "half": "free",
+      "youtubeId": "9bZkp7q19f0",
+      "start": 0,
+      "text": "Open Q&A this week. The theme in the questions is adoption: how do you get AI workflows to actually stick across a team, not just with the one champion?"
+    },
+    {
+      "sessionId": "2026-06-11-open-qa",
+      "title": "Open Q&A: shipping AI workflows that stick",
+      "date": "2026-06-11",
+      "half": "free",
+      "youtubeId": "9bZkp7q19f0",
+      "start": 20,
+      "text": "First question. Someone asks: my team wants to level up but doesn't know where to start. My answer is to build skills as a team ritual, one small reusable skill per week, reviewed together."
+    },
+    {
+      "sessionId": "2026-06-11-open-qa",
+      "title": "Open Q&A: shipping AI workflows that stick",
+      "date": "2026-06-11",
+      "half": "free",
+      "youtubeId": "9bZkp7q19f0",
+      "start": 68,
+      "text": "When you build skills that way, the workflow stops living in one person's head. It becomes shared infrastructure, and that's the difference between a demo and adoption."
+    },
+    {
+      "sessionId": "2026-06-11-open-qa",
+      "title": "Open Q&A: shipping AI workflows that stick",
+      "date": "2026-06-11",
+      "half": "free",
+      "youtubeId": "9bZkp7q19f0",
+      "start": 120,
+      "text": "Second question is about tooling. Yes, you can connect internal systems with MCP servers so the whole team hits the same data through the same skills."
+    },
+    {
+      "sessionId": "2026-06-11-open-qa",
+      "title": "Open Q&A: shipping AI workflows that stick",
+      "date": "2026-06-11",
+      "half": "gated",
+      "youtubeId": "e-ORhEE9VVg",
+      "start": 0,
+      "text": "Into the unedited half. A member asks how to keep spend under control at scale. This is the cost optimization conversation everyone eventually has."
+    },
+    {
+      "sessionId": "2026-06-11-open-qa",
+      "title": "Open Q&A: shipping AI workflows that stick",
+      "date": "2026-06-11",
+      "half": "gated",
+      "youtubeId": "e-ORhEE9VVg",
+      "start": 50,
+      "text": "The levers are: cache aggressively, keep context lean, and pick the smallest model that clears the bar. Most teams overspend on context they never needed."
+    },
+    {
+      "sessionId": "2026-06-11-open-qa",
+      "title": "Open Q&A: shipping AI workflows that stick",
+      "date": "2026-06-11",
+      "half": "gated",
+      "youtubeId": "e-ORhEE9VVg",
+      "start": 110,
+      "text": "Last one is a deeper MCP servers question about auth. I'll walk through how we scope tokens so an agent only ever sees the data that particular workflow needs."
+    }
+  ]
+}

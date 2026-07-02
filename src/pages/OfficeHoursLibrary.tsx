@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Calendar, Play } from "lucide-react";
+import { Calendar, Play, Search } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -115,6 +115,14 @@ const OfficeHoursLibrary = () => {
             Every session, both halves — the full archive of what Builders are
             shipping with AI.
           </p>
+          <div className="mt-6">
+            <Button variant="outline" asChild>
+              <a href="/office-hours/search">
+                <Search className="mr-2 h-4 w-4" />
+                Search the library by topic
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
