@@ -100,6 +100,7 @@ import LKOfficeHours from './pages/LKOfficeHours';
 import OfficeHours from './pages/OfficeHours';
 import OfficeHoursSession from './pages/OfficeHoursSession';
 import OfficeHoursLibrary from './pages/OfficeHoursLibrary';
+import OfficeHoursSearch from './pages/OfficeHoursSearch';
 import { officeHoursSessions } from './data/office-hours/sessions';
 import TDownload from './pages/TDownload';
 import FirstTimeFounder from './pages/FirstTimeFounder';
@@ -244,6 +245,9 @@ export const appRoutes: AppRoute[] = [
   // Gated library index. Registered before the per-session pages; "/library" is
   // never used as a session slug so there is no path collision.
   page('/office-hours/library', OfficeHoursLibrary),
+  // Open, prospect-facing search over the transcript index. Search itself is
+  // ungated; gated clips route through OfficeHoursAccessGate on click.
+  page('/office-hours/search', OfficeHoursSearch),
   // One static, prerenderable page per office-hours session so the free-half URL
   // unfurls with per-session Open Graph tags when shared in a sales email. The
   // component derives its session from the path (see OfficeHoursSession).

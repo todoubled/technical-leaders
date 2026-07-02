@@ -45,6 +45,18 @@ export interface OfficeHoursSession {
 // order is not load-bearing.
 export const officeHoursSessions: OfficeHoursSession[] = [
   {
+    id: "2026-06-24-ai-office-hours",
+    title: "AI Office Hours — June 24, 2026",
+    date: "2026-06-24",
+    description:
+      "The live AI office-hours session: members share what they built this week, then dig into practical AI workflows, skills, and tooling. Recording from the real session — the free half is open; the second half is members-only.",
+    // Real recording (Airtable Recording Link). A single upload backs both
+    // halves; the searchable index splits it at the midpoint for the gate.
+    freeHalf: { youtubeId: "OsQqiuOKrzs", duration: "73 min" },
+    gatedHalf: { youtubeId: "OsQqiuOKrzs", duration: "73 min" },
+    topics: ["Office hours", "AI workflows", "Skills"],
+  },
+  {
     id: "2026-06-25-systems-of-documents",
     title: "Replace custom software with a system of documents",
     date: "2026-06-25",
