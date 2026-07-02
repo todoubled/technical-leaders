@@ -1,26 +1,29 @@
 // Build the searchable office-hours index.
 //
-// Reads every per-session transcript in src/data/office-hours/transcripts/, joins
-// each timecoded segment to its session (title, date, and the correct YouTube id
-// for that half), and writes a single query-ready JSON artifact to
+// Reads every per-session scrubbed transcript artifact in
+// src/data/office-hours/transcripts/ (produced by transcribe-office-hours.mjs
+// from the real Airtable + Google-Doc data) and writes a single query-ready JSON
+// artifact to
 //   public/office-hours-search-index.json
 // which Vite copies into dist/ and the client fetches at runtime.
 //
 // Usage: node scripts/build-office-hours-index.mjs   (also runs in `npm run build`)
 //
-// The record shape is deliberately backend-agnostic — { sessionId, title, date,
-// half, youtubeId, start, text } — so today's keyword search can be swapped for
-// embeddings/vector search later without reshaping the stored data. Output is
-// deterministic (sorted, stable) so re-running with no transcript changes produces
-// no diff.
+// Each index entry is one session: { sessionId, title, date, youtubeId,
+// durationSeconds, segments: [{ text, startSeconds }] }. The transcript artifacts
+// are self-describing (they carry title/date/youtubeId straight from Airtable),
+// so the index is decoupled from the 001 session manifest. Output is
+// deterministic (sessions sorted newest-first, segments by start) so re-running
+// with no artifact changes produces no diff beyond the timestamp.
+//
+// durationSeconds is carried through so the client can split each real recording
+// into a free first half and a members-only second half (see office-hours-search
+// gating) — mirroring 001's free/gated model with a single real upload.
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import {
-  loadOfficeHoursSessions,
-  TRANSCRIPTS_DIR,
-} from './lib/office-hours-sessions.mjs';
+import { TRANSCRIPTS_DIR } from './lib/office-hours-sessions.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,12 +35,9 @@ const OUT_PATH = path.join(
   'office-hours-search-index.json',
 );
 
-const INDEX_VERSION = 1;
+const INDEX_VERSION = 2;
 
 const run = () => {
-  const sessions = loadOfficeHoursSessions();
-  const sessionById = new Map(sessions.map((s) => [s.id, s]));
-
   let transcriptFiles = [];
   try {
     transcriptFiles = fs
@@ -48,61 +48,64 @@ const run = () => {
     console.warn('⚠️  No transcripts directory found — writing an empty index.');
   }
 
-  const records = [];
+  const sessions = [];
+  let totalSegments = 0;
   let skippedSegments = 0;
 
   for (const file of transcriptFiles) {
-    const transcript = JSON.parse(
+    const artifact = JSON.parse(
       fs.readFileSync(path.join(TRANSCRIPTS_DIR, file), 'utf-8'),
     );
-    const session = sessionById.get(transcript.sessionId);
-    if (!session) {
-      console.warn(
-        `   ⚠️  ${file}: sessionId "${transcript.sessionId}" not in manifest, skipping.`,
-      );
+    if (!artifact.sessionId || !artifact.youtubeId) {
+      console.warn(`   ⚠️  ${file}: missing sessionId/youtubeId, skipping.`);
       continue;
     }
 
-    for (const seg of transcript.segments || []) {
-      const half = seg.half === 'gated' ? 'gated' : 'free';
+    const segments = [];
+    for (const seg of artifact.segments || []) {
       const text = (seg.text || '').trim();
       if (!text) {
         skippedSegments++;
         continue;
       }
-      records.push({
-        sessionId: session.id,
-        title: session.title,
-        date: session.date,
-        half,
-        youtubeId: session.halves[half].youtubeId,
-        start: Math.max(0, Math.round(seg.start ?? 0)),
+      segments.push({
         text,
+        startSeconds: Math.max(0, Math.round(seg.startSeconds ?? 0)),
       });
     }
+    segments.sort((a, b) => a.startSeconds - b.startSeconds);
+    totalSegments += segments.length;
+
+    sessions.push({
+      sessionId: artifact.sessionId,
+      title: artifact.title,
+      date: artifact.date,
+      youtubeId: artifact.youtubeId,
+      durationSeconds: Math.max(0, Math.round(artifact.durationSeconds ?? 0)),
+      segments,
+    });
   }
 
-  // Deterministic order: session date (newest first), then half, then timecode.
-  records.sort((a, b) => {
+  // Deterministic order: newest session first, then by id as a stable tiebreak.
+  sessions.sort((a, b) => {
     if (a.date !== b.date) return b.date.localeCompare(a.date);
-    if (a.sessionId !== b.sessionId) return a.sessionId.localeCompare(b.sessionId);
-    if (a.half !== b.half) return a.half.localeCompare(b.half);
-    return a.start - b.start;
+    return a.sessionId.localeCompare(b.sessionId);
   });
 
   const index = {
     version: INDEX_VERSION,
     // "keyword" today; a later upgrade to embeddings can bump this without
-    // changing the record shape above.
+    // changing the entry shape above.
     strategy: 'keyword',
     generatedAt: new Date().toISOString(),
-    records,
+    sessions,
   };
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
 
   // Stable write ignoring only the timestamp, so an unchanged corpus doesn't churn.
-  const stripTs = (json) => json.replace(/"generatedAt":\s*"[^"]*"/, '"generatedAt":""');
+  const stripTs = (json) =>
+    json.replace(/"generatedAt":\s*"[^"]*"/, '"generatedAt":""');
   const nextJson = JSON.stringify(index, null, 2) + '\n';
   let existing = null;
   try {
@@ -114,7 +117,7 @@ const run = () => {
   if (changed) fs.writeFileSync(OUT_PATH, nextJson, 'utf8');
 
   console.log(
-    `🔎 Office-hours search index: ${records.length} segment records from ${transcriptFiles.length} transcript(s)` +
+    `🔎 Office-hours search index: ${totalSegments} segment(s) across ${sessions.length} session(s)` +
       `${skippedSegments ? `, ${skippedSegments} empty segment(s) skipped` : ''}.`,
   );
   console.log(

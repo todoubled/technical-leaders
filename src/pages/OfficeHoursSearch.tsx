@@ -104,7 +104,7 @@ const OfficeHoursSearch = () => {
       start_seconds: result.startSeconds,
       query: query.trim(),
     });
-    if (result.half === "gated") {
+    if (result.gated) {
       setGatedResult(result);
     } else {
       setFreeResult(result);
@@ -179,7 +179,7 @@ const OfficeHoursSearch = () => {
                       <Clock className="h-3.5 w-3.5" />
                       {formatTimecode(result.startSeconds)}
                     </span>
-                    {result.half === "gated" ? (
+                    {result.gated ? (
                       <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 text-primary px-2 py-0.5">
                         <Lock className="h-3 w-3" />
                         Members
