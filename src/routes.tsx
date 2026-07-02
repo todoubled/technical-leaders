@@ -98,6 +98,9 @@ import ClaudeWorkshopReplay from './pages/ClaudeWorkshopReplay';
 import AIAgentSystem from './pages/AIAgentSystem';
 import LKOfficeHours from './pages/LKOfficeHours';
 import OfficeHours from './pages/OfficeHours';
+import OfficeHoursSession from './pages/OfficeHoursSession';
+import OfficeHoursLibrary from './pages/OfficeHoursLibrary';
+import { officeHoursSessions } from './data/office-hours/sessions';
 import TDownload from './pages/TDownload';
 import FirstTimeFounder from './pages/FirstTimeFounder';
 import ClaudeMetaPrompting from './pages/ClaudeMetaPrompting';
@@ -238,6 +241,15 @@ export const appRoutes: AppRoute[] = [
   page('/ai-agent-system', AIAgentSystem),
   page('/lk-office-hours', LKOfficeHours),
   page('/office-hours', OfficeHours),
+  // Gated library index. Registered before the per-session pages; "/library" is
+  // never used as a session slug so there is no path collision.
+  page('/office-hours/library', OfficeHoursLibrary),
+  // One static, prerenderable page per office-hours session so the free-half URL
+  // unfurls with per-session Open Graph tags when shared in a sales email. The
+  // component derives its session from the path (see OfficeHoursSession).
+  ...officeHoursSessions.map((session) =>
+    page(`/office-hours/${session.id}`, OfficeHoursSession),
+  ),
   page('/first-time-founder', FirstTimeFounder),
   page('/claude-meta-prompting', ClaudeMetaPrompting),
   page('/tokens', Tokens),
